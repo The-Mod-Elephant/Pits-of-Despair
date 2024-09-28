@@ -1,10 +1,14 @@
 @50000 = ~Umbral Fang +4~
-@50001 = ~This dagger was Nephetel's main weapon of choice. Apparently enchanted by Szass Tam himself (according to her, at least), this dagger's blade radiates a powerful aura, and it gleams with an eerie black sheen, etched with runes that hint at the evil magic contained within.
+@50001 = ~This ebony dagger was Nephetel's main weapon of choice. Apparently made from the fang of a dracolich (according to her, at least), this dagger's blade radiates a powerful aura, and it gleams with an eerie black sheen, etched with runes that hint at the dark magic contained within.
 
 STATISTICS:
 
+Equipped abilities:
+– Immunity to instant-death magic and vorpal hits
+
 Combat abilities:
-– 10% chance per hit of unleashing a ray of dark magic into the body of the victim, forcing them to save vs. Death or die. If a save is made, they still suffer 1d8 magic damage. Critical hits always trigger the effect. Non-living beings and targets immune to death magic are unaffected.
+– 10% chance per hit of unleashing a ray of dark magic into the body of the victim, forcing them to save vs. Death or die. If a save is made, they still suffer 1d8 magic damage from the shock. Critical hits always trigger this effect. Non-living beings and targets immune to death magic are unaffected.
+– +5% chance to critical hit (this weapon only)
 
 THAC0: +4
 Damage: 1d4+4, +1d2 cold damage
