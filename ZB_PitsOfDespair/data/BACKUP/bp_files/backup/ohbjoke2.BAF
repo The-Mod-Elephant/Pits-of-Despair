@@ -1,0 +1,2738 @@
+IF
+	Global("OH_Active","LOCALS",0)
+	OR(3)
+		See(NearestEnemyOf(Myself))
+		AttackedBy([ANYONE],DEFAULT)
+		TookDamage()
+THEN
+	RESPONSE #100
+		SetGlobal("OH_Active","LOCALS",1)
+		SetGlobalTimer("OH_Rest","LOCALS",EIGHT_HOURS)
+		Enemy()
+		Shout(ASSIST)
+		Continue()
+END
+
+IF
+	Global("OH_Active","LOCALS",0)
+	Heard([EVILCUTOFF],ASSIST)
+	Range(LastHeardBy(Myself),25)
+THEN
+	RESPONSE #100
+		SetGlobal("OH_Active","LOCALS",1)
+		SetGlobalTimer("OH_Rest","LOCALS",EIGHT_HOURS)
+		Enemy()
+		Shout(ASSIST)
+		MoveToObject(LastHeardBy(Myself))
+END
+
+IF
+	OR(4)
+		Global("OH_Active","LOCALS",0)
+		!Allegiance(Myself,EVILCUTOFF)
+		StateCheck(Myself,STATE_IMMOBILE)
+		StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Rest","LOCALS",EIGHT_HOURS)
+		SetGlobal("OH_Cntg","LOCALS",0)
+		SetGlobal("OH_Seq","LOCALS",0)
+		SetGlobal("OH_MSeq","LOCALS",0)
+		SetGlobal("OH_Trig","LOCALS",0)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
+		Rest()
+END
+
+IF
+	Global("OH_Active","LOCALS",1)
+	!InActiveArea(Myself)
+	!See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	Global("OH_Active","LOCALS",1)
+	Global("OH_Cntg","LOCALS",0)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobal("OH_Cntg","LOCALS",1)
+		DisplayString(Myself,8292)  // Contingency Active
+		ReallyForceSpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+		Continue()
+END
+
+IF
+	Global("OH_Heal","LOCALS",1)
+	OR(2)
+		!HasItem("POTN52",Myself)  // Potion of Extra Healing
+		HPPercentGT(Myself,84)
+THEN
+	RESPONSE #100
+		SetGlobal("OH_Heal","LOCALS",0)
+END
+
+IF
+	HPPercentLT(Myself,85)
+	!Global("OH_Heal","LOCALS",1)
+	HasItem("POTN52",Myself)  // Potion of Extra Healing
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("OH_Heal","LOCALS",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HasItem("POTN20",Myself)  // Antidote
+	StateCheck(Myself,STATE_POISONED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN20",Myself)  // Antidote
+		DisplayStringHead(Myself,46150)  // *quaffs a potion*
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	Global("OH_Heal","LOCALS",1)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself)  // Potion of Invisibility
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN10",Myself)  // Potion of Invisibility
+		DisplayStringHead(Myself,46150)  // *quaffs a potion*
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("OH_Heal","LOCALS",1)
+	HasItem("POTN55",Myself)  // Potion of Superior Healing
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN55",Myself)  // Potion of Superior Healing
+		DisplayStringHead(Myself,46150)  // *quaffs a potion*
+END
+
+IF
+	Global("OH_Heal","LOCALS",1)
+	!HasItem("POTN55",Myself)  // Potion of Superior Healing
+	HasItem("POTN52",Myself)  // Potion of Extra Healing
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN52",Myself)  // Potion of Extra Healing
+		DisplayStringHead(Myself,46150)  // *quaffs a potion*
+END
+
+IF
+	Global("OH_Heal","LOCALS",0)
+	HPPercentLT(Myself,85)
+	HasItem("POTN55",Myself)  // Potion of Superior Healing
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN55",Myself)  // Potion of Superior Healing
+		DisplayStringHead(Myself,46150)  // *quaffs a potion*
+END
+
+IF
+	StateCheck(Myself,STATE_SILENCED)
+	HaveSpell(WIZARD_VOCALIZE)  // SPWI219.SPL (Vocalize)
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,WIZARD_VOCALIZE)  // SPWI219.SPL (Vocalize)
+END
+
+IF
+	!CheckStatGT(Myself,0,AURACLEANSING)
+	Global("OH_Trig","LOCALS",0)
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	Range([GOODCUTOFF],30)
+THEN
+	RESPONSE #100
+		SetGlobal("OH_Trig","LOCALS",1)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		DisplayString(Myself,26243)  // Spell Trigger
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
+		ReallyForceSpell(Myself,WIZARD_IMPROVED_HASTE)  // SPWI613.SPL (Improved Haste)
+		ReallyForceSpell(Myself,WIZARD_SPELL_DEFLECTION)  // SPWI618.SPL (Spell Deflection)
+END
+
+IF
+	!CheckStatGT(Myself,0,AURACLEANSING)
+	CheckStatLT(Myself,1,STONESKINS)
+	!CheckStatGT(Myself,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	Global("OH_Seq","LOCALS",0)
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobal("OH_Seq","LOCALS",1)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		DisplayString(Myself,39969)  // Spell Sequencer—Fired
+		ReallyForceSpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+		ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)  // SPWI418.SPL (Fire Shield (Red))
+		ReallyForceSpell(Myself,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)  // SPWI406.SPL (Minor Globe of Invulnerability)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!CheckStatGT(Myself,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	HaveSpell(WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	OR(3)
+		CheckStatLT(Myself,1,STONESKINS)
+		AttackedBy([ANYONE],DEFAULT)
+		Range([GOODCUTOFF],4)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	CheckStatLT(Myself,1,STONESKINS)
+	HaveSpell(WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	Global("OH_MSeq","LOCALS",0)
+	!CheckStatGT(Myself,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!StateCheck(Myself,STATE_MIRRORIMAGE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetGlobal("OH_MSeq","LOCALS",1)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetSequence(SEQ_CAST)
+		DisplayString(Myself,8635)  // Minor Sequencer Activated
+		ReallyForceSpell(Myself,WIZARD_STRENGTH)  // SPWI214.SPL (Strength)
+		ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Mirror Image)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!StateCheck(Myself,STATE_MIRRORIMAGE)
+	HaveSpell(WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Mirror Image)
+	!CheckStatGT(Myself,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Mirror Image)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HaveSpell(WIZARD_PROTECTION_FROM_EVIL)  // SPWI113.SPL (Protection From Evil)
+	See([0.0.DEMONIC.0.0.SUMMONED_DEMON])
+	CheckStat(Myself,0,PROTECTION_FROM_EVIL)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,WIZARD_PROTECTION_FROM_EVIL)  // SPWI113.SPL (Protection From Evil)
+END
+
+IF
+	Global("OH_Heal","LOCALS",0)
+	HasItem("POTN35",Myself)  // Potion of Magic Shielding
+	CheckStatLT(Myself,50,MAGICDAMAGERESISTANCE)
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN35",Myself)  // Potion of Magic Shielding
+		DisplayStringHead(Myself,46150)  // *quaffs a potion*
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+	HaveSpell(WIZARD_SHADOW_DOOR)  // SPWI505.SPL (Shadow Door)
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,WIZARD_SHADOW_DOOR)  // SPWI505.SPL (Shadow Door)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_MINOR_SPELL_DEFLECTION)  // SPWI318.SPL (Minor Spell Deflection)
+	!CheckStatGT(Myself,0,WIZARD_SPELL_DEFLECTION)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,WIZARD_MINOR_SPELL_DEFLECTION)  // SPWI318.SPL (Minor Spell Deflection)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HaveSpell(WIZARD_PROTECTION_FROM_FIRE)  // SPWI319.SPL (Protection From Fire)
+	CheckStatLT(Myself,75,RESISTFIRE)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,WIZARD_PROTECTION_FROM_FIRE)  // SPWI319.SPL (Protection From Fire)
+END
+
+IF
+	HaveSpell(ROGUE_AVOID_DEATH)  // SPCL917.SPL (Avoid Death)
+	!StateCheck(Myself,STATE_SILENCED)
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_AvoidD","LOCALS")
+	OR(2)
+		!HasItem("POTN10",Myself)  // Potion of Invisibility
+		RandomNum(5,1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_AvoidD","LOCALS",FIVE_ROUNDS)
+		Spell(Myself,ROGUE_AVOID_DEATH)  // SPCL917.SPL (Avoid Death)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Displ","LOCALS")
+	HaveSpell(WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	OR(4)
+		See([GOODCUTOFF.0.0.CLERIC_ALL])
+		See([GOODCUTOFF.0.0.DRUID_ALL])
+		See([GOODCUTOFF.0.0.BARD_ALL])
+		See([GOODCUTOFF.0.0.MAGE_ALL])
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL2)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL3)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	OR(17)
+		CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+		CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+		CheckStatGT(LastSeenBy(Myself),0,DEFENSIVE_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),0,STRENGTH_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		HasItemEquiped("BLAKBLAD",LastSeenBy(Myself))  // Black Blade of Disaster
+		HasItemEquiped("HARM",LastSeenBy(Myself))  // Harm
+		HasItemEquiped("SLAYLIVE",LastSeenBy(Myself))  // Slay Living
+		HasItemEquiped("MELFMET",LastSeenBy(Myself))  // Melf's Minute Meteor
+	!StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Displ","LOCALS",THREE_ROUNDS)
+		Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Displ","LOCALS")
+	HaveSpell(WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	OR(4)
+		See(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
+		See(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]))
+		See(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]))
+		See(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL2)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL3)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	OR(17)
+		CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+		CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+		CheckStatGT(LastSeenBy(Myself),0,DEFENSIVE_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),0,STRENGTH_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		HasItemEquiped("BLAKBLAD",LastSeenBy(Myself))  // Black Blade of Disaster
+		HasItemEquiped("HARM",LastSeenBy(Myself))  // Harm
+		HasItemEquiped("SLAYLIVE",LastSeenBy(Myself))  // Slay Living
+		HasItemEquiped("MELFMET",LastSeenBy(Myself))  // Melf's Minute Meteor
+	!StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Displ","LOCALS",THREE_ROUNDS)
+		Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Displ","LOCALS")
+	HaveSpell(WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	OR(4)
+		See(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
+		See(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]))
+		See(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]))
+		See(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL2)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL3)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	OR(17)
+		CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+		CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+		CheckStatGT(LastSeenBy(Myself),0,DEFENSIVE_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),0,STRENGTH_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		HasItemEquiped("BLAKBLAD",LastSeenBy(Myself))  // Black Blade of Disaster
+		HasItemEquiped("HARM",LastSeenBy(Myself))  // Harm
+		HasItemEquiped("SLAYLIVE",LastSeenBy(Myself))  // Slay Living
+		HasItemEquiped("MELFMET",LastSeenBy(Myself))  // Melf's Minute Meteor
+	!StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Displ","LOCALS",THREE_ROUNDS)
+		Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Displ","LOCALS")
+	HaveSpell(WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(NearestEnemyOf(Myself))
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL2)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL3)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	OR(17)
+		CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+		CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+		CheckStatGT(LastSeenBy(Myself),0,DEFENSIVE_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),0,STRENGTH_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		HasItemEquiped("BLAKBLAD",LastSeenBy(Myself))  // Black Blade of Disaster
+		HasItemEquiped("HARM",LastSeenBy(Myself))  // Harm
+		HasItemEquiped("SLAYLIVE",LastSeenBy(Myself))  // Slay Living
+		HasItemEquiped("MELFMET",LastSeenBy(Myself))  // Melf's Minute Meteor
+	!StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Displ","LOCALS",THREE_ROUNDS)
+		Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Displ","LOCALS")
+	HaveSpell(WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(SecondNearestEnemyOf(Myself))
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL2)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL3)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	OR(17)
+		CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+		CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+		CheckStatGT(LastSeenBy(Myself),0,DEFENSIVE_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),0,STRENGTH_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		HasItemEquiped("BLAKBLAD",LastSeenBy(Myself))  // Black Blade of Disaster
+		HasItemEquiped("HARM",LastSeenBy(Myself))  // Harm
+		HasItemEquiped("SLAYLIVE",LastSeenBy(Myself))  // Slay Living
+		HasItemEquiped("MELFMET",LastSeenBy(Myself))  // Melf's Minute Meteor
+	!StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Displ","LOCALS",THREE_ROUNDS)
+		Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Displ","LOCALS")
+	HaveSpell(WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(ThirdNearestEnemyOf(Myself))
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL2)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL3)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	OR(17)
+		CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+		CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+		CheckStatGT(LastSeenBy(Myself),0,DEFENSIVE_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),0,STRENGTH_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		HasItemEquiped("BLAKBLAD",LastSeenBy(Myself))  // Black Blade of Disaster
+		HasItemEquiped("HARM",LastSeenBy(Myself))  // Harm
+		HasItemEquiped("SLAYLIVE",LastSeenBy(Myself))  // Slay Living
+		HasItemEquiped("MELFMET",LastSeenBy(Myself))  // Melf's Minute Meteor
+	!StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Displ","LOCALS",THREE_ROUNDS)
+		Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Displ","LOCALS")
+	HaveSpell(WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(FourthNearestEnemyOf(Myself))
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL2)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL3)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	OR(17)
+		CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+		CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+		CheckStatGT(LastSeenBy(Myself),0,DEFENSIVE_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),0,STRENGTH_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		HasItemEquiped("BLAKBLAD",LastSeenBy(Myself))  // Black Blade of Disaster
+		HasItemEquiped("HARM",LastSeenBy(Myself))  // Harm
+		HasItemEquiped("SLAYLIVE",LastSeenBy(Myself))  // Slay Living
+		HasItemEquiped("MELFMET",LastSeenBy(Myself))  // Melf's Minute Meteor
+	!StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Displ","LOCALS",THREE_ROUNDS)
+		Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Displ","LOCALS")
+	HaveSpell(WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(FifthNearestEnemyOf(Myself))
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL2)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL3)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	OR(17)
+		CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+		CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+		CheckStatGT(LastSeenBy(Myself),0,DEFENSIVE_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),0,STRENGTH_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		HasItemEquiped("BLAKBLAD",LastSeenBy(Myself))  // Black Blade of Disaster
+		HasItemEquiped("HARM",LastSeenBy(Myself))  // Harm
+		HasItemEquiped("SLAYLIVE",LastSeenBy(Myself))  // Slay Living
+		HasItemEquiped("MELFMET",LastSeenBy(Myself))  // Melf's Minute Meteor
+	!StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Displ","LOCALS",THREE_ROUNDS)
+		Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Displ","LOCALS")
+	HaveSpell(WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(SixthNearestEnemyOf(Myself))
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL2)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL3)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	OR(17)
+		CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+		CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+		CheckStatGT(LastSeenBy(Myself),0,DEFENSIVE_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),0,STRENGTH_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		HasItemEquiped("BLAKBLAD",LastSeenBy(Myself))  // Black Blade of Disaster
+		HasItemEquiped("HARM",LastSeenBy(Myself))  // Harm
+		HasItemEquiped("SLAYLIVE",LastSeenBy(Myself))  // Slay Living
+		HasItemEquiped("MELFMET",LastSeenBy(Myself))  // Melf's Minute Meteor
+	!StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Displ","LOCALS",THREE_ROUNDS)
+		Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Displ","LOCALS")
+	HaveSpell(WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(SeventhNearestEnemyOf(Myself))
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL2)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL3)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	OR(17)
+		CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+		CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+		CheckStatGT(LastSeenBy(Myself),0,DEFENSIVE_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),0,STRENGTH_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		HasItemEquiped("BLAKBLAD",LastSeenBy(Myself))  // Black Blade of Disaster
+		HasItemEquiped("HARM",LastSeenBy(Myself))  // Harm
+		HasItemEquiped("SLAYLIVE",LastSeenBy(Myself))  // Slay Living
+		HasItemEquiped("MELFMET",LastSeenBy(Myself))  // Melf's Minute Meteor
+	!StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Displ","LOCALS",THREE_ROUNDS)
+		Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Displ","LOCALS")
+	HaveSpell(WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(EighthNearestEnemyOf(Myself))
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL2)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL3)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	OR(17)
+		CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+		CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+		CheckStatGT(LastSeenBy(Myself),0,DEFENSIVE_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),0,STRENGTH_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		HasItemEquiped("BLAKBLAD",LastSeenBy(Myself))  // Black Blade of Disaster
+		HasItemEquiped("HARM",LastSeenBy(Myself))  // Harm
+		HasItemEquiped("SLAYLIVE",LastSeenBy(Myself))  // Slay Living
+		HasItemEquiped("MELFMET",LastSeenBy(Myself))  // Melf's Minute Meteor
+	!StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Displ","LOCALS",THREE_ROUNDS)
+		Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Displ","LOCALS")
+	HaveSpell(WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(NinthNearestEnemyOf(Myself))
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL2)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL3)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	OR(17)
+		CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+		CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+		CheckStatGT(LastSeenBy(Myself),0,DEFENSIVE_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),0,STRENGTH_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		HasItemEquiped("BLAKBLAD",LastSeenBy(Myself))  // Black Blade of Disaster
+		HasItemEquiped("HARM",LastSeenBy(Myself))  // Harm
+		HasItemEquiped("SLAYLIVE",LastSeenBy(Myself))  // Slay Living
+		HasItemEquiped("MELFMET",LastSeenBy(Myself))  // Melf's Minute Meteor
+	!StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Displ","LOCALS",THREE_ROUNDS)
+		Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Displ","LOCALS")
+	HaveSpell(WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(TenthNearestEnemyOf(Myself))
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL2)
+	CheckStatLT(LastSeenBy(Myself),34,LEVEL3)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	OR(17)
+		CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+		CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+		CheckStatGT(LastSeenBy(Myself),0,DEFENSIVE_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),0,STRENGTH_MODIFIER)
+		CheckStatGT(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		HasItemEquiped("BLAKBLAD",LastSeenBy(Myself))  // Black Blade of Disaster
+		HasItemEquiped("HARM",LastSeenBy(Myself))  // Harm
+		HasItemEquiped("SLAYLIVE",LastSeenBy(Myself))  // Slay Living
+		HasItemEquiped("MELFMET",LastSeenBy(Myself))  // Melf's Minute Meteor
+	!StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
+	!StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Displ","LOCALS",THREE_ROUNDS)
+		Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+END
+
+IF
+	Global("OH_Heal","LOCALS",0)
+	HaveSpell(BLADE_OFFENSIVE_SPIN)  // SPCL521.SPL (Offensive Spin)
+	CheckStat(Myself,0,IMPROVEDHASTE)
+	!CheckStat(Myself,2,OFFENSIVE_MODIFIER)
+	Range(NearestEnemyOf(Myself),6)
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_OSpin","LOCALS")
+THEN
+	RESPONSE #70
+		SetGlobalTimer("OH_OSpin","LOCALS",FOUR_ROUNDS)
+		Continue()
+	RESPONSE #30
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_OSpin","LOCALS",FOUR_ROUNDS)
+		Spell(Myself,BLADE_OFFENSIVE_SPIN)  // SPCL521.SPL (Offensive Spin)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+	See([GOODCUTOFF])
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!HasItemEquiped("LEAT20",LastSeenBy(Myself))  // Aeger's Hide +3
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself))  // Lilarcor
+	!HasItemEquipedReal("SW1H54",LastSeenBy(Myself))  // The Equalizer
+	!HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+	See(SecondNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!HasItemEquiped("LEAT20",LastSeenBy(Myself))  // Aeger's Hide +3
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself))  // Lilarcor
+	!HasItemEquipedReal("SW1H54",LastSeenBy(Myself))  // The Equalizer
+	!HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+	See(ThirdNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!HasItemEquiped("LEAT20",LastSeenBy(Myself))  // Aeger's Hide +3
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself))  // Lilarcor
+	!HasItemEquipedReal("SW1H54",LastSeenBy(Myself))  // The Equalizer
+	!HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+	See(FourthNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!HasItemEquiped("LEAT20",LastSeenBy(Myself))  // Aeger's Hide +3
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself))  // Lilarcor
+	!HasItemEquipedReal("SW1H54",LastSeenBy(Myself))  // The Equalizer
+	!HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+	See(FifthNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!HasItemEquiped("LEAT20",LastSeenBy(Myself))  // Aeger's Hide +3
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself))  // Lilarcor
+	!HasItemEquipedReal("SW1H54",LastSeenBy(Myself))  // The Equalizer
+	!HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+	See(SixthNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!HasItemEquiped("LEAT20",LastSeenBy(Myself))  // Aeger's Hide +3
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself))  // Lilarcor
+	!HasItemEquipedReal("SW1H54",LastSeenBy(Myself))  // The Equalizer
+	!HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HaveSpell(WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!Difficulty(EASIEST)
+	See([PC.0.0.FIGHTER_ALL])
+	!Race(LastSeenBy(Myself),ELF)
+	!Class(LastSeenBy(Myself),MONK)
+	!StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-2,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helm of Charm Protection
+	!HasItemEquiped("NPCHAN",LastSeenBy(Myself))  // Corthala Family Armor
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself))  // Lilarcor
+	!HasItemEquipedReal("SW1H54",LastSeenBy(Myself))  // The Equalizer
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!HasItemEquipedReal("SW1H35",LastSeenBy(Myself))  // Adjatha the Drinker +2
+	!HasItemEquipedReal("STAF11",LastSeenBy(Myself))  // Staff of the Magi
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HaveSpell(WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!Difficulty(EASIEST)
+	See(SecondNearest([PC.0.0.FIGHTER_ALL]))
+	!Race(LastSeenBy(Myself),ELF)
+	!Class(LastSeenBy(Myself),MONK)
+	!StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-2,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helm of Charm Protection
+	!HasItemEquiped("NPCHAN",LastSeenBy(Myself))  // Corthala Family Armor
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself))  // Lilarcor
+	!HasItemEquipedReal("SW1H54",LastSeenBy(Myself))  // The Equalizer
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!HasItemEquipedReal("SW1H35",LastSeenBy(Myself))  // Adjatha the Drinker +2
+	!HasItemEquipedReal("STAF11",LastSeenBy(Myself))  // Staff of the Magi
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HaveSpell(WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!Difficulty(EASIEST)
+	See(ThirdNearest([PC.0.0.FIGHTER_ALL]))
+	!Race(LastSeenBy(Myself),ELF)
+	!Class(LastSeenBy(Myself),MONK)
+	!StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-2,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helm of Charm Protection
+	!HasItemEquiped("NPCHAN",LastSeenBy(Myself))  // Corthala Family Armor
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself))  // Lilarcor
+	!HasItemEquipedReal("SW1H54",LastSeenBy(Myself))  // The Equalizer
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!HasItemEquipedReal("SW1H35",LastSeenBy(Myself))  // Adjatha the Drinker +2
+	!HasItemEquipedReal("STAF11",LastSeenBy(Myself))  // Staff of the Magi
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HaveSpell(WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!Difficulty(EASIEST)
+	See([PC.0.0.RANGER_ALL])
+	!Race(LastSeenBy(Myself),ELF)
+	!StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-2,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helm of Charm Protection
+	!HasItemEquiped("NPCHAN",LastSeenBy(Myself))  // Corthala Family Armor
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself))  // Lilarcor
+	!HasItemEquipedReal("SW1H54",LastSeenBy(Myself))  // The Equalizer
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!HasItemEquipedReal("SW1H35",LastSeenBy(Myself))  // Adjatha the Drinker +2
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HaveSpell(WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!Difficulty(EASIEST)
+	See(SecondNearest([PC.0.0.RANGER_ALL]))
+	!Race(LastSeenBy(Myself),ELF)
+	!StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-2,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helm of Charm Protection
+	!HasItemEquiped("NPCHAN",LastSeenBy(Myself))  // Corthala Family Armor
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself))  // Lilarcor
+	!HasItemEquipedReal("SW1H54",LastSeenBy(Myself))  // The Equalizer
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!HasItemEquipedReal("SW1H35",LastSeenBy(Myself))  // Adjatha the Drinker +2
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HaveSpell(WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!Difficulty(EASIEST)
+	See(ThirdNearest([PC.0.0.RANGER_ALL]))
+	!Race(LastSeenBy(Myself),ELF)
+	!StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-2,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helm of Charm Protection
+	!HasItemEquiped("NPCHAN",LastSeenBy(Myself))  // Corthala Family Armor
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself))  // Lilarcor
+	!HasItemEquipedReal("SW1H54",LastSeenBy(Myself))  // The Equalizer
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!HasItemEquipedReal("SW1H35",LastSeenBy(Myself))  // Adjatha the Drinker +2
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HaveSpell(WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!Difficulty(EASIEST)
+	See([PC.0.0.PALADIN_ALL])
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-2,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helm of Charm Protection
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself))  // Lilarcor
+	!HasItemEquipedReal("SW1H54",LastSeenBy(Myself))  // The Equalizer
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!HasItemEquipedReal("SW1H35",LastSeenBy(Myself))  // Adjatha the Drinker +2
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HaveSpell(WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!Difficulty(EASIEST)
+	See(SecondNearest([PC.0.0.PALADIN_ALL]))
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-2,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helm of Charm Protection
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself))  // Lilarcor
+	!HasItemEquipedReal("SW1H54",LastSeenBy(Myself))  // The Equalizer
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!HasItemEquipedReal("SW1H35",LastSeenBy(Myself))  // Adjatha the Drinker +2
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HaveSpell(WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!Difficulty(EASIEST)
+	See(ThirdNearest([PC.0.0.PALADIN_ALL]))
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-2,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helm of Charm Protection
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself))  // Lilarcor
+	!HasItemEquipedReal("SW1H54",LastSeenBy(Myself))  // The Equalizer
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!HasItemEquipedReal("SW1H35",LastSeenBy(Myself))  // Adjatha the Drinker +2
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HasItem("WAND04",Myself)  // Wand of Paralyzation
+	!Difficulty(EASIEST)
+	See([PC.0.0.FIGHTER])
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+	CheckStatGT(LastSeenBy(Myself),9,SAVEVSWANDS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("WAND04",LastSeenBy(Myself))  // Wand of Paralyzation
+		DisplayStringHead(Myself,31971)  // *uses a wand*
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HasItem("WAND04",Myself)  // Wand of Paralyzation
+	!Difficulty(EASIEST)
+	See(SecondNearest([PC.0.0.FIGHTER]))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+	CheckStatGT(LastSeenBy(Myself),9,SAVEVSWANDS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("WAND04",LastSeenBy(Myself))  // Wand of Paralyzation
+		DisplayStringHead(Myself,31971)  // *uses a wand*
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HasItem("WAND04",Myself)  // Wand of Paralyzation
+	!Difficulty(EASIEST)
+	See([PC.0.0.RANGER])
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+	CheckStatGT(LastSeenBy(Myself),9,SAVEVSWANDS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("WAND04",LastSeenBy(Myself))  // Wand of Paralyzation
+		DisplayStringHead(Myself,31971)  // *uses a wand*
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HasItem("WAND04",Myself)  // Wand of Paralyzation
+	!Difficulty(EASIEST)
+	See(SecondNearest([PC.0.0.RANGER]))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+	CheckStatGT(LastSeenBy(Myself),9,SAVEVSWANDS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("WAND04",LastSeenBy(Myself))  // Wand of Paralyzation
+		DisplayStringHead(Myself,31971)  // *uses a wand*
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HasItem("WAND04",Myself)  // Wand of Paralyzation
+	!Difficulty(EASIEST)
+	See([PC.0.0.PALADIN])
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+	CheckStatGT(LastSeenBy(Myself),9,SAVEVSWANDS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("WAND04",LastSeenBy(Myself))  // Wand of Paralyzation
+		DisplayStringHead(Myself,31971)  // *uses a wand*
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HasItem("WAND04",Myself)  // Wand of Paralyzation
+	!Difficulty(EASIEST)
+	See(SecondNearest([PC.0.0.PALADIN]))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+	CheckStatGT(LastSeenBy(Myself),9,SAVEVSWANDS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("WAND04",LastSeenBy(Myself))  // Wand of Paralyzation
+		DisplayStringHead(Myself,31971)  // *uses a wand*
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HasItem("WAND04",Myself)  // Wand of Paralyzation
+	!Difficulty(EASIEST)
+	See([PC.0.0.CLERIC])
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+	CheckStatGT(LastSeenBy(Myself),9,SAVEVSWANDS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("WAND04",LastSeenBy(Myself))  // Wand of Paralyzation
+		DisplayStringHead(Myself,31971)  // *uses a wand*
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HasItem("WAND04",Myself)  // Wand of Paralyzation
+	!Difficulty(EASIEST)
+	See(SecondNearest([PC.0.0.CLERIC]))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+	CheckStatGT(LastSeenBy(Myself),9,SAVEVSWANDS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("WAND04",LastSeenBy(Myself))  // Wand of Paralyzation
+		DisplayStringHead(Myself,31971)  // *uses a wand*
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HasItem("WAND04",Myself)  // Wand of Paralyzation
+	!Difficulty(EASIEST)
+	See([PC.0.0.DRUID])
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+	CheckStatGT(LastSeenBy(Myself),9,SAVEVSWANDS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("WAND04",LastSeenBy(Myself))  // Wand of Paralyzation
+		DisplayStringHead(Myself,31971)  // *uses a wand*
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HasItem("WAND04",Myself)  // Wand of Paralyzation
+	!Difficulty(EASIEST)
+	See(SecondNearest([PC.0.0.DRUID]))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+	CheckStatGT(LastSeenBy(Myself),9,SAVEVSWANDS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself))  // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself))  // Spear of the Unicorn +2
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		UseItem("WAND04",LastSeenBy(Myself))  // Wand of Paralyzation
+		DisplayStringHead(Myself,31971)  // *uses a wand*
+		SetInterrupt(TRUE)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_SLOW)  // SPWI312.SPL (Slow)
+	See([GOODCUTOFF])
+	!Class(LastSeenBy(Myself),MONK)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_SLOW)  // SPWI312.SPL (Slow)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_SLOW)  // SPWI312.SPL (Slow)
+	See([GOODCUTOFF])
+	!Class(LastSeenBy(Myself),MONK)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_SLOW)  // SPWI312.SPL (Slow)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_SLOW)  // SPWI312.SPL (Slow)
+	See(SecondNearest([GOODCUTOFF]))
+	!Class(LastSeenBy(Myself),MONK)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_SLOW)  // SPWI312.SPL (Slow)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_SLOW)  // SPWI312.SPL (Slow)
+	See(ThirdNearest([GOODCUTOFF]))
+	!Class(LastSeenBy(Myself),MONK)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_SLOW)  // SPWI312.SPL (Slow)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_SLOW)  // SPWI312.SPL (Slow)
+	See(FourthNearest([GOODCUTOFF]))
+	!Class(LastSeenBy(Myself),MONK)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_SLOW)  // SPWI312.SPL (Slow)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_SLOW)  // SPWI312.SPL (Slow)
+	See(FifthNearest([GOODCUTOFF]))
+	!Class(LastSeenBy(Myself),MONK)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_SLOW)  // SPWI312.SPL (Slow)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_SLOW)  // SPWI312.SPL (Slow)
+	See(SixthNearest([GOODCUTOFF]))
+	!Class(LastSeenBy(Myself),MONK)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +3
+	!HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself))  // Firecam Full-Plate Armor
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_SLOW)  // SPWI312.SPL (Slow)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_FEEBLEMIND)  // SPWI509.SPL (Feeblemind)
+	See([PC])
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-2,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_FEEBLEMIND)  // SPWI509.SPL (Feeblemind)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_FEEBLEMIND)  // SPWI509.SPL (Feeblemind)
+	See(SecondNearest([PC]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-2,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_FEEBLEMIND)  // SPWI509.SPL (Feeblemind)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	See(ThirdNearest([PC]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-2,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_FEEBLEMIND)  // SPWI509.SPL (Feeblemind)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_FEEBLEMIND)  // SPWI509.SPL (Feeblemind)
+	See(FourthNearest([PC]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-2,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_FEEBLEMIND)  // SPWI509.SPL (Feeblemind)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_FEEBLEMIND)  // SPWI509.SPL (Feeblemind)
+	See(FifthNearest([PC]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-2,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_FEEBLEMIND)  // SPWI509.SPL (Feeblemind)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_FEEBLEMIND)  // SPWI509.SPL (Feeblemind)
+	See(SixthNearest([PC]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),-2,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_FEEBLEMIND)  // SPWI509.SPL (Feeblemind)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_SPOOK)  // SPWI125.SPL (Spook)
+	See([GOODCUTOFF])
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Kit(LastSeenBy(Myself),Blackguard)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	CheckStat(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquiped("CLCK30",LastSeenBy(Myself))  // Cloak of Bravery
+	!HasItemEquipedReal("SW1H32",LastSeenBy(Myself))  // Peridan +2
+	!HasItemEquipedReal("MISCBC",LastSeenBy(Myself))  // Blackrazor +3
+	!HasItemEquipedReal("HAMM11",LastSeenBy(Myself))  // Runehammer +5
+	!CheckStat(LastSeenBy(Myself),5,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_SPOOK)  // SPWI125.SPL (Spook)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_SPOOK)  // SPWI125.SPL (Spook)
+	See(SecondNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Kit(LastSeenBy(Myself),Blackguard)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	CheckStat(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquiped("CLCK30",LastSeenBy(Myself))  // Cloak of Bravery
+	!HasItemEquipedReal("SW1H32",LastSeenBy(Myself))  // Peridan +2
+	!HasItemEquipedReal("MISCBC",LastSeenBy(Myself))  // Blackrazor +3
+	!HasItemEquipedReal("HAMM11",LastSeenBy(Myself))  // Runehammer +5
+	!CheckStat(LastSeenBy(Myself),5,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_SPOOK)  // SPWI125.SPL (Spook)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_SPOOK)  // SPWI125.SPL (Spook)
+	See(ThirdNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Kit(LastSeenBy(Myself),Blackguard)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	CheckStat(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquiped("CLCK30",LastSeenBy(Myself))  // Cloak of Bravery
+	!HasItemEquipedReal("SW1H32",LastSeenBy(Myself))  // Peridan +2
+	!HasItemEquipedReal("MISCBC",LastSeenBy(Myself))  // Blackrazor +3
+	!HasItemEquipedReal("HAMM11",LastSeenBy(Myself))  // Runehammer +5
+	!CheckStat(LastSeenBy(Myself),5,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_SPOOK)  // SPWI125.SPL (Spook)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_SPOOK)  // SPWI125.SPL (Spook)
+	See(FourthNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Kit(LastSeenBy(Myself),Blackguard)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	CheckStat(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquiped("CLCK30",LastSeenBy(Myself))  // Cloak of Bravery
+	!HasItemEquipedReal("SW1H32",LastSeenBy(Myself))  // Peridan +2
+	!HasItemEquipedReal("MISCBC",LastSeenBy(Myself))  // Blackrazor +3
+	!HasItemEquipedReal("HAMM11",LastSeenBy(Myself))  // Runehammer +5
+	!CheckStat(LastSeenBy(Myself),5,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_SPOOK)  // SPWI125.SPL (Spook)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_SPOOK)  // SPWI125.SPL (Spook)
+	See(FifthNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Kit(LastSeenBy(Myself),Blackguard)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	CheckStat(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquiped("CLCK30",LastSeenBy(Myself))  // Cloak of Bravery
+	!HasItemEquipedReal("SW1H32",LastSeenBy(Myself))  // Peridan +2
+	!HasItemEquipedReal("MISCBC",LastSeenBy(Myself))  // Blackrazor +3
+	!HasItemEquipedReal("HAMM11",LastSeenBy(Myself))  // Runehammer +5
+	!CheckStat(LastSeenBy(Myself),5,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_SPOOK)  // SPWI125.SPL (Spook)
+END
+
+IF
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_SPOOK)  // SPWI125.SPL (Spook)
+	See(SixthNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Kit(LastSeenBy(Myself),Blackguard)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	CheckStat(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquiped("CLCK30",LastSeenBy(Myself))  // Cloak of Bravery
+	!HasItemEquipedReal("SW1H32",LastSeenBy(Myself))  // Peridan +2
+	!HasItemEquipedReal("MISCBC",LastSeenBy(Myself))  // Blackrazor +3
+	!HasItemEquipedReal("HAMM11",LastSeenBy(Myself))  // Runehammer +5
+	!CheckStat(LastSeenBy(Myself),5,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),WIZARD_SPOOK)  // SPWI125.SPL (Spook)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!See([GOODCUTOFF])
+	Detect([GOODCUTOFF])
+	CheckStatLT(LastSeenBy(Myself),60,STEALTH)
+	!StateCheck(LastSeenBy(Myself),STATE_NONDETECTION)
+	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+	HaveSpell(WIZARD_DETECT_INVISIBILITY)  // SPWI203.SPL (Detect Invisibility)
+	CheckStat(Myself,0,TRUE_SIGHT)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,WIZARD_DETECT_INVISIBILITY)  // SPWI203.SPL (Detect Invisibility)
+END
+
+IF
+	Global("OH_Heal","LOCALS",0)
+	HaveSpell(BLADE_OFFENSIVE_SPIN)  // SPCL521.SPL (Offensive Spin)
+	CheckStat(Myself,0,IMPROVEDHASTE)
+	!CheckStat(Myself,2,OFFENSIVE_MODIFIER)
+	Range(NearestEnemyOf(Myself),6)
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_OSpin","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_OSpin","LOCALS",FOUR_ROUNDS)
+		Spell(Myself,BLADE_OFFENSIVE_SPIN)  // SPCL521.SPL (Offensive Spin)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	OR(6)
+		See(Player1)
+		See(Player2)
+		See(Player3)
+		See(Player4)
+		See(Player5)
+		See(Player6)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(NearestEnemyOf(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	CheckStatLT(NearestEnemyOf(Myself),100,RESISTPIERCING)
+	See(NearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(SixthNearestEnemyOf(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_PANIC)
+	CheckStatLT(SixthNearestEnemyOf(Myself),100,RESISTPIERCING)
+	CheckStatLT(SixthNearestEnemyOf(Myself),1,STONESKINS)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+	See(SixthNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(FifthNearestEnemyOf(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_PANIC)
+	CheckStatLT(FifthNearestEnemyOf(Myself),100,RESISTPIERCING)
+	CheckStatLT(FifthNearestEnemyOf(Myself),1,STONESKINS)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+	See(FifthNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(FourthNearestEnemyOf(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_PANIC)
+	CheckStatLT(FourthNearestEnemyOf(Myself),100,RESISTPIERCING)
+	CheckStatLT(FourthNearestEnemyOf(Myself),1,STONESKINS)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+	See(FourthNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(ThirdNearestEnemyOf(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_PANIC)
+	CheckStatLT(ThirdNearestEnemyOf(Myself),100,RESISTPIERCING)
+	CheckStatLT(ThirdNearestEnemyOf(Myself),1,STONESKINS)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+	See(ThirdNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(SecondNearestEnemyOf(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_PANIC)
+	CheckStatLT(SecondNearestEnemyOf(Myself),100,RESISTPIERCING)
+	CheckStatLT(SecondNearestEnemyOf(Myself),1,STONESKINS)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+	See(SecondNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(NearestEnemyOf(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!StateCheck(NearestEnemyOf(Myself),STATE_PANIC)
+	CheckStatLT(NearestEnemyOf(Myself),100,RESISTPIERCING)
+	CheckStatLT(NearestEnemyOf(Myself),1,STONESKINS)
+	!StateCheck(NearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+	See(NearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!StateCheck(WorstAC([PC]),STATE_PANIC)
+	!StateCheck(WorstAC([PC]),STATE_MIRRORIMAGE)
+	!CheckStatGT(WorstAC([PC]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	CheckStatLT(WorstAC([PC]),100,RESISTPIERCING)
+	CheckStatLT(WorstAC([PC]),1,STONESKINS)
+	See(WorstAC([PC]))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+	!CheckStatGT(LastAttackerOf(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!StateCheck(LastAttackerOf(Myself),STATE_PANIC)
+	CheckStatLT(LastAttackerOf(Myself),100,RESISTPIERCING)
+	!StateCheck(LastAttackerOf(Myself),STATE_MIRRORIMAGE)
+	CheckStatLT(LastAttackerOf(Myself),1,STONESKINS)
+	Range(LastAttackerOf(Myself),8)
+	RandomNum(3,1)
+	See(LastAttackerOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+	!CheckStatGT(LastAttackerOf(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!StateCheck(LastAttackerOf(Myself),STATE_PANIC)
+	CheckStatLT(LastAttackerOf(Myself),100,RESISTPIERCING)
+	!StateCheck(LastAttackerOf(Myself),STATE_MIRRORIMAGE)
+	CheckStatLT(LastAttackerOf(Myself),1,STONESKINS)
+	Range(LastAttackerOf(Myself),4)
+	See(LastAttackerOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(SixthNearestEnemyOf(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	StateCheck(SixthNearestEnemyOf(Myself),STATE_IMMOBILE)
+	CheckStatLT(SixthNearestEnemyOf(Myself),100,RESISTPIERCING)
+	See(SixthNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(FifthNearestEnemyOf(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	StateCheck(FifthNearestEnemyOf(Myself),STATE_IMMOBILE)
+	CheckStatLT(FifthNearestEnemyOf(Myself),100,RESISTPIERCING)
+	See(FifthNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(FourthNearestEnemyOf(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	StateCheck(FourthNearestEnemyOf(Myself),STATE_IMMOBILE)
+	CheckStatLT(FourthNearestEnemyOf(Myself),100,RESISTPIERCING)
+	See(FourthNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(ThirdNearestEnemyOf(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	StateCheck(ThirdNearestEnemyOf(Myself),STATE_IMMOBILE)
+	CheckStatLT(ThirdNearestEnemyOf(Myself),100,RESISTPIERCING)
+	See(ThirdNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(SecondNearestEnemyOf(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	StateCheck(SecondNearestEnemyOf(Myself),STATE_IMMOBILE)
+	CheckStatLT(SecondNearestEnemyOf(Myself),100,RESISTPIERCING)
+	See(SecondNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(NearestEnemyOf(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	StateCheck(NearestEnemyOf(Myself),STATE_IMMOBILE)
+	CheckStatLT(NearestEnemyOf(Myself),100,RESISTPIERCING)
+	See(NearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(Player6,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	StateCheck(Player6,STATE_IMMOBILE)
+	CheckStatLT(Player6,100,RESISTPIERCING)
+	See(Player6)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(Player5,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	StateCheck(Player5,STATE_IMMOBILE)
+	CheckStatLT(Player5,100,RESISTPIERCING)
+	See(Player5)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(Player4,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	StateCheck(Player4,STATE_IMMOBILE)
+	CheckStatLT(Player4,100,RESISTPIERCING)
+	See(Player4)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(Player3,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	StateCheck(Player3,STATE_IMMOBILE)
+	CheckStatLT(Player3,100,RESISTPIERCING)
+	See(Player3)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(Player2,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	StateCheck(Player2,STATE_IMMOBILE)
+	CheckStatLT(Player2,100,RESISTPIERCING)
+	See(Player2)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStatGT(Player1,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	StateCheck(Player1,STATE_IMMOBILE)
+	CheckStatLT(Player1,100,RESISTPIERCING)
+	See(Player1)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!AreaType(OUTDOOR)
+	!Range(NearestEnemyOf(Myself),30)
+	Range(NearestDoor,15)
+	OpenState(NearestDoor,FALSE)
+THEN
+	RESPONSE #100
+		MoveToObject(NearestDoor)
+		OpenDoor(NearestDoor)
+END
+
+IF
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("OH_Active","LOCALS",1)
+	!Detect([GOODCUTOFF])
+	InMyArea(Player1)
+	!StateCheck(Myself,STATE_BLIND)
+	!StateCheck(Player1,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	Global("OH_Active","LOCALS",1)
+	!Detect([GOODCUTOFF])
+	InMyArea(Player1)
+	!StateCheck(Player1,STATE_REALLY_DEAD)
+	!StateCheck(Myself,STATE_BLIND)
+	OR(2)
+		RandomNum(5,1)
+		CombatCounter(0)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	Global("OH_Active","LOCALS",1)
+	!See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+

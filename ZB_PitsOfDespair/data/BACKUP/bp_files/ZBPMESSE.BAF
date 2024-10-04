@@ -1,0 +1,24 @@
+IF
+	OR(6)
+		Range(Player1,20)
+		Range(Player2,20)
+		Range(Player3,20)
+		Range(Player4,20)
+		Range(Player5,20)
+		Range(Player6,20)
+	Global("OHB_DINNERBELL","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_DINNERBELL","MYAREA",1)
+		ClearAllActions()
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	!Range([PC],30)
+	GlobalGT("OHB_DINNERBELL","MYAREA",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+

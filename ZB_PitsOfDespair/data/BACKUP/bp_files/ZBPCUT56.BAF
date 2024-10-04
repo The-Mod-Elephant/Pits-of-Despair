@@ -1,0 +1,25 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("OHBWING2")  // The Winged
+		Wait(1)
+		SetSequence(SEQ_CONJURE)
+		SmallWait(5)
+		SetSequence(SEQ_CAST)
+		SmallWait(5)
+		CreateVisualEffectObject("SPDIMNDR",Myself)
+		Wait(4)
+		ActionOverride(Player1,SetSequence(SEQ_AWAKE))
+		ActionOverride(Player2,SetSequence(SEQ_AWAKE))
+		ActionOverride(Player3,SetSequence(SEQ_AWAKE))
+		ActionOverride(Player4,SetSequence(SEQ_AWAKE))
+		ActionOverride(Player5,SetSequence(SEQ_AWAKE))
+		ActionOverride(Player6,SetSequence(SEQ_AWAKE))
+		EndCutSceneMode()
+		SetCursorState(FALSE)
+		UnhideGUI()
+		SetInterrupt(TRUE)
+		DestroySelf()
+END
+

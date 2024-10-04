@@ -1,0 +1,16 @@
+IF
+	Range([PC],20)
+	Global("OHB_SPELLS_NOT_ALLOWED","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_SPELLS_NOT_ALLOWED","LOCALS",1)
+		ClearActions(Player1)
+		ClearActions(Player2)
+		ClearActions(Player3)
+		ClearActions(Player4)
+		ClearActions(Player5)
+		ClearActions(Player6)
+		StartCutSceneMode()
+		StartCutScene("ohbcut04")
+END
+

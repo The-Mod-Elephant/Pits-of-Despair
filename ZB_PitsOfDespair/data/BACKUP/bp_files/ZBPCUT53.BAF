@@ -1,0 +1,25 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		CreateCreature("ohbdenna",[1319.845],W)  // Dennaton
+		CreateCreature("CUTSPY",[1447.865],S)  // No such index
+		ActionOverride("ohbdenna",DestroyItem("MINHP1"))  // No such index
+		MoveViewPoint([1447.865],INSTANT)
+		Wait(1)
+		FadeFromColor([15.0],0)
+		Wait(1)
+		DisplayStringHead("ohbdenna",94274)  // Damn, damn, damn it all! Damn the slaves, double damn the Winged, and triple damn—
+		Wait(5)
+		CreateCreatureDoor("ohbszass",[1431.929],NW)  // Mysterious Figure
+		Wait(2)
+		ActionOverride("ohbdenna",FaceObject("ohbszass"))  // Mysterious Figure
+		Wait(2)
+		ActionOverride("ohbszass",FaceObject("ohbdenna"))  // Dennaton
+		Wait(1)
+		DisplayStringHead("ohbdenna",94275)  // What? Oh, m-master. It's you.
+		Wait(5)
+		ActionOverride("ohbdenna",StartDialogueNoSet(Player1))
+END
+

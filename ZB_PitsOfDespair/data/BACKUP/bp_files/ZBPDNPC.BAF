@@ -1,0 +1,9 @@
+IF
+	Allegiance(Myself,ALLY)
+	!Range([PC],30)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+		Continue()
+END
+

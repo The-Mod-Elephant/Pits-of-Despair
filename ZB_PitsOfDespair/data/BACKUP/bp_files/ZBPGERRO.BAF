@@ -1,0 +1,27 @@
+IF
+	Dead("ohbgerro")  // Gerrold Darkfellow
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	OR(3)
+		AreaCheck("OH8200")  // TBP2 - Arena 1
+		AreaCheck("OH8300")  // TBP2 - Arena 2
+		AreaCheck("OH8400")  // TBP2 - Arena 3
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("ohb_gerro_hired","global",3)
+	!AreaCheck("oh8100")  // TBP2 - Staging Area Map
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_gerro_hired","global",4)
+		EquipMostDamagingMelee()
+END
+

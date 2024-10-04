@@ -1,0 +1,15 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbbrodl")  // Brodle
+		CreateVisualEffectObject("SPFLESHS","OHBSTANN")  // Stannel Eibor
+		SmallWait(10)
+		CreateVisualEffectObject("SPDISPMA","OHBSTANN")  // Stannel Eibor
+		SmallWait(10)
+		ActionOverride("OHBSTANN",ChangeAnimationNoEffect("OHBBAEL"))  // Baeloth
+		SmallWait(28)
+		SetCursorState(TRUE)
+		ActionOverride("OHBBAEL",StartDialogueNoSet(Myself))
+END
+

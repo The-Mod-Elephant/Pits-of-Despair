@@ -1,0 +1,25 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbbrodl")  // Brodle
+		ActionOverride("ohbcook",Face(N))
+		ActionOverride("ohbcogua",MoveToPoint([1613.3229]))
+		Wait(3)
+		DisplayStringHead("ohbcogua",90647)  // You're right, boss. It's mushroom.
+		SmallWait(55)
+		DisplayStringHead("ohbcook",90650)  // What's...? M'head...
+		SmallWait(40)
+		DisplayStringHead("ohbcogua",90651)  // My throat… I can't swallow!
+		SmallWait(45)
+		DisplayStringHead("ohbcook",90653)  // My heart… so fast…
+		SmallWait(25)
+		Kill("ohbcook")  // The Cook
+		SmallWait(2)
+		Kill("ohbcogua")  // Cook's Bodyguard
+		Wait(2)
+		SetGlobal("OHB_COOK_DEAD","GLOBAL",1)
+		Wait(1)
+		ActionOverride("ohbmardu",StartDialogueNoSet([PC]))
+END
+

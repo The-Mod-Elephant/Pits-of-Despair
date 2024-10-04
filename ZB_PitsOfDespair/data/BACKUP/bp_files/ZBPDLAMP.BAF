@@ -1,0 +1,18 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+THEN
+	RESPONSE #100
+		CreateCreature("ohblamp1",[3808.835],SSW)  // No such index
+		SmallWait(1)
+		ActionOverride("ohblamp1",StartDialogueNoSet(Player1))
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,15)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)  // You are too far away to use that.
+END
+

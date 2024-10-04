@@ -1,0 +1,73 @@
+IF
+	Global("ohb_finale","GLOBAL",0)
+	GlobalLT("OHB_GCENTRY","OH8100",5)  // TBP2 - Staging Area Map
+	Global("bd_gc_warn_barrier","oh8100",0)  // TBP2 - Staging Area Map
+	Detect([PC])
+	OR(6)
+		NearLocation(Player1,2380,825,10)
+		NearLocation(Player2,2380,825,10)
+		NearLocation(Player3,2380,825,10)
+		NearLocation(Player4,2380,825,10)
+		NearLocation(Player5,2380,825,10)
+		NearLocation(Player6,2380,825,10)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_gc_warn_barrier","oh8100",1)  // TBP2 - Staging Area Map
+		PlaySound("EFF_M10")
+		SmallWait(3)
+		AmbientActivate("lounge_barrier1",TRUE)
+		AmbientActivate("lounge_barrier2",TRUE)
+		SmallWait(6)
+		DisplayStringHead(Myself,86575)  // What're you still doing here? Begone!
+END
+
+IF
+	Global("ohb_finale","global",0)
+	GlobalLT("OHB_GCENTRY","OH8100",1)  // TBP2 - Staging Area Map
+	Range([PC],20)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+END
+
+IF
+	Global("ohb_finale","global",1)
+	Global("ohb_captain_finale","locals",0)
+	Detect([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		CutSceneId("ohbgc01")  // Guard Captain
+		SetGlobal("ohb_captain_finale","locals",1)
+		CreateCreature("cutspy",[1830.2090],N)  // No such index
+		MoveViewPoint([1660.2205],INSTANT)
+		Wait(1)
+		DisplayStringHead(Myself,92932)  // Fall back! Man the barricades, lock down your positions!
+		Wait(1)
+		Enemy()
+		MoveToPoint([1810.2430])
+		SmallWait(1)
+		CloseDoor("door0003")
+		Lock("door0003")
+		CloseDoor("door0004")
+		Lock("door0004")
+		Wait(1)
+		ActionOverride("cutspy",DestroySelf())
+		MoveViewObject(LastSeenBy(Myself),INSTANT)
+		JumpToPoint([1810.2430])
+		SmallWait(1)
+		Face(NW)
+		SmallWait(1)
+		EndCutSceneMode()
+END
+
+IF
+	Global("ohb_finale","global",3)
+	Global("ohb_finale_captain_bark3","oh8100",0)  // TBP2 - Staging Area Map
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Myself)
+END
+

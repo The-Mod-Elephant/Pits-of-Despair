@@ -1,0 +1,25 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveViewObject("ohbdorma",INSTANT)  // Dormamus
+		Wait(1)
+		DisplayStringHead("ohbdorma",92813)  // You have betrayed our kind by aligning with this mortal, Najim. Your forget your first duty is to our great race.
+		Wait(3)
+		DisplayStringHead("ohbdorma",92819)  // I will snuff out your spirit! I'll chase you down if it takes me to the end of time!
+		Wait(4)
+		ActionOverride("ohbnajim",SetSequence(SEQ_CAST))
+		Wait(1)
+		ForceSpell("ohbdorma",HOLY_PILLAR_VISUAL)  // Dormamus
+		Wait(1)
+		ActionOverride("ohbdorma",SetSequence(SEQ_SLEEP))
+		SmallWait(30)
+		CreateVisualEffect("shearth",[3806.833])
+		SmallWait(30)
+		ActionOverride("ohbdorma",DestroySelf())
+		SetGlobal("OHB_DORMAMUS_TRAPPED","GLOBAL",1)
+		EndCutSceneMode()
+		ActionOverride("ohbnajim",StartDialogueNoSet(Player1))
+END
+

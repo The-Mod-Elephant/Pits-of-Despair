@@ -1,0 +1,65 @@
+IF
+	Allegiance(Myself,ENEMY)
+	Global("OHB_ENEMY_OVERRIDE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself,NEUTRAL)
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Global("OHB_ENEMY_OVERRIDE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	!Detect([PC])
+	ActionListEmpty()
+	OR(6)
+		Exists(Player1)
+		Exists(Player2)
+		Exists(Player3)
+		Exists(Player4)
+		Exists(Player5)
+		Exists(Player6)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+		Continue()
+	RESPONSE #100
+		MoveToObject(Player2)
+		Continue()
+	RESPONSE #100
+		MoveToObject(Player3)
+		Continue()
+	RESPONSE #100
+		MoveToObject(Player4)
+		Continue()
+	RESPONSE #100
+		MoveToObject(Player5)
+		Continue()
+	RESPONSE #100
+		MoveToObject(Player6)
+		Continue()
+END
+
+IF
+	TookDamage()
+THEN
+	RESPONSE #100
+		GlobalShout(9100)
+		VerbalConstant(Myself,HURT)
+		SetGlobal("OHB_CROWD_POS","MYAREA",1)
+		Continue()
+END
+
+IF
+	Killed([ANYONE])
+THEN
+	RESPONSE #100
+		GlobalShout(9101)
+		Continue()
+END
+
