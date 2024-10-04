@@ -1,2 +1,2 @@
 # Pits-of-Despair
-Baldur's Gate 2 expansion mod
+Expansion mod for BG2:EE. Injects the Black Pits 2: Gladiators of Thay into SoA and ToB.
