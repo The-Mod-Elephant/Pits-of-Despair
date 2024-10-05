@@ -1,0 +1,177 @@
+IF
+	Global("ohb_stirv_training","global",1)
+	HPLT("ohbmena1",5)  // Vampiric Wolf
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		Wait(2)
+		FadeToColor([10.0],0)
+		Wait(1)
+		SetGlobal("ohb_stirv_training","global",0)
+		ActionOverride("ohbmena1",DestroySelf())
+		CreateCreature("ohbmena1",[2460.2785],S)  // Vampiric Wolf
+		JumpToPoint([2440.2900])
+		Face(NW)
+		Wait(1)
+		FadeFromColor([20.0],0)
+		AddexperienceParty(6000)
+		SmallWait(5)
+		EndCutSceneMode()
+END
+
+IF
+	Global("ohb_stirv_training","global",2)
+	HPLT("ohbmena2",5)  // Dangerous Moose
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		Wait(2)
+		FadeToColor([10.0],0)
+		Wait(1)
+		SetGlobal("ohb_stirv_training","global",0)
+		ActionOverride("ohbmena2",DestroySelf())
+		CreateCreature("ohbmena2",[2100.3000],SE)  // Dangerous Moose
+		JumpToPoint([2440.2900])
+		Face(NW)
+		Wait(1)
+		FadeFromColor([20.0],0)
+		AddexperienceParty(15000)
+		SmallWait(5)
+		EndCutSceneMode()
+END
+
+IF
+	Global("ohb_stirv_training","global",3)
+	HPLT("ohbmena3",5)  // Grizzly Bear
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		Wait(2)
+		FadeToColor([10.0],0)
+		Wait(1)
+		SetGlobal("ohb_stirv_training","global",0)
+		ActionOverride("ohbmena3",DestroySelf())
+		CreateCreature("ohbmena3",[2575.3005],NW)  // Grizzly Bear
+		JumpToPoint([2440.2900])
+		Face(NW)
+		Wait(1)
+		FadeFromColor([20.0],0)
+		AddexperienceParty(22500)
+		SmallWait(5)
+		EndCutSceneMode()
+END
+
+IF
+	Global("ohb_stirv_training","global",4)
+	HPLT("ohbmena4",5)  // Mountain Lion
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		Wait(2)
+		FadeToColor([10.0],0)
+		Wait(1)
+		SetGlobal("ohb_stirv_training","global",0)
+		ActionOverride("ohbmena4",DestroySelf())
+		CreateCreature("ohbmena4",[2470.3080],NW)  // Mountain Lion
+		JumpToPoint([2440.2900])
+		Face(NW)
+		Wait(1)
+		FadeFromColor([20.0],0)
+		AddexperienceParty(30000)
+		SmallWait(5)
+		EndCutSceneMode()
+END
+
+IF
+	Global("ohb_stirv_training","global",5)
+	HPLT("ohbmena5",5)  // Boalisk
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		Wait(2)
+		FadeToColor([10.0],0)
+		Wait(1)
+		SetGlobal("ohb_stirv_training","global",0)
+		ActionOverride("ohbmena5",DestroySelf())
+		CreateCreature("ohbmena5",[2260.2900],SE)  // Boalisk
+		JumpToPoint([2440.2900])
+		Face(NW)
+		Wait(1)
+		FadeFromColor([20.0],0)
+		AddexperienceParty(45000)
+		SmallWait(5)
+		EndCutSceneMode()
+END
+
+IF
+	Global("ohb_stirv_training","global",6)
+	HPLT("ohbmena6",5)  // Carrion Crawler
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		Wait(2)
+		FadeToColor([10.0],0)
+		Wait(1)
+		SetGlobal("ohb_stirv_training","global",0)
+		ActionOverride("ohbmena6",DestroySelf())
+		CreateCreature("ohbmena6",[2365.3160],NW)  // Carrion Crawler
+		JumpToPoint([2440.2900])
+		Face(NW)
+		Wait(1)
+		FadeFromColor([20.0],0)
+		AddexperienceParty(60000)
+		SmallWait(5)
+		EndCutSceneMode()
+END
+
+IF
+	Global("ohb_stirv_training","global",7)
+	HPLT("ohbmena7",5)  // Vortex Spider
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		Wait(2)
+		FadeToColor([10.0],0)
+		Wait(1)
+		SetGlobal("ohb_stirv_training","global",0)
+		ActionOverride("ohbmena7",DestroySelf())
+		CreateCreature("ohbmena7",[1950.3120],SE)  // Vortex Spider
+		JumpToPoint([2440.2900])
+		Face(NW)
+		Wait(1)
+		FadeFromColor([20.0],0)
+		AddexperienceParty(75000)
+		SmallWait(5)
+		EndCutSceneMode()
+END
+
+IF
+	Global("ohb_stirv_training","global",8)
+	HPLT("ohbmena8",5)  // Greater Wyvern
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		Wait(2)
+		FadeToColor([10.0],0)
+		Wait(1)
+		IncrementGlobal("ohb_stirv_wyvern","global",1)
+		SetGlobal("ohb_stirv_training","global",0)
+		ActionOverride("ohbmena8",DestroySelf())
+		CreateCreature("ohbmena8",[2180.3235],N)  // Greater Wyvern
+		JumpToPoint([2440.2900])
+		Face(NW)
+		Wait(1)
+		FadeFromColor([20.0],0)
+		AddexperienceParty(150000)
+		SmallWait(5)
+		EndCutSceneMode()
+END
+

@@ -1,0 +1,75 @@
+IF
+	NumberOfTimesTalkedTo(0)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	NumberOfTimesTalkedTo(0)
+	!Detect([PC])
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	NumberOfTimesTalkedTo(0)
+	!Detect([PC])
+	InMyArea(Player2)
+	!StateCheck(Player2,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		MoveToObject(Player2)
+END
+
+IF
+	NumberOfTimesTalkedTo(0)
+	!Detect([PC])
+	InMyArea(Player3)
+	!StateCheck(Player3,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		MoveToObject(Player3)
+END
+
+IF
+	NumberOfTimesTalkedTo(0)
+	InMyArea(Player4)
+	!Detect([PC])
+	!StateCheck(Player4,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		MoveToObject(Player4)
+END
+
+IF
+	NumberOfTimesTalkedTo(0)
+	InMyArea(Player5)
+	!Detect([PC])
+	!StateCheck(Player5,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		MoveToObject(Player5)
+END
+
+IF
+	NumberOfTimesTalkedTo(0)
+	!Detect([PC])
+	InMyArea(Player6)
+	!StateCheck(Player6,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		MoveToObject(Player6)
+END
+
+IF
+	NumTimesTalkedToGT(0)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+

@@ -1,0 +1,14 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		SmallWait(5)
+		Kill("ohbgua11")  // Guard
+		Wait(1)
+		Unlock("door0004")
+		OpenDoor("door0004")
+		SmallWait(5)
+		ActionOverride("ohbleoka",StartDialogueNoSet(Player1))
+END
+

@@ -1,0 +1,32 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbbrodl")  // Brodle
+		FadeToColor([30.0],0)
+		Wait(2)
+		CreateCreature("ohbleoka",[580.2445],SE)  // Leokas
+		SetGlobal("OHB_BRODLE_LIEUTENANT","GLOBAL",4)
+		JumpToPoint([1670.2510])
+		MoveToPoint([1670.2510])
+		Face(SE)
+		SmallWait(5)
+		ActionOverride(Player1,JumpToPoint([755.2410]))
+		ActionOverride(Player2,JumpToPoint([813.2421]))
+		ActionOverride(Player3,JumpToPoint([795.2382]))
+		ActionOverride(Player4,JumpToPoint([850.2394]))
+		ActionOverride(Player5,JumpToPoint([866.2429]))
+		ActionOverride(Player6,JumpToPoint([837.2352]))
+		SmallWait(5)
+		ActionOverride(Player1,Face(W))
+		ActionOverride(Player2,Face(W))
+		ActionOverride(Player3,Face(W))
+		ActionOverride(Player4,Face(W))
+		ActionOverride(Player5,Face(W))
+		ActionOverride(Player6,Face(W))
+		MoveViewObject("ohbleoka",INSTANT)  // Leokas
+		FadeFromColor([20.0],0)
+		Wait(2)
+		ActionOverride("ohbleoka",StartDialogueNoSet([PC]))
+END
+

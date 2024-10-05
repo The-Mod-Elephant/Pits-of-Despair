@@ -1,0 +1,17 @@
+BEGIN ~OHBGREST~
+
+IF ~  True()
+~ THEN BEGIN 0
+  SAY #102511
+  IF ~~ THEN REPLY #102513 GOTO 1
+  IF ~~ THEN REPLY #102514 DO ~EscapeArea()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 1
+  SAY #102515
+  IF ~~ THEN DO ~ClearAllActions()
+StartCutSceneMode()
+StartCutScene("OHBCUT50")
+~ EXIT
+END
