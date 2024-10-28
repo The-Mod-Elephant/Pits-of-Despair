@@ -1,0 +1,17 @@
+IF
+	!Range(NearestEnemyOf(Myself),8)
+	!See(LastAttackerOf(Myself))
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	OR(2)
+		Range(NearestEnemyOf(Myself),8)
+		See(LastAttackerOf(Myself))
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+

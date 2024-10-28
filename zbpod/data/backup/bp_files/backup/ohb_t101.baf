@@ -1,0 +1,220 @@
+IF
+	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+	Global("OH_InitView","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("OH_InitView","LOCALS",1)
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		ChangeSpecifics(Myself,200)
+		ApplySpellRES("OHBINVUL",Myself)  // No such index
+		DialogInterrupt(FALSE)
+		SetInterrupt(TRUE)
+END
+
+IF
+	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	Range([PC],30)
+	Name("OHBORC03",Myself)  // Orc Priest
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		FaceObject([PC])
+		VerbalConstant(Myself,HURT)
+		DisplayStringHead(Myself,94521)  // Mog agar fum Gruumsh!
+END
+
+IF
+	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("ohb_imprisonement_fix","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_imprisonement_fix","locals",1)
+		ApplySpellRES("ohbimpri",Myself)  // No such index
+		Continue()
+END
+
+IF
+	SpellCastOnMe([ANYONE],WIZARD_IMPRISONMENT)  // SPWI910.SPL (Imprisonment)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("OHB_ENEMY_OVERRIDE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself,NEUTRAL)
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Global("OHB_ENEMY_OVERRIDE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Global("OH_Active","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("OH_Active","LOCALS",1)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Crit","LOCALS")
+	TookDamage()
+	DamageTakenGT(30)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Crit","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",1)
+		GlobalShout(9003)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Killed([PC])
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+		GlobalShout(9002)
+		DisplayStringHead(Myself,94532)  // Gruumsh is with us!
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+		GlobalShout(9002)
+		DisplayStringHead(Myself,94533)  // Ah-hah! Fall before my blade, weakling!
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Died([EVILCUTOFF.0.ORC])
+THEN
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",3)
+		GlobalShout(9011)
+		DisplayStringHead(Myself,94530)  // Avenge the fallen!
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",3)
+		GlobalShout(9011)
+		DisplayStringHead(Myself,94531)  // Fly to Nishrek, my brother!
+		Continue()
+	RESPONSE #60
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",3)
+		GlobalShout(9011)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	HPPercentLT(Myself,60)
+	OR(2)
+		Range([EVILCUTOFF.0.0.CLERIC_ALL],30)
+		Range([EVILCUTOFF.0.0.DRUID_ALL],30)
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,94528)  // Shaman, I need aid!
+		Help()
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,94529)  // Healing... QUICKLY!
+		Help()
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	BreakingPoint()
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,94534)  // Fall back!
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,94535)  // There are too many of them!
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	OR(3)
+		StateCheck([EVILCUTOFF],STATE_IMMOBILE)
+		StateCheck(SecondNearest([EVILCUTOFF]),STATE_IMMOBILE)
+		StateCheck(ThirdNearest([EVILCUTOFF]),STATE_IMMOBILE)
+THEN
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,94536)  // What witchcraft is this?
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,94537)  // Shake it off, fool! The enemy is upon us!
+		Continue()
+	RESPONSE #60
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!GlobalTimerNotExpired("OH_RTaunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Range([GOODCUTOFF],30)
+THEN
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,94522)  // Ok throg mok far!
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,94523)  // Kill! KILL!
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,94524)  // Gruumsh, grant us victory!
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,94525)  // DIE, SCUM!
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,94526)  // AARGH! 
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,94527)  // Fall before our might, cowards!
+		Continue()
+	RESPONSE #10
+		SetGlobalTimer("OH_RTaunt","LOCALS",ONE_ROUND)
+		Continue()
+END
+

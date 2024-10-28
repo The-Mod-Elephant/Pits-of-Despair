@@ -1,0 +1,34 @@
+IF
+	Allegiance(Myself,ENEMY)
+	Global("OHB_ENEMY_OVERRIDE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself,NEUTRAL)
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Global("OHB_ENEMY_OVERRIDE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	TookDamage()
+THEN
+	RESPONSE #100
+		GlobalShout(9100)
+		VerbalConstant(Myself,HURT)
+		SetGlobal("OHB_CROWD_POS","MYAREA",1)
+		Continue()
+END
+
+IF
+	Killed([ANYONE])
+THEN
+	RESPONSE #100
+		GlobalShout(9101)
+		Continue()
+END
+

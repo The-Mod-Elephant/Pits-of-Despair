@@ -1,0 +1,74 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbdulf")  // Dulf Ebonbeard
+		SetAreaScript("cutskip2",OVERRIDE)
+		SetGlobal("BD_CUTSCENE_BREAKABLE","GLOBAL",201)
+		SetCutSceneBreakable(TRUE)
+		DisplayStringHead(Myself,90484)  // There's nothing we can do.
+		Wait(15)
+		SmallWait(7)
+		DisplayStringHead(Myself,90487)  // Do not be rash, my young friend. You may not like the result.
+		Wait(23)
+		SetCutSceneBreakable(FALSE)
+		SetGlobal("BD_CUTSCENE_BREAKABLE","GLOBAL",0)
+		SetAreaScript("",OVERRIDE)
+		DisplayStringHead(Myself,90490)  // Poor lad. His power could be contained after all. Just... not within his own body.
+		Wait(4)
+		MoveToObject("DOOR0012")
+		OpenDoor("DOOR0012")
+		MoveToPointNoInterrupt([2575.1845])
+		Wait(1)
+		EndCutSceneMode()
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbvoghi")  // Voghiln the Vast
+		SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)
+		SetGlobal("OHB_VOGHI_WALK","LOCALS",1)
+		Wait(44)
+		SmallWait(2)
+		MoveToObject("DOOR0012")
+		MoveToPointNoInterrupt([2520.1890])
+		Face(E)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbellra")  // Brother Ellraish
+		Wait(2)
+		SmallWait(7)
+		DisplayStringHead(Myself,90485)  // Yes, all spells have been disrupted. We are at their mercy.
+		Wait(31)
+		DisplayStringHead(Myself,90489)  // Well, he was right in a way. He escaped, after a fashion.
+		Wait(11)
+		SmallWait(3)
+		MoveToPointNoInterrupt([2579.1935])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbmort")  // Mort the Wizard
+		MoveViewObject("ohbmort",BD_NORMAL)  // Mort the Wizard
+		Wait(6)
+		SmallWait(7)
+		DisplayStringHead(Myself,90486)  // You are all weak... or cowards... or both! I'm a master of teleportation! I can—and will—escape this dungeon!
+		Wait(13)
+		DisplayStringHead(Myself,90488)  // Rash? RASH? MY POWER CANNOT BE CONTAINED! Now watch... and learn!
+		Wait(6)
+		ForceSpell(Myself,WIZARD_DIMENSION_DOOR)  // SPWI402.SPL (Dimension Door)
+		Wait(3)
+		CreateVisualEffectObject("CALLIGH",Myself)
+		PlaySound("EFF_P19")
+		Wait(1)
+		ApplySpell(Myself,SLAVE_CHUNK)  // SPIN813.SPL (Death Curse)
+END
+

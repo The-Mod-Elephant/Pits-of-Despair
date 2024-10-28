@@ -1,0 +1,22 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbbanno")  // Bannor
+		SetInterrupt(FALSE)
+		NoAction()
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		SetName(90406)  // Bannor
+		ChangeAIScript("",OVERRIDE)
+		ChangeAIScript("",RACE)
+		ChangeAIScript("",GENERAL)
+		DestroyItem("goliro")  // Attack
+		DestroyItem("immune3")  // No such index
+		DestroyItem("irongol")  // No such index
+		Wait(1)
+		CreateVisualEffectObject("spfleshs",Myself)
+		Wait(2)
+		StartDialogueNoSet(Myself)
+		SetInterrupt(TRUE)
+END
+

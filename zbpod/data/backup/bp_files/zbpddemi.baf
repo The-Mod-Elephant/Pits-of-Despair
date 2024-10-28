@@ -1,0 +1,433 @@
+IF
+	SpellCastPriest([ANYONE],CLERIC_HOLY_WORD)  // SPPR710.SPL (Holy Word)
+	Range([GOODCUTOFF.0.0.CLERIC_ALL],15)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,102822)  // Takes extra damage from Holy Word
+		ApplyDamage(Myself,15,MAGIC)
+		CreateVisualEffectObject("ICMAGICH",Myself)
+END
+
+IF
+	SpellCastOnMe([ANYONE],WIZARD_POWER_WORD_KILL)  // SPWI912.SPL (Power Word, Kill)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,102823)  // Takes extra damage from Power Word, Kill
+		ApplyDamage(Myself,25,MAGIC)
+		CreateVisualEffectObject("ICMAGICH",Myself)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Demicurse","LOCALS")
+	DifficultyGT(EASY)
+	See(NearestEnemyOf(Myself))
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Demicurse","LOCALS",FIVE_ROUNDS)
+		ForceSpellRES("OHBDEMI",LastSeenBy(Myself))  // Bestow Curse
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Demicurse","LOCALS")
+	DifficultyGT(EASY)
+	See(SecondNearestEnemyOf(Myself))
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Demicurse","LOCALS",FIVE_ROUNDS)
+		ForceSpellRES("OHBDEMI",LastSeenBy(Myself))  // Bestow Curse
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Demicurse","LOCALS")
+	DifficultyGT(EASY)
+	See(ThirdNearestEnemyOf(Myself))
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Demicurse","LOCALS",FIVE_ROUNDS)
+		ForceSpellRES("OHBDEMI",LastSeenBy(Myself))  // Bestow Curse
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Demicurse","LOCALS")
+	DifficultyGT(EASY)
+	See(FourthNearestEnemyOf(Myself))
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Demicurse","LOCALS",FIVE_ROUNDS)
+		ForceSpellRES("OHBDEMI",LastSeenBy(Myself))  // Bestow Curse
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Demicurse","LOCALS")
+	DifficultyGT(EASY)
+	See(FifthNearestEnemyOf(Myself))
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Demicurse","LOCALS",FIVE_ROUNDS)
+		ForceSpellRES("OHBDEMI",LastSeenBy(Myself))  // Bestow Curse
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Demicurse","LOCALS")
+	DifficultyGT(EASY)
+	See(SixthNearestEnemyOf(Myself))
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Demicurse","LOCALS",FIVE_ROUNDS)
+		ForceSpellRES("OHBDEMI",LastSeenBy(Myself))  // Bestow Curse
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Demihowl","LOCALS")
+	See(NearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),12)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	!CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+	!HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Demihowl","LOCALS",THREE_ROUNDS)
+		ForceSpellRES("OHBDEMI2",Myself)  // Demilich Howl
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Demihowl","LOCALS")
+	!Difficulty(EASIEST)
+	See(SecondNearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),12)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	!CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+	!HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Demihowl","LOCALS",THREE_ROUNDS)
+		ForceSpellRES("OHBDEMI2",Myself)  // Demilich Howl
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Demihowl","LOCALS")
+	See(ThirdNearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),12)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	!CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+	!HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Demihowl","LOCALS",THREE_ROUNDS)
+		ForceSpellRES("OHBDEMI2",Myself)  // Demilich Howl
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Demihowl","LOCALS")
+	See(FourthNearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),12)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	!CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+	!HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Demihowl","LOCALS",THREE_ROUNDS)
+		ForceSpellRES("OHBDEMI2",Myself)  // Demilich Howl
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Demihowl","LOCALS")
+	See(FifthNearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),12)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	!CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+	!HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Demihowl","LOCALS",THREE_ROUNDS)
+		ForceSpellRES("OHBDEMI2",Myself)  // Demilich Howl
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!GlobalTimerNotExpired("OH_Demihowl","LOCALS")
+	See(SixthNearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),12)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	!CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+	!HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Demihowl","LOCALS",THREE_ROUNDS)
+		ForceSpellRES("OHBDEMI2",Myself)  // Demilich Howl
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	CheckStat(LastSeenBy(Myself),0,OFFENSIVE_MODIFIER)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		ForceSpellRES("OHBDEMI3",LastSeenBy(Myself))  // Imprisonment
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	See(SecondNearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	CheckStat(LastSeenBy(Myself),0,OFFENSIVE_MODIFIER)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		ForceSpellRES("OHBDEMI3",LastSeenBy(Myself))  // Imprisonment
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	See(ThirdNearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	CheckStat(LastSeenBy(Myself),0,OFFENSIVE_MODIFIER)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		ForceSpellRES("OHBDEMI3",LastSeenBy(Myself))  // Imprisonment
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	See(FourthNearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	CheckStat(LastSeenBy(Myself),0,OFFENSIVE_MODIFIER)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		ForceSpellRES("OHBDEMI3",LastSeenBy(Myself))  // Imprisonment
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	See(FifthNearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	CheckStat(LastSeenBy(Myself),0,OFFENSIVE_MODIFIER)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		ForceSpellRES("OHBDEMI3",LastSeenBy(Myself))  // Imprisonment
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	See(SixthNearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	CheckStat(LastSeenBy(Myself),0,OFFENSIVE_MODIFIER)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		ForceSpellRES("OHBDEMI3",LastSeenBy(Myself))  // Imprisonment
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_IMMUNITY)
+	CheckStat(LastSeenBy(Myself),0,OFFENSIVE_MODIFIER)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		ForceSpellRES("OHBDEMI3",LastSeenBy(Myself))  // Imprisonment
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!AreaType(OUTDOOR)
+	!Range(NearestEnemyOf(Myself),30)
+	Range(NearestDoor,15)
+	OpenState(NearestDoor,FALSE)
+THEN
+	RESPONSE #100
+		MoveToObject(NearestDoor)
+		OpenDoor(NearestDoor)
+END
+
+IF
+	Global("OH_Heal","LOCALS",0)
+	Global("OH_Active","LOCALS",1)
+	!Detect([GOODCUTOFF])
+	InMyArea(Player1)
+	!StateCheck(Myself,STATE_BLIND)
+	!StateCheck(Player1,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	Global("OH_Heal","LOCALS",0)
+	Global("OH_Active","LOCALS",1)
+	!Detect([GOODCUTOFF])
+	InMyArea(Player1)
+	!StateCheck(Player1,STATE_REALLY_DEAD)
+	!StateCheck(Myself,STATE_BLIND)
+	OR(2)
+		RandomNum(5,1)
+		CombatCounter(0)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	!Global("OH_Heal","LOCALS",1)
+	Global("OH_Active","LOCALS",1)
+	!See([GOODCUTOFF])
+	RandomNum(2,1)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackOneRound(NearestEnemyOf(Myself))
+END
+

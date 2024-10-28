@@ -1,0 +1,473 @@
+IF
+	AreaCheckObject("OH8200",Player1)  // TBP2 - Arena 1
+	Global("OHB_POST_ARENA","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_POST_ARENA","MYAREA",1)
+		ReallyForceSpellRES("ohbrset",Player1)  // <NO TEXT>
+		CreateCreatureImpassable("OHBELGIA",[1283.372],S)  // Elgiad
+		ApplySpellRES("OH_EXPLR","OHBELGIA")  // Elgiad
+		CreateCreature("OHBRFF01",[1011.895],SSW)  // No such index
+		CreateCreature("OHBRFF01",[1288.711],SSW)  // No such index
+		CreateCreature("OHBRFF01",[1563.918],SSW)  // No such index
+		CreateCreature("OHBRFF01",[1269.1154],SSW)  // No such index
+		Explore()
+		Continue()
+END
+
+IF
+	AreaCheckObject("OH8300",Player1)  // TBP2 - Arena 2
+	Global("OHB_POST_ARENA","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_POST_ARENA","MYAREA",1)
+		ReallyForceSpellRES("ohbrset",Player1)  // <NO TEXT>
+		CreateCreatureImpassable("OHBELGIA",[1283.372],S)  // Elgiad
+		ApplySpellRES("OH_EXPLR","OHBELGIA")  // Elgiad
+		CreateCreature("OHBRFF01",[1011.895],SSW)  // No such index
+		CreateCreature("OHBRFF01",[1288.711],SSW)  // No such index
+		CreateCreature("OHBRFF01",[1563.918],SSW)  // No such index
+		CreateCreature("OHBRFF01",[1269.1154],SSW)  // No such index
+		Explore()
+		Continue()
+END
+
+IF
+	AreaCheckObject("OH8400",Player1)  // TBP2 - Arena 3
+	Global("OHB_POST_ARENA","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_POST_ARENA","MYAREA",1)
+		ReallyForceSpellRES("ohbrset",Player1)  // <NO TEXT>
+		CreateCreatureImpassable("OHBELGIA",[1295.450],S)  // Elgiad
+		ApplySpellRES("OH_EXPLR","OHBELGIA")  // Elgiad
+		CreateCreature("OHBRFF01",[1275.716],SSW)  // No such index
+		CreateCreature("OHBRFF01",[1612.940],SSW)  // No such index
+		CreateCreature("OHBRFF01",[1265.1144],SSW)  // No such index
+		CreateCreature("OHBRFF01",[957.940],SSW)  // No such index
+		Explore()
+		Continue()
+END
+
+IF
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	Global("OHB_DULF_HIRED","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!InMyArea("ohbdulf")  // Dulf Ebonbeard
+	!Dead("ohbdulf")  // Dulf Ebonbeard
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_dulf_hired","global",2)
+		CreateCreatureObject("ohbdul02",Player1,10,0,0)  // Dulf Ebonbeard
+		Continue()
+END
+
+IF
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	Global("OHB_VOGHILN_HIRED","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!InMyArea("ohbvoghi")  // Voghiln the Vast
+	!Dead("ohbvoghi")  // Voghiln the Vast
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_voghiln_hired","global",2)
+		CreateCreatureObject("ohbvog02",Player1,10,0,0)  // Voghiln the Vast
+		Continue()
+END
+
+IF
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	Global("OHB_GEZZ_HIRED","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!InMyArea("ohbgezzt")  // Gezzthemin
+	!Dead("ohbgezzt")  // Gezzthemin
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_gezz_hired","global",2)
+		CreateCreatureObject("ohbgez02",Player1,10,0,0)  // Gezzthemin
+		Continue()
+END
+
+IF
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	Global("OHB_FELDRAK_HIRED","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!InMyArea("ohbfeldr")  // Feldrak Feldrak'i
+	!Dead("ohbfeldr")  // Feldrak Feldrak'i
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_feldrak_hired","global",2)
+		CreateCreatureObject("ohbfel02",Player1,10,0,0)  // Feldrak Feldrak'i
+		Continue()
+END
+
+IF
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	Global("OHB_TIMMOTH_HIRED","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!InMyArea("ohbtimmo")  // Timmoth Goodtree
+	!Dead("ohbtimmo")  // Timmoth Goodtree
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_timmoth_hired","global",2)
+		CreateCreatureObject("ohbtim02",Player1,10,0,0)  // Timmoth Goodtree
+		Continue()
+END
+
+IF
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	Global("OHB_LEA_HIRED","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!InMyArea("ohblea")  // Lea Gosh'Aar
+	!Dead("ohblea")  // Lea Gosh'Aar
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_lea_hired","global",2)
+		CreateCreatureObject("ohblea02",Player1,10,0,0)  // Lea Gosh'Aar
+		Continue()
+END
+
+IF
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	Global("OHB_GERRO_HIRED","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!InMyArea("ohbgerro")  // Gerrold Darkfellow
+	!Dead("ohbgerro")  // Gerrold Darkfellow
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_gerro_hired","global",2)
+		CreateCreatureObject("ohbger02",Player1,10,0,0)  // Gerrold Darkfellow
+		Continue()
+END
+
+IF
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	Global("OHB_MERCY_HIRED","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!InMyArea("ohbmercy")  // Mercy Whitedove
+	!Dead("ohbmercy")  // Mercy Whitedove
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_mercy_hired","global",2)
+		CreateCreatureObject("ohbmer02",Player1,10,0,0)  // Mercy Whitedove
+		Continue()
+END
+
+IF
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	Global("OHB_HORT_HIRED","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!InMyArea("ohbhort")  // Hort Il-D'rth
+	!Dead("ohbhort")  // Hort Il-D'rth
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_hort_hired","global",2)
+		CreateCreatureObject("ohbhor02",Player1,10,0,0)  // Hort Il-D'rth
+		Continue()
+END
+
+IF
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	Global("OHB_SYMM_HIRED","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!InMyArea("ohbsymm")  // Symm Haximus
+	!Dead("ohbsymm")  // Symm Haximus
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_symm_hired","global",2)
+		CreateCreatureObject("ohbsym02",Player1,10,0,0)  // Symm Haximus
+		Continue()
+END
+
+IF
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	Global("OHB_ELLRAISH_HIRED","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!InMyArea("ohbellra")  // Brother Ellraish
+	!Dead("ohbellra")  // Brother Ellraish
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_ellraish_hired","global",2)
+		CreateCreatureObject("ohbell02",Player1,10,0,0)  // Brother Ellraish
+		Continue()
+END
+
+IF
+	Global("MC_INIT_BATTLE","GLOBAL",0)
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	OR(6)
+		InMyArea(Player1)
+		InMyArea(Player2)
+		InMyArea(Player3)
+		InMyArea(Player4)
+		InMyArea(Player5)
+		InMyArea(Player6)
+THEN
+	RESPONSE #100
+		ActionOverride("OHBMC",FaceObject(Player1))
+		FadeToColor([1.0],0)
+		SetGlobal("MC_INIT_BATTLE","GLOBAL",1)
+		SetGlobal("OHB_BATTLE_COMPLETE","GLOBAL",0)
+		SetGlobal("OHB_ARENA","GLOBAL",0)
+		MultiPlayerSync()
+END
+
+IF
+	Global("OHB_501","GLOBAL",1)
+	Global("OHB_START_BATTLE","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DayNight(DUSK_END)
+		Activate("ohbelgia")  // Elgiad
+		SetAreaScript("OHB_501",OVERRIDE)
+		SetAreaScript("OHBVIC01",GENERAL)
+		SetAreaScript("OHBDEF01",RACE)
+		SetAreaScript("OHSOUND1",CLASS)
+END
+
+IF
+	Global("OHB_502","GLOBAL",1)
+	Global("OHB_START_BATTLE","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DayNight(DAWN_END)
+		Activate("ohbelgia")  // Elgiad
+		SetAreaScript("OHB_502",OVERRIDE)
+		SetAreaScript("OHBVIC01",GENERAL)
+		SetAreaScript("OHBDEF01",RACE)
+		SetAreaScript("OHSOUND1",CLASS)
+END
+
+IF
+	Global("OHB_503","GLOBAL",1)
+	Global("OHB_START_BATTLE","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DayNight(DUSK_END)
+		Activate("ohbelgia")  // Elgiad
+		SetAreaScript("OHB_503",OVERRIDE)
+		SetAreaScript("OHBVIC01",GENERAL)
+		SetAreaScript("OHBDEF01",RACE)
+		SetAreaScript("OHSOUND1",CLASS)
+END
+
+IF
+	Global("OHB_504","GLOBAL",1)
+	Global("OHB_START_BATTLE","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DayNight(DAWN_END)
+		Activate("ohbelgia")  // Elgiad
+		SetAreaScript("OHB_504",OVERRIDE)
+		SetAreaScript("OHBVIC01",GENERAL)
+		SetAreaScript("OHBDEF01",RACE)
+		SetAreaScript("OHSOUND1",CLASS)
+END
+
+IF
+	Global("OHB_505","GLOBAL",1)
+	Global("OHB_START_BATTLE","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DayNight(DUSK_END)
+		Activate("ohbelgia")  // Elgiad
+		SetAreaScript("OHB_505",OVERRIDE)
+		SetAreaScript("OHBVIC01",GENERAL)
+		SetAreaScript("OHBDEF01",RACE)
+		SetAreaScript("OHSOUND1",CLASS)
+END
+
+IF
+	Global("OHB_506","GLOBAL",1)
+	Global("OHB_START_BATTLE","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DayNight(DUSK_END)
+		Activate("ohbelgia")  // Elgiad
+		CreateCreature("ohb6noob",[1274.930],S)  // Noober
+		SetAreaScript("OHB_506",OVERRIDE)
+		SetAreaScript("OHBVIC01",GENERAL)
+		SetAreaScript("OHBDEF01",RACE)
+		SetAreaScript("OHSOUND1",CLASS)
+END
+
+IF
+	Global("OHB_START_BATTLE","GLOBAL",4)
+	Global("MC_INIT_BATTLE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("MC_INIT_BATTLE","GLOBAL",2)
+		Continue()
+END
+
+IF
+	Global("OHB_BATTLE_COMPLETE","GLOBAL",1)
+	Global("OHB_HIRE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_HIRE","GLOBAL",0)
+END
+
+IF
+	Global("OHB_BATTLE_COMPLETE","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!Global("OHB_DULF_HIRED","GLOBAL",0)
+	!Dead("ohbdulf")  // Dulf Ebonbeard
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_DULF_HIRED","GLOBAL",0)
+		CreateVisualEffectObject("spdimndr","ohbdulf")  // Dulf Ebonbeard
+		ActionOverride("ohbdulf",DestroySelf())
+		Continue()
+END
+
+IF
+	Global("OHB_BATTLE_COMPLETE","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!Global("OHB_VOGHILN_HIRED","GLOBAL",0)
+	!Dead("ohbvoghi")  // Voghiln the Vast
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_VOGHILN_HIRED","GLOBAL",0)
+		CreateVisualEffectObject("spdimndr","ohbvoghi")  // Voghiln the Vast
+		ActionOverride("ohbvoghi",DestroySelf())
+		Continue()
+END
+
+IF
+	Global("OHB_BATTLE_COMPLETE","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!Global("OHB_GEZZ_HIRED","GLOBAL",0)
+	!Dead("ohbgezzt")  // Gezzthemin
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_GEZZ_HIRED","GLOBAL",0)
+		CreateVisualEffectObject("spdimndr","ohbgezzt")  // Gezzthemin
+		ActionOverride("ohbgezzt",DestroySelf())
+		Continue()
+END
+
+IF
+	Global("OHB_BATTLE_COMPLETE","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!Global("OHB_FELDRAK_HIRED","GLOBAL",0)
+	!Dead("ohbfeldr")  // Feldrak Feldrak'i
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_FELDRAK_HIRED","GLOBAL",0)
+		CreateVisualEffectObject("spdimndr","ohbfeldr")  // Feldrak Feldrak'i
+		ActionOverride("ohbfeldr",DestroySelf())
+		Continue()
+END
+
+IF
+	Global("OHB_BATTLE_COMPLETE","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!Global("OHB_TIMMOTH_HIRED","GLOBAL",0)
+	!Dead("ohbtimmo")  // Timmoth Goodtree
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_TIMMOTH_HIRED","GLOBAL",0)
+		CreateVisualEffectObject("spdimndr","ohbtimmo")  // Timmoth Goodtree
+		ActionOverride("ohbtimmo",DestroySelf())
+		Continue()
+END
+
+IF
+	Global("OHB_BATTLE_COMPLETE","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!Global("OHB_LEA_HIRED","GLOBAL",0)
+	!Dead("ohblea")  // Lea Gosh'Aar
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_LEA_HIRED","GLOBAL",0)
+		CreateVisualEffectObject("spdimndr","ohblea")  // Lea Gosh'Aar
+		ActionOverride("ohblea",DestroySelf())
+		Continue()
+END
+
+IF
+	Global("OHB_BATTLE_COMPLETE","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!Global("OHB_GERRO_HIRED","GLOBAL",0)
+	!Dead("ohbgerro")  // Gerrold Darkfellow
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_GERRO_HIRED","GLOBAL",0)
+		CreateVisualEffectObject("spdimndr","ohbgerro")  // Gerrold Darkfellow
+		ActionOverride("ohbgerro",DestroySelf())
+		Continue()
+END
+
+IF
+	Global("OHB_BATTLE_COMPLETE","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!Global("OHB_MERCY_HIRED","GLOBAL",0)
+	!Dead("ohbmercy")  // Mercy Whitedove
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_MERCY_HIRED","GLOBAL",0)
+		CreateVisualEffectObject("spdimndr","ohbmercy")  // Mercy Whitedove
+		ActionOverride("ohbmercy",DestroySelf())
+		Continue()
+END
+
+IF
+	Global("OHB_BATTLE_COMPLETE","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!Global("OHB_HORT_HIRED","GLOBAL",0)
+	!Dead("ohbhort")  // Hort Il-D'rth
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_HORT_HIRED","GLOBAL",0)
+		CreateVisualEffectObject("spdimndr","ohbhort")  // Hort Il-D'rth
+		ActionOverride("ohbhort",DestroySelf())
+		Continue()
+END
+
+IF
+	Global("OHB_BATTLE_COMPLETE","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!Global("OHB_SYMM_HIRED","GLOBAL",0)
+	!Dead("ohbsymm")  // Symm Haximus
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_SYMM_HIRED","GLOBAL",0)
+		CreateVisualEffectObject("spdimndr","ohbsymm")  // Symm Haximus
+		ActionOverride("ohbsymm",DestroySelf())
+		Continue()
+END
+
+IF
+	Global("OHB_BATTLE_COMPLETE","GLOBAL",1)
+	Global("ohb_finale","GLOBAL",0)
+	!Global("OHB_ELLRAISH_HIRED","GLOBAL",0)
+	!Dead("ohbellra")  // Brother Ellraish
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_ELLRAISH_HIRED","GLOBAL",0)
+		CreateVisualEffectObject("spdimndr","ohbellra")  // Brother Ellraish
+		ActionOverride("ohbellra",DestroySelf())
+		Continue()
+END
+
+IF
+	Global("OHB_BATTLE_COMPLETE","GLOBAL",1)
+	Delay(3)
+	OR(6)
+		InMyArea(Player1)
+		InMyArea(Player2)
+		InMyArea(Player3)
+		InMyArea(Player4)
+		InMyArea(Player5)
+		InMyArea(Player6)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetGlobal("OHB_BATTLE_COMPLETE","GLOBAL",2)
+		SetGlobal("MC_INIT_BATTLE","GLOBAL",0)
+		Activate("OHBELGIA")  // Elgiad
+		MoveViewObject("OHBELGIA",INSTANT)  // Elgiad
+		ActionOverride("OHBELGIA",StartDialogueNoSet(Player1))
+END
+

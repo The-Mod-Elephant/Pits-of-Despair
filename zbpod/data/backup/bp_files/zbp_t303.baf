@@ -1,0 +1,240 @@
+IF
+	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+	Global("OH_InitView","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("OH_InitView","LOCALS",1)
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		ChangeSpecifics(Myself,200)
+		ApplySpellRES("OHBINVUL",Myself)  // No such index
+		DialogInterrupt(FALSE)
+		SetInterrupt(TRUE)
+END
+
+IF
+	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	Range([PC],30)
+	Name("OHBLIC01",Myself)  // Leah Redsun
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		FaceObject([PC])
+		DisplayStringHead(Myself,95494)  // In death, you will serve me.
+END
+
+IF
+	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("ohb_imprisonement_fix","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_imprisonement_fix","locals",1)
+		ApplySpellRES("ohbimpri",Myself)  // No such index
+		Continue()
+END
+
+IF
+	SpellCastOnMe([ANYONE],WIZARD_IMPRISONMENT)  // SPWI910.SPL (Imprisonment)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("OHB_ENEMY_OVERRIDE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself,NEUTRAL)
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Global("OHB_ENEMY_OVERRIDE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Global("OH_Active","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("OH_Active","LOCALS",1)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Crit","LOCALS")
+	TookDamage()
+	DamageTakenGT(30)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Crit","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",1)
+		GlobalShout(9003)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Killed([PC])
+	!Race(Myself,GOLEM)
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+		GlobalShout(9002)
+		DisplayStringHead(Myself,95505)  // See how your pitiful flesh gives way.
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+		GlobalShout(9002)
+		DisplayStringHead(Myself,95506)  // Now you shall serve me forever in undeath.
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Killed([PC])
+	Race(Myself,GOLEM)
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+		GlobalShout(9002)
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+		GlobalShout(9002)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Died(NearestMyGroupOfType)
+	!Race(Myself,GOLEM)
+THEN
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",3)
+		GlobalShout(9011)
+		DisplayStringHead(Myself,95503)  // You cannot kill all of my servants.
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",3)
+		GlobalShout(9011)
+		DisplayStringHead(Myself,95504)  // No matter. I didn't like that servant anyway.
+		Continue()
+	RESPONSE #60
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",3)
+		GlobalShout(9011)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	HPPercentLT(Myself,31)
+	!Race(Myself,GOLEM)
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95501)  // Even if you strike me down, I shall rise again!
+		Help()
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95502)  // Fool! You cannot kill me! I am not one of you!
+		Help()
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	BreakingPoint()
+	!Race(Myself,GOLEM)
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95507)  // Servants, defend me!
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95508)  // I have underestimated our foe.
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Race(Myself,GOLEM)
+	OR(3)
+		StateCheck(NearestMyGroupOfType,STATE_IMMOBILE)
+		StateCheck(SecondNearestMyGroupOfType,STATE_IMMOBILE)
+		StateCheck(ThirdNearestMyGroupOfType,STATE_IMMOBILE)
+THEN
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95509)  // Impossible. How can this be?
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95510)  // Your tricks are clever, but you shall not prevail.
+		Continue()
+	RESPONSE #60
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!GlobalTimerNotExpired("OH_RTaunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Range([GOODCUTOFF],30)
+	!Race(Myself,GOLEM)
+THEN
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95495)  // Taste your doom!
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95496)  // Your pitiful mortal frame will be wracked by agony!
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95497)  // You cannot stand before my arcane power!
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95498)  // Death shall truly become you.
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95499)  // I shall make you one of my mindless servants.
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95500)  // Servants, dispose of this fool.
+		Continue()
+	RESPONSE #10
+		SetGlobalTimer("OH_RTaunt","LOCALS",ONE_ROUND)
+		Continue()
+END
+

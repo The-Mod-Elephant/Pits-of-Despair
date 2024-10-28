@@ -1,0 +1,89 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("ohbmesse",MoveToPoint([3254.2039]))
+		SmallWait(45)
+		ActionOverride("ohbmort",DestroySelf())
+		ActionOverride("ohbmesse",DestroySelf())
+		OpenDoor("door0013")
+		SmallWait(10)
+		SetGlobal("OHB_FOOD_FIGHT","MYAREA",1)
+		Wait(2)
+		EndCutSceneMode()
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbdulf")  // Dulf Ebonbeard
+		MoveToPoint([3254.2039])
+		SmallWait(90)
+		ClearActions(Myself)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbellra")  // Brother Ellraish
+		MoveToPoint([3254.2039])
+		SmallWait(90)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbgezzt")  // Gezzthemin
+		MoveToPoint([3254.2039])
+		SmallWait(90)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbmercy")  // Mercy Whitedove
+		MoveToPoint([3254.2039])
+		SmallWait(90)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbhort")  // Hort Il-D'rth
+		MoveToPoint([3254.2039])
+		SmallWait(90)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbfeldr")  // Feldrak Feldrak'i
+		MoveToPoint([3254.2039])
+		SmallWait(90)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbtimmo")  // Timmoth Goodtree
+		MoveToPoint([3254.2039])
+		SmallWait(90)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbvoghi")  // Voghiln the Vast
+		MoveToPoint([3254.2039])
+		SmallWait(90)
+END
+

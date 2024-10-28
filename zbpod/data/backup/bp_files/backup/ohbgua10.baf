@@ -1,0 +1,27 @@
+IF
+	GlobalGT("ohb_finale","global",1)
+	GlobalLT("OHB_LEOKAS_BRIBE","GLOBAL",5)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	GlobalGT("ohb_finale","global",1)
+	Global("OHB_LEOKAS_BRIBE","GLOBAL",5)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself,GOODCUTOFF)
+END
+
+IF
+	GlobalGT("ohb_finale","global",2)
+	Global("OHB_LEOKAS_BRIBE","GLOBAL",99)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+

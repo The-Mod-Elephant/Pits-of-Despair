@@ -1,0 +1,222 @@
+IF
+	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+	Global("OH_InitView","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("OH_InitView","LOCALS",1)
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		ChangeSpecifics(Myself,200)
+		ApplySpellRES("OHBINVUL",Myself)  // No such index
+		DialogInterrupt(FALSE)
+		SetInterrupt(TRUE)
+END
+
+IF
+	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	Range([PC],30)
+	Name("OHBSAH01",Myself)  // Sahuagin Prince
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		FaceObject([PC])
+		DisplayStringHead(Myself,95087)  // You shall despair and die.
+END
+
+IF
+	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("ohb_imprisonement_fix","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_imprisonement_fix","locals",1)
+		ApplySpellRES("ohbimpri",Myself)  // No such index
+		Continue()
+END
+
+IF
+	SpellCastOnMe([ANYONE],WIZARD_IMPRISONMENT)  // SPWI910.SPL (Imprisonment)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("OHB_ENEMY_OVERRIDE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself,NEUTRAL)
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Global("OHB_ENEMY_OVERRIDE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Global("OH_Active","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("OH_Active","LOCALS",1)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Crit","LOCALS")
+	TookDamage()
+	DamageTakenGT(30)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Crit","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",1)
+		GlobalShout(9003)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Killed([PC])
+	!Race(Myself,ELEMENTAL)
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+		GlobalShout(9002)
+		DisplayStringHead(Myself,95099)  // Your weakness cannot stand against me.
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+		GlobalShout(9002)
+		DisplayStringHead(Myself,95100)  // And now you die, surfacer.
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Died([EVILCUTOFF])
+	!Race(Myself,ELEMENTAL)
+THEN
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",3)
+		GlobalShout(9011)
+		DisplayStringHead(Myself,95097)  // I shall repay you in kind!
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",3)
+		GlobalShout(9011)
+		DisplayStringHead(Myself,95098)  // You may kill one of us, but you cannot kill us all!
+		Continue()
+	RESPONSE #60
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",3)
+		GlobalShout(9011)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	HPPercentLT(Myself,31)
+	!Race(Myself,ELEMENTAL)
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95095)  // The surfacer has wounded me!
+		Help()
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95096)  // My life blood ebbs!
+		Help()
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	BreakingPoint()
+	!Race(Myself,ELEMENTAL)
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95101)  // Flee back to the depths!
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95102)  // Retreat! The surfacers are too powerful.
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	OR(3)
+		StateCheck([EVILCUTOFF],STATE_IMMOBILE)
+		StateCheck(SecondNearest([EVILCUTOFF]),STATE_IMMOBILE)
+		StateCheck(ThirdNearest([EVILCUTOFF]),STATE_IMMOBILE)
+	!Race(Myself,ELEMENTAL)
+THEN
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95103)  // The surfacers use powerful magics, beware!
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95104)  // Your tricks shall not defeat us, surfacer.
+		Continue()
+	RESPONSE #60
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!GlobalTimerNotExpired("OH_RTaunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Range([GOODCUTOFF],30)
+	!Race(Myself,ELEMENTAL)
+THEN
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95088)  // The depths shall take you.
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95089)  // Prepare to die.
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95091)  // Eternal sleep is upon you.
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95092)  // I shall strike your heart.
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95093)  // You shall sink beneath the waves of despair.
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95094)  // Feel the sting of death.
+		Continue()
+	RESPONSE #10
+		SetGlobalTimer("OH_RTaunt","LOCALS",ONE_ROUND)
+		Continue()
+END
+

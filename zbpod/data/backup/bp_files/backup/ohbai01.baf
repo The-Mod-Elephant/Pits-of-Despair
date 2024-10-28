@@ -1,0 +1,39 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	InWeaponRange(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		MoveToObject(LastSeenBy(Myself))
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+	InWeaponRange(LastAttackerOf(Myself))
+THEN
+	RESPONSE #100
+		AttackOneRound(LastAttackerOf(Myself))
+END
+

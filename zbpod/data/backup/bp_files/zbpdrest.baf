@@ -1,0 +1,147 @@
+IF
+	Global("OHB_REST","MYAREA",1)
+	GlobalGT("OHB_FOOD_FIGHT","MYAREA",3)
+	OR(3)
+		IsOverMe([0.0.0.0.0.SUMMONED])
+		IsOverMe([0.0.0.0.0.SUMMONED_DEMON])
+		IsOverMe([0.0.0.0.0.ILLUSIONARY])
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("OHBUNSUM",[PC])  // No such index
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("OHB_REST","MYAREA",0)
+	GlobalGT("OHB_FOOD_FIGHT","MYAREA",3)
+	OR(3)
+		IsOverMe(Player1)
+		StateCheck(Player1,STATE_REALLY_DEAD)
+		!InParty(Player1)
+	OR(3)
+		IsOverMe(Player2)
+		StateCheck(Player2,STATE_REALLY_DEAD)
+		!InParty(Player2)
+	OR(3)
+		IsOverMe(Player3)
+		StateCheck(Player3,STATE_REALLY_DEAD)
+		!InParty(Player3)
+	OR(3)
+		IsOverMe(Player4)
+		StateCheck(Player4,STATE_REALLY_DEAD)
+		!InParty(Player4)
+	OR(3)
+		IsOverMe(Player5)
+		StateCheck(Player5,STATE_REALLY_DEAD)
+		!InParty(Player5)
+	OR(3)
+		IsOverMe(Player6)
+		StateCheck(Player6,STATE_REALLY_DEAD)
+		!InParty(Player6)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("OHB_REST","MYAREA",1)
+		SetGlobal("OHB_ANTIMAGIC","GLOBAL",2)
+		SetRestEncounterProbabilityDay(0)
+		SetRestEncounterProbabilityNight(0)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("OHB_REST","MYAREA",1)
+	GlobalGT("OHB_FOOD_FIGHT","MYAREA",3)
+	!IsOverMe(Player1)
+	!StateCheck(Player1,STATE_REALLY_DEAD)
+	InParty(Player1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("OHB_REST","MYAREA",0)
+		SetGlobal("OHB_ANTIMAGIC","GLOBAL",0)
+		SetRestEncounterProbabilityDay(100)
+		SetRestEncounterProbabilityNight(100)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("OHB_REST","MYAREA",1)
+	GlobalGT("OHB_FOOD_FIGHT","MYAREA",3)
+	!IsOverMe(Player2)
+	!StateCheck(Player2,STATE_REALLY_DEAD)
+	InParty(Player2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("OHB_REST","MYAREA",0)
+		SetGlobal("OHB_ANTIMAGIC","GLOBAL",0)
+		SetRestEncounterProbabilityDay(100)
+		SetRestEncounterProbabilityNight(100)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("OHB_REST","MYAREA",1)
+	GlobalGT("OHB_FOOD_FIGHT","MYAREA",3)
+	!IsOverMe(Player3)
+	!StateCheck(Player3,STATE_REALLY_DEAD)
+	InParty(Player3)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("OHB_REST","MYAREA",0)
+		SetGlobal("OHB_ANTIMAGIC","GLOBAL",0)
+		SetRestEncounterProbabilityDay(100)
+		SetRestEncounterProbabilityNight(100)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("OHB_REST","MYAREA",1)
+	GlobalGT("OHB_FOOD_FIGHT","MYAREA",3)
+	!IsOverMe(Player4)
+	!StateCheck(Player4,STATE_REALLY_DEAD)
+	InParty(Player4)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("OHB_REST","MYAREA",0)
+		SetGlobal("OHB_ANTIMAGIC","GLOBAL",0)
+		SetRestEncounterProbabilityDay(100)
+		SetRestEncounterProbabilityNight(100)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("OHB_REST","MYAREA",1)
+	GlobalGT("OHB_FOOD_FIGHT","MYAREA",3)
+	!IsOverMe(Player5)
+	!StateCheck(Player5,STATE_REALLY_DEAD)
+	InParty(Player5)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("OHB_REST","MYAREA",0)
+		SetGlobal("OHB_ANTIMAGIC","GLOBAL",0)
+		SetRestEncounterProbabilityDay(100)
+		SetRestEncounterProbabilityNight(100)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("OHB_REST","MYAREA",1)
+	GlobalGT("OHB_FOOD_FIGHT","MYAREA",3)
+	!IsOverMe(Player6)
+	!StateCheck(Player6,STATE_REALLY_DEAD)
+	InParty(Player6)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("OHB_REST","MYAREA",0)
+		SetGlobal("OHB_ANTIMAGIC","GLOBAL",0)
+		SetRestEncounterProbabilityDay(100)
+		SetRestEncounterProbabilityNight(100)
+		SetInterrupt(TRUE)
+END
+

@@ -1,0 +1,20 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbbrodl")  // Brodle
+		CreateCreature("ohbglend",[2449.497],S)  // Glenda Darkenstone
+		MoveViewObject("ohbglend",INSTANT)  // Glenda Darkenstone
+		Wait(1)
+		Unlock("Bannor Door")
+		OpenDoor("Bannor Door")
+		SmallWait(2)
+		ActionOverride("ohbglend",MoveToPoint([2509.580]))
+		Wait(2)
+		DisplayStringHead("ohbglend",100496)  // Okay, which one of you Nosers made a mess in here? The scrolls are all scattered about. It'll take me HOURS to get them back in place!
+		Wait(3)
+		ActionOverride("ohbglend",EscapeAreaDestroy(3))
+		Wait(1)
+		EndCutSceneMode()
+END
+

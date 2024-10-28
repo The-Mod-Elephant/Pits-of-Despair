@@ -1,0 +1,216 @@
+IF
+	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+	Global("OH_InitView","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("OH_InitView","LOCALS",1)
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		ChangeSpecifics(Myself,200)
+		ApplySpellRES("OHBINVUL",Myself)  // No such index
+		DialogInterrupt(FALSE)
+		SetInterrupt(TRUE)
+END
+
+IF
+	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	Range([PC],30)
+	Name("OHBDEV01",Myself)  // Maadrazel
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		FaceObject([PC])
+		DisplayStringHead(Myself,95379)  // I shall barter with your soul.
+END
+
+IF
+	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("ohb_imprisonement_fix","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_imprisonement_fix","locals",1)
+		ApplySpellRES("ohbimpri",Myself)  // No such index
+		Continue()
+END
+
+IF
+	SpellCastOnMe([ANYONE],WIZARD_IMPRISONMENT)  // SPWI910.SPL (Imprisonment)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("OHB_ENEMY_OVERRIDE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself,NEUTRAL)
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Global("OHB_ENEMY_OVERRIDE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Global("OH_Active","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("OH_Active","LOCALS",1)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Crit","LOCALS")
+	TookDamage()
+	DamageTakenGT(30)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Crit","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",1)
+		GlobalShout(9003)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Killed([PC])
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+		GlobalShout(9002)
+		DisplayStringHead(Myself,95390)  // Now your soul is mine!
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+		GlobalShout(9002)
+		DisplayStringHead(Myself,95391)  // I shall feast on your flesh and your soul!
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Died(NearestMyGroupOfType)
+THEN
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",3)
+		GlobalShout(9011)
+		DisplayStringHead(Myself,95388)  // You shall burn for that, mortal!
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",3)
+		GlobalShout(9011)
+		DisplayStringHead(Myself,95389)  // You may slay one, but you cannot slay us all!
+		Continue()
+	RESPONSE #60
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",3)
+		GlobalShout(9011)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	HPPercentLT(Myself,31)
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95386)  // Curse you, mortal, you shall not defeat me!
+		Help()
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95387)  // You cannot kill me, fool!
+		Help()
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	BreakingPoint()
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95392)  // We are defeated! Retreat!
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95393)  // Back, fall back! The mortal has won!
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	OR(3)
+		StateCheck(NearestMyGroupOfType,STATE_IMMOBILE)
+		StateCheck(SecondNearestMyGroupOfType,STATE_IMMOBILE)
+		StateCheck(ThirdNearestMyGroupOfType,STATE_IMMOBILE)
+THEN
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95394)  // Back to the fight! Slay the mortal.
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95395)  // You lazy fool, return to the battle!
+		Continue()
+	RESPONSE #60
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!GlobalTimerNotExpired("OH_RTaunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Range([GOODCUTOFF],30)
+THEN
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95380)  // Defeat the mortal!
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95381)  // I shall have your soul!
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95382)  // You shall burn upon my fires!
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95383)  // I shall smite your pitiful body to the ground.
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95384)  // Come to your doom.
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95385)  // Your future is pain and despair.
+		Continue()
+	RESPONSE #10
+		SetGlobalTimer("OH_RTaunt","LOCALS",ONE_ROUND)
+		Continue()
+END
+

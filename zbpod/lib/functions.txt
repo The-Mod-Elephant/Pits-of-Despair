@@ -1,0 +1,33 @@
+DEFINE_ACTION_FUNCTION cd_new_summon_table
+  STR_VAR descript = "foo"
+          2da_file = "foo"
+  RET     table
+  BEGIN
+
+  COPY_EXISTING ~smtables.2da~ ~override~
+    COUNT_2DA_ROWS 2 count
+    READ_2DA_ENTRY (count - 1) 0 2 table
+    INNER_PATCH_SAVE table ~%table%~ BEGIN
+      REPLACE_TEXTUALLY ~^\([0-9]+\).+$~ ~\1~
+    END
+    SET table += 1
+
+  APPEND ~smtables.2da~ ~%table%_%descript% %2da_file%~
+
+END
+
+
+DEFINE_ACTION_FUNCTION cd_new_portrait_icon
+  INT_VAR string = 0
+  STR_VAR bam_file = "****"
+  RET     icon
+  BEGIN
+
+  COPY_EXISTING ~statdesc.2da~ ~override~
+    COUNT_2DA_ROWS 3 count
+    READ_2DA_ENTRY (count - 1) 0 3 icon
+    SET icon += 1
+
+  APPEND ~statdesc.2da~ ~%icon% %string% %bam_file%~
+
+END
