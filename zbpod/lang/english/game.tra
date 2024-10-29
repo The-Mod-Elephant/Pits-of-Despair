@@ -6,6 +6,7 @@ STATISTICS:
 
 Combat abilities:
 – Flame Wings: 50% chance of reducing target's fire resistance by 10% for 4 rounds. This effect may not stack more than 4 times or happen more than once per second.
+– Every hit has a 10% chance of triggering a less powerful Heavenly Hammer attack that deals 10d8 fire damage to the target and all adjacent enemies.
 
 Charge abilities:
 – Heavenly Hammer: Once per day
@@ -13,7 +14,7 @@ Charge abilities:
   Area of Effect: One target plus other adjacent targets
 
 THAC0: +6
-Damage: 1d4+6, +4 fire damage
+Damage: 2d4+5, +4 fire damage
 Damage type: Crushing
 Speed Factor: 0
 Proficiency Type: War Hammer
@@ -22,3 +23,31 @@ Requires:
  9 Strength
 
 Weight: 6~
+
+
+@10010 = ~Riptide +5~
+@10011 = ~Riptide +5 description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– 50% cold resistance
+
+Combat abilities:
+– 50% chance of adding a stack of Tidal Wave to the target. These stacks last for 4 rounds, and build up power in the blade against them. When four stacks are reached, a Smashing Wave is triggered, dealing 4d10 crushing damage to the target and all adjacent enemies, possibly stunning and knocking them unconscious.
+
+THAC0: +5
+Damage: 1d10+5, +4 cold damage
+Damage type: Slashing
+Speed Factor: 0
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 5~
+
+@10012 = ~Tidal Wave: 1 stack~
+@10013 = ~Tidal Wave: 2 stacks~
+@10014 = ~Tidal Wave: 3 stacks~
+@10015 = ~Unleashed Smashing Wave~
