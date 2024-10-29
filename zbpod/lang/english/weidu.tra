@@ -1,3 +1,6 @@
-@1 = "Install required Black Pits files for Original Games"
-@2 = "Not available for your game version"
-@3 = "Pits of Despair for Enhanced Edition"
+// components
+@20000 = "Install required Black Pits files for Original Games" // changed numbers to avoid conflicts with game.tra
+@20001 = "Pits of Despair for Enhanced Edition"
+
+// warnings
+@20050 = "Not available for your game version"

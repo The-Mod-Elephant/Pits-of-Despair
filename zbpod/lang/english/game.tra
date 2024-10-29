@@ -1,0 +1,24 @@
+// items
+@10000 = ~Angelfist +5~
+@10001 = ~Angelfist +5 description placeholder
+
+STATISTICS:
+
+Combat abilities:
+– Flame Wings: 50% chance of reducing target's fire resistance by 10% for 4 rounds. This effect may not stack more than 4 times or happen more than once per second.
+
+Charge abilities:
+– Heavenly Hammer: Once per day
+  Special: Instantly cast a flame strike that causes 20d8 fire damage, save vs. spell for half damage
+  Area of Effect: One target plus other adjacent targets
+
+THAC0: +6
+Damage: 1d4+6, +4 fire damage
+Damage type: Crushing
+Speed Factor: 0
+Proficiency Type: War Hammer
+Type: One-handed
+Requires:
+ 9 Strength
+
+Weight: 6~

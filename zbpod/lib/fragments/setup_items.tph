@@ -1,0 +1,11 @@
+/**
+ * This code fragment will contain all of the code necessary to set up the items in the mod, including where to place them.
+ */
+
+//////// Angelfist +5 \\\\\\\\
+
+// String placements
+COPY ~%MOD_FOLDER%/items/angelfist~ ~override~
+COPY_EXISTING ~zbafistd.itm~ ~override~
+    SAY NAME2 @10000
+    SAY IDENTIFIED_DESC @10001

@@ -8,26 +8,24 @@ AUTO_EVAL_STRINGS
 LANGUAGE
 "English"
 "english"
-"%MOD_FOLDER%/lang/english/game.tra"
-"%MOD_FOLDER%/lang/english/weidu.tra"
+"zbpod/lang/english/game.tra"
+"zbpod/lang/english/weidu.tra"
+"zbpod/lang/english/dialogs.tra"
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+/*BEGIN @20000 DESIGNATED 1 LABEL ~zb_pod_original~ // INSTALL PITS OF DESPAIR FOR ORIGINAL GAMES
+REQUIRE_PREDICATE GAME_IS "bg2 bgt" @20050*/
+
+// Commented out because it's lower priority, to agilize testing, and because this will require
+// tweaking items that use features only found in EE games.
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BEGIN ~Pits of Despair~ DESIGNATED 1
-LABEL ~zb_pod~
-BEGIN @1 DESIGNATED 1 // INSTALL PITS OF DESPAIR FOR ORIGINAL GAMES
-REQUIRE_PREDICATE GAME_IS "bg2 bgt" @2
+BEGIN @20001 DESIGNATED 2 LABEL ~zb_pod_ee~ // INSTALL PIT OF DESPAIR FOR ENHANCED EDITION
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
 
-
-BEGIN @3 DESIGNATED 2  // INSTALL PIT OF DESPAIR FOR ENHANCED EDITION
-GROUP @1
-REQUIRE_PREDICATE GAME_IS "bg2ee eet" @2
-
-
-
+INCLUDE ~zbpod/lib/fragments/setup_items.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
