@@ -9,30 +9,30 @@ BEGIN ~OHBHUEGR~
 
 IF ~  True()
 ~ THEN BEGIN 0
-  SAY ~Hello! The name's Hue Greenleaf. I've got armor made by the finest smiths from Waterdeep to Kara-Tur! I've scoured all Faerûn for the very best, so buy with confidence! ~
-  IF ~~ THEN REPLY ~Sounds good. Let me see what you've got.~ DO ~AddJournalEntry(96002,INFO)
+  SAY @1597 /* Hello! The name's Hue Greenleaf. I've got armor made by the finest smiths from Waterdeep to Kara-Tur! I've scoured all Faerûn for the very best, so buy with confidence!  */
+  IF ~~ THEN REPLY @1598 /* Sounds good. Let me see what you've got. */ DO ~AddJournalEntry(96002,INFO)
 ClearAllActions()
 StartStore("ohbhuegr",LastTalkedToBy(Myself))
 ~ EXIT
-  IF ~~ THEN REPLY ~How'd you get here?~ DO ~AddJournalEntry(96002,INFO)
+  IF ~~ THEN REPLY @1599 /* How'd you get here? */ DO ~AddJournalEntry(96002,INFO)
 ~ GOTO 1
-  IF ~~ THEN REPLY ~Perhaps I will, another time.~ DO ~AddJournalEntry(96002,INFO)
+  IF ~~ THEN REPLY @1600 /* Perhaps I will, another time. */ DO ~AddJournalEntry(96002,INFO)
 ~ EXIT
 END
 
 IF ~~ THEN BEGIN 1
-  SAY ~The same way as you, I imagine. But Dennaton allows me to leave occasionally, so long as I use my contacts to your—and ultimately his—advantage. So what can I give you today?~
-  IF ~~ THEN REPLY ~I'm not sure. Let me look at your selection.~ DO ~ClearAllActions()
+  SAY @1601 /* The same way as you, I imagine. But Dennaton allows me to leave occasionally, so long as I use my contacts to your—and ultimately his—advantage. So what can I give you today? */
+  IF ~~ THEN REPLY @1602 /* I'm not sure. Let me look at your selection. */ DO ~ClearAllActions()
 StartStore("ohbhuegr",LastTalkedToBy(Myself))
 ~ EXIT
-  IF ~~ THEN REPLY ~His advantage?~ GOTO 2
-  IF ~~ THEN REPLY ~Eh, perhaps another time.~ EXIT
+  IF ~~ THEN REPLY @1603 /* His advantage? */ GOTO 2
+  IF ~~ THEN REPLY @1435 /* Eh, perhaps another time. */ EXIT
 END
 
 IF ~~ THEN BEGIN 2
-  SAY ~We're not to talk with the performers, and the guards are already eyeing me, but all right, here's how it is. Dennaton gets all our profit—everything above our procurement cost—and we get to live. You win prize money in the arena, you buy from us, he gets the money back. It's a great deal for him. Now, really, are you going to buy?~
-  IF ~~ THEN REPLY ~Maybe. Let me see your selection.~ DO ~ClearAllActions()
+  SAY @1604 /* We're not to talk with the performers, and the guards are already eyeing me, but all right, here's how it is. Dennaton gets all our profit—everything above our procurement cost—and we get to live. You win prize money in the arena, you buy from us, he gets the money back. It's a great deal for him. Now, really, are you going to buy? */
+  IF ~~ THEN REPLY @1605 /* Maybe. Let me see your selection. */ DO ~ClearAllActions()
 StartStore("ohbhuegr",LastTalkedToBy(Myself))
 ~ EXIT
-  IF ~~ THEN REPLY ~Not right now. Another time, perhaps.~ EXIT
+  IF ~~ THEN REPLY @1606 /* Not right now. Another time, perhaps. */ EXIT
 END

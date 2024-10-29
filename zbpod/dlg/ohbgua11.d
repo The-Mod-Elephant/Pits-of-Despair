@@ -9,7 +9,7 @@ BEGIN ~OHBGUA11~
 
 IF ~  NumberOfTimesTalkedTo(0)
 ~ THEN BEGIN 0
-  SAY ~What's the matter, slaves? Nowhere to go? That whole rebellion thing doesn't look so good now, does it?~
+  SAY @1515 /* What's the matter, slaves? Nowhere to go? That whole rebellion thing doesn't look so good now, does it? */
   IF ~  Global("OHB_LEOKAS_BRIBE","GLOBAL",5)
 ~ THEN GOTO 1
   IF ~  GlobalLT("OHB_LEOKAS_BRIBE","GLOBAL",5)
@@ -18,13 +18,13 @@ IF ~  NumberOfTimesTalkedTo(0)
 END
 
 IF ~~ THEN BEGIN 1
-  SAY ~When reinforcements arrive, you'll be sorry. Then we'll—argh!~
+  SAY @1516 /* When reinforcements arrive, you'll be sorry. Then we'll—argh! */
   IF ~~ THEN DO ~StartCutSceneMode()
 StartCutScene("ohbcut21")
 ~ EXIT
 END
 
 IF ~~ THEN BEGIN 2
-  SAY ~When reinforcements arrive, you'll be sorry. Then we'll—~
+  SAY @1517 /* When reinforcements arrive, you'll be sorry. Then we'll— */
   IF ~~ THEN EXTERN ~OHBBRODL~ 76
 END
