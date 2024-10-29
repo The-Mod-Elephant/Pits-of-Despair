@@ -25,7 +25,7 @@ Requires:
 Weight: 6~
 
 
-@10010 = ~Riptide +5~
+@10010 = ~Riptide~
 @10011 = ~Riptide +5 description placeholder
 
 STATISTICS:
@@ -34,7 +34,9 @@ Equipped abilities:
 – 50% cold resistance
 
 Combat abilities:
-– 50% chance of adding a stack of Tidal Wave to the target. These stacks last for 4 rounds, and build up power in the blade against them. When four stacks are reached, a Smashing Wave is triggered, dealing 4d10 crushing damage to the target and all adjacent enemies, possibly stunning and knocking them unconscious.
+– High Tide: Thieves and Bards have a 90% chance of causing a stack of Tidal Wave to the target when hit
+– Low Tide: Non-thieves have a 60% chance of causing a stack of Tidal Wave to the target when hit
+– Tidal Wave: Targets affected by this empower the blade against them. When this effect stacks 4 times, a Smashing Wave is triggered towards them, dealing 4d10 crushing damage to them and all adjacent targets, possibly stunning or knocking them unconscious.
 
 THAC0: +5
 Damage: 1d10+5, +4 cold damage
@@ -49,5 +51,5 @@ Weight: 5~
 
 @10012 = ~Tidal Wave: 1 stack~
 @10013 = ~Tidal Wave: 2 stacks~
-@10014 = ~Tidal Wave: 3 stacks~
+// @10014 = ~Tidal Wave: 3 stacks~
 @10015 = ~Unleashed Smashing Wave~

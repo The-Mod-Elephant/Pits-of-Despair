@@ -2,7 +2,10 @@
  * This code fragment will contain all of the code necessary to set up the items in the mod, including where to place them.
  */
 
+INCLUDE ~zbpod/lib/rp/zs_cdfunctions.tpa~ // CamDawg's functions that I will use for the items
+
 //////// Angelfist +5 \\\\\\\\
+
 
 // String placements
 COPY ~%MOD_FOLDER%/items/angelfist~ ~override~
@@ -12,6 +15,10 @@ COPY_EXISTING ~zbafistd.itm~ ~override~
 
 
 //////// Riptide +5 \\\\\\\\
+
+// projectiles for Smashing Wave / Tidal Wave
+ADD_PROJECTILE ~%MOD_FOLDER%/pro/idpro302.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/pro/swave.PRO~
 
 // String placements
 COPY ~%MOD_FOLDER%/items/riptide~ ~override~
@@ -28,3 +35,7 @@ COPY_EXISTING ~zbriptid.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10014) END
 COPY_EXISTING ~zbriptie.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10015) END
+COPY_EXISTING ~zbriptif.spl~ ~override~
+    LPF ALTER_HEADER INT_VAR projectile = %idpro302% END
+COPY_EXISTING ~idpro302.pro~ ~override~
+    WRITE_SHORT 0x21a %swave%
