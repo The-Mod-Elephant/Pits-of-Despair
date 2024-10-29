@@ -10,5 +10,8 @@ for file in $*; do
   sed -E "s/([SAY|REPLY])\s+\#[0-9]+\s+\/\*\s+~(.*)~\s+\*\//\1 ~\2~/g" "${file}" > temp.d;
   rm "${file}"
   sed -E "s/([SAY|REPLY])\s+\#[0-9]+\s+\/\*\s+~(.*)~\s+(.*)\s+\*\//\1 ~\2~ \3/g" temp.d > "${file}"
-  weidu --traify-comment --traify ${file} --traify-old-tra temp.tra --out temp.tra
+  weidu --traify ${file} --traify-comment --traify-old-tra temp.tra
+  trap "rm -f ${file::-2}.tra" EXIT
+  cat "${file::-2}.tra" > temp.tra
+  rm "${file::-2}.tra"
 done

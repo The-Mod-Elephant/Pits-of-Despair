@@ -9,12 +9,12 @@ BEGIN ~OHBWING2~
 
 IF ~  Global("OHB_WARN","GLOBAL",1)
 ~ THEN BEGIN 0
-  SAY ~This is your only warning.~
+  SAY @3667 /* This is your only warning. */
   IF ~~ THEN GOTO 1
 END
 
 IF ~~ THEN BEGIN 1
-  SAY ~Attempt something like that again and you will be dealt with accordingly.~
+  SAY @3668 /* Attempt something like that again and you will be dealt with accordingly. */
   IF ~~ THEN DO ~SetGlobal("OHB_WARN","GLOBAL",2)
 ClearAllActions()
 StartCutSceneMode()
@@ -24,7 +24,7 @@ END
 
 IF ~  Global("OHB_WARN","GLOBAL",3)
 ~ THEN BEGIN 2
-  SAY ~You were warned, mortal. Now face the consequences of your actions.~
+  SAY @3669 /* You were warned, mortal. Now face the consequences of your actions. */
   IF ~~ THEN DO ~Enemy()
 SetGlobal("OHB_WARN","GLOBAL",4)
 SetCutSceneLite(FALSE)

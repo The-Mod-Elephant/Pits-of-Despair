@@ -10,7 +10,7 @@ BEGIN ~OHBDORMA~
 IF ~  Global("ohb_finale","GLOBAL",8)
 Global("OHB_NAJIM","GLOBAL",4)
 ~ THEN BEGIN 0
-  SAY ~The time has come to shed this appalling disguise. I am Dormamus no more! Now come, <CHARNAME>, and let us win our freedom!~ [OH100610]
+  SAY @923 /* The time has come to shed this appalling disguise. I am Dormamus no more! Now come, <CHARNAME>, and let us win our freedom! */
   IF ~~ THEN DO ~SetGlobal("OHB_NAJIM","GLOBAL",5)
 CreateVisualEffectObject("SPPOLYMP",Myself)
 ChangeAnimation("ohbnajim")
@@ -18,16 +18,16 @@ ChangeAnimation("ohbnajim")
 END
 
 IF ~~ THEN BEGIN 1
-  SAY ~Is it really you?~
+  SAY @924 /* Is it really you? */
   IF ~~ THEN EXTERN ~OHBTHASS~ 0
 END
 
 IF ~~ THEN BEGIN 2
-  SAY ~You should have stayed out of this, djinni. Guilty consciences are unhealthy.~
+  SAY @925 /* You should have stayed out of this, djinni. Guilty consciences are unhealthy. */
   IF ~~ THEN EXTERN ~OHBNAJIM~ 17
 END
 
 IF ~~ THEN BEGIN 3
-  SAY ~No. I'm keeping this one for myself.~
+  SAY @926 /* No. I'm keeping this one for myself. */
   IF ~~ THEN EXTERN ~OHBTHASS~ 1
 END

@@ -8,22 +8,22 @@
 BEGIN ~OHBSZASS~
 
 IF ~~ THEN BEGIN 0
-  SAY ~We? A captain goes down with the ship.~ [OH94277]
+  SAY @3141 /* We? A captain goes down with the ship. */
   IF ~~ THEN EXTERN ~OHBDENNA~ 248
 END
 
 IF ~~ THEN BEGIN 1
-  SAY ~Plans change, Dennaton.~ [OH94279]
+  SAY @3142 /* Plans change, Dennaton. */
   IF ~~ THEN EXTERN ~OHBDENNA~ 249
 END
 
 IF ~~ THEN BEGIN 2
-  SAY ~I must cut my losses before the extent of my involvement here is revealed.~ [OH94281]
+  SAY @3143 /* I must cut my losses before the extent of my involvement here is revealed. */
   IF ~~ THEN EXTERN ~OHBDENNA~ 250
 END
 
 IF ~~ THEN BEGIN 3
-  SAY ~You are now a loose end. ~ [OH94283]
+  SAY @3144 /* You are now a loose end.  */
   IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 StartCutScene("OHBCUT54")

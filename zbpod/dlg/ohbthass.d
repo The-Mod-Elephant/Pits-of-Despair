@@ -8,16 +8,16 @@
 BEGIN ~OHBTHASS~
 
 IF ~~ THEN BEGIN 0
-  SAY ~Out of my way! I saw <PRO_HIMHER> first!~
+  SAY @3346 /* Out of my way! I saw <PRO_HIMHER> first! */
   IF ~~ THEN EXTERN ~OHBBANNO~ 0
 END
 
 IF ~~ THEN BEGIN 1
-  SAY ~Do what you want, Dormamus! Just don't let another target escape!~
+  SAY @3347 /* Do what you want, Dormamus! Just don't let another target escape! */
   IF ~~ THEN EXTERN ~OHBPOL~ 0
 END
 
 IF ~~ THEN BEGIN 2
-  SAY ~What's that supposed to mean?~
+  SAY @3348 /* What's that supposed to mean? */
   IF ~~ THEN EXTERN ~OHBJOKER~ 3
 END
