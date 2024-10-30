@@ -31,11 +31,20 @@ COPY_EXISTING ~zbriptib.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10012) END
 COPY_EXISTING ~zbriptic.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10013) END
-COPY_EXISTING ~zbriptid.spl~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10014) END
 COPY_EXISTING ~zbriptie.spl~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10015) END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10014) END
 COPY_EXISTING ~zbriptif.spl~ ~override~
     LPF ALTER_HEADER INT_VAR projectile = %idpro302% END
 COPY_EXISTING ~idpro302.pro~ ~override~
     WRITE_SHORT 0x21a %swave%
+
+//////// GOLDEN GALE +4 \\\\\\\\
+COPY ~%MOD_FOLDER%/items/ggale~ ~override~
+COPY_EXISTING ~zbggalea.itm~ ~override~
+    SAY NAME1 @10020
+    SAY NAME2 @10021
+    SAY UNIDENTIFIED_DESC @10022
+    SAY IDENTIFIED_DESC @10023
+COPY_EXISTING ~zbggaleb.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF(@10024) END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 2 parameter1 = RESOLVE_STR_REF(@10025) END

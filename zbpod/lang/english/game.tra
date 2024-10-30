@@ -51,5 +51,63 @@ Weight: 5~
 
 @10012 = ~Tidal Wave: 1 stack~
 @10013 = ~Tidal Wave: 2 stacks~
-// @10014 = ~Tidal Wave: 3 stacks~
-@10015 = ~Unleashed Smashing Wave~
+@10014 = ~Unleashed Smashing Wave~
+
+@10020 = ~Double sword~
+@10021 = ~Golden Gale +4~
+@1022 = ~Double sword general description placeholder
+
+STATISTICS:
+
+THAC0: +4
+Damage: 1d10+4 (slashing)
+Speed Factor: 8
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 12 Strength
+ 15 Dexterity~
+
+
+@10023 = ~Golden Gale +4 description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Once per round, a physical attack is parried, deflecting all damage and dealing 2d10+4 slashing or piercing damage to the attacker, save vs. breath at -2 for half damage
+
+THAC0: +4
+Damage: 1d10+4 (slashing)
+Speed Factor: 4
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 12 Strength
+ 15 Dexterity
+
+Weight: 10~
+
+@10024 = ~Golden Parry: 2d10+4 piercing~
+@10025 = ~Golden Parry: 2d10+4 slashing~
+
+@10030 = ~Seraphic Gale +6~
+@10031 = ~Seraphic Gale +6 description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Once per round, a physical attack is parried, deflecting all damage and dealing 2d10+6 slashing or piercing damage to the attacker, save vs. breath at -4 for half damage
+
+THAC0: +6
+Damage: 1d10+6 (slashing)
+Speed Factor: 2
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 12 Strength
+ 15 Dexterity
+
+Weight: 10~
+
+@10032 = ~Seraphic Parry: 2d10+6 piercing~
+@10033 = ~Seraphic Parry: 2d10+6 slashing~
