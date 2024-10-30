@@ -6,12 +6,12 @@ STATISTICS:
 
 Combat abilities:
 – Flame Wings: 50% chance of reducing target's fire resistance by 10% for 4 rounds. This effect may not stack more than 4 times or happen more than once per second.
-– Every hit has a 10% chance of triggering a less powerful Heavenly Hammer attack that deals 10d8 fire damage to the target and all adjacent enemies.
+– Every hit has a 10% chance of triggering a powerful flame strike that deals 10d8 fire damage to the target and all adjacent enemies.
 
 Charge abilities:
-– Heavenly Hammer: Once per day
-  Special: Instantly cast a flame strike that causes 20d8 fire damage, save vs. spell for half damage
-  Area of Effect: One target plus other adjacent targets
+– Heavenly Hammer once per day
+  Special: Rain down fire from the skies, dealing 2d8+20 fire damage each round for 4 rounds
+  Area of Effect: 15 ft. radius around the target
 
 THAC0: +6
 Damage: 2d4+5, +4 fire damage
@@ -36,7 +36,9 @@ Equipped abilities:
 Combat abilities:
 – High Tide: Thieves and Bards have a 90% chance of causing a stack of Tidal Wave to the target when hit
 – Low Tide: Non-thieves have a 60% chance of causing a stack of Tidal Wave to the target when hit
-– Tidal Wave: Targets affected by this empower the blade against them. When this effect stacks 4 times, a Smashing Wave is triggered towards them, dealing 4d10 crushing damage to them and all adjacent targets, possibly stunning or knocking them unconscious.
+– Tidal Wave: Targets affected by this empower the blade against them. When this effect stacks 3 times, an Overwhelming Wave is unleashed towards them
+– Overwhelming Wave: 6d10 crushing damage, save vs. breath at -2 for half damage, with a 40% chance of stunning for 1 round and a 10% chance of knocking them unconscious. A save vs. breath at -2 negates the stun and unconsciousness effects
+– Drowning strike: Every hit has a 15% chance of forcing breathing targets to save vs. death at -4 or have their lungs filled with water, killing them instantly
 
 THAC0: +5
 Damage: 1d10+5, +4 cold damage
@@ -59,8 +61,7 @@ Weight: 5~
 
 STATISTICS:
 
-THAC0: +4
-Damage: 1d10+4 (slashing)
+Damage: 1d10 (slashing)
 Speed Factor: 8
 Proficiency Type: Two-handed Sword
 Type: Two-handed
