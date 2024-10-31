@@ -1,6 +1,10 @@
 // items
 @10000 = ~Angelfist +5~
-@10001 = ~Angelfist +5 description placeholder
+@10001 = ~Created in the celestial forges of Elysium, Angelfist is a warhammer imbued with divine purpose. Its head is radiant silver, glowing with a soft, ethereal light that illuminates the darkest corners of the material plane. Angelic decorations and symbols adorn it, blessed by the heavens themselves. It feels warm and comforting to the touch.
+
+When wielded, Angelfist feels alive, throbbing with the fire of righteousness and justice. Each swing resonates with a heavenly chorus that intensifies when using its Heavenly Hammer ability. Upon striking a foe, it delivers not only physical might but also a searing burst of radiant energy. Enemies struck by Angelfist find themselves momentarily blinded, as if caught in the gaze of the divine.
+
+How this weapon fell into the hands of the Winged, none know or have the courage to ask, as even gazing upon it may draw her ire. However, it is rumored to be her only comfort, the reason she can endure the presence of mortals.
 
 STATISTICS:
 
@@ -13,7 +17,7 @@ Charge abilities:
   Special: Rain down fire from the skies, dealing 2d8+20 fire damage each round for 4 rounds
   Area of Effect: 15 ft. radius around the target
 
-THAC0: +6
+THAC0: +5
 Damage: 2d4+5, +4 fire damage
 Damage type: Crushing
 Speed Factor: 0
@@ -112,3 +116,26 @@ Weight: 10~
 
 @10032 = ~Seraphic Parry: 2d10+6 piercing~
 @10033 = ~Seraphic Parry: 2d10+6 slashing~
+
+@10040 = ~Profane +4~
+@10041 = ~Profane +4 placeholder
+
+
+STATISTICS:
+
+Equipped abilities:
+– 50% Acid Resistance
+
+Combat abilities:
+– Every hit has a 15% has a chance of releasing more acid, causing 2d8 extra acid damage or half on a successful save vs. breath
+– Acidic poison: Critical hits inject poison into the bloodstream of the victim, causing 1 poison damage per second for 24 seconds if a Save vs. Death is failed, causing 6 more poison damage instantly with no save allowed
+
+THAC0: +4
+Damage: 2d4+4, +2 (acid), +2 (poison)
+Damage type: Slashing
+Speed Factor: 3
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ Strength 12
+Weight: 10~

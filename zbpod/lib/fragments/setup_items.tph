@@ -48,3 +48,14 @@ COPY_EXISTING ~zbggalea.itm~ ~override~
 COPY_EXISTING ~zbggaleb.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF(@10024) END
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 2 parameter1 = RESOLVE_STR_REF(@10025) END
+
+
+//////// SERAPHIC GALE +6 \\\\\\\\
+
+
+
+//////// dark0dave PROFANE +4 \\\\\\\\
+COPY ~%MOD_FOLDER%/items/profane~ ~override~
+COPY_EXISTING ~zbprofaa.itm~ ~override~
+    SAY NAME2 @10040
+    SAY IDENTIFIED_DESC @10041
