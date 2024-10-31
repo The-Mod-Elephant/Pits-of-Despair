@@ -6,6 +6,6 @@ Project Leads: zenblack, RoyalProtector,
 Collaborator: Angel, Curian55, Crevs Daak, dark0dave
 Contributer: Glittergear,
 Playtester: suy, Aquadrizzt,
-Special Thanks:	Argent77, Skellytz, Acifer, jastey, 
+Special Thanks:	Halmy, Argent77, Skellytz, Acifer, jastey, 
 
 Pink and turquoise fire shield effects provided by Curian55
