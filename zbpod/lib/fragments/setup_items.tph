@@ -64,5 +64,7 @@ COPY_EXISTING ~zbprofaa.itm~ ~override~
 //////// Nephy's gear \\\\\\\\
 
 //////// Nephy's dagger (Umbral Fang +4) \\\\\\\\
-COPY ~%MOD_FOLDER%/items/umbralfang~ ~override~
-
+COPY ~%MOD_FOLDER%/items/nephy_umbral_fang~ ~override~
+COPY_EXISTING ~zspddaga.itm~ ~override~
+    SAY NAME2 @10050
+    SAY IDENTIFIED_DESC @10051
