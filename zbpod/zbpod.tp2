@@ -11,16 +11,9 @@ LANGUAGE
 "zbpod/lang/english/game.tra"
 "zbpod/lang/english/weidu.tra"
 "zbpod/lang/english/dialogs.tra"
+"zbpod/lang/royalp/strings.tra"
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-/*BEGIN @20000 DESIGNATED 1 LABEL ~zb_pod_original~ // INSTALL PITS OF DESPAIR FOR ORIGINAL GAMES
-REQUIRE_PREDICATE GAME_IS "bg2 bgt" @20050*/
-
-// Commented out because it's lower priority, to agilize testing, and because this will require
-// tweaking items that use features only found in EE games.
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 BEGIN @20001 DESIGNATED 2 LABEL ~zb_pod_ee~ // INSTALL PIT OF DESPAIR FOR ENHANCED EDITION

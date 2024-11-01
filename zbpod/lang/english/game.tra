@@ -139,3 +139,32 @@ Type: One-handed
 Requires:
  Strength 12
 Weight: 10~
+
+@10050 = ~Umbral Fang +4~
+@10051 = ~This pale dagger was Nephetel's main weapon of choice. Made from the fang of a dracolich (according to her, at least), this dagger's blade radiates a powerful aura, and it gleams with an eerie ghostly sheen, etched with runes that hint at the powerful magic contained within.
+
+The essence of the dracolich lingers, and provides the user with limited protections that liches would have.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to instant-death effects
+– Immunity to paralysis
+– +60% resistance to cold
+– Immunity to level 1 spells
+
+Combat abilities:
+– 10% chance per hit of causing frostbite in the target, causing 1d4 cold damage instantly, and again once per round in the next 3 rounds. If a save vs. Death is failed, the target is paralyzed for 1 round, otherwise, they are only slowed
+– Critical hits unleash a ray of necromantic magic into the body of the victim, forcing them to save vs. Death or die. If the target has 60 hit points or less, the save vs. Death is made at -4. Even if a save is made, they still suffer 1d8 magic damage from the shock
+– +5% chance to critical hit (this weapon only)
+
+THAC0: +4
+Damage: 1d4+4, +1d2 cold damage
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~

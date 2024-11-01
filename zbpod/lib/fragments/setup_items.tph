@@ -59,3 +59,10 @@ COPY ~%MOD_FOLDER%/items/profane~ ~override~
 COPY_EXISTING ~zbprofaa.itm~ ~override~
     SAY NAME2 @10040
     SAY IDENTIFIED_DESC @10041
+
+
+//////// Nephy's gear \\\\\\\\
+
+//////// Nephy's dagger (Umbral Fang +4) \\\\\\\\
+COPY ~%MOD_FOLDER%/items/umbralfang~ ~override~
+
