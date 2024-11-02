@@ -1,0 +1,22 @@
+* text eol=lf
+
+*.baf binary
+*.bam binary
+*.BAM binary
+*.bmp binary
+*.cre binary
+*.dlg binary
+*.eff binary
+*.exe binary
+*.itm binary
+*.ITM binary
+*.png binary
+*.pro binary
+*.PRO binary
+*.spl binary
+*.SPL binary
+*.sto binary
+*.vvc binary
+*.VVC binary
+*.wav binary
+*.WAV binary
