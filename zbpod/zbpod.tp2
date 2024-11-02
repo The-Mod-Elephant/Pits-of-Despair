@@ -2,15 +2,16 @@ BACKUP "weidu_external/zbpod/backup/"
 SUPPORT "https://www.gibberlings3.net/forums/forum/28-miscellaneous-released-mods/"
 VERSION "0.1"
 README ~%MOD_FOLDER%/README.md~
-//~zbpod/lang/%LANGUAGE%/readme--zbpod.html~
+
 AUTO_EVAL_STRINGS
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-LANGUAGE
-"English"
-"english"
-"zbpod/lang/english/game.tra"
-"zbpod/lang/english/weidu.tra"
-"zbpod/lang/english/dialogs.tra"
+AUTO_TRA ~%MOD_FOLDER%/lang/%s~
+
+LANGUAGE  ~English~
+          ~english~
+          ~%MOD_FOLDER%/lang/english/game.tra~
+          ~%MOD_FOLDER%/lang/english/weidu.tra~
+          ~%MOD_FOLDER%/lang/english/dialogs.tra~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
