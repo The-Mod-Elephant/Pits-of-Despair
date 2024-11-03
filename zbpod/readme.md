@@ -19,7 +19,7 @@ Lazy Nezumi Pro
 
 Credits - 
 Project Leads: zenblack, RoyalProtector,
-Collaborator: Angel, Curian55, Crevs Daak, dark0dave, quantum_mechani, bucketfullofsunshine,
+Collaborator: Angel, Curian55, Crevs Daak, dark0dave, quantum_mechani, bucketfulofsunshine,
 Contributer: Glittergear,
 Playtester: suy, Aquadrizzt,
 Special Thanks:	Halmy, Argent77, Skellytz, Acifer, jastey, Camdawg 
