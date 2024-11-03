@@ -68,3 +68,9 @@ COPY ~%MOD_FOLDER%/items/nephy_umbral_fang~ ~override~
 COPY_EXISTING ~zspddaga.itm~ ~override~
     SAY NAME2 @10050
     SAY IDENTIFIED_DESC @10051
+COPY_EXISTING ~zspddg01.spl~ ~override~
+              ~zspddg02.spl~ ~override~
+              ~zspddg03.spl~ ~override~
+    SAY NAME2 @10050
+COPY_EXISTING ~zspddg01.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10052) END
