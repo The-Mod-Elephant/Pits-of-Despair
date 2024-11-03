@@ -1,21 +1,34 @@
 * text eol=lf
 
+*.are binary
+*.ARE binary
 *.baf binary
+*.BAF binary
 *.bam binary
 *.BAM binary
+*.bcs binary
+*.BCS binary
 *.bmp binary
+*.BMP binary
 *.cre binary
+*.CRE binary
 *.dlg binary
+*.DLG binary
 *.eff binary
+*.EFF binary
 *.exe binary
 *.itm binary
 *.ITM binary
 *.png binary
+*.PNG binary
 *.pro binary
 *.PRO binary
+*.pvrz binary
+*.PVRZ binary
 *.spl binary
 *.SPL binary
 *.sto binary
+*.STO binary
 *.vvc binary
 *.VVC binary
 *.wav binary
