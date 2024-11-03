@@ -72,7 +72,7 @@ COPY_EXISTING ~zbtnskya.itm~ ~override~
 
 //////// Nephy's gear \\\\\\\\
 
-//////// Nephy's dagger (Umbral Fang +4) \\\\\\\\
+//////// Nephy's dagger (Phantasmal Fang +4) \\\\\\\\
 COPY ~%MOD_FOLDER%/items/nephy_umbral_fang~ ~override~
 COPY_EXISTING ~zspddaga.itm~ ~override~
     SAY NAME2 @10050
@@ -84,4 +84,10 @@ COPY_EXISTING ~zspddg01.spl~ ~override~
 COPY_EXISTING ~zspddg01.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10052) END
 
-
+//////// Nephy's crossbow (Astral Crossbow of Speed +4) \\\\\\\\
+COPY ~%MOD_FOLDER%/items/nephy_crossbow~ ~override~
+COPY_EXISTING ~zspdxboa.itm~ ~override~
+    SAY NAME2 @10060
+    SAY IDENTIFIED_DESC @10061
+COPY_EXISTING ~zspdxb01.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10062) END

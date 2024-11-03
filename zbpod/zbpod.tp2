@@ -2,22 +2,18 @@ BACKUP "weidu_external/zbpod/backup/"
 SUPPORT "https://www.gibberlings3.net/forums/forum/28-miscellaneous-released-mods/"
 VERSION "0.1"
 README ~%MOD_FOLDER%/README.md~
-
 AUTO_EVAL_STRINGS
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 AUTO_TRA ~%MOD_FOLDER%/lang/%s~
-
 LANGUAGE  ~English~
           ~english~
           ~%MOD_FOLDER%/lang/english/game.tra~
           ~%MOD_FOLDER%/lang/english/weidu.tra~
           ~%MOD_FOLDER%/lang/english/dialogs.tra~
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-
 BEGIN @20001 DESIGNATED 2 LABEL ~zb_pod_ee~ // INSTALL PIT OF DESPAIR FOR ENHANCED EDITION
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
 INCLUDE ~zbpod/lib/fragments/setup_items.tph~
 

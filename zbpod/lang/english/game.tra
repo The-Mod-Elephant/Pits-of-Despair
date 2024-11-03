@@ -175,19 +175,26 @@ Weight: 1~
 @10052 = ~Grave Chill~
 
 @10060 = ~Astral Crowssbow of Speed +4~
-@10061 = ~Nephetel's Crossbow description placeholder
-A crossbow is a bow mounted crosswise on a wooden or metal shaft, the latter called a tiller. The bow is usually made of ash or yew. The crossbow fires a quarrel (also called a bolt).
+@10061 = ~This crossbow is a sleek, silvered weapon adorned with faintly glowing etchings of celestial constellations. When bolts are loaded into it, they seem to shimmer and vanish, only to reappear in the bowstring, ready to be fired. The weapon is light and easy to handle, and the wielder feels a sense of calm and focus when using it.
+
+Even without bolts, the crossbow can fire ethereal bolts of pure magical energy, dealing damage to the target as if they were physical. Either way, the bolts fired are infused with the power of the Astral Plane, and can cause massive damage to outsiders and the undead.
 
 STATISTICS:
 
 Combat abilities:
 – 1 extra attack per round
-– +4 irresistible damage is inflicted against outsiders and undead
-– Upon hitting an outsider, there is a 10% chance to etheralize part of their body, sending just that portion to the Astral Plane, separating them and causing massive damage to their being (-10% to their maximum health).
+– +4 irresistible damage is inflicted against outsiders
+– Astral Drain: On hitting an outsider target there is a 10% chance to etherealize part of their body, sending just that portion to the Astral Plane, separating them and causing massive damage to their being (-10% to their maximum health)
+– When no bolts are equipped, the crossbow fires phantasmal bolts that deal 1d8+4 missile damage plus 1d+2 magic damage that act as +5 projectiles
 
+Charge ability:
+– Bolt of Glory once per day
+  Special: Fire a bolt of pure energy that deals different amounts of damage depending on the plane of origin of the target
+  Area of Effect: Single target
 
-THAC0: +4, +6 against outsiders and undead
-Damage: +4 (missile)
+THAC0: +4, +6 against outsiders
+Damage: +4, +1d2 magic damage
+Damage type: Missile
 Speed Factor: 0
 Proficiency Type: Crossbow
 Type: Two-handed
@@ -195,6 +202,8 @@ Requires:
  8 Strength
 
 Weight: 5~
+
+@10062 = ~Astral Drain: -10% health siphoned~
 
 @10070 = ~The Night Sky~
 @10071 = ~The Night Sky description placeholder
