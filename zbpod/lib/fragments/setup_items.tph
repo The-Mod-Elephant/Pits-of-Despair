@@ -61,14 +61,14 @@ COPY_EXISTING ~zbprofaa.itm~ ~override~
     SAY IDENTIFIED_DESC @10041
 
 
-
 //////// The Night Sky \\\\\\\\
 COPY ~%MOD_FOLDER%/items/the_night_sky~ ~override~
 ADD_PROJECTILE ~%MOD_FOLDER%/pro/zbtnarea.PRO~
 COPY_EXISTING ~zbtnskya.itm~ ~override~
     SAY NAME2 @10070
     SAY IDENTIFIED_DESC @10071
-
+COPY_EXISTING ~zbtnskyb.SPL~ ~override~
+    LPF ALTER_EFFECT INT_VAR projectile = %zbtnarea% END
 
 //////// Nephy's gear \\\\\\\\
 
