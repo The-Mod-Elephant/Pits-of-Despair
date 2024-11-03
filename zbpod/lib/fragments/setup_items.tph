@@ -70,6 +70,12 @@ COPY_EXISTING ~zbtnskya.itm~ ~override~
 COPY_EXISTING ~zbtnskyb.SPL~ ~override~
     LPF ALTER_EFFECT INT_VAR projectile = %zbtnarea% END
 
+//////// Staff of Disruption +1 \\\\\\\\
+COPY ~%MOD_FOLDER%/items/staff_disruption~ ~override~
+COPY_EXISTING ~ZBSTOFDD.ITM~ ~override~
+    SAY NAME2 @10080
+    SAY IDENTIFIED_DESC @10081
+
 //////// Nephy's gear \\\\\\\\
 
 //////// Nephy's dagger (Phantasmal Fang +4) \\\\\\\\

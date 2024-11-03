@@ -212,3 +212,22 @@ Equipped abilities:
 – Enemies around the wearer suffer a -2 penalty to their saving throws against Necromancy spells
 
 Weight: 3~
+
+@10080 = ~Staff of Disruption +1~
+@10081 = ~This staff was created for a very specific purpose: to slay undead. Any such creature hit by it not only feels the sting of the weapon, but also has a chance of being simply blasted from existence. There are legends that speak of a priest so holy a single glancing touch could send a vampire to oblivion, but whether the weapon empowered her or she empowered it is a topic for theologians.
+
+STATISTICS:
+
+Combat abilities:
+– Undead must save vs. Death at -4 or be utterly destroyed
+
+THAC0: +1 (strikes as a +3 weapon)
+Damage: 1d6+1, 2d6+3 vs. undead
+Damage type: Crushing
+Speed Factor: 3
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 8~
