@@ -61,6 +61,15 @@ COPY_EXISTING ~zbprofaa.itm~ ~override~
     SAY IDENTIFIED_DESC @10041
 
 
+
+//////// The Night Sky \\\\\\\\
+COPY ~%MOD_FOLDER%/items/the_night_sky~ ~override~
+ADD_PROJECTILE ~%MOD_FOLDER%/pro/zbtnarea.PRO~
+COPY_EXISTING ~zbtnskya.itm~ ~override~
+    SAY NAME2 @10070
+    SAY IDENTIFIED_DESC @10071
+
+
 //////// Nephy's gear \\\\\\\\
 
 //////// Nephy's dagger (Umbral Fang +4) \\\\\\\\
@@ -74,3 +83,5 @@ COPY_EXISTING ~zspddg01.spl~ ~override~
     SAY NAME2 @10050
 COPY_EXISTING ~zspddg01.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10052) END
+
+

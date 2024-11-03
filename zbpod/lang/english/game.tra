@@ -173,3 +173,33 @@ Requires:
 Weight: 1~
 
 @10052 = ~Grave Chill~
+
+@10060 = ~Astral Crowssbow of Speed +4~
+@10061 = ~Nephetel's Crossbow description placeholder
+A crossbow is a bow mounted crosswise on a wooden or metal shaft, the latter called a tiller. The bow is usually made of ash or yew. The crossbow fires a quarrel (also called a bolt).
+
+STATISTICS:
+
+Combat abilities:
+– 1 extra attack per round
+– +4 irresistible damage is inflicted against outsiders and undead
+– Upon hitting an outsider, there is a 10% chance to etheralize part of their body, sending just that portion to the Astral Plane, separating them and causing massive damage to their being (-10% to their maximum health).
+
+
+THAC0: +4, +6 against outsiders and undead
+Damage: +4 (missile)
+Speed Factor: 0
+Proficiency Type: Crossbow
+Type: Two-handed
+Requires:
+ 8 Strength
+
+Weight: 5~
+
+@10070 = ~The Night Sky~
+@10071 = ~The Night Sky description placeholder
+
+Equipped abilities:
+– Non-allies around the wearer suffer a -2 penalty to their saving throws against Necromancy spells
+
+Weight: 3~
