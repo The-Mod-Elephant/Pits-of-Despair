@@ -1,0 +1,9 @@
+COPY ~%MOD_FOLDER%/creatures/deathslither~ ~override~
+COPY_EXISTING ~zbdrclch.CRE~ ~override~
+    SAY 0x08 @15000
+    SAY 0x0c @15000
+
+COPY ~%MOD_FOLDER%/creatures/nephetel~ ~override~
+COPY_EXISTING ~zspdnefa.CRE~ ~override~
+    SAY 0x08 @15001
+    SAY 0x0c @15001
