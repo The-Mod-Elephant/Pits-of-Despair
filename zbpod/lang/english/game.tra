@@ -232,5 +232,21 @@ Requires:
 
 Weight: 8~
 
+@10090 = ~Nephetel's Supple Gloves~
+@10091 = ~These gloves were given to Nephetel when she was first inducted into the Thieves Guild. While they were supposedly not magical, it seems that her deeds have over time imbued them with a certain power, which reflect the owner's skills. These gloves fit snugly around her hands, and are made of a soft, supple leather that is surprisingly durable. They are unadorned, save for a small, stylized 'N' on the back of each hand. They are well-worn, but have been meticulously cared for, and show no signs of wear. Because of this adaptation to her, only she may wear them.
+
+STATISTICS:
+
+Equipped abilities:
+– Pick Pockets: +30%
+– Open Locks: +30%
+– Find Traps: +15%
+– Unarmed damage: +5
+– Unarmed to-hit: +2
+– Backstabs are particularly forceful and may render the target unconscious for 1 turn if a save vs. Death is failed. The target will wake up if damaged further
+
+Weight: 2~
+
 
 @15000 = ~Dracolich Deathslither~ // placeholder
+@15001 = ~Nephetel~

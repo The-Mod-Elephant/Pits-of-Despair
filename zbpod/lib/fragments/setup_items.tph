@@ -97,3 +97,11 @@ COPY_EXISTING ~zspdxboa.itm~ ~override~
     SAY IDENTIFIED_DESC @10061
 COPY_EXISTING ~zspdxb01.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10062) END
+
+//////// Nephy's supple gloves  \\\\\\\\
+COPY ~%MOD_FOLDER%/items/nephy_gloves~ ~override~
+COPY_EXISTING ~zspdbrca.itm~ ~override~
+    SAY NAME2 @10090
+    SAY IDENTIFIED_DESC @10091
+    SET nephetel = RESOLVE_STR_REF(@15001)
+    LPF ALTER_EFFECT INT_VAR match_opcode = 319 parameter1 = nephetel special = nephetel END
