@@ -1,4 +1,4 @@
-COPY ~%MOD_FOLDER%/creatures/deathslither~ ~override~
+COPY ~%MOD_FOLDER%/creatures/deathslither_dracolich~ ~override~
 COPY_EXISTING ~zbdrclch.CRE~ ~override~
     SAY 0x08 @15000
     SAY 0x0c @15000
