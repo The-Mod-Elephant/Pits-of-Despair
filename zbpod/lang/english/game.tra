@@ -184,7 +184,7 @@ STATISTICS:
 Combat abilities:
 – 1 extra attack per round
 – +4 irresistible damage is inflicted against outsiders
-– Astral Drain: On hitting an outsider target there is a 10% chance to etherealize part of their body, sending just that portion to the Astral Plane, separating them and causing massive damage to their being (-10% to their maximum health)
+– Astral Drain: On hitting an outsider there is a 10% chance to etherealize part of their body, sending just that portion to the Astral Plane, separating them and causing massive damage to their being (-10% to their maximum health)
 – When no bolts are equipped, the crossbow fires phantasmal bolts that deal 1d8+4 missile damage plus 1d+2 magic damage that act as +5 projectiles
 
 Charge ability:
@@ -238,12 +238,11 @@ Weight: 8~
 STATISTICS:
 
 Equipped abilities:
-– Pick Pockets: +30%
-– Open Locks: +30%
-– Find Traps: +15%
-– Unarmed damage: +5
-– Unarmed to-hit: +2
-– Backstabs are particularly forceful and may render the target unconscious for 1 turn if a save vs. Death is failed. The target will wake up if damaged further
+– Pick Pockets and Open Locks: +20%
+– Find Traps: +10%
+– Fist damage: +3
+– Fist to-hit: +2
+– Backstabs are particularly forceful and may render the target unconscious for 1 turn if a save vs. Death is failed. Further damage will wake them up
 
 Weight: 2~
 
