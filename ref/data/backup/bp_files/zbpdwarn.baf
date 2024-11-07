@@ -1,0 +1,48 @@
+IF
+	Global("OHB_final_restock","GLOBAL",0)
+	Global("OHB_WARN","GLOBAL",0)
+	Global("ohb_finale","global",0)
+	!GlobalTimerNotExpired("OH_WTimer","GLOBAL")
+	!Exists("OHBWING2")  // The Winged
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_WTimer","GLOBAL",ONE_ROUND)
+		SetGlobal("OHB_WARN","GLOBAL",1)
+		CreateCreatureObjectDoor("OHBWING2",Myself,0,0,0)  // The Winged
+		ClearAllActions()
+		SetCursorState(TRUE)
+END
+
+IF
+	Global("OHB_final_restock","GLOBAL",0)
+	Global("OHB_WARN","GLOBAL",2)
+	Global("ohb_finale","global",0)
+	!GlobalTimerNotExpired("OH_WTimer","GLOBAL")
+	!Exists("OHBWING2")  // The Winged
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("OH_WTimer","GLOBAL",ONE_ROUND)
+		SetGlobal("OHB_WARN","GLOBAL",3)
+		CreateCreatureObjectDoor("OHBWING2",Myself,0,0,0)  // The Winged
+		ClearAllActions()
+		SetCursorState(TRUE)
+END
+
+IF
+	!Global("ohb_finale","global",0)
+	HasItem("MINHP1",Myself)  // No such index
+	!Name("OHBSTANN",Myself)  // Stannel Eibor
+	!Name("OHBBRODL",Myself)  // Brodle
+	!Name("OHBMOLZA",Myself)  // Molzahn of Tymora
+	!Name("OHBCUREL",Myself)  // Curell of Tempus
+	!Name("OHBLARIS",Myself)  // Laris of Garagos
+THEN
+	RESPONSE #100
+		DestroyItem("MINHP1")  // No such index
+		Continue()
+END
+

@@ -1,0 +1,112 @@
+IF
+	Global("OHB_ANTIMAGIC","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_ANTIMAGIC","GLOBAL",0)
+		ApplySpellRES("OHBAMREM",Player1)  // No such index
+		ApplySpellRES("OHBAMREM",Player2)  // No such index
+		ApplySpellRES("OHBAMREM",Player3)  // No such index
+		ApplySpellRES("OHBAMREM",Player4)  // No such index
+		ApplySpellRES("OHBAMREM",Player5)  // No such index
+		ApplySpellRES("OHBAMREM",Player6)  // No such index
+		DestroyGroundPiles()
+		Continue()
+END
+
+IF
+	Global("OHB_103","GLOBAL",1)
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	Global("ohb_spawn_gladiators","myarea",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetGlobal("ohb_spawn_gladiators","myarea",1)
+		SmallWait(5)
+		ActionOverride(Player1,JumpToPoint([935.1036]))
+		ActionOverride(Player2,JumpToPoint([935.1096]))
+		ActionOverride(Player3,JumpToPoint([872.1013]))
+		ActionOverride(Player4,JumpToPoint([792.989]))
+		ActionOverride(Player5,JumpToPoint([857.1080]))
+		ActionOverride(Player6,JumpToPoint([929.1157]))
+		SmallWait(5)
+		FadeFromColor([20.0],0)
+		CreateCreature("OHBLIZ02",[1685.830],SW)  // Lizard Man Elite
+		CreateCreature("OHBLIZ02",[1730.810],SW)  // Lizard Man Elite
+		CreateCreature("OHBLIZ01",[1725.890],SW)  // Lizard Man Chieftain
+		CreateCreature("OHBLIZ03",[1780.860],SW)  // Lizard Man Shaman
+		CreateCreature("OHBLIZ02",[1765.950],SW)  // Lizard Man Elite
+		CreateCreature("OHBLIZ02",[1830.910],SW)  // Lizard Man Elite
+		SmallWait(25)
+		MoveViewPoint([1770.792],BD_NORMAL)
+		SmallWait(100)
+		ActionOverride("ohbdenna",StartDialogueNoSet(Player1))
+END
+
+IF
+	Global("ohb_item_reward","global",1)
+	OR(2)
+		Global("ohb_103_item_good","global",0)
+		Global("ohb_103_item_great","global",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_item_reward","global",2)
+END
+
+IF
+	Global("ohb_item_reward","global",6)
+	Global("ohb_103_item_great","global",0)
+	GlobalsGT("ohb_item_prob_low","ohb_item_roll")
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_103_item_great","global",1)
+		SetGlobal("ohb_item_reward","global",11)
+END
+
+IF
+	Global("ohb_item_reward","global",6)
+	OR(2)
+		GlobalGT("ohb_103_item_great","global",0)
+		!GlobalsGT("ohb_item_prob_low","ohb_item_roll")
+	Global("ohb_103_item_good","global",0)
+	GlobalsGT("ohb_item_prob_high","ohb_item_roll")
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_103_item_good","global",1)
+		SetGlobal("ohb_item_reward","global",10)
+END
+
+IF
+	!GlobalLT("ohb_103_score_limit","global",3)
+	OR(2)
+		Global("ohb_raise_hero_score","global",1)
+		Global("ohb_raise_villain_score","global",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_raise_hero_score","global",0)
+		SetGlobal("ohb_raise_villain_score","global",0)
+END
+
+IF
+	Global("ohb_raise_hero_score","global",1)
+	GlobalLT("ohb_103_score_limit","global",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_raise_hero_score","global",0)
+		IncrementGlobal("ohb_103_score_limit","global",1)
+		IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",-1)
+		IncrementGlobal("ohb_hero","global",1)
+		IncrementGlobal("ohb_villain","global",-1)
+END
+
+IF
+	Global("ohb_raise_villain_score","global",1)
+	GlobalLT("ohb_103_score_limit","global",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_raise_villain_score","global",0)
+		IncrementGlobal("ohb_103_score_limit","global",1)
+		IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",-1)
+		IncrementGlobal("ohb_hero","global",-1)
+		IncrementGlobal("ohb_villain","global",1)
+END
+

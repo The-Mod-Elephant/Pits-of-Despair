@@ -1,0 +1,247 @@
+IF
+	Die()
+	Class(Myself,ELEMENTAL_EARTH)
+	!Dead("ohbmardi")  // Mardii
+THEN
+	RESPONSE #100
+		CreateCreatureObjectEffect("ohbeea01","SPPORTAL","ohbmardi")  // Greater Earth Elemental
+		CreateCreatureObjectEffect("ohbeea01","SPPORTAL","ohbmardi")  // Greater Earth Elemental
+END
+
+IF
+	Die()
+	Class(Myself,ELEMENTAL_AIR)
+	!Dead("ohbmardi")  // Mardii
+THEN
+	RESPONSE #100
+		CreateCreatureObjectEffect("ohbeai01","SPPORTAL","ohbmardi")  // Greater Air Elemental
+		CreateCreatureObjectEffect("ohbeai01","SPPORTAL","ohbmardi")  // Greater Air Elemental
+END
+
+IF
+	Die()
+	Class(Myself,ELEMENTAL_FIRE)
+	!Dead("ohbmardi")  // Mardii
+THEN
+	RESPONSE #100
+		CreateCreatureObjectEffect("ohbefi01","SPPORTAL","ohbmardi")  // Greater Fire Elemental
+		CreateCreatureObjectEffect("ohbefi01","SPPORTAL","ohbmardi")  // Greater Fire Elemental
+END
+
+IF
+	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+	Global("OH_InitView","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("OH_InitView","LOCALS",1)
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		ChangeSpecifics(Myself,200)
+		ApplySpellRES("OHBINVUL",Myself)  // No such index
+		DialogInterrupt(FALSE)
+		SetInterrupt(TRUE)
+END
+
+IF
+	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	Range([PC],30)
+	Name("OHBMARDI",Myself)  // Mardii
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		FaceObject([PC])
+		DisplayStringHead(Myself,95336)  // Your cannot resist my charms. You will be mine, and you will die.
+END
+
+IF
+	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("ohb_imprisonement_fix","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_imprisonement_fix","locals",1)
+		ApplySpellRES("ohbimpri",Myself)  // No such index
+		Continue()
+END
+
+IF
+	SpellCastOnMe([ANYONE],WIZARD_IMPRISONMENT)  // SPWI910.SPL (Imprisonment)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("OHB_ENEMY_OVERRIDE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself,NEUTRAL)
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Global("OHB_ENEMY_OVERRIDE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Global("OH_Active","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("OH_Active","LOCALS",1)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Crit","LOCALS")
+	TookDamage()
+	DamageTakenGT(30)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Crit","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",1)
+		GlobalShout(9003)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Killed([PC])
+	!Race(Myself,ELEMENTAL)
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+		GlobalShout(9002)
+		DisplayStringHead(Myself,95347)  // Now we see that I am the stronger!
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+		GlobalShout(9002)
+		DisplayStringHead(Myself,95348)  // Your death reveals your weakness.
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Died([EVILCUTOFF.0.ELEMENTAL])
+	!Race(Myself,ELEMENTAL)
+THEN
+	RESPONSE #75
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",3)
+		GlobalShout(9011)
+		DisplayStringHead(Myself,95346)  // Kill one and two more shall rise against you!
+		Continue()
+	RESPONSE #25
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		SetGlobal("OHB_CROWD_POS","MYAREA",3)
+		GlobalShout(9011)
+		DisplayStringHead(Myself,95345)  // You shall pay for your impertinence!
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	HPPercentLT(Myself,31)
+	!Race(Myself,ELEMENTAL)
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95343)  // Elementals, to my aid!
+		Help()
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95344)  // I am wounded! Shield me!
+		Help()
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	BreakingPoint()
+	!Race(Myself,ELEMENTAL)
+THEN
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95349)  // The battle has turned!
+		Continue()
+	RESPONSE #50
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95350)  // Tymora favors our enemy!
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	OR(3)
+		StateCheck([EVILCUTOFF],STATE_IMMOBILE)
+		StateCheck(SecondNearest([EVILCUTOFF]),STATE_IMMOBILE)
+		StateCheck(ThirdNearest([EVILCUTOFF]),STATE_IMMOBILE)
+	!Race(Myself,ELEMENTAL)
+THEN
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95351)  // You, back to the fight!
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95352)  // Get up! Fight!
+		Continue()
+	RESPONSE #60
+		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
+	!GlobalTimerNotExpired("OH_RTaunt","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Range([GOODCUTOFF],30)
+	!Race(Myself,ELEMENTAL)
+THEN
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95337)  // Elementals, attack!
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95338)  // You will fall prey to my spells, weakling.
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95339)  // Your defenses will not stand forever!
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95340)  // I shall destroy your mind, then your body.
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95341)  // My elementals will destroy you!
+		Continue()
+	RESPONSE #15
+		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+		DisplayStringHead(Myself,95342)  // My magics will shroud your mind in darkness.
+		Continue()
+	RESPONSE #10
+		SetGlobalTimer("OH_RTaunt","LOCALS",ONE_ROUND)
+		Continue()
+END
+

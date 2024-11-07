@@ -1,0 +1,135 @@
+IF
+	ActionListEmpty()
+	See(NearestEnemyOf(Myself))
+	StateCheck(Myself,STATE_SILENCED)
+	HaveSpell(WIZARD_VOCALIZE)  // SPWI219.SPL (Vocalize)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	Range(NearestEnemyOf(Myself),30)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_VOCALIZE)  // SPWI219.SPL (Vocalize)
+END
+
+IF
+	ActionListEmpty()
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	CheckStatLT(Myself,1,STONESKINS)
+	HaveSpell(WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	Range(NearestEnemyOf(Myself),30)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+END
+
+IF
+	ActionListEmpty()
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	!StateCheck(Myself,STATE_MIRRORIMAGE)
+	HaveSpell(WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Mirror Image)
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	Range(NearestEnemyOf(Myself),30)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Mirror Image)
+END
+
+IF
+	ActionListEmpty()
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	!GlobalTimerNotExpired("OH_Haste","LOCALS")
+	HaveSpell(WIZARD_HASTE)  // SPWI305.SPL (Haste)
+	OR(3)
+		Range([GOODCUTOFF.0.0.FIGHTER_ALL],12)
+		Range([GOODCUTOFF.0.0.RANGER_ALL],12)
+		Range([GOODCUTOFF.0.0.PALADIN_ALL],12)
+	CheckStat(Myself,0,IMPROVEDHASTE)
+	!StateCheck(Myself,STATE_HASTED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	Range(NearestEnemyOf(Myself),30)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("OH_Haste","LOCALS",THREE_ROUNDS)
+		Spell(Myself,WIZARD_HASTE)  // SPWI305.SPL (Haste)
+END
+
+IF
+	ActionListEmpty()
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(NearestEnemyOf(Myself),STATE_NOT_TARGETABLE)
+	!HasItemEquiped("MISC5X",NearestEnemyOf(Myself))  // Harper Pin
+	!HasItemEquiped("OHRAMUL1",NearestEnemyOf(Myself))  // Brooch of the Vagrant Blades
+	CheckStat(NearestEnemyOf(Myself),0,MINORGLOBE)
+	CheckStatLT(NearestEnemyOf(Myself),31,RESISTMAGIC)
+	CheckStatLT(NearestEnemyOf(Myself),31,MAGICDAMAGERESISTANCE)
+	!CheckStat(NearestEnemyOf(Myself),2,DEFENSIVE_MODIFIER)
+	!CheckStatGT(NearestEnemyOf(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(NearestEnemyOf(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(NearestEnemyOf(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(NearestEnemyOf(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(NearestEnemyOf(Myself),6,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
+END
+
+IF
+	ActionListEmpty()
+	OR(2)
+		!GlobalTimerNotExpired("OH_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpell(WIZARD_SHIELD)  // SPWI114.SPL (Shield)
+	!CheckStat(Myself,2,DEFENSIVE_MODIFIER)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	Range(NearestEnemyOf(Myself),30)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,WIZARD_SHIELD)  // SPWI114.SPL (Shield)
+END
+
+IF
+	ActionListEmpty()
+	!StateCheck(Myself,STATE_INVISIBLE)
+	CheckStatLT(Myself,1,SANCTUARY)
+	See(NearestEnemyOf(Myself))
+	!InParty(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+

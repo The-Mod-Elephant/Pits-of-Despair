@@ -1,0 +1,21 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([15.0],0)
+		Wait(1)
+		JumpToPoint([2540.1308])
+		ActionOverride(Player2,JumpToPoint([2585.1342]))
+		ActionOverride(Player3,JumpToPoint([2496.1345]))
+		ActionOverride(Player4,JumpToPoint([2543.1376]))
+		ActionOverride(Player5,JumpToPoint([2450.1375]))
+		ActionOverride(Player6,JumpToPoint([2499.1409]))
+		MoveViewPoint([2540.1308],INSTANT)
+		Wait(1)
+		FadeFromColor([15.0],0)
+		Wait(1)
+		UnhideGUI()
+		EndCutSceneMode()
+END
+

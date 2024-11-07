@@ -1,0 +1,151 @@
+IF
+	!GlobalTimerNotExpired("ohb_mc_shout_timer","locals")
+	Heard([ANYONE],9011)
+THEN
+	RESPONSE #20
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94136)  // The bodies will be piled high today!
+	RESPONSE #20
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94138)  // Another casualty in the pits!
+	RESPONSE #20
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94143)  // Impressive, performer, but can you do it again?
+	RESPONSE #20
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94145)  // And another one goes down! Drag 'em off and keep going!
+	RESPONSE #20
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94146)  // Ah-hah! Fantastic carnage! More... MORE!
+END
+
+IF
+	!GlobalTimerNotExpired("ohb_mc_shout_timer","locals")
+	Heard([ANYONE],9002)
+THEN
+	RESPONSE #25
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94148)  // Surprising how easily Baeloth's champions fall before my minions!
+	RESPONSE #25
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94149)  // I think someone needs a healer! Oops, too late!
+	RESPONSE #25
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94152)  // And another of Baeloth's champions goes down! Is THIS all they've got?
+	RESPONSE #25
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94154)  // Slaughter them all! For the glory of Thay!
+END
+
+IF
+	!GlobalTimerNotExpired("ohb_mc_shout_timer","locals")
+	Heard([ANYONE],9003)
+THEN
+	RESPONSE #25
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94102)  // Now THAT looked like it hurt!
+	RESPONSE #25
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94106)  // Uh oh! Looks like someone's lost their entrails!
+	RESPONSE #25
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94120)  // An absolutely VICIOUS hit! I LOVE IT!
+	RESPONSE #25
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94116)  // Oh! Now THAT'S gonna leave a mark!
+END
+
+IF
+	!GlobalTimerNotExpired("ohb_mc_shout_timer","locals")
+	OR(32)
+		SpellCast([PC],WIZARD_MONSTER_SUMMONING_1)  // SPWI309.SPL (Monster Summoning I)
+		SpellCast([PC],WIZARD_MONSTER_SUMMONING_2)  // SPWI407.SPL (Monster Summoning II)
+		SpellCast([PC],WIZARD_MONSTER_SUMMONING_3)  // SPWI504.SPL (Monster Summoning III)
+		SpellCast([PC],WIZARD_MONSTER_SUMMONING_4)
+		SpellCast([PC],WIZARD_SPIDER_SPAWN)  // SPWI423.SPL (Spider Spawn)
+		SpellCast([PC],WIZARD_ANIMATE_DEAD)  // SPWI501.SPL (Animate Dead)
+		SpellCast([PC],WIZARD_MONSTER_SUMMONING_4)
+		SpellCast([PC],WIZARD_CONJURE_LESSER_AIR_ELEMENTAL)  // SPWI520.SPL (Conjure Lesser Air Elemental)
+		SpellCast([PC],WIZARD_CONJURE_LESSER_EARTH_ELEMENTAL)  // SPWI521.SPL (Conjure Lesser Earth Elemental)
+		SpellCast([PC],WIZARD_CONJURE_LESSER_FIRE_ELEMENTAL)  // SPWI516.SPL (Conjure Lesser Fire Elemental)
+		SpellCast([PC],WIZARD_CONJURE_AIR_ELEMENTAL)  // SPWI621.SPL (Conjure Air Elemental)
+		SpellCast([PC],WIZARD_CONJURE_EARTH_ELEMENTAL)  // SPWI622.SPL (Conjure Earth Elemental)
+		SpellCast([PC],WIZARD_CONJURE_FIRE_ELEMENTAL)  // SPWI620.SPL (Conjure Fire Elemental)
+		SpellCast([PC],WIZARD_INVISIBLE_STALKER)  // SPWI601.SPL (Invisible Stalker)
+		SpellCast([PC],WIZARD_SUMMON_NISHRUU)  // SPWI624.SPL (Summon Nishruu)
+		SpellCast([PC],WIZARD_WYVERN_CALL)  // SPWI619.SPL (Wyvern Call)
+		SpellCast([PC],WIZARD_CACOFIEND)  // SPWI707.SPL (Cacofiend)
+		SpellCast([PC],WIZARD_SUMMON_DJINNI)  // SPWI718.SPL (Summon Djinni)
+		SpellCast([PC],WIZARD_SUMMON_EFREET)  // SPWI717.SPL (Summon Efreeti)
+		SpellCast([PC],WIZARD_SUMMON_HAKEASHAR)  // SPWI719.SPL (Summon Hakeashar)
+		SpellCast([PC],WIZARD_SUMMON_FIEND)  // SPWI807.SPL (Summon Fiend)
+		SpellCast([PC],WIZARD_GATE)  // SPWI905.SPL (Gate)
+		SpellCastPriest([PC],CLERIC_ANIMATE_DEAD)  // SPPR301.SPL (Animate Dead)
+		SpellCastPriest([PC],CLERIC_ANIMAL_SUMMONING_1)  // SPPR402.SPL (Animal Summoning I)
+		SpellCastPriest([PC],CLERIC_ANIMAL_SUMMONING_2)  // SPPR501.SPL (Animal Summoning II)
+		SpellCastPriest([PC],CLERIC_ANIMAL_SUMMONING_3)  // SPPR602.SPL (Animal Summoning III)
+		SpellCastPriest([PC],CLERIC_CALL_WOODLAND_BEINGS)  // SPPR410.SPL (Call Woodland Beings)
+		SpellCastPriest([PC],CLERIC_AERIAL_SERVANT)  // SPPR601.SPL (Aerial Servant)
+		SpellCastPriest([PC],CLERIC_CONJURE_ANIMALS)  // SPPR604.SPL (Conjure Animals)
+		SpellCastPriest([PC],CLERIC_CONJURE_FIRE_ELEMENTAL)  // SPPR605.SPL (Conjure Fire Elemental)
+		SpellCastPriest([PC],CLERIC_CONJURE_EARTH_ELEMENTAL)  // SPPR702.SPL (Conjure Earth Elemental)
+		SpellCastPriest([PC],CLERIC_GATE)  // SPPR703.SPL (Gate)
+THEN
+	RESPONSE #34
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94170)  // Baeloth's champion calls for reinforcements, but will they be enough?
+	RESPONSE #33
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94172)  // Oh, excellent! More creatures to slaughter at no extra charge!
+	RESPONSE #33
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94174)  // Sure, call in some friends! The more the merrier!
+END
+
+IF
+	!GlobalTimerNotExpired("ohb_mc_shout_timer","locals")
+	OR(32)
+		SpellCast([EVILCUTOFF],WIZARD_MONSTER_SUMMONING_1)  // SPWI309.SPL (Monster Summoning I)
+		SpellCast([EVILCUTOFF],WIZARD_MONSTER_SUMMONING_2)  // SPWI407.SPL (Monster Summoning II)
+		SpellCast([EVILCUTOFF],WIZARD_MONSTER_SUMMONING_3)  // SPWI504.SPL (Monster Summoning III)
+		SpellCast([EVILCUTOFF],WIZARD_MONSTER_SUMMONING_4)
+		SpellCast([EVILCUTOFF],WIZARD_SPIDER_SPAWN)  // SPWI423.SPL (Spider Spawn)
+		SpellCast([EVILCUTOFF],WIZARD_ANIMATE_DEAD)  // SPWI501.SPL (Animate Dead)
+		SpellCast([EVILCUTOFF],WIZARD_MONSTER_SUMMONING_4)
+		SpellCast([EVILCUTOFF],WIZARD_CONJURE_LESSER_AIR_ELEMENTAL)  // SPWI520.SPL (Conjure Lesser Air Elemental)
+		SpellCast([EVILCUTOFF],WIZARD_CONJURE_LESSER_EARTH_ELEMENTAL)  // SPWI521.SPL (Conjure Lesser Earth Elemental)
+		SpellCast([EVILCUTOFF],WIZARD_CONJURE_LESSER_FIRE_ELEMENTAL)  // SPWI516.SPL (Conjure Lesser Fire Elemental)
+		SpellCast([EVILCUTOFF],WIZARD_CONJURE_AIR_ELEMENTAL)  // SPWI621.SPL (Conjure Air Elemental)
+		SpellCast([EVILCUTOFF],WIZARD_CONJURE_EARTH_ELEMENTAL)  // SPWI622.SPL (Conjure Earth Elemental)
+		SpellCast([EVILCUTOFF],WIZARD_CONJURE_FIRE_ELEMENTAL)  // SPWI620.SPL (Conjure Fire Elemental)
+		SpellCast([EVILCUTOFF],WIZARD_INVISIBLE_STALKER)  // SPWI601.SPL (Invisible Stalker)
+		SpellCast([EVILCUTOFF],WIZARD_SUMMON_NISHRUU)  // SPWI624.SPL (Summon Nishruu)
+		SpellCast([EVILCUTOFF],WIZARD_WYVERN_CALL)  // SPWI619.SPL (Wyvern Call)
+		SpellCast([EVILCUTOFF],WIZARD_CACOFIEND)  // SPWI707.SPL (Cacofiend)
+		SpellCast([EVILCUTOFF],WIZARD_SUMMON_DJINNI)  // SPWI718.SPL (Summon Djinni)
+		SpellCast([EVILCUTOFF],WIZARD_SUMMON_EFREET)  // SPWI717.SPL (Summon Efreeti)
+		SpellCast([EVILCUTOFF],WIZARD_SUMMON_HAKEASHAR)  // SPWI719.SPL (Summon Hakeashar)
+		SpellCast([EVILCUTOFF],WIZARD_SUMMON_FIEND)  // SPWI807.SPL (Summon Fiend)
+		SpellCast([EVILCUTOFF],WIZARD_GATE)  // SPWI905.SPL (Gate)
+		SpellCastPriest([EVILCUTOFF],CLERIC_ANIMATE_DEAD)  // SPPR301.SPL (Animate Dead)
+		SpellCastPriest([EVILCUTOFF],CLERIC_ANIMAL_SUMMONING_1)  // SPPR402.SPL (Animal Summoning I)
+		SpellCastPriest([EVILCUTOFF],CLERIC_ANIMAL_SUMMONING_2)  // SPPR501.SPL (Animal Summoning II)
+		SpellCastPriest([EVILCUTOFF],CLERIC_ANIMAL_SUMMONING_3)  // SPPR602.SPL (Animal Summoning III)
+		SpellCastPriest([EVILCUTOFF],CLERIC_CALL_WOODLAND_BEINGS)  // SPPR410.SPL (Call Woodland Beings)
+		SpellCastPriest([EVILCUTOFF],CLERIC_AERIAL_SERVANT)  // SPPR601.SPL (Aerial Servant)
+		SpellCastPriest([EVILCUTOFF],CLERIC_CONJURE_ANIMALS)  // SPPR604.SPL (Conjure Animals)
+		SpellCastPriest([EVILCUTOFF],CLERIC_CONJURE_FIRE_ELEMENTAL)  // SPPR605.SPL (Conjure Fire Elemental)
+		SpellCastPriest([EVILCUTOFF],CLERIC_CONJURE_EARTH_ELEMENTAL)  // SPPR702.SPL (Conjure Earth Elemental)
+		SpellCastPriest([EVILCUTOFF],CLERIC_GATE)  // SPPR703.SPL (Gate)
+THEN
+	RESPONSE #34
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94175)  // Call in some friends! The more the merrier, and you'll certainly need them!
+	RESPONSE #33
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94178)  // The odds grow longer against the Scourge of Baeloth's Pits!
+	RESPONSE #33
+		SetGlobalTimer("ohb_mc_shout_timer","locals",ONE_ROUND)
+		DisplayStringHead(Myself,94180)  // Things are about to get crowded for our performers!
+END
+

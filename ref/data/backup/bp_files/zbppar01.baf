@@ -1,0 +1,113 @@
+IF
+	ActionListEmpty()
+	HaveSpell(BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
+	CheckStat(Myself,0,OFFENSIVE_MODIFIER)
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	Range(NearestEnemyOf(Myself),30)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
+END
+
+IF
+	ActionListEmpty()
+	HaveSpell(BARBARIAN_RAGE)  // SPCL152.SPL (Barbarian Rage)
+	CheckStat(Myself,0,LEVEL_DRAIN_IMMUNITY)
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	Range(NearestEnemyOf(Myself),30)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,BARBARIAN_RAGE)  // SPCL152.SPL (Barbarian Rage)
+END
+
+IF
+	ActionListEmpty()
+	HaveSpellRES("SPDWD02")  // Defensive Stance
+	CheckStatLT(Myself,50,RESISTSLASHING)
+	Range(NearestEnemyOf(Myself),30)
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		SpellRES("SPDWD02",Myself)  // Defensive Stance
+END
+
+IF
+	ActionListEmpty()
+	HaveSpell(KENSAI_KIA)  // SPCL144.SPL (Kai)
+	!CheckStat(Myself,2,OFFENSIVE_MODIFIER)
+	Range(NearestEnemyOf(Myself),30)
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,KENSAI_KIA)  // SPCL144.SPL (Kai)
+END
+
+IF
+	ActionListEmpty()
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HaveSpell(PALADIN_LAY_ON_HANDS)  // SPCL211.SPL (Lay On Hands)
+	HPPercentLT(Myself,50)
+	Range(NearestEnemyOf(Myself),30)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,PALADIN_LAY_ON_HANDS)  // SPCL211.SPL (Lay On Hands)
+END
+
+IF
+	ActionListEmpty()
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	Range(NearestEnemyOf(Myself),30)
+	HaveSpell(PALADIN_PROTECTION_FROM_EVIL)  // SPCL213.SPL (Protection From Evil)
+	CheckStat(Myself,0,PROTECTION_FROM_EVIL)
+	OR(2)
+		See([0.0.DEMONIC.0.0.SUMMONED_DEMON])
+		See([EVILCUTOFF.0.0.0.0.0.MASK_EVIL])
+	See(SecondNearest([EVILCUTOFF.0.0.0.0.0.MASK_EVIL]))
+	See(ThirdNearest([EVILCUTOFF.0.0.0.0.0.MASK_EVIL]))
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,PALADIN_PROTECTION_FROM_EVIL)  // SPCL213.SPL (Protection From Evil)
+END
+
+IF
+	ActionListEmpty()
+	!GlobalTimerNotExpired("OH_Cast","LOCALS")
+	HaveSpell(CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+	CheckStatLT(Myself,10,MAGICDAMAGERESISTANCE)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	Range(NearestEnemyOf(Myself),30)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+END
+
+IF
+	ActionListEmpty()
+	!StateCheck(Myself,STATE_INVISIBLE)
+	CheckStatLT(Myself,1,SANCTUARY)
+	See(NearestEnemyOf(Myself))
+	!InParty(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
