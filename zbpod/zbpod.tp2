@@ -19,3 +19,4 @@ INCLUDE ~zbpod/lib/fragments/setup_items.tph~
 INCLUDE ~zbpod/lib/fragments/setup_cre.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+COMPILE EVALUATE_BUFFER ~zbpod/cutscenes~
