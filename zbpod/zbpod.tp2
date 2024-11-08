@@ -4,24 +4,38 @@ VERSION "0.1"
 README ~%MOD_FOLDER%/README.md~
 AUTO_EVAL_STRINGS
 /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+AUTO_TRA ~%MOD_FOLDER%/lang/%s~
+ALWAYS
+  INCLUDE ~%MOD_FOLDER%/lib/a7#add_kit_ex.tpa~
+  INCLUDE ~%MOD_FOLDER%/lib/alter_script.tpa~
+  INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
+END
+
+
 AUTO_TRA ~%MOD_FOLDER%/lang/%s~
 LANGUAGE  ~English~
           ~english~
           ~%MOD_FOLDER%/lang/english/game.tra~
           ~%MOD_FOLDER%/lang/english/weidu.tra~
           ~%MOD_FOLDER%/lang/english/dialogs.tra~
+		  
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20001 DESIGNATED 2 LABEL ~zb_pod_ee~ // INSTALL PIT OF DESPAIR FOR ENHANCED EDITION
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~p_cta1.bam~ THEN BEGIN
+INCLUDE ~%MOD_FOLDER%/lib/animations.tpa~
+END
 
 INCLUDE ~zbpod/lib/fragments/setup_items.tph~
 INCLUDE ~zbpod/lib/fragments/setup_cre.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 COMPILE EVALUATE_BUFFER ~zbpod/cutscene~
-COMPILE EVALUATE_BUFFER ~zbpod/bp2scripts~
+//COMPILE EVALUATE_BUFFER ~zbpod/bp2scripts~
 
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~p_cta1.bam~ THEN BEGIN
-INCLUDE ~%MOD_FOLDER%/animations/couatl~
-END
+

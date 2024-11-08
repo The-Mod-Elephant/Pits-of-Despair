@@ -17,4 +17,4 @@ COPY ~%MOD_FOLDER%/creatures/couatl~ ~override~
 COPY_EXISTING ~zbcouatl.CRE~ ~override~
     SAY 0x08 @15003
     SAY 0x0c @15003
-	WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~P_COAUTL~))
+	WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~P_COUATL~))
