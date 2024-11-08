@@ -21,3 +21,6 @@ INCLUDE ~zbpod/lib/fragments/setup_cre.tph~
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 COMPILE EVALUATE_BUFFER ~zbpod/cutscene~
 COMPILE EVALUATE_BUFFER ~zbpod/bp2scripts~
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~p_cta1.bam~ THEN BEGIN
+INCLUDE ~%MOD_FOLDER%/lib/animations/couatl~
