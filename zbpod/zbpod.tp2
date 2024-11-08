@@ -23,4 +23,5 @@ COMPILE EVALUATE_BUFFER ~zbpod/cutscene~
 COMPILE EVALUATE_BUFFER ~zbpod/bp2scripts~
 
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~p_cta1.bam~ THEN BEGIN
-INCLUDE ~%MOD_FOLDER%/lib/animations/couatl~
+INCLUDE ~%MOD_FOLDER%/animations/couatl~
+END
