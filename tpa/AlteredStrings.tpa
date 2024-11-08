@@ -1,0 +1,20 @@
+// ~It has been several months since your escape from Baeloth's Black Pits. Tales of your deeds have spread far and wide, and bards sing of them wherever you travel...~
+STRING_SET 102546 ~It has been several months since you defeated Sarevok in Baldur's Gate. Tales of your deeds, and whispers of your dark heritage, have spread far and wide. Even bards sing of them wherever you travel...~
+
+// ~... And so it came that Baeloth's game was quickly turned to naught.~
+STRING_SET 90407 ~Along the Sword Coast they travelled with stealth, wits and brawn.~
+
+// ~The swords were sheathed, the spells unweaved, the final battle fought.~
+STRING_SET 102802 ~Investigating matters of iron, wayward bandits and then learnt they are a Bhaalspawn.~
+
+// ~Our heroes' wits had solved the pits; their freedom did they win.~
+STRING_SET 102803 ~The final battle: a city, breath held, nearing a most unwelcome fate.~
+
+// ~So fled the cage 'midst Baeloth's rage upon a mighty djinni.~
+STRING_SET 102804 ~But our heroes rose to the challenge, ending the crisis, and became the Champions of Baldur's Gate.~
+
+// ~It sounds fantastic, I know, but it IS true. I can prove it—unless I'm much mistaken, the Champion of Baeloth's Pits is among us this very minute. Everyone, say hello to <CHARNAME>—our tale's protagonist in the flesh!~
+STRING_SET 90418 ~It sounds fantastic, I know, but it IS true. I can prove it—unless I'm much mistaken, our Hero - the Champion of Baldur's Gate - is among us this very minute. Everyone, say hello to <CHARNAME>—our tale's protagonist in the flesh!~
+
+// ~Hah! Baeloth's Champion does not lack for ego.~
+STRING_SET 90465 ~Hah! The Bhaalspawn does not lack for ego.~
