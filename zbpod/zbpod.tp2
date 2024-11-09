@@ -38,4 +38,5 @@ INCLUDE ~zbpod/lib/fragments/setup_cre.tph~
 COMPILE EVALUATE_BUFFER ~zbpod/cutscene~
 //COMPILE EVALUATE_BUFFER ~zbpod/bp2scripts~
 
-
+/* copy edited sound files over */
+COPY ~zbpod/wav~ ~override~ 
