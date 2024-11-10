@@ -48,6 +48,8 @@ THEN
 		ActionOverride(Player6,FaceObject("ohbjoker"))  // Joker
 		MoveViewPoint([672.468],INSTANT)
 		SetAreaScript("cutskip2",OVERRIDE)
+		SetGlobal("ZBBP2inBG2","GLOBAL",1) /* newly added line, to check that we're playing Pits of Despair during dialogue, interjections, etc */ 
+		SetGlobal("OHB_TALKED_BELLOWGULP","GLOBAL",1) /* take a sledgehammer to Bello's intro dialogue, skipping straight to his main merchant dialogue */ 
 		SetGlobal("BD_CUTSCENE_BREAKABLE","GLOBAL",202)
 		SetCutSceneBreakable(TRUE)
 		Wait(2)

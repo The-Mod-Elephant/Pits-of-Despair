@@ -4,3 +4,6 @@
 
 // warnings
 @20050 = "Not available for your game version"
+
+/* vanilla npc interjection */
+@30000 = "Vanilla & EE NPC interjections for Pits of Despair"

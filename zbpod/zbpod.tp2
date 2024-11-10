@@ -20,8 +20,6 @@ LANGUAGE  ~English~
           ~%MOD_FOLDER%/lang/english/weidu.tra~
           ~%MOD_FOLDER%/lang/english/dialogs.tra~
 		  
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20001 DESIGNATED 2 LABEL ~zb_pod_ee~ // INSTALL PIT OF DESPAIR FOR ENHANCED EDITION
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
@@ -38,5 +36,26 @@ INCLUDE ~zbpod/lib/fragments/setup_cre.tph~
 COMPILE EVALUATE_BUFFER ~zbpod/cutscene~
 //COMPILE EVALUATE_BUFFER ~zbpod/bp2scripts~
 
+
+
+
+/*
+  bucket's tp2 additions - still need to be approved and tested 
+                                                               */ 			
+
+/* compile the new dialogues and recompile old ones with the new strings */ 
+/* do we just recompile ALL 54 dialogues? only added a few that i know have been edited, there are more i need to add */ 
+COMPILE EVALUATE_BUFFER ~zbpod/dlg/ohbbello.d~
+                        ~zbpod/dlg/ohbdenna.d~ /* still needs HEAVY edits */ 
+						~zbpod/dlg/ohbjoker.d~
+						~zbpod/dlg/ohbnajim.d~ /* still needs some edits */ 
+						~zbpod/dlg/ohbbrodl.d~ /* still needs some edits */
+						~zbpod/dlg/ohbstann.d~ /* edits haven't started */ 
+						
+												
 /* copy edited sound files over */
 COPY ~zbpod/wav~ ~override~ 
+
+/* Vanilla NPC Interjections for Pits of Despair */ 
+BEGIN @30000
+COMPILE ~zbpod/test/zbvci.d~ 

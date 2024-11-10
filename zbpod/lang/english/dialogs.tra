@@ -1,7 +1,7 @@
 /*
   bucketfulofsunshine, 20241108: comments are about the line BELOW them 
   several lines from Dennaton's dialog file - OHBDENNA - remain untouched as aren't present within this tra
-  heavy edits, outside of single line rewrites are needed for OHBNAJIM & OHBSTANN - which are part of this tra file 
+  heavy edits, outside of single line rewrites are needed for OHBBELLO, OHBNAJIM & OHBSTANN - which are part of this tra file 
   complete rewrites will be needed for large parts of the dialogue if the player isn't trapped and can leave freely - version 2.0? 
                                                                                                                                   */
 																															 
@@ -948,7 +948,8 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @915  = ~Think of yourselves as my guests, my dear, and of the arena as... an inn. An inn for people who fight and kill others for money and entertainment.~ [OH90559]
 @916  = ~Next is a wizard of deceptive power. His aging body may seem past its prime, but his mind is sharp as any blade. I give you Dulf "The Ancient Threat" Ebonbeard!~ [OH90560]
 @917  = ~Right, with that cleared up, we can turn to the show itself. As a great bard once said, "All the world's a stage, and all of us merely players! Each of us in our time will play many parts!"~ [OH90572]
-@918  = ~So now we decide which part each of you shall play. Our main star will be <CHARNAME>, who is already well known as a champion of the arena.~ [OH90573]
+/* removing references to Baeloth's Pits */ 
+@918  = ~So now we decide which part each of you shall play. Our main star will be <CHARNAME>, who is already renowned for defeating Sarevok at Baldur's Gate.~ [OH90573]
 @919  = ~Oh, by the Nine Hells, why do you interrupt me?! Have I ever not paid before? You'll get your money. Now—~ [OH94237]
 @920  = ~I can't get it right now! There's a match about to start. Immediately afterwards, I'll—~ [OH94239]
 @921  = ~Of course, you—~ [OH94241]
@@ -2188,19 +2189,21 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @2151 = ~Oh, Tymora help me! Even with our oppressors on the run, you keep on with the "savage" bit?~
 @2152 = ~One more thing, <CHARNAME>. I've been saving a special draught for just the right occasion. These potions will restore both mind and spirit. Drink up! This is no time to be weary.~
 @2153 = ~<CHARNAME>! I've found you, and not a moment too soon! You're in danger! DANGER, I TELL YOU!~ [OH90429]
-@2154 = ~Najim? What's going on?~
-@2155 = ~What a shock. You and danger always seem to go hand in hand.~
-@2156 = ~This doesn't have anything to do with the village that burned down last week, does it? Because I wasn't involved.~
+/* altering Najim lines to remove Baeloth's Pits references, keeping them vague so it might just be a RANDOM djinni you've never met teleports in and warns you */
+@2154 = ~What's going on?~
+@2155 = ~What a shock. Danger and I always seem to go hand in hand.~
+@2156 = ~This doesn't have anything to do with the tavern that burned down last week, does it? Because I wasn't involved.~
+/* end of Najim altered lines */
 @2157 = ~I was attacked by a group of bounty hunters! Before I escaped, I heard them say your name—I came to warn you!~ [OH90433]
 @2158 = ~You're safe now.~
 @2159 = ~Let me guess. This "escape" involved your telling them where to find me.~
 @2160 = ~Wait! Something is wrong... we're in an ambush! Prepare yourselves! The bounty hunters are upon us!~ [OH90436]
 @2161 = ~Careful, <CHARNAME>! I suspect the bard's not really a bard!~ [OH90438]
 @2162 = ~No... Maybe. But then I thought better of it. I couldn't leave you to face them alone!~ [OH90463]
-@2163 = ~<CHARNAME>! They are attempting to capture you, battle your way to freedom or become a captive once again!~
+@2163 = ~<CHARNAME>! They are attempting to capture you, battle your way to freedom or become a captive!~
 @2164 = ~That will never happen!~
 @2165 = ~Is that what they want? Very well. I'll go with you... for now.~
-@2166 = ~Praise the gods, you have saved us both once again. And from a fate most dire, I am certain. You have my deepest gratitude, <CHARNAME>.~
+@2166 = ~Praise the gods, you have saved us both. And from a fate most dire, I am certain. You have my deepest gratitude, <CHARNAME>.~
 @2167 = ~Thank you for coming to my aid. Had they caught me unprepared, I wouldn't have stood a chance.~
 @2168 = ~That was close. Far too close.~
 @2169 = ~Deep enough for you to grant me a wish?~
@@ -3721,11 +3724,11 @@ Vyatri~
 @3673 = ~This has to be about one of those feuding noble nitwits, they probably cursed the ring.~
 @3674 = ~Oh no. Not Trademeet again. The stench, the manure. Animals everywhere, braying ....~
 /* changing several lines to remove Baeloth's Pit references - numbered 3675 - 3679 */
-@3675 = ~Black Pits 2: It has been several months since you defeated Sarevok in Baldur's Gate. Tales of your deeds, and whispers of your dark heritage, have spread far and wide, Even bards sing of them wherever you travel ...~
+@3675 = ~It has been several months since you defeated Sarevok in Baldur's Gate. Tales of your deeds, and whispers of your dark heritage, have spread far and wide, Even bards sing of them wherever you travel ...~
 @3676 = ~Along the Sword Coast they travelled with stealth, wits and brawn.~
 @3677 = ~Investigating matters of iron, wayward bandits and then learnt they are a Bhaalspawn.~
 @3678 = ~The final battle: a city, breath held, nearing a most unwelcome fate.~
-@3679 = ~But our heroes rose to the challenge, ending the crisis, and became the Champions of Baldur's Gate.~
+@3679 = ~But they rose to the challenge, ending the crisis, and became the Heroes of Baldur's Gate.~
 /* above line changes end here */ 
 @3680 = ~A decent yarn, though a bit TOO fantastic if you ask me.~
 @3681 = ~Thank you. It is an amazing tale, all the more so for the fact that it actually happened.~
