@@ -105,3 +105,40 @@ COPY_EXISTING ~zspdbrca.itm~ ~override~
     SAY IDENTIFIED_DESC @10091
     SET nephetel = RESOLVE_STR_REF(@15001)
     LPF ALTER_EFFECT INT_VAR match_opcode = 319 parameter1 = nephetel special = nephetel END
+
+//////// Eshpel \\\\\\\\
+INCLUDE ~%MOD_FOLDER%/lib/rp/a7-cutscene_customization.tph~
+<<<<<<<< .../inlined/cutscene.baf
+IF
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    ClearAllActions()
+    FadeToColor([30.0],0)
+    Wait(2)
+    LeaveAreaLUAPanic("oh8000", "", [697.458], SE)
+    LeaveAreaLUA("oh8000", "", [697.458], SE)
+    ActionOverride(Player2, LeaveAreaLUA("oh8000", "", [766.482], SE))
+    ActionOverride(Player3, LeaveAreaLUA("oh8000", "", [592.533], SE))
+    ActionOverride(Player4, LeaveAreaLUA("oh8000", "", [653.577], SE))
+    ActionOverride(Player5, LeaveAreaLUA("oh8000", "", [701.596], SE))
+    ActionOverride(Player6, LeaveAreaLUA("oh8000", "", [744.557], SE))
+    Wait(2)
+    MultiPlayerSync()
+    EndCutSceneMode()
+END
+>>>>>>>>
+LAF EXTEND_CUT250
+  STR_VAR baf_file = ".../inlined/cutscene.baf"
+  RET guard = value  // can be used later to set the required global variable
+END
+COPY ~%MOD_FOLDER%/items/eshpel~ ~override~
+COPY_EXISTING ~zbeshped.itm~ ~override~
+    SAY NAME2 @10092
+    SAY IDENTIFIED_DESC @10093
+COPY_EXISTING ~zbeshpeu.itm~ ~override~
+    SAY NAME2 @10092
+    SAY IDENTIFIED_DESC @10094
+    LPF ALTER_EFFECT INT_VAR match_opcode = 265 parameter1 = guard END
+
+
