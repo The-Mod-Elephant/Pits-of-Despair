@@ -2,19 +2,20 @@
 A file where anyone can add vanilla npc interjections they think are suitable in PoD
 These lines have not been tra-ified due to not being proofread or approved yet */ 
 
-/* intro dialogue upon being transported to OH8100, extending to voghlin's dialogue */ 
-EXTEND_BOTTOM OHBVOGHI 1
-+ ~NumInPartyGT(1) Global("ZBBP2inBG2","GLOBAL",1)~ + ~Who is this Dennaton? Where are we?~ EXTERN OHBVOGHI ZBPoDIntro
-+ ~!NumInPartyGT(1) Global("ZBBP2inBG2","GLOBAL",1)~ + ~Who is this Dennaton? Where am I?~ EXIT
+/* intro dialogue upon being transported to OH8100, after speaking to Voghiln */ 
+APPEND PLAYER1
+
+IF ~Global("ZBPODINTRO","GLOBAL",1)~ THEN BEGIN ZBPODIntro
+SAY ~(You've been captured once again. But you broke free from your imprisonment once, surely this Dennaton can't prove a greater threat than Irenicus?)~
++ ~NumInPartyGT(1) Global("ZBBP2inBG2","GLOBAL",1)~ + ~Who is this Dennaton? Where are we?~ EXTERN Player1 ZBPoDIntro2
++ ~!NumInPartyGT(1) Global("ZBBP2inBG2","GLOBAL",1)~ + ~Who is this Dennaton? Where am I?~ DO ~SetGlobal("ZBPODINTRO","GLOBAL",2)~ EXIT
 END
 
-EXTEND_BOTTOM OHBVOGHI 21
-+ ~NumInPartyGT(1) Global("ZBBP2inBG2","GLOBAL",1)~ + ~Who is this Dennaton? Where are we?~ EXTERN OHBVOGHI ZBPoDIntro
-+ ~!NumInPartyGT(1) Global("ZBBP2inBG2","GLOBAL",1)~ + ~Who is this Dennaton? Where am I?~ EXIT
-END
+END // FOR TOP APPEND 
 
-CHAIN OHBVOGHI ZBPoDIntro /* it's not letting me extern to Player1, will need to find a way around that, or it will appear as though Voghlin's talking here, which we don't want */ 
-~You've been captured once again. But you broke free from your imprisonment once, surely this Dennaton can't prove a greater threat than Irenicus?~ 
+CHAIN Player1 ZBPoDIntro2 
+~(Your companions seem every bit as confused as you are.)~ 
+DO ~SetGlobal("ZBPODINTRO","GLOBAL",2)~
 /* these dialogues aren't fully in character yet just quick placeholders to test */ 
 == AERIEJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~Where are we? I feel...strange. And I can't access my magic. Be careful, <CHARNAME>.~
 == ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~An ill omen. Best we explore and gain our bearings.~
@@ -46,6 +47,6 @@ END
 /* random singe interjections to dialogue */ 
 
 I_C_T OHBMOLZA 19 ZBJAN1
-== JANJ IF ~InParty("JAN") InMyArea("JAN") !StateCheck("JAN",CD_STATE_NOTVALID)~ THEN ~Turnip bandits. Truly the most despicable of all villians. Why, this reminds me of a story, my cousin, Dipsy, was robbed by a most unbecoming fellow who...~
+== JANJ IF ~Global("ZBPODINTRO","GLOBAL",1) InParty("JAN") InMyArea("JAN") !StateCheck("JAN",CD_STATE_NOTVALID)~ THEN ~Turnip bandits. Truly the most despicable of all villians. Why, this reminds me of a story, my cousin, Dipsy, was robbed by a most unbecoming fellow who...~
 END
 

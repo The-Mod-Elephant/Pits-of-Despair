@@ -768,3 +768,19 @@ THEN
 		SetGlobal("OHB_WINGED_GAUNTLET","GLOBAL",0)
 END
 
+/* player has dialogue upon entering the area */ 
+IF
+Global("ZBBP2inBG2","GLOBAL",1) /* we're playing pits of despair */       
+Global("ZBPODINTRO","GLOBAL",0) /* we haven't read the intro dialogue yet */
+THEN
+RESPONSE #100
+SetGlobal("ZBPODINTRO","GLOBAL",1)
+END
+
+IF
+  Global("ZBPODINTRO","GLOBAL",1)
+ THEN
+ RESPONSE #100
+  ActionOverride(Player1,StartDialog("player1",Player1))
+END 
+/* intro dialogue script ends here */ 

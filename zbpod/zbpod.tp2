@@ -34,10 +34,7 @@ INCLUDE ~zbpod/lib/fragments/setup_cre.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 COMPILE EVALUATE_BUFFER ~zbpod/cutscene~
-//COMPILE EVALUATE_BUFFER ~zbpod/bp2scripts~
-
-
-
+COMPILE EVALUATE_BUFFER ~zbpod/bp2scripts~ /* bucketfulofsunshine, 20241111 - this was commented out but i compiled for my dialogue tests. is there a reason why it was commented out before? */ 
 
 /*
   bucket's tp2 additions - still need to be approved and tested 
@@ -48,9 +45,9 @@ COMPILE EVALUATE_BUFFER ~zbpod/cutscene~
 COMPILE EVALUATE_BUFFER ~zbpod/dlg/ohbbello.d~
                         ~zbpod/dlg/ohbdenna.d~ /* still needs HEAVY edits */ 
 						~zbpod/dlg/ohbjoker.d~
-						~zbpod/dlg/ohbnajim.d~ /* still needs some edits */ 
-						~zbpod/dlg/ohbbrodl.d~ /* still needs some edits */
-						~zbpod/dlg/ohbstann.d~ /* edits haven't started */ 
+						~zbpod/dlg/ohbnajim.d~  
+						~zbpod/dlg/ohbbrodl.d~ 
+						~zbpod/dlg/ohbstann.d~ 
 						
 												
 /* copy edited sound files over */
