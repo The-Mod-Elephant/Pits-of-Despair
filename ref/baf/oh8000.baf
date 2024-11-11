@@ -1,0 +1,640 @@
+IF
+    Global("OHB_START_TAVERN","MYAREA",0)
+THEN
+    RESPONSE #100
+        StartCutSceneMode()
+        FadeToColor([0.0],0)
+        SetGlobal("OHB_START_TAVERN","MYAREA",1)
+        SetGlobal("BDAI_RESET_TIMERS","GLOBAL",1)
+        StartCutScene("ohbcut00")
+END
+
+IF
+    False()
+    Global("OHB_START_TAVERN","MYAREA",0)
+THEN
+    RESPONSE #100
+        StartCutSceneMode()
+        FadeToColor([0.0],0)
+        SetGlobal("OHB_START_TAVERN","MYAREA",1)
+        SetGlobal("BDAI_RESET_TIMERS","GLOBAL",1)
+        SetGlobal("OHB_BP2_CAPTURE","GLOBAL",1)
+        Explore()
+        ActionOverride(Player1,ChangeAIScript("OHBPLOT",OVERRIDE))
+        ActionOverride(Player2,ChangeAIScript("OHBPLOT",OVERRIDE))
+        ActionOverride(Player3,ChangeAIScript("OHBPLOT",OVERRIDE))
+        ActionOverride(Player4,ChangeAIScript("OHBPLOT",OVERRIDE))
+        ActionOverride(Player5,ChangeAIScript("OHBPLOT",OVERRIDE))
+        ActionOverride(Player6,ChangeAIScript("OHBPLOT",OVERRIDE))
+        ApplySpellRES("SPBP001",Player1)  // No such index
+        ApplySpellRES("SPBP001",Player2)  // No such index
+        ApplySpellRES("SPBP001",Player3)  // No such index
+        ApplySpellRES("SPBP001",Player4)  // No such index
+        ApplySpellRES("SPBP001",Player5)  // No such index
+        ApplySpellRES("SPBP001",Player6)  // No such index
+        ReallyForceSpell(Player1,LOSE_ALL)  // SPIN838.SPL (Loses all Bhaal powers)
+        CreateCreature("ohbbarte",[489.405],SE)  // Bartender
+        CreateCreature("ohbjoker",[585.473],SE)  // Joker
+        ActionOverride("ohbjoker",Polymorph(NOBLE_WOMAN))
+        ActionOverride("ohbjoker",SetName(1083))  // Bard
+        CreateCreature("ohbdorma",[786.391],SW)  // Dormamus
+        ActionOverride("ohbdorma",Polymorph(STATIC_PEASANT_MAN_CHAIR))
+        ActionOverride("ohbdorma",SetName(93613))  // Fan
+        CreateCreature("ohbbanno",[498.577],E)  // Bannor
+        ActionOverride("ohbbanno",Polymorph(PEASANT_MAN))
+        ActionOverride("ohbbanno",SetName(93613))  // Fan
+        CreateCreature("ohbthass",[753.665],NW)  // Thassk Kun
+        ActionOverride("ohbthass",Polymorph(STATIC_PEASANT_MAN_CHAIR))
+        ActionOverride("ohbthass",SetName(93613))  // Fan
+        CreateCreature("ohbpol",[882.557],W)  // Pol Pyrrus
+        ActionOverride("ohbpol",Polymorph(STATIC_PEASANT_MAN_CHAIR))
+        ActionOverride("ohbpol",SetName(93613))  // Fan
+        ActionOverride(Player1,JumpToPoint([697.458]))
+        ActionOverride(Player2,JumpToPoint([766.482]))
+        ActionOverride(Player3,JumpToPoint([592.533]))
+        ActionOverride(Player4,JumpToPoint([653.577]))
+        ActionOverride(Player5,JumpToPoint([701.596]))
+        ActionOverride(Player6,JumpToPoint([744.557]))
+        ActionOverride(Player1,FaceObject("ohbjoker"))  // Joker
+        ActionOverride(Player2,FaceObject("ohbjoker"))  // Joker
+        ActionOverride(Player3,FaceObject("ohbjoker"))  // Joker
+        ActionOverride(Player4,FaceObject("ohbjoker"))  // Joker
+        ActionOverride(Player5,FaceObject("ohbjoker"))  // Joker
+        ActionOverride(Player6,FaceObject("ohbjoker"))  // Joker
+        MoveViewPoint([672.468],INSTANT)
+        Wait(2)
+        DisplayStringPoint([672.468],102546)  // It has been several months since your escape from Baeloth's Black Pits. Tales of your deeds have spread far and wide, and bards sing of them wherever you travel...
+        Wait(5)
+        FadeToColor([0.0],0)
+        Wait(5)
+        FadeFromColor([60.0],0)
+        SmallWait(12)
+        DisplayStringHead("ohbjoker",90407)  // ...And so it came that Baeloth's game was quickly turned to naught.
+        Wait(3)
+        DisplayStringHead("ohbjoker",102802)  // The swords were sheathed, the spells unweaved, the final battle fought.
+        Wait(3)
+        DisplayStringHead("ohbjoker",102803)  // Our heroes' wits had solved the pits; their freedom did they win.
+        Wait(3)
+        DisplayStringHead("ohbjoker",102804)  // So fled the cage 'midst Baeloth's rage upon a mighty djinni.
+        Wait(3)
+        SmallWait(7)
+        DisplayStringHead("OHBTHASS",90412)  // A decent yarn, though a bit TOO fantastic if you ask me.
+        Wait(5)
+        DisplayStringHead("OHBJOKER",90413)  // Thank you. It is an amazing tale, all the more so for the fact that it actually happened.
+        Wait(5)
+        DisplayStringHead("OHBPOL",90417)  // You are a talented entertainer, madam, but do not insult my intelligence. The story you told is naught but a story. It never happened.
+        Wait(7)
+        ActionOverride("ohbjoker",StartDialogueNoSet(Player1))
+END
+
+IF
+    Global("ohb_suzail_player1_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    OR(3)
+        StateCheck(Player1,STATE_REALLY_DEAD)
+        !InParty(Player1)
+        TriggerOverride(Player1,Global("ohb_suza","locals",1))
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_player1_lost","oh8000",1)  // TBP2 - Suzail Tavern
+        IncrementGlobal("ohb_suzail_players_down","oh8000",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+    Global("ohb_suzail_player2_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    OR(3)
+        StateCheck(Player2,STATE_REALLY_DEAD)
+        !InParty(Player2)
+        TriggerOverride(Player2,Global("ohb_suza","locals",1))
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_player2_lost","oh8000",1)  // TBP2 - Suzail Tavern
+        IncrementGlobal("ohb_suzail_players_down","oh8000",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+    Global("ohb_suzail_player3_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    OR(3)
+        StateCheck(Player3,STATE_REALLY_DEAD)
+        !InParty(Player3)
+        TriggerOverride(Player3,Global("ohb_suza","locals",1))
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_player3_lost","oh8000",1)  // TBP2 - Suzail Tavern
+        IncrementGlobal("ohb_suzail_players_down","oh8000",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+    Global("ohb_suzail_player4_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    OR(3)
+        StateCheck(Player4,STATE_REALLY_DEAD)
+        !InParty(Player4)
+        TriggerOverride(Player4,Global("ohb_suza","locals",1))
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_player4_lost","oh8000",1)  // TBP2 - Suzail Tavern
+        IncrementGlobal("ohb_suzail_players_down","oh8000",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+    Global("ohb_suzail_player5_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    OR(3)
+        StateCheck(Player5,STATE_REALLY_DEAD)
+        !InParty(Player5)
+        TriggerOverride(Player5,Global("ohb_suza","locals",1))
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_player5_lost","oh8000",1)  // TBP2 - Suzail Tavern
+        IncrementGlobal("ohb_suzail_players_down","oh8000",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+    Global("ohb_suzail_player6_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    OR(3)
+        StateCheck(Player6,STATE_REALLY_DEAD)
+        !InParty(Player6)
+        TriggerOverride(Player6,Global("ohb_suza","locals",1))
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_player6_lost","oh8000",1)  // TBP2 - Suzail Tavern
+        IncrementGlobal("ohb_suzail_players_down","oh8000",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+    Global("ohb_suzail_najim_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    OR(2)
+        Dead("ohbnajim")  // Najim
+        TriggerOverride("ohbnajim",Global("ohb_suza","locals",1))
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_najim_lost","oh8000",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+    Global("ohb_suzail_pol_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    OR(2)
+        Dead("ohbpol")  // Pol Pyrrus
+        !InMyArea("ohbpol")  // Pol Pyrrus
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pol_lost","oh8000",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+    Global("ohb_suzail_thass_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    OR(2)
+        Dead("ohbthass")  // Thassk Kun
+        !InMyArea("ohbthass")  // Thassk Kun
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_thass_lost","oh8000",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+    Global("ohb_suzail_joker_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    OR(2)
+        Dead("ohbjoker")  // Joker
+        !InMyArea("ohbjoker")  // Joker
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_joker_lost","oh8000",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+    Global("ohb_suzail_dorma_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    OR(2)
+        Dead("ohbdorma")  // Dormamus
+        !InMyArea("ohbdorma")  // Dormamus
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_dorma_lost","oh8000",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+    Global("ohb_suzail_banno_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    OR(2)
+        Dead("ohbbanno")  // Bannor
+        !InMyArea("ohbbanno")  // Bannor
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_banno_lost","oh8000",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+    Global("ohb_suzail_pc1_bark","oh8000",0)  // TBP2 - Suzail Tavern
+    TriggerOverride(Player1,Global("ohb_suza","locals",1))
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc1_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player1,102549)  // I... I can't move!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc1_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player1,102550)  // I'm paralyzed!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc1_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player1,102551)  // Can't... Can't move!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc1_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player1,102552)  // I'm stuck!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc1_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player1,102553)  // Help! I'm trapped!
+END
+
+IF
+    Global("ohb_suzail_pc2_bark","oh8000",0)  // TBP2 - Suzail Tavern
+    TriggerOverride(Player2,Global("ohb_suza","locals",1))
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc2_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player2,102549)  // I... I can't move!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc2_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player2,102550)  // I'm paralyzed!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc2_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player2,102551)  // Can't... Can't move!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc2_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player2,102552)  // I'm stuck!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc2_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player2,102553)  // Help! I'm trapped!
+END
+
+IF
+    Global("ohb_suzail_pc3_bark","oh8000",0)  // TBP2 - Suzail Tavern
+    TriggerOverride(Player3,Global("ohb_suza","locals",1))
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc3_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player3,102549)  // I... I can't move!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc3_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player3,102550)  // I'm paralyzed!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc3_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player3,102551)  // Can't... Can't move!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc3_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player3,102552)  // I'm stuck!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc3_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player3,102553)  // Help! I'm trapped!
+END
+
+IF
+    Global("ohb_suzail_pc4_bark","oh8000",0)  // TBP2 - Suzail Tavern
+    TriggerOverride(Player4,Global("ohb_suza","locals",1))
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc4_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player4,102549)  // I... I can't move!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc4_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player4,102550)  // I'm paralyzed!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc4_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player4,102551)  // Can't... Can't move!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc4_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player4,102552)  // I'm stuck!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc4_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player4,102553)  // Help! I'm trapped!
+END
+
+IF
+    Global("ohb_suzail_pc5_bark","oh8000",0)  // TBP2 - Suzail Tavern
+    TriggerOverride(Player5,Global("ohb_suza","locals",1))
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc5_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player5,102549)  // I... I can't move!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc5_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player5,102550)  // I'm paralyzed!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc5_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player5,102551)  // Can't... Can't move!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc5_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player5,102552)  // I'm stuck!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc5_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player5,102553)  // Help! I'm trapped!
+END
+
+IF
+    Global("ohb_suzail_pc6_bark","oh8000",0)  // TBP2 - Suzail Tavern
+    TriggerOverride(Player6,Global("ohb_suza","locals",1))
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc6_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player6,102549)  // I... I can't move!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc6_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player6,102550)  // I'm paralyzed!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc6_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player6,102551)  // Can't... Can't move!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc6_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player6,102552)  // I'm stuck!
+    RESPONSE #100
+        SetGlobal("ohb_suzail_pc6_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead(Player6,102553)  // Help! I'm trapped!
+END
+
+IF
+    Global("ohb_bp2_capture","global",4)
+    Global("ohb_suzail_players_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    Global("ohb_suzail_player1_lost","oh8000",1)  // TBP2 - Suzail Tavern
+    Global("ohb_suzail_player2_lost","oh8000",1)  // TBP2 - Suzail Tavern
+    Global("ohb_suzail_player3_lost","oh8000",1)  // TBP2 - Suzail Tavern
+    Global("ohb_suzail_player4_lost","oh8000",1)  // TBP2 - Suzail Tavern
+    Global("ohb_suzail_player5_lost","oh8000",1)  // TBP2 - Suzail Tavern
+    Global("ohb_suzail_player6_lost","oh8000",1)  // TBP2 - Suzail Tavern
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_players_lost","oh8000",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+    Global("ohb_bp2_capture","global",4)
+    Global("ohb_suzail_hunters_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    Global("ohb_suzail_pol_lost","oh8000",1)  // TBP2 - Suzail Tavern
+    Global("ohb_suzail_thass_lost","oh8000",1)  // TBP2 - Suzail Tavern
+    Global("ohb_suzail_joker_lost","oh8000",1)  // TBP2 - Suzail Tavern
+    Global("ohb_suzail_dorma_lost","oh8000",1)  // TBP2 - Suzail Tavern
+    Global("ohb_suzail_banno_lost","oh8000",1)  // TBP2 - Suzail Tavern
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_suzail_hunters_lost","oh8000",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+    Global("ohb_bp2_capture","global",4)
+    Global("ohb_suzail_players_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    !Dead("ohbnajim")  // Najim
+    Global("ohb_suzail_hunters_lost","oh8000",1)  // TBP2 - Suzail Tavern
+    Dead("ohbwing")  // The Winged
+THEN
+    RESPONSE #100
+        SetCursorState(TRUE)
+        ClearAllActions()
+        SetGlobal("ohb_bp2_capture","global",5)
+        ActionOverride("ohbnajim",SetSequence(SEQ_READY))
+        ActionOverride(Player1,SetSequence(SEQ_READY))
+        ActionOverride(Player2,SetSequence(SEQ_READY))
+        ActionOverride(Player3,SetSequence(SEQ_READY))
+        ActionOverride(Player4,SetSequence(SEQ_READY))
+        ActionOverride(Player5,SetSequence(SEQ_READY))
+        ActionOverride(Player6,SetSequence(SEQ_READY))
+        CreateCreature("cutspy",[730.560],N)  // No such index
+        ReallyForceSpellPointRES("ohbsuza2",[1.1])  // No such index
+        MoveViewObject("ohbnajim",VERY_FAST)  // Najim
+        SetGlobal("ohb_bp2_capture","global",8)
+END
+
+IF
+    Global("ohb_bp2_capture","global",4)
+    Global("ohb_suzail_players_lost","oh8000",0)  // TBP2 - Suzail Tavern
+    Dead("ohbnajim")  // Najim
+    Global("ohb_suzail_hunters_lost","oh8000",1)  // TBP2 - Suzail Tavern
+    Dead("ohbwing")  // The Winged
+THEN
+    RESPONSE #100
+        SetCursorState(TRUE)
+        ClearAllActions()
+        SetGlobal("ohb_bp2_capture","global",5)
+        ActionOverride(Player1,SetSequence(SEQ_READY))
+        ActionOverride(Player2,SetSequence(SEQ_READY))
+        ActionOverride(Player3,SetSequence(SEQ_READY))
+        ActionOverride(Player4,SetSequence(SEQ_READY))
+        ActionOverride(Player5,SetSequence(SEQ_READY))
+        ActionOverride(Player6,SetSequence(SEQ_READY))
+        CreateCreature("cutspy",[730.560],N)  // No such index
+        ReallyForceSpellPointRES("ohbsuza2",[1.1])  // No such index
+        MoveViewPoint([680.355],VERY_FAST)
+        Wait(3)
+        CreateVisualEffect("SPPORTAL",[680.355])
+        SmallWait(25)
+        SetGlobal("sprite_is_deadohbnajim","global",0)
+        CreateCreature("ohbnajim",[680.355],S)  // Najim
+        CreateVisualEffect("SPGFLSHI",[680.355])
+        SmallWait(5)
+        PlaySound("ogrem01")
+        SetGlobal("ohb_bp2_capture","global",8)
+END
+
+IF
+    Global("ohb_bp2_capture","global",4)
+    Global("ohb_suzail_players_lost","oh8000",1)  // TBP2 - Suzail Tavern
+    !Dead("ohbwing")  // The Winged
+THEN
+    RESPONSE #100
+        SetCursorState(TRUE)
+        SetGlobal("ohb_bp2_capture","global",5)
+        ChangeEnemyAlly("ohbwing",NEUTRAL)  // The Winged
+        ChangeEnemyAlly("ohbpol",NEUTRAL)  // Pol Pyrrus
+        ChangeEnemyAlly("ohbjoker",NEUTRAL)  // Joker
+        ChangeEnemyAlly("ohbbanno",NEUTRAL)  // Bannor
+        ChangeEnemyAlly("ohbthass",NEUTRAL)  // Thassk Kun
+        ChangeEnemyAlly("ohbdorma",NEUTRAL)  // Dormamus
+        ClearAllActions()
+        ActionOverride("ohbbanno",SetSequence(SEQ_READY))
+        ActionOverride("ohbdorma",SetSequence(SEQ_READY))
+        ActionOverride("ohbjoker",SetSequence(SEQ_READY))
+        ActionOverride("ohbpol",SetSequence(SEQ_READY))
+        ActionOverride("ohbthass",SetSequence(SEQ_READY))
+        ActionOverride("ohbwing",SetSequence(SEQ_READY))
+        CreateCreature("cutspy",[730.560],N)  // No such index
+        MoveViewObject("ohbwing",VERY_FAST)  // The Winged
+        ActionOverride("ohbwing",FaceObject("ohbnajim"))  // Najim
+        ActionOverride("ohbwing",SetSequence(SEQ_HEAD_TURN))
+        SetGlobal("ohb_bp2_capture","global",6)
+END
+
+IF
+    Global("ohb_bp2_capture","global",4)
+    Global("ohb_suzail_players_lost","oh8000",1)  // TBP2 - Suzail Tavern
+    Dead("ohbwing")  // The Winged
+THEN
+    RESPONSE #100
+        SetCursorState(TRUE)
+        SetGlobal("ohb_bp2_capture","global",5)
+        ChangeEnemyAlly("ohbwing",NEUTRAL)  // The Winged
+        ChangeEnemyAlly("ohbpol",NEUTRAL)  // Pol Pyrrus
+        ChangeEnemyAlly("ohbjoker",NEUTRAL)  // Joker
+        ChangeEnemyAlly("ohbbanno",NEUTRAL)  // Bannor
+        ChangeEnemyAlly("ohbthass",NEUTRAL)  // Thassk Kun
+        ChangeEnemyAlly("ohbdorma",NEUTRAL)  // Dormamus
+        ClearAllActions()
+        ActionOverride("ohbbanno",SetSequence(SEQ_READY))
+        ActionOverride("ohbdorma",SetSequence(SEQ_READY))
+        ActionOverride("ohbjoker",SetSequence(SEQ_READY))
+        ActionOverride("ohbpol",SetSequence(SEQ_READY))
+        ActionOverride("ohbthass",SetSequence(SEQ_READY))
+        MoveViewPoint([790.620],VERY_FAST)
+        CreateCreature("cutspy",[730.560],N)  // No such index
+        Wait(3)
+        CreateVisualEffect("SPHOLY",[790.620])
+        SmallWait(32)
+        CreateVisualEffect("SPSPEV",[790.620])
+        SetGlobal("sprite_is_deadohbwing","global",0)
+        SmallWait(9)
+        CreateCreature("ohbwing",[790.620],NW)  // The Winged
+        ActionOverride("ohbwing",ChangeAIScript("",OVERRIDE))
+        ActionOverride("ohbwing",ChangeAIScript("",GENERAL))
+        ActionOverride("ohbwing",SetSequence(SEQ_AWAKE))
+        SmallWait(7)
+        CreateVisualEffectObject("SPHEALIN","ohbwing")  // The Winged
+        SmallWait(3)
+        ActionOverride("ohbwing",SetSequence(SEQ_HEAD_TURN))
+        Wait(1)
+        ActionOverride("ohbwing",SetSequence(SEQ_READY))
+        Wait(2)
+        SetGlobal("ohb_bp2_capture","global",6)
+END
+
+IF
+    Global("ohb_bp2_capture","global",6)
+    OR(12)
+        StateCheck(Player1,STATE_REALLY_DEAD)
+        StateCheck(Player2,STATE_REALLY_DEAD)
+        StateCheck(Player3,STATE_REALLY_DEAD)
+        StateCheck(Player4,STATE_REALLY_DEAD)
+        StateCheck(Player5,STATE_REALLY_DEAD)
+        StateCheck(Player6,STATE_REALLY_DEAD)
+        Dead("ohbnajim")  // Najim
+        Dead("ohbbanno")  // Bannor
+        Dead("ohbdorma")  // Dormamus
+        Dead("ohbjoker")  // Joker
+        Dead("ohbpol")  // Pol Pyrrus
+        Dead("ohbthass")  // Thassk Kun
+THEN
+    RESPONSE #100
+        SetCursorState(TRUE)
+        SetGlobal("ohb_bp2_capture","global",7)
+        ClearAllActions()
+        SmallWait(5)
+        DisplayStringHead("ohbwing",90466)  // Bind and ready them for transport. Dennaton will pay us handsomely for these ones.
+        Wait(5)
+        FadeToColor([20.0],0)
+        ApplySpellRES("SPBP001","ohbwing")  // No such index
+        Wait(1)
+        ReallyForceSpellPointRES("ohbremov",[1.1])  // No such index
+        Wait(1)
+        ReallyForceSpellPointRES("ohbsuza2",[1.1])  // No such index
+        SmallWait(1)
+        ActionOverride("ohbwing",ReallyForceSpell(Myself,CLERIC_MASS_RAISE_DEAD))  // SPPR729.SPL (Mass Raise Dead)
+        Wait(1)
+        StartCutScene("ohbcut03")
+END
+
+IF
+    Global("ohb_bp2_capture","global",6)
+THEN
+    RESPONSE #100
+        SetCursorState(TRUE)
+        SetGlobal("ohb_bp2_capture","global",7)
+        ClearAllActions()
+        SmallWait(5)
+        DisplayStringHead("ohbwing",90466)  // Bind and ready them for transport. Dennaton will pay us handsomely for these ones.
+        Wait(5)
+        FadeToColor([20.0],0)
+        ApplySpellRES("SPBP001","ohbwing")  // No such index
+        Wait(1)
+        ReallyForceSpellPointRES("ohbremov",[1.1])  // No such index
+        Wait(1)
+        ReallyForceSpellPointRES("ohbsuza2",[1.1])  // No such index
+        Wait(1)
+        StartCutScene("ohbcut03")
+END
+
+IF
+    Global("ohb_bp2_capture","global",8)
+    OR(6)
+        StateCheck(Player1,STATE_REALLY_DEAD)
+        StateCheck(Player2,STATE_REALLY_DEAD)
+        StateCheck(Player3,STATE_REALLY_DEAD)
+        StateCheck(Player4,STATE_REALLY_DEAD)
+        StateCheck(Player5,STATE_REALLY_DEAD)
+        StateCheck(Player6,STATE_REALLY_DEAD)
+THEN
+    RESPONSE #100
+        SetCursorState(TRUE)
+        SetGlobal("ohb_bp2_capture","global",9)
+        ClearAllActions()
+        Wait(2)
+        ActionOverride("ohbnajim",ForceSpell(Myself,CLERIC_MASS_RAISE_DEAD))  // SPPR729.SPL (Mass Raise Dead)
+        Wait(5)
+        ActionOverride("ohbnajim",FaceObject(Player1))
+        Wait(1)
+        ActionOverride("ohbnajim",StartDialogueNoSet(Player1))
+END
+
+IF
+    Global("ohb_bp2_capture","global",8)
+THEN
+    RESPONSE #100
+        SetCursorState(TRUE)
+        SetGlobal("ohb_bp2_capture","global",9)
+        ClearAllActions()
+        Wait(2)
+        ActionOverride("ohbnajim",FaceObject(Player1))
+        Wait(1)
+        ActionOverride("ohbnajim",StartDialogueNoSet(Player1))
+END
+
+IF
+    Global("ohb_bp2_capture","global",4)
+    Global("ohb_bartender_ot","oh8000",0)  // TBP2 - Suzail Tavern
+    !GlobalTimerNotExpired("ohb_bartender_ot_timer","oh8000")  // TBP2 - Suzail Tavern
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_bartender_ot","oh8000",1)  // TBP2 - Suzail Tavern
+        SetGlobalTimer("ohb_bartender_ot_timer","oh8000",ONE_ROUND)  // TBP2 - Suzail Tavern
+    RESPONSE #100
+        SetGlobal("ohb_bartender_ot","oh8000",1)  // TBP2 - Suzail Tavern
+        SetGlobalTimer("ohb_bartender_ot_timer","oh8000",TWO_ROUNDS)  // TBP2 - Suzail Tavern
+    RESPONSE #100
+        SetGlobal("ohb_bartender_ot","oh8000",1)  // TBP2 - Suzail Tavern
+        SetGlobalTimer("ohb_bartender_ot_timer","oh8000",THREE_ROUNDS)  // TBP2 - Suzail Tavern
+END
+
+IF
+    Global("ohb_bp2_capture","global",4)
+    Global("ohb_bartender_ot","oh8000",1)  // TBP2 - Suzail Tavern
+    GlobalTimerExpired("ohb_bartender_ot_timer","oh8000")  // TBP2 - Suzail Tavern
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_bartender_ot","oh8000",0)  // TBP2 - Suzail Tavern
+        DisplayStringHead("ohbbarte",101754)  // If you have a score to settle, take it outside... I run a tavern, not some cheap gladiator pit.
+    RESPONSE #100
+        SetGlobal("ohb_bartender_ot","oh8000",0)  // TBP2 - Suzail Tavern
+        DisplayStringHead("ohbbarte",101755)  // Ladies, gentlemen, please... That's expensive furniture you're destroying!
+    RESPONSE #100
+        SetGlobal("ohb_bartender_ot","oh8000",0)  // TBP2 - Suzail Tavern
+        DisplayStringHead("ohbbarte",101756)  // The losing side is paying for property damage with their belongings.
+    RESPONSE #100
+        SetGlobal("ohb_bartender_ot","oh8000",0)  // TBP2 - Suzail Tavern
+        DisplayStringHead("ohbbarte",101757)  // Come on, if you're gonna fight, fight like you mean it.
+    RESPONSE #100
+        SetGlobal("ohb_bartender_ot","oh8000",0)  // TBP2 - Suzail Tavern
+        DisplayStringHead("ohbbarte",101758)  // Let me know if anyone ruptures a knee. The local guard captain is short of men-at-arms.
+    RESPONSE #100
+        SetGlobal("ohb_bartender_ot","oh8000",0)  // TBP2 - Suzail Tavern
+        DisplayStringHead("ohbbarte",101759)  // Adventurers, always the same. Serve them a round and they're after each other's throats in minutes.
+END
+
+IF
+    Global("ohb_najim_intro_bark","oh8000",0)  // TBP2 - Suzail Tavern
+    GlobalGT("ohb_suzail_players_down","oh8000",2)  // TBP2 - Suzail Tavern
+    Global("ohb_suzail_hunters_lost","oh8000",0)  // TBP2 - Suzail Tavern
+THEN
+    RESPONSE #100
+        SetGlobal("ohb_najim_intro_bark","oh8000",1)  // TBP2 - Suzail Tavern
+        DisplayStringHead("ohbnajim",102548)  // The battle is hopeless, my friend! Lay down your arms and perhaps they will grant you mercy.
+END
+
