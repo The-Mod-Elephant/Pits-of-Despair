@@ -46,13 +46,14 @@ COPY_EXISTING ~zbggalea.itm~ ~override~
     SAY UNIDENTIFIED_DESC @10022
     SAY IDENTIFIED_DESC @10023
 COPY_EXISTING ~zbggaleb.spl~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF(@10024) END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 2 parameter1 = RESOLVE_STR_REF(@10025) END
+    LPF ALTER_EFFECT INT_VAR match_opcode=139 match_probability1=49 parameter1=RESOLVE_STR_REF(@10024) END
+    LPF ALTER_EFFECT INT_VAR match_opcode=139 match_probability2=50 parameter1=RESOLVE_STR_REF(@10025) END
 
+// todo decide implementation of parrying effect
 
 //////// SERAPHIC GALE +6 \\\\\\\\
 
-
+// pending
 
 //////// dark0dave PROFANE +4 \\\\\\\\
 COPY ~%MOD_FOLDER%/items/profane~ ~override~
@@ -103,6 +104,18 @@ COPY_EXISTING ~zspdbrca.itm~ ~override~
     SAY IDENTIFIED_DESC @10091
     SET nephetel = RESOLVE_STR_REF(@15001)
     LPF ALTER_EFFECT INT_VAR match_opcode = 319 parameter1 = nephetel special = nephetel END
+
+
+//////// Nephy's Rogue's luck +1 \\\\\\\\
+COPY ~%MOD_FOLDER%/items/nephy_ring~ ~override~
+COPY_EXISTING ~zspdrnga.itm~ ~override~
+    SAY NAME2 @10100
+    SAY IDENTIFIED_DESC @10101
+
+//////// Improved Rogue's luck +2 \\\\\\\\
+COPY_EXISTING ~zspdrngb.itm~ ~override~
+    SAY NAME2 @10102
+    SAY IDENTIFIED_DESC @10103
 
 //////// Eshpel \\\\\\\\
 INCLUDE ~%MOD_FOLDER%/lib/a7-cutscene_customization.tph~

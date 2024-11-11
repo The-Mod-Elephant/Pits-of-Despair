@@ -252,7 +252,7 @@ Weight: 2~
 
 
 @10100 = ~Rogue's Luck +1~
-@10101 = ~This ring is a small, seemingly unremarkable charm fashioned from dark steel. According to hearsay, a rogue the favor of Tymora, goddess of luck, after she defended one of her temples from a band of fiends. As a gift, the goddess granted her a glimmer of divine fortune, which she sealed into this ring. The story goes that the charm saved her countless times, from dodging fire traps to avoiding fatal ambushes, making her one of the most successful rogues of her era.
+@10101 = ~This ring is a small, seemingly unremarkable charm fashioned from dark steel. According to hearsay, a rogue the favor of Tymora, goddess of luck, after she defended one of her temples from a band of fiends. As a gift, the goddess granted her a glimmer of divine fortune, which she sealed into this ring. The story goes that the charm saved her countless times, from dodging fire traps to avoiding fatal ambushes, making her one of the most successful rogues of her era. Only bards and thieves may wear this ring.
 
 Equipped abilities:
 – Luck: +1
@@ -263,7 +263,7 @@ Equipped abilities:
 Weight: 0~
 
 @10102 = ~Rogue's Luck +2~
-@10103 = ~This ring is a small, seemingly unremarkable charm fashioned from dark steel. According to hearsay, a rogue the favor of Tymora, goddess of luck, after she defended one of her temples from a band of fiends. As a gift, the goddess granted her a glimmer of divine fortune, which she sealed into this ring. The story goes that the charm saved her countless times, from dodging fire traps to avoiding fatal ambushes, making her one of the most successful rogues of her era.
+@10103 = ~This ring is a small, seemingly unremarkable charm fashioned from dark steel. According to hearsay, a rogue the favor of Tymora, goddess of luck, after she defended one of her temples from a band of fiends. As a gift, the goddess granted her a glimmer of divine fortune, which she sealed into this ring. The story goes that the charm saved her countless times, from dodging fire traps to avoiding fatal ambushes, making her one of the most successful rogues of her era. Only bards and thieves may wear this ring.
 
 Now that it's upgraded with blah blah blah, it's even better!
 
@@ -272,6 +272,7 @@ Equipped abilities:
 – Saving throws: +2
 – AC: +2
 – Thieving skills: +5%
+– Critical misses are no longer possible
 
 Weight: 0~
 
