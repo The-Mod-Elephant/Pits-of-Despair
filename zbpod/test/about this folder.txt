@@ -1,0 +1,3 @@
+/* new dialogue additions that haven't been fully tested & approved are thrown in here. 
+because we still need them proofread they are NOT moved over to the tra file 
+once they're approved, we'll add the @number to the d AND tra files */ 

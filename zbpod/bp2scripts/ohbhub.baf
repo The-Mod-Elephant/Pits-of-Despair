@@ -238,6 +238,74 @@ THEN
 END
 
 IF
+	Global("ohb_battle_xp_award","global",30000)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_battle_xp_award","global",0)
+		AddXPObject(Player1,30000)
+		AddXPObject(Player2,30000)
+		AddXPObject(Player3,30000)
+		AddXPObject(Player4,30000)
+		AddXPObject(Player5,30000)
+		AddXPObject(Player6,30000)
+END
+
+IF
+	Global("ohb_battle_xp_award","global",25000)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_battle_xp_award","global",0)
+		AddXPObject(Player1,25000)
+		AddXPObject(Player2,25000)
+		AddXPObject(Player3,25000)
+		AddXPObject(Player4,25000)
+		AddXPObject(Player5,25000)
+		AddXPObject(Player6,25000)
+END
+
+IF
+	Global("ohb_battle_xp_award","global",15000)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_battle_xp_award","global",0)
+		AddXPObject(Player1,15000)
+		AddXPObject(Player2,15000)
+		AddXPObject(Player3,15000)
+		AddXPObject(Player4,15000)
+		AddXPObject(Player5,15000)
+		AddXPObject(Player6,15000)
+END
+
+IF
+	Global("ohb_battle_xp_award","global",10000)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_battle_xp_award","global",0)
+		AddXPObject(Player1,10000)
+		AddXPObject(Player2,10000)
+		AddXPObject(Player3,10000)
+		AddXPObject(Player4,10000)
+		AddXPObject(Player5,10000)
+		AddXPObject(Player6,10000)
+END
+
+IF
+	Global("ohb_battle_xp_award","global",5000)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_battle_xp_award","global",0)
+		AddXPObject(Player1,5000)
+		AddXPObject(Player2,5000)
+		AddXPObject(Player3,5000)
+		AddXPObject(Player4,5000)
+		AddXPObject(Player5,5000)
+		AddXPObject(Player6,5000)
+END
+
+
+
+
+IF
 	Global("OHB_FOOD_FIGHT","MYAREA",1)
 THEN
 	RESPONSE #100
@@ -700,3 +768,19 @@ THEN
 		SetGlobal("OHB_WINGED_GAUNTLET","GLOBAL",0)
 END
 
+/* player has dialogue upon entering the area */ 
+IF
+Global("ZBBP2inBG2","GLOBAL",1) /* we're playing pits of despair */       
+Global("ZBPODINTRO","GLOBAL",0) /* we haven't read the intro dialogue yet */
+THEN
+RESPONSE #100
+SetGlobal("ZBPODINTRO","GLOBAL",1)
+END
+
+IF
+  Global("ZBPODINTRO","GLOBAL",1)
+ THEN
+ RESPONSE #100
+  ActionOverride(Player1,StartDialog("player1",Player1))
+END 
+/* intro dialogue script ends here */ 
