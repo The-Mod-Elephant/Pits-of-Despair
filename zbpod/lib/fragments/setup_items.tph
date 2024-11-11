@@ -133,9 +133,6 @@ LAF EXTEND_CUT250
   RET guard = value  // can be used later to set the required global variable
 END
 COPY ~%MOD_FOLDER%/items/eshpel~ ~override~
-COPY_EXISTING ~zbeshped.itm~ ~override~
-    SAY NAME2 @10092
-    SAY IDENTIFIED_DESC @10093
 COPY_EXISTING ~zbeshpeu.itm~ ~override~
     SAY NAME2 @10092
     SAY IDENTIFIED_DESC @10094
