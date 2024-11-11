@@ -4,22 +4,20 @@ VERSION "0.1"
 README ~%MOD_FOLDER%/README.md~
 AUTO_EVAL_STRINGS
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-AUTO_TRA ~%MOD_FOLDER%/lang/%s~
+// AUTO_TRA ~%MOD_FOLDER%/lang/%s~ unnecessary?
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/a7#add_kit_ex.tpa~
   INCLUDE ~%MOD_FOLDER%/lib/alter_script.tpa~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
 END
 
-
-AUTO_TRA ~%MOD_FOLDER%/lang/%s~
+AUTO_TRA ~zbpod/lang/%s~
 LANGUAGE  ~English~
           ~english~
-          ~%MOD_FOLDER%/lang/english/game.tra~
-          ~%MOD_FOLDER%/lang/english/weidu.tra~
-          ~%MOD_FOLDER%/lang/english/dialogs.tra~
-		  
+          ~zbpod/lang/english/game.tra~ // there are bugs associated with using the %MOD_FOLDER% variable here, thus removed
+          ~zbpod/lang/english/weidu.tra~
+          ~zbpod/lang/english/dialogs.tra~
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20001 DESIGNATED 2 LABEL ~zb_pod_ee~ // INSTALL PIT OF DESPAIR FOR ENHANCED EDITION
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
@@ -34,25 +32,25 @@ INCLUDE ~zbpod/lib/fragments/setup_cre.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 COMPILE EVALUATE_BUFFER ~zbpod/cutscene~
-COMPILE EVALUATE_BUFFER ~zbpod/bp2scripts~ /* bucketfulofsunshine, 20241111 - this was commented out but i compiled for my dialogue tests. is there a reason why it was commented out before? */ 
+COMPILE EVALUATE_BUFFER ~zbpod/bp2scripts~ /* bucketfulofsunshine, 20241111 - this was commented out but i compiled for my dialogue tests. is there a reason why it was commented out before? */
 
 /*
-  bucket's tp2 additions - still need to be approved and tested 
-                                                               */ 			
+  bucket's tp2 additions - still need to be approved and tested
+                                                               */
 
-/* compile the new dialogues and recompile old ones with the new strings */ 
-/* do we just recompile ALL 54 dialogues? only added a few that i know have been edited, there are more i need to add */ 
+/* compile the new dialogues and recompile old ones with the new strings */
+/* do we just recompile ALL 54 dialogues? only added a few that i know have been edited, there are more i need to add */
 COMPILE EVALUATE_BUFFER ~zbpod/dlg/ohbbello.d~
-                        ~zbpod/dlg/ohbdenna.d~ /* still needs HEAVY edits */ 
+                        ~zbpod/dlg/ohbdenna.d~ /* still needs HEAVY edits */
 						~zbpod/dlg/ohbjoker.d~
-						~zbpod/dlg/ohbnajim.d~  
-						~zbpod/dlg/ohbbrodl.d~ 
-						~zbpod/dlg/ohbstann.d~ 
-						
-												
-/* copy edited sound files over */
-COPY ~zbpod/wav~ ~override~ 
+						~zbpod/dlg/ohbnajim.d~
+						~zbpod/dlg/ohbbrodl.d~
+						~zbpod/dlg/ohbstann.d~
 
-/* Vanilla NPC Interjections for Pits of Despair */ 
+
+/* copy edited sound files over */
+COPY ~zbpod/wav~ ~override~
+
+/* Vanilla NPC Interjections for Pits of Despair */
 BEGIN @30000
-COMPILE ~zbpod/test/zbvci.d~ 
+COMPILE ~zbpod/test/zbvci.d~

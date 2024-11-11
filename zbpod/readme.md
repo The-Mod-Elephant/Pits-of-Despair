@@ -17,9 +17,9 @@ Adobe Photoshop, design elements assisted with Adobe Firefly
 Lazy Nezumi Pro
 
 
-Credits - 
-Project Leads: zenblack, RoyalProtector,
-Collaborator: Angel, Curian55, Crevs Daak, dark0dave, quantum_mechani, bucketfulofsunshine,
-Contributer: Glittergear,
-Playtester: suy, Aquadrizzt,
-Special Thanks:	Halmy, Argent77, Skellytz, Acifer, jastey, Camdawg 
+Credits -
+Project Leads: zenblack, RoyalProtector
+Collaborators: Angel, Curian55, CrevsDaak, dark0dave, quantum_mechani, bucketfulofsunshine
+Contributors: Glittergear
+Playtesters: suy, Aquadrizzt
+Special Thanks:	Halmy, Argent77, Skellytz, Acifer, jastey, CamDawg

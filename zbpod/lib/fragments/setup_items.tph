@@ -76,8 +76,6 @@ COPY_EXISTING ~ZBSTOFDD.ITM~ ~override~
     SAY NAME2 @10080
     SAY IDENTIFIED_DESC @10081
 
-//////// Nephy's gear \\\\\\\\
-
 //////// Nephy's dagger (Phantasmal Fang +4) \\\\\\\\
 COPY ~%MOD_FOLDER%/items/nephy_umbral_fang~ ~override~
 COPY_EXISTING ~zspddaga.itm~ ~override~
@@ -98,7 +96,7 @@ COPY_EXISTING ~zspdxboa.itm~ ~override~
 COPY_EXISTING ~zspdxb01.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10062) END
 
-//////// Nephy's supple gloves  \\\\\\\\
+//////// Nephy's supple gloves \\\\\\\\
 COPY ~%MOD_FOLDER%/items/nephy_gloves~ ~override~
 COPY_EXISTING ~zspdbrca.itm~ ~override~
     SAY NAME2 @10090
@@ -107,7 +105,7 @@ COPY_EXISTING ~zspdbrca.itm~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 319 parameter1 = nephetel special = nephetel END
 
 //////// Eshpel \\\\\\\\
-INCLUDE ~%MOD_FOLDER%/lib/rp/a7-cutscene_customization.tph~
+INCLUDE ~%MOD_FOLDER%/lib/a7-cutscene_customization.tph~
 <<<<<<<< .../inlined/cutscene.baf
 IF
 THEN
