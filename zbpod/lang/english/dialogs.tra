@@ -2804,7 +2804,8 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @2765 = ~<CHARNAME>. The rampant rumors of your recent residence are ratified. I am not surprised to see you here. Do not be shocked. My profession requires I know all persons of prominence and prosperity parading in the pit. Now you shall know my name.~ [OH92316]
 @2766 = ~I am the sultan of scholars! The regent of recorders! The baron of bards! Sought by pashas, kings, lords, and emperors alike to chronicle the conquests and catastrophes of our time. ~ [OH92317]
 @2767 = ~Dennaton caught you too, huh?~
-@2768 = ~Caught? No, no, my sad, cynical soldier of ill fortune. I am here of my own consent, to craft "The Black Pits 2: Eclectic Blood and Grue." That's the working title of my current compendium of characters cunning, captivating, and—in your case—contentious and cantankerous.~
+/* removing black pits references by renaming the book baeloth's writing */ 
+@2768 = ~Caught? No, no, my sad, cynical soldier of ill fortune. I am here of my own consent, to craft "The Pits of Despair: Bhaalspawn you best beware." That's the working title of my current compendium of characters cunning, captivating, and—in your case—contentious and cantankerous.~
 @2769 = ~What?~
 @2770 = ~I am the renowned, the beloved, the exalted, the inestimable Stannel Eibor! May you rejoice in the good fortune of meeting me in person!~ [OH92318]
 @2771 = ~I might do that later. Can I ask you a question?~
@@ -2812,8 +2813,10 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @2773 = ~Stannel Eibor? Sounds like a disease.~
 @2774 = ~You find my phonetics familiar? Please indulge my egotistic interest and inform me who speaks so similarly to this simple scribe. A king, perhaps? The lord of a great city?~ [OH92322]
 @2775 = ~Neither a king nor a lord. It was Baeloth the Entertainer.~
-@2776 = ~It was a lord of pits such as these. Baeloth was his name.~
-@2777 = ~If he was a king, then I dethroned him. It was Baeloth the Entertainer.~
+/* removing references to Baeloth's Pits */ 
+@2776 = ~A drow I met while traversing the Sword Coast. Baeloth was his name.~
+/* removing references to Baeloth's Pits */
+@2777 = ~His name, I believe, was Baeloth. We travelled together for a time.~
 @2778 = ~Yes, I remember now. It was the town idiot where I grew up.~
 @2779 = ~Ah... Yes. Through a certain sister's second servant's son, we are somehow siblings. No doubt the similarity of speech springs from our sires. Baeloth is a gifted and generous businessman. You were lucky to have made his acquaintance.~ [OH92327]
 @2780 = ~That explains it. Can I ask you something else?~
@@ -2873,9 +2876,10 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @2834 = ~Dennaton wanted the crowd warmed up, so I was forced to put the orcs down.~
 @2835 = ~A senseless battle. I've faced more formidable summer breezes. I can't believe anyone found that slaughter entertaining.~
 @2836 = ~It was over the moment I walked into the arena. In only a few seconds, I personally slew a dozen orcs!~
-/* removing references - i think this entire line (and conversation) will need to be YEETED actually, but I'll check in-game, voiced line will need to be removed if so' */ 
-@2837 = ~I'm sure prevailing over that pack of portly pig-people proved a perplexing puzzle for a preeminent pugilist like the purported "Scourge of Baeloth's Pits."~ [OH94542]
-@2838 = ~But let's not belabor the business! How's this sound: "Bagged from their natural habitat, a bold band of orcs bravely battled a bloodthirsty butcher!"~ [OH94543]
+/* removing references of baeloth's pits, altering voiced line */ 
+@2837 = ~I'm sure prevailing over that pack of portly pig-people proved a perplexing puzzle for a preeminent pugilist like the purported "Hero of Baldur's Gate."~ [ZBPOD8]
+/* changes 'butcher' to 'Bhaalspawn' for BG2EE tie-in */
+@2838 = ~But let's not belabor the business! How's this sound: "Bagged from their natural habitat, a bold band of orcs bravely battled a bloodthirsty Bhaalspawn!"~ [OH94543]
 @2839 = ~That has a bit of a spin on it, but... all right.~
 @2840 = ~I see the notion of subject neutrality is alive and well, "historian."~
 @2841 = ~Good. Chapter Two will be about that same butcher slicing open the arena scribe.~
@@ -2913,12 +2917,14 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @2872 = ~According to the schedule, a group of drow were your latest opponents.~ [OH94261]
 @2873 = ~Correct. They were ferocious combatants, but in the end, their dark spider goddess could not save them.~
 @2874 = ~Why do you even ask me about my fights? You already have the story written.~
-@2875 = ~They fell as easily as the last drow I faced, an arrogant git named Baeloth.~
+/* removing references to baeloth's pits */
+@2875 = ~They fell all too easily. Not even the legendary drow can hope to stand against me.~
 @2876 = ~Your declaration was the drivel of a deluded dimwit! Here's how it happened: "The drow were driven to defend themselves by a dogged enemy determined to decimate them. They were diabolically destroyed, their bodies disgustingly disfigured by the depraved devil."~ [OH94265]
 @2877 = ~It was absolutely nothing like that!~
 @2878 = ~Your propaganda is getting out of control.~
 @2879 = ~You know I can't wait to kill you, right?~
-@2880 = ~Your tale of defeating Baeloth so easily rings false, <CHARNAME>.~ [OH94269]
+/* removing references to baeloth's pits, removed voiced line */
+@2880 = ~Your confidence so easily rings false, <CHARNAME>.~ [ZBLANK]
 @2881 = ~With you as its subject, this chronicle will surely be a bestseller!~ [OH94270]
 @2882 = ~You have undone the unbeatable undead! How does it feel?~ [OH94868]
 @2883 = ~Glorious. Those vile creatures shall no longer trouble the good folk of Thay.~
@@ -3049,9 +3055,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @3008 = ~I'm going to strangle you with your own intestines. You hear me?~
 @3009 = ~Details, details, my deluded duelist! Now go away—you're bothering me.~ [OH94449]
 @3010 = ~You're welcome to try some other time. For the moment, I've more important matters to attend to.~ [OH94450]
-/* several edits will be needed her to address CHARNAME also being a Bhaalspawn
-but stannel's file needs heavy edits altogether so any edits that follow may end up being moot 
-if lines are used, voiced files will need be be edited or removed */
+/* removing several lines that don't take charname's bhaalspawn heritage into account */
 @3011 = ~You have beaten Bhaal's brood! Impossible... You share a sire but—how did you do it?~ [ZBLANK]
 @3012 = ~The Lord of Murder preys on the innocent. His taint influences our actions. My siblings have to be eliminated, no matter the cost.~
 @3013 = ~We may share divine power, but they still fell before a superior tactician.~ 
