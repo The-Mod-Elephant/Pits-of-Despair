@@ -1,0 +1,28 @@
+/* extending main BALDUR script, yikes, because i don't know an easier way to manage this 
+if someone else has a better solution PLEASE change this */ 
+
+/* set conditions for messenger to appear */
+
+IF
+Global("ZBPodSummonsReceived","GLOBAL",0) /* we haven't received the summons */ 
+GlobalGT("Chapter","GLOBAL",2) /* it can't happen before chapter 3 */ 
+XPGT(Player1,850000) /* player needs to have a certain level of experience */ 
+THEN
+RESPONSE #100
+SetGlobal("ZBPodSummonsReceived","GLOBAL",1)
+SetGlobalTimer("ZBPodMessengerArrives","GLOBAL",THREE_DAYS) /* set the timer for three days */ 
+Continue()
+END
+
+/* the messenger shows up */ 
+IF
+Global("ZBPodSummonsReceived","GLOBAL",1)
+GlobalTimerExpired("ZBPodMessengerArrives","GLOBAL") /* the timer has expired */ 
+AreaType(CITY) /* messenger can only approach in the city */
+CombatCounter(0) /* we're not in combat */ 
+THEN
+RESPONSE #100
+CreateCreatureObject("zbmes",Player1,0,0,0) 
+SetGlobal("ZBPodSummonsReceived","GLOBAL",2) /* we don't want the messenger to keep showing up */
+Continue()
+END
