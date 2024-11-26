@@ -12,7 +12,7 @@ COPY ~%MOD_FOLDER%/creatures/dennaton~ ~override~
 COPY_EXISTING ~ohbdenna.CRE~ ~override~
     SAY 0x08 @15002
     SAY 0x0c @15002
-	
+
 COPY ~%MOD_FOLDER%/creatures/couatl~ ~override~
 COPY_EXISTING ~zbcouatl.CRE~ ~override~
     SAY 0x08 @15003
@@ -23,32 +23,32 @@ COPY ~%MOD_FOLDER%/creatures/stirvandtraining~ ~override~
 COPY_EXISTING ~ohbstirv.CRE~ ~override~
     SAY 0x08 @15004
     SAY 0x0c @15004
-	
+
 COPY ~%MOD_FOLDER%/creatures/stirvandtraining~ ~override~
 COPY_EXISTING ~ohbmena1.CRE~ ~override~
     SAY 0x08 @15005
     SAY 0x0c @15005
-	
+
 COPY ~%MOD_FOLDER%/creatures/stirvandtraining~ ~override~
 COPY_EXISTING ~ohbmena2.CRE~ ~override~
     SAY 0x08 @15006
     SAY 0x0c @15006
-	
+
 COPY ~%MOD_FOLDER%/creatures/stirvandtraining~ ~override~
 COPY_EXISTING ~ohbmena3.CRE~ ~override~
     SAY 0x08 @15007
     SAY 0x0c @15007
-	
+
 COPY ~%MOD_FOLDER%/creatures/stirvandtraining~ ~override~
 COPY_EXISTING ~ohbmena4.CRE~ ~override~
     SAY 0x08 @15008
-    SAY 0x0c @15008	
-	
+    SAY 0x0c @15008
+
 COPY ~%MOD_FOLDER%/creatures/stirvandtraining~ ~override~
-COPY_EXISTING ~ohbmen5.CRE~ ~override~
+COPY_EXISTING ~ohbmena5.CRE~ ~override~
     SAY 0x08 @15009
     SAY 0x0c @15009
-	
+
 COPY ~%MOD_FOLDER%/creatures/stirvandtraining~ ~override~
 COPY_EXISTING ~ohbmena6.CRE~ ~override~
     SAY 0x08 @15010
@@ -58,7 +58,7 @@ COPY ~%MOD_FOLDER%/creatures/stirvandtraining~ ~override~
 COPY_EXISTING ~ohbmena7.CRE~ ~override~
     SAY 0x08 @15011
     SAY 0x0c @15011
-	
+
 COPY ~%MOD_FOLDER%/creatures/stirvandtraining~ ~override~
 COPY_EXISTING ~ohbmena8.CRE~ ~override~
     SAY 0x08 @15012
