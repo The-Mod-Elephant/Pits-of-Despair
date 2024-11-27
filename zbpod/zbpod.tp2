@@ -1,0 +1,99 @@
+BACKUP "weidu_external/zbpod/backup/"
+SUPPORT "https://www.gibberlings3.net/forums/forum/28-miscellaneous-released-mods/"
+VERSION "0.1"
+README ~%MOD_FOLDER%/README.md~
+AUTO_EVAL_STRINGS
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+AUTO_TRA ~%MOD_FOLDER%/lang/%s~
+ALWAYS
+  INCLUDE ~%MOD_FOLDER%/lib/a7#add_kit_ex.tpa~
+  INCLUDE ~%MOD_FOLDER%/lib/alter_script.tpa~
+  INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
+END
+
+
+AUTO_TRA ~%MOD_FOLDER%/lang/%s~
+LANGUAGE  ~English~
+          ~english~
+          ~zbpod/lang/english/game.tra~ // %MOD_FOLDER% has bugs associated with its use in LANGUAGE blocks
+          ~zbpod/lang/english/weidu.tra~
+          ~zbpod/lang/english/dialogs.tra~
+		  ~zbpod/lang/english/JournalEntries.tra~
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @20001 DESIGNATED 2 LABEL ~zb_pod_ee~ // INSTALL PIT OF DESPAIR FOR ENHANCED EDITION
+REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY ~%MOD_FOLDER%/spells/bp2~ ~override~
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~p_cta1.bam~ THEN BEGIN
+INCLUDE ~%MOD_FOLDER%/lib/animations.tpa~
+END
+
+INCLUDE ~zbpod/lib/fragments/setup_items.tph~
+INCLUDE ~zbpod/lib/fragments/setup_cre.tph~
+
+// Fix antimagic BP2 spell so it prevents Simulacrum from being cast
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+COMPILE EVALUATE_BUFFER ~zbpod/cutscene~
+COMPILE EVALUATE_BUFFER ~zbpod/bp2scripts~ /* bucketfulofsunshine, 20241111 - this was commented out but i compiled for my dialogue tests. is there a reason why it was commented out before? */
+
+/*
+  bucket's tp2 additions - still need to be approved and tested
+                                                               */
+
+/* compile the new dialogues and recompile old ones with the new strings */
+/* do we just recompile ALL 54 dialogues? only added a few that i know have been edited, there are more i need to add */
+COMPILE EVALUATE_BUFFER ~zbpod/dlg/ohbbello.d~
+                        ~zbpod/dlg/ohbdenna.d~ /* still needs HEAVY edits */
+						~zbpod/dlg/ohbjoker.d~
+						~zbpod/dlg/ohbnajim.d~
+						~zbpod/dlg/ohbbrodl.d~
+						~zbpod/dlg/ohbstann.d~
+
+/* copy edited sound files over */
+COPY ~zbpod/wav~ ~override~
+
+/* cutscene to transfer to OH8000 */
+COMPILE ~zbpod/test/podstr.baf~
+
+/* add messenger timer */
+EXTEND_BOTTOM ~BALDUR.bcs~ ~zbpod/test/zbmes.baf~
+/* add messenger script */
+COMPILE ~zbpod/test/zbme2.baf~
+/* add messenger creature */
+COPY ~zbpod/creatures/messenger/zbmes.cre~ ~override/zbmes.cre~
+SAY NAME1 ~Messenger~
+SAY NAME2 ~Messenger~
+WRITE_ASCII 0x248 ~zbme2~ #8  // override script
+WRITE_ASCII 0x2cc ~zbmes~  #8  // dialogue file
+COMPILE ~zbpod/test/zbmes.d~
+
+/* cutscenes for eshpel to transfer group around -
+we're not using these, we're using spells,
+and i know mine are still bugged atm
+and i won't fix them UNLESS we pivot back to using them*/
+// COMPILE ~zbpod/test/podthay.baf~
+// COMPILE ~zbpod/test/podtrades.baf~
+
+/* make eshpel conversable */
+OUTER_SET label = RESOLVE_STR_REF(~Converse~)
+
+APPEND ~ITEMDIAL.2da~
+~zbeshpeu %label% zbeshpeu~
+UNLESS ~zbeshpeu~
+
+COMPILE ~zbpod/test/zbeshpeu.d~
+        ~zbpod/test/zbvyan.d~
+
+/* new journal entries */
+ADD_JOURNAL TITLE (@800000) @800001 USING ~zbpod/lang/english/JournalEntries.tra~
+
+/* this has to be at the bottom of the tp2 because it's a new, seperate component */
+/* Vanilla NPC Interjections for Pits of Despair */
+BEGIN @30000
+COMPILE ~zbpod/test/zbvci.d~
+
