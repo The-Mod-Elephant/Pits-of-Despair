@@ -1,14 +1,14 @@
 IF
-	!GlobalTimerNotExpired("ZB_SimulacrumTimer","AR3004")
+	!GlobalTimerNotExpired("ZB_SimulacrumTimer","OH8100")
 THEN
 	RESPONSE #100
-		ApplySpellRES("ZBPDSIMC",Player1)
-		ApplySpellRES("ZBPDSIMC",Player2)
-		ApplySpellRES("ZBPDSIMC",Player3)
-		ApplySpellRES("ZBPDSIMC",Player4)
-		ApplySpellRES("ZBPDSIMC",Player5)
-		ApplySpellRES("ZBPDSIMC",Player6)
-		SetGlobalTimer("ZB_SimulacrumTimer","AR3004",7)
+		ApplySpellRES("ZBPDSIM",Player1)
+		ApplySpellRES("ZBPDSIM",Player2)
+		ApplySpellRES("ZBPDSIM",Player3)
+		ApplySpellRES("ZBPDSIM",Player4)
+		ApplySpellRES("ZBPDSIM",Player5)
+		ApplySpellRES("ZBPDSIM",Player6)
+		SetGlobalTimer("ZB_SimulacrumTimer","OH8100",7)
 END
 
 IF
