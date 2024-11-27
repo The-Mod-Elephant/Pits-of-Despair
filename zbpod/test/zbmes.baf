@@ -5,7 +5,9 @@ if someone else has a better solution PLEASE change this */
 
 IF
 Global("ZBPodSummonsReceived","GLOBAL",0) /* we haven't received the summons */ 
-GlobalGT("Chapter","GLOBAL",2) /* it can't happen before chapter 3 */ 
+GlobalGT("Chapter","GLOBAL",1) /* it can't happen before chapter 3 */ 
+!Global("Chapter","GLOBAL",4)
+!Global("Chapter","GLOBAL",5) /* messenger shouldn't spawn during brynnlaw or underdark chapters */ 
 XPGT(Player1,850000) /* player needs to have a certain level of experience */ 
 THEN
 RESPONSE #100
