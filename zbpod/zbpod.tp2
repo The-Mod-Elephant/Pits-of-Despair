@@ -87,7 +87,7 @@ APPEND ~ITEMDIAL.2da~
 UNLESS ~zbeshpeu~
 
 COMPILE ~zbpod/test/zbeshpeu.d~
-        ~zbpod/test/zbvyan.d~
+		 ~zbpod/test/zbvyan.d~
 
 /* new journal entries */
 ADD_JOURNAL TITLE (@800000) @800001 USING ~zbpod/lang/english/JournalEntries.tra~
@@ -96,4 +96,3 @@ ADD_JOURNAL TITLE (@800000) @800001 USING ~zbpod/lang/english/JournalEntries.tra
 /* Vanilla NPC Interjections for Pits of Despair */
 BEGIN @30000
 COMPILE ~zbpod/test/zbvci.d~
-
