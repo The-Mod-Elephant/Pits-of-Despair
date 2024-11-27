@@ -28,24 +28,6 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
 
 COPY ~%MOD_FOLDER%/spells/bp2~ ~override~
 
-<<<<<<<<.../zbpod/bp2_cant_project_image.baf
-IF
-	!GlobalTimerNotExpired("ZB_SimulacrumTimer","AR3004")
-THEN
-	RESPONSE #100
-		ApplySpellRES("ZBPDSIMC",Player1)
-		ApplySpellRES("ZBPDSIMC",Player2)
-		ApplySpellRES("ZBPDSIMC",Player3)
-		ApplySpellRES("ZBPDSIMC",Player4)
-		ApplySpellRES("ZBPDSIMC",Player5)
-		ApplySpellRES("ZBPDSIMC",Player6)
-		SetGlobalTimer("ZB_SimulacrumTimer","AR3004",7)
-END
->>>>>>>>
-
-EXTEND_TOP "ohbhub.BCS" ".../zbpod/bp2_cant_project_image.baf"
-
-
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~p_cta1.bam~ THEN BEGIN
 INCLUDE ~%MOD_FOLDER%/lib/animations.tpa~
 END

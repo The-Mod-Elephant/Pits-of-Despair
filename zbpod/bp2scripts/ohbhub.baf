@@ -1,4 +1,17 @@
 IF
+	!GlobalTimerNotExpired("ZB_SimulacrumTimer","AR3004")
+THEN
+	RESPONSE #100
+		ApplySpellRES("ZBPDSIMC",Player1)
+		ApplySpellRES("ZBPDSIMC",Player2)
+		ApplySpellRES("ZBPDSIMC",Player3)
+		ApplySpellRES("ZBPDSIMC",Player4)
+		ApplySpellRES("ZBPDSIMC",Player5)
+		ApplySpellRES("ZBPDSIMC",Player6)
+		SetGlobalTimer("ZB_SimulacrumTimer","AR3004",7)
+END
+
+IF
 	Global("OHB_START_HUB","MYAREA",0)
 THEN
 	RESPONSE #100
@@ -131,7 +144,7 @@ THEN
 		ActionOverride("ohbberyl",EscapeAreaMove("OH8300",1165,1075,SW))  // TBP2 - Arena 2
 		ActionOverride("ohbsymm",EscapeAreaMove("OH8300",850,975,S))  // TBP2 - Arena 2
 		Wait(1)
-		ActionOverride("ohbbrodl",DisplayStringHead(Myself,92868))  // Hmm... 
+		ActionOverride("ohbbrodl",DisplayStringHead(Myself,92868))  // Hmm...
 		Wait(2)
 		ActionOverride("ohbbrodl",FaceObject([PC]))
 		SmallWait(5)
@@ -768,9 +781,9 @@ THEN
 		SetGlobal("OHB_WINGED_GAUNTLET","GLOBAL",0)
 END
 
-/* player has dialogue upon entering the area */ 
+/* player has dialogue upon entering the area */
 IF
-Global("ZBBP2inBG2","GLOBAL",1) /* we're playing pits of despair */       
+Global("ZBBP2inBG2","GLOBAL",1) /* we're playing pits of despair */
 Global("ZBPODINTRO","GLOBAL",0) /* we haven't read the intro dialogue yet */
 THEN
 RESPONSE #100
@@ -782,5 +795,5 @@ IF
  THEN
  RESPONSE #100
   ActionOverride(Player1,StartDialog("player1",Player1))
-END 
-/* intro dialogue script ends here */ 
+END
+/* intro dialogue script ends here */
