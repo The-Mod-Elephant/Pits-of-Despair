@@ -123,6 +123,11 @@ COPY_EXISTING ~zspdroda.itm~ ~override~
     SAY NAME2 @10110
     SAY IDENTIFIED_DESC @10111
 
+//////// Vyatri's Note (quest) \\\\\\\\
+COPY ~%MOD_FOLDER%/items/vyatrinote~ ~override~
+COPY_EXISTING ~zbpdnote.itm~ ~override~
+    SAY NAME2 @10112
+    SAY IDENTIFIED_DESC @3670
 
 //////// Eshpel \\\\\\\\
 INCLUDE ~%MOD_FOLDER%/lib/a7-cutscene_customization.tph~
