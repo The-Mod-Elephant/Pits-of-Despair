@@ -8,7 +8,7 @@ THEN
 		ApplySpellRES("ZBPDSIM",Player4)
 		ApplySpellRES("ZBPDSIM",Player5)
 		ApplySpellRES("ZBPDSIM",Player6)
-		SetGlobalTimer("ZB_SimulacrumTimer","OH8100",7)
+		SetGlobalTimer("ZB_SimulacrumTimer","OH8100",3)
 END
 
 IF
