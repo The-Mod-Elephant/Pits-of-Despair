@@ -1,6 +1,8 @@
 // components
 @20000 = "Install required Black Pits files for Original Games" // changed numbers to avoid conflicts with game.tra
-@20001 = "Pits of Despair for Enhanced Edition (Note: Does not function from Black Pits 2 standalone campaign. Must be played in the Baldur's Gate 2 campaign.)"
+@20001 = "Pits of Despair for Enhanced Edition
+
+WARNING! Will break the default the Black Pits 2 standalone campaign. We are not responsible for any bugs you find or if your mod installation is compromised if you attempt to play that campaign with this mod installed."
 
 // warnings
 @20050 = "Not available for your game version"
