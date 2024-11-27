@@ -30,15 +30,16 @@ COPY ~%MOD_FOLDER%/spells/bp2~ ~override~
 
 <<<<<<<<.../zbpod/bp2_cant_project_image.baf
 IF
-	AreaCheckAllegiance(PC)
+	!GlobalTimerNotExpired("ZB_SimulacrumTimer","AR3004")
 THEN
 	RESPONSE #100
-		ApplySpellRES("ZBPDSIMA",Player1)
-		ApplySpellRES("ZBPDSIMA",Player2)
-		ApplySpellRES("ZBPDSIMA",Player3)
-		ApplySpellRES("ZBPDSIMA",Player4)
-		ApplySpellRES("ZBPDSIMA",Player5)
-		ApplySpellRES("ZBPDSIMA",Player6)
+		ApplySpellRES("ZBPDSIMC",Player1)
+		ApplySpellRES("ZBPDSIMC",Player2)
+		ApplySpellRES("ZBPDSIMC",Player3)
+		ApplySpellRES("ZBPDSIMC",Player4)
+		ApplySpellRES("ZBPDSIMC",Player5)
+		ApplySpellRES("ZBPDSIMC",Player6)
+		SetGlobalTimer("ZB_SimulacrumTimer","AR3004",7)
 END
 >>>>>>>>
 
