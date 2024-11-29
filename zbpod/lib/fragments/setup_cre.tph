@@ -60,3 +60,13 @@ COPY ~%MOD_FOLDER%/creatures/brodle~ ~override~
 COPY_EXISTING ~ohbbrodl.CRE~ ~override~
     SAY 0x08 @15013
     SAY 0x0c @15013
+	
+	COPY ~%MOD_FOLDER%/creatures/voghiln~ ~override~
+COPY_EXISTING ~ohbvoghi.CRE~ ~override~
+    SAY 0x08 @15014
+    SAY 0x0c @15014
+	
+	COPY ~%MOD_FOLDER%/creatures/bellowgulp~ ~override~
+COPY_EXISTING ~ohbbello.CRE~ ~override~
+    SAY 0x08 @15015
+    SAY 0x0c @15015
