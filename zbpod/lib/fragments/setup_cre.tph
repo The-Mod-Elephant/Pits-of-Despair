@@ -55,3 +55,8 @@ COPY_EXISTING ~ohbmena7.CRE~ ~override~
 COPY_EXISTING ~ohbmena8.CRE~ ~override~
     SAY 0x08 @15012
     SAY 0x0c @15012
+
+COPY ~%MOD_FOLDER%/creatures/brodle~ ~override~
+COPY_EXISTING ~ohbbrodl.CRE~ ~override~
+    SAY 0x08 @15013
+    SAY 0x0c @15013
