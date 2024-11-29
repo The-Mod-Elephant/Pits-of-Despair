@@ -28,6 +28,7 @@ LANGUAGE  ~Simplified Chinese (copy&translation by Lzw104522773;technical suppor
           ~zbpod/lang/schinese/dialogs.tra~
 		  ~zbpod/lang/schinese/JournalEntries.tra~
 
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20001 DESIGNATED 2 LABEL ~zb_pod_ee~ // INSTALL PIT OF DESPAIR FOR ENHANCED EDITION
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
@@ -51,6 +52,9 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bp2scripts~ /* bucketfulofsunshine, 202411
 /*
   bucket's tp2 additions - still need to be approved and tested
                                                                */
+															   
+/* new journal entries */
+ADD_JOURNAL TITLE (@800000) @800001 USING ~%MOD_FOLDER%/lang/english/JournalEntries.tra~
 
 /* compile the new dialogues and recompile old ones with the new strings */
 /* do we just recompile ALL 54 dialogues? only added a few that i know have been edited, there are more i need to add */
@@ -60,6 +64,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
 						~%MOD_FOLDER%/dlg/ohbnajim.d~
 						~%MOD_FOLDER%/dlg/ohbbrodl.d~
 						~%MOD_FOLDER%/dlg/ohbstann.d~
+						
 
 /* copy edited sound files over */
 COPY ~%MOD_FOLDER%/wav~ ~override~
@@ -73,11 +78,10 @@ EXTEND_BOTTOM ~BALDUR.bcs~ ~%MOD_FOLDER%/test/zbmes.baf~
 COMPILE ~%MOD_FOLDER%/test/zbme2.baf~
 /* add messenger creature */
 COPY ~%MOD_FOLDER%/creatures/messenger/zbmes.cre~ ~override/zbmes.cre~
-SAY NAME1 ~Messenger~
-SAY NAME2 ~Messenger~
+SAY NAME1 ~Mysterious Messenger~
+SAY NAME2 ~Mysterious Messenger~
 WRITE_ASCII 0x248 ~zbme2~ #8  // override script
 WRITE_ASCII 0x2cc ~zbmes~  #8  // dialogue file
-COMPILE ~%MOD_FOLDER%/test/zbmes.d~
 
 /* cutscenes for eshpel to transfer group around -
 we're not using these, we're using spells,
@@ -93,13 +97,7 @@ APPEND ~ITEMDIAL.2da~
 ~zbeshpeu %label% zbeshpeu~
 UNLESS ~zbeshpeu~
 
-COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~
-		 ~%MOD_FOLDER%/test/zbvyan.d~
-
-/* new journal entries */
-ADD_JOURNAL TITLE (@800000) @800001 USING ~%MOD_FOLDER%/lang/english/JournalEntries.tra~
-
-/* this has to be at the bottom of the tp2 because it's a new, seperate component */
-/* Vanilla NPC Interjections for Pits of Despair */
-BEGIN @30000
-COMPILE ~%MOD_FOLDER%/test/zbvci.d~
+COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */ 
+		~%MOD_FOLDER%/test/zbvyan.d~ /* vyantri's new line */ 
+		~%MOD_FOLDER%/test/zbmes.d~ /* messenger - aka best girl in disguise lines */ 
+        ~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */ 
