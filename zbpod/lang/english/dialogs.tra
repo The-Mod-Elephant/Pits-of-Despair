@@ -546,7 +546,7 @@
 @535  = ~Forget it. I'm not going through this again!~
 @536  = ~You won't be fighting each other, at least not often. That would be counterproductive! You are the prize horses, not the mules!~ [OH90542]
 /* removing references to Baeloth's Pit */
-@537  = ~Don't let that act fool you! Very cagey is the Ancient Threat. Next, we have a <PRO_MANWOMAN> whose deeds are so well known, they hardly need mentioning. A <PRO_MANWOMAN> legendary for for their combat prowess. I give you the Hero of Baldur's Gate, <CHARNAME>!~ [OH90562]
+@537  = ~Don't let that act fool you! Very cagey is the Ancient Threat. Next, we have a <PRO_MANWOMAN> whose deeds are so well known, they hardly need mentioning. A <PRO_MANWOMAN> legendary for for their combat prowess. I give you, <CHARNAME>!~ [OH90562]
 @538  = ~I'll not play your pathetic game, Dennaton! I decide my own fate!~
 @539  = ~What, no nickname for me?~
 @540  = ~Let me be clear, Dennaton. I'll fight and I'll kill. It's what I do, but if the coin's not good enough, I'll butcher and stew you in a pot of your own gravy!~
