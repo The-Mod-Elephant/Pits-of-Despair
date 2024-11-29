@@ -21,6 +21,13 @@ LANGUAGE  ~English~
           ~zbpod/lang/english/dialogs.tra~
 		  ~zbpod/lang/english/JournalEntries.tra~
 
+LANGUAGE  ~Simplified Chinese (copy&translation by Lzw104522773;technical support by Coelacanth)~
+          ~schinese~
+          ~zbpod/lang/schinese/game.tra~ // %MOD_FOLDER% has bugs associated with its use in LANGUAGE blocks
+          ~zbpod/lang/schinese/weidu.tra~
+          ~zbpod/lang/schinese/dialogs.tra~
+		  ~zbpod/lang/schinese/JournalEntries.tra~
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20001 DESIGNATED 2 LABEL ~zb_pod_ee~ // INSTALL PIT OF DESPAIR FOR ENHANCED EDITION
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
