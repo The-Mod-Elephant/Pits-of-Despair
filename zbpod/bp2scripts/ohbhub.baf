@@ -794,6 +794,6 @@ IF
   Global("ZBPODINTRO","GLOBAL",1)
  THEN
  RESPONSE #100
-  //ActionOverride(Player1,StartDialog("player1",Player1))
+ ActionOverride(Player1,StartDialog("player1",Player1))
 END
 /* intro dialogue script ends here */
