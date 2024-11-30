@@ -93,3 +93,5 @@ COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */
 		~%MOD_FOLDER%/test/zbvyan.d~ /* vyantri's new line */ 
 		~%MOD_FOLDER%/test/zbmes.d~ /* messenger - aka best girl in disguise lines */ 
         ~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */ 
+
+INCLUDE ~%MOD_FOLDER%/test/tpa/MovieStrings.tpa~

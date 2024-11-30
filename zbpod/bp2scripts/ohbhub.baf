@@ -1,4 +1,14 @@
 IF
+    True()
+    Global("ZBINTROMOVIE","GLOBAL",0)
+THEN
+    RESPONSE #100
+	      SetGlobal("ZBINTROMOVIE","GLOBAL",1)
+          StartMovie("blackpit")		  
+		  Continue()
+END
+
+IF
 	!GlobalTimerNotExpired("ZB_SimulacrumTimer","OH8100")
 THEN
 	RESPONSE #100
