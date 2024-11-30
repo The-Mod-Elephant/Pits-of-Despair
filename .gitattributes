@@ -1,35 +1,10 @@
-* text eol=lf
-
-*.are binary
-*.ARE binary
-*.baf binary
-*.BAF binary
-*.bam binary
-*.BAM binary
-*.bcs binary
-*.BCS binary
-*.bmp binary
-*.BMP binary
-*.cre binary
-*.CRE binary
-*.dlg binary
-*.DLG binary
-*.eff binary
-*.EFF binary
-*.exe binary
-*.itm binary
-*.ITM binary
-*.png binary
-*.PNG binary
-*.pro binary
-*.PRO binary
-*.pvrz binary
-*.PVRZ binary
-*.spl binary
-*.SPL binary
-*.sto binary
-*.STO binary
-*.vvc binary
-*.VVC binary
-*.wav binary
-*.WAV binary
+*baf text eol=lf
+*d text eol=lf
+*md text eol=lf
+*txt text eol=lf
+*tp2 text eol=lf
+*tpa text eol=lf
+*tph text eol=lf
+*tra text eol=lf
+*ini text eol=lf
+*INI text eol=lf
