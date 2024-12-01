@@ -21,12 +21,6 @@ THEN
 		ActionOverride("ohbbarte",ApplySpellRES("SPSREST",Player4))  // No such index
 		ActionOverride("ohbbarte",ApplySpellRES("SPSREST",Player5))  // No such index
 		ActionOverride("ohbbarte",ApplySpellRES("SPSREST",Player6))  // No such index
-		//ActionOverride(Player2,DestroyAllEquipment())
-		//ActionOverride(Player3,DestroyAllEquipment())
-		//ActionOverride(Player4,DestroyAllEquipment())
-		//ActionOverride(Player5,DestroyAllEquipment())
-		//ActionOverride(Player6,DestroyAllEquipment())
-		//TakePartyGold(2147483647)
 		SetGlobal("sprite_is_deadohbnajim","global",0)
 		SetGlobal("sprite_is_deadohbbanno","global",0)
 		SetGlobal("sprite_is_deadohbdorma","global",0)
@@ -52,7 +46,6 @@ THEN
 		LeaveAreaLUA("OH8100","",[2499.1409],S)  // TBP2 - Staging Area Map
 		MultiPlayerSync()
 		FadeToColor([0.0],0)
-		//DestroyAllEquipment()
 		SetSequence(SEQ_SLEEP)
 		ActionOverride(Player2,SetSequence(SEQ_SLEEP))
 		ActionOverride(Player3,SetSequence(SEQ_SLEEP))
