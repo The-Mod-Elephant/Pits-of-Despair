@@ -13,13 +13,16 @@ ConTEXT Text Editor by Eden Kirin
 WeiDU ConTEXT Highlighters by Idobek, updated by cmorgan
 IESDP maintained by igi and lynx
 DLTCEP by Avenger
+VSCodium
+Infinity Viewer by dark0dave
 Adobe Photoshop, design elements assisted with Adobe Firefly
 Lazy Nezumi Pro
+FFMpeg
 
 
 Credits -
 Project Leads: zenblack, RoyalProtector, bucketfulofsunshine
 Collaborators: Angel, Curian55, CrevsDaak, dark0dave, quantum_mechani
-Contributors: Glittergear, CamDawg
+Contributors: Glittergear, CamDawg, Svef
 Playtesters: suy, Aquadrizzt
 Special Thanks:	Halmy, Argent77, Skellytz, Acifer, jastey
