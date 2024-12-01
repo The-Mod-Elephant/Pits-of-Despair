@@ -27,7 +27,7 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY ~%MOD_FOLDER%/spells/bp2~ ~override~
-COPY ~%MOD_FOLDER%/movie/blackpit.wbm~ ~override~
+COPY ~%MOD_FOLDER%/movie/pod.wbm~ ~movies~ /* adding directly to movies, not override, because otherwise it doesn't work. this isn't ideal. */
 
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~p_cta1.bam~ THEN BEGIN
 INCLUDE ~%MOD_FOLDER%/lib/animations.tpa~
@@ -58,7 +58,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
 						~%MOD_FOLDER%/dlg/ohbbrodl.d~
 						~%MOD_FOLDER%/dlg/ohbstann.d~
 						
-
 /* copy edited sound files over */
 COPY ~%MOD_FOLDER%/wav~ ~override~
 

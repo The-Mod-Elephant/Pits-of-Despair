@@ -1,10 +1,11 @@
+/* intro movie plays on entering arena */
 IF
     True()
     Global("ZBINTROMOVIE","GLOBAL",0)
 THEN
     RESPONSE #100
 	      SetGlobal("ZBINTROMOVIE","GLOBAL",1)
-          StartMovie("blackpit")		  
+          StartMovie("pod")		  
 		  Continue()
 END
 
@@ -337,6 +338,7 @@ THEN
 		TriggerActivation("ohb_messhall1",TRUE)
 		TriggerActivation("ohb_messhall2",TRUE)
 		CreateCreature("ohbdenna",[2530.3265],SE)  // Dennaton
+		CreateCreature("zspdnf16",[2462.3309],SE)  /* Nephetel, Welcoming Feast */ 
 		ActionOverride("OHBTARTL",JumpToPoint([2570.3232]))
 		ActionOverride("OHBTARTL",Face(SSE))
 		ActionOverride("ohbcook",JumpToPoint([2375.3385]))
