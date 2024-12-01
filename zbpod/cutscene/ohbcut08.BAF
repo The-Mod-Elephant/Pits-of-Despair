@@ -1,0 +1,89 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        FadeToColor([20.0],0)
+        Wait(2)
+        AddAreaType(CANRESTOTHER)
+        MoveViewPoint([2665.3355],INSTANT)
+        ActionOverride("ohbdenna",GiveGoldForce(15000))
+        ActionOverride("ohbhort",DestroySelf())
+        ActionOverride("ohbfeldr",DestroySelf())
+        ActionOverride("ohbvoghi",DestroySelf())
+        ActionOverride("ohbdenna",DestroySelf())
+        ActionOverride("ohbwing",DestroySelf())
+        CreateCreature("ohbgerro",[3485.1850],SE)  // Gerrold Darkfellow
+        CreateCreature("ohbsymm",[1880.2835],SSE)  // Symm Haximus
+        CreateCreature("ohbdanc1",[3535.1006],W)  // Dancer
+        CreateCreature("ohbdanc2",[3948.994],NW)  // Dancer
+        CreateCreature("ohbdanc2",[3925.1035],W)  // Dancer
+        CreateCreature("ohbdanc2",[3721.1056],NE)  // Dancer
+        CreateCreature("ohbdanc2",[3717.937],SE)  // Dancer
+        CreateCreature("ohbgua10",[2075.2505],SW)  // Guard
+        CreateCreature("ohbgua10",[2115.2540],NW)  // Guard
+        CreateCreature("ohbgua10",[1490.2700],E)  // Guard
+        ActionOverride("ohbtartl",JumpToPoint([4560.3160]))
+        ActionOverride("ohbtartl",MoveToPoint([4560.3160]))
+        ActionOverride("ohbtartl",Face(SW))
+        ActionOverride("ohbbrodl",JumpToPoint([1670.2510]))
+        ActionOverride("ohbbrodl",MoveToPoint([1670.2510]))
+        ActionOverride("ohbbrodl",Face(SE))
+        ActionOverride("ohbcook",JumpToPoint([1572.3265]))
+        ActionOverride("ohbcook",MoveToPoint([1572.3265]))
+        ActionOverride("ohbcook",Face(NNE))
+        ActionOverride("ohbmercy",JumpToPoint([3811.3575]))
+        ActionOverride("ohbmercy",MoveToPoint([3811.3575]))
+        ActionOverride("ohbmercy",Face(NE))
+        ActionOverride("ohbgezzt",JumpToPoint([2655.1865]))
+        ActionOverride("ohbgezzt",MoveToPoint([2655.1865]))
+        ActionOverride("ohbgezzt",Face(NE))
+        ActionOverride("ohbtimmo",JumpToPoint([2990.1505]))
+        ActionOverride("ohbtimmo",MoveToPoint([2990.1505]))
+        ActionOverride("ohbtimmo",Face(SE))
+        ActionOverride("ohblea",JumpToPoint([2550.2075]))
+        ActionOverride("ohblea",MoveToPoint([2550.2075]))
+        ActionOverride("ohblea",Face(NW))
+        ActionOverride("ohbellra",JumpToPoint([3280.3288]))
+        ActionOverride("ohbellra",MoveToPoint([3280.3288]))
+        ActionOverride("ohbellra",Face(NE))
+        ActionOverride("ohbdulf",JumpToPoint([2720.1810]))
+        ActionOverride("ohbdulf",MoveToPoint([2720.1810]))
+        ActionOverride("ohbdulf",Face(SW))
+		ActionOverride("zspdnf16",JumpToPoint([4395.3341])) /* move nephetel to stand next to stannel */ 
+        ActionOverride("zspdnf16",MoveToPoint([4395.3341]))
+        ActionOverride("zspdnf16",Face(NNE))
+		CreateCreature("ohbvoghi",[2945.3025],NW)  // Voghiln the Vast
+        ActionOverride("ohbvoghi",SetGlobal("OHB_TALKED_VOGHI","LOCALS",1))
+        CreateCreature("ohbfeldr",[1985.2605],NE)  // Feldrak Feldrak'i
+        CreateCreature("ohbhort",[1665.2680],W)  // Hort Il-D'rth
+        JumpToPoint([3900.3050])
+        ActionOverride(Player2,JumpToPoint([4000.3050]))
+        ActionOverride(Player3,JumpToPoint([3860.3125]))
+        ActionOverride(Player4,JumpToPoint([4040.3125]))
+        ActionOverride(Player5,JumpToPoint([3900.3200]))
+        ActionOverride(Player6,JumpToPoint([4000.3200]))
+        Face(SE)
+        ActionOverride(Player2,Face(SW))
+        ActionOverride(Player3,Face(E))
+        ActionOverride(Player4,Face(W))
+        ActionOverride(Player5,Face(NE))
+        ActionOverride(Player6,Face(NW))
+        ApplySpell(Player1,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
+        ApplySpell(Player2,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
+        ApplySpell(Player3,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
+        ApplySpell(Player4,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
+        ApplySpell(Player5,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
+        ApplySpell(Player6,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
+        Unlock("door0014")
+        Unlock("door0005")
+        Unlock("door0004")
+        Unlock("door0003")
+        Unlock("door0001")
+        Wait(1)
+        MoveViewPoint([3950.3125],INSTANT)
+        FadeFromColor([20.0],0)
+        Wait(1)
+        EndCutSceneMode()
+END
+
