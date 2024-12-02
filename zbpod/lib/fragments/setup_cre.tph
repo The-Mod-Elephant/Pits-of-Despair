@@ -50,7 +50,7 @@ COMPILE "%MOD_FOLDER%/creatures/#scripts/zbmostmp.baf" // compile the script tha
 COPY_EXISTING ~ohbmena2.CRE~ ~override~
     SAY 0x08 @15006 // inject into name field (dangerous moose)
     SAY 0x0c @15006 // inject into creature tooltip field (dangerous moose)
-    WRITE_ASCII 0x260 ~zbmostmp~ #8  // general script
+    WRITE_ASCII 0x260 ~zbmostmp~ #8  // inject script name to general script field; #8 is the length of the string
 
 // end of moosey moosey code
 
