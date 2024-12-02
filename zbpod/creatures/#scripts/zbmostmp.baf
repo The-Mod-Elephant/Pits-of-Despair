@@ -1,0 +1,15 @@
+IF
+    Allegiance(Myself,ENEMY)
+    StateCheck([PC],STATE_SLEEPING)
+THEN
+    RESPONSE #100
+        AttackReevaluate([PC],45)
+END
+
+IF
+    Allegiance(Myself,ENEMY)
+    StateCheck(SecondNearest([PC]),STATE_SLEEPING)
+THEN
+    RESPONSE #100
+        AttackReevaluate(SecondNearest([PC]),45)
+END

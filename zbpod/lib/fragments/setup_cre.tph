@@ -31,10 +31,6 @@ COPY_EXISTING ~ohbmena1.CRE~ ~override~
 
 // All moosey moose related code goes here
 COPY ~%MOD_FOLDER%/creatures/mutdiremoose~ ~override~
-COPY_EXISTING ~ohbmena2.CRE~ ~override~
-    SAY 0x08 @15006 // inject into name field (dangerous moose)
-    SAY 0x0c @15006 // inject into creature tooltip field (dangerous moose)
-
 COPY_EXISTING "zbmoose1.spl" "override" // first we tackle the stomping effect
     LPF ALTER_EFFECT
         INT_VAR
@@ -48,6 +44,14 @@ COPY_EXISTING "zbmoose2.spl" "override" // next the unconsciousness effect
             match_opcode = 139 // we map this altering to opcode 139 (display string)
             parameter1 = RESOLVE_STR_REF("Knocked Prone") // string tlk index; RESOLVE_STR_REF injects the string in the tlk and returns index // substitute later for a @xxxx reference
     END
+
+COMPILE "%MOD_FOLDER%/creatures/#scripts/zbmostmp.baf" // compile the script that makes the moose stomp selectively
+
+COPY_EXISTING ~ohbmena2.CRE~ ~override~
+    SAY 0x08 @15006 // inject into name field (dangerous moose)
+    SAY 0x0c @15006 // inject into creature tooltip field (dangerous moose)
+    WRITE_ASCII 0x260 ~zbmostmp~ #8  // general script
+
 // end of moosey moosey code
 
 COPY ~%MOD_FOLDER%/creatures/mutdirebear~ ~override~
