@@ -29,10 +29,26 @@ COPY_EXISTING ~ohbmena1.CRE~ ~override~
     SAY 0x08 @15005
     SAY 0x0c @15005
 
+// All moosey moose related code goes here
 COPY ~%MOD_FOLDER%/creatures/mutdiremoose~ ~override~
 COPY_EXISTING ~ohbmena2.CRE~ ~override~
-    SAY 0x08 @15006
-    SAY 0x0c @15006
+    SAY 0x08 @15006 // inject into name field (dangerous moose)
+    SAY 0x0c @15006 // inject into creature tooltip field (dangerous moose)
+
+COPY_EXISTING "zbmoose1.spl" "override" // first we tackle the stomping effect
+    LPF ALTER_EFFECT
+        INT_VAR
+            match_opcode = 139 // we map this altering to opcode 139 (display string)
+            parameter1 = RESOLVE_STR_REF("Stomped") // string tlk index; RESOLVE_STR_REF injects the string in the tlk and returns index
+    END
+
+COPY_EXISTING "zbmoose2.spl" "override" // next the unconsciousness effect
+    LPF ALTER_EFFECT
+        INT_VAR
+            match_opcode = 139 // we map this altering to opcode 139 (display string)
+            parameter1 = RESOLVE_STR_REF("Knocked Prone") // string tlk index; RESOLVE_STR_REF injects the string in the tlk and returns index // substitute later for a @xxxx reference
+    END
+// end of moosey moosey code
 
 COPY ~%MOD_FOLDER%/creatures/mutdirebear~ ~override~
 COPY_EXISTING ~ohbmena3.CRE~ ~override~
@@ -68,12 +84,12 @@ COPY ~%MOD_FOLDER%/creatures/brodle~ ~override~
 COPY_EXISTING ~ohbbrodl.CRE~ ~override~
     SAY 0x08 @15013
     SAY 0x0c @15013
-	
+
 	COPY ~%MOD_FOLDER%/creatures/voghiln~ ~override~
 COPY_EXISTING ~ohbvoghi.CRE~ ~override~
     SAY 0x08 @15014
     SAY 0x0c @15014
-	
+
 	COPY ~%MOD_FOLDER%/creatures/bellowgulp~ ~override~
 COPY_EXISTING ~ohbbello.CRE~ ~override~
     SAY 0x08 @15015

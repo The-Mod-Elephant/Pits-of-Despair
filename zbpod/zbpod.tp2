@@ -16,11 +16,11 @@ END
 AUTO_TRA ~%MOD_FOLDER%/lang/%s~
 LANGUAGE  ~English~
           ~english~
-          ~zbpod/lang/english/game.tra~ // %MOD_FOLDER% has bugs associated with its use in LANGUAGE blocks
+          ~zbpod/lang/english/game.tra~
           ~zbpod/lang/english/weidu.tra~
           ~zbpod/lang/english/dialogs.tra~
-		  ~zbpod/lang/english/JournalEntries.tra~
-		  
+		      ~zbpod/lang/english/JournalEntries.tra~
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20001 DESIGNATED 2 LABEL ~zb_pod_ee~ // INSTALL PIT OF DESPAIR FOR ENHANCED EDITION
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
@@ -45,7 +45,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bp2scripts~ /* bucketfulofsunshine, 202411
 /*
   bucket's tp2 additions - still need to be approved and tested
                                                                */
-															   
+
 /* new journal entries */
 ADD_JOURNAL TITLE (@800000) @800001 USING ~%MOD_FOLDER%/lang/english/JournalEntries.tra~
 
@@ -57,7 +57,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
 						~%MOD_FOLDER%/dlg/ohbnajim.d~
 						~%MOD_FOLDER%/dlg/ohbbrodl.d~
 						~%MOD_FOLDER%/dlg/ohbstann.d~
-						
+
 /* copy edited sound files over */
 COPY ~%MOD_FOLDER%/wav~ ~override~
 
@@ -89,9 +89,9 @@ APPEND ~ITEMDIAL.2da~
 ~zbeshpeu %label% zbeshpeu~
 UNLESS ~zbeshpeu~
 
-COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */ 
-		~%MOD_FOLDER%/test/zbvyan.d~ /* vyantri's new line */ 
-		~%MOD_FOLDER%/test/zbmes.d~ /* messenger - aka best girl in disguise lines */ 
-        ~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */ 
+COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */
+		~%MOD_FOLDER%/test/zbvyan.d~ /* vyantri's new line */
+		~%MOD_FOLDER%/test/zbmes.d~ /* messenger - aka best girl in disguise lines */
+        ~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */
 
 INCLUDE ~%MOD_FOLDER%/test/tpa/MovieStrings.tpa~
