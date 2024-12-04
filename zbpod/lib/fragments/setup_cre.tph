@@ -63,20 +63,12 @@ COPY_EXISTING ~ohbmena4.CRE~ ~override~
     SAY 0x08 @15008
     SAY 0x0c @15008
 
-COPY_EXISTING "zblion1.spl" "override" // first we tackle the knocking over effect
+COPY_EXISTING "zblion1.spl" "override" // we tackle the knocking over effect
     LPF ALTER_EFFECT
         INT_VAR
             match_opcode = 139 // we map this altering to opcode 139 (display string)
             parameter1 = RESOLVE_STR_REF("Pounce") // string tlk index; RESOLVE_STR_REF injects the string in the tlk and returns index
     END
-
-COPY_EXISTING "zblion2.spl" "override" // then we tackle the bite effect (can only happen once per round)
-    LPF ALTER_EFFECT
-        INT_VAR
-            match_opcode = 139 // we map this altering to opcode 139 (display string)
-            parameter1 = RESOLVE_STR_REF("Bitten") // string tlk index; RESOLVE_STR_REF injects the string in the tlk and returns index
-    END
-
 // end of dire lion related code
 
 COPY ~%MOD_FOLDER%/creatures/mutboalisk~ ~override~
