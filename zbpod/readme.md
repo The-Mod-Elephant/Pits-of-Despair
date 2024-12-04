@@ -15,6 +15,7 @@ IESDP maintained by igi and lynx
 DLTCEP by Avenger
 VSCodium
 Infinity Viewer by dark0dave
+BGForge
 Adobe Photoshop, design elements assisted with Adobe Firefly
 Lazy Nezumi Pro
 FFMpeg
