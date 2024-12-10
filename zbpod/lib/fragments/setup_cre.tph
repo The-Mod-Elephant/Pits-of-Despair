@@ -28,6 +28,7 @@ COPY ~%MOD_FOLDER%/creatures/mutvampworg~ ~override~
 COPY_EXISTING ~ohbmena1.CRE~ ~override~
     SAY 0x08 @15005
     SAY 0x0c @15005
+	WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~P_RED_WORG~))
 
 // All moosey moose related code goes here
 COPY ~%MOD_FOLDER%/creatures/mutdiremoose~ ~override~
