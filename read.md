@@ -1,0 +1,1 @@
+Expansion mod for Baldur’s Gate 2: Enhanced Edition. Incorporates and expands the Black Pits 2: Gladiators of Thay into the Shadows of Amn and Throne of Bhaal campaign along with the custom Pits of Despair content that finishes the storyline with intent for a more satisfying end.
