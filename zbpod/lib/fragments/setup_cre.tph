@@ -3,10 +3,15 @@ COPY_EXISTING ~zbdrclch.CRE~ ~override~
     SAY 0x08 @15000
     SAY 0x0c @15000
 
-COPY ~%MOD_FOLDER%/creatures/nephetel~ ~override~
+COPY ~%MOD_FOLDER%/creatures/nephetel/zspdnf16.cre~ ~override~
 COPY_EXISTING ~zspdnf16.CRE~ ~override~
     SAY 0x08 @15001
     SAY 0x0c @15001
+    WRITE_ASCII SCRIPT_OVERRIDE ~ZSPDNFS~ #8
+    WRITE_ASCII DEATHVAR ~ZSPDNF16~ #32
+    WRITE_ASCII DIALOG ~ZSPDNF16~ #8
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/creatures/nephetel/zspdnfs.baf~
 
 COPY ~%MOD_FOLDER%/creatures/dennaton~ ~override~
 COPY_EXISTING ~ohbdenna.CRE~ ~override~

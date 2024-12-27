@@ -1,0 +1,77 @@
+// these are all placeholder values, they will likely require adjustment
+
+IF
+    InParty(Myself)
+    Global("ZBNEPHXP","GLOBAL",0)
+    XPLT(Player1,800000)
+THEN
+    RESPONSE #100
+    SetGlobal("ZBNEPHXP","GLOBAL",1)
+END
+
+IF
+    InParty(Myself)
+    Global("ZBNEPHXP","GLOBAL",0)
+    XPGT(Player1,900000)
+    XPLT(Player1,1100000)
+THEN
+    RESPONSE #100
+    SetGlobal("ZBNEPHXP","GLOBAL",1)
+    AddXPObject("ZSPDNF16",250000)
+END
+
+IF
+    InParty(Myself)
+    Global("ZBNEPHXP","GLOBAL",0)
+    XPGT(Player1,1100000)
+    XPLT(Player1,1500000)
+THEN
+    RESPONSE #100
+    SetGlobal("ZBNEPHXP","GLOBAL",1)
+    AddXPObject("ZSPDNF16",500000)
+END
+
+IF
+    InParty(Myself)
+    Global("ZBNEPHXP","GLOBAL",0)
+    XPGT(Player1,1500000)
+    XPLT(Player1,2000000)
+THEN
+    RESPONSE #100
+    SetGlobal("ZBNEPHXP","GLOBAL",1)
+    AddXPObject("ZSPDNF16",900000)
+END
+
+IF
+    InParty(Myself)
+    Global("ZBNEPHXP","GLOBAL",0)
+    XPGT(Player1,1500000)
+    XPLT(Player1,2000000)
+THEN
+    RESPONSE #100
+    SetGlobal("ZBNEPHXP","GLOBAL",1)
+    AddXPObject("ZSPDNF16",900000)
+END
+
+
+IF
+    InParty(Myself)
+    Global("ZBNEPHXP","GLOBAL",0)
+    XPGT(Player1,2000000)
+    XPLT(Player1,2500000)
+THEN
+    RESPONSE #100
+    SetGlobal("ZBNEPHXP","GLOBAL",1)
+    AddXPObject("ZSPDNF16",1600000)
+END
+
+IF
+    InParty(Myself)
+    Global("ZBNEPHXP","GLOBAL",0)
+    XPGT(Player1,2500000)
+    XPLT(Player1,3000000)
+THEN
+    RESPONSE #100
+    SetGlobal("ZBNEPHXP","GLOBAL",1)
+    AddXPObject("ZSPDNF16",2400000)
+END
