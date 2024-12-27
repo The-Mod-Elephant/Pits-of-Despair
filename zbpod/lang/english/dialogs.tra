@@ -3737,3 +3737,19 @@ Vyatri~
 @3680 = ~A decent yarn, though a bit TOO fantastic if you ask me.~
 @3681 = ~Thank you. It is an amazing tale, all the more so for the fact that it actually happened.~
 @3682 = ~You are a talented entertainer, madam, but do not insult my intelligence. The story you told is naught but a story. It never happened.~
+
+/* literally copied over from cutscenes.tra */ 
+
+@1800000 = ~Have you found any information about the book?~
+@1800001 = ~No. All anyone can talk about is this Hero of Baldur’s Gate.~
+@1800002 = ~Every tavern or noble house I scout there is someone who is saying they saved this or defeated that.~
+@1800003 = ~Quite annoying.~
+@1800004 = ~Who are they? What do you know about them?~
+@1800005 = ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~
+@1800006 = ~Is it anything like the weapon in the Pits?~
+@1800007 = ~No, not like Enegar. They are free of the Cult and choose of their own free will.~
+@1800008 = ~No one has spoken as to why, but I will investigate.~
+@1800009 = ~Good. Good. I know you will find the Book.~
+@1800010 = ~Our Master will be very… very pleased, he has assured me.~
+@1800011 = ~I expect a full report on this 'Hero' when next we meet.~
+@1800012 = ~Of course, Spymaster.~

@@ -9,13 +9,29 @@ SAY ~It looks like I have a letter and a fancy box for you good <PRO_SIRMAAM>.~
 END
 
 IF ~~ THEN BEGIN zbmessenger1
-SAY ~Thank you good sir, this'll feed my twelve sick children and dying grandmother just fine.~
-IF ~~ DO ~SetGlobal("ZBPodSummonsReceived","GLOBAL",4) AddJournalEntry(@800001,QUEST) GiveItemCreate("zbpdnote",Player1,1,0,0) TakePartyGold(1) RevealAreaOnMap("AR2000") DestroySelf()~ EXIT
+SAY ~Thank you good <PRO_SIRMAAM>, this'll feed my twelve sick children and dying grandmother just fine.~
+IF ~~ DO ~SetGlobal("ZBPodSummonsReceived","GLOBAL",4) 
+AddJournalEntry(@800001,QUEST) 
+GiveItemCreate("zbpdnote",Player1,1,0,0) 
+TakePartyGold(1) 
+RevealAreaOnMap("AR2000") 
+DestroySelf()
+ClearAllActions() 
+StartCutSceneMode()
+StartCutScene("zbmescut")~ EXIT
 END
 
 IF ~~ THEN BEGIN zbmessenger1.5 /* the 5 gold variant */ 
-SAY ~Thank you good sir, this'll feed my twelve sick children and dying grandmother just fine.~
-IF ~~ DO ~SetGlobal("ZBPodSummonsReceived","GLOBAL",4) AddJournalEntry(@800001,QUEST) GiveItemCreate("zbpdnote",Player1,1,0,0) TakePartyGold(5) RevealAreaOnMap("AR2000") DestroySelf()~ EXIT
+SAY ~Thank you good <PRO_SIRMAAM>, this'll feed my twelve sick children and dying grandmother just fine.~
+IF ~~ DO ~SetGlobal("ZBPodSummonsReceived","GLOBAL",4) 
+AddJournalEntry(@800001,QUEST) 
+GiveItemCreate("zbpdnote",Player1,1,0,0) 
+TakePartyGold(5) 
+RevealAreaOnMap("AR2000") 
+DestroySelf()
+ClearAllActions() 
+StartCutSceneMode()
+StartCutScene("zbmescut")~ EXIT
 END
 
 IF ~~ THEN BEGIN zbmessenger2
@@ -27,5 +43,12 @@ END
 
 IF ~~ THEN BEGIN zbmessenger3
 SAY ~I suppose the high and mighty hero can't be bothered to spare a single pitiful coin.~
-IF ~~ DO ~SetGlobal("ZBPodSummonsReceived","GLOBAL",4) AddJournalEntry(@800001,QUEST) GiveItemCreate("zbpdnote",Player1,1,0,0) RevealAreaOnMap("AR2000") DestroySelf()~ EXIT
+IF ~~ DO ~SetGlobal("ZBPodSummonsReceived","GLOBAL",4) 
+AddJournalEntry(@800001,QUEST) 
+GiveItemCreate("zbpdnote",Player1,1,0,0) 
+RevealAreaOnMap("AR2000") 
+DestroySelf()
+ClearAllActions() 
+StartCutSceneMode()
+StartCutScene("zbmescut")~ EXIT
 END

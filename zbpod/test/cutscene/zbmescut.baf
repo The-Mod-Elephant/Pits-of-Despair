@@ -1,0 +1,55 @@
+IF
+	True() 
+	Global("zbnephcutscene","GLOBAL",0) /* we haven't seen the cutscene */ 
+THEN
+	RESPONSE #100
+	    CutSceneID(Player1) /* who performs the action */
+		/* actions start here */ 
+		SetGlobal("zbnephcutscene","GLOBAL",1) /* we don't want the cutscene to repeat */ 
+		StorePartyLocations() 
+		LeaveAreaLUA("AR0701","",[1692.834],NW) /* carries player over */ 
+		ActionOverride(Player2,LeaveAreaLUA("AR0701","",[766.482],NW))  
+        ActionOverride(Player3,LeaveAreaLUA("AR0701","",[766.482],NW))  
+        ActionOverride(Player4,LeaveAreaLUA("AR0701","",[766.482],NW))  
+        ActionOverride(Player5,LeaveAreaLUA("AR0701","",[766.482],NW))  
+        ActionOverride(Player6,LeaveAreaLUA("AR0701","",[766.482],NW))  /* carries party over, they have to be out of sight */ 
+		CreateCreature("zspdnf16",[1560.680],NE)  /* spawns in nephetel */ 
+		CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */ 
+		MoveViewPoint([1670.680],INSTANT)
+		ActionOverride("zspdnf16",FaceObject("zbvamp"))
+        ActionOverride("zbvamp",FaceObject("zspdnf16"))
+        Wait(3)
+		DisplayStringHead("zbvamp",@1800000)  
+		Wait(5)
+		DisplayStringHead("zspdnf16",@1800001)  
+		Wait(5)
+		DisplayStringHead("zspdnf16",@1800002) 
+		Wait(5)
+		DisplayStringHead("zspdnf16",@1800003) 
+		Wait(5)
+		DisplayStringHead("zbvamp",@1800004)
+		Wait(5)
+		DisplayStringHead("zspdnf16",@1800005) 
+		Wait(5)
+		DisplayStringHead("zbvamp",@1800006) 
+		Wait(5)
+		DisplayStringHead("zspdnf16",@1800007) 
+		Wait(5)
+		DisplayStringHead("zspdnf16",@1800008) 
+		Wait(5)
+		DisplayStringHead("zbvamp",@1800009) 
+		Wait(5)
+		DisplayStringHead("zbvamp",@1800010) 
+		Wait(5)
+		DisplayStringHead("zbvamp",@1800011) 
+		Wait(5)
+		DisplayStringHead("zspdnf16",@1800012) 
+		Wait(5)
+		ActionOverride("zspdnf16",DestroySelf())
+		Wait(1)
+        ActionOverride("zbvamp",DestroySelf())
+		Wait(1)
+        RestorePartyLocations()
+		/* actions end here */ 
+		EndCutSceneMode() /* exits the the StartCutSceneMode() action */
+END

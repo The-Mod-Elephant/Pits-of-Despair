@@ -19,7 +19,9 @@ LANGUAGE  ~English~
           ~zbpod/lang/english/game.tra~
           ~zbpod/lang/english/weidu.tra~
           ~zbpod/lang/english/dialogs.tra~
-		      ~zbpod/lang/english/JournalEntries.tra~
+		  ~zbpod/lang/english/JournalEntries.tra~
+		  ~zbpod/lang/english/cutscenes.tra~
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20001 DESIGNATED 2 LABEL ~zb_pod_ee~ // INSTALL PIT OF DESPAIR FOR ENHANCED EDITION
@@ -48,6 +50,13 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bp2scripts~ /* bucketfulofsunshine, 202411
 
 /* new journal entries */
 ADD_JOURNAL TITLE (@800000) @800001 USING ~%MOD_FOLDER%/lang/english/JournalEntries.tra~
+
+
+/* compile new nephetel cutscene */ 
+COMPILE ~%MOD_FOLDER%/test/cutscene/zbmescut.baf~ 
+/* add new vampire creature for it */
+COPY ~%MOD_FOLDER%/creatures/vampirecutscene/zbvamp.cre~ ~override/zbvamp.cre~ /* need to move this line over to the setup-cre file but i'm not touching that since it's royal's baby */ 
+WRITE_ASCII DEATHVAR ~zbvamp~ #32
 
 /* compile the new dialogues and recompile old ones with the new strings */
 /* do we just recompile ALL 54 dialogues? only added a few that i know have been edited, there are more i need to add */
