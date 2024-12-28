@@ -1,3 +1,10 @@
+/* 
+  cutscene where nephetel and the vampire meet in the sewers  
+  we'll need to add 'playsound' for each line once we have the VO lines
+  right now we only have the one vampire sound
+  ideally played AFTER the player has explored the sewers but yolo 
+  fires AFTER nephetel / mysterious messenger gives charname the note
+                                                                     */ 
 IF
 	True() 
 	Global("zbnephcutscene","GLOBAL",0) /* we haven't seen the cutscene */ 
@@ -7,43 +14,60 @@ THEN
 		/* actions start here */ 
 		SetGlobal("zbnephcutscene","GLOBAL",1) /* we don't want the cutscene to repeat */ 
 		StorePartyLocations() 
-		LeaveAreaLUA("AR0701","",[1692.834],NW) /* carries player over */ 
-		ActionOverride(Player2,LeaveAreaLUA("AR0701","",[766.482],NW))  
-        ActionOverride(Player3,LeaveAreaLUA("AR0701","",[766.482],NW))  
-        ActionOverride(Player4,LeaveAreaLUA("AR0701","",[766.482],NW))  
-        ActionOverride(Player5,LeaveAreaLUA("AR0701","",[766.482],NW))  
-        ActionOverride(Player6,LeaveAreaLUA("AR0701","",[766.482],NW))  /* carries party over, they have to be out of sight */ 
+		LeaveAreaLUA("AR0701","",[2034.873],NW) /* carries player over */ 
+		ActionOverride(Player2,LeaveAreaLUA("AR0701","",[2034.873],NW))  
+        ActionOverride(Player3,LeaveAreaLUA("AR0701","",[2034.873],NW))  
+        ActionOverride(Player4,LeaveAreaLUA("AR0701","",[2034.873],NW))  
+        ActionOverride(Player5,LeaveAreaLUA("AR0701","",[2034.873],NW))  
+        ActionOverride(Player6,LeaveAreaLUA("AR0701","",[2034.873],NW))  /* carries party over, they have to be out of sight */ 
 		CreateCreature("zspdnf16",[1560.680],NE)  /* spawns in nephetel */ 
 		CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */ 
 		MoveViewPoint([1670.680],INSTANT)
 		ActionOverride("zspdnf16",FaceObject("zbvamp"))
         ActionOverride("zbvamp",FaceObject("zspdnf16"))
         Wait(3)
-		DisplayStringHead("zbvamp",@1800000)  
+		DisplayStringHead("zbvamp",@1800000)  /* ~Have you found any information about the book?~ */ 
 		Wait(5)
-		DisplayStringHead("zspdnf16",@1800001)  
+		DisplayStringHead("zspdnf16",@1800001)  /* ~No. All anyone can talk about is this Hero of Baldur’s Gate.~ */ 
 		Wait(5)
-		DisplayStringHead("zspdnf16",@1800002) 
+		DisplayStringHead("zspdnf16",@1800002) /* ~Every tavern or noble house I scout there is someone who is saying they saved this or defeated that.~ */ 
 		Wait(5)
-		DisplayStringHead("zspdnf16",@1800003) 
+		DisplayStringHead("zspdnf16",@1800003) /* ~Quite annoying.~ */ 
 		Wait(5)
-		DisplayStringHead("zbvamp",@1800004)
+		ActionOverride("zbvamp",MoveToPoint([1670.600])) /* pacing north */ 
+		Wait(3)
+		ActionOverride("zbvamp",MoveToPoint([1670.752])) /* pacing south */ 
+		Wait(3)
+		DisplayStringHead("zbvamp",@1800004) /* ~Who are they? What do you know about them?~ */ 
 		Wait(5)
-		DisplayStringHead("zspdnf16",@1800005) 
+		DisplayStringHead("zspdnf16",@1800005) /* ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~ */ 
 		Wait(5)
-		DisplayStringHead("zbvamp",@1800006) 
+		ActionOverride("zbvamp",MoveToPoint([1670.680])) /* pacing back to usual spot */ 
+		ActionOverride("zbvamp",FaceObject("zspdnf16"))
+		DisplayStringHead("zbvamp",@1800006) /* ~Is it anything like the weapon in the Pits?~ */ 
 		Wait(5)
-		DisplayStringHead("zspdnf16",@1800007) 
+		ActionOverride("zspdnf16",Face(W)) /* nephetel faces away */  
+		Wait(2)
+		DisplayStringHead("zspdnf16",@1800007) /* ~No, not like Enegar. They are free of the Cult and choose of their own free will.~ */ 
 		Wait(5)
-		DisplayStringHead("zspdnf16",@1800008) 
+		ActionOverride("zspdnf16",FaceObject("zbvamp")) /* she turns back */ 
+		Wait(2)
+		DisplayStringHead("zspdnf16",@1800008) /* ~No one has spoken as to why, but I will investigate.~ */ 
 		Wait(5)
-		DisplayStringHead("zbvamp",@1800009) 
+		ActionOverride("zbvamp",SwingOnce()) /* quick attack animation */ 
+		Wait(2)
+		DisplayStringHead("zbvamp",@1800009) /* ~Good. Good. I know you will find the Book.~ */ 
 		Wait(5)
-		DisplayStringHead("zbvamp",@1800010) 
+		DisplayStringHead("zbvamp",@1800010) /* ~Our Master will be very… very pleased, he has assured me.~ */ 
 		Wait(5)
-		DisplayStringHead("zbvamp",@1800011) 
+		DisplayStringHead("zbvamp",@1800011) /* ~I expect a full report on this 'Hero' when next we meet.~ */ 
+		PlaySound("VAMPFX07") /* plays the vampire sound */ 
 		Wait(5)
-		DisplayStringHead("zspdnf16",@1800012) 
+		ActionOverride("zspdnf16",MoveToPoint([1560.1069])) /* neph moving south */ 
+		Wait(2)
+		ActionOverride("zspdnf16",FaceObject("zbvamp"))
+		Wait(2)
+		DisplayStringHead("zspdnf16",@1800012) /* ~Of course, Spymaster.~ */ 
 		Wait(5)
 		ActionOverride("zspdnf16",DestroySelf())
 		Wait(1)
@@ -52,4 +76,6 @@ THEN
         RestorePartyLocations()
 		/* actions end here */ 
 		EndCutSceneMode() /* exits the the StartCutSceneMode() action */
+		AddJournalEntry(@800001,QUEST) /* add journal entry, moved over from d file */ 
+        GiveItemCreate("zbpdnote",Player1,1,0,0) /* give player the note, moved over from d file */ 
 END
