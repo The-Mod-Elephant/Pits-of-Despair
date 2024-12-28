@@ -45,11 +45,6 @@ END
 /* companion interjections during the welcoming feast
 edwin should also react here, since we're in thay and the red wizards are involved, but i'll have glitter manage that. :3 
 NONE OF THIS IS PROOFREAD OR FULLY IC YET - heavy edits expected */
-I_C_T OHBTARTL 72 ZBSFEASTMINSC
-== MINSCJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN ~Did you hear that, Boo? This nice halfling wants to tell a story of our heroics. Do you think they'll hear it back home?~
-== MINSCJ ~No, you're right. I will not be distracted. We must free these people first.~ 
-END
-
 I_C_T OHBTARTL 75 ZBSFEASTJAHEIRA
 == JAHEIRAJ IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~For one so small of stature, his ego seems disproportionately sized.~
 END

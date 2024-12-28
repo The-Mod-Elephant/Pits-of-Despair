@@ -154,7 +154,7 @@
 @144  = ~Oh, <CHARNAME>, good. I just heard something that makes me believe we have a chance for freedom... if we're willing to seize it! Quickly, gather as many as you can in the performers' bunks! I'll meet you there.~ [OH92870]
 @145  = ~Hey. I managed to get those items you asked for. You wouldn't believe the lengths I had to go to. Think duck feathers, ale, and a highly choreographed song and dance routine... but it'll be worth it if it all gets put to good use.~ [OH100690]
 @146  = ~Hey, <CHARNAME>. An audience member donated this and asked that you use it in your next fight. Congratulations!~ [OH94549]
-@147  = ~Your prematch appeal for material wealth paid off. Someone who wishes to remain anonymous wanted you to have this and asked that you continue "kickin' arse and spillin' entrails." Enjoy!~ [OH94550]
+@147  = ~Someone who wishes to remain anonymous wanted you to have this and asked that you continue "kickin' arse and spillin' entrails." Enjoy!~ [zbpod9]
 @148  = ~Wow, <CHARNAME>, you obviously have at least one rabid—not to mention EXTREMELY wealthy—fan. Just LOOK at what someone sent you today!~ [OH94551]
 @149  = ~It's unbelievable the way these people fawn over you. I could bottle your sweat and sell it as an in-stand refreshment. Here's something from an INCREDIBLY devoted fan. Congratulations!~ [OH94552]
 @150  = ~Psst! I set up that meetin' with the lieutenant. He's in the barracks. I can take you there if you like, or you can go on your own when you get around to it.~ [OH92333]
@@ -589,7 +589,7 @@
 @572  = ~Thayan gladiators? Ha! A nation of weaklings! No Thayan can stand against me!~
 /* removing references to Baeloth's Pit - voice line needs to be removed 
 i think removing the OH94073 and only keeping the brackets MIGHT work but I need to check */
-@573  = ~Amazing! The Hero of Baldur's Gate just convinced the crowd THEY'RE the underdog! Even more amazingly, they've convinced a crowd of Thayans to ROOT for the underdog! Good show! Combatants, to arms!~ [OH94073]
+@573  = ~Amazing! The Hero of Baldur's Gate just convinced the crowd THEY'RE the underdog! Even more amazingly, they've convinced a crowd of Thayans to ROOT for the underdog! Good show! Combatants, to arms!~ [zblank]
 @574  = ~If it would ease your conscience, I can make sure your future battles are VERY DIFFICULT. Now, combatants, to arms!~ [OH94075]
 @575  = ~How can you resist a champion who begs for the opportunity to entertain you more?! Dig deep, and be generous, but above all, enjoy the show! Combatants, to arms!~ [OH94076]
 @576  = ~Boring, boring, boring! But have it your way. All right, combatants, to arms!~ [OH94077]
@@ -868,7 +868,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @837  = ~Gods? These are men and women. I'll cut their flesh and shatter their bones, proving Dennaton's fraud!~
 @838  = ~Am I to face the power of the gods themselves unaided? Have I not won favor enough to be granted some token of appreciation to bolster me in my darkest hour?~
 @839  = ~I have no words left for the crowd.~
-@840  = ~This Bhaalspawn and their cultists will fall! And the people of Thay will join them soon after!~
+@840  = ~These Bhaalspawn and their cultists will fall! And the people of Thay will join them soon after!~
 /* Here's where the conversation ends - check if further edits are needed above */ 
 @841  = ~This claim will be put to the ultimate test! Prepare yourself! The battle begins!~ [OH95602]
 @842  = ~I swear, even if you prevail here, you will suffer a slow and painful death by my hand. Now, fight and die!~ [OH95603]
@@ -877,7 +877,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @845  = ~Steady yourselves, my guests. Take your seats and do not be afraid. You will not be harmed. After this battle, <CHARNAME> will be... dealt with.~ [OH95606]
 @846  = ~My performers are victorious! ~ [OH96046]
 /* removing references to Baeloth's pit - voice line needs to be removed - using line with multiple (heroes), since that was used in vanilla text, but can be altered to simple 'Bhaalspawn has won' instead */ 
-@847  = ~The heroes of Baldur's Gate have won!~ [OH96047]
+@847  = ~The heroes of Baldur's Gate have won!~ [zblank]
 @848  = ~A victory worthy of the epics!~ [OH96048]
 @849  = ~You've really made a mess of things, <CHARNAME>. You could've had wealth, glory, immortality... Instead, you will die, your body dumped in an unmarked grave. And for what?~ [OH100555]
 @850  = ~Better to die free than live a slave.~

@@ -60,12 +60,26 @@ WRITE_ASCII DEATHVAR ~zbvamp~ #32
 
 /* compile the new dialogues and recompile old ones with the new strings */
 /* do we just recompile ALL 54 dialogues? only added a few that i know have been edited, there are more i need to add */
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~ 
                         ~%MOD_FOLDER%/dlg/ohbdenna.d~ /* still needs HEAVY edits */
 						~%MOD_FOLDER%/dlg/ohbjoker.d~
 						~%MOD_FOLDER%/dlg/ohbnajim.d~
-						~%MOD_FOLDER%/dlg/ohbbrodl.d~
+						~%MOD_FOLDER%/dlg/ohbbrodl.d~ /* still needs HEAVY edits */ 
 						~%MOD_FOLDER%/dlg/ohbstann.d~
+						~%MOD_FOLDER%/dlg/ohbtartl.d~
+						~%MOD_FOLDER%/dlg/ohbcook.d~
+                        ~%MOD_FOLDER%/dlg/ohbcurel.d~
+						~%MOD_FOLDER%/dlg/ohbdulf.d~
+						~%MOD_FOLDER%/dlg/ohbelgia.d~
+						~%MOD_FOLDER%/dlg/ohbfeldr.d~
+						~%MOD_FOLDER%/dlg/ohbgc01.d~
+						~%MOD_FOLDER%/dlg/ohbgerro.d~
+						~%MOD_FOLDER%/dlg/ohbgezzt.d~
+						~%MOD_FOLDER%/dlg/ohbimim.d~ /* needs crossmod edits for BPinBG1 */ 
+						~%MOD_FOLDER%/dlg/ohblaris.d~
+						~%MOD_FOLDER%/dlg/ohbleoka.d~
+						~%MOD_FOLDER%/dlg/ohbmardu.d~
+						~%MOD_FOLDER%/dlg/ohbvoghi.d~
 
 /* copy edited sound files over */
 COPY ~%MOD_FOLDER%/wav~ ~override~

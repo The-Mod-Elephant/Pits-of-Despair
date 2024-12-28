@@ -64,17 +64,19 @@ END
 IF ~~ THEN BEGIN 9
   SAY @550 /* Before we begin, <CHARNAME>, is there anything you'd like to say to the audience? */
   IF ~~ THEN REPLY @551 /* These foul beasts once committed unspeakable acts of cruelty upon the civilized people of Faerûn. Today, I enact justice in the name of all their innocent victims! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 10
-  IF ~~ THEN REPLY @552 /* This arena is as much a joke as the last. Let's get this over with, Dennaton! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 11
-  IF ~  OR(2)
-Global("ohb_101_item_good","global",0)
-Global("ohb_101_item_great","global",0)
-~ THEN REPLY @553 /* You expect me to entertain you, yet I have only the most basic of weaponry. Can a chef make a soufleé with only a firepit? Can a painter create a masterpiece with only one color? A symphony of violence requires many instruments. */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 12
-  IF ~~ THEN REPLY @554 /* Not particularly. */ GOTO 13
+  // IF ~~ THEN REPLY @552 /* This arena is as much a joke as the last. Let's get this over with, Dennaton! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+// ~ GOTO 11
+  // IF ~  OR(2)
+// Global("ohb_101_item_good","global",0)
+// Global("ohb_101_item_great","global",0)
+// ~ THEN REPLY @553 /* You expect me to entertain you, yet I have only the most basic of weaponry. Can a chef make a soufleé with only a firepit? Can a painter create a masterpiece with only one color? A symphony of violence requires many instruments. */ DO ~SetGlobal("ohb_item_reward","global",1)
+// ~ GOTO 12
+//   IF ~~ THEN REPLY @554 /* Not particularly. */ GOTO 13
   IF ~~ THEN REPLY @555 /* Why should I address these peasants? To gaze upon my magnificence is more than they deserve! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1) 
 PlaySound("BP2NEG_1")
 ~ GOTO 14
 END
@@ -105,7 +107,7 @@ Wait(1)
 UnhideGUI()
 EndCutSceneMode()
 ~ EXIT
-END
+END 
 
 IF ~~ THEN BEGIN 12
   SAY @558 /* My friends, our fledgling composer needs a patron. Will any of you help <PRO_HIMHER> make sweet music for you? For now, we shall let <PRO_HIMHER> demonstrate <PRO_HISHER> talent by hearing the tune <PRO_HESHE> plays with the instruments at hand! Combatants, to arms! */
@@ -133,7 +135,7 @@ Wait(1)
 UnhideGUI()
 EndCutSceneMode()
 ~ EXIT
-END
+END 
 
 IF ~~ THEN BEGIN 14
   SAY @560 /* Listen to the boos! So raucous! So beautiful! The applause will be thunderous the day you are brought low! Perhaps today? Let's find out! Combatants, to arms! */
@@ -213,17 +215,19 @@ END
 IF ~~ THEN BEGIN 21
   SAY @567 /* Before we start, <CHARNAME>, would you like to address your adoring fans? */
   IF ~~ THEN REPLY @568 /* I am a humble <PRO_MANWOMAN>. I scraped by as best I could in Baeloth's Pits. Faced with trained gladiators, I only hope I last long enough to provide the entertainment you deserve. */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 22
-  IF ~~ THEN REPLY @569 /* Really, Dennaton? You claim to provide entertainment available nowhere else. This fight will be over in seconds, and you know it. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 23
-  IF ~  OR(2)
-Global("ohb_102_item_good","global",0)
-Global("ohb_102_item_great","global",0)
-~ THEN REPLY @570 /* I destroyed some orcs for your amusement—these gladiators will be no different. But you, my people, deserve more! Give me the proper tools, and I swear the front row will drip red with blood! */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 24
-  IF ~~ THEN REPLY @571 /* Not at all. */ GOTO 25
+  // IF ~~ THEN REPLY @569 /* Really, Dennaton? You claim to provide entertainment available nowhere else. This fight will be over in seconds, and you know it. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+// ~ GOTO 23
+  // IF ~  OR(2)
+// Global("ohb_102_item_good","global",0)
+// Global("ohb_102_item_great","global",0)
+// ~ THEN REPLY @570 /* I destroyed some orcs for your amusement—these gladiators will be no different. But you, my people, deserve more! Give me the proper tools, and I swear the front row will drip red with blood! */ DO ~SetGlobal("ohb_item_reward","global",1)
+// ~ GOTO 24
+  // IF ~~ THEN REPLY @571 /* Not at all. */ GOTO 25
   IF ~~ THEN REPLY @572 /* Thayan gladiators? Ha! A nation of weaklings! No Thayan can stand against me! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 26
 END
@@ -304,17 +308,18 @@ END
 IF ~~ THEN BEGIN 29
   SAY @580 /* But before we begin—<CHARNAME>, is there anything you'd like to say to your adoring fans? */
   IF ~~ THEN REPLY @581 /* The noble savage. A worthy foe. I am honored to battle such an adversary. I trust our esteemed guests will find some thrill in the contest. */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 30
-  IF ~~ THEN REPLY @582 /* This is shameful! Yet another hopelessly lopsided match fobbed off as entertainment. You're bilking these people out of their hard-earned coin! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 31
-  IF ~  OR(2)
-Global("ohb_103_item_good","global",0)
-Global("ohb_103_item_great","global",0)
-~ THEN REPLY @583 /* Today, you will see one lizard at a time skewered—but two at a time would be better. I need proper weaponry! Come on, people! A potter cannot create vases without clay! */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 32
-  IF ~~ THEN REPLY @584 /* Nothing they'd care to hear. */ GOTO 33
+  // IF ~~ THEN REPLY @582 /* This is shameful! Yet another hopelessly lopsided match fobbed off as entertainment. You're bilking these people out of their hard-earned coin! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+// ~ GOTO 31
+ // IF ~  OR(2)
+// Global("ohb_103_item_good","global",0)
+// ~ THEN REPLY @583 /* Today, you will see one lizard at a time skewered—but two at a time would be better. I need proper weaponry! Come on, people! A potter cannot create vases without clay! */ DO ~SetGlobal("ohb_item_reward","global",1)
+// ~ GOTO 32
+//   IF ~~ THEN REPLY @584 /* Nothing they'd care to hear. */ GOTO 33
   IF ~~ THEN REPLY @585 /* A lion doesn't address sheep. */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 34
 END
@@ -405,17 +410,19 @@ END
 IF ~~ THEN BEGIN 37
   SAY @593 /* Before we begin, <CHARNAME>, have you any words for the audience? */
   IF ~~ THEN REPLY @594 /* Fear not, good people. As nightmares are banished by the light, so shall these creatures be banished by my might. */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 38
-  IF ~~ THEN REPLY @595 /* Dennaton, you disgusting piece of filth! You'd not last ten seconds in this arena! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 39
-  IF ~  OR(2)
-Global("ohb_104_item_good","global",0)
-Global("ohb_104_item_great","global",0)
-~ THEN REPLY @596 /* At last, I face creatures capable of spilling the kind of blood you want. But imagine how much greater a spectacle you'd witness had I better weapons! You shall have a river of blood, but I yearn to give you an ocean! */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 40
-  IF ~~ THEN REPLY @597 /* Don't think so. */ GOTO 41
+ // IF ~~ THEN REPLY @595 /* Dennaton, you disgusting piece of filth! You'd not last ten seconds in this arena! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+//~ GOTO 39
+//  IF ~  OR(2)
+// Global("ohb_104_item_good","global",0)
+// Global("ohb_104_item_great","global",0)
+// ~ THEN REPLY @596 /* At last, I face creatures capable of spilling the kind of blood you want. But imagine how much greater a spectacle you'd witness had I better weapons! You shall have a river of blood, but I yearn to give you an ocean! */ DO ~SetGlobal("ohb_item_reward","global",1)
+// ~ GOTO 40
+// IF ~~ THEN REPLY @597 /* Don't think so. */ GOTO 41
   IF ~~ THEN REPLY @598 /* These pathetic creatures will fall before me. People of Thay, lock your doors and hide your children. I give nightmares nightmares! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 42
 END
@@ -516,21 +523,23 @@ END
 IF ~~ THEN BEGIN 47
   SAY @608 /* Before we begin, <CHARNAME>, have you anything you'd like to say? */
   IF ~~ THEN REPLY @609 /* Fear not, good people of Thay! Your champion is here! When I am done this day, these despicable beasts will be naught but stains upon the arena floor! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_5")
 ~ GOTO 48
-  IF ~  GlobalGT("OHB_ANTI_DENNATON","GLOBAL",2)
-~ THEN REPLY @610 /* I've no doubt YOU fear the drow, Dennaton. You're nothing without the Winged. One day, it'll just be you and me in this arena. Some day soon. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 49
-  IF ~  !GlobalGT("OHB_ANTI_DENNATON","GLOBAL",2)
-~ THEN REPLY @610 /* I've no doubt YOU fear the drow, Dennaton. You're nothing without the Winged. One day, it'll just be you and me in this arena. Some day soon. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 51
-  IF ~  OR(2)
-Global("ohb_105_item_good","global",0)
-Global("ohb_105_item_great","global",0)
-~ THEN REPLY @611 /* Volo wrote the History of the Sword Coast. Prism sculpted the Mask of Ellesime. I shall create the greatest spectacle of gore seen this side of the Blood War. I need only the proper tools. Help me, everyone. Help me entertain YOU! */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 50
-  IF ~~ THEN REPLY @612 /* Nope. */ GOTO 52
+ // IF ~  GlobalGT("OHB_ANTI_DENNATON","GLOBAL",2)
+// ~ THEN REPLY @610 /* I've no doubt YOU fear the drow, Dennaton. You're nothing without the Winged. One day, it'll just be you and me in this arena. Some day soon. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+// ~ GOTO 49
+//   IF ~  !GlobalGT("OHB_ANTI_DENNATON","GLOBAL",2)
+// ~ THEN REPLY @610 /* I've no doubt YOU fear the drow, Dennaton. You're nothing without the Winged. One day, it'll just be you and me in this arena. Some day soon. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+// ~ GOTO 51
+// IF ~  OR(2)
+// Global("ohb_105_item_good","global",0)
+// Global("ohb_105_item_great","global",0)
+// ~ THEN REPLY @611 /* Volo wrote the History of the Sword Coast. Prism sculpted the Mask of Ellesime. I shall create the greatest spectacle of gore seen this side of the Blood War. I need only the proper tools. Help me, everyone. Help me entertain YOU! */ DO ~SetGlobal("ohb_item_reward","global",1)
+// ~ GOTO 50
+// IF ~~ THEN REPLY @612 /* Nope. */ GOTO 52
   IF ~~ THEN REPLY @613 /* Drow? Is this the best you can do? Surely even you fools know better than to fear such weaklings. I am the true dark one. FEAR ME! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_3")
 ~ GOTO 53
 END
@@ -652,17 +661,19 @@ END
 IF ~~ THEN BEGIN 61
   SAY @627 /* Before the carnage begins, would you like to address your adoring fans, <CHARNAME>? */
   IF ~~ THEN REPLY @628 /* Dusk settles across the land, but dawn will come anew. Citizens of Thay, I am your dawn-bringer. I shall banish these foul creatures to the Nine Hells! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 62
-  IF ~~ THEN REPLY @629 /* These are no vampires! I can see their false fangs from here! You're trying to pass common street ruffians off as undead! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 63
-  IF ~  OR(2)
-Global("ohb_201_item_good","global",0)
-Global("ohb_201_item_great","global",0)
-~ THEN REPLY @630 /* If you truly want a spectacle, ladies and gentlemen, give me something I can use to decorate this pit with my opponents' broken bodies! */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 64
-  IF ~~ THEN REPLY @631 /* No. */ GOTO 65
+ // IF ~~ THEN REPLY @629 /* These are no vampires! I can see their false fangs from here! You're trying to pass common street ruffians off as undead! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+//~ GOTO 63
+//  IF ~  OR(2)
+//Global("ohb_201_item_good","global",0)
+//Global("ohb_201_item_great","global",0)
+//~ THEN REPLY @630 /* If you truly want a spectacle, ladies and gentlemen, give me something I can use to decorate this pit with my opponents' broken bodies! */ DO ~SetGlobal("ohb_item_reward","global",1)
+//~ GOTO 64
+//  IF ~~ THEN REPLY @631 /* No. */ GOTO 65
   IF ~~ THEN REPLY @632 /* You Thayans cower and squeal like stuck pigs, and for what? A handful of rotting corpses? Behold a true warrior, and know shame! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 66
 END
@@ -778,17 +789,19 @@ END
 IF ~~ THEN BEGIN 72
   SAY @643 /* Before the slaughter commences, <CHARNAME>, would you care to address the audience? */
   IF ~~ THEN REPLY @644 /* I dedicate this battle to you, good people of Thay. I'll vanquish these alien monstrosities for YOU! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 73
-  IF ~~ THEN REPLY @645 /* You may fool the crowd with these two-copper illusions, Dennaton, but not me. These are nothing but freakishly tall goblins. They shall fall before me. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 74
-  IF ~  OR(2)
-Global("ohb_202_item_good","global",0)
-Global("ohb_202_item_great","global",0)
-~ THEN REPLY @646 /* They say the githyanki wield mighty swords. Imagine what I could do with an equally mighty weapon or item to use against them! Give me one and I promise you'll not regret it! */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 75
-  IF ~~ THEN REPLY @647 /* I'll save my breath for the battle. */ GOTO 76
+//  IF ~~ THEN REPLY @645 /* You may fool the crowd with these two-copper illusions, Dennaton, but not me. These are nothing but freakishly tall goblins. They shall fall before me. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+//~ GOTO 74
+ // IF ~  OR(2)
+//Global("ohb_202_item_good","global",0)
+//Global("ohb_202_item_great","global",0)
+//~ THEN REPLY @646 /* They say the githyanki wield mighty swords. Imagine what I could do with an equally mighty weapon or item to use against them! Give me one and I promise you'll not regret it! */ DO ~SetGlobal("ohb_item_reward","global",1)
+//~ GOTO 75
+//  IF ~~ THEN REPLY @647 /* I'll save my breath for the battle. */ GOTO 76
   IF ~~ THEN REPLY @648 /* With each blow I land upon my enemy, I shall imagine I am crushing one of you cowering weaklings! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 77
 END
@@ -904,17 +917,19 @@ END
 IF ~~ THEN BEGIN 83
   SAY @659 /* <CHARNAME>! Before we begin, have you anything to say to the Thayan people? */
   IF ~~ THEN REPLY @660 /* No beasts from the sea will stop me from defending the worthy citizens of Thay! Rest easy. I am here for you! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 84
-  IF ~~ THEN REPLY @661 /* Is this the best you can do, Dennaton? I'll slaughter these beasts in moments. I hope you people didn't actually pay for this. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 85
-  IF ~  OR(2)
-Global("ohb_203_item_good","global",0)
-Global("ohb_203_item_great","global",0)
-~ THEN REPLY @662 /* Look at my equipment, my weapons! Are there no better instruments of destruction to be had? With the mighty artifacts your great nation possesses, I could give you an unforgettable show! */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 86
-  IF ~~ THEN REPLY @663 /* Let's get on with this. */ GOTO 87
+ // IF ~~ THEN REPLY @661 /* Is this the best you can do, Dennaton? I'll slaughter these beasts in moments. I hope you people didn't actually pay for this. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+//~ GOTO 85
+//  IF ~  OR(2)
+//Global("ohb_203_item_good","global",0)
+//Global("ohb_203_item_great","global",0)
+//~ THEN REPLY @662 /* Look at my equipment, my weapons! Are there no better instruments of destruction to be had? With the mighty artifacts your great nation possesses, I could give you an unforgettable show! */ DO ~SetGlobal("ohb_item_reward","global",1)
+//~ GOTO 86
+//  IF ~~ THEN REPLY @663 /* Let's get on with this. */ GOTO 87
   IF ~~ THEN REPLY @664 /* I shall make the battle short. I'm sure you wretches want to return to your worthless lives as soon as possible. */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 88
 END
@@ -1025,17 +1040,19 @@ END
 IF ~~ THEN BEGIN 93
   SAY @674 /* As always, before we begin, I want to give you the opportunity to speak to your fans, <CHARNAME>. These may be your last words—choose them well. */
   IF ~~ THEN REPLY @675 /* No sorcerous trickery, no summoned elemental lord, no conjurer of any power will thwart me. I fight for Thay! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_raise_villain_score","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 94
-  IF ~~ THEN REPLY @676 /* A halfling mage, Dennaton? Is your audience so easily parted from their hard-earned gold? */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 95
-  IF ~  OR(2)
-Global("ohb_204_item_good","global",0)
-Global("ohb_204_item_great","global",0)
-~ THEN REPLY @677 /* This shall be poor entertainment—unless some generous patron or patroness has something I might use to enhance the spectacle. Anyone? */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 96
-  IF ~~ THEN REPLY @678 /* I have nothing to say. */ GOTO 97
+//  IF ~~ THEN REPLY @676 /* A halfling mage, Dennaton? Is your audience so easily parted from their hard-earned gold? */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+//~ GOTO 95
+//  IF ~  OR(2)
+//Global("ohb_204_item_good","global",0)
+//Global("ohb_204_item_great","global",0)
+//~ THEN REPLY @677 /* This shall be poor entertainment—unless some generous patron or patroness has something I might use to enhance the spectacle. Anyone? */ DO ~SetGlobal("ohb_item_reward","global",1)
+//~ GOTO 96
+//  IF ~~ THEN REPLY @678 /* I have nothing to say. */ GOTO 97
   IF ~~ THEN REPLY @679 /* You Thayans will regret caging me. When I am free, all Thayans will cower in their bedchambers at night, fearful that the mighty <CHARNAME> will come for them from the shadows! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_raise_villain_score","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 98
 END
@@ -1151,22 +1168,25 @@ END
 IF ~~ THEN BEGIN 104
   SAY @690 /* And as always, I offer you the chance to speak to your fans, <CHARNAME>. What would you have them know? */
   IF ~~ THEN REPLY @691 /* Nothing can overcome my zeal for defending the Thayan people! I shall defeat these fiends for you, my noble patrons! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_5")
 ~ GOTO 105
-  IF ~~ THEN REPLY @692 /* Devils and demons? They're nothing but imps, you wretched fraud! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 106
-  IF ~  OR(2)
-Global("ohb_205_item_good","global",0)
-Global("ohb_205_item_great","global",0)
-~ THEN REPLY @693 /* Who would see these fiends beg for mercy? Give me the means and I'll have this entire host on its knees before you! */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 107
-  IF ~~ THEN REPLY @694 /* Let's just get this over with. */ GOTO 108
+ // IF ~~ THEN REPLY @692 /* Devils and demons? They're nothing but imps, you wretched fraud! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+//~ GOTO 106
+//  IF ~  OR(2)
+//Global("ohb_205_item_good","global",0)
+//Global("ohb_205_item_great","global",0)
+//~ THEN REPLY @693 /* Who would see these fiends beg for mercy? Give me the means and I'll have this entire host on its knees before you! */ DO ~SetGlobal("ohb_item_reward","global",1)
+//~ GOTO 107
+//  IF ~~ THEN REPLY @694 /* Let's just get this over with. */ GOTO 108
   IF ~  !Gender(Player1,FEMALE)
 ~ THEN REPLY @695 /* I see devils and demons each time I look at this accursed audience! If you wish to see the true fiends, look to yourselves! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_3")
 ~ GOTO 109
   IF ~  Gender(Player1,FEMALE)
 ~ THEN REPLY @695 /* I see devils and demons each time I look at this accursed audience! If you wish to see the true fiends, look to yourselves! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_3")
 ~ GOTO 275
 END
@@ -1282,17 +1302,19 @@ END
 IF ~~ THEN BEGIN 115
   SAY @706 /* But before the clash begins—<CHARNAME>, would you care to address your adoring fans? */
   IF ~~ THEN REPLY @707 /* Heresies have no place in Thay! I shall silence this cult's lies forever so all gods-fearing people can worship without fear. */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 116
-  IF ~~ THEN REPLY @708 /* Priests and scribes, Dennaton? Ridiculous. I'll try to end this before the crowd falls asleep. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 117
-  IF ~  OR(2)
-Global("ohb_301_item_good","global",0)
-Global("ohb_301_item_great","global",0)
-~ THEN REPLY @709 /* Cults often possess relics of untold power. I wonder, do any of you possess some token I might use to thwart this twisted order? */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 118
-  IF ~~ THEN REPLY @710 /* I am a <PRO_MANWOMAN> of action! Let the battle begin! */ GOTO 119
+ // IF ~~ THEN REPLY @708 /* Priests and scribes, Dennaton? Ridiculous. I'll try to end this before the crowd falls asleep. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+//~ GOTO 117
+//  IF ~  OR(2)
+//Global("ohb_301_item_good","global",0)
+//Global("ohb_301_item_great","global",0)
+//~ THEN REPLY @709 /* Cults often possess relics of untold power. I wonder, do any of you possess some token I might use to thwart this twisted order? */ DO ~SetGlobal("ohb_item_reward","global",1)
+//~ GOTO 118
+ // IF ~~ THEN REPLY @710 /* I am a <PRO_MANWOMAN> of action! Let the battle begin! */ GOTO 119
   IF ~~ THEN REPLY @711 /* I'm not surprised this detestable nation harbors such foul blasphemers. Watch me visit the gods' wrath on these heretics. As I kill them, I think of you. */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 119
 END
@@ -1408,17 +1430,19 @@ END
 IF ~~ THEN BEGIN 126
   SAY @722 /* <CHARNAME>. Have you anything to say before we begin? */
   IF ~~ THEN REPLY @723 /* I would gladly strike down a hundred golems in my patrons' honor. */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 127
-  IF ~~ THEN REPLY @724 /* "Shattering golem"? Are you joking? */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 128
-  IF ~  OR(2)
-Global("ohb_302_item_good","global",0)
-Global("ohb_302_item_great","global",0)
-~ THEN REPLY @725 /* My mouth is parched! Had I some fine spirits to moisten my lips, I could promise a fine spectacle! */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 129
-  IF ~~ THEN REPLY @726 /* I'll save my words for when we're finished. */ GOTO 130
+//  IF ~~ THEN REPLY @724 /* "Shattering golem"? Are you joking? */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+//~ GOTO 128
+//  IF ~  OR(2)
+//Global("ohb_302_item_good","global",0)
+//Global("ohb_302_item_great","global",0)
+//~ THEN REPLY @725 /* My mouth is parched! Had I some fine spirits to moisten my lips, I could promise a fine spectacle! */ DO ~SetGlobal("ohb_item_reward","global",1)
+//~ GOTO 129
+ // IF ~~ THEN REPLY @726 /* I'll save my words for when we're finished. */ GOTO 130
   IF ~~ THEN REPLY @727 /* A shattering golem? Only in Thay... */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 131
 END
@@ -1524,17 +1548,19 @@ END
 IF ~~ THEN BEGIN 137
   SAY @738 /* But before we begin, have you any words for the audience, <CHARNAME>? */
   IF ~~ THEN REPLY @739 /* Death in service to the Thayan people holds no horror for me. My life is yours! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 138
-  IF ~~ THEN REPLY @740 /* I shall slay this rotting hedge wizardess and reveal you for the fraud you are, Dennaton! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 139
-  IF ~  OR(2)
-Global("ohb_303_item_good","global",0)
-Global("ohb_303_item_great","global",0)
-~ THEN REPLY @741 /* A lich is a powerful foe. Give me something, some item to help me fight it, and I'll end this undead horror for all time! */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 140
-  IF ~~ THEN REPLY @742 /* None. */ GOTO 141
+// IF ~~ THEN REPLY @740 /* I shall slay this rotting hedge wizardess and reveal you for the fraud you are, Dennaton! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+//~ GOTO 139
+//  IF ~  OR(2)
+//Global("ohb_303_item_good","global",0)
+//Global("ohb_303_item_great","global",0)
+//~ THEN REPLY @741 /* A lich is a powerful foe. Give me something, some item to help me fight it, and I'll end this undead horror for all time! */ DO ~SetGlobal("ohb_item_reward","global",1)
+//~ GOTO 140
+//  IF ~~ THEN REPLY @742 /* None. */ GOTO 141
   IF ~~ THEN REPLY @743 /* A lich. Finally, a real wizard in this nation of bumbling poseurs. */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 142
 END
@@ -1650,17 +1676,19 @@ END
 IF ~~ THEN BEGIN 148
   SAY @754 /* But before we begin, do you have anything to say to the audience, <CHARNAME>? */
   IF ~~ THEN REPLY @755 /* Do not fear these monstrous creatures, good people of Thay. They shall fall before before me, your champion! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 149
-  IF ~~ THEN REPLY @756 /* Pathetic. I'll unmask your so-called rakshasas and reveal them as for the common street thugs they are. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 150
-  IF ~  OR(2)
-Global("ohb_304_item_good","global",0)
-Global("ohb_304_item_great","global",0)
-~ THEN REPLY @757 /* People of Thay, I beseech you, give me the means to send cat hair throughout this arena. */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 151
-  IF ~~ THEN REPLY @758 /* Nothing springs to mind. */ GOTO 152
+ // IF ~~ THEN REPLY @756 /* Pathetic. I'll unmask your so-called rakshasas and reveal them as for the common street thugs they are. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+//~ GOTO 150
+//  IF ~  OR(2)
+//Global("ohb_304_item_good","global",0)
+//Global("ohb_304_item_great","global",0)
+//~ THEN REPLY @757 /* People of Thay, I beseech you, give me the means to send cat hair throughout this arena. */ DO ~SetGlobal("ohb_item_reward","global",1)
+//~ GOTO 151
+//  IF ~~ THEN REPLY @758 /* Nothing springs to mind. */ GOTO 152
   IF ~~ THEN REPLY @759 /* Just like Thayans to be frightened by cats. */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 153
 END
@@ -1776,17 +1804,19 @@ END
 IF ~~ THEN BEGIN 159
   SAY @770 /* But before we begin, do you wish to speak, <CHARNAME>? */
   IF ~~ THEN REPLY @771 /* My love for Thay will shield my mind from illithid trickery! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_5")
 ~ GOTO 160
-  IF ~~ THEN REPLY @772 /* Gluing squids onto some goblins won't fool anyone, Dennaton. You're a sham! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 161
-  IF ~  OR(2)
-Global("ohb_305_item_good","global",0)
-Global("ohb_305_item_great","global",0)
-~ THEN REPLY @773 /* Good people of Thay, if I have found any favor in your hearts, please bestow on me some token to aid me in my struggles. */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 162
-  IF ~~ THEN REPLY @774 /* I've nothing to say. */ GOTO 163
+//  IF ~~ THEN REPLY @772 /* Gluing squids onto some goblins won't fool anyone, Dennaton. You're a sham! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+//~ GOTO 161
+//  IF ~  OR(2)
+//Global("ohb_305_item_good","global",0)
+//Global("ohb_305_item_great","global",0)
+//~ THEN REPLY @773 /* Good people of Thay, if I have found any favor in your hearts, please bestow on me some token to aid me in my struggles. */ DO ~SetGlobal("ohb_item_reward","global",1)
+//~ GOTO 162
+ // IF ~~ THEN REPLY @774 /* I've nothing to say. */ GOTO 163
   IF ~~ THEN REPLY @775 /* Mind flayers feed on their victims' minds. My opponents would surely starve to death in the witless nation of Thay. I shall kill them out of mercy. */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_3")
 ~ GOTO 164
 END
@@ -1892,17 +1922,19 @@ END
 IF ~~ THEN BEGIN 170
   SAY @786 /* Have you any words for the audience before you face your fate, <CHARNAME>? */
   IF ~~ THEN REPLY @787 /* These creatures are tainted with evil. I shall remove their stain from this great nation! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 171
-  IF ~~ THEN REPLY @788 /* Wenches in parakeet costumes! How much have you bilked these people for, Dennaton? */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 172
-  IF ~  OR(2)
-Global("ohb_401_item_good","global",0)
-Global("ohb_401_item_great","global",0)
-~ THEN REPLY @789 /* I wonder, are there any here tonight who possess an item they would see tested against the might of the heavens? Give it to me and I'll shower you with feathers from devas' wings! */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 173
-  IF ~~ THEN REPLY @790 /* I have no speech prepared. */ GOTO 174
+//  IF ~~ THEN REPLY @788 /* Wenches in parakeet costumes! How much have you bilked these people for, Dennaton? */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+//~ GOTO 172
+//  IF ~  OR(2)
+//Global("ohb_401_item_good","global",0)
+//Global("ohb_401_item_great","global",0)
+//~ THEN REPLY @789 /* I wonder, are there any here tonight who possess an item they would see tested against the might of the heavens? Give it to me and I'll shower you with feathers from devas' wings! */ DO ~SetGlobal("ohb_item_reward","global",1)
+//~ GOTO 173
+//  IF ~~ THEN REPLY @790 /* I have no speech prepared. */ GOTO 174
   IF ~~ THEN REPLY @791 /* Only Thayans would be so vile as to imprison celestial beings. A day of reckoning is coming, you rephrehensible thugs. */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 175
 END
@@ -2018,17 +2050,19 @@ END
 IF ~~ THEN BEGIN 181
   SAY @802 /* <CHARNAME>? Have you any words of wisdom for your adoring fans? */
   IF ~~ THEN REPLY @803 /* Two liches or two score, I will defeat them all for you, good people of Thay! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 182
-  IF ~~ THEN REPLY @804 /* More decrepit arcanists. Surely you people can find better ways to waste your money. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 183
-  IF ~  OR(2)
-Global("ohb_402_item_good","global",0)
-Global("ohb_402_item_great","global",0)
-~ THEN REPLY @805 /* People of Thay, if any among you have a powerful weapon to bestow upon me, I promise I will send lich skulls sailing high into the crowd! */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 184
-  IF ~~ THEN REPLY @806 /* Don't waste time talking. */ GOTO 185
+ // IF ~~ THEN REPLY @804 /* More decrepit arcanists. Surely you people can find better ways to waste your money. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+//~ GOTO 183
+ // IF ~  OR(2)
+//Global("ohb_402_item_good","global",0)
+//Global("ohb_402_item_great","global",0)
+//~ THEN REPLY @805 /* People of Thay, if any among you have a powerful weapon to bestow upon me, I promise I will send lich skulls sailing high into the crowd! */ DO ~SetGlobal("ohb_item_reward","global",1)
+// ~ GOTO 184
+ // IF ~~ THEN REPLY @806 /* Don't waste time talking. */ GOTO 185
   IF ~~ THEN REPLY @807 /* Half-dead senile wizards? Aren't there enough in Thay already? */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 186
 END
@@ -2144,17 +2178,19 @@ END
 IF ~~ THEN BEGIN 192
   SAY @818 /* But before we begin—<CHARNAME>, do you have any final words for your adoring fans? */
   IF ~~ THEN REPLY @819 /* Citizens of Thay, do not fear! My zeal for your good nation will help me vanquish these monsters! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 193
-  IF ~~ THEN REPLY @820 /* Dragons? They're wyrmlings, hardly older than I am. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 194
-  IF ~  OR(2)
-Global("ohb_403_item_good","global",0)
-Global("ohb_403_item_great","global",0)
-~ THEN REPLY @821 /* Help me now, O people of Thay! Bestow upon me a token of your favor that I might paint this arena's walls crimson with dragon blood! */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 195
-  IF ~~ THEN REPLY @822 /* A new set of trousers would be nice. */ GOTO 196
+ // IF ~~ THEN REPLY @820 /* Dragons? They're wyrmlings, hardly older than I am. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+//~ GOTO 194
+//  IF ~  OR(2)
+//Global("ohb_403_item_good","global",0)
+//Global("ohb_403_item_great","global",0)
+//~ THEN REPLY @821 /* Help me now, O people of Thay! Bestow upon me a token of your favor that I might paint this arena's walls crimson with dragon blood! */ DO ~SetGlobal("ohb_item_reward","global",1)
+//~ GOTO 195
+//  IF ~~ THEN REPLY @822 /* A new set of trousers would be nice. */ GOTO 196
   IF ~~ THEN REPLY @823 /* I see you fainting like sickly cattle on a hot summer day, Thayans. I slay these monsters to expose you for the weakling cowards you are! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 197
 END
@@ -2275,17 +2311,19 @@ END
 IF ~~ THEN BEGIN 204
   SAY @835 /* You've had the opportunity to address the audience many times, performer. This may be your last. Have you anything to say? */
   IF ~~ THEN REPLY @836 /* The Thayan peoples' devotion and love gives me the strength to overcome even those whose veins course with the blood of gods! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_5")
 ~ GOTO 205
-  IF ~~ THEN REPLY @837 /* Gods? These are men and women. I'll cut their flesh and shatter their bones, proving Dennaton's fraud! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
-~ GOTO 206
-  IF ~  OR(2)
-Global("ohb_404_item_good","global",0)
-Global("ohb_404_item_great","global",0)
-~ THEN REPLY @838 /* Am I to face the power of the gods themselves unaided? Have I not won favor enough to be granted some token of appreciation to bolster me in my darkest hour? */ DO ~SetGlobal("ohb_item_reward","global",1)
-~ GOTO 207
-  IF ~~ THEN REPLY @839 /* I have no words left for the crowd. */ GOTO 208
+ // IF ~~ THEN REPLY @837 /* Gods? These are men and women. I'll cut their flesh and shatter their bones, proving Dennaton's fraud! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+//~ GOTO 206
+ // IF ~  OR(2)
+//Global("ohb_404_item_good","global",0)
+//Global("ohb_404_item_great","global",0)
+//~ THEN REPLY @838 /* Am I to face the power of the gods themselves unaided? Have I not won favor enough to be granted some token of appreciation to bolster me in my darkest hour? */ DO ~SetGlobal("ohb_item_reward","global",1)
+//~ GOTO 207
+//  IF ~~ THEN REPLY @839 /* I have no words left for the crowd. */ GOTO 208
   IF ~~ THEN REPLY @840 /* The Bhaalspawn and their cultists will fall! And the people of Thay will join them soon after! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_3")
 ~ GOTO 209
 END
