@@ -13,6 +13,7 @@ SAY ~Thank you good <PRO_SIRMAAM>, this'll feed my twelve sick children and dyin
 IF ~~ DO ~SetGlobal("ZBPodSummonsReceived","GLOBAL",4) 
 // AddJournalEntry(@800001,QUEST) 
 // GiveItemCreate("zbpdnote",Player1,1,0,0) 
+GiveItemCreate("ZBrrrinC",Player1,1,0,0) 
 TakePartyGold(1) 
 RevealAreaOnMap("AR2000") 
 DestroySelf()
@@ -26,6 +27,7 @@ SAY ~Thank you good <PRO_SIRMAAM>, this'll feed my twelve sick children and dyin
 IF ~~ DO ~SetGlobal("ZBPodSummonsReceived","GLOBAL",4) 
 // AddJournalEntry(@800001,QUEST) 
 // GiveItemCreate("zbpdnote",Player1,1,0,0) 
+GiveItemCreate("ZBrrrinC",Player1,1,0,0) 
 TakePartyGold(5) 
 RevealAreaOnMap("AR2000") 
 DestroySelf()
@@ -46,6 +48,7 @@ SAY ~I suppose the high and mighty hero can't be bothered to spare a single piti
 IF ~~ DO ~SetGlobal("ZBPodSummonsReceived","GLOBAL",4) 
 // AddJournalEntry(@800001,QUEST) */
 // GiveItemCreate("zbpdnote",Player1,1,0,0) 
+GiveItemCreate("ZBrrrinC",Player1,1,0,0) 
 RevealAreaOnMap("AR2000") 
 DestroySelf()
 ClearAllActions() 
