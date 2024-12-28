@@ -220,7 +220,7 @@
 @210  = ~I'm interested. Go on.~
 @211  = ~How do I know you aren't setting me up?~
 @212  = ~I'm really not interested anymore.~
-@213  = ~Psst, <CHARNAME>. I want to ask you about something. We've all heard how you vanquished Baeloth and won your freedom. I admit I doubted it before. But your arena success makes me think the legend might actually be true. Are you interested in attaining your freedom once more?~ [OH91030]
+@213  = ~Psst, <CHARNAME>. I want to ask you about something. We've all heard how you defeated Sarevok and saved Baldur's Gate. I admit I doubted it before. But your arena success makes me think the legend might actually be true. Are you interested in attaining your freedom once more?~ [zblank]
 @214  = ~Sure.~
 @215  = ~What's in it for you?~
 @216  = ~I was at first, but I've changed my mind. This place isn't so bad. There's a... clarity here that's very attractive to me.~

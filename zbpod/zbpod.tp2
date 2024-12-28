@@ -95,4 +95,4 @@ COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */
 		~%MOD_FOLDER%/test/zbvyan.d~ /* vyantri's new line */
 		~%MOD_FOLDER%/test/zbmes.d~ /* messenger - aka best girl in disguise lines */
         ~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */
-		
+		~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */ 
