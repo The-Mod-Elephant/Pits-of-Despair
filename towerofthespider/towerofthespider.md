@@ -12,7 +12,7 @@ Upper layers Top 2 layers: Necromancy Tower
 
 1. Entrance of Tower. Cannot exit without the Red Wizard Sigil found on XXX. Wide double doors to be able to allow large creatures or wagon loads of supplies through. Heavily guarded, DO NOT OPEN.
     - Living Statues or Guardian (big strong) beholder with 18 eyes, just has to watch like the under-dark beholder who guards the chest
-    - Heavily guarded soliders and statues 
+    - Heavily guarded soldiers and statues 
 
 2. Commoner Entrance, Spiral Stairs down to Black Pits. Large and covered in ornamental rugs, separator down the middle with railing meant to have large numbers of people at once use.
 
@@ -73,6 +73,45 @@ Even more lavish decor, opulent, fancy guards (black,blue, purple, gold)
 
 ### Swamp Tower Level 3
 
+Big Lab, lum the mad assets, demon fire from sod areas assets
+
 Liches and demons, Yugoloths
 
+1. Spiral Stair Case
+
+2. Workroom, many tables and operating equipment
+
+3. Outside bridge walk, webs
+- Super high level drow
+- Webs 
+- Ancient Driders
+
+4. Polygon room with storage areas
+- Each room is locked with magic, portals to traverse
+- Each room has some specific enemies half dragons of differing colours
+- Keys are in level 3: 2,5 one on level 2 and one on level 1 (coloured keys)
+
+5. Spider room
+- big spider in center
+- spiders crawling down from the ceiling and windows
+
+6. Outside cat walk
+- Cap of Balours on each walkway
+
 ### Swamp Tower Level 4
+
+1. Spiral Stair Case end
+
+2. giant ornate square table in the middle of the room, with a huge magic immune zombie in the middle
+- Souls being draw into it
+- Count down to activation wait 3 rounds
+
+3. Throne and dias for Saz Tam and lower level Vicktor Spy master
+- Poison and spider thrown
+
+4. Depressed area with staircases going up and down
+
+5. Big battle room
+- Magic grimours, animated weapons spell casters 8 magic books one for each school aside from necromantic books
+- Walls with books, windows are magic forcefields
+- Meat hooks with human bodies, minotaurs, dead creatures
