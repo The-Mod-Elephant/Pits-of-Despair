@@ -89,27 +89,27 @@ Liches and demons, Yugoloths
 4. Polygon room with storage areas
 - Each room is locked with magic, portals to traverse
 - Each room has some specific enemies half dragons of differing colours
-- Keys are in level 3: 2,5 one on level 2 and one on level 1 (coloured keys)
+- Keys are in level 3: 2,5 one on level 2 and one on level 1 (coloured keys, one for each Half-dragon color. Red, Green, Blue, Black)
 
 5. Spider room
 - big spider in center
 - spiders crawling down from the ceiling and windows
 
 6. Outside cat walk
-- Cap of Balours on each walkway
+- Each catwalk has 3 balors + draw from a pool of total other balors (9) of Balors on each walkway
 
 ### Swamp Tower Level 4
 
 1. Spiral Stair Case end
 
-2. giant ornate square table in the middle of the room, with a huge magic immune zombie in the middle
+2. giant ornate square table in the middle of the room, with a huge magic immune zombie like creature (think Frankenstein) in the middle
 - Souls being draw into it
 - Count down to activation wait 3 rounds
 
 3. Throne and dias for Saz Tam and lower level Vicktor Spy master
-- Poison and spider thrown
+- Poison and spider throne
 
-4. Depressed area with staircases going up and down
+4. Depressed area with staircases going up and down, 4 total 2 on each side for chokepoints
 
 5. Big battle room
 - Magic grimours, animated weapons spell casters 8 magic books one for each school aside from necromantic books
