@@ -160,3 +160,9 @@ COPY_EXISTING ~zbeshpeu.itm~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 265 parameter1 = guard END
 
 
+
+//////// Mirror Mask \\\\\\\\
+INCLUDE ~%MOD_FOLDER%/items/mirrormask~ ~override~
+COPY_EXISTING ~zbhlmmir.ITM~ ~override~
+    SAY NAME2 @10120
+    SAY IDENTIFIED_DESC @10121
