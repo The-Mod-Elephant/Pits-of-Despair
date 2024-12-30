@@ -172,3 +172,9 @@ INCLUDE ~%MOD_FOLDER%/items/luxlizardleeps~ ~override~
 COPY_EXISTING ~zbbtlizd.ITM~ ~override~
     SAY NAME2 @10130
     SAY IDENTIFIED_DESC @10131
+
+//////// Blazing Bull \\\\\\\\
+INCLUDE ~%MOD_FOLDER%/items/blazingbull~ ~override~
+COPY_EXISTING ~zbhlmbul.ITM~ ~override~
+    SAY NAME2 @10140
+    SAY IDENTIFIED_DESC @10141
