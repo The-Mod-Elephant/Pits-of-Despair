@@ -178,3 +178,9 @@ INCLUDE ~%MOD_FOLDER%/items/blazingbull~ ~override~
 COPY_EXISTING ~zbhlmbul.ITM~ ~override~
     SAY NAME2 @10140
     SAY IDENTIFIED_DESC @10141
+
+//////// Gruumsh's Totem \\\\\\\\
+INCLUDE ~%MOD_FOLDER%/items/grummshtotem~ ~override~
+COPY_EXISTING ~zbrdorc0.ITM~ ~override~
+    SAY NAME2 @10150
+    SAY IDENTIFIED_DESC @10151
