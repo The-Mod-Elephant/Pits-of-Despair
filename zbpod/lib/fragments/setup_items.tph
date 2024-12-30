@@ -166,3 +166,9 @@ INCLUDE ~%MOD_FOLDER%/items/mirrormask~ ~override~
 COPY_EXISTING ~zbhlmmir.ITM~ ~override~
     SAY NAME2 @10120
     SAY IDENTIFIED_DESC @10121
+
+//////// Luxurious Lizardskin Leaps \\\\\\\\
+INCLUDE ~%MOD_FOLDER%/items/luxlizardleeps~ ~override~
+COPY_EXISTING ~zbbtlizd.ITM~ ~override~
+    SAY NAME2 @10130
+    SAY IDENTIFIED_DESC @10131
