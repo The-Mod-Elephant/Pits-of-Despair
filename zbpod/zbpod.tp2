@@ -1,7 +1,7 @@
 BACKUP "weidu_external/zbpod/backup/"
 SUPPORT "https://www.gibberlings3.net/forums/forum/28-miscellaneous-released-mods/"
 VERSION "0.1"
-README ~%MOD_FOLDER%/README.rtf~
+README ~%MOD_FOLDER%/README.html~
 AUTO_EVAL_STRINGS
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
