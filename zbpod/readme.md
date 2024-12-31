@@ -1,0 +1,73 @@
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+</head>
+
+<h1 style="text-align: center; font-size: 20px; font-family: Inconsolata, sans-serif;">
+Pits of Despair
+<h1>
+
+<p style="text-align: center; font-size: 20px; font-family: Inconsolata, sans-serif;">
+Expansion mod for Baldur’s Gate 2: Enhanced Edition. Incorporates and expands the Black Pits 2: Gladiators of Thay into the Shadows of Amn and Throne of Bhaal campaign along with the custom Pits of Despair content that finishes the storyline with intent for a more satisfying end.
+</p>
+
+<img src="pits_of_despair.png" alt="" width="800" style="display: block; margin-left: auto; margin-right: auto;" />
+
+<h2 style="text-align: center; font-size: 20px; font-family: Inconsolata, sans-serif;">
+Tools Used in Creation
+<h2>
+
+<div style="text-align: center; font-size: 20px; font-family: Inconsolata, sans-serif;">
+
+WeiDU by Wes Weimer, the bigg, and Wisp
+
+Near Infinity by Jon Olav Hauglid, FredSRichardson, and argent77
+
+Notepad++ by the Notepad++ team
+
+WeiDU Notepad++ Highlighters by cmorgan, updated by argent77
+
+ConTEXT Text Editor by Eden Kirin
+
+WeiDU ConTEXT Highlighters by Idobek, updated by cmorgan
+
+IESDP maintained by igi and lynx
+
+DLTCEP by Avenger
+
+VSCodium by Microsoft and VSCodium team
+
+Infinity Viewer by dark0dave
+
+BGForge BGforge team
+
+Adobe Photoshop design elements assisted with **Adobe Firefly**
+
+Lazy Nezumi Pro Guillaume Stordeur
+
+FFMpeg FFmpeg team
+
+</div>
+<br></br>
+
+<h2 style="text-align: center; font-size: 20px; font-family: Inconsolata, sans-serif;">
+Credits
+<h2>
+
+<div style="text-align: center; font-size: 20px; font-family: Inconsolata, sans-serif;">
+
+Project Lead:   [@zenblack](https://github.com/zenblack)
+
+Team Leads:     [@RoyalProtector](https://github.com/szaumoor), [@bucketfulofsunshine](https://github.com/bucketfulofsunshine), [@dark0dave](https://github.com/dark0dave)
+
+Collaborators:  Angel, Curian55, CrevsDaak, quantum_mechani, Llewren, FallDamage
+
+Contributors:   Glittergear, CamDawg, Svef
+
+Voice Actors:   
+
+Effects/Sound:  
+
+Playtesters:    suy, Aquadrizzt
+
+Special Thanks: Halmy, Argent77, Skellytz, Acifer, jastey
+</div>
