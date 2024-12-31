@@ -13,6 +13,13 @@ THEN
 	    CutSceneID(Player1) /* who performs the action */
 		/* actions start here */ 
 		SetGlobal("zbnephcutscene","GLOBAL",1) /* we don't want the cutscene to repeat */ 
+		Wait(2)
+		DisplayStringHead(Player1,@1800013)
+		Wait(3)
+		PlaySound("MISC_03A")
+        PlayDead(45)
+		FadeToColor([50.0],0)
+		Wait(2)
 		StorePartyLocations() 
 		LeaveAreaLUA("AR0701","",[2034.873],NW) /* carries player over */ 
 		ActionOverride(Player2,LeaveAreaLUA("AR0701","",[2034.873],NW))  
@@ -22,6 +29,8 @@ THEN
         ActionOverride(Player6,LeaveAreaLUA("AR0701","",[2034.873],NW))  /* carries party over, they have to be out of sight */ 
 		CreateCreature("zspdnf16",[1560.680],NE)  /* spawns in nephetel */ 
 		CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */ 
+		Wait(2)
+		FadeFromColor([30.0],0)
 		MoveViewPoint([1670.680],INSTANT)
 		ActionOverride("zspdnf16",FaceObject("zbvamp"))
         ActionOverride("zbvamp",FaceObject("zspdnf16"))
@@ -65,10 +74,13 @@ THEN
 		Wait(5)
 		ActionOverride("zspdnf16",MoveToPoint([1560.1069])) /* neph moving south */ 
 		Wait(2)
+		ActionOverride("zbvamp",FaceObject("zspdnf16"))
+		Wait(2)
 		ActionOverride("zspdnf16",FaceObject("zbvamp"))
 		Wait(2)
 		DisplayStringHead("zspdnf16",@1800012) /* ~Of course, Spymaster.~ */ 
 		Wait(5)
+		FadeToColor([50.0],0)
 		ActionOverride("zspdnf16",DestroySelf())
 		Wait(1)
         ActionOverride("zbvamp",DestroySelf())
@@ -76,6 +88,8 @@ THEN
         RestorePartyLocations()
 		/* actions end here */ 
 		EndCutSceneMode() /* exits the the StartCutSceneMode() action */
+		Wait(1)
+		FadeFromColor([50.0],0)
 		AddJournalEntry(@800001,QUEST) /* add journal entry, moved over from d file */ 
         GiveItemCreate("zbpdnote",Player1,1,0,0) /* give player the note, moved over from d file */ 
 END
