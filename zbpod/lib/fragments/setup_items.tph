@@ -162,31 +162,31 @@ COPY_EXISTING ~zbeshpeu.itm~ ~override~
 
 
 //////// Mirror Mask \\\\\\\\
-INCLUDE ~%MOD_FOLDER%/items/mirrormask~ ~override~
+COPY ~%MOD_FOLDER%/items/mirrormask~ ~override~
 COPY_EXISTING ~zbhlmmir.ITM~ ~override~
     SAY NAME2 @10120
     SAY IDENTIFIED_DESC @10121
 
 //////// Luxurious Lizardskin Leaps \\\\\\\\
-INCLUDE ~%MOD_FOLDER%/items/luxlizardleeps~ ~override~
+COPY ~%MOD_FOLDER%/items/luxlizardleeps~ ~override~
 COPY_EXISTING ~zbbtlizd.ITM~ ~override~
     SAY NAME2 @10130
     SAY IDENTIFIED_DESC @10131
 
 //////// Blazing Bull \\\\\\\\
-INCLUDE ~%MOD_FOLDER%/items/blazingbull~ ~override~
+COPY ~%MOD_FOLDER%/items/blazingbull~ ~override~
 COPY_EXISTING ~zbhlmbul.ITM~ ~override~
     SAY NAME2 @10140
     SAY IDENTIFIED_DESC @10141
 
 //////// Gruumsh's Totem \\\\\\\\
-INCLUDE ~%MOD_FOLDER%/items/grummshtotem~ ~override~
+COPY ~%MOD_FOLDER%/items/grummshtotem~ ~override~
 COPY_EXISTING ~zbrdorc0.ITM~ ~override~
     SAY NAME2 @10150
     SAY IDENTIFIED_DESC @10151
 
 //////// Resplendent Ring \\\\\\\\
-INCLUDE ~%MOD_FOLDER%/items/rrr~ ~override~
+COPY ~%MOD_FOLDER%/items/rrr~ ~override~
 COPY_EXISTING ~zbrdorc0.ITM~ ~override~
     SAY NAME2 @10150
     SAY IDENTIFIED_DESC @10151
