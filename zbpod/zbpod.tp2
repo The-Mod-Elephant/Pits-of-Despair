@@ -43,6 +43,7 @@ INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_cre.tph~
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/cutscene~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bp2scripts~ /* bucketfulofsunshine, 20241111 - this was commented out but i compiled for my dialogue tests. is there a reason why it was commented out before? */
+COMPILE ~%MOD_FOLDER%/ohbvic01~ /* editing the item_roll at the bottom to be zero so we ALWAYS get loot */ /* using EVALUATE BUFFER here means it won't install where going YOLO */                    
 
 /*
   bucket's tp2 additions - still need to be approved and tested
