@@ -188,5 +188,12 @@ COPY_EXISTING ~zbrdorc0.ITM~ ~override~
 //////// Resplendent Ring \\\\\\\\
 COPY ~%MOD_FOLDER%/items/rrr~ ~override~
 COPY_EXISTING ~zbrdorc0.ITM~ ~override~
-    SAY NAME2 @10150
-    SAY IDENTIFIED_DESC @10151
+    SAY NAME2 @10160
+    SAY IDENTIFIED_DESC @10161
+
+//////// Angelic Horseshoe \\\\\\\\
+COPY ~%MOD_FOLDER%/items/angelichorseshoe~ ~override~
+COPY_EXISTING ~zbahorse.ITM~ ~override~
+    SAY NAME1 @10172
+    SAY NAME2 @10170
+    SAY IDENTIFIED_DESC @10171

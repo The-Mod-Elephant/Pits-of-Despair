@@ -317,6 +317,19 @@ A work of considerable ambition, but ultimately, one that may leave you feeling 
 @10160 = ~Resplendent Ring~
 @10161 = ~Resplendent Ring description placeholder~
 
+@10170 = ~Angelic Horseshoe~
+@10171 = ~Only four of these magnificent golden horseshoe amulets are known to exist.  According to legend, they once belonged to an astral deva who liked to polymorph herself into an equine form such as a pegasus or unicorn when on a mission in the prime material plane, often serving as the mount of a worthy hero.  During one perilous mission the deva's avatar was slain and the grieving heroes kept her horseshoes as a memento and lucky charm.
+
+STATISTICS:
+
+Equipped abilities:
+- Charisma: +1
+- Constitution: +1
+- Luck: +1
+
+Weight: 3~
+@10172 = ~Horseshoe Amulet~
+
 @15000 = ~Deathslither~ // placeholder
 @15001 = ~Nephetel~
 @15002 = ~Dennaton~
