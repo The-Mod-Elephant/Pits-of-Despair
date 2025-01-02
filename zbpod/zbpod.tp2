@@ -45,6 +45,12 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/cutscene~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bp2scripts~ /* bucketfulofsunshine, 20241111 - this was commented out but i compiled for my dialogue tests. is there a reason why it was commented out before? */
 COMPILE ~%MOD_FOLDER%/ohbvic01~ /* editing the item_roll at the bottom to be zero so we ALWAYS get loot */ /* using EVALUATE BUFFER here means it won't install where going YOLO */                    
 
+// Add Portrait Icons
+COPY ~%MOD_FOLDER%/spells/picon~ ~override~
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@20000) STR_VAR bam file = zbantisi RET icon END
+
+
 /*
   bucket's tp2 additions - still need to be approved and tested
                                                                */
@@ -110,4 +116,5 @@ COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */
 		~%MOD_FOLDER%/test/zbvyan.d~ /* vyantri's new line */
 		~%MOD_FOLDER%/test/zbmes.d~ /* messenger - aka best girl in disguise lines */
         ~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */
-		~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */ 
+		~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */
+		

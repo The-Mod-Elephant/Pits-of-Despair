@@ -995,3 +995,19 @@ DEFINE_PATCH_FUNCTION set_clab_2da_entries INT_VAR f_MaxLevel = 50 f_Increment =
     INSERT_2DA_ROW r2en num_col "%newrow%"
   END
 END
+
+// Camdawg's Portrait Icon Function //
+DEFINE_ACTION_FUNCTION cd_new_portrait_icon
+  INT_VAR string = 0
+  STR_VAR bam_file = "****"
+  RET     icon
+  BEGIN
+
+  COPY_EXISTING ~statdesc.2da~ ~override~
+    COUNT_2DA_ROWS 3 count
+    READ_2DA_ENTRY (count - 1) 0 3 icon
+    SET icon += 1
+
+  APPEND ~statdesc.2da~ ~%icon% %string% %bam_file%~
+
+END
