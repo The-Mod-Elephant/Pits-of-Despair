@@ -48,7 +48,7 @@ COMPILE ~%MOD_FOLDER%/ohbvic01~ /* editing the item_roll at the bottom to be zer
 // Add Portrait Icons
 COPY ~%MOD_FOLDER%/spells/picon~ ~override~
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@20000) STR_VAR bam file = zbantisi RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@18000) STR_VAR bam file = zbantisi RET icon END
 COPY_EXISTING ~zbpdsim.spl~ ~override~
   LPF ALTER_EFFECT INT_VAR match_opcode = 142 parameter2 = icon END
 
