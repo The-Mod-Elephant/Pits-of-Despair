@@ -197,3 +197,9 @@ COPY_EXISTING ~zbahorse.ITM~ ~override~
     SAY NAME1 @10172
     SAY NAME2 @10170
     SAY IDENTIFIED_DESC @10171
+
+//////// Nine Lives -- Nephy's Armor \\\\\\\\
+COPY ~%MOD_FOLDER%/items/nephy_9_lives~ ~override~
+COPY_EXISTING ~zbneparm.ITM~ ~override~
+    SAY NAME2 @10180
+    SAY IDENTIFIED_DESC @10181
