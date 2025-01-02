@@ -43,13 +43,14 @@ INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_cre.tph~
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/cutscene~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bp2scripts~ /* bucketfulofsunshine, 20241111 - this was commented out but i compiled for my dialogue tests. is there a reason why it was commented out before? */
-COMPILE ~%MOD_FOLDER%/ohbvic01~ /* editing the item_roll at the bottom to be zero so we ALWAYS get loot */ /* using EVALUATE BUFFER here means it won't install where going YOLO */                    
+COMPILE ~%MOD_FOLDER%/ohbvic01~ /* editing the item_roll at the bottom to be zero so we ALWAYS get loot */ /* using EVALUATE BUFFER here means it won't install where going YOLO */
 
 // Add Portrait Icons
 COPY ~%MOD_FOLDER%/spells/picon~ ~override~
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@20000) STR_VAR bam file = zbantisi RET icon END
-
+COPY_EXISTING ~zbpdsim.spl~ ~override~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 142 parameter2 = icon END
 
 /*
   bucket's tp2 additions - still need to be approved and tested
@@ -59,19 +60,19 @@ LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@20000) STR_VAR bam fi
 ADD_JOURNAL TITLE (@800000) @800001 USING ~%MOD_FOLDER%/lang/english/JournalEntries.tra~
 
 
-/* compile new nephetel cutscene */ 
-COMPILE ~%MOD_FOLDER%/test/cutscene/zbmescut.baf~ 
+/* compile new nephetel cutscene */
+COMPILE ~%MOD_FOLDER%/test/cutscene/zbmescut.baf~
 /* add new vampire creature for it */
-COPY ~%MOD_FOLDER%/creatures/vampirecutscene/zbvamp.cre~ ~override/zbvamp.cre~ /* need to move this line over to the setup-cre file but i'm not touching that since it's royal's baby */ 
+COPY ~%MOD_FOLDER%/creatures/vampirecutscene/zbvamp.cre~ ~override/zbvamp.cre~ /* need to move this line over to the setup-cre file but i'm not touching that since it's royal's baby */
 WRITE_ASCII DEATHVAR ~zbvamp~ #32
 
 /* compile the new dialogues and recompile old ones with the new strings */
 /* do we just recompile ALL 54 dialogues? only added a few that i know have been edited, there are more i need to add */
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~ 
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
                         ~%MOD_FOLDER%/dlg/ohbdenna.d~ /* still needs HEAVY edits */
 						~%MOD_FOLDER%/dlg/ohbjoker.d~
 						~%MOD_FOLDER%/dlg/ohbnajim.d~
-						~%MOD_FOLDER%/dlg/ohbbrodl.d~ /* still needs HEAVY edits */ 
+						~%MOD_FOLDER%/dlg/ohbbrodl.d~ /* still needs HEAVY edits */
 						~%MOD_FOLDER%/dlg/ohbstann.d~
 						~%MOD_FOLDER%/dlg/ohbtartl.d~
 						~%MOD_FOLDER%/dlg/ohbcook.d~
@@ -82,7 +83,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
 						~%MOD_FOLDER%/dlg/ohbgc01.d~
 						~%MOD_FOLDER%/dlg/ohbgerro.d~
 						~%MOD_FOLDER%/dlg/ohbgezzt.d~
-						~%MOD_FOLDER%/dlg/ohbimim.d~ /* needs crossmod edits for BPinBG1 */ 
+						~%MOD_FOLDER%/dlg/ohbimim.d~ /* needs crossmod edits for BPinBG1 */
 						~%MOD_FOLDER%/dlg/ohblaris.d~
 						~%MOD_FOLDER%/dlg/ohbleoka.d~
 						~%MOD_FOLDER%/dlg/ohbmardu.d~
@@ -117,4 +118,3 @@ COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */
 		~%MOD_FOLDER%/test/zbmes.d~ /* messenger - aka best girl in disguise lines */
         ~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */
 		~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */
-		

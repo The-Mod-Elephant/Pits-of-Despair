@@ -187,7 +187,7 @@ COPY_EXISTING ~zbrdorc0.ITM~ ~override~
 
 //////// Resplendent Ring \\\\\\\\
 COPY ~%MOD_FOLDER%/items/rrr~ ~override~
-COPY_EXISTING ~zbrdorc0.ITM~ ~override~
+COPY_EXISTING ~zbrrrind.ITM~ ~override~
     SAY NAME2 @10160
     SAY IDENTIFIED_DESC @10161
 
