@@ -3,7 +3,7 @@
 IF
     InParty(Myself)
     Global("ZBNEPHXP","GLOBAL",0)
-    XPLT(Player1,800000)
+    XPLT(Player1,880000)
 THEN
     RESPONSE #100
     SetGlobal("ZBNEPHXP","GLOBAL",1)
@@ -17,7 +17,7 @@ IF
 THEN
     RESPONSE #100
     SetGlobal("ZBNEPHXP","GLOBAL",1)
-    AddXPObject("ZSPDNF16",250000)
+    AddXPObject("ZSPDNF16",120000)
 END
 
 IF
@@ -28,7 +28,7 @@ IF
 THEN
     RESPONSE #100
     SetGlobal("ZBNEPHXP","GLOBAL",1)
-    AddXPObject("ZSPDNF16",500000)
+    AddXPObject("ZSPDNF16",450000)
 END
 
 IF
