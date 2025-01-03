@@ -117,7 +117,7 @@ COPY_EXISTING ~ohbbello.CRE~ ~override~
     SAY 0x08 @15015
     SAY 0x0c @15015
 
-COPY ~%MOD_FOLDER%/creatures/mutvampworg~ ~override~
+COPY ~%MOD_FOLDER%/creatures/tartle~ ~override~
 COPY_EXISTING ~ohbtartl.CRE~ ~override~
     SAY 0x08 @15016
     SAY 0x0c @15016
