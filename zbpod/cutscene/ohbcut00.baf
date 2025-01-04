@@ -55,10 +55,10 @@ THEN
 		Wait(2)
 		DisplayStringPoint([672.468],@3675)  // It has been several months since your escape from Baeloth's Black Pits. Tales of your deeds have spread far and wide, and bards sing of them wherever you travel...
 		Wait(5)
-		FadeToColor([0.0],0)
+		// FadeToColor([0.0],0) /* we've already done a fade in vyantri's dialogue to move areas */ 
 		Wait(5)
 		FadeFromColor([60.0],0)
-		SmallWait(12)
+		Wait(5) /* changed from smallwait(12) */ 
 		DisplayStringHead("ohbjoker",@3676)  // ...And so it came that Baeloth's game was quickly turned to naught.
 		Wait(3)
 		DisplayStringHead("ohbjoker",@3677)  // The swords were sheathed, the spells unweaved, the final battle fought.

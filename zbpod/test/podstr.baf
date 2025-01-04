@@ -4,7 +4,7 @@ THEN
     RESPONSE #100
 	    SetGlobal("ZBPODSTART","GLOBAL",2)
         CutSceneId(Player1) 
-        FadeToColor([20.0],0)
+        FadeToColor([60.0],0)
         Wait(1)
         LeaveAreaLUAPanic("OH8000","",[697.458],NW)  
         LeaveAreaLUA("OH8000","",[697.458],NW)  
@@ -13,6 +13,6 @@ THEN
         ActionOverride(Player4,LeaveAreaLUA("OH8000","",[653.577],NW))  
         ActionOverride(Player5,LeaveAreaLUA("OH8000","",[701.596],NW))  
         ActionOverride(Player6,LeaveAreaLUA("OH8000","",[744.557],NW))  
-		FadeFromColor([30.0],0) 
+		// FadeFromColor([30.0],0) /* should fade back from OHCUT00.baf */ 
         EndCutSceneMode()
 END
