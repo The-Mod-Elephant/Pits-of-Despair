@@ -121,7 +121,7 @@ COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20002 DESIGNATED 8 LABEL ~zb_pod_rm_portraits~ // REMOVE PORTRAITS
-REQUIRE_COMPONENT "zbpod.tp2" "20001"
+REQUIRE_COMPONENT "zbpod.tp2" "20001" "This component requires the installation of Pits of Despair" // traify later
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING ~zbdrclch.cre~ ~override~
