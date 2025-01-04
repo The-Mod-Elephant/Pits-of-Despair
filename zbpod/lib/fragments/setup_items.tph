@@ -73,7 +73,7 @@ COPY_EXISTING ~zbtnskyb.SPL~ ~override~
 
 //////// Staff of Disruption +1 \\\\\\\\
 COPY ~%MOD_FOLDER%/items/staff_disruption~ ~override~
-COPY_EXISTING ~ZBSTOFDD.ITM~ ~override~
+COPY_EXISTING ~ZBSTOFDD.itm~ ~override~
     SAY NAME2 @10080
     SAY IDENTIFIED_DESC @10081
 
@@ -163,43 +163,43 @@ COPY_EXISTING ~zbeshpeu.itm~ ~override~
 
 //////// Mirror Mask \\\\\\\\
 COPY ~%MOD_FOLDER%/items/mirrormask~ ~override~
-COPY_EXISTING ~zbhlmmir.ITM~ ~override~
+COPY_EXISTING ~zbhlmmir.itm~ ~override~
     SAY NAME2 @10120
     SAY IDENTIFIED_DESC @10121
 
 //////// Luxurious Lizardskin Leaps \\\\\\\\
 COPY ~%MOD_FOLDER%/items/luxlizardleeps~ ~override~
-COPY_EXISTING ~zbbtlizd.ITM~ ~override~
+COPY_EXISTING ~zbbtlizd.itm~ ~override~
     SAY NAME2 @10130
     SAY IDENTIFIED_DESC @10131
 
 //////// Blazing Bull \\\\\\\\
 COPY ~%MOD_FOLDER%/items/blazingbull~ ~override~
-COPY_EXISTING ~zbhlmbul.ITM~ ~override~
+COPY ~%MOD_FOLDER%/items/blazingbull/zbhlmbul.itm~ ~override~
     SAY NAME2 @10140
     SAY IDENTIFIED_DESC @10141
 
 //////// Gruumsh's Totem \\\\\\\\
 COPY ~%MOD_FOLDER%/items/grummshtotem~ ~override~
-COPY_EXISTING ~zbrdorc0.ITM~ ~override~
+COPY_EXISTING ~zbrdorc0.itm~ ~override~
     SAY NAME2 @10150
     SAY IDENTIFIED_DESC @10151
 
 //////// Resplendent Ring \\\\\\\\
 COPY ~%MOD_FOLDER%/items/rrr~ ~override~
-COPY_EXISTING ~zbrrrind.ITM~ ~override~
+COPY_EXISTING ~zbrrrind.itm~ ~override~
     SAY NAME2 @10160
     SAY IDENTIFIED_DESC @10161
 
 //////// Angelic Horseshoe \\\\\\\\
 COPY ~%MOD_FOLDER%/items/angelichorseshoe~ ~override~
-COPY_EXISTING ~zbahorse.ITM~ ~override~
+COPY ~%MOD_FOLDER%/items/angelichorseshoe/zbahorse.itm~ ~override~
     SAY NAME1 @10172
     SAY NAME2 @10170
     SAY IDENTIFIED_DESC @10171
 
 //////// Nine Lives -- Nephy's Armor \\\\\\\\
 COPY ~%MOD_FOLDER%/items/nephy_9_lives~ ~override~
-COPY_EXISTING ~zbneparm.ITM~ ~override~
+COPY_EXISTING ~zbneparm.itm~ ~override~
     SAY NAME2 @10180
     SAY IDENTIFIED_DESC @10181
