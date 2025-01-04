@@ -121,3 +121,8 @@ COPY ~%MOD_FOLDER%/creatures/tartle~ ~override~
 COPY_EXISTING ~ohbtartl.CRE~ ~override~
     SAY 0x08 @15016
     SAY 0x0c @15016
+	
+COPY ~%MOD_FOLDER%/creatures/szasstam~ ~override~
+COPY_EXISTING ~ohbszass.CRE~ ~override~
+    SAY 0x08 @15017
+    SAY 0x0c @15017
