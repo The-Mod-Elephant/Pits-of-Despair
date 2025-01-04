@@ -4,6 +4,8 @@
 
 WARNING! Will break the default the Black Pits 2 standalone campaign. We are not responsible for any bugs you find or if your mod installation is compromised if you attempt to play that campaign with this mod installed."
 
+@20002 = ~Remove all the new portraits~
+
 // warnings
 @20050 = "Not available for your game version"
 

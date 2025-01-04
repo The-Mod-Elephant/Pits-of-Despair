@@ -118,3 +118,19 @@ COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */
 		~%MOD_FOLDER%/test/zbmes.d~ /* messenger - aka best girl in disguise lines */
         ~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */
 		~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @20002 DESIGNATED 8 LABEL ~zb_pod_rm_portraits~ // REMOVE PORTRAITS
+REQUIRE_COMPONENT "zbpod.tp2" "20001"
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~zbdrclch.cre~ ~override~
+			  ~ohbbrodl.cre~ ~override~
+			  ~ohbbello.cre~ ~override~
+			  ~ohbtartl.cre~ ~override~
+
+	WRITE_ASCII 0x34 ~~ #8
+	WRITE_ASCII 0x3c ~~ #8
+BUT_ONLY
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
