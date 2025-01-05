@@ -126,3 +126,11 @@ COPY ~%MOD_FOLDER%/creatures/szasstam~ ~override~
 COPY_EXISTING ~ohbszass.CRE~ ~override~
     SAY 0x08 @15017
     SAY 0x0c @15017
+	
+COPY ~%MOD_FOLDER%/creatures/match1orcs~ ~override~
+
+
+COPY ~%MOD_FOLDER%/creatures/match2mino~ ~override~
+COPY_EXISTING ~ohbmin01.CRE~ ~override~
+    SAY 0x08 @15018
+    SAY 0x0c @15018
