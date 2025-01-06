@@ -84,20 +84,6 @@ THEN
 END
 
 IF
-	Global("TIER","GLOBAL",0)
-	Global("OHB_INITREP","OH8100",0)  // TBP2 - Staging Area Map
-	AreaCheckAllegiance(PC)
-	OR(2)
-		ReputationLT(Player1,10)
-		ReputationGT(Player1,12)
-THEN
-	RESPONSE #100
-		SetGlobal("OHB_INITREP","OH8100",1)  // TBP2 - Staging Area Map
-		ReputationSet(10)
-		Continue()
-END
-
-IF
 	Global("ohb_plot_cutscene","global",1)
 	Global("OHB_LAST_BATTLE","GLOBAL",404)
 THEN
