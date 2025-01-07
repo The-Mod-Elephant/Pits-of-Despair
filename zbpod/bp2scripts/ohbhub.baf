@@ -222,6 +222,42 @@ THEN
 END
 
 IF
+	Global("ohb_battle_xp_award","global",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_battle_xp_award","global",0)
+		AddExperienceParty(10000)
+END
+IF
+	Global("ohb_battle_xp_award","global",2)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_battle_xp_award","global",0)
+		AddExperienceParty(12000)
+END
+IF
+	Global("ohb_battle_xp_award","global",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_battle_xp_award","global",0)
+		AddExperienceParty(15000)
+END
+IF
+	Global("ohb_battle_xp_award","global",4)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_battle_xp_award","global",0)
+		AddExperienceParty(15000)
+END
+IF
+	Global("ohb_battle_xp_award","global",5)
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_battle_xp_award","global",0)
+		AddExperienceParty(18000)
+END
+
+IF
 	Global("ohb_battle_xp_award","global",500000)
 THEN
 	RESPONSE #100
@@ -311,9 +347,6 @@ THEN
 		AddXPObject(Player5,5000)
 		AddXPObject(Player6,5000)
 END
-
-
-
 
 IF
 	Global("OHB_FOOD_FIGHT","MYAREA",1)

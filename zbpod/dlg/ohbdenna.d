@@ -2404,14 +2404,13 @@ Global("OHB_101","GLOBAL",2)
 ~ THEN BEGIN 210
   SAY @846 /* My performers are victorious!  */
   IF ~~ THEN DO ~SetGlobal("OHB_101","GLOBAL",-1)
-SetGlobal("ohb_battle_xp_award","global",5000)
 GiveGoldForce(500)
 SetGlobal("ohb_cutscene_exit","global",1)
 ~ EXIT
   IF ~  GlobalLT("OHB_LAST_BATTLE","GLOBAL",101)
 ~ THEN DO ~SetGlobal("OHB_101","GLOBAL",-1)
 SetGlobal("OHB_LAST_BATTLE","GLOBAL",101)
-SetGlobal("ohb_battle_xp_award","global",500000)
+SetGlobal("ohb_battle_xp_award","global",1)
 GiveGoldForce(11000)
 SetGlobal("ohb_cutscene_exit","global",1)
 ~ EXIT
@@ -2422,14 +2421,13 @@ Global("OHB_102","GLOBAL",2)
 ~ THEN BEGIN 211
   SAY @847 /* The champions of Baeloth's Pits have won! */
   IF ~~ THEN DO ~SetGlobal("OHB_102","GLOBAL",-1)
-SetGlobal("ohb_battle_xp_award","global",5000)
 GiveGoldForce(750)
 SetGlobal("ohb_cutscene_exit","global",1)
 ~ EXIT
   IF ~  GlobalLT("OHB_LAST_BATTLE","GLOBAL",102)
 ~ THEN DO ~SetGlobal("OHB_102","GLOBAL",-1)
 SetGlobal("OHB_LAST_BATTLE","GLOBAL",102)
-SetGlobal("ohb_battle_xp_award","global",500000)
+SetGlobal("ohb_battle_xp_award","global",2)
 GiveGoldForce(12000)
 SetGlobal("ohb_cutscene_exit","global",1)
 ~ EXIT
@@ -2440,14 +2438,13 @@ Global("OHB_103","GLOBAL",2)
 ~ THEN BEGIN 212
   SAY @846 /* My performers are victorious!  */
   IF ~~ THEN DO ~SetGlobal("OHB_103","GLOBAL",-1)
-SetGlobal("ohb_battle_xp_award","global",5000)
 GiveGoldForce(1000)
 SetGlobal("ohb_cutscene_exit","global",1)
 ~ EXIT
   IF ~  GlobalLT("OHB_LAST_BATTLE","GLOBAL",103)
 ~ THEN DO ~SetGlobal("OHB_103","GLOBAL",-1)
 SetGlobal("OHB_LAST_BATTLE","GLOBAL",103)
-SetGlobal("ohb_battle_xp_award","global",500000)
+SetGlobal("ohb_battle_xp_award","global",3)
 GiveGoldForce(13000)
 SetGlobal("ohb_cutscene_exit","global",1)
 ~ EXIT
@@ -2458,14 +2455,13 @@ Global("OHB_104","GLOBAL",2)
 ~ THEN BEGIN 213
   SAY @847 /* The champions of Baeloth's Pits have won! */
   IF ~~ THEN DO ~SetGlobal("OHB_104","GLOBAL",-1)
-SetGlobal("ohb_battle_xp_award","global",5000)
 GiveGoldForce(1250)
 SetGlobal("ohb_cutscene_exit","global",1)
 ~ EXIT
   IF ~  GlobalLT("OHB_LAST_BATTLE","GLOBAL",104)
 ~ THEN DO ~SetGlobal("OHB_104","GLOBAL",-1)
 SetGlobal("OHB_LAST_BATTLE","GLOBAL",104)
-SetGlobal("ohb_battle_xp_award","global",500000)
+SetGlobal("ohb_battle_xp_award","global",4)
 GiveGoldForce(14000)
 SetGlobal("ohb_cutscene_exit","global",1)
 ~ EXIT
@@ -2476,14 +2472,13 @@ Global("OHB_105","GLOBAL",2)
 ~ THEN BEGIN 214
   SAY @848 /* A victory worthy of the epics! */
   IF ~~ THEN DO ~SetGlobal("OHB_105","GLOBAL",-1)
-SetGlobal("ohb_battle_xp_award","global",5000)
 GiveGoldForce(1500)
 SetGlobal("ohb_cutscene_exit","global",1)
 ~ EXIT
   IF ~  GlobalLT("OHB_LAST_BATTLE","GLOBAL",105)
 ~ THEN DO ~SetGlobal("OHB_105","GLOBAL",-1)
 SetGlobal("OHB_LAST_BATTLE","GLOBAL",105)
-SetGlobal("ohb_battle_xp_award","global",500000)
+SetGlobal("ohb_battle_xp_award","global",5)
 GiveGoldForce(15000)
 SetGlobal("ohb_cutscene_exit","global",1)
 ~ EXIT
