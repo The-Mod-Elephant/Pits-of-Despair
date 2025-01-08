@@ -226,35 +226,60 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("ohb_battle_xp_award","global",0)
-		AddExperienceParty(10000)
+		AddXPObject(Player1,10000)
+		AddXPObject(Player2,10000)
+		AddXPObject(Player3,10000)
+		AddXPObject(Player4,10000)
+		AddXPObject(Player5,10000)
+		AddXPObject(Player6,10000)
 END
 IF
 	Global("ohb_battle_xp_award","global",2)
 THEN
 	RESPONSE #100
 		SetGlobal("ohb_battle_xp_award","global",0)
-		AddExperienceParty(12000)
+		AddXPObject(Player1,12000)
+		AddXPObject(Player2,12000)
+		AddXPObject(Player3,12000)
+		AddXPObject(Player4,12000)
+		AddXPObject(Player5,12000)
+		AddXPObject(Player6,12000)
 END
 IF
 	Global("ohb_battle_xp_award","global",3)
 THEN
 	RESPONSE #100
 		SetGlobal("ohb_battle_xp_award","global",0)
-		AddExperienceParty(15000)
+		AddXPObject(Player1,15000)
+		AddXPObject(Player2,15000)
+		AddXPObject(Player3,15000)
+		AddXPObject(Player4,15000)
+		AddXPObject(Player5,15000)
+		AddXPObject(Player6,15000)
 END
 IF
 	Global("ohb_battle_xp_award","global",4)
 THEN
 	RESPONSE #100
 		SetGlobal("ohb_battle_xp_award","global",0)
-		AddExperienceParty(15000)
+		AddXPObject(Player1,15000)
+		AddXPObject(Player2,15000)
+		AddXPObject(Player3,15000)
+		AddXPObject(Player4,15000)
+		AddXPObject(Player5,15000)
+		AddXPObject(Player6,15000)
 END
 IF
 	Global("ohb_battle_xp_award","global",5)
 THEN
 	RESPONSE #100
 		SetGlobal("ohb_battle_xp_award","global",0)
-		AddExperienceParty(18000)
+		AddXPObject(Player1,18000)
+		AddXPObject(Player2,18000)
+		AddXPObject(Player3,18000)
+		AddXPObject(Player4,18000)
+		AddXPObject(Player5,18000)
+		AddXPObject(Player6,18000)
 END
 
 IF
