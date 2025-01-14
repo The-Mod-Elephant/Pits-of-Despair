@@ -141,4 +141,4 @@ COPY_EXISTING ~ohbmin01.CRE~ ~override~
     LPF ADD_CRE_EFFECT INT_VAR opcode = 248 timing = 9 STR_VAR resource = ~ZBGOREM0~ END
 
 COPY_EXISTING ~ZBGOREM1.SPL~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF("Gore attack") END // add .tra ref later
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF("Gore") END // add .tra ref later
