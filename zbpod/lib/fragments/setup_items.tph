@@ -203,3 +203,10 @@ COPY ~%MOD_FOLDER%/items/nephy_9_lives~ ~override~
 COPY_EXISTING ~zbneparm.itm~ ~override~
     SAY NAME2 @10180
     SAY IDENTIFIED_DESC @10181
+
+
+//////// Jack of all trades \\\\\\\\
+COPY ~%MOD_FOLDER%/items/jack~ ~override~
+COPY_EXISTING ~zbjack01.itm~ ~override~
+    SAY NAME2 @10190
+    SAY IDENTIFIED_DESC @10191
