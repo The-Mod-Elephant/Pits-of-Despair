@@ -22,7 +22,7 @@ COPY ~%MOD_FOLDER%/creatures/couatl~ ~override~
 COPY_EXISTING ~zbcouatl.CRE~ ~override~
     SAY 0x08 @15003
     SAY 0x0c @15003
-	WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~P_COUATL~))
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~P_COUATL~))
 
 COPY ~%MOD_FOLDER%/creatures/stirv~ ~override~
 COPY_EXISTING ~ohbstirv.CRE~ ~override~
@@ -33,7 +33,8 @@ COPY ~%MOD_FOLDER%/creatures/mutvampworg~ ~override~
 COPY_EXISTING ~ohbmena1.CRE~ ~override~
     SAY 0x08 @15005
     SAY 0x0c @15005
-	WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~P_RED_WORG~))
+    REMOVE_CRE_ITEM minhp1
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~P_RED_WORG~))
 
 // All moosey moose related code goes here
 COPY ~%MOD_FOLDER%/creatures/mutdiremoose~ ~override~
@@ -56,18 +57,21 @@ COPY_EXISTING ~ohbmena2.CRE~ ~override~
     SAY 0x08 @15006 // inject into name field (dangerous moose)
     SAY 0x0c @15006 // inject into creature tooltip field (dangerous moose)
     WRITE_ASCII 0x260 ~zbmostmp~ #8  // inject script name to general script field; #8 is the length of the string
+    REMOVE_CRE_ITEM minhp1
 // end of moosey moosey code
 
 COPY ~%MOD_FOLDER%/creatures/mutdirebear~ ~override~
 COPY_EXISTING ~ohbmena3.CRE~ ~override~
     SAY 0x08 @15007
     SAY 0x0c @15007
+    REMOVE_CRE_ITEM minhp1
 
 // start of dire lion related code
 COPY ~%MOD_FOLDER%/creatures/mutdirelion~ ~override~
 COPY_EXISTING ~ohbmena4.CRE~ ~override~
     SAY 0x08 @15008
     SAY 0x0c @15008
+    REMOVE_CRE_ITEM minhp1
 
 COPY_EXISTING "zblion1.spl" "override" // we tackle the knocking over effect
     LPF ALTER_EFFECT
@@ -81,21 +85,25 @@ COPY ~%MOD_FOLDER%/creatures/mutboalisk~ ~override~
 COPY_EXISTING ~ohbmena5.CRE~ ~override~
     SAY 0x08 @15009
     SAY 0x0c @15009
+    REMOVE_CRE_ITEM minhp1
 
 COPY ~%MOD_FOLDER%/creatures/mutcarrion~ ~override~
 COPY_EXISTING ~ohbmena6.CRE~ ~override~
     SAY 0x08 @15010
     SAY 0x0c @15010
+    REMOVE_CRE_ITEM minhp1
 
 COPY ~%MOD_FOLDER%/creatures/mutvortex~ ~override~
 COPY_EXISTING ~ohbmena7.CRE~ ~override~
     SAY 0x08 @15011
     SAY 0x0c @15011
+    REMOVE_CRE_ITEM minhp1
 
 COPY ~%MOD_FOLDER%/creatures/mutgwyvern~ ~override~
 COPY_EXISTING ~ohbmena8.CRE~ ~override~
     SAY 0x08 @15012
     SAY 0x0c @15012
+    REMOVE_CRE_ITEM minhp1
 
 COPY ~%MOD_FOLDER%/creatures/brodle~ ~override~
 COPY_EXISTING ~ohbbrodl.CRE~ ~override~

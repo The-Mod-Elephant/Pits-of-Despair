@@ -1,0 +1,136 @@
+
+IF
+  Global("zb_train_spawn","global",1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    SetGlobal("zb_train_spawn","global",10)
+    SmallWait(5)
+    CreateCreature("ohbmena1",[1615.900],W) // Vampire Worg
+    ActionOverride("ohbmena1",Enemy())
+    CreateCreature("ohbmena1",[1625.910],W) // Vampire Worg
+    ActionOverride("ohbmena1",Enemy())
+    CreateCreature("ohbmena3",[1635.920],W) // Dire Bear
+    ActionOverride("ohbmena3",Enemy())
+    CreateCreature("ohbmena4",[1645.930],W) // Dire Lion
+    ActionOverride("ohbmena4",Enemy())
+    SmallWait(25)
+    MoveViewPoint([1655.702],BD_NORMAL)
+    SmallWait(75)
+    EndCutSceneMode()
+END
+
+IF
+  Global("zb_train_spawn","global",2)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    SetGlobal("zb_train_spawn","global",20)
+    SmallWait(5)
+    CreateCreature("ohbmena4",[1620.900],W)  // Dire Lion
+    ActionOverride("ohbmena4",Enemy())
+    CreateCreature("ohbmena4",[1625.905],W)  // Dire Lion
+    ActionOverride("ohbmena4",Enemy())
+    CreateCreature("ohbmena2",[1630.910],W)  // Dire Moose
+    ActionOverride("ohbmena2",Enemy())
+    CreateCreature("ohbmena3",[1640.915],W)  // Dire Bear
+    ActionOverride("ohbmena3",Enemy())
+    CreateCreature("ohbmena1",[1650.920],W)  // Vampire Worg
+    ActionOverride("ohbmena1",Enemy())
+    SmallWait(25)
+    MoveViewPoint([1655.702],BD_NORMAL)
+    SmallWait(75)
+    EndCutSceneMode()
+END
+
+IF
+  Global("zb_train_spawn","global",3)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    SetGlobal("zb_train_spawn","global",30)
+    SmallWait(5)
+    CreateCreature("ohbmena5",[1620.900],W)  // Boalisk
+    ActionOverride("ohbmena5",Enemy())
+    CreateCreature("ohbmena4",[1625.905],W)  // Dire Lion
+    ActionOverride("ohbmena4",Enemy())
+    CreateCreature("ohbmena4",[1630.910],W)  // Dire Lion
+    ActionOverride("ohbmena4",Enemy())
+    CreateCreature("ohbmena3",[1640.915],W)  // Dire Bear
+    ActionOverride("ohbmena3",Enemy())
+    CreateCreature("ohbmena3",[1645.920],W)  // Dire Bear
+    ActionOverride("ohbmena3",Enemy())
+    CreateCreature("ohbmena2",[1630.910],W)  // Dire Moose
+    ActionOverride("ohbmena2",Enemy())
+    SmallWait(25)
+    MoveViewPoint([1655.702],BD_NORMAL)
+    SmallWait(75)
+    EndCutSceneMode()
+END
+
+
+IF
+  Global("zb_train_spawn","global",10)
+  Dead("ohbmena1")
+  Dead("ohbmena1")
+  Dead("ohbmena3")
+  Dead("ohbmena3")
+  Dead("ohbmena4")
+  CombatCounter(0)
+  Global("zb_train_exit","global",0)
+THEN
+  RESPONSE #100
+    SetGlobal("zb_train_exit","global",1)
+    SetGlobal("zb_train_spawn","global",11)
+    GiveGoldForce(1000)
+    AddExperienceParty(8000)
+END
+
+IF
+  Global("zb_train_spawn","global",20)
+  Dead("ohbmena4")
+  Dead("ohbmena4")
+  Dead("ohbmena2")
+  Dead("ohbmena3")
+  Dead("ohbmena1")
+  CombatCounter(0)
+  Global("zb_train_exit","global",0)
+THEN
+  RESPONSE #100
+    SetGlobal("zb_train_exit","global",1)
+    SetGlobal("zb_train_spawn","global",21)
+    GiveGoldForce(1000)
+    AddExperienceParty(9000)
+END
+
+IF
+  Global("zb_train_spawn","global",30)
+  Dead("ohbmena5")
+  Dead("ohbmena3")
+  Dead("ohbmena3")
+  Dead("ohbmena4")
+  Dead("ohbmena4")
+  Dead("ohbmena2")
+  CombatCounter(0)
+  Global("zb_train_exit","global",0)
+THEN
+  RESPONSE #100
+    SetGlobal("zb_train_exit","global",1)
+    SetGlobal("zb_train_spawn","global",31)
+    GiveGoldForce(1000)
+    AddExperienceParty(10000)
+END
+
+IF
+  Global("zb_train_exit","global",1)
+  OR(3)
+    Global("zb_train_spawn","global",31)
+    Global("zb_train_spawn","global",21)
+    Global("zb_train_spawn","global",11)
+THEN
+  RESPONSE #100
+    SetGlobal("zb_train_exit","global",0)
+    ClearAllActions()
+    StartCutSceneMode()
+    StartCutScene("zbtrain0")
+END

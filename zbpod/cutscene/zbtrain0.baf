@@ -1,0 +1,19 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    Wait(2)
+    LeaveAreaLUAPanic("OH8100","",[2499.1409],S)  // TBP2 - Staging Area Map
+    LeaveAreaLUA("OH8100","",[2499.1409],S)  // TBP2 - Staging Area Map
+    ActionOverride(Player2,LeaveAreaLUA("OH8100","",[2450.1375],S))  // TBP2 - Staging Area Map
+    ActionOverride(Player3,LeaveAreaLUA("OH8100","",[2543.1376],S))  // TBP2 - Staging Area Map
+    ActionOverride(Player4,LeaveAreaLUA("OH8100","",[2496.1345],S))  // TBP2 - Staging Area Map
+    ActionOverride(Player5,LeaveAreaLUA("OH8100","",[2585.1342],S))  // TBP2 - Staging Area Map
+    ActionOverride(Player6,LeaveAreaLUA("OH8100","",[2540.1308],S))  // TBP2 - Staging Area Map
+    MultiPlayerSync()
+    SmallWait(25)
+    SetAreaScript("OH8100",DEFAULT)
+    EndCutSceneMode()
+    SaveGame(0)
+END

@@ -1,0 +1,20 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		Wait(2)
+		LeaveAreaLUAPanic("OH8200","",[950.850],N)
+		LeaveAreaLUA("OH8200","",[950.850],N)
+		ActionOverride(Player2,LeaveAreaLUA("OH8200","",[940.820],N))
+		ActionOverride(Player3,LeaveAreaLUA("OH8200","",[940.830],N))
+		ActionOverride(Player4,LeaveAreaLUA("OH8200","",[940.840],N))
+		ActionOverride(Player5,LeaveAreaLUA("OH8200","",[950.860],N))
+		ActionOverride(Player6,LeaveAreaLUA("OH8200","",[950.870],N))
+		MultiPlayerSync()
+		FadeFromColor([20.0],0)
+		SetGlobal("zb_train_spawn","global",3)
+		Wait(1)
+		SetAreaScript("zbtrain",DEFAULT)
+		EndCutSceneMode()
+END

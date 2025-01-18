@@ -18,12 +18,12 @@ IF
 THEN
     RESPONSE #1
     ActionOverride("zspdnf16",DestroySelf())
-	ActionOverride("zbvamp",DestroySelf())
-	Wait(1)
+    ActionOverride("zbvamp",DestroySelf())
+    Wait(1)
     RestorePartyLocations()
-	Wait(1) 
-	EndCutSceneMode() /* exits the the StartCutSceneMode() action */
-	FadeFromColor([50.0],0)
-	AddJournalEntry(@800001,QUEST) /* add journal entry, moved over from d file */ 
+    Wait(1) 
+    EndCutSceneMode() /* exits the the StartCutSceneMode() action */
+    FadeFromColor([50.0],0)
+    AddJournalEntry(@800001,QUEST) /* add journal entry, moved over from d file */ 
     GiveItemCreate("zbpdnote",Player1,1,0,0) /* give player the note, moved over from d file */ 
 END
