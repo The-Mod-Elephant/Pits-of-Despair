@@ -10,5 +10,5 @@ WARNING! Will break the default the Black Pits 2 standalone campaign. We are not
 @20050 = "Not available for your game version"
 
 //added subcomponents
-@30000 = This component requires the installation of Pits of Despair
+@30000 = "This component requires the installation of Pits of Despair"
 
