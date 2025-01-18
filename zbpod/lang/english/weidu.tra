@@ -9,5 +9,6 @@ WARNING! Will break the default the Black Pits 2 standalone campaign. We are not
 // warnings
 @20050 = "Not available for your game version"
 
-/* vanilla npc interjection */
-@30000 = "Vanilla & EE NPC interjections for Pits of Despair"
+//added subcomponents
+@30000 = This component requires the installation of Pits of Despair
+

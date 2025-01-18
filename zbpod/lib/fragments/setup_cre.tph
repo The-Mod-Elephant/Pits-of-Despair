@@ -41,14 +41,14 @@ COPY_EXISTING "zbmoose1.spl" "override" // first we tackle the stomping effect
     LPF ALTER_EFFECT
         INT_VAR
             match_opcode = 139 // we map this altering to opcode 139 (display string)
-            parameter1 = RESOLVE_STR_REF("Stomped") // string tlk index; RESOLVE_STR_REF injects the string in the tlk and returns index
+            parameter1 = @18001 // string tlk index; RESOLVE_STR_REF injects the string in the tlk and returns index
     END
 
 COPY_EXISTING "zbmoose2.spl" "override" // next the unconsciousness effect
     LPF ALTER_EFFECT
         INT_VAR
             match_opcode = 139 // we map this altering to opcode 139 (display string)
-            parameter1 = RESOLVE_STR_REF("Knocked Prone") // string tlk index; RESOLVE_STR_REF injects the string in the tlk and returns index // substitute later for a @xxxx reference
+            parameter1 = @18002 // string tlk index; RESOLVE_STR_REF injects the string in the tlk and returns index // substitute later for a @xxxx reference
     END
 
 COMPILE "%MOD_FOLDER%/creatures/#scripts/zbmostmp.baf" // compile the script that makes the moose stomp selectively
@@ -73,7 +73,7 @@ COPY_EXISTING "zblion1.spl" "override" // we tackle the knocking over effect
     LPF ALTER_EFFECT
         INT_VAR
             match_opcode = 139 // we map this altering to opcode 139 (display string)
-            parameter1 = RESOLVE_STR_REF("Pounce") // string tlk index; RESOLVE_STR_REF injects the string in the tlk and returns index
+            parameter1 = @18003 // string tlk index; RESOLVE_STR_REF injects the string in the tlk and returns index
     END
 // end of dire lion related code
 
@@ -141,4 +141,9 @@ COPY_EXISTING ~ohbmin01.CRE~ ~override~
     LPF ADD_CRE_EFFECT INT_VAR opcode = 248 timing = 9 STR_VAR resource = ~ZBGOREM0~ END
 
 COPY_EXISTING ~ZBGOREM1.SPL~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF("Gore") END // add .tra ref later
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = @18004 END // add .tra ref later
+	
+	COPY ~%MOD_FOLDER%/creatures/thewinged~ ~override~
+COPY_EXISTING ~ohbwing.CRE~ ~override~
+    SAY 0x08 @15019
+    SAY 0x0c @15019
