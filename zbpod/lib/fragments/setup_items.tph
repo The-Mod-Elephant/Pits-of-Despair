@@ -210,3 +210,9 @@ COPY ~%MOD_FOLDER%/items/jack~ ~override~
 COPY_EXISTING ~zbjack01.itm~ ~override~
     SAY NAME2 @10190
     SAY IDENTIFIED_DESC @10191
+	
+//////// Nephetel's Report \\\\\\\\
+COPY ~%MOD_FOLDER%/items/nephreport~ ~override~
+COPY_EXISTING ~zbpages.itm~ ~override~
+    SAY NAME2 @18005
+    SAY IDENTIFIED_DESC @18006

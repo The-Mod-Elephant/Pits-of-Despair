@@ -295,7 +295,7 @@ Weight: 3~
 
 Baeloth Barrityl, the notorious drow socerer and self-proclaimed "Entertainer" has once again unleashed his literary prowess upon the unsuspecting masses. His latest work, The Pits of Despair: Desperate and True, is a rousing mix of drama, despair, and – as one might expect – a rather excessive amount of self-aggrandizement.
 
-However, there are moments in which Barrityl’s over-the-top style gets the best of him. The prose often veers into the theatrical—though, given that this is a work by a drow socerer, this is perhaps to be expected. The narrative is occasionally interrupted by lengthy monologues that read as though they were lifted directly from one of Barrityl's own performances, making it unclear whether the book is a story or simply a vehicle for Barrityl’s self-promotion. One could imagine him standing on a stage, flourishing dramatically as he dictates each word with an exaggerated flourish. If you enjoy the sound of your own voice (or, in this case, the written word) more than the development of characters and plot, this might suit your taste.
+However, there are moments in which Barrityl's over-the-top style gets the best of him. The prose often veers into the theatrical—though, given that this is a work by a drow socerer, this is perhaps to be expected. The narrative is occasionally interrupted by lengthy monologues that read as though they were lifted directly from one of Barrityl's own performances, making it unclear whether the book is a story or simply a vehicle for Barrityl's self-promotion. One could imagine him standing on a stage, flourishing dramatically as he dictates each word with an exaggerated flourish. If you enjoy the sound of your own voice (or, in this case, the written word) more than the development of characters and plot, this might suit your taste.
 
 In conclusion, The Pits of Despair: Desperate and True is a book that will divide its audience. Some will find it a masterpiece of bleak, brooding storytelling—an ode to the complexities of the soul and the burdens of heroism. Others will be turned off by its heavy-handed melodrama and self-indulgent prose. Still, as a work dictated by Baeloth Barrityl himself, it is undeniably fascinating and worthy of attention, if only for its sheer audacity and bravado. Whether or not you emerge from the pits of despair with any sense of hope is a matter for each reader to decide.
 
@@ -362,3 +362,19 @@ Weight: 3~
 @18002 = ~Knocked Prone~
 @18003 = ~Pounce~
 @18004 = ~Gore~
+
+@18005 = ~Shadow Thief Report~
+@18006 = ~A report, handwritten by a member of the Shadow Thieves, recounting a meeting between one Lady Katarina and Lord Dominick. While much of the report rambles on about Lord Dominick's daily tasks, a particular passage catches your attention:
+
+Lady Katarina: ... you are quite funny my Lord Dominic, I am so happy that you responded to my letter.
+Dominick: Thank you, Lady Katarina.
+Lady Katarin: You are so much more handsome than your mother told me. Why don't we have another bottle of wine?
+Dominick: Yes, of course! Servant!
+Lady Katarina: Oh my, this is absolutely delicious… One might think you are trying to get me drunk, young sir… Now, you said you knew the Hero of Baldur's Gate?
+Dominick: I… I apologize, my lady, I do not exactly know them… but I was in Baldur's Gate when they saved the city. Me and my father were visiting during the crisis and the near war and witnessed it all first hand through the gossip of the guilds!
+Lady Katarina: Oh. You are so naughty, to have lied to me. You wouldn't lie to me now that we are good friends, would you, my dear boy?
+Dominick: Never, Mish Katarina. You can trusht me. They were so brave and incredible. The evil war… warrior Sarevok was killing everyone and it was he who nearly started the war! The hero came from Candlekeep and they were related! Related, I say!
+Lady Katarina: Tell me ALL about it, have you heard of what they have been doing here in Amn, why are they here?
+Dominick: OH, yesh! First there wasesh this mad mage Irenikish and he caught the hero becaush he was a CH… ILD OF BHAAAL and...
+
+The report gets increasingly less coherent as the informer,  who'd written said report, tries to mimick Dominick's slurred form of speech. From what you can glean, eventually Lord Dominick falls unconsious and the Lady Katarina leaves for the night.~
