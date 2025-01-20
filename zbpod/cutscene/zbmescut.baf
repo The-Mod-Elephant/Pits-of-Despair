@@ -10,34 +10,34 @@ IF
 	Global("zbnephcutscene","GLOBAL",0) /* we haven't seen the cutscene */ 
 THEN
 	RESPONSE #100
-	    CutSceneID(Player1) /* who performs the action */
+		CutSceneID(Player1) /* who performs the action */
 		/* actions start here */ 
-		SetGlobal("zbnephcutscene","GLOBAL",1) /* we don't want the cutscene to repeat */ 		
+		SetGlobal("zbnephcutscene","GLOBAL",1) /* we don't want the cutscene to repeat */
 		Wait(2)
 		DisplayStringHead(Player1,@1800013)
 		Wait(2)
 		PlaySound("MISC_03A")
-        PlayDead(45)
+		PlayDead(45)
 		FadeToColor([50.0],0)
 		Wait(2)
-		StorePartyLocations() 
+		StorePartyLocations()
 		LeaveAreaLUA("AR0701","",[2034.873],NW) /* carries player over */ 
 		ActionOverride(Player2,LeaveAreaLUA("AR0701","",[2034.873],NW))  
-        ActionOverride(Player3,LeaveAreaLUA("AR0701","",[2034.873],NW))  
-        ActionOverride(Player4,LeaveAreaLUA("AR0701","",[2034.873],NW))  
-        ActionOverride(Player5,LeaveAreaLUA("AR0701","",[2034.873],NW))  
-        ActionOverride(Player6,LeaveAreaLUA("AR0701","",[2034.873],NW))  /* carries party over, they have to be out of sight */	
+		ActionOverride(Player3,LeaveAreaLUA("AR0701","",[2034.873],NW))  
+		ActionOverride(Player4,LeaveAreaLUA("AR0701","",[2034.873],NW))  
+		ActionOverride(Player5,LeaveAreaLUA("AR0701","",[2034.873],NW))  
+		ActionOverride(Player6,LeaveAreaLUA("AR0701","",[2034.873],NW))  /* carries party over, they have to be out of sight */ 
 		CreateCreature("zspdnf16",[1560.680],NE)  /* spawns in nephetel */ 
 		CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */ 
 		SetAreaScript("zbnephskip",OVERRIDE)
-        SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",1)
-        SetCutSceneBreakable(TRUE)
+		SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",1)
+		SetCutSceneBreakable(TRUE)
 		Wait(2)
 		FadeFromColor([30.0],0)
 		MoveViewPoint([1670.680],INSTANT)
 		ActionOverride("zspdnf16",FaceObject("zbvamp"))
-        ActionOverride("zbvamp",FaceObject("zspdnf16"))
-        Wait(3)
+		ActionOverride("zbvamp",FaceObject("zspdnf16"))
+		Wait(3)
 		DisplayStringHead("zbvamp",@1800000)  /* ~Have you found any information about the book?~ */ 
 		Wait(5)
 		DisplayStringHead("zspdnf16",@1800001)  /* ~No. All anyone can talk about is this Hero of Baldur’s Gate.~ */ 
@@ -85,17 +85,17 @@ THEN
 		Wait(5)		
 		FadeToColor([50.0],0)
 		SetCutSceneBreakable(FALSE)
-        SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",0)
-        SetAreaScript("",OVERRIDE)
+		SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",0)
+		SetAreaScript("",OVERRIDE)
 		ActionOverride("zspdnf16",DestroySelf())
 		Wait(1)
-        ActionOverride("zbvamp",DestroySelf())
+		ActionOverride("zbvamp",DestroySelf())
 		Wait(1)
-        RestorePartyLocations()
+		RestorePartyLocations()
 		/* actions end here */ 
 		EndCutSceneMode() /* exits the the StartCutSceneMode() action */
 		Wait(1)
 		FadeFromColor([50.0],0)
 		AddJournalEntry(@800001,QUEST) /* add journal entry, moved over from d file */ 
-        GiveItemCreate("zbpdnote",Player1,1,0,0) /* give player the note, moved over from d file */ 
+		GiveItemCreate("zbpdnote",Player1,1,0,0) /* give player the note, moved over from d file */ 
 END

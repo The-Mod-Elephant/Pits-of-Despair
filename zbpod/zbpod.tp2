@@ -19,8 +19,8 @@ LANGUAGE  ~English~
           ~zbpod/lang/english/game.tra~
           ~zbpod/lang/english/weidu.tra~
           ~zbpod/lang/english/dialogs.tra~
-		  ~zbpod/lang/english/JournalEntries.tra~
-		  ~zbpod/lang/english/cutscenes.tra~
+          ~zbpod/lang/english/JournalEntries.tra~
+          ~zbpod/lang/english/cutscenes.tra~
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -42,7 +42,7 @@ INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_cre.tph~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/cutscene~
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bp2scripts~ /* bucketfulofsunshine, 20241111 - this was commented out but i compiled for my dialogue tests. is there a reason why it was commented out before? */
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bp2scripts~
 COMPILE ~%MOD_FOLDER%/ohbvic01~ /* editing the item_roll at the bottom to be zero so we ALWAYS get loot */ /* using EVALUATE BUFFER here means it won't install where going YOLO */
 
 // Add Portrait Icons
@@ -52,17 +52,11 @@ LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@18000) STR_VAR bam_fi
 COPY_EXISTING ~zbpdsim.spl~ ~override~
   LPF ALTER_EFFECT INT_VAR match_opcode = 142 parameter2 = icon END
 
-/*
-  bucket's tp2 additions - still need to be approved and tested
-                                                               */
+// bucket's tp2 additions - still need to be approved and tested
 
 /* new journal entries */
 ADD_JOURNAL TITLE (@800000) @800001 USING ~%MOD_FOLDER%/lang/english/JournalEntries.tra~
 
-
-/* compile new nephetel cutscene */
-COMPILE ~%MOD_FOLDER%/test/cutscene/zbmescut.baf~
-        ~%MOD_FOLDER%/test/cutscene/zbnephskip.baf~
 /* add new vampire creature for it */
 COPY ~%MOD_FOLDER%/creatures/vampirecutscene/zbvamp.cre~ ~override/zbvamp.cre~ /* need to move this line over to the setup-cre file but i'm not touching that since it's royal's baby */
 WRITE_ASCII DEATHVAR ~zbvamp~ #32
@@ -71,24 +65,25 @@ WRITE_ASCII DEATHVAR ~zbvamp~ #32
 /* do we just recompile ALL 54 dialogues? only added a few that i know have been edited, there are more i need to add */
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
                         ~%MOD_FOLDER%/dlg/ohbdenna.d~ /* still needs HEAVY edits */
-						~%MOD_FOLDER%/dlg/ohbjoker.d~
-						~%MOD_FOLDER%/dlg/ohbnajim.d~
-						~%MOD_FOLDER%/dlg/ohbbrodl.d~ /* still needs HEAVY edits */
-						~%MOD_FOLDER%/dlg/ohbstann.d~
-						~%MOD_FOLDER%/dlg/ohbtartl.d~
-						~%MOD_FOLDER%/dlg/ohbcook.d~
+                        ~%MOD_FOLDER%/dlg/ohbjoker.d~
+                        ~%MOD_FOLDER%/dlg/ohbnajim.d~
+                        ~%MOD_FOLDER%/dlg/ohbbrodl.d~ /* still needs HEAVY edits */
+                        ~%MOD_FOLDER%/dlg/ohbstann.d~
+                        ~%MOD_FOLDER%/dlg/ohbtartl.d~
+                        ~%MOD_FOLDER%/dlg/ohbcook.d~
                         ~%MOD_FOLDER%/dlg/ohbcurel.d~
-						~%MOD_FOLDER%/dlg/ohbdulf.d~
-						~%MOD_FOLDER%/dlg/ohbelgia.d~
-						~%MOD_FOLDER%/dlg/ohbfeldr.d~
-						~%MOD_FOLDER%/dlg/ohbgc01.d~
-						~%MOD_FOLDER%/dlg/ohbgerro.d~
-						~%MOD_FOLDER%/dlg/ohbgezzt.d~
-						~%MOD_FOLDER%/dlg/ohbimim.d~ /* needs crossmod edits for BPinBG1 */
-						~%MOD_FOLDER%/dlg/ohblaris.d~
-						~%MOD_FOLDER%/dlg/ohbleoka.d~
-						~%MOD_FOLDER%/dlg/ohbmardu.d~
-						~%MOD_FOLDER%/dlg/ohbvoghi.d~
+                        ~%MOD_FOLDER%/dlg/ohbdulf.d~
+                        ~%MOD_FOLDER%/dlg/ohbelgia.d~
+                        ~%MOD_FOLDER%/dlg/ohbfeldr.d~
+                        ~%MOD_FOLDER%/dlg/ohbgc01.d~
+                        ~%MOD_FOLDER%/dlg/ohbgerro.d~
+                        ~%MOD_FOLDER%/dlg/ohbgezzt.d~
+                        ~%MOD_FOLDER%/dlg/ohbimim.d~ /* needs crossmod edits for BPinBG1 */
+                        ~%MOD_FOLDER%/dlg/ohblaris.d~
+                        ~%MOD_FOLDER%/dlg/ohbleoka.d~
+                        ~%MOD_FOLDER%/dlg/ohbmardu.d~
+                        ~%MOD_FOLDER%/dlg/ohbvoghi.d~
+                        ~%MOD_FOLDER%/dlg/ohbstirv.d~
 
 /* copy edited sound files over */
 COPY ~%MOD_FOLDER%/wav~ ~override~
@@ -115,11 +110,12 @@ APPEND ~ITEMDIAL.2da~
 UNLESS ~zbeshpeu~
 
 COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */
-		~%MOD_FOLDER%/test/zbvyan.d~ /* vyantri's new line */
-		~%MOD_FOLDER%/test/zbmes.d~ /* messenger - aka best girl in disguise lines */
+        ~%MOD_FOLDER%/test/zbvyan.d~ /* vyantri's new line */
+        ~%MOD_FOLDER%/test/zbmes.d~ /* messenger - aka best girl in disguise lines */
         ~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */
-		~%MOD_FOLDER%/test/gaelan.d~ /* vanilla npc interjections */
-		~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */
+        ~%MOD_FOLDER%/test/gaelan.d~ /* vanilla npc interjections */
+        ~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */
+        ~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20002 DESIGNATED 8 LABEL ~zb_pod_rm_portraits~ // REMOVE PORTRAITS
@@ -127,11 +123,11 @@ REQUIRE_COMPONENT "zbpod.tp2" "2" @30000 // traify later
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY_EXISTING ~zbdrclch.cre~ ~override~
-			  ~ohbbrodl.cre~ ~override~
-			  ~ohbbello.cre~ ~override~
-			  ~ohbtartl.cre~ ~override~
-			  ~ohbstirv.cre~ ~override~
-			  ~ohbwing.cre~ ~override~
+              ~ohbbrodl.cre~ ~override~
+              ~ohbbello.cre~ ~override~
+              ~ohbtartl.cre~ ~override~
+              ~ohbstirv.cre~ ~override~
+              ~ohbwing.cre~ ~override~
 
 	WRITE_ASCII 0x34 ~~ #8
 	WRITE_ASCII 0x3c ~~ #8
