@@ -1,0 +1,14 @@
+IF
+	Global("zbnephcutscene","GLOBAL",1)
+	Global("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetCutSceneBreakable(FALSE)
+		EndCutSceneMode()
+		ClearAllActions()
+		SetCursorState(FALSE)
+		SetAreaScript("",OVERRIDE)
+		RestorePartyLocations()
+		SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",0)
+		Continue()
+END
