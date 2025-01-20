@@ -12,10 +12,10 @@ THEN
 	RESPONSE #100
 	    CutSceneID(Player1) /* who performs the action */
 		/* actions start here */ 
-		SetGlobal("zbnephcutscene","GLOBAL",1) /* we don't want the cutscene to repeat */ 
+		SetGlobal("zbnephcutscene","GLOBAL",1) /* we don't want the cutscene to repeat */ 		
 		Wait(2)
 		DisplayStringHead(Player1,@1800013)
-		Wait(3)
+		Wait(2)
 		PlaySound("MISC_03A")
         PlayDead(45)
 		FadeToColor([50.0],0)
@@ -26,9 +26,12 @@ THEN
         ActionOverride(Player3,LeaveAreaLUA("AR0701","",[2034.873],NW))  
         ActionOverride(Player4,LeaveAreaLUA("AR0701","",[2034.873],NW))  
         ActionOverride(Player5,LeaveAreaLUA("AR0701","",[2034.873],NW))  
-        ActionOverride(Player6,LeaveAreaLUA("AR0701","",[2034.873],NW))  /* carries party over, they have to be out of sight */ 
+        ActionOverride(Player6,LeaveAreaLUA("AR0701","",[2034.873],NW))  /* carries party over, they have to be out of sight */	
 		CreateCreature("zspdnf16",[1560.680],NE)  /* spawns in nephetel */ 
 		CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */ 
+		SetAreaScript("zbnephskip",OVERRIDE)
+        SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",1)
+        SetCutSceneBreakable(TRUE)
 		Wait(2)
 		FadeFromColor([30.0],0)
 		MoveViewPoint([1670.680],INSTANT)
@@ -79,8 +82,11 @@ THEN
 		ActionOverride("zspdnf16",FaceObject("zbvamp"))
 		Wait(2)
 		DisplayStringHead("zspdnf16",@1800012) /* ~Of course, Spymaster.~ */ 
-		Wait(5)
+		Wait(5)		
 		FadeToColor([50.0],0)
+		SetCutSceneBreakable(FALSE)
+        SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",0)
+        SetAreaScript("",OVERRIDE)
 		ActionOverride("zspdnf16",DestroySelf())
 		Wait(1)
         ActionOverride("zbvamp",DestroySelf())

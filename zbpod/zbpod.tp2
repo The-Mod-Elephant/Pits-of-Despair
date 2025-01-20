@@ -62,6 +62,7 @@ ADD_JOURNAL TITLE (@800000) @800001 USING ~%MOD_FOLDER%/lang/english/JournalEntr
 
 /* compile new nephetel cutscene */
 COMPILE ~%MOD_FOLDER%/test/cutscene/zbmescut.baf~
+        ~%MOD_FOLDER%/test/cutscene/zbnephskip.baf~
 /* add new vampire creature for it */
 COPY ~%MOD_FOLDER%/creatures/vampirecutscene/zbvamp.cre~ ~override/zbvamp.cre~ /* need to move this line over to the setup-cre file but i'm not touching that since it's royal's baby */
 WRITE_ASCII DEATHVAR ~zbvamp~ #32
