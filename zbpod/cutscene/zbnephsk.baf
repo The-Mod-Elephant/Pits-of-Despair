@@ -8,7 +8,18 @@ THEN
 		ClearAllActions()
 		SetCursorState(FALSE)
 		SetAreaScript("",OVERRIDE)
+		ActionOverride("zspdnf16",DestroySelf())
+		ActionOverride("zbvamp",DestroySelf())
 		RestorePartyLocations()
 		SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",0)
+		AddJournalEntry(@800001,QUEST) /* add journal entry, moved over from d file */
+		GiveItemCreate("zbpdnote",Player1,1,0,0)
 		Continue()
 END
+
+
+
+
+
+	
+		
