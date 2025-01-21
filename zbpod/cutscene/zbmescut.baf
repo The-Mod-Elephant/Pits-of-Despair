@@ -3,11 +3,10 @@
   we'll need to add 'playsound' for each line once we have the VO lines
   right now we only have the one vampire sound
   ideally played AFTER the player has explored the sewers but yolo 
-  fires AFTER nephetel / mysterious messenger gives charname the note
-                                                                     */ 
+  fires AFTER nephetel / mysterious messenger gives charname the note */
+
 IF
-	True() 
-	Global("zbnephcutscene","GLOBAL",0) /* we haven't seen the cutscene */ 
+	Global("zbnephcutscene","GLOBAL",0) /* we haven't seen the cutscene */
 THEN
 	RESPONSE #100
 		CutSceneID(Player1) /* who performs the action */
@@ -29,7 +28,7 @@ THEN
 		ActionOverride(Player6,LeaveAreaLUA("AR0701","",[2034.873],NW))  /* carries party over, they have to be out of sight */ 
 		CreateCreature("zspdnf16",[1560.680],NE)  /* spawns in nephetel */ 
 		CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */ 
-		SetAreaScript("zbnephskip",OVERRIDE)
+		SetAreaScript("zbnephsk",OVERRIDE)
 		SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",1)
 		SetCutSceneBreakable(TRUE)
 		Wait(2)
@@ -82,7 +81,7 @@ THEN
 		ActionOverride("zspdnf16",FaceObject("zbvamp"))
 		Wait(2)
 		DisplayStringHead("zspdnf16",@1800012) /* ~Of course, Spymaster.~ */ 
-		Wait(5)		
+		Wait(5)
 		FadeToColor([50.0],0)
 		SetCutSceneBreakable(FALSE)
 		SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",0)
@@ -92,10 +91,10 @@ THEN
 		ActionOverride("zbvamp",DestroySelf())
 		Wait(1)
 		RestorePartyLocations()
-		/* actions end here */ 
+		// Actions end here
 		EndCutSceneMode() /* exits the the StartCutSceneMode() action */
 		Wait(1)
 		FadeFromColor([50.0],0)
-		AddJournalEntry(@800001,QUEST) /* add journal entry, moved over from d file */ 
+		AddJournalEntry(@800001,QUEST) /* add journal entry, moved over from d file */
 		GiveItemCreate("zbpdnote",Player1,1,0,0) /* give player the note, moved over from d file */ 
 END
