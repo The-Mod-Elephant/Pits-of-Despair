@@ -4,22 +4,18 @@ IF
 THEN
 	RESPONSE #100
 		SetCutSceneBreakable(FALSE)
+		FadeToColor([50.0],0)
+		ActionOverride("zspdnf16",DestroySelf())
+		Wait(1)
+		ActionOverride("zbvamp",DestroySelf())
+		Wait(1)
 		EndCutSceneMode()
 		ClearAllActions()
-		SetCursorState(FALSE)
-		SetAreaScript("",OVERRIDE)
-		ActionOverride("zspdnf16",DestroySelf())
-		ActionOverride("zbvamp",DestroySelf())
+		FadeFromColor([50.0],0)
 		RestorePartyLocations()
+		SetAreaScript("",OVERRIDE)
 		SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",0)
 		AddJournalEntry(@800001,QUEST) /* add journal entry, moved over from d file */
 		GiveItemCreate("zbpdnote",Player1,1,0,0)
 		Continue()
 END
-
-
-
-
-
-	
-		

@@ -6,6 +6,7 @@
   fires AFTER nephetel / mysterious messenger gives charname the note */
 
 IF
+	True()
 	Global("zbnephcutscene","GLOBAL",0) /* we haven't seen the cutscene */
 THEN
 	RESPONSE #100
