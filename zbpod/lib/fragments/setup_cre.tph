@@ -4,6 +4,7 @@ COPY_EXISTING ~zbdrclch.CRE~ ~override~
     SAY 0x0c @15000
 
 COPY ~%MOD_FOLDER%/creatures/nephetel/zspdnf16.cre~ ~override~
+COPY ~%MOD_FOLDER%/creatures/nephetel/zbnephy.bmp~ ~override~
 COPY_EXISTING ~zspdnf16.CRE~ ~override~
     SAY 0x08 @15001
     SAY 0x0c @15001
@@ -150,7 +151,7 @@ COPY_EXISTING ~ohbmin01.CRE~ ~override~
 
 COPY_EXISTING ~ZBGOREM1.SPL~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@18004) END // add .tra ref later
-	
+
 	COPY ~%MOD_FOLDER%/creatures/thewinged~ ~override~
 COPY_EXISTING ~ohbwing.CRE~ ~override~
     SAY 0x08 @15019
