@@ -6,11 +6,11 @@ THEN
     StartCutSceneMode()
     SetGlobal("zb_train_spawn","global",10)
     SmallWait(5)
-    CreateCreature("ohbmena1",[1615.900],W) // Vampire Worg
+    CreateCreature("ohbmena1",[1240.640],S) // Vampire Worg
     ActionOverride("ohbmena1",Enemy())
-    CreateCreature("ohbmena1",[1625.910],W) // Vampire Worg
+    CreateCreature("ohbmena1",[1260.640],S) // Vampire Worg
     ActionOverride("ohbmena1",Enemy())
-    CreateCreature("ohbmena3",[1635.920],W) // Dire Bear
+    CreateCreature("ohbmena3",[1230.1215],N) // Dire Bear
     ActionOverride("ohbmena3",Enemy())
     CreateCreature("ohbmena4",[1645.930],W) // Dire Lion
     ActionOverride("ohbmena4",Enemy())
@@ -29,13 +29,13 @@ THEN
     StartCutSceneMode()
     SetGlobal("zb_train_spawn","global",20)
     SmallWait(5)
-    CreateCreature("ohbmena4",[1620.900],W)  // Dire Lion
+    CreateCreature("ohbmena4",[1240.640],S)  // Dire Lion
     ActionOverride("ohbmena4",Enemy())
-    CreateCreature("ohbmena4",[1625.905],W)  // Dire Lion
+    CreateCreature("ohbmena4",[1260.640],S)  // Dire Lion
     ActionOverride("ohbmena4",Enemy())
-    CreateCreature("ohbmena2",[1630.910],W)  // Dire Moose
+    CreateCreature("ohbmena2",[1230.1215],N)  // Dire Moose
     ActionOverride("ohbmena2",Enemy())
-    CreateCreature("ohbmena3",[1640.915],W)  // Dire Bear
+    CreateCreature("ohbmena3",[1250.1215],N)  // Dire Bear
     ActionOverride("ohbmena3",Enemy())
     CreateCreature("ohbmena5",[1650.920],W)  // Boalisk
     ActionOverride("ohbmena5",Enemy())
@@ -52,13 +52,13 @@ THEN
     StartCutSceneMode()
     SetGlobal("zb_train_spawn","global",30)
     SmallWait(5)
-    CreateCreature("ohbmena5",[1620.900],W)  // Boalisk
+    CreateCreature("ohbmena5",[1240.640],S)  // Boalisk
     ActionOverride("ohbmena5",Enemy())
-    CreateCreature("ohbmena4",[1625.905],W)  // Dire Lion
+    CreateCreature("ohbmena4",[1230.1215],N)  // Dire Lion
     ActionOverride("ohbmena4",Enemy())
-    CreateCreature("ohbmena4",[1630.910],W)  // Dire Lion
+    CreateCreature("ohbmena4",[1250.1215],N)  // Dire Lion
     ActionOverride("ohbmena4",Enemy())
-    CreateCreature("ohbmena3",[1640.915],W)  // Dire Bear
+    CreateCreature("ohbmena3",[1260.640],S)  // Dire Bear
     ActionOverride("ohbmena3",Enemy())
     CreateCreature("ohbmena2",[1645.920],W)  // Dire Moose
     ActionOverride("ohbmena2",Enemy())
