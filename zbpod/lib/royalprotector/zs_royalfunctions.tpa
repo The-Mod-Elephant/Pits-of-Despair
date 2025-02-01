@@ -1,0 +1,308 @@
+/*
+    Modify the basic values of any item, to ease use without having to memorize offsets or remember the size in bytes of
+    anything.
+
+    All integer variables except variables to refer to string references default to -1. String references default to -2, since
+    -1 is a value one might want to have for string references.
+*/
+DEFINE_PATCH_FUNCTION ALTER_ITEM
+INT_VAR
+    //// Use these for known string references, or pass a new string using RESOLVE_STR_REF(<string>)
+    unid_ref_name = "-2"
+    id_ref_name = "-2"
+    unid_ref_desc = "-2"
+    id_ref_desc = "-2"
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    flags = "-1"
+    category = "-1"
+    wpn_prof = "-1"
+    min_level = "-1"
+    min_str = "-1"
+    min_str_bonus = "-1"
+    min_dex = "-1"
+    min_con = "-1"
+    min_int = "-1"
+    min_wis = "-1"
+    min_cha = "-1"
+    unusable0 = "-1"
+    unusable1 = "-1"
+    unusable2 = "-1"
+    unusable3 = "-1"
+    unusable4 = "-1"
+    price = "-1"
+    max_stack = "-1"
+    lore_id = "-1"
+    weight = "-1"
+    ench = "-1"
+    this_plus = 0 // to enable addition to values, a value of 1 will add, -1 will subtract, to the current value instead of setting on some fields
+STR_VAR
+    //// Use these for passing strings directly -- will be added to the TLK, tra refs will need to be set as variables first
+    general_name = ~~
+    id_name = ~~
+    general_desc = ~~
+    id_desc = ~~
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    used_up_itm = ~none~
+    appearance = ~none~
+    icon = ~none~
+    ground_icon = ~none~
+    desc_img = ~none~
+BEGIN
+    PATCH_IF unid_ref_name > "-2" BEGIN
+        WRITE_LONG 0x08 unid_ref_name
+    END ELSE BEGIN
+        PATCH_IF unid_ref_name < "-2" BEGIN
+            PATCH_WARN "Passed a wrong value to unid_ref_name: %unid_ref_name%"
+        END
+    END
+
+    PATCH_IF unid_ref_desc > "-2" BEGIN
+        WRITE_LONG 0x50 unid_ref_desc
+    END ELSE BEGIN
+        PATCH_IF unid_ref_desc < "-2" BEGIN
+            PATCH_WARN "Passed a wrong value to unid_ref_desc: %unid_ref_desc%"
+        END
+    END
+
+    PATCH_IF id_ref_name > "-2" BEGIN
+        WRITE_LONG 0x0c id_ref_name
+    END ELSE BEGIN
+        PATCH_IF id_ref_name < "-2" BEGIN
+            PATCH_WARN "Passed a wrong value to id_ref_name: %id_ref_name%"
+        END
+    END
+
+    PATCH_IF id_ref_desc > "-2" BEGIN
+        WRITE_LONG 0x54 id_ref_desc
+    END ELSE BEGIN
+        PATCH_IF id_ref_desc < "-2" BEGIN
+            PATCH_WARN "Passed a wrong value to id_ref_desc: %id_ref_desc%"
+        END
+    END
+
+    PATCH_IF flags > "-1" BEGIN
+        PATCH_IF this_plus = 0 BEGIN
+            WRITE_LONG 0x18 flags
+        END ELSE BEGIN
+            PATCH_IF this_plus = 1 BEGIN
+                WRITE_LONG 0x18 (THIS + flags)
+            END
+            PATCH_IF this_plus = "-1" BEGIN
+                WRITE_LONG 0x18 (THIS - flags)
+            END
+        END
+    END ELSE BEGIN
+        PATCH_IF flags < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to flags: %flags%"
+        END
+    END
+
+    PATCH_IF category > "-1" BEGIN
+        WRITE_BYTE 0x1c category
+    END ELSE BEGIN
+        PATCH_IF category < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to category: %category%"
+        END
+    END
+
+    PATCH_IF wpn_prof > "-1" BEGIN
+        WRITE_LONG 0x31 wpn_prof
+    END ELSE BEGIN
+        PATCH_IF wpn_prof < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to wpn_prof: %wpn_prof%"
+        END
+    END
+
+    PATCH_IF min_level > "-1" BEGIN
+        WRITE_SHORT 0x24 min_level
+    END ELSE BEGIN
+        PATCH_IF min_level < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to min_level: %min_level%"
+        END
+    END
+
+    PATCH_IF min_str > "-1" BEGIN
+        WRITE_SHORT 0x26 min_str
+    END ELSE BEGIN
+        PATCH_IF min_str < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to min_str: %min_str%"
+        END
+    END
+
+    PATCH_IF min_str_bonus > "-1" BEGIN
+        WRITE_BYTE 0x28 min_str_bonus
+    END ELSE BEGIN
+        PATCH_IF min_str_bonus < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to min_str_bonus: %min_str_bonus%"
+        END
+    END
+
+    PATCH_IF min_int > "-1" BEGIN
+        WRITE_BYTE 0x2a min_int
+    END ELSE BEGIN
+        PATCH_IF min_int < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to min_int: %min_int%"
+        END
+    END
+
+    PATCH_IF min_dex > "-1" BEGIN
+        WRITE_BYTE 0x2c min_dex
+    END ELSE BEGIN
+        PATCH_IF min_dex < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to min_dex: %min_dex%"
+        END
+    END
+
+    PATCH_IF min_wis > "-1" BEGIN
+        WRITE_BYTE 0x2e min_wis
+    END ELSE BEGIN
+        PATCH_IF min_wis < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to min_wis: %min_wis%"
+        END
+    END
+
+    PATCH_IF min_con > "-1" BEGIN
+        WRITE_BYTE 0x30 min_con
+    END ELSE BEGIN
+        PATCH_IF min_con < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to min_con: %min_con%"
+        END
+    END
+
+    PATCH_IF min_cha > "-1" BEGIN
+        WRITE_SHORT 0x30 min_cha
+    END ELSE BEGIN
+        PATCH_IF min_cha < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to min_cha: %min_cha%"
+        END
+    END
+
+    PATCH_IF max_stack > "-1" BEGIN
+        WRITE_SHORT 0x38 max_stack
+    END ELSE BEGIN
+        PATCH_IF max_stack < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to max_stack: %max_stack%"
+        END
+    END
+
+    PATCH_IF lore_id > "-1" BEGIN
+        WRITE_SHORT 0x42 lore_id
+    END ELSE BEGIN
+        PATCH_IF lore_id < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to lore_id: %lore_id%"
+        END
+    END
+
+    PATCH_IF weight > "-1" BEGIN
+        WRITE_LONG 0x4c weight
+    END ELSE BEGIN
+        PATCH_IF weight < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to weight: %weight%"
+        END
+    END
+
+    PATCH_IF ench > "-1" BEGIN
+        WRITE_LONG 0x60 ench
+    END ELSE BEGIN
+        PATCH_IF ench < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to ench: %ench%"
+        END
+    END
+
+    PATCH_IF unusable0 > "-1" BEGIN
+        WRITE_LONG 0x1e unusable0
+    END ELSE BEGIN
+        PATCH_IF unusable0 < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to unusable0: %unusable0%"
+        END
+    END
+
+    PATCH_IF unusable1 > "-1" BEGIN
+        WRITE_BYTE 0x29 unusable1
+    END ELSE BEGIN
+        PATCH_IF unusable1 < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to unusable1: %unusable1%"
+        END
+    END
+
+    PATCH_IF unusable2 > "-1" BEGIN
+        WRITE_BYTE 0x2b unusable2
+    END ELSE BEGIN
+        PATCH_IF unusable2 < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to unusable2: %unusable2%"
+        END
+    END
+
+    PATCH_IF unusable3 > "-1" BEGIN
+        WRITE_BYTE 0x2d unusable3
+    END ELSE BEGIN
+        PATCH_IF unusable3 < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to unusable3: %unusable3%"
+        END
+    END
+
+    PATCH_IF unusable4 > "-1" BEGIN
+        WRITE_BYTE 0x2f unusable4
+    END ELSE BEGIN
+        PATCH_IF unusable4 < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to unusable4: %unusable4%"
+        END
+    END
+
+    PATCH_IF price > "-1" BEGIN
+        WRITE_LONG 0x34 price
+    END ELSE BEGIN
+        PATCH_IF price < "-1" BEGIN
+            PATCH_WARN "Passed a wrong value to price: %price%"
+        END
+    END
+
+    PATCH_IF STRING_LENGTH "%general_name%" > 0 BEGIN
+        PATCH_IF unid_ref_name > "-2" BEGIN
+            PATCH_WARN "Already passed an string reference for general name! It will be substituted by %general_name%."
+        END
+        SAY NAME1 "%general_name%"
+    END
+
+    PATCH_IF STRING_LENGTH "%id_name%" > 0 BEGIN
+        PATCH_IF id_ref_name > "-2" BEGIN
+            PATCH_WARN "Already passed an string reference for identified name! It will be substituted by %id_name%."
+        END
+        SAY NAME2 "%id_name%"
+    END
+
+
+    PATCH_IF STRING_LENGTH "%general_desc%" > 0 BEGIN
+        PATCH_IF unid_ref_desc > "-2" BEGIN
+            PATCH_WARN "Already passed an string reference for general description! It will be substituted by %general_desc%."
+        END
+        SAY UNIDENTIFIED_DESC "%general_desc%"
+    END
+
+    PATCH_IF STRING_LENGTH "%id_desc%" > 0 BEGIN
+        PATCH_IF id_ref_desc > "-2" BEGIN
+            PATCH_WARN "Already passed an string reference for identified description! It will be substituted by %id_desc%."
+        END
+        SAY IDENTIFIED_DESC "%id_desc%"
+    END
+
+    PATCH_IF "%used_up_itm%" STRING_COMPARE_CASE "none" != 0 BEGIN
+        WRITE_ASCII 0x10 "%used_up_itm%" #8
+    END
+
+    PATCH_IF "%icon%" STRING_COMPARE_CASE "none" != 0 BEGIN
+        WRITE_ASCII 0x3a "%icon%" #8
+    END
+
+    PATCH_IF "%ground_icon%" STRING_COMPARE_CASE "none" != 0 BEGIN
+        WRITE_ASCII 0x3a "%ground_icon%" #8
+    END
+
+    PATCH_IF "%desc_img%" STRING_COMPARE_CASE "none" != 0 BEGIN
+        WRITE_ASCII 0x58 "%desc_img%" #8
+    END
+
+    PATCH_IF "%appearance%" STRING_COMPARE_CASE "none" != 0 BEGIN
+        WRITE_ASCII 0x22 "%appearance%" #2
+    END
+END

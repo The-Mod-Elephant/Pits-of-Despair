@@ -10,6 +10,7 @@ ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/a7#add_kit_ex.tpa~
   INCLUDE ~%MOD_FOLDER%/lib/alter_script.tpa~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
+  INCLUDE ~%MOD_FOLDER%/lib/royalprotector/zs_royalfunctions.tpa~
 END
 
 
@@ -37,6 +38,7 @@ END
 
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_items.tph~
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_cre.tph~
+INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_stores.tph~
 
 // Fix antimagic BP2 spell so it prevents Simulacrum from being cast
 
@@ -115,7 +117,7 @@ COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */
         ~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */
 		~%MOD_FOLDER%/test/gaelan.d~ /* add a line to gaelan */
 		~%MOD_FOLDER%/test/zbneph.d~ /* nephetel's base dialogue file */
-		~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */		
+		~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20002 DESIGNATED 8 LABEL ~zb_pod_rm_portraits~ // REMOVE PORTRAITS
