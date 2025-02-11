@@ -306,3 +306,94 @@ BEGIN
         WRITE_ASCII 0x22 "%appearance%" #2
     END
 END
+
+DEFINE_PATCH_FUNCTION ALTER_SPELL
+INT_VAR
+    ref_name = "-2"
+    ref_desc = "-2"
+    flags = "-1"
+    spell_type = "-1"
+    excl_flags = "-1"
+    animation = "-1"
+    primary_type = "-1"
+    secondary_type = "-1"
+    spell_level = "-1"
+    this_plus = 0
+STR_VAR
+    casting_sound = ~none~
+    icon = ~none~
+BEGIN
+    PATCH_IF ref_name > "-2" BEGIN
+        WRITE_LONG 0x08 ref_name
+    END ELSE PATCH_IF ref_name < "-2" BEGIN
+        PATCH_FAIL "Passed a wrong value to ref_name: %ref_name%"
+    END
+
+    PATCH_IF ref_desc > "-2" BEGIN
+        WRITE_LONG 0x50 ref_desc
+    END ELSE PATCH_IF ref_desc < "-2" BEGIN
+        PATCH_FAIL "Passed a wrong value to ref_desc: %ref_desc%"
+    END
+
+    PATCH_IF flags > "-1" BEGIN
+        PATCH_IF this_plus = 0 BEGIN
+            WRITE_LONG 0x18 flags
+        END ELSE PATCH_IF this_plus = 1 BEGIN
+            WRITE_LONG 0x18 (THIS + flags)
+        END ELSE PATCH_IF this_plus = "-1" BEGIN
+            WRITE_LONG 0x18 (THIS - flags)
+        END
+    END ELSE PATCH_IF flags < "-1" BEGIN
+        PATCH_FAIL "Passed a wrong value to flags: %flags%"
+    END
+
+    PATCH_IF spell_type > "-1" BEGIN
+        WRITE_LONG 0x1c spell_type
+    END ELSE PATCH_IF spell_type < "-1" BEGIN
+        PATCH_FAIL "Passed a wrong value to spell_type: %spell_type%"
+    END
+
+    PATCH_IF excl_flags > "-1" BEGIN
+        PATCH_IF this_plus = 0 BEGIN
+            WRITE_LONG 0x1e excl_flags
+        END ELSE PATCH_IF this_plus = 1 BEGIN
+            WRITE_LONG 0x1e (THIS + excl_flags)
+        END ELSE PATCH_IF this_plus = "-1" BEGIN
+            WRITE_LONG 0x1e (THIS - excl_flags)
+        END
+    END ELSE PATCH_IF flags < "-1" BEGIN
+        PATCH_FAIL "Passed a wrong value to excl_flags: %excl_flags%"
+    END
+
+    PATCH_IF animation > "-1" BEGIN
+        WRITE_LONG 0x22 animation
+    END ELSE PATCH_IF spell_type < "-1" BEGIN
+        PATCH_FAIL "Passed a wrong value to animation: %animation%"
+    END
+
+    PATCH_IF primary_type > "-1" BEGIN
+        WRITE_LONG 0x25 primary_type
+    END ELSE PATCH_IF primary_type < "-1" BEGIN
+        PATCH_FAIL "Passed a wrong value to primary_type: %primary_type%"
+    END
+
+    PATCH_IF secondary_type > "-1" BEGIN
+        WRITE_LONG 0x27 secondary_type
+    END ELSE PATCH_IF secondary_type < "-1" BEGIN
+        PATCH_FAIL "Passed a wrong value to secondary_type: %secondary_type%"
+    END
+
+    PATCH_IF spell_level > "-1" BEGIN
+        WRITE_LONG 0x34 spell_level
+    END ELSE PATCH_IF spell_level < "-1" BEGIN
+        PATCH_FAIL "Passed a wrong value to spell_level: %spell_level%"
+    END
+
+    PATCH_IF "%icon%" STRING_COMPARE_CASE "none" != 0 BEGIN
+        WRITE_ASCII 0x3a "%icon%" #8
+    END
+
+    PATCH_IF "%casting_sound%" STRING_COMPARE_CASE "none" != 0 BEGIN
+        WRITE_ASCII 0x10 "%casting_sound%" #8
+    END
+END
