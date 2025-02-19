@@ -102,7 +102,6 @@ IF
   Dead("ohbmena1")
   Dead("ohbmena1")
   Dead("ohbmena3")
-  Dead("ohbmena3")
   Dead("ohbmena4")
   Dead("ohbmena7")
   CombatCounter(0)
