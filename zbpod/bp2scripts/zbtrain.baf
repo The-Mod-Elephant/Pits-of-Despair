@@ -14,7 +14,7 @@ THEN
     ActionOverride("ohbmena3",Enemy())
     CreateCreature("ohbmena4",[1645.930],W) // Dire Lion
     ActionOverride("ohbmena4",Enemy())
-	CreateCreature("ohbmena7",[1655.940],W) // Vortex Spider
+    CreateCreature("ohbmena7",[1655.940],W) // Vortex Spider
     ActionOverride("ohbmena7",Enemy())
     SmallWait(25)
     MoveViewPoint([1655.702],BD_NORMAL)
@@ -29,16 +29,16 @@ THEN
     StartCutSceneMode()
     SetGlobal("zb_train_spawn","global",20)
     SmallWait(5)
-    CreateCreature("ohbmena4",[1240.640],S)  // Dire Lion
-    ActionOverride("ohbmena4",Enemy())
-    CreateCreature("ohbmena4",[1260.640],S)  // Dire Lion
-    ActionOverride("ohbmena4",Enemy())
+    CreateCreature("ohbmena1",[1650.940],W) // Vampire Worg
+    ActionOverride("ohbmena1",Enemy())
     CreateCreature("ohbmena2",[1230.1215],N)  // Dire Moose
     ActionOverride("ohbmena2",Enemy())
     CreateCreature("ohbmena3",[1250.1215],N)  // Dire Bear
     ActionOverride("ohbmena3",Enemy())
-	CreateCreature("ohbmena1",[1650.940],W) // Vampire Worg
-    ActionOverride("ohbmena1",Enemy())
+    CreateCreature("ohbmena4",[1240.640],S)  // Dire Lion
+    ActionOverride("ohbmena4",Enemy())
+    CreateCreature("ohbmena4",[1260.640],S)  // Dire Lion
+    ActionOverride("ohbmena4",Enemy())
     CreateCreature("ohbmena5",[1655.920],W)  // Boalisk
     ActionOverride("ohbmena5",Enemy())
     SmallWait(25)
@@ -54,18 +54,18 @@ THEN
     StartCutSceneMode()
     SetGlobal("zb_train_spawn","global",30)
     SmallWait(5)
-    CreateCreature("ohbmena5",[1240.640],S)  // Boalisk
-    ActionOverride("ohbmena5",Enemy())
-    CreateCreature("ohbmena7",[1230.1215],N)  // Vortex Spider
-    ActionOverride("ohbmena7",Enemy())
-    CreateCreature("ohbmena7",[1250.1215],N)  // Vortex Spider
-    ActionOverride("ohbmena7",Enemy())
     CreateCreature("ohbmena2",[1260.640],S)  // Dire Moose
     ActionOverride("ohbmena2",Enemy())
-    CreateCreature("ohbmena7",[1645.920],W)  // Vortex Spider
-    ActionOverride("ohbmena7",Enemy())
+    CreateCreature("ohbmena5",[1240.640],S)  // Boalisk
+    ActionOverride("ohbmena5",Enemy())
     CreateCreature("ohbmena6",[1650.925],W)  // Mutated Carrion Crawler
     ActionOverride("ohbmena6",Enemy())
+    CreateCreature("ohbmena7",[1230.1215],N)  // Vortex Spider
+    ActionOverride("ohbmena7",Enemy())
+    CreateCreature("ohbmena7",[1230.1215],N)  // Vortex Spider
+    ActionOverride("ohbmena7",Enemy())
+    CreateCreature("ohbmena7",[1230.1215],N)  // Vortex Spider
+    ActionOverride("ohbmena7",Enemy())
     SmallWait(25)
     MoveViewPoint([1655.702],BD_NORMAL)
     SmallWait(75)
@@ -79,32 +79,17 @@ THEN
     StartCutSceneMode()
     SetGlobal("zb_train_spawn","global",40)
     SmallWait(5)
-    CreateCreature("ohbmena8",[1645.920],W)  // Greater Wyvern
-    ActionOverride("ohbmena8",Enemy())
-	CreateCreature("ohbmena3",[1665.930],W)  // Dire Bear
+    CreateCreature("ohbmena3",[1665.930],W)  // Dire Bear
     ActionOverride("ohbmena3",Enemy())
-	CreateCreature("ohbmena6",[1240.640],S)  // Mutated Carrion Crawler
-    ActionOverride("ohbmena6",Enemy())
-	CreateCreature("ohbmena6",[1260.640],S)  // Mutated Carrion Crawler
-    ActionOverride("ohbmena6",Enemy())
-	CreateCreature("ohbmena4",[1230.1215],N)  // Dire Lion
+    CreateCreature("ohbmena4",[1230.1215],N)  // Dire Lion
     ActionOverride("ohbmena4",Enemy())
-    CreateCreature("ohbmena4",[1250.1215],N)  // Dire Lion
+    CreateCreature("ohbmena4",[1230.1215],N)  // Dire Lion
     ActionOverride("ohbmena4",Enemy())
-    SmallWait(25)
-    MoveViewPoint([1655.702],BD_NORMAL)
-    SmallWait(75)
-    EndCutSceneMode()
-END
-
-IF
-  Global("zb_train_spawn","global",5)
-THEN
-  RESPONSE #100
-    StartCutSceneMode()
-    SetGlobal("zb_train_spawn","global",50)
-    SmallWait(5)
-    CreateCreature("ohbmena8",[1240.640],S)  // Greater Wyvern
+    CreateCreature("ohbmena6",[1240.640],S)  // Mutated Carrion Crawler
+    ActionOverride("ohbmena6",Enemy())
+    CreateCreature("ohbmena6",[1240.640],S)  // Mutated Carrion Crawler
+    ActionOverride("ohbmena6",Enemy())
+    CreateCreature("ohbmena8",[1645.920],W)  // Greater Wyvern
     ActionOverride("ohbmena8",Enemy())
     SmallWait(25)
     MoveViewPoint([1655.702],BD_NORMAL)
@@ -119,6 +104,7 @@ IF
   Dead("ohbmena3")
   Dead("ohbmena3")
   Dead("ohbmena4")
+  Dead("ohbmena7")
   CombatCounter(0)
   Global("zb_train_exit","global",0)
 THEN
@@ -131,11 +117,12 @@ END
 
 IF
   Global("zb_train_spawn","global",20)
-  Dead("ohbmena4")
-  Dead("ohbmena4")
+  Dead("ohbmena1")
   Dead("ohbmena2")
   Dead("ohbmena3")
-  Dead("ohbmena1")
+  Dead("ohbmena4")
+  Dead("ohbmena4")
+  Dead("ohbmena5")
   CombatCounter(0)
   Global("zb_train_exit","global",0)
 THEN
@@ -148,12 +135,12 @@ END
 
 IF
   Global("zb_train_spawn","global",30)
-  Dead("ohbmena5")
-  Dead("ohbmena3")
-  Dead("ohbmena3")
-  Dead("ohbmena4")
-  Dead("ohbmena4")
   Dead("ohbmena2")
+  Dead("ohbmena5")
+  Dead("ohbmena6")
+  Dead("ohbmena7")
+  Dead("ohbmena7")
+  Dead("ohbmena7")
   CombatCounter(0)
   Global("zb_train_exit","global",0)
 THEN
@@ -166,6 +153,11 @@ END
 
 IF
   Global("zb_train_spawn","global",40)
+  Dead("ohbmena3")
+  Dead("ohbmena4")
+  Dead("ohbmena4")
+  Dead("ohbmena6")
+  Dead("ohbmena6")
   Dead("ohbmena8")
   CombatCounter(0)
   Global("zb_train_exit","global",0)
@@ -178,22 +170,8 @@ THEN
 END
 
 IF
-  Global("zb_train_spawn","global",50)
-  Dead("ohbmena7")
-  CombatCounter(0)
-  Global("zb_train_exit","global",0)
-THEN
-  RESPONSE #100
-    SetGlobal("zb_train_exit","global",1)
-    SetGlobal("zb_train_spawn","global",51)
-    GiveGoldForce(2000)
-    AddExperienceParty(10000)
-END
-
-IF
   Global("zb_train_exit","global",1)
   OR(3)
-    Global("zb_train_spawn","global",51)
     Global("zb_train_spawn","global",41)
     Global("zb_train_spawn","global",31)
     Global("zb_train_spawn","global",21)
