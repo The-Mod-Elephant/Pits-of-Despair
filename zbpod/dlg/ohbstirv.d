@@ -22,7 +22,6 @@ IF ~~ THEN BEGIN 6
   IF ~Global("ohb_stirv_training","global",1)~ THEN REPLY @3042 /* Dialogue for second training goes here  */ GOTO 8
   IF ~Global("ohb_stirv_training","global",2)~ THEN REPLY @3042 /* Dialogue for thord training goes here  */ GOTO 9
   IF ~Global("ohb_stirv_training","global",3)~ THEN REPLY @3042 /* Dialogue for thord training goes here  */ GOTO 10
-  IF ~Global("ohb_stirv_training","global",4)~ THEN REPLY @3042 /* Dialogue for thord training goes here  */ GOTO 11
   IF ~~ THEN REPLY @973 /* Not right now. */ GOTO 15
 END
 
@@ -70,16 +69,6 @@ IF ~~ THEN BEGIN 10
   EXIT
 END
 
-IF ~~ THEN BEGIN 11
-  SAY @3050 /* Good, give the gold here. */
-  IF ~~ THEN DO ~
-  SetGlobal("ohb_stirv_training","global",5)
-  ClearAllActions()
-  StartCutSceneMode()
-  StartCutScene("zbtrain5")
-  ~
-  EXIT
-END
 
 IF ~~ THEN BEGIN 15
   SAY @3051 /* Off with you, then. I got work to do. Daddy's coming, darlings! */
