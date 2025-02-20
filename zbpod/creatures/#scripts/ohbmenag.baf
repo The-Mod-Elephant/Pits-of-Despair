@@ -7,6 +7,16 @@ THEN
 END
 
 IF
+  Delay(2)
+  ActionListEmpty()
+  !GlobalTimerNotExpired("ZB_IsMovingTimer","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("ZB_IsMovingTimer","LOCALS",6)
+    MoveToObject([PC])
+END
+
+IF
   Heard([ANYONE],111)
 THEN
   RESPONSE #100
@@ -35,7 +45,7 @@ IF
 	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		AttackReevaluate(NearestEnemyOf(Myself),60)
+		AttackReevaluate(NearestEnemyOf(Myself),30)
 END
 
 IF
