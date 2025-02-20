@@ -4,6 +4,9 @@ THEN
   RESPONSE #100
     CutSceneId(Player1)
     Wait(2)
+    CopyGroundPilesTo("OH8100",[2499.1390])  // TBP2 - Staging Area Map
+    SmallWait(5)
+    DestroyGroundPiles()
     LeaveAreaLUAPanic("OH8100","",[2499.1409],S)  // TBP2 - Staging Area Map
     LeaveAreaLUA("OH8100","",[2499.1409],S)  // TBP2 - Staging Area Map
     ActionOverride(Player2,LeaveAreaLUA("OH8100","",[2450.1375],S))  // TBP2 - Staging Area Map

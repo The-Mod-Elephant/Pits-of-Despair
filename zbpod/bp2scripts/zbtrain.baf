@@ -104,6 +104,8 @@ THEN
     SetGlobal("zb_train_spawn","global",11)
     GiveGoldForce(1000)
     AddExperienceParty(8000)
+    PlaySound("BP2POS_1")
+    Wait(2)
 END
 
 IF
@@ -122,6 +124,8 @@ THEN
     SetGlobal("zb_train_spawn","global",21)
     GiveGoldForce(1000)
     AddExperienceParty(9000)
+    PlaySound("BP2POS_2")
+    Wait(2)
 END
 
 IF
@@ -140,6 +144,8 @@ THEN
     SetGlobal("zb_train_spawn","global",31)
     GiveGoldForce(1000)
     AddExperienceParty(10000)
+    PlaySound("BP2POS_3")
+    Wait(2)
 END
 
 IF
@@ -158,6 +164,8 @@ THEN
     SetGlobal("zb_train_spawn","global",41)
     GiveGoldForce(2000)
     AddExperienceParty(10000)
+    PlaySound("BP2POS_4")
+    Wait(2)
 END
 
 IF
