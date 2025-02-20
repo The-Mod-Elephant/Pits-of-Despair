@@ -14,26 +14,27 @@ COPY_EXISTING ~zspdnf16.CRE~ ~override~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/creatures/#scripts/zspdnfs.baf~
 
 COPY ~%MOD_FOLDER%/creatures/dennaton~ ~override~
-COPY_EXISTING ~ohbdenna.CRE~ ~override~
+COPY_EXISTING ~ohbdenna.cre~ ~override~
     SAY 0x08 @15002
     SAY 0x0c @15002
 
 COPY ~%MOD_FOLDER%/creatures/couatl~ ~override~
-COPY_EXISTING ~zbcouatl.CRE~ ~override~
+COPY_EXISTING ~zbcouatl.cre~ ~override~
     SAY 0x08 @15003
     SAY 0x0c @15003
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~P_COUATL~))
 
 COPY ~%MOD_FOLDER%/creatures/stirv~ ~override~
-COPY_EXISTING ~ohbstirv.CRE~ ~override~
+COPY_EXISTING ~ohbstirv.cre~ ~override~
     SAY 0x08 @15004
     SAY 0x0c @15004
 
 COPY ~%MOD_FOLDER%/creatures/mutvampworg~ ~override~
-COPY_EXISTING ~ohbmena1.CRE~ ~override~
+COPY_EXISTING ~ohbmena1.cre~ ~override~
     SAY 0x08 @15005
     SAY 0x0c @15005
     REMOVE_CRE_ITEM minhp1
+    WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~P_RED_WORG~))
 
 // All moosey moose related code goes here
@@ -53,25 +54,28 @@ COPY_EXISTING "zbmoose2.spl" "override" // next the unconsciousness effect
     END
 
 COMPILE "%MOD_FOLDER%/creatures/#scripts/zbmostmp.baf" // compile the script that makes the moose stomp selectively
-COPY_EXISTING ~ohbmena2.CRE~ ~override~
+COPY_EXISTING ~ohbmena2.cre~ ~override~
     SAY 0x08 @15006 // inject into name field (dangerous moose)
     SAY 0x0c @15006 // inject into creature tooltip field (dangerous moose)
     WRITE_ASCII 0x260 ~zbmostmp~ #8  // inject script name to general script field; #8 is the length of the string
     REMOVE_CRE_ITEM minhp1
+    WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
 // end of moosey moosey code
 
 COPY ~%MOD_FOLDER%/creatures/mutdirebear~ ~override~
-COPY_EXISTING ~ohbmena3.CRE~ ~override~
+COPY_EXISTING ~ohbmena3.cre~ ~override~
     SAY 0x08 @15007
     SAY 0x0c @15007
     REMOVE_CRE_ITEM minhp1
+    WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
 
 // start of dire lion related code
 COPY ~%MOD_FOLDER%/creatures/mutdirelion~ ~override~
-COPY_EXISTING ~ohbmena4.CRE~ ~override~
+COPY_EXISTING ~ohbmena4.cre~ ~override~
     SAY 0x08 @15008
     SAY 0x0c @15008
     REMOVE_CRE_ITEM minhp1
+    WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
 
 COPY_EXISTING "zblion1.spl" "override" // we tackle the knocking over effect
     LPF ALTER_EFFECT
@@ -82,56 +86,60 @@ COPY_EXISTING "zblion1.spl" "override" // we tackle the knocking over effect
 // end of dire lion related code
 
 COPY ~%MOD_FOLDER%/creatures/mutboalisk~ ~override~
-COPY_EXISTING ~ohbmena5.CRE~ ~override~
+COPY_EXISTING ~ohbmena5.cre~ ~override~
     SAY 0x08 @15009
     SAY 0x0c @15009
     REMOVE_CRE_ITEM minhp1
+    WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
 
 COPY ~%MOD_FOLDER%/creatures/mutcarrion~ ~override~
-COPY_EXISTING ~ohbmena6.CRE~ ~override~
+COPY_EXISTING ~ohbmena6.cre~ ~override~
     SAY 0x08 @15010
     SAY 0x0c @15010
     REMOVE_CRE_ITEM minhp1
+    WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
 
 COPY ~%MOD_FOLDER%/creatures/mutvortex~ ~override~
-COPY_EXISTING ~ohbmena7.CRE~ ~override~
+COPY_EXISTING ~ohbmena7.cre~ ~override~
     SAY 0x08 @15011
     SAY 0x0c @15011
     REMOVE_CRE_ITEM minhp1
+    WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
 
 COPY ~%MOD_FOLDER%/creatures/mutgwyvern~ ~override~
-COPY_EXISTING ~ohbmena8.CRE~ ~override~
+COPY_EXISTING ~ohbmena8.cre~ ~override~
     SAY 0x08 @15012
     SAY 0x0c @15012
     REMOVE_CRE_ITEM minhp1
+    WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
 
 COPY ~%MOD_FOLDER%/creatures/brodle~ ~override~
-COPY_EXISTING ~ohbbrodl.CRE~ ~override~
+COPY_EXISTING ~ohbbrodl.cre~ ~override~
     SAY 0x08 @15013
     SAY 0x0c @15013
 
 COPY ~%MOD_FOLDER%/creatures/voghiln~ ~override~
-COPY_EXISTING_REGEXP ~ohbvog0[2-5]\.CRE~ ~override~
+COPY_EXISTING_REGEXP ~ohbvog0[2-5]\.cre~ ~override~
     WRITE_ASCII 0x34 "zbvoghil"
     WRITE_ASCII 0x3c "zbvoghil"
-COPY_EXISTING ~ohbvoghi.CRE~ ~override~
-              ~ohnvoghi.CRE~ ~override~
-              ~ohbvogff.CRE~ ~override~
+COPY_EXISTING ~ohbvoghi.cre~ ~override~
+              ~ohnvoghi.cre~ ~override~
+              ~ohbvogff.cre~ ~override~
     WRITE_ASCII 0x34 "zbvoghil"
     WRITE_ASCII 0x3c "zbvoghil"
 
 COPY ~%MOD_FOLDER%/creatures/bellowgulp~ ~override~
-COPY_EXISTING ~ohbbello.CRE~ ~override~
+COPY_EXISTING ~ohbbello.cre~ ~override~
     SAY 0x08 @15015
     SAY 0x0c @15015
 
 COPY ~%MOD_FOLDER%/creatures/tartle~ ~override~
-COPY_EXISTING ~ohbtartl.CRE~ ~override~
+COPY_EXISTING ~ohbtartl.cre~ ~override~
     SAY 0x08 @15016
     SAY 0x0c @15016
 
 COPY ~%MOD_FOLDER%/creatures/szasstam~ ~override~
-COPY_EXISTING ~ohbszass.CRE~ ~override~
+COPY_EXISTING ~ohbszass.cre~ ~override~
     SAY 0x08 @15017
     SAY 0x0c @15017
 
@@ -139,19 +147,19 @@ COPY ~%MOD_FOLDER%/creatures/match1orcs~ ~override~
 
 
 COPY ~%MOD_FOLDER%/creatures/match2mino~ ~override~
-COPY_EXISTING ~ohbmin01.CRE~ ~override~
+COPY_EXISTING ~ohbmin01.cre~ ~override~
     SAY 0x08 @15018
     SAY 0x0c @15018
 
 // minotaurs gore attack
 COPY ~%MOD_FOLDER%/creatures/match2mino~ ~override~
-COPY_EXISTING ~ohbmin01.CRE~ ~override~
+COPY_EXISTING ~ohbmin01.cre~ ~override~
     LPF ADD_CRE_EFFECT INT_VAR opcode = 248 timing = 9 STR_VAR resource = ~ZBGOREM0~ END
 
 COPY_EXISTING ~ZBGOREM1.SPL~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@18004) END // add .tra ref later
 
 	COPY ~%MOD_FOLDER%/creatures/thewinged~ ~override~
-COPY_EXISTING ~ohbwing.CRE~ ~override~
+COPY_EXISTING ~ohbwing.cre~ ~override~
     SAY 0x08 @15019
     SAY 0x0c @15019
