@@ -7,13 +7,12 @@ THEN
 END
 
 IF
-  Delay(2)
-  ActionListEmpty()
+  Allegiance(Myself,ENEMY)
   !GlobalTimerNotExpired("ZB_IsMovingTimer","LOCALS")
 THEN
   RESPONSE #100
-    SetGlobalTimer("ZB_IsMovingTimer","LOCALS",6)
-    MoveToObject([PC])
+    MoveToObject(Player1)
+    Continue()
 END
 
 IF
@@ -38,7 +37,8 @@ IF
 	NumCreatureGT([ENEMY],1)
 THEN
 	RESPONSE #100
-		RandomWalk()
+		MoveToObject(NearestEnemyOf(Myself))
+    Continue()
 END
 
 IF
@@ -63,4 +63,5 @@ IF
 THEN
   RESPONSE #100
     MoveToObject(LastSeenBy(Myself))
+    Continue()
 END
