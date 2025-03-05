@@ -1,3 +1,17 @@
+IF
+  Global("OHB_ANTIMAGIC","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("OHB_ANTIMAGIC","GLOBAL",0)
+    ApplySpellRES("OHBAMREM",Player1)  // No such index
+    ApplySpellRES("OHBAMREM",Player2)  // No such index
+    ApplySpellRES("OHBAMREM",Player3)  // No such index
+    ApplySpellRES("OHBAMREM",Player4)  // No such index
+    ApplySpellRES("OHBAMREM",Player5)  // No such index
+    ApplySpellRES("OHBAMREM",Player6)  // No such index
+    DestroyGroundPiles()
+    Continue()
+END
 
 IF
   Global("zb_train_spawn","global",1)
