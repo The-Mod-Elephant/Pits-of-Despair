@@ -8,7 +8,7 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",3)
     SetGlobalTimer("MO_AreaWebTimer","LOCALS",12)
-    ReallyForceSpell(Myself,VORTEX_WEB)  // SPIN575.SPL (Vortex Web)
+    ReallyForceSpell(LastSeenBy(Myself),VORTEX_WEB)  // SPIN575.SPL (Vortex Web)
 END
 
 IF
