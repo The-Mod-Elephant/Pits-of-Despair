@@ -1,0 +1,727 @@
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+//            moratk01
+/////////////////////////////////////////////////////////////////////
+//        Version 1
+// Generic ranged script 
+// 
+// 
+//
+// 
+/////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
+// Heal!
+/////////////////////////////////////////////////////////////////////
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  HasItemEquiped("POTN55",Myself)
+  HPPercentLT(Myself,60)
+  Allegiance(Myself,ENEMY)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    UseItem("POTN55",Myself)  // ~Potion of Superior Healing~
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  HasItemEquiped("POTN52",Myself)
+  HPPercentLT(Myself,60)
+  Allegiance(Myself,ENEMY)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    UseItem("POTN52",Myself)  // ~Potion of Extra Healing~
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  HasItemEquiped("POTN08",Myself)
+  HPPercentLT(Myself,60)
+  Allegiance(Myself,ENEMY)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    UseItem("POTN08",Myself)  // ~Potion of Healing~
+END
+
+/////////////////////////////////////////////////////////////////////
+// Hunt the Player
+/////////////////////////////////////////////////////////////////////
+IF
+  !Detect([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  CheckStatLT(Player1,1,SANCTUARY)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",ONE_ROUND)
+    MoveToObject(Player1)
+END
+
+IF
+  !Detect([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  CheckStatLT(Player2,1,SANCTUARY)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",ONE_ROUND)
+    MoveToObject(Player2)
+END
+
+IF
+  !Detect([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  CheckStatLT(Player3,1,SANCTUARY)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",ONE_ROUND)
+    MoveToObject(Player3)
+END
+
+IF
+  !Detect([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  CheckStatLT(Player4,1,SANCTUARY)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",ONE_ROUND)
+    MoveToObject(Player4)
+END
+
+IF
+  !Detect([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  CheckStatLT(Player5,1,SANCTUARY)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",ONE_ROUND)
+    MoveToObject(Player5)
+END
+
+IF
+  !Detect([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  CheckStatLT(Player6,1,SANCTUARY)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",ONE_ROUND)
+    MoveToObject(Player6)
+END
+
+IF
+    GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+    !Detect([GOODCUTOFF])
+    Allegiance(Myself,ENEMY)
+THEN
+    RESPONSE #100
+END
+
+/////////////////////////////////////////////////////////////////////
+// Enemy Distance Check
+/////////////////////////////////////////////////////////////////////
+IF 
+  Range(NearestEnemyOf(Myself),5)
+  IsWeaponRanged(Myself)
+  !HasItem("melfmet",Myself)  // Melf's Minute Meteor
+THEN
+  RESPONSE #100
+    EquipMostDamagingMelee()
+    Continue()
+END
+
+IF 
+  OR(2)
+    !Range(NearestEnemyOf(Myself),5)
+    GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  !IsWeaponRanged(Myself)
+  CanEquipRanged()
+THEN
+  RESPONSE #100
+    EquipRanged()
+    Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Force Break in AttackReevaluate
+/////////////////////////////////////////////////////////////////////
+IF
+  !GlobalTimerNotExpired("MO_AttackingTimer","LOCALS")
+  Global("MO_Attacking","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",0)
+    Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Attack
+/////////////////////////////////////////////////////////////////////
+IF
+  GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  See(NearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+  GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  See(SecondNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(SecondNearestEnemyOf(Myself),30)
+END
+
+IF
+  GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  See(ThirdNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(ThirdNearestEnemyOf(Myself),30)
+END
+
+IF
+  GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  See(FourthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(FourthNearestEnemyOf(Myself),30)
+END
+
+IF
+  GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  See(FifthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(FifthNearestEnemyOf(Myself),30)
+END
+
+IF
+  GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  See(SixthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(SixthNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  DifficultyGT(HARD)
+  See(MostDamagedOf([PC]))
+  Allegiance(Myself,ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  IsWeaponRanged(Myself)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(LastSeenBy(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  DifficultyGT(HARD)
+  See(WorstAC([PC]))
+  Allegiance(Myself,ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  IsWeaponRanged(Myself)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(LastSeenBy(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  DifficultyGT(HARD)
+  See(NearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+  IsWeaponRanged(Myself)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  DifficultyGT(HARD)
+  See(SecondNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
+  IsWeaponRanged(Myself)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(SecondNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  DifficultyGT(HARD)
+  See(ThirdNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
+  IsWeaponRanged(Myself)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(ThirdNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  DifficultyGT(HARD)
+  See(FourthNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+  IsWeaponRanged(Myself)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(FourthNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  DifficultyGT(HARD)
+  See(FifthNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+  IsWeaponRanged(Myself)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(FifthNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  DifficultyGT(HARD)
+  See(SixthNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+  IsWeaponRanged(Myself)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(SixthNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  See(NearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  See(SecondNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(SecondNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  See(ThirdNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(ThirdNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  See(FourthNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(FourthNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  See(FifthNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(FifthNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  See(SixthNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !CheckStatGT(LastSeenBy(Myself),0,CLERIC_PHYSICAL_MIRROR)
+  OR(2)
+    !IsWeaponRanged(Myself)
+    !HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Shield of Reflection
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(SixthNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  See(Player1)
+  !See(Player2)
+  Allegiance(Myself,ENEMY)
+  !WeaponEffectiveVs(Player1,MAINHAND)
+  !WeaponCanDamage(Player1,MAINHAND)
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",6)
+    MoveToObject(Player2)
+END
+
+IF
+  ActionListEmpty()
+  See(Player2)
+  !See(Player3)
+  Allegiance(Myself,ENEMY)
+  !WeaponEffectiveVs(Player2,MAINHAND)
+  !WeaponCanDamage(Player2,MAINHAND)
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",6)
+    MoveToObject(Player3)
+END
+
+IF
+  ActionListEmpty()
+  See(Player3)
+  !See(Player4)
+  Allegiance(Myself,ENEMY)
+  !WeaponEffectiveVs(Player3,MAINHAND)
+  !WeaponCanDamage(Player3,MAINHAND)
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",6)
+    MoveToObject(Player4)
+END
+
+IF
+  ActionListEmpty()
+  See(Player4)
+  !See(Player5)
+  Allegiance(Myself,ENEMY)
+  !WeaponEffectiveVs(Player4,MAINHAND)
+  !WeaponCanDamage(Player4,MAINHAND)
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",6)
+    MoveToObject(Player5)
+END
+
+IF
+  ActionListEmpty()
+  See(Player5)
+  !See(Player6)
+  Allegiance(Myself,ENEMY)
+  !WeaponEffectiveVs(Player5,MAINHAND)
+  !WeaponCanDamage(Player5,MAINHAND)
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",6)
+    MoveToObject(Player6)
+END
+
+IF
+  ActionListEmpty()
+  See(Player6)
+  !See(Player1)
+  Allegiance(Myself,ENEMY)
+  !WeaponEffectiveVs(Player6,MAINHAND)
+  !WeaponCanDamage(Player6,MAINHAND)
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",6)
+    MoveToObject(Player1)
+END
+
+IF
+  AttackedBy([ANYONE],DEFAULT)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(LastAttackerOf(Myself),30)
+END

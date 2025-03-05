@@ -11,6 +11,7 @@ ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/alter_script.tpa~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
   INCLUDE ~%MOD_FOLDER%/lib/royalprotector/zs_royalfunctions.tpa~
+  INCLUDE ~%MOD_FOLDER%/lib/ds/ds.tph~ // Detectable Spells
 END
 
 
@@ -36,6 +37,7 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~p_cta1.bam~ THEN BEGIN
 INCLUDE ~%MOD_FOLDER%/lib/animations.tpa~
 END
 
+INCLUDE ~%MOD_FOLDER%/lib/fragments/mo_initialize.tph~ // sets up various script variables and detectable spells
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_items.tph~
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_cre.tph~
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_stores.tph~

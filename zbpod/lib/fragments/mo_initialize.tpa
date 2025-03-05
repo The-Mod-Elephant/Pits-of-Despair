@@ -1,0 +1,99 @@
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+//Initializes stats used for scripting                                   //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Detectable Spells                                                     //
+///////////////////////////////////////////////////////////////////////////
+LAF detectable_spells END
+
+///////////////////////////////////////////////////////////////////////////
+// Adds States used in AI Scripts                                        //
+///////////////////////////////////////////////////////////////////////////
+APPEND ~STATE.IDS~ ~0x00000001 STATE_SLEEPING~				          UNLESS ~0x00000001 STATE_SLEEPING~
+APPEND ~STATE.IDS~ ~0x00000004 STATE_PANIC~					            UNLESS ~0x00000004 STATE_PANIC~
+APPEND ~STATE.IDS~ ~0x00000008 STATE_STUNNED~		         		    UNLESS ~0x00000008 STATE_STUNNED~
+APPEND ~STATE.IDS~ ~0x00000010 STATE_INVISIBLE~				          UNLESS ~0x00000010 STATE_INVISIBLE~
+APPEND ~STATE.IDS~ ~0x00000FC0 STATE_REALLY_DEAD~	   	          UNLESS ~0x00000FC0 STATE_REALLY_DEAD~
+APPEND ~STATE.IDS~ ~0x00001000 STATE_SILENCED~ 		   	          UNLESS ~0x00001000 STATE_SILENCED~
+APPEND ~STATE.IDS~ ~0x00002000 STATE_CHARMED~				            UNLESS ~0x00002000 STATE_CHARMED~
+APPEND ~STATE.IDS~ ~0x00004000 STATE_POISONED~ 				          UNLESS ~0x00004000 STATE_POISONED~
+APPEND ~STATE.IDS~ ~0x00008000 STATE_HASTED~				            UNLESS ~0x00008000 STATE_HASTED~
+APPEND ~STATE.IDS~ ~0x00040000 STATE_BLIND~					            UNLESS ~0x00040000 STATE_BLIND~
+APPEND ~STATE.IDS~ ~0x00080000 STATE_DISEASED~				          UNLESS ~0x00080000 STATE_DISEASED~
+APPEND ~STATE.IDS~ ~0x00200000 STATE_NONDETECTION~			        UNLESS ~0x00200000 STATE_NONDETECTION~
+APPEND ~STATE.IDS~ ~0x00400000 STATE_IMPROVEDINVISIBILITY~	    UNLESS ~0x00400000 STATE_IMPROVEDINVISIBILITY~
+APPEND ~STATE.IDS~ ~0x00100000 STATE_FEEBLEMINDED~			        UNLESS ~0x00100000 STATE_FEEBLEMINDED~
+APPEND ~STATE.IDS~ ~0x00400010 STATE_NOT_TARGETABLE~  		      UNLESS ~0x00400010 STATE_NOT_TARGETABLE~
+APPEND ~STATE.IDS~ ~0x00800000 STATE_BLESS~					            UNLESS ~0x00800000 STATE_BLESS~
+APPEND ~STATE.IDS~ ~0x02000000 STATE_DRAWUPONHOLYMIGHT~		      UNLESS ~0x02000000 STATE_DRAWUPONHOLYMIGHT~
+APPEND ~STATE.IDS~ ~0x40000000 STATE_MIRRORIMAGE~			          UNLESS ~0x40000000 STATE_MIRRORIMAGE~
+APPEND ~STATE.IDS~ ~0x80000000 STATE_CONFUSED~				          UNLESS ~0x80000000 STATE_CONFUSED~
+APPEND ~STATE.IDS~ ~0x8010202D STATE_DISABLED~	       		      UNLESS ~0x8010202D STATE_DISABLED~
+APPEND ~STATE.IDS~ ~0x80002006 STATE_NOT_APPROACHABLE~		      UNLESS ~0x80002006 STATE_NOT_APPROACHABLE~
+
+///////////////////////////////////////////////////////////////////////////
+// Adds Stats used in AI Scripts                                        //
+///////////////////////////////////////////////////////////////////////////
+APPEND ~stats.ids~ ~110 CLERIC_ARMOR_OF_FAITH~                  UNLESS ~110 CLERIC_ARMOR_OF_FAITH~
+APPEND ~stats.ids~ ~116 WIZARD_SPELL_DEFLECTION~                UNLESS ~116 WIZARD_SPELL_DEFLECTION~
+APPEND ~stats.ids~ ~117 PROTECTION_FROM_EVIL~                   UNLESS ~117 PROTECTION_FROM_EVIL~
+APPEND ~stats.ids~ ~118 TRUE_SIGHT~                             UNLESS ~118 TRUE_SIGHT~
+APPEND ~stats.ids~ ~119 CLERIC_CHAOTIC_COMMANDS~                UNLESS ~119 CLERIC_CHAOTIC_COMMANDS~
+APPEND ~stats.ids~ ~120 CLERIC_INSECT_PLAGUE~                   UNLESS ~120 CLERIC_INSECT_PLAGUE~
+APPEND ~stats.ids~ ~121 CLERIC_BLADE_BARRIER~                   UNLESS ~121 CLERIC_BLADE_BARRIER~
+APPEND ~stats.ids~ ~122 CLERIC_PHYSICAL_MIRROR~                 UNLESS ~122 CLERIC_PHYSICAL_MIRROR~
+APPEND ~stats.ids~ ~123 CLERIC_SHIELD_OF_THE_ARCHONS~           UNLESS ~123 CLERIC_SHIELD_OF_THE_ARCHONS~
+APPEND ~stats.ids~ ~124 CLERIC_REGENERATION~                    UNLESS ~124 CLERIC_REGENERATION~
+APPEND ~stats.ids~ ~125 WIZARD_FIRE_SHIELD~                     UNLESS ~125 WIZARD_FIRE_SHIELD~
+APPEND ~stats.ids~ ~126 WIZARD_PROTECTION_FROM_MAGIC_ENERGY~    UNLESS ~126 WIZARD_PROTECTION_FROM_MAGIC_ENERGY~
+APPEND ~stats.ids~ ~127 WIZARD_MISLEAD~                         UNLESS ~127 WIZARD_MISLEAD~
+APPEND ~stats.ids~ ~128 WIZARD_PROTECTION_FROM_MAGIC_WEAPONS~   UNLESS ~128 WIZARD_PROTECTION_FROM_MAGIC_WEAPONS~
+APPEND ~stats.ids~ ~129 WIZARD_SPELL_TURNING~                   UNLESS ~129 WIZARD_SPELL_TURNING~
+APPEND ~stats.ids~ ~130 WIZARD_PROTECTION_FROM_THE_ELEMENTS~    UNLESS ~130 WIZARD_PROTECTION_FROM_THE_ELEMENTS~
+APPEND ~stats.ids~ ~131 CLERIC_FREE_ACTION~                     UNLESS ~131 CLERIC_FREE_ACTION~
+APPEND ~stats.ids~ ~132 WIZARD_KHELBENS_WARDING_WHIP~           UNLESS ~132 WIZARD_KHELBENS_WARDING_WHIP~
+APPEND ~stats.ids~ ~133 CLERIC_DEFENSIVE_HARMONY~               UNLESS ~133 CLERIC_DEFENSIVE_HARMONY~
+APPEND ~stats.ids~ ~161 SCRIPTINGSTATE6~                        UNLESS ~161 SCRIPTINGSTATE6~
+APPEND ~stats.ids~ ~162 WIZARD_SPELL_IMMUNITY~                  UNLESS ~162 WIZARD_SPELL_IMMUNITY~
+APPEND ~stats.ids~ ~163 WIZARD_PROTECTION_FROM_ENERGY~          UNLESS ~163 WIZARD_PROTECTION_FROM_ENERGY~
+APPEND ~stats.ids~ ~164 WIZARD_SPELL_TRAP~                      UNLESS ~164 WIZARD_SPELL_TRAP~
+APPEND ~stats.ids~ ~165 WIZARD_IMPROVED_ALACRITY~               UNLESS ~165 WIZARD_IMPROVED_ALACRITY~
+APPEND ~stats.ids~ ~176 WIZARD_PROTECTION_FROM_PETRIFICATION~   UNLESS ~176 WIZARD_PROTECTION_FROM_PETRIFICATION~
+APPEND ~stats.ids~ ~177 WIZARD_SPELL_SHIELD~                    UNLESS ~177 WIZARD_SPELL_SHIELD~
+APPEND ~stats.ids~ ~178 WIZARD_RESIST_FEAR~                     UNLESS ~178 WIZARD_RESIST_FEAR~
+APPEND ~stats.ids~ ~179 WIZARD_PROTECTION_FROM_NORMAL_MISSILES~ UNLESS ~179 WIZARD_PROTECTION_FROM_NORMAL_MISSILES~
+APPEND ~stats.ids~ ~180 WIZARD_GREATER_MALISON~                 UNLESS ~180 WIZARD_GREATER_MALISON~
+APPEND ~stats.ids~ ~181 WIZARD_PROTECTION_FROM_NORMAL_WEAPONS~  UNLESS ~181 WIZARD_PROTECTION_FROM_NORMAL_WEAPONS~
+APPEND ~stats.ids~ ~182 WIZARD_TENSERS_TRANSFORMATION~          UNLESS ~182 WIZARD_TENSERS_TRANSFORMATION~
+
+///////////////////////////////////////////////////////////////////////////
+// Adds Objects used in AI Scripts                                       //
+///////////////////////////////////////////////////////////////////////////
+APPEND ~object.ids~ ~95 NearestAllyOf~                  				UNLESS ~95 NearestAllyOf~
+APPEND ~object.ids~ ~96 SecondNearestAllyOf~                  	UNLESS ~96 SecondNearestAllyOf~
+APPEND ~object.ids~ ~97 ThirdNearestAllyOf~                  		UNLESS ~97 ThirdNearestAllyOf~
+APPEND ~object.ids~ ~98 FourthNearestAllyOf~                  	UNLESS ~98 FourthNearestAllyOf~
+APPEND ~object.ids~ ~99 FifthNearestAllyOf~                  		UNLESS ~99 FifthNearestAllyOf~
+APPEND ~object.ids~ ~100 SixthNearestAllyOf~                  	UNLESS ~100 SixthNearestAllyOf~
+APPEND ~object.ids~ ~101 SeventhNearestAllyOf~                  UNLESS ~101 SeventhNearestAllyOf~
+APPEND ~object.ids~ ~102 EighthNearestAllyOf~                  	UNLESS ~102 EighthNearestAllyOf~
+APPEND ~object.ids~ ~103 NinthNearestAllyOf~                  	UNLESS ~103 NinthNearestAllyOf~
+APPEND ~object.ids~ ~104 TenthNearestAllyOf~                  	UNLESS ~104 TenthNearestAllyOf~
+
+///////////////////////////////////////////////////////////////////////////
+// Adds Classes used in AI Scripts                                       //
+///////////////////////////////////////////////////////////////////////////
+APPEND ~class.ids~ ~223 WIGHT~                  				        UNLESS ~223 WIGHT~
+
+///////////////////////////////////////////////////////////////////////////
+// Adds Raceses used in AI Scripts                                       //
+///////////////////////////////////////////////////////////////////////////
+APPEND ~race.ids~ ~163 MUMMY~		                                UNLESS ~163 MUMMY~
+
+///////////////////////////////////////////////////////////////////////////
+// Adds Action to Swap Items in AI Scripts                               //
+///////////////////////////////////////////////////////////////////////////
+APPEND ~action.ids~ ~34 UseItemAbility(S:Object*,O:Target*,I:Slot*SLOTS,I:Ability*)~ UNLESS ~34 UseItemAbility(S:Object*,O:Target*,I:Slot*SLOTS,I:Ability*)~
