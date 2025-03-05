@@ -1,0 +1,150 @@
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_AreaWebTimer","LOCALS")
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",3)
+    SetGlobalTimer("MO_AreaWebTimer","LOCALS",12)
+    ReallyForceSpell(Myself,VORTEX_WEB)  // SPIN575.SPL (Vortex Web)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_SingleWebTimer","LOCALS")
+  See([GOODCUTOFF])
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_CastSingleWeb","LOCALS",1)
+    Continue()
+  RESPONSE #100
+    SetGlobal("MO_CastSingleWeb","LOCALS",0)
+    Continue()
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_SingleWebTimer","LOCALS")
+  See(NearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
+  CheckStat(LastSeenBy(Myself),0,WEB)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+  !HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_SingleWebTimer","LOCALS",18)
+    SetInterrupt(FALSE)
+    ForceSpellRES("spin683",LastSeenBy(Myself))  // Web Tangle
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_SingleWebTimer","LOCALS")
+  See(SecondNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
+  CheckStat(LastSeenBy(Myself),0,WEB)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+  !HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_SingleWebTimer","LOCALS",18)
+    SetInterrupt(FALSE)
+    ForceSpellRES("spin683",LastSeenBy(Myself))  // Web Tangle
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_SingleWebTimer","LOCALS")
+  See(ThirdNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
+  CheckStat(LastSeenBy(Myself),0,WEB)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+  !HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_SingleWebTimer","LOCALS",18)
+    SetInterrupt(FALSE)
+    ForceSpellRES("spin683",LastSeenBy(Myself))  // Web Tangle
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_SingleWebTimer","LOCALS")
+  See(FourthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
+  CheckStat(LastSeenBy(Myself),0,WEB)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+  !HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_SingleWebTimer","LOCALS",18)
+    SetInterrupt(FALSE)
+    ForceSpellRES("spin683",LastSeenBy(Myself))  // Web Tangle
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_SingleWebTimer","LOCALS")
+  See(FifthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
+  CheckStat(LastSeenBy(Myself),0,WEB)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+  !HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_SingleWebTimer","LOCALS",18)
+    SetInterrupt(FALSE)
+    ForceSpellRES("spin683",LastSeenBy(Myself))  // Web Tangle
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_SingleWebTimer","LOCALS")
+  See(SixthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
+  CheckStat(LastSeenBy(Myself),0,WEB)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+  !HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_SingleWebTimer","LOCALS",18)
+    SetInterrupt(FALSE)
+    ForceSpellRES("spin683",LastSeenBy(Myself))  // Web Tangle
+    SetInterrupt(TRUE)
+END

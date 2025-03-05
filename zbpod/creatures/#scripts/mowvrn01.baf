@@ -1,0 +1,19 @@
+IF
+  StateCheck(Myself,STATE_PANIC)
+THEN
+  RESPONSE #100
+    RandomWalkContinuous()
+END
+
+IF
+  !GlobalTimerNotExpired("BD_PICK_WEAPON","LOCALS")
+THEN
+  RESPONSE #40
+    SelectWeaponAbility(SLOT_WEAPON0,0)
+    SetGlobalTimer("BD_PICK_WEAPON","LOCALS",12)
+    Continue()
+  RESPONSE #60
+    SelectWeaponAbility(SLOT_WEAPON1,0)
+    SetGlobalTimer("BD_PICK_WEAPON","LOCALS",12)
+    Continue()
+END

@@ -1,4 +1,4 @@
-IF
+/*IF
     Allegiance(Myself,ENEMY)
     StateCheck([PC],STATE_SLEEPING)
 THEN
@@ -12,4 +12,149 @@ IF
 THEN
     RESPONSE #100
         AttackReevaluate(SecondNearest([PC]),45)
+END
+*/
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_StompTimer","LOCALS")
+  See(NearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  !StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+  Range(LastSeenBy(Myself),5)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_StompTimer","LOCALS",10)
+    SetInterrupt(FALSE)
+    ReallyForceSpellRES("zbmoose1",LastSeenBy(Myself))
+    SmallWait(2)
+    ReallyForceSpellRES("zbmoose2",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_StompTimer","LOCALS")
+  See(SecondNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  !StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+  Range(LastSeenBy(Myself),5)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_StompTimer","LOCALS",10)
+    SetInterrupt(FALSE)
+    ReallyForceSpellRES("zbmoose1",LastSeenBy(Myself))
+    SmallWait(2)
+    ReallyForceSpellRES("zbmoose2",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_StompTimer","LOCALS")
+  See(ThirdNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  !StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+  Range(LastSeenBy(Myself),5)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_StompTimer","LOCALS",10)
+    SetInterrupt(FALSE)
+    ReallyForceSpellRES("zbmoose1",LastSeenBy(Myself))
+    SmallWait(2)
+    ReallyForceSpellRES("zbmoose2",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_StompTimer","LOCALS")
+  See(FourthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  !StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+  Range(LastSeenBy(Myself),5)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_StompTimer","LOCALS",10)
+    SetInterrupt(FALSE)
+    ReallyForceSpellRES("zbmoose1",LastSeenBy(Myself))
+    SmallWait(2)
+    ReallyForceSpellRES("zbmoose2",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_StompTimer","LOCALS")
+  See(FifthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  !StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+  Range(LastSeenBy(Myself),5)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_StompTimer","LOCALS",10)
+    SetInterrupt(FALSE)
+    ReallyForceSpellRES("zbmoose1",LastSeenBy(Myself))
+    SmallWait(2)
+    ReallyForceSpellRES("zbmoose2",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_StompTimer","LOCALS")
+  See(SixthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  !StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+  Range(LastSeenBy(Myself),5)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_StompTimer","LOCALS",10)
+    SetInterrupt(FALSE)
+    ReallyForceSpellRES("zbmoose1",LastSeenBy(Myself))
+    SmallWait(2)
+    ReallyForceSpellRES("zbmoose2",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
 END
