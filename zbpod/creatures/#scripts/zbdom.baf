@@ -1,4 +1,60 @@
-// Generously donated by @morpheus562
+/////////////////////////////////////////////////////////////////////
+// Spell: Aura of Despair
+/////////////////////////////////////////////////////////////////////
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_AuraDespair","LOCALS")
+  See(ThirdNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Range(LastSeenBy(Myself),15)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_AuraDespair","LOCALS",60)
+    SetInterrupt(FALSE)
+    ReallyForceSpell(Myself,AURA_OF_DESPAIR)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_AuraDespair","LOCALS")
+  See(SecondNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Range(LastSeenBy(Myself),10)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_AuraDespair","LOCALS",60)
+    SetInterrupt(FALSE)
+    ReallyForceSpell(Myself,AURA_OF_DESPAIR)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_AuraDespair","LOCALS")
+  See(NearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Range(LastSeenBy(Myself),5)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_AuraDespair","LOCALS",60)
+    SetInterrupt(FALSE)
+    ReallyForceSpell(Myself,AURA_OF_DESPAIR)
+    SetInterrupt(TRUE)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Spell: Vampire Domination
+/////////////////////////////////////////////////////////////////////
 IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
