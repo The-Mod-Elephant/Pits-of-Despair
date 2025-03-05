@@ -1,0 +1,16 @@
+/////////////////////////////////////////////////////////////////////
+// Enrage
+/////////////////////////////////////////////////////////////////////
+IF
+  Global("MO_CastEnrage","LOCALS",0)
+  !CheckSpellState(Myself,BERSERKER_RAGE_FATIGUE)
+  !CheckSpellState(Myself,BERSERKER_RAGE)
+  OR(2)
+    Detect(NearestEnemyOf(Myself))
+    TookDamage()
+THEN
+  RESPONSE #100
+    SetGlobal("MO_CastEnrage","LOCALS",1)
+    ReallyForceSpell(Myself,BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
+    Continue()
+END

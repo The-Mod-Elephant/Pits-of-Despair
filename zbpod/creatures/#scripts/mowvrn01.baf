@@ -5,6 +5,8 @@ THEN
     RandomWalkContinuous()
 END
 
+/*
+// Hiding as I'm moving the poison attack to shield (Tail)
 IF
   !GlobalTimerNotExpired("BD_PICK_WEAPON","LOCALS")
 THEN
@@ -17,3 +19,4 @@ THEN
     SetGlobalTimer("BD_PICK_WEAPON","LOCALS",12)
     Continue()
 END
+*/

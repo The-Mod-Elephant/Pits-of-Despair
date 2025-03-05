@@ -44,7 +44,6 @@ COPY_EXISTING ~ohbmena1.cre~ ~override~
     WRITE_BYTE 0x63  15  // Missile resistance
     WRITE_ASCII 0x258 ~zbdom~ #8 // Add Race Script
     WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
-    LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
     REMOVE_CRE_ITEM minhp1
     WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~P_RED_WORG~))
@@ -70,6 +69,10 @@ COMPILE "%MOD_FOLDER%/creatures/#scripts/zbmostmp.baf" // compile the script tha
 COPY_EXISTING ~ohbmena2.cre~ ~override~
     SAY 0x08 @15006 // inject into name field (dangerous moose)
     SAY 0x0c @15006 // inject into creature tooltip field (dangerous moose)
+    WRITE_BYTE 0x60  40  // Slashing resistance
+    WRITE_BYTE 0x61  40  // Crushing resistance
+    WRITE_BYTE 0x62  40  // Piercing resistance
+    WRITE_BYTE 0x63  40  // Missile resistance
     WRITE_ASCII 0x260 ~zbmostmp~ #8  // inject script name to general script field; #8 is the length of the string
     WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
     REMOVE_CRE_ITEM minhp1
@@ -82,6 +85,7 @@ COPY_EXISTING ~ohbmena3.cre~ ~override~
     SAY 0x0c @15007
     REMOVE_CRE_ITEM minhp1
     WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
+    WRITE_ASCII 0x258 ~mobear01~ #8 // Add Race Script
     WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
 
 // start of dire lion related code
@@ -134,6 +138,7 @@ COPY ~%MOD_FOLDER%/creatures/mutboalisk~ ~override~
 COPY_EXISTING ~ohbmena5.cre~ ~override~
     SAY 0x08 @15009
     SAY 0x0c @15009
+    WRITE_BYTE 0x53   8  // 5/2 APR Base
     REMOVE_CRE_ITEM minhp1
     WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
     WRITE_ASCII 0x250 ~~         #8 // Clear Class Script
@@ -154,11 +159,13 @@ COPY ~%MOD_FOLDER%/creatures/mutvortex~ ~override~
 COPY_EXISTING ~ohbmena7.cre~ ~override~
     SAY 0x08 @15011
     SAY 0x0c @15011
+    WRITE_BYTE 0x53   2  // 2 APR Base
     REMOVE_CRE_ITEM minhp1
     WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
     WRITE_ASCII 0x250 ~~         #8 // Clear Class Script
     WRITE_ASCII 0x258 ~mospdr02~ #8 // Add Race Script
     WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
 
 COPY ~%MOD_FOLDER%/creatures/mutgwyvern~ ~override~
 COPY_EXISTING ~ohbmena8.cre~ ~override~
@@ -231,5 +238,6 @@ COPY ~%MOD_FOLDER%/creatures/#scripts/momatk01.baf~ ~override/momatk01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/mosnek01.baf~ ~override/mosnek01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/mocrwl01.baf~ ~override/mocrwl01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/mowvrn01.baf~ ~override/mowvrn01.bcs~
+     ~%MOD_FOLDER%/creatures/#scripts/mobear01.baf~ ~override/mobear01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/zbdom.baf~    ~override/zbdom.bcs~
   COMPILE_BAF_TO_BCS

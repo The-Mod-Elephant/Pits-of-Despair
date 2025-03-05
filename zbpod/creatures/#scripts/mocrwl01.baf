@@ -5,6 +5,66 @@ THEN
     AttackReevaluate(LastAttackerOf(Myself),100)
 END
 
+/////////////////////////////////////////////////////////////////////
+// Insect Plague
+/////////////////////////////////////////////////////////////////////
+IF 
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_CastInsectsTimer","LOCALS")
+  See(ThirdNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Range(LastSeenBy(Myself),15)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_CastInsectsTimer","LOCALS",60)
+    SetInterrupt(FALSE)
+    ReallyForceSpell(Myself,CLERIC_INSECT_PLAGUE)  // SPPR517.SPL (Insect Plague)
+    SetInterrupt(TRUE)
+END
+
+IF 
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_CastInsectsTimer","LOCALS")
+  See(SecondNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Range(LastSeenBy(Myself),10)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_CastInsectsTimer","LOCALS",60)
+    SetInterrupt(FALSE)
+    ReallyForceSpell(Myself,CLERIC_INSECT_PLAGUE)  // SPPR517.SPL (Insect Plague)
+    SetInterrupt(TRUE)
+END
+
+IF 
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_CastInsectsTimer","LOCALS")
+  See(NearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Range(LastSeenBy(Myself),5)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_CastInsectsTimer","LOCALS",60)
+    SetInterrupt(FALSE)
+    ReallyForceSpell(Myself,CLERIC_INSECT_PLAGUE)  // SPPR517.SPL (Insect Plague)
+    SetInterrupt(TRUE)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Attack not frozen character
+/////////////////////////////////////////////////////////////////////
 IF
   See(NearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
