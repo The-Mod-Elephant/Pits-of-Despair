@@ -36,6 +36,8 @@ COPY_EXISTING ~ohbmena1.cre~ ~override~
     REMOVE_CRE_ITEM minhp1
     WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~P_RED_WORG~))
+    WRITE_ASCII 0x258 ~zbdom~ #8 // Add Race Script
+    WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
 
 // All moosey moose related code goes here
 COPY ~%MOD_FOLDER%/creatures/mutdiremoose~ ~override~
@@ -68,6 +70,7 @@ COPY_EXISTING ~ohbmena3.cre~ ~override~
     SAY 0x0c @15007
     REMOVE_CRE_ITEM minhp1
     WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
+    WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
 
 // start of dire lion related code
 COPY ~%MOD_FOLDER%/creatures/mutdirelion~ ~override~
@@ -163,3 +166,11 @@ COPY_EXISTING ~ZBGOREM1.SPL~ ~override~
 COPY_EXISTING ~ohbwing.cre~ ~override~
     SAY 0x08 @15019
     SAY 0x0c @15019
+
+///////////////////////////////////////////////////////////////////////////
+// Copy .BCS file to override folder                                     //
+///////////////////////////////////////////////////////////////////////////
+COPY ~%MOD_FOLDER%/creatures/#scripts/momatk01.baf~ ~override/momatk01.bcs~
+     ~%MOD_FOLDER%/creatures/#scripts/moratk01.baf~ ~override/moratk01.bcs~
+     ~%MOD_FOLDER%/creatures/#scripts/zbdom.baf~    ~override/zbdom.bcs~
+  COMPILE_BAF_TO_BCS
