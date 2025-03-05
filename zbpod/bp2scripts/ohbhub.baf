@@ -40,7 +40,7 @@ THEN
 		CreateCreature("ohbmena1",[2460.2785],S)  // Vampiric Wolf
 		CreateCreature("ohbmena2",[2100.3000],SE)  // Dangerous Moose
 		CreateCreature("ohbmena3",[2575.3005],NW)  // Grizzly Bear
-		CreateCreature("ohbmena4",[2470.3080],NW)  // Mountain Lion
+		CreateCreature("modisp01",[2470.3080],NW)  // Displacer Beast
 		CreateCreature("ohbmena5",[2260.2900],SE)  // Boalisk
 		CreateCreature("ohbmena6",[2365.3160],NW)  // Carrion Crawler
 		CreateCreature("ohbmena7",[1950.3120],SE)  // Vortex Spider
