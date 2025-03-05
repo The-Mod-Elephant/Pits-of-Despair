@@ -12,8 +12,8 @@ THEN
     ActionOverride("ohbmena1",Enemy())
     CreateCreature("ohbmena3",[1230.1215],N) // Dire Bear
     ActionOverride("ohbmena3",Enemy())
-    CreateCreature("ohbmena4",[1645.930],W) // Dire Lion
-    ActionOverride("ohbmena4",Enemy())
+    CreateCreature("modisp01",[1645.930],W) // Displacer Beast
+    ActionOverride("modisp01",Enemy())
     CreateCreature("ohbmena7",[1655.940],W) // Vortex Spider
     ActionOverride("ohbmena7",Enemy())
     SmallWait(75)
@@ -33,10 +33,10 @@ THEN
     ActionOverride("ohbmena2",Enemy())
     CreateCreature("ohbmena3",[1250.1215],N)  // Dire Bear
     ActionOverride("ohbmena3",Enemy())
-    CreateCreature("ohbmena4",[1240.640],S)  // Dire Lion
-    ActionOverride("ohbmena4",Enemy())
-    CreateCreature("ohbmena4",[1260.640],S)  // Dire Lion
-    ActionOverride("ohbmena4",Enemy())
+    CreateCreature("modisp01",[1240.640],S)  // Displacer Beast
+    ActionOverride("modisp01",Enemy())
+    CreateCreature("modisp01",[1260.640],S)  // Displacer Beast
+    ActionOverride("modisp01",Enemy())
     CreateCreature("ohbmena5",[1655.920],W)  // Boalisk
     ActionOverride("ohbmena5",Enemy())
     SmallWait(75)
@@ -75,10 +75,10 @@ THEN
     SmallWait(5)
     CreateCreature("ohbmena3",[1665.930],W)  // Dire Bear
     ActionOverride("ohbmena3",Enemy())
-    CreateCreature("ohbmena4",[1230.1215],N)  // Dire Lion
-    ActionOverride("ohbmena4",Enemy())
-    CreateCreature("ohbmena4",[1230.1215],N)  // Dire Lion
-    ActionOverride("ohbmena4",Enemy())
+    CreateCreature("modisp01",[1230.1215],N)  // Displacer Beast
+    ActionOverride("modisp01",Enemy())
+    CreateCreature("modisp01",[1230.1215],N)  // Displacer Beast
+    ActionOverride("modisp01",Enemy())
     CreateCreature("ohbmena6",[1240.640],S)  // Mutated Carrion Crawler
     ActionOverride("ohbmena6",Enemy())
     CreateCreature("ohbmena6",[1240.640],S)  // Mutated Carrion Crawler
@@ -94,7 +94,7 @@ IF
   Dead("ohbmena1")
   Dead("ohbmena1")
   Dead("ohbmena3")
-  Dead("ohbmena4")
+  Dead("modisp01")
   Dead("ohbmena7")
   CombatCounter(0)
   Global("zb_train_exit","global",0)
@@ -113,8 +113,8 @@ IF
   Dead("ohbmena1")
   Dead("ohbmena2")
   Dead("ohbmena3")
-  Dead("ohbmena4")
-  Dead("ohbmena4")
+  Dead("modisp01")
+  Dead("modisp01")
   Dead("ohbmena5")
   CombatCounter(0)
   Global("zb_train_exit","global",0)
@@ -151,8 +151,8 @@ END
 IF
   Global("zb_train_spawn","global",40)
   Dead("ohbmena3")
-  Dead("ohbmena4")
-  Dead("ohbmena4")
+  Dead("modisp01")
+  Dead("modisp01")
   Dead("ohbmena6")
   Dead("ohbmena6")
   Dead("ohbmena8")

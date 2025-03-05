@@ -73,6 +73,7 @@ COPY_EXISTING ~ohbmena3.cre~ ~override~
     WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
 
 // start of dire lion related code
+/*
 COPY ~%MOD_FOLDER%/creatures/mutdirelion~ ~override~
 COPY_EXISTING ~ohbmena4.cre~ ~override~
     SAY 0x08 @15008
@@ -86,7 +87,36 @@ COPY_EXISTING "zblion1.spl" "override" // we tackle the knocking over effect
             match_opcode = 139 // we map this altering to opcode 139 (display string)
             parameter1 = RESOLVE_STR_REF(@18003) // string tlk index; RESOLVE_STR_REF injects the string in the tlk and returns index
     END
+*/
 // end of dire lion related code
+
+//-------------------------------------------------------------------------
+// Displacer Beast - Animations provided by Acifer, THANK YOU!
+LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7F3D slotMax = slotMin + 0xff RET slot END
+ACTION_IF (slot <= 0) BEGIN
+  FAIL ~No free creature animation slot found.~
+END
+
+LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+APPEND ~animate.ids~ ~0x%hexNumber% AC#DISPLACER_BEAST~ UNLESS ~AC#DISPLACER_BEAST~
+CLEAR_IDS_MAP
+
+COPY ~%MOD_FOLDER%/animations/displacer_beast/exxx.ini~ ~override/%hexNumber%.ini~
+
+ACTION_BASH_FOR ~%MOD_FOLDER%/animations/displacer_beast~ ~^.+.bam$~ BEGIN
+  COPY ~%BASH_FOR_FILESPEC%~ ~override~
+END
+
+COPY ~%MOD_FOLDER%/creatures/displacer/modisp01.cre~ ~override~  // Displacer Beast
+  SAY NAME1 @15008
+  SAY NAME2 @15008
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#DISPLACER_BEAST~))
+  WRITE_ASCII 0x258 ~modisp01~ #8 // Add Race Script
+  WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
+  REPLACE_CRE_ITEM ~modisp01~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~WEAPON1~ EQUIP
+
+COPY ~%MOD_FOLDER%/creatures/displacer/modisp01.itm~ ~override~  // Claws
+
 
 COPY ~%MOD_FOLDER%/creatures/mutboalisk~ ~override~
 COPY_EXISTING ~ohbmena5.cre~ ~override~
@@ -172,5 +202,6 @@ COPY_EXISTING ~ohbwing.cre~ ~override~
 ///////////////////////////////////////////////////////////////////////////
 COPY ~%MOD_FOLDER%/creatures/#scripts/momatk01.baf~ ~override/momatk01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/moratk01.baf~ ~override/moratk01.bcs~
+     ~%MOD_FOLDER%/creatures/#scripts/modisp01.baf~ ~override/modisp01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/zbdom.baf~    ~override/zbdom.bcs~
   COMPILE_BAF_TO_BCS

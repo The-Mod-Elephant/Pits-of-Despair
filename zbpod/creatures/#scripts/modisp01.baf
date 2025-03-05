@@ -1,0 +1,33 @@
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+//            Displacer Beast
+/////////////////////////////////////////////////////////////////////
+//        Version 1
+// 12th level Displacer Beast
+//
+// 
+/////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
+// Spell: Wizard Mislead
+/////////////////////////////////////////////////////////////////////
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING) 
+  !GlobalTimerNotExpired("MO_MisleadTimer","LOCALS")
+  See([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
+  !CheckStatGT(Myself,0,WIZARD_MISLEAD)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_MisleadTimer","LOCALS",12)
+    SetInterrupt(FALSE)
+    ReallyForceSpell(Myself,WIZARD_MISLEAD)
+    SetInterrupt(TRUE)
+END
