@@ -49,10 +49,10 @@ THEN
 END
 
 IF
-	NumInPartyAlive(0)
+  Dead(PC)
 THEN
-	RESPONSE #100
-		GameOver(103098)  // The party has been killed. You must restart the game.
+  RESPONSE #100
+    GameOver(17123) // The main character has died.
 END
 
 IF

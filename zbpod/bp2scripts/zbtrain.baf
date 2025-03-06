@@ -14,6 +14,13 @@ THEN
 END
 
 IF
+  Dead(PC)
+THEN
+  RESPONSE #100
+    GameOver(17123) // The main character has died.
+END
+
+IF
   Global("zb_train_spawn","global",1)
 THEN
   RESPONSE #100
