@@ -5,18 +5,118 @@ THEN
     RandomWalkContinuous()
 END
 
-/*
-// Hiding as I'm moving the poison attack to shield (Tail)
+/////////////////////////////////////////////////////////////////////
+// Wyvern
+// Poison Damage: 3d6+4 (save vs. breath for half)
+/////////////////////////////////////////////////////////////////////
 IF
-  !GlobalTimerNotExpired("BD_PICK_WEAPON","LOCALS")
+  Allegiance(Myself,ENEMY)
+  !GlobalTimerNotExpired("GREENDRAGONBREATH","LOCALS")
+  See(NearestEnemyOfType([PC]))
+  Range(LastSeenBy(Myself),15)
 THEN
-  RESPONSE #40
-    SelectWeaponAbility(SLOT_WEAPON0,0)
-    SetGlobalTimer("BD_PICK_WEAPON","LOCALS",12)
-    Continue()
-  RESPONSE #60
-    SelectWeaponAbility(SLOT_WEAPON1,0)
-    SetGlobalTimer("BD_PICK_WEAPON","LOCALS",12)
-    Continue()
+  RESPONSE #100
+    SetGlobalTimer("GREENDRAGONBREATH","LOCALS",12)
+    ReallyForceSpell(LastSeenBy(Myself),GREEN_DRAGON_BREATH)  // SPIN535.SPL (Green Dragon Breath)
+    ReallyForceSpellRES("mowvrn01",LastSeenBy(Myself))  // No such index
+    Continue()  // continue after innate actions
 END
-*/
+
+/////////////////////////////////////////////////////////////////////
+// Wing Buffet 1 Creature
+/////////////////////////////////////////////////////////////////////
+IF
+  See(NearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  Range(LastSeenBy(Myself),5)
+  !GlobalTimerNotExpired("Buffet","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("Buffet","LOCALS",6)
+    SetInterrupt(FALSE)
+    ForceSpellRES("mowing02",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+    //Continue()  // continue after innate actions
+END
+
+IF
+  See(SecondNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  Range(LastSeenBy(Myself),5)
+  !GlobalTimerNotExpired("Buffet","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("Buffet","LOCALS",6)
+    SetInterrupt(FALSE)
+    ForceSpellRES("mowing02",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+    //Continue()  // continue after innate actions
+END
+
+IF
+  See(ThirdNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  Range(LastSeenBy(Myself),5)
+  !GlobalTimerNotExpired("Buffet","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("Buffet","LOCALS",6)
+    SetInterrupt(FALSE)
+    ForceSpellRES("mowing02",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+    //Continue()  // continue after innate actions
+END
+
+IF
+  See(FourthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  Range(LastSeenBy(Myself),5)
+  !GlobalTimerNotExpired("Buffet","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("Buffet","LOCALS",6)
+    SetInterrupt(FALSE)
+    ForceSpellRES("mowing02",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+    //Continue()  // continue after innate actions
+END
+
+IF
+  See(FifthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  Range(LastSeenBy(Myself),5)
+  !GlobalTimerNotExpired("Buffet","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("Buffet","LOCALS",6)
+    SetInterrupt(FALSE)
+    ForceSpellRES("mowing02",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+    //Continue()  // continue after innate actions
+END
+
+IF
+  See(SixthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  Range(LastSeenBy(Myself),5)
+  !GlobalTimerNotExpired("Buffet","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("Buffet","LOCALS",6)
+    SetInterrupt(FALSE)
+    ForceSpellRES("mowing02",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+    //Continue()  // continue after innate actions
+END
