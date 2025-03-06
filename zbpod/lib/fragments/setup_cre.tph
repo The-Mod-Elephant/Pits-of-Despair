@@ -38,10 +38,10 @@ COPY_EXISTING ~ohbmena1.cre~ ~override~
     WRITE_BYTE 0x238 17  // Strength
     WRITE_BYTE 0x23c 18  // Dexterity
     WRITE_BYTE 0x53   2  // 2 APR Base
-    WRITE_BYTE 0x60  15  // Slashing resistance
-    WRITE_BYTE 0x61  15  // Crushing resistance
-    WRITE_BYTE 0x62  15  // Piercing resistance
-    WRITE_BYTE 0x63  15  // Missile resistance
+    //WRITE_BYTE 0x60  15  // Slashing resistance
+    //WRITE_BYTE 0x61  15  // Crushing resistance
+    //WRITE_BYTE 0x62  15  // Piercing resistance
+    //WRITE_BYTE 0x63  15  // Missile resistance
     WRITE_ASCII 0x258 ~zbdom~ #8 // Add Race Script
     WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
     REMOVE_CRE_ITEM minhp1
