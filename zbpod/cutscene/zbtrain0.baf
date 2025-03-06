@@ -16,7 +16,7 @@ THEN
     ActionOverride(Player6,LeaveAreaLUA("OH8100","",[2540.1308],S))  // TBP2 - Staging Area Map
     MultiPlayerSync()
     SmallWait(25)
-    SetAreaScript("OH8100",DEFAULT)
+    //SetAreaScript("OH8100",DEFAULT)
     EndCutSceneMode()
     SaveGame(0)
 END
