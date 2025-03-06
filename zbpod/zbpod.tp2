@@ -30,6 +30,13 @@ BEGIN @20001 DESIGNATED 2 LABEL ~zb_pod_ee~ // INSTALL PIT OF DESPAIR FOR ENHANC
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Add new areas
+COPY ~%MOD_FOLDER%/are~ ~override~
+APPEND ~mastarea.2da~
+~ZB0701     value      ~
+UNLESS ~ZB0701~
+
+// Copy spells and movies
 COPY ~%MOD_FOLDER%/spells/bp2~ ~override~
 COPY ~%MOD_FOLDER%/movie/pod.wbm~ ~movies~ /* adding directly to movies, not override, because otherwise it doesn't work. this isn't ideal. */
 
@@ -116,7 +123,7 @@ UNLESS ~zbeshpeu~
 COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */
 		~%MOD_FOLDER%/test/zbvyan.d~ /* vyantri's new line */
 		~%MOD_FOLDER%/test/zbmes.d~ /* messenger - aka best girl in disguise lines */
-        ~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */
+		~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */
 		~%MOD_FOLDER%/test/gaelan.d~ /* add a line to gaelan */
 		~%MOD_FOLDER%/test/zbneph.d~ /* nephetel's base dialogue file */
 		~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */
