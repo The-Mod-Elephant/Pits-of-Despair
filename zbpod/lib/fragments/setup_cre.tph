@@ -171,6 +171,12 @@ COPY ~%MOD_FOLDER%/creatures/mutgwyvern~ ~override~
 COPY_EXISTING ~ohbmena8.cre~ ~override~
     SAY 0x08 @15012
     SAY 0x0c @15012
+    WRITE_BYTE 0x24 120  // Current HP
+    WRITE_BYTE 0x26 120  // Maximum HP
+    WRITE_BYTE 0x60  20  // Slashing resistance
+    WRITE_BYTE 0x61  20  // Crushing resistance
+    WRITE_BYTE 0x62  20  // Piercing resistance
+    WRITE_BYTE 0x63  20  // Missile resistance
     REMOVE_CRE_ITEM minhp1
     WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
     WRITE_ASCII 0x250 ~~         #8 // Clear Class Script
