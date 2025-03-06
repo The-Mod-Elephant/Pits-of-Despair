@@ -6,7 +6,9 @@ WARNING! Will break the default the Black Pits 2 standalone campaign. We are not
 
 @20002 = ~Remove non-essential Portraits~
 
-@20003 = ~Add alt Portraits~
+@20003 = ~by Keldorn's Simp~
+
+@20004 = ~by Llewren~
 
 // warnings
 @20050 = "Not available for your game version"
