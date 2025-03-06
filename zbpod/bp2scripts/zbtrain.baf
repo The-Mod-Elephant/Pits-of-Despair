@@ -24,12 +24,12 @@ THEN
     ActionOverride("ohbmena1",Enemy())
     CreateCreature("ohbmena1",[1260.640],S) // Vampire Worg
     ActionOverride("ohbmena1",Enemy())
-    CreateCreature("ohbmena3",[1230.1215],N) // Dire Bear
-    ActionOverride("ohbmena3",Enemy())
+    CreateCreature("ohbmena7",[1230.1215],N) // Vortex Spider
+    ActionOverride("ohbmena7",Enemy())
     CreateCreature("modisp01",[1645.930],W) // Displacer Beast
     ActionOverride("modisp01",Enemy())
-    CreateCreature("ohbmena7",[1655.940],W) // Vortex Spider
-    ActionOverride("ohbmena7",Enemy())
+    CreateCreature("ohbmena3",[1665.930],W) // Dire Bear
+    ActionOverride("ohbmena3",Enemy())
     SmallWait(75)
     EndCutSceneMode()
 END
@@ -41,16 +41,14 @@ THEN
     StartCutSceneMode()
     SetGlobal("zb_train_spawn","global",20)
     SmallWait(5)
-    CreateCreature("ohbmena1",[1650.940],W) // Vampire Worg
-    ActionOverride("ohbmena1",Enemy())
-    CreateCreature("ohbmena2",[1230.1215],N)  // Dire Moose
+      CreateCreature("ohbmena2",[1230.1215],N)  // Dire Moose
     ActionOverride("ohbmena2",Enemy())
-    CreateCreature("ohbmena3",[1250.1215],N)  // Dire Bear
-    ActionOverride("ohbmena3",Enemy())
-    CreateCreature("modisp01",[1240.640],S)  // Displacer Beast
-    ActionOverride("modisp01",Enemy())
-    CreateCreature("modisp01",[1260.640],S)  // Displacer Beast
-    ActionOverride("modisp01",Enemy())
+    CreateCreature("ohbmena6",[1250.1215],N)  // Mutated Carrion Crawler
+    ActionOverride("ohbmena6",Enemy())
+    CreateCreature("ohbmena1",[1240.640],S)  // Vampire Worg
+    ActionOverride("ohbmena1",Enemy())
+    CreateCreature("ohbmena1",[1260.640],S)  // Vampire Worg
+    ActionOverride("ohbmena1",Enemy())
     CreateCreature("ohbmena5",[1655.920],W)  // Boalisk
     ActionOverride("ohbmena5",Enemy())
     SmallWait(75)
@@ -64,18 +62,18 @@ THEN
     StartCutSceneMode()
     SetGlobal("zb_train_spawn","global",30)
     SmallWait(5)
-    CreateCreature("ohbmena2",[1260.640],S)  // Dire Moose
-    ActionOverride("ohbmena2",Enemy())
+    CreateCreature("modisp01",[1260.640],S)  // Displacer Beast
+    ActionOverride("modisp01",Enemy())
     CreateCreature("ohbmena5",[1240.640],S)  // Boalisk
     ActionOverride("ohbmena5",Enemy())
-    CreateCreature("ohbmena6",[1650.925],W)  // Mutated Carrion Crawler
-    ActionOverride("ohbmena6",Enemy())
+    CreateCreature("ohbmena8",[1650.925],W)  // Greater Wyvern
+    ActionOverride("ohbmena8",Enemy())
     CreateCreature("ohbmena7",[1230.1215],N)  // Vortex Spider
     ActionOverride("ohbmena7",Enemy())
-    CreateCreature("ohbmena7",[1230.1215],N)  // Vortex Spider
-    ActionOverride("ohbmena7",Enemy())
-    CreateCreature("ohbmena7",[1230.1215],N)  // Vortex Spider
-    ActionOverride("ohbmena7",Enemy())
+    CreateCreature("ohbmena2",[1260.1215],N)  // Dire Moose
+    ActionOverride("ohbmena2",Enemy())
+    CreateCreature("modisp01",[950.900],E)  // Displacer Beast
+    ActionOverride("modisp01",Enemy())
     SmallWait(75)
     EndCutSceneMode()
 END

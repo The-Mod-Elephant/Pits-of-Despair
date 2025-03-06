@@ -21,12 +21,12 @@ THEN
 		FadeToColor([50.0],0)
 		Wait(2)
 		StorePartyLocations()
-		LeaveAreaLUA("AR0701","",[2034.873],NW) /* carries player over */ 
-		ActionOverride(Player2,LeaveAreaLUA("AR0701","",[2034.873],NW))  
-		ActionOverride(Player3,LeaveAreaLUA("AR0701","",[2034.873],NW))  
-		ActionOverride(Player4,LeaveAreaLUA("AR0701","",[2034.873],NW))  
-		ActionOverride(Player5,LeaveAreaLUA("AR0701","",[2034.873],NW))  
-		ActionOverride(Player6,LeaveAreaLUA("AR0701","",[2034.873],NW))  /* carries party over, they have to be out of sight */ 
+		LeaveAreaLUA("zb0701","",[2034.873],NW) /* carries player over */ 
+		ActionOverride(Player2,LeaveAreaLUA("zb0701","",[2034.873],NW))  
+		ActionOverride(Player3,LeaveAreaLUA("zb0701","",[2034.873],NW))  
+		ActionOverride(Player4,LeaveAreaLUA("zb0701","",[2034.873],NW))  
+		ActionOverride(Player5,LeaveAreaLUA("zb0701","",[2034.873],NW))  
+		ActionOverride(Player6,LeaveAreaLUA("zb0701","",[2034.873],NW))  /* carries party over, they have to be out of sight */
 		CreateCreature("zspdnf16",[1560.680],NE)  /* spawns in nephetel */ 
 		CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */ 
 		SetAreaScript("zbnephsk",OVERRIDE)
