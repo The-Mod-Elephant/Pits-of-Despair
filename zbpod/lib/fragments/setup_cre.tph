@@ -30,24 +30,33 @@ COPY_EXISTING ~ohbstirv.cre~ ~override~
     SAY 0x0c @15004
 
 COPY ~%MOD_FOLDER%/creatures/mutvampworg~ ~override~
-COPY_EXISTING ~ohbmena1.cre~ ~override~
-    SAY 0x08 @15005
-    SAY 0x0c @15005
-    WRITE_BYTE 0x24  80  // Current HP
-    WRITE_BYTE 0x26  80  // Maximum HP
-    WRITE_BYTE 0x238 17  // Strength
-    WRITE_BYTE 0x23c 18  // Dexterity
-    WRITE_BYTE 0x53   2  // 2 APR Base
-    //WRITE_BYTE 0x60  15  // Slashing resistance
-    //WRITE_BYTE 0x61  15  // Crushing resistance
-    //WRITE_BYTE 0x62  15  // Piercing resistance
-    //WRITE_BYTE 0x63  15  // Missile resistance
-    WRITE_ASCII 0x258 ~zbdom~ #8 // Add Race Script
-    WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
-    REMOVE_CRE_ITEM minhp1
-    WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
-    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~P_RED_WORG~))
-    
+
+// Create 5 unique instances of vampiric worgs
+ACTION_FOR_EACH wolf IN 
+        1
+        2
+        3
+        4
+    BEGIN
+        COPY_EXISTING ~ohbmena1.cre~ ~override/mowlf0%wolf%.cre~
+            SAY 0x08 @15005
+            SAY 0x0c @15005
+            WRITE_BYTE 0x24  80  // Current HP
+            WRITE_BYTE 0x26  80  // Maximum HP
+            WRITE_BYTE 0x238 17  // Strength
+            WRITE_BYTE 0x23c 18  // Dexterity
+            WRITE_BYTE 0x53   3  // 2 APR Base
+            //WRITE_BYTE 0x60  15  // Slashing resistance
+            //WRITE_BYTE 0x61  15  // Crushing resistance
+            //WRITE_BYTE 0x62  15  // Piercing resistance
+            //WRITE_BYTE 0x63  15  // Missile resistance
+            WRITE_ASCII 0x258 ~zbdom~        #8 // Add Race Script
+            WRITE_ASCII 0x268 ~momatk01~     #8 // Add Default Script
+            WRITE_ASCII 0x280 ~mowlf0%wolf%~ #8 // Script Name
+            REMOVE_CRE_ITEM minhp1
+            WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
+            WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~P_RED_WORG~))
+END    
 
 // All moosey moose related code goes here
 COPY ~%MOD_FOLDER%/creatures/mutdiremoose~ ~override~
@@ -66,27 +75,43 @@ COPY_EXISTING "zbmoose2.spl" "override" // next the unconsciousness effect
     END
 
 COMPILE "%MOD_FOLDER%/creatures/#scripts/zbmostmp.baf" // compile the script that makes the moose stomp selectively
-COPY_EXISTING ~ohbmena2.cre~ ~override~
-    SAY 0x08 @15006 // inject into name field (dangerous moose)
-    SAY 0x0c @15006 // inject into creature tooltip field (dangerous moose)
-    WRITE_BYTE 0x60  40  // Slashing resistance
-    WRITE_BYTE 0x61  40  // Crushing resistance
-    WRITE_BYTE 0x62  40  // Piercing resistance
-    WRITE_BYTE 0x63  40  // Missile resistance
-    WRITE_ASCII 0x260 ~zbmostmp~ #8  // inject script name to general script field; #8 is the length of the string
-    WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
-    REMOVE_CRE_ITEM minhp1
-    WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
+
+// Create 2 unique instances of moose
+ACTION_FOR_EACH moose IN 
+        1
+        2
+    BEGIN
+        COPY_EXISTING ~ohbmena2.cre~ ~override/momoos0%moose%.cre~
+            SAY 0x08 @15006 // inject into name field (dangerous moose)
+            SAY 0x0c @15006 // inject into creature tooltip field (dangerous moose)
+            WRITE_BYTE 0x60  40  // Slashing resistance
+            WRITE_BYTE 0x61  40  // Crushing resistance
+            WRITE_BYTE 0x62  40  // Piercing resistance
+            WRITE_BYTE 0x63  40  // Missile resistance
+            WRITE_ASCII 0x260 ~zbmostmp~       #8  // inject script name to general script field; #8 is the length of the string
+            WRITE_ASCII 0x268 ~momatk01~       #8 // Add Default Script
+            WRITE_ASCII 0x280 ~momoos0%moose%~ #8 // Script Name
+            REMOVE_CRE_ITEM minhp1
+            WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
+END
 // end of moosey moosey code
 
 COPY ~%MOD_FOLDER%/creatures/mutdirebear~ ~override~
-COPY_EXISTING ~ohbmena3.cre~ ~override~
-    SAY 0x08 @15007
-    SAY 0x0c @15007
-    REMOVE_CRE_ITEM minhp1
-    WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
-    WRITE_ASCII 0x258 ~mobear01~ #8 // Add Race Script
-    WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
+
+// Create 2 unique instances of bears
+ACTION_FOR_EACH bear IN 
+        1
+        2
+    BEGIN
+        COPY_EXISTING ~ohbmena3.cre~ ~override/mobear0%bear%.cre~
+            SAY 0x08 @15007
+            SAY 0x0c @15007
+            REMOVE_CRE_ITEM minhp1
+            WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
+            WRITE_ASCII 0x258 ~mobear01~      #8 // Add Race Script
+            WRITE_ASCII 0x268 ~momatk01~      #8 // Add Default Script
+            WRITE_ASCII 0x280 ~mobear0%bear%~ #8 // Script Name
+END 
 
 // start of dire lion related code
 /*
@@ -123,65 +148,104 @@ ACTION_BASH_FOR ~%MOD_FOLDER%/animations/displacer_beast~ ~^.+.bam$~ BEGIN
   COPY ~%BASH_FOR_FILESPEC%~ ~override~
 END
 
-COPY ~%MOD_FOLDER%/creatures/displacer/modisp01.cre~ ~override~  // Displacer Beast
-  SAY NAME1 @15008
-  SAY NAME2 @15008
-  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#DISPLACER_BEAST~))
-  WRITE_ASCII 0x258 ~modisp01~ #8 // Add Race Script
-  WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
-  REPLACE_CRE_ITEM ~modisp01~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~WEAPON1~ EQUIP
+// Create 5 unique instances of displacer beasts
+ACTION_FOR_EACH displacer IN 
+        1
+        2
+        3
+        4
+        5
+    BEGIN
+        COPY ~%MOD_FOLDER%/creatures/displacer/modisp01.cre~ ~override/modisp0%displacer%.cre~  // Displacer Beast
+          SAY NAME1 @15008
+          SAY NAME2 @15008
+          WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#DISPLACER_BEAST~))
+          WRITE_ASCII 0x258 ~modisp01~           #8 // Add Race Script
+          WRITE_ASCII 0x268 ~momatk01~           #8 // Add Default Script
+          WRITE_ASCII 0x280 ~modisp0%displacer%~ #8 // Script Name
+          REPLACE_CRE_ITEM ~modisp01~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~WEAPON1~ EQUIP
+END
 
 COPY ~%MOD_FOLDER%/creatures/displacer/modisp01.itm~ ~override~  // Claws
 
 
 COPY ~%MOD_FOLDER%/creatures/mutboalisk~ ~override~
-COPY_EXISTING ~ohbmena5.cre~ ~override~
-    SAY 0x08 @15009
-    SAY 0x0c @15009
-    WRITE_BYTE 0x53   8  // 5/2 APR Base
-    REMOVE_CRE_ITEM minhp1
-    WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
-    WRITE_ASCII 0x250 ~~         #8 // Clear Class Script
-    WRITE_ASCII 0x258 ~mosnek01~ #8 // Add Race Script
-    WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
+// Create 2 unique instances of boalisk
+ACTION_FOR_EACH boa IN 
+        1
+        2
+    BEGIN
+        COPY_EXISTING ~ohbmena5.cre~ ~override/mosnek0%boa%.cre~
+            SAY 0x08 @15009
+            SAY 0x0c @15009
+            WRITE_BYTE 0x53   8  // 5/2 APR Base
+            REMOVE_CRE_ITEM minhp1
+            WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
+            WRITE_ASCII 0x250 ~~             #8 // Clear Class Script
+            WRITE_ASCII 0x258 ~mosnek01~     #8 // Add Race Script
+            WRITE_ASCII 0x268 ~momatk01~     #8 // Add Default Script
+            WRITE_ASCII 0x280 ~mosnek0%boa%~ #8 // Script Name
+END
 
 COPY ~%MOD_FOLDER%/creatures/mutcarrion~ ~override~
-COPY_EXISTING ~ohbmena6.cre~ ~override~
-    SAY 0x08 @15010
-    SAY 0x0c @15010
-    REMOVE_CRE_ITEM minhp1
-    WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
-    WRITE_ASCII 0x250 ~~         #8 // Clear Class Script
-    WRITE_ASCII 0x258 ~mocrwl01~ #8 // Add Race Script
-    WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
+// Create 3 unique instances of carrion crawlers
+ACTION_FOR_EACH crawl IN 
+        1
+        2
+        3
+    BEGIN
+        COPY_EXISTING ~ohbmena6.cre~ ~override/mocrwl0%crawl%.cre~
+            SAY 0x08 @15010
+            SAY 0x0c @15010
+            REMOVE_CRE_ITEM minhp1
+            WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
+            WRITE_ASCII 0x250 ~~               #8 // Clear Class Script
+            WRITE_ASCII 0x258 ~mocrwl01~       #8 // Add Race Script
+            WRITE_ASCII 0x268 ~momatk01~       #8 // Add Default Script
+            WRITE_ASCII 0x280 ~mocrwl0%crawl%~ #8 // Script Name
+END
 
 COPY ~%MOD_FOLDER%/creatures/mutvortex~ ~override~
-COPY_EXISTING ~ohbmena7.cre~ ~override~
-    SAY 0x08 @15011
-    SAY 0x0c @15011
-    WRITE_BYTE 0x53   2  // 2 APR Base
-    REMOVE_CRE_ITEM minhp1
-    WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
-    WRITE_ASCII 0x250 ~~         #8 // Clear Class Script
-    WRITE_ASCII 0x258 ~mospdr02~ #8 // Add Race Script
-    WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
-    LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
+// Create 2 unique instances of vortex spiders
+ACTION_FOR_EACH spdr IN 
+        1
+        2
+    BEGIN
+        COPY_EXISTING ~ohbmena7.cre~ ~override/mospdr0%spdr%.cre~
+            SAY 0x08 @15011
+            SAY 0x0c @15011
+            WRITE_BYTE 0x53   2  // 2 APR Base
+            REMOVE_CRE_ITEM minhp1
+            WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
+            WRITE_ASCII 0x250 ~~         #8 // Clear Class Script
+            WRITE_ASCII 0x258 ~mospdr02~ #8 // Add Race Script
+            WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
+            WRITE_ASCII 0x280 ~mospdr0%spdr%~ #8 // Script Name
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
+END
 
 COPY ~%MOD_FOLDER%/creatures/mutgwyvern~ ~override~
-COPY_EXISTING ~ohbmena8.cre~ ~override~
-    SAY 0x08 @15012
-    SAY 0x0c @15012
-    WRITE_BYTE 0x24 120  // Current HP
-    WRITE_BYTE 0x26 120  // Maximum HP
-    WRITE_BYTE 0x60  20  // Slashing resistance
-    WRITE_BYTE 0x61  20  // Crushing resistance
-    WRITE_BYTE 0x62  20  // Piercing resistance
-    WRITE_BYTE 0x63  20  // Missile resistance
-    REMOVE_CRE_ITEM minhp1
-    WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
-    WRITE_ASCII 0x250 ~~         #8 // Clear Class Script
-    WRITE_ASCII 0x258 ~mowvrn01~ #8 // Add Race Script
-    WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
+// Create 2 unique instances of wyverns
+ACTION_FOR_EACH wvrn IN 
+        1
+        2
+    BEGIN
+        COPY_EXISTING ~ohbmena8.cre~ ~override/mowvrn0%wvrn%.cre~
+            SAY 0x08 @15012
+            SAY 0x0c @15012
+            WRITE_BYTE 0x24 120  // Current HP
+            WRITE_BYTE 0x26 120  // Maximum HP
+            WRITE_BYTE 0x60  20  // Slashing resistance
+            WRITE_BYTE 0x61  20  // Crushing resistance
+            WRITE_BYTE 0x62  20  // Piercing resistance
+            WRITE_BYTE 0x63  20  // Missile resistance
+            REMOVE_CRE_ITEM minhp1
+            WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
+            WRITE_ASCII 0x250 ~~         #8 // Clear Class Script
+            WRITE_ASCII 0x258 ~mowvrn01~ #8 // Add Race Script
+            WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
+            WRITE_ASCII 0x280 ~mowvrn0%wvrn%~ #8 // Script Name
+END
 
 COPY ~%MOD_FOLDER%/creatures/brodle~ ~override~
 COPY_EXISTING ~ohbbrodl.cre~ ~override~
