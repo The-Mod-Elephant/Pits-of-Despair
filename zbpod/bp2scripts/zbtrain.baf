@@ -48,12 +48,12 @@ THEN
     StartCutSceneMode()
     SetGlobal("zb_train_spawn","global",20)
     SmallWait(5)
-    CreateCreature("momoos01",[1230.1215],N)  // Dire Moose
-    ActionOverride("momoos01",Enemy())
+    CreateCreature("momoos03",[1230.1215],N)  // Dire Moose
+    ActionOverride("momoos03",Enemy())
     CreateCreature("mocrwl01",[1250.1215],N)  // Mutated Carrion Crawler
     ActionOverride("mocrwl01",Enemy())
-    CreateCreature("mobear01",[950.900],E)  // Dire Bear
-    ActionOverride("mobear01",Enemy())
+    CreateCreature("mobear03",[950.900],E)  // Dire Bear
+    ActionOverride("mobear03",Enemy())
     CreateCreature("mowlf04",[1260.640],S)  // Vampire Worg
     ActionOverride("mowlf04",Enemy())
     CreateCreature("mosnek01",[1655.920],W)  // Boalisk
@@ -111,7 +111,7 @@ END
 IF
   Global("zb_train_spawn","global",10)
   Dead("mowlf01") // Vampire Worg
-  Dead("mowlf02") // Vampire Worg
+  Dead("momoos01") // Dangerous Moose
   Dead("mospdr01") // Vortex Spider
   Dead("modisp01") // Displacer Beast
   Dead("mobear01") // Dire Bear
@@ -129,9 +129,9 @@ END
 
 IF
   Global("zb_train_spawn","global",20)
-  Dead("momoos01")  // Dire Moose
+  Dead("momoos03")  // Dire Moose
   Dead("mocrwl01")  // Mutated Carrion Crawler
-  Dead("mowlf03")  // Vampire Worg
+  Dead("mobear03")  // Dire Bear
   Dead("mowlf04")  // Vampire Worg
   Dead("mosnek01")  // Boalisk
   CombatCounter(0)
