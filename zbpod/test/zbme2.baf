@@ -19,3 +19,11 @@ THEN
 RESPONSE #100
 MoveToObject([PC])
 END
+
+IF
+  Global("ZBPodSummonsReceived","GLOBAL",4)
+THEN
+  RESPONSE #100
+    EscapeArea()
+END 
+  

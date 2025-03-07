@@ -30,3 +30,13 @@ CreateCreatureObject("zbmes",Player1,0,0,0)
 SetGlobal("ZBPodSummonsReceived","GLOBAL",2) /* we don't want the messenger to keep showing up */
 Continue()
 END
+
+IF
+  Global("ZBPodSummonsReceived","GLOBAL",4)
+  Global("zbnephcutscene","GLOBAL",0)
+THEN
+  RESPONSE #100
+    ClearAllActions()
+    StartCutSceneMode()
+    StartCutScene("zbmescut")
+END 
