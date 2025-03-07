@@ -33,6 +33,7 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_VortexTimer","LOCALS",18)
+    ReallyForceSpellPointRES("zbvort03",[1275.928])
     ReallyForceSpellPointRES("zbvort02",[1275.928])
 END
 
