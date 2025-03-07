@@ -27,6 +27,7 @@ IF
   See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_PANIC)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN

@@ -76,10 +76,11 @@ COPY_EXISTING "zbmoose2.spl" "override" // next the unconsciousness effect
 
 COMPILE "%MOD_FOLDER%/creatures/#scripts/zbmostmp.baf" // compile the script that makes the moose stomp selectively
 
-// Create 2 unique instances of moose
+// Create 3 unique instances of moose
 ACTION_FOR_EACH moose IN 
         1
         2
+        3
     BEGIN
         COPY_EXISTING ~ohbmena2.cre~ ~override/momoos0%moose%.cre~
             SAY 0x08 @15006 // inject into name field (dangerous moose)
@@ -102,6 +103,7 @@ COPY ~%MOD_FOLDER%/creatures/mutdirebear~ ~override~
 ACTION_FOR_EACH bear IN 
         1
         2
+        3
     BEGIN
         COPY_EXISTING ~ohbmena3.cre~ ~override/mobear0%bear%.cre~
             SAY 0x08 @15007
