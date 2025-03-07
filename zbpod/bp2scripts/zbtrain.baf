@@ -29,13 +29,13 @@ THEN
     SmallWait(5)
     CreateCreature("mowlf01",[1240.640],S) // Vampire Worg
     ActionOverride("mowlf01",Enemy())
-    CreateCreature("mowlf02",[1260.640],S) // Vampire Worg
-    ActionOverride("mowlf02",Enemy())
+    CreateCreature("momoos01",[950.900],E) // Dangerous Moose
+    ActionOverride("momoos01",Enemy())
     CreateCreature("mospdr01",[1230.1215],N) // Vortex Spider
     ActionOverride("mospdr01",Enemy())
     CreateCreature("modisp01",[1645.930],W) // Displacer Beast
     ActionOverride("modisp01",Enemy())
-    CreateCreature("mobear01",[1665.930],W) // Dire Bear
+    CreateCreature("mobear01",[1665.950],W) // Dire Bear
     ActionOverride("mobear01",Enemy())
     SmallWait(75)
     EndCutSceneMode()
@@ -52,8 +52,8 @@ THEN
     ActionOverride("momoos01",Enemy())
     CreateCreature("mocrwl01",[1250.1215],N)  // Mutated Carrion Crawler
     ActionOverride("mocrwl01",Enemy())
-    CreateCreature("mowlf03",[1240.640],S)  // Vampire Worg
-    ActionOverride("mowlf03",Enemy())
+    CreateCreature("mobear01",[950.900],E)  // Dire Bear
+    ActionOverride("mobear01",Enemy())
     CreateCreature("mowlf04",[1260.640],S)  // Vampire Worg
     ActionOverride("mowlf04",Enemy())
     CreateCreature("mosnek01",[1655.920],W)  // Boalisk
