@@ -27,16 +27,16 @@ THEN
     StartCutSceneMode()
     SetGlobal("zb_train_spawn","global",10)
     SmallWait(5)
-    CreateCreature("ohbmena1",[1240.640],S) // Vampire Worg
-    ActionOverride("ohbmena1",Enemy())
-    CreateCreature("ohbmena1",[1260.640],S) // Vampire Worg
-    ActionOverride("ohbmena1",Enemy())
-    CreateCreature("ohbmena7",[1230.1215],N) // Vortex Spider
-    ActionOverride("ohbmena7",Enemy())
+    CreateCreature("mowlf01",[1240.640],S) // Vampire Worg
+    ActionOverride("mowlf01",Enemy())
+    CreateCreature("mowlf02",[1260.640],S) // Vampire Worg
+    ActionOverride("mowlf02",Enemy())
+    CreateCreature("mospdr01",[1230.1215],N) // Vortex Spider
+    ActionOverride("mospdr01",Enemy())
     CreateCreature("modisp01",[1645.930],W) // Displacer Beast
     ActionOverride("modisp01",Enemy())
-    CreateCreature("ohbmena3",[1665.930],W) // Dire Bear
-    ActionOverride("ohbmena3",Enemy())
+    CreateCreature("mobear01",[1665.930],W) // Dire Bear
+    ActionOverride("mobear01",Enemy())
     SmallWait(75)
     EndCutSceneMode()
 END
@@ -48,16 +48,16 @@ THEN
     StartCutSceneMode()
     SetGlobal("zb_train_spawn","global",20)
     SmallWait(5)
-      CreateCreature("ohbmena2",[1230.1215],N)  // Dire Moose
-    ActionOverride("ohbmena2",Enemy())
-    CreateCreature("ohbmena6",[1250.1215],N)  // Mutated Carrion Crawler
-    ActionOverride("ohbmena6",Enemy())
-    CreateCreature("ohbmena1",[1240.640],S)  // Vampire Worg
-    ActionOverride("ohbmena1",Enemy())
-    CreateCreature("ohbmena1",[1260.640],S)  // Vampire Worg
-    ActionOverride("ohbmena1",Enemy())
-    CreateCreature("ohbmena5",[1655.920],W)  // Boalisk
-    ActionOverride("ohbmena5",Enemy())
+    CreateCreature("momoos01",[1230.1215],N)  // Dire Moose
+    ActionOverride("momoos01",Enemy())
+    CreateCreature("mocrwl01",[1250.1215],N)  // Mutated Carrion Crawler
+    ActionOverride("mocrwl01",Enemy())
+    CreateCreature("mowlf03",[1240.640],S)  // Vampire Worg
+    ActionOverride("mowlf03",Enemy())
+    CreateCreature("mowlf04",[1260.640],S)  // Vampire Worg
+    ActionOverride("mowlf04",Enemy())
+    CreateCreature("mosnek01",[1655.920],W)  // Boalisk
+    ActionOverride("mosnek01",Enemy())
     SmallWait(75)
     EndCutSceneMode()
 END
@@ -69,18 +69,18 @@ THEN
     StartCutSceneMode()
     SetGlobal("zb_train_spawn","global",30)
     SmallWait(5)
-    CreateCreature("modisp01",[1260.640],S)  // Displacer Beast
-    ActionOverride("modisp01",Enemy())
-    CreateCreature("ohbmena5",[1240.640],S)  // Boalisk
-    ActionOverride("ohbmena5",Enemy())
-    CreateCreature("ohbmena8",[1650.925],W)  // Greater Wyvern
-    ActionOverride("ohbmena8",Enemy())
-    CreateCreature("ohbmena7",[1230.1215],N)  // Vortex Spider
-    ActionOverride("ohbmena7",Enemy())
-    CreateCreature("ohbmena2",[1260.1215],N)  // Dire Moose
-    ActionOverride("ohbmena2",Enemy())
-    CreateCreature("modisp01",[950.900],E)  // Displacer Beast
-    ActionOverride("modisp01",Enemy())
+    CreateCreature("modisp02",[1260.640],S)  // Displacer Beast
+    ActionOverride("modisp02",Enemy())
+    CreateCreature("mosnek02",[1240.640],S)  // Boalisk
+    ActionOverride("mosnek02",Enemy())
+    CreateCreature("mowvrn01",[1650.925],W)  // Greater Wyvern
+    ActionOverride("mowvrn01",Enemy())
+    CreateCreature("mospdr02",[1230.1215],N)  // Vortex Spider
+    ActionOverride("mospdr02",Enemy())
+    CreateCreature("momoos02",[1260.1215],N)  // Dire Moose
+    ActionOverride("momoos02",Enemy())
+    CreateCreature("modisp03",[950.900],E)  // Displacer Beast
+    ActionOverride("modisp03",Enemy())
     SmallWait(75)
     EndCutSceneMode()
 END
@@ -92,29 +92,29 @@ THEN
     StartCutSceneMode()
     SetGlobal("zb_train_spawn","global",40)
     SmallWait(5)
-    CreateCreature("ohbmena3",[1665.930],W)  // Dire Bear
-    ActionOverride("ohbmena3",Enemy())
-    CreateCreature("modisp01",[1230.1215],N)  // Displacer Beast
-    ActionOverride("modisp01",Enemy())
-    CreateCreature("modisp01",[1230.1215],N)  // Displacer Beast
-    ActionOverride("modisp01",Enemy())
-    CreateCreature("ohbmena6",[1240.640],S)  // Mutated Carrion Crawler
-    ActionOverride("ohbmena6",Enemy())
-    CreateCreature("ohbmena6",[1240.640],S)  // Mutated Carrion Crawler
-    ActionOverride("ohbmena6",Enemy())
-    CreateCreature("ohbmena8",[1645.920],W)  // Greater Wyvern
-    ActionOverride("ohbmena8",Enemy())
+    CreateCreature("mobear02",[1665.930],W)  // Dire Bear
+    ActionOverride("mobear02",Enemy())
+    CreateCreature("modisp04",[1230.1215],N)  // Displacer Beast
+    ActionOverride("modisp04",Enemy())
+    CreateCreature("modisp05",[1230.1215],N)  // Displacer Beast
+    ActionOverride("modisp05",Enemy())
+    CreateCreature("mocrwl02",[1240.640],S)  // Mutated Carrion Crawler
+    ActionOverride("mocrwl02",Enemy())
+    CreateCreature("mocrwl03",[1240.640],S)  // Mutated Carrion Crawler
+    ActionOverride("mocrwl03",Enemy())
+    CreateCreature("mowvrn02",[1645.920],W)  // Greater Wyvern
+    ActionOverride("mowvrn02",Enemy())
     SmallWait(75)
     EndCutSceneMode()
 END
 
 IF
   Global("zb_train_spawn","global",10)
-  Dead("ohbmena1")
-  Dead("ohbmena1")
-  Dead("ohbmena3")
-  Dead("modisp01")
-  Dead("ohbmena7")
+  Dead("mowlf01") // Vampire Worg
+  Dead("mowlf02") // Vampire Worg
+  Dead("mospdr01") // Vortex Spider
+  Dead("modisp01") // Displacer Beast
+  Dead("mobear01") // Dire Bear
   CombatCounter(0)
   Global("zb_train_exit","global",0)
 THEN
@@ -129,12 +129,11 @@ END
 
 IF
   Global("zb_train_spawn","global",20)
-  Dead("ohbmena1")
-  Dead("ohbmena2")
-  Dead("ohbmena3")
-  Dead("modisp01")
-  Dead("modisp01")
-  Dead("ohbmena5")
+  Dead("momoos01")  // Dire Moose
+  Dead("mocrwl01")  // Mutated Carrion Crawler
+  Dead("mowlf03")  // Vampire Worg
+  Dead("mowlf04")  // Vampire Worg
+  Dead("mosnek01")  // Boalisk
   CombatCounter(0)
   Global("zb_train_exit","global",0)
 THEN
@@ -149,12 +148,12 @@ END
 
 IF
   Global("zb_train_spawn","global",30)
-  Dead("ohbmena2")
-  Dead("ohbmena5")
-  Dead("ohbmena6")
-  Dead("ohbmena7")
-  Dead("ohbmena7")
-  Dead("ohbmena7")
+  Dead("modisp02")  // Displacer Beast
+  Dead("mosnek02")  // Boalisk
+  Dead("mowvrn01")  // Greater Wyvern
+  Dead("mospdr02")  // Vortex Spider
+  Dead("momoos02")  // Dire Moose
+  Dead("modisp03")  // Displacer Beast
   CombatCounter(0)
   Global("zb_train_exit","global",0)
 THEN
@@ -169,12 +168,12 @@ END
 
 IF
   Global("zb_train_spawn","global",40)
-  Dead("ohbmena3")
-  Dead("modisp01")
-  Dead("modisp01")
-  Dead("ohbmena6")
-  Dead("ohbmena6")
-  Dead("ohbmena8")
+  Dead("mobear02")  // Dire Bear
+  Dead("modisp04")  // Displacer Beast
+  Dead("modisp05")  // Displacer Beast
+  Dead("mocrwl02")  // Mutated Carrion Crawler
+  Dead("mocrwl03")  // Mutated Carrion Crawler
+  Dead("mowvrn02")  // Greater Wyvern
   CombatCounter(0)
   Global("zb_train_exit","global",0)
 THEN
