@@ -4,6 +4,12 @@ IF
 THEN
 	RESPONSE #100
 		SetCutSceneBreakable(FALSE)
+		ActionOverride(Player1,RemoveSpell(Player1,WIZARD_INVISIBILITY))
+		ActionOverride(Player2,RemoveSpell(Player2,WIZARD_INVISIBILITY))
+		ActionOverride(Player3,RemoveSpell(Player3,WIZARD_INVISIBILITY))
+		ActionOverride(Player4,RemoveSpell(Player4,WIZARD_INVISIBILITY))
+		ActionOverride(Player5,RemoveSpell(Player5,WIZARD_INVISIBILITY))
+		ActionOverride(Player6,RemoveSpell(Player6,WIZARD_INVISIBILITY))
 		FadeToColor([50.0],0)
 		ActionOverride("zspdnf16",DestroySelf())
 		Wait(1)

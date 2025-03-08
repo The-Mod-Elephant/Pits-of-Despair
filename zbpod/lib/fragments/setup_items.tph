@@ -117,7 +117,7 @@ COPY_EXISTING ~zspdrngb.itm~ ~override~
     SAY IDENTIFIED_DESC @10103
 
 //////// Vyatri's Note (quest) \\\\\\\\
-COPY ~%MOD_FOLDER%/items/vyatrinote~ ~override~
+COPY ~%MOD_FOLDER%/items/vytarinote~ ~override~
 COPY_EXISTING ~zbpdnote.itm~ ~override~
     SAY NAME2 @10112
     SAY IDENTIFIED_DESC @3670
