@@ -39,11 +39,11 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Add new areas
-COPY ~%MOD_FOLDER%/zb0700~ ~override~
+COPY ~%MOD_FOLDER%/area/zb0700~ ~override~
 APPEND ~mastarea.2da~
 ~zb0700     value      ~
 UNLESS ~zb0700~
-COPY ~%MOD_FOLDER%/zb0701~ ~override~
+COPY ~%MOD_FOLDER%/area/zb0701~ ~override~
 APPEND ~mastarea.2da~
 ~zb0701     value      ~
 UNLESS ~zb0701~
@@ -169,7 +169,7 @@ COPY ~%MOD_FOLDER%/altportrait/keldornsimp_zbnephy.bmp~ ~override/zbnephy.bmp~
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20004 DESIGNATED 10 LABEL ~zb_llewren_nephetel_portrait~ // ADD ALT PORTRAITS
 REQUIRE_COMPONENT "zbpod.tp2" "2" @30000 // traify later
-SUBCOMPONENT ~Nephetel alt portrait~ // traify later
+SUBCOMPONENT ~Nephetel Alternate portrait~ // traify later
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY ~%MOD_FOLDER%/altportrait/llew_zbnephy.bmp~ ~override/zbnephy.bmp~

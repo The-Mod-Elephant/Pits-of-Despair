@@ -27,6 +27,12 @@ THEN
 		ActionOverride(Player4,LeaveAreaLUA("zb0701","",[2034.873],NW))  
 		ActionOverride(Player5,LeaveAreaLUA("zb0701","",[2034.873],NW))  
 		ActionOverride(Player6,LeaveAreaLUA("zb0701","",[2034.873],NW))  /* carries party over, they have to be out of sight */
+		ActionOverride(Player1,ApplySpell(Player1,WIZARD_INVISIBILITY))
+		ActionOverride(Player2,ApplySpell(Player2,WIZARD_INVISIBILITY))
+		ActionOverride(Player3,ApplySpell(Player3,WIZARD_INVISIBILITY))
+		ActionOverride(Player4,ApplySpell(Player4,WIZARD_INVISIBILITY))
+		ActionOverride(Player5,ApplySpell(Player5,WIZARD_INVISIBILITY))
+		ActionOverride(Player6,ApplySpell(Player6,WIZARD_INVISIBILITY))
 		CreateCreature("zspdnf16",[1560.680],NE)  /* spawns in nephetel */ 
 		CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */ 
 		SetAreaScript("zbnephsk",OVERRIDE)
@@ -92,6 +98,12 @@ THEN
 		ActionOverride("zbvamp",DestroySelf())
 		Wait(1)
 		RestorePartyLocations()
+		ActionOverride(Player1,RemoveSpell(Player1,WIZARD_INVISIBILITY))
+		ActionOverride(Player2,RemoveSpell(Player2,WIZARD_INVISIBILITY))
+		ActionOverride(Player3,RemoveSpell(Player3,WIZARD_INVISIBILITY))
+		ActionOverride(Player4,RemoveSpell(Player4,WIZARD_INVISIBILITY))
+		ActionOverride(Player5,RemoveSpell(Player5,WIZARD_INVISIBILITY))
+		ActionOverride(Player6,RemoveSpell(Player6,WIZARD_INVISIBILITY))
 		// Actions end here
 		EndCutSceneMode() /* exits the the StartCutSceneMode() action */
 		Wait(1)
