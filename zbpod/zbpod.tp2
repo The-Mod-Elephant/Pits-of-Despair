@@ -39,10 +39,14 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Add new areas
-COPY ~%MOD_FOLDER%/area~ ~override~
+COPY ~%MOD_FOLDER%/zb0700~ ~override~
 APPEND ~mastarea.2da~
-~ZB0701     value      ~
-UNLESS ~ZB0701~
+~zb0700     value      ~
+UNLESS ~zb0700~
+COPY ~%MOD_FOLDER%/zb0701~ ~override~
+APPEND ~mastarea.2da~
+~zb0701     value      ~
+UNLESS ~zb0701~
 
 // Copy spells and movies
 COPY ~%MOD_FOLDER%/spells/bp2~ ~override~
