@@ -86,29 +86,6 @@ THEN
 END
 
 IF
-  Global("zb_train_spawn","global",4)
-THEN
-  RESPONSE #100
-    StartCutSceneMode()
-    SetGlobal("zb_train_spawn","global",40)
-    SmallWait(5)
-    CreateCreature("mobear02",[1665.930],W)  // Dire Bear
-    ActionOverride("mobear02",Enemy())
-    CreateCreature("modisp04",[1230.1215],N)  // Displacer Beast
-    ActionOverride("modisp04",Enemy())
-    CreateCreature("modisp05",[1230.1215],N)  // Displacer Beast
-    ActionOverride("modisp05",Enemy())
-    CreateCreature("mocrwl02",[1240.640],S)  // Mutated Carrion Crawler
-    ActionOverride("mocrwl02",Enemy())
-    CreateCreature("mocrwl03",[1240.640],S)  // Mutated Carrion Crawler
-    ActionOverride("mocrwl03",Enemy())
-    CreateCreature("mowvrn02",[1645.920],W)  // Greater Wyvern
-    ActionOverride("mowvrn02",Enemy())
-    SmallWait(75)
-    EndCutSceneMode()
-END
-
-IF
   Global("zb_train_spawn","global",10)
   Dead("mowlf01") // Vampire Worg
   Dead("momoos01") // Dangerous Moose
@@ -167,29 +144,8 @@ THEN
 END
 
 IF
-  Global("zb_train_spawn","global",40)
-  Dead("mobear02")  // Dire Bear
-  Dead("modisp04")  // Displacer Beast
-  Dead("modisp05")  // Displacer Beast
-  Dead("mocrwl02")  // Mutated Carrion Crawler
-  Dead("mocrwl03")  // Mutated Carrion Crawler
-  Dead("mowvrn02")  // Greater Wyvern
-  CombatCounter(0)
-  Global("zb_train_exit","global",0)
-THEN
-  RESPONSE #100
-    SetGlobal("zb_train_exit","global",1)
-    SetGlobal("zb_train_spawn","global",41)
-    GiveGoldForce(2000)
-    AddExperienceParty(10000)
-    PlaySound("BP2POS_4")
-    Wait(2)
-END
-
-IF
   Global("zb_train_exit","global",1)
-  OR(4)
-    Global("zb_train_spawn","global",41)
+  OR(3)
     Global("zb_train_spawn","global",31)
     Global("zb_train_spawn","global",21)
     Global("zb_train_spawn","global",11)
