@@ -172,7 +172,16 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
                         ~%MOD_FOLDER%/dlg/ohbstirv.d~
 
 /* copy edited sound files over */
-COPY ~%MOD_FOLDER%/wav~ ~override~
+COPY ~%MOD_FOLDER%/wav/oh10~ ~override~
+COPY ~%MOD_FOLDER%/wav/oh88~ ~override~
+COPY ~%MOD_FOLDER%/wav/oh90~ ~override~
+COPY ~%MOD_FOLDER%/wav/oh91~ ~override~
+COPY ~%MOD_FOLDER%/wav/oh92~ ~override~
+COPY ~%MOD_FOLDER%/wav/oh93~ ~override~
+COPY ~%MOD_FOLDER%/wav/oh94~ ~override~
+COPY ~%MOD_FOLDER%/wav/oh95~ ~override~
+COPY ~%MOD_FOLDER%/wav/oh96~ ~override~
+COPY ~%MOD_FOLDER%/wav/zb~ ~override~
 
 /* cutscene to transfer to OH8000 */
 COMPILE ~%MOD_FOLDER%/test/podstr.baf~
