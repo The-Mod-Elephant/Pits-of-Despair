@@ -1,10 +1,3 @@
-// creator  : weidu (version 24900)
-// argument : OHBTARTL.DLG
-// game     : ..
-// source   : ../DATA/BLACKPITS.BIF
-// dialog   : ..\lang\en_us\dialog.tlk
-// dialogF  : (none)
-
 BEGIN ~OHBTARTL~
 
 IF ~  False()
@@ -456,7 +449,7 @@ Global("OHB_LAST_BATTLE","GLOBAL",0)
 END
 
 IF ~~ THEN BEGIN 47
-  SAY @3251 /* Will you be fighting our latest offering, or will you attempt to fight one of your previous battles again? */
+  SAY @3251 /* Will you be fighting our latest offering? */
   IF ~  Global("OHB_LAST_BATTLE","GLOBAL",0)
 ~ THEN REPLY @3252 /* I'd like to fight my next battle. */ DO ~SetCutSceneLite(TRUE)
 SetGlobal("OHB_START_BATTLE","GLOBAL",1)
@@ -590,12 +583,15 @@ SetGlobal("OHB_404","GLOBAL",1)
 SetGlobal("OHB_ARENA","GLOBAL",1)
 SetGlobal("OHB_INTERVIEW","GLOBAL",1)
 ~ EXIT
-  IF ~  OR(2)
-Global("OHB_DEBUG","GLOBAL",1)
-GlobalGT("OHB_LAST_BATTLE","GLOBAL",0)
+  IF ~False()// This is always FALSE
+  // OR(2)
+  //   Global("OHB_DEBUG","GLOBAL",1)
+  //   GlobalGT("OHB_LAST_BATTLE","GLOBAL",0)
 ~ THEN REPLY @3253 /* Let me fight a previous battle again. */ GOTO 48
   IF ~~ THEN REPLY @3254 /* Actually, never mind—I shall return. */ EXIT
 END
+
+/* START OF DISABLED BLOCK */
 
 IF ~~ THEN BEGIN 48
   SAY @3255 /* Very well. From which tier will you select your battle? */
@@ -776,6 +772,8 @@ SetGlobal("OHB_ARENA","GLOBAL",1)
 ~ EXIT
   IF ~~ THEN REPLY @3286 /* Now that I think about it, no. I'll come back later. */ EXIT
 END
+
+/* END OF DISABLED BLOCK */
 
 IF ~~ THEN BEGIN 53
   SAY @3287 /* Debug mode is now on. */
