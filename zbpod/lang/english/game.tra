@@ -138,6 +138,31 @@ Proficiency Type: Bastard Sword
 Type: One-handed
 Requires:
  Strength 12
+ 
+Weight: 10~
+
+@10042 = ~Profane +6~
+@10043 = ~Profane +6 placeholder
+
+
+STATISTICS:
+
+Equipped abilities:
+– 50% Acid Resistance
+
+Combat abilities:
+– Every hit has a 15% has a chance of releasing more acid, causing 2d8 extra acid damage or half on a successful save vs. breath
+– Acidic poison: Critical hits inject poison into the bloodstream of the victim, causing 1 poison damage per second for 24 seconds if a Save vs. Death is failed, causing 6 more poison damage instantly with no save allowed
+
+THAC0: +6
+Damage: 2d4+6, +2 (acid), +2 (poison)
+Damage type: Slashing
+Speed Factor: 1
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ Strength 12
+
 Weight: 10~
 
 @10050 = ~Phantasmal Fang +4~
