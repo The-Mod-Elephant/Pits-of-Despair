@@ -1,8 +1,8 @@
-/* 
-  cutscene where nephetel and the vampire meet in the sewers  
+/*
+  cutscene where nephetel and the vampire meet in the sewers
   we'll need to add 'playsound' for each line once we have the VO lines
   right now we only have the one vampire sound
-  ideally played AFTER the player has explored the sewers but yolo 
+  ideally played AFTER the player has explored the sewers but yolo
   fires AFTER nephetel / mysterious messenger gives charname the note */
 
 IF
@@ -11,7 +11,7 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneID(Player1) /* who performs the action */
-		/* actions start here */ 
+		/* actions start here */
 		SetGlobal("zbnephcutscene","GLOBAL",1) /* we don't want the cutscene to repeat */
 		Wait(2)
 		DisplayStringHead(Player1,@1800013)
@@ -21,20 +21,22 @@ THEN
 		FadeToColor([50.0],0)
 		Wait(2)
 		StorePartyLocations()
-		LeaveAreaLUA("zb0701","",[2034.873],NW) /* carries player over */ 
-		ActionOverride(Player2,LeaveAreaLUA("zb0701","",[2034.873],NW))  
-		ActionOverride(Player3,LeaveAreaLUA("zb0701","",[2034.873],NW))  
-		ActionOverride(Player4,LeaveAreaLUA("zb0701","",[2034.873],NW))  
-		ActionOverride(Player5,LeaveAreaLUA("zb0701","",[2034.873],NW))  
-		ActionOverride(Player6,LeaveAreaLUA("zb0701","",[2034.873],NW))  /* carries party over, they have to be out of sight */
-		ActionOverride(Player1,ApplySpell(Player1,WIZARD_INVISIBILITY))
-		ActionOverride(Player2,ApplySpell(Player2,WIZARD_INVISIBILITY))
-		ActionOverride(Player3,ApplySpell(Player3,WIZARD_INVISIBILITY))
-		ActionOverride(Player4,ApplySpell(Player4,WIZARD_INVISIBILITY))
-		ActionOverride(Player5,ApplySpell(Player5,WIZARD_INVISIBILITY))
-		ActionOverride(Player6,ApplySpell(Player6,WIZARD_INVISIBILITY))
-		CreateCreature("zspdnf16",[1560.680],NE)  /* spawns in nephetel */ 
-		CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */ 
+		LeaveAreaLUA("ZB0701","",[1625.480],NW) /* carries player over */
+		ActionOverride(Player2,LeaveAreaLUA("ZB0701","",[2034.873],NW))
+		ActionOverride(Player3,LeaveAreaLUA("ZB0701","",[2034.873],NW))
+		ActionOverride(Player4,LeaveAreaLUA("ZB0701","",[2034.873],NW))
+		ActionOverride(Player5,LeaveAreaLUA("ZB0701","",[2034.873],NW))
+		ActionOverride(Player6,LeaveAreaLUA("ZB0701","",[2034.873],NW))  /* carries party over, they have to be out of sight */
+		ApplySpell(Player1,WIZARD_INVISIBILITY)
+		ApplySpell(Player2,WIZARD_INVISIBILITY)
+		ApplySpell(Player3,WIZARD_INVISIBILITY)
+		ApplySpell(Player4,WIZARD_INVISIBILITY)
+		ApplySpell(Player5,WIZARD_INVISIBILITY)
+		ApplySpell(Player6,WIZARD_INVISIBILITY)
+		CreateCreature("zspdnf16",[1560.680],NE)  /* spawns in nephetel */
+		CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */
+		Explore()
+		MoveViewObject("zspdnf16",INSTANT)
 		SetAreaScript("zbnephsk",OVERRIDE)
 		SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",1)
 		SetCutSceneBreakable(TRUE)
@@ -44,50 +46,50 @@ THEN
 		ActionOverride("zspdnf16",FaceObject("zbvamp"))
 		ActionOverride("zbvamp",FaceObject("zspdnf16"))
 		Wait(3)
-		DisplayStringHead("zbvamp",@1800000)  /* ~Have you found any information about the book?~ */ 
+		DisplayStringHead("zbvamp",@1800000)  /* ~Have you found any information about the book?~ */
 		Wait(5)
-		DisplayStringHead("zspdnf16",@1800001)  /* ~No. All anyone can talk about is this Hero of Baldur’s Gate.~ */ 
+		DisplayStringHead("zspdnf16",@1800001)  /* ~No. All anyone can talk about is this Hero of Baldur’s Gate.~ */
 		Wait(5)
-		DisplayStringHead("zspdnf16",@1800002) /* ~Every tavern or noble house I scout there is someone who is saying they saved this or defeated that.~ */ 
+		DisplayStringHead("zspdnf16",@1800002) /* ~Every tavern or noble house I scout there is someone who is saying they saved this or defeated that.~ */
 		Wait(5)
-		DisplayStringHead("zspdnf16",@1800003) /* ~Quite annoying.~ */ 
+		DisplayStringHead("zspdnf16",@1800003) /* ~Quite annoying.~ */
 		Wait(5)
-		ActionOverride("zbvamp",MoveToPoint([1670.600])) /* pacing north */ 
+		ActionOverride("zbvamp",MoveToPoint([1670.600])) /* pacing north */
 		Wait(3)
-		ActionOverride("zbvamp",MoveToPoint([1670.752])) /* pacing south */ 
+		ActionOverride("zbvamp",MoveToPoint([1670.752])) /* pacing south */
 		Wait(3)
-		DisplayStringHead("zbvamp",@1800004) /* ~Who are they? What do you know about them?~ */ 
+		DisplayStringHead("zbvamp",@1800004) /* ~Who are they? What do you know about them?~ */
 		Wait(5)
-		DisplayStringHead("zspdnf16",@1800005) /* ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~ */ 
+		DisplayStringHead("zspdnf16",@1800005) /* ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~ */
 		Wait(5)
-		ActionOverride("zbvamp",MoveToPoint([1670.680])) /* pacing back to usual spot */ 
+		ActionOverride("zbvamp",MoveToPoint([1670.680])) /* pacing back to usual spot */
 		ActionOverride("zbvamp",FaceObject("zspdnf16"))
-		DisplayStringHead("zbvamp",@1800006) /* ~Is it anything like the weapon in the Pits?~ */ 
+		DisplayStringHead("zbvamp",@1800006) /* ~Is it anything like the weapon in the Pits?~ */
 		Wait(5)
-		ActionOverride("zspdnf16",Face(W)) /* nephetel faces away */  
+		ActionOverride("zspdnf16",Face(W)) /* nephetel faces away */
 		Wait(2)
-		DisplayStringHead("zspdnf16",@1800007) /* ~No, not like Enegar. They are free of the Cult and choose of their own free will.~ */ 
+		DisplayStringHead("zspdnf16",@1800007) /* ~No, not like Enegar. They are free of the Cult and choose of their own free will.~ */
 		Wait(5)
-		ActionOverride("zspdnf16",FaceObject("zbvamp")) /* she turns back */ 
+		ActionOverride("zspdnf16",FaceObject("zbvamp")) /* she turns back */
 		Wait(2)
-		DisplayStringHead("zspdnf16",@1800008) /* ~No one has spoken as to why, but I will investigate.~ */ 
+		DisplayStringHead("zspdnf16",@1800008) /* ~No one has spoken as to why, but I will investigate.~ */
 		Wait(5)
-		ActionOverride("zbvamp",SwingOnce()) /* quick attack animation */ 
+		ActionOverride("zbvamp",SwingOnce()) /* quick attack animation */
 		Wait(2)
-		DisplayStringHead("zbvamp",@1800009) /* ~Good. Good. I know you will find the Book.~ */ 
+		DisplayStringHead("zbvamp",@1800009) /* ~Good. Good. I know you will find the Book.~ */
 		Wait(5)
-		DisplayStringHead("zbvamp",@1800010) /* ~Our Master will be very… very pleased, he has assured me.~ */ 
+		DisplayStringHead("zbvamp",@1800010) /* ~Our Master will be very… very pleased, he has assured me.~ */
 		Wait(5)
-		DisplayStringHead("zbvamp",@1800011) /* ~I expect a full report on this 'Hero' when next we meet.~ */ 
-		PlaySound("VAMPFX07") /* plays the vampire sound */ 
+		DisplayStringHead("zbvamp",@1800011) /* ~I expect a full report on this 'Hero' when next we meet.~ */
+		PlaySound("VAMPFX07") /* plays the vampire sound */
 		Wait(5)
-		ActionOverride("zspdnf16",MoveToPoint([1560.1069])) /* neph moving south */ 
+		ActionOverride("zspdnf16",MoveToPoint([1560.1069])) /* neph moving south */
 		Wait(2)
 		ActionOverride("zbvamp",FaceObject("zspdnf16"))
 		Wait(2)
 		ActionOverride("zspdnf16",FaceObject("zbvamp"))
 		Wait(2)
-		DisplayStringHead("zspdnf16",@1800012) /* ~Of course, Spymaster.~ */ 
+		DisplayStringHead("zspdnf16",@1800012) /* ~Of course, Spymaster.~ */
 		Wait(5)
 		FadeToColor([50.0],0)
 		SetCutSceneBreakable(FALSE)
@@ -98,16 +100,16 @@ THEN
 		ActionOverride("zbvamp",DestroySelf())
 		Wait(1)
 		RestorePartyLocations()
-		ActionOverride(Player1,ApplySpell(Player1,FORCE_DISPEL_MAGIC))
-		ActionOverride(Player2,ApplySpell(Player2,FORCE_DISPEL_MAGIC))
-		ActionOverride(Player3,ApplySpell(Player3,FORCE_DISPEL_MAGIC))
-		ActionOverride(Player4,ApplySpell(Player4,FORCE_DISPEL_MAGIC))
-		ActionOverride(Player5,ApplySpell(Player5,FORCE_DISPEL_MAGIC))
-		ActionOverride(Player6,ApplySpell(Player6,FORCE_DISPEL_MAGIC))
+		ApplySpellRES("BPDISPEL",Player1)  // No such index
+		ApplySpellRES("BPDISPEL",Player2)  // No such index
+		ApplySpellRES("BPDISPEL",Player3)  // No such index
+		ApplySpellRES("BPDISPEL",Player4)  // No such index
+		ApplySpellRES("BPDISPEL",Player5)  // No such index
+		ApplySpellRES("BPDISPEL",Player6)  // No such index
 		// Actions end here
 		EndCutSceneMode() /* exits the the StartCutSceneMode() action */
 		Wait(1)
 		FadeFromColor([50.0],0)
 		AddJournalEntry(@800001,QUEST) /* add journal entry, moved over from d file */
-		GiveItemCreate("zbpdnote",Player1,1,0,0) /* give player the note, moved over from d file */ 
+		GiveItemCreate("zbpdnote",Player1,1,0,0) /* give player the note, moved over from d file */
 END

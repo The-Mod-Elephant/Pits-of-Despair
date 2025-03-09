@@ -39,14 +39,77 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Add new areas
-COPY ~%MOD_FOLDER%/area/zb0700~ ~override~
-APPEND ~mastarea.2da~
-~zb0700     value      ~
-UNLESS ~zb0700~
-COPY ~%MOD_FOLDER%/area/zb0701~ ~override~
-APPEND ~mastarea.2da~
-~zb0701     value      ~
-UNLESS ~zb0701~
+// Script taken from IWD1_EET, for cleaning the area
+COPY_EXISTING ~AR0701.ARE~ ~override/ZB0701.ARE~
+READ_LONG   0x54 actor_off
+READ_SHORT  0x58 actor_num
+PATCH_IF (~%actor_num%~ > 0) BEGIN
+  WRITE_SHORT 0x58 0
+  READ_LONG   0x5c triggers_off
+  PATCH_IF (~%triggers_off%~ >= ~%actor_off%~) BEGIN
+    WRITE_LONG 0x5c ~%triggers_off%~ - ~%actor_num%~ * 0x110
+  END
+  READ_LONG   0x60 spawn_off
+  PATCH_IF (~%spawn_off%~ >= ~%actor_off%~) BEGIN
+    WRITE_LONG 0x60 ~%spawn_off%~ - ~%actor_num%~ * 0x110
+  END
+  READ_LONG   0x68 entrance_off
+  PATCH_IF (~%entrance_off%~ >= ~%actor_off%~) BEGIN
+    WRITE_LONG 0x68 ~%entrance_off%~ - ~%actor_num%~ * 0x110
+  END
+  READ_LONG   0x70 contain_off
+  PATCH_IF (~%contain_off%~ >= ~%actor_off%~) BEGIN
+    WRITE_LONG 0x70 ~%contain_off%~ - ~%actor_num%~ * 0x110
+  END
+  READ_LONG   0x78 item_off
+  PATCH_IF (~%item_off%~ >= ~%actor_off%~) BEGIN
+    WRITE_LONG 0x78 ~%item_off%~ - ~%actor_num%~ * 0x110
+  END
+  READ_LONG   0x7c vert_off
+  PATCH_IF (~%vert_off%~ >= ~%actor_off%~) BEGIN
+    WRITE_LONG 0x7c ~%vert_off%~ - ~%actor_num%~ * 0x110
+  END
+  READ_LONG   0x84 ambi_off
+  PATCH_IF (~%ambi_off%~ >= ~%actor_off%~) BEGIN
+    WRITE_LONG 0x84 ~%ambi_off%~ - ~%actor_num%~ * 0x110
+  END
+  READ_LONG   0x88 var_off
+  PATCH_IF (~%var_off%~ >= ~%actor_off%~) BEGIN
+    WRITE_LONG 0x88 ~%var_off%~ - ~%actor_num%~ * 0x110
+  END
+  READ_LONG   0xa0 explore_off
+  PATCH_IF (~%explore_off%~ >= ~%actor_off%~) BEGIN
+    WRITE_LONG 0xa0 ~%explore_off%~ - ~%actor_num%~ * 0x110
+  END
+  READ_LONG   0xa8 door_off
+  PATCH_IF (~%door_off%~ >= ~%actor_off%~) BEGIN
+    WRITE_LONG 0xa8 ~%door_off%~ - ~%actor_num%~ * 0x110
+  END
+  READ_LONG   0xb0 anim_off
+  PATCH_IF (~%anim_off%~ >= ~%actor_off%~) BEGIN
+    WRITE_LONG 0xb0 ~%anim_off%~ - ~%actor_num%~ * 0x110
+  END
+  READ_LONG   0xb8 tiled_off
+  PATCH_IF (~%tiled_off%~ >= ~%actor_off%~) BEGIN
+    WRITE_LONG 0xb8 ~%tiled_off%~ - ~%actor_num%~ * 0x110
+  END
+  READ_LONG   0xbc song_off
+  PATCH_IF (~%song_off%~ >= ~%actor_off%~) BEGIN
+    WRITE_LONG 0xbc ~%song_off%~ - ~%actor_num%~ * 0x110
+  END
+  READ_LONG   0xc0 rest_enc_off
+  PATCH_IF (~%rest_enc_off%~ >= ~%actor_off%~) BEGIN
+    WRITE_LONG 0xc0 ~%rest_enc_off%~ - ~%actor_num%~ * 0x110
+  END
+  READ_LONG   0xc4 auto_map_off
+  PATCH_IF (~%auto_map_off%~ >= ~%actor_off%~) BEGIN
+    WRITE_LONG 0xc4 ~%auto_map_off%~ - ~%actor_num%~ * 0x110
+  END
+  DELETE_BYTES ~%actor_off%~ ~%actor_num%~ * 0x110
+END
+
+APPEND ~MASTAREA.2da~ ~ZB0701     value      ~
+UNLESS ~ZB0701~
 
 // Copy spells and movies
 COPY ~%MOD_FOLDER%/spells/bp2~ ~override~
@@ -116,6 +179,7 @@ COMPILE ~%MOD_FOLDER%/test/podstr.baf~
 
 /* add messenger timer */
 EXTEND_BOTTOM ~BALDUR.bcs~ ~%MOD_FOLDER%/test/zbmes.baf~
+
 /* add messenger script */
 COMPILE ~%MOD_FOLDER%/test/zbme2.baf~
 /* add messenger creature */
