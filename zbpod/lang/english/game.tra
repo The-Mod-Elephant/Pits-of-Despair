@@ -361,6 +361,90 @@ Weight: 3~
 @10190 = ~Jack of all trades~
 @10191 = ~Jack of all trades description placeholder~
 
+// Imported BG1 Items
+@11000 = ~BG Imported Items~
+@11001 = ~Circlet~
+@11002 = ~Circlet of the Archmagi~
+@11003 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
+
+Weight: 1~
+@11004 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
+
+Weight: 1~
+
+@11005 = ~Girdle~
+@11006 = ~Big-Fisted Belt~
+@11007 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+
+STATISTICS:
+
+Weight: 2~
+@11008 = ~Identified description	Cursed Girdle of Hill Giant Strength: Big-Fisted Belt
+A fist-shaped brass buckle secures this belt of thick elk hide. The old bloodstains on the leather hint at unspeakable carnage, but the misspelled graffiti scratched into its surface suggests that the girdle's former owners were none too bright.
+
+STATISTICS:
+
+Equipped abilities:
+– Strength: 19
+– Intelligence: 6
+– May only be removed by a Remove Curse spell
+
+Weight: 2~
+
+@11009 = ~Cloak~
+@11010 = ~Relair's Mistake~
+@11011 = ~The cloak can be made in every possible shape with just about every type of fabric. The most common forms are a circular piece of fabric with a hole in the center for the head, and fabric draped from neck, connected by a chain, brooch, cord, or pins.
+
+STATISTICS:
+
+Weight: 3~
+@11012 = ~Cloak of the Wolf: Relair's Mistake 
+A great amount of irony surrounds the creation of this magical cloak. Relair was a mage who overestimated the amount of control he had over magic, and in the course of creating this garment, he apparently inflicted lycanthropy upon himself. The wearer can change form whenever <PRO_HESHE> wishes. Relair was not so lucky.
+
+STATISTICS:
+
+Equipped abilities:
+– Polymorph into a wolf at will
+  Duration: 2 turns
+
+Weight: 3~
+
+@11013 = ~Blood-filled Goblet~
+@11014 = ~Durlag's Goblet~
+@11015 = ~Dark and rancid blood lurks within this pewter goblet. The lip is black and caked where it appears others have tasted from it. Scratched deep into the pewter are the words "Taste My Fear."
+
+STATISTICS:
+
+Weight: 2~
+@11016 = ~Scratched deep into the side of this cursed goblet are the words "Taste My Fear." It is said that one can regain lost health from the dark blood that lurks within its pewter depths. This comes with a price, however, as all who drink of the blood become cursed with the fear it brings. This effect will last up to 12 hours or until dispelled.
+
+STATISTICS:
+
+Special: 
+– Fully heals the imbiber
+– Causes imbiber to run at the first sign of trouble
+
+Duration: 12 hours
+
+Weight: 2~
+
+@11017 = ~Ring~
+@11018 = ~Evermemory~
+@11019 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+
+STATISTICS:
+
+Weight: 0~
+@11020 = ~Ring of Wizardry: Evermemory
+Long ago, a grand wizard from Amn was rumored to have defied Mystra's limitations on the magical arts. Legends spoke of this wizard being able to cast spells without the limitation of memorization. In the end it was found that his powers stemmed from the several magical rings that he had made for himself. His proclaimed "everlasting memory" was a hoax, though his rings continue to be one of the most sought after items in the realms.
+
+STATISTICS:
+
+Equipped abilities:
+– Can memorize double the amount of 1st-level wizard spells
+
+Weight: 0~
+
 // igneous oil
 @40000 = ~Igneous Oil~
 @40001 = ~This oil will make your weapons inflict fire damage when coated with it. Since it is a natural substance, it won't be stopped by Magic Resistance.
