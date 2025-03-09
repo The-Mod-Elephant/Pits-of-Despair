@@ -7,5 +7,14 @@
 *tph text eol=lf
 *tra text eol=lf
 *ini text eol=lf
-*INI text eol=lf
+*are binary
+*bam binary
+*cre binary
+*itm binary
+*png binary
+*pro binary
+*spl binary
+*vvc binary
+*wav binary
+*wbm binary
 *wed binary

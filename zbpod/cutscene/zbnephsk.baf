@@ -4,12 +4,12 @@ IF
 THEN
 	RESPONSE #100
 		SetCutSceneBreakable(FALSE)
-		ActionOverride(Player1,ApplySpell(Player1,FORCE_DISPEL_MAGIC))
-		ActionOverride(Player2,ApplySpell(Player2,FORCE_DISPEL_MAGIC))
-		ActionOverride(Player3,ApplySpell(Player3,FORCE_DISPEL_MAGIC))
-		ActionOverride(Player4,ApplySpell(Player4,FORCE_DISPEL_MAGIC))
-		ActionOverride(Player5,ApplySpell(Player5,FORCE_DISPEL_MAGIC))
-		ActionOverride(Player6,ApplySpell(Player6,FORCE_DISPEL_MAGIC))
+		ApplySpellRES("BPDISPEL",Player1)  // No such index
+		ApplySpellRES("BPDISPEL",Player2)  // No such index
+		ApplySpellRES("BPDISPEL",Player3)  // No such index
+		ApplySpellRES("BPDISPEL",Player4)  // No such index
+		ApplySpellRES("BPDISPEL",Player5)  // No such index
+		ApplySpellRES("BPDISPEL",Player6)  // No such index
 		FadeToColor([50.0],0)
 		ActionOverride("zspdnf16",DestroySelf())
 		Wait(1)
