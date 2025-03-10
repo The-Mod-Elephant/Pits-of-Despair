@@ -334,10 +334,34 @@ A work of considerable ambition, but ultimately, one that may leave you feeling 
 @10131 = ~Luxurious Lizardskin Leaps description placeholder~
 
 @10140 = ~Blazing Bull~
-@10141 = ~Blazing Bull description placeholder~
+@10141 = ~Blazing Bull description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Physical damage resistance: +5%
+– Protects against critical hits
+– Gore attack: Once per round, the wearer may gore an enemy for 1d6 piercing plus 2 fire damage. Barbarians inflict double damage with this attack
+
+Weight: 2~
 
 @10150 = ~Gruumsh's Totem~
-@10151 = ~Gruumsh's Totem description placeholder~
+@10151 = ~Among the Ashmaw clan—a powerful but relatively secretive clan of orcs that once lived amongst the Sunset Mountains—the most devout servants of Gruumsh were not allowed to fall into obscurity. Death was seen as merely a threshold, and the greatest of their warriors, shamans, and chieftains were not left to decay in the frozen reaches of their homeland. Instead, their heads were severed in grizzly rituals, dried in the smoke of pinewood fires, and then serenaded in the name of Grummsh.
+
+Fashioned into easily carryable totems by shamanic magic, they were oft brought into battle by the fiercest of the Ashmaw, who sought both the wisdom and fury of their ancestors. Clutching the totem was said to awaken the rage of the dead, flooding the wielder with visions of fury and bloodshed, goading them into a battle frenzy.
+
+The shrunken head that dangles from this beaded leather cord bears the markings of a battle-scarred warrior, a singular preserved eye appearing to watch those that hold it, and his mouth caught in a voracious battle-cry.
+
+STATISTICS:
+
+Charge ability:
+– Berserker Rage once per day
+  Special: The wielder is enraged as per the Berserker Rage skill. Half-orcs gain an additional +1 bonus to attack damage
+  Area of Effect: Self
+  Duration: 8 rounds
+
+Weight: 2~
 
 @10160 = ~Resplendent Ring~
 @10161 = ~Resplendent Ring description placeholder~
@@ -348,9 +372,9 @@ A work of considerable ambition, but ultimately, one that may leave you feeling 
 STATISTICS:
 
 Equipped abilities:
-- Charisma: +1
-- Constitution: +1
-- Luck: +1
+– Charisma: +1
+– Constitution: +1
+– Luck: +1
 
 Weight: 3~
 @10172 = ~Horseshoe Amulet~
