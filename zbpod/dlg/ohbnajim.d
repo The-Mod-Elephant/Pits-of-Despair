@@ -45,7 +45,11 @@ END
 
 IF ~~ THEN BEGIN 5
   SAY @2163 /* <CHARNAME>! They are attempting to capture you, battle your way to freedom or become a captive once again! */
-  IF ~~ THEN REPLY @2164 /* That will never happen! */ EXTERN ~OHBJOKER~ 9
+  IF ~~ THEN REPLY @2164 /* That will never happen! */ DO ~SetGlobal("ohb_najim_fight_or_not","oh8000",3)
+ClearAllActions()
+StartCutSceneMode()
+StartCutScene("ohbcut51")
+~ EXIT
   IF ~~ THEN REPLY @2165 /* Is that what they want? Very well. I'll go with you... for now. */ DO ~SetGlobal("ohb_najim_fight_or_not","oh8000",3)
 ClearAllActions()
 StartCutSceneMode()
