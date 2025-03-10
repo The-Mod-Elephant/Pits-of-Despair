@@ -7,6 +7,9 @@ AUTO_EVAL_STRINGS
 
 AUTO_TRA ~%MOD_FOLDER%/lang/%s~
 ALWAYS
+  // Workspace
+  OUTER_SPRINT workspace "weidu_external/zbpod/workspace"
+  MKDIR "%workspace%"
   INCLUDE ~%MOD_FOLDER%/lib/a7#add_kit_ex.tpa~
   INCLUDE ~%MOD_FOLDER%/lib/alter_script.tpa~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
@@ -180,7 +183,11 @@ COPY ~%MOD_FOLDER%/wav/zb~ ~override~
 COMPILE ~%MOD_FOLDER%/test/podstr.baf~
 
 /* add messenger timer */
-EXTEND_BOTTOM ~BALDUR.bcs~ ~%MOD_FOLDER%/test/zbmes.baf~
+COPY_EXISTING ~BALDUR.bcs~ ~%workspace%/~
+ACTION_IF NOT FILE_CONTAINS ~%workspace%/BALDUR.bcs~ ~ZBPodMessengerSpawned~
+THEN BEGIN
+  EXTEND_BOTTOM ~BALDUR.bcs~ ~%MOD_FOLDER%/scripts/zbmes.baf~
+END
 
 /* add messenger script */
 COMPILE ~%MOD_FOLDER%/test/zbme2.baf~
