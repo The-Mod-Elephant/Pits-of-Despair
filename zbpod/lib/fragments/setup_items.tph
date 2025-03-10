@@ -211,6 +211,15 @@ COPY_EXISTING ~zbpages.itm~ ~override~
     SAY NAME2 @18005
     SAY IDENTIFIED_DESC @18006
 
+//////// Viridian Masks \\\\\\\\
+COPY ~%MOD_FOLDER%/items/viridianmask_lord~ ~override~
+COPY_EXISTING ~zbvirida.itm~ ~override~
+    SAY NAME2 @11030
+    SAY IDENTIFIED_DESC @111031
+COPY_EXISTING ~zbviridb.itm~ ~override~
+    SAY NAME2 @11032
+    SAY IDENTIFIED_DESC @11033
+
 // Oils from ZS_WeaponOils from RoyalProtector
 COPY ~%MOD_FOLDER%/items/zs_weaponoils/~ ~override~
 COPY_EXISTING ~zswofr01.itm~ ~override~

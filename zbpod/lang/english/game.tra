@@ -138,7 +138,7 @@ Proficiency Type: Bastard Sword
 Type: One-handed
 Requires:
  Strength 12
- 
+
 Weight: 10~
 
 @10042 = ~Profane +6~
@@ -374,7 +374,7 @@ Weight: 1~
 
 @11005 = ~Girdle~
 @11006 = ~Big-Fisted Belt~
-@11007 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+@11007 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like.
 
 STATISTICS:
 
@@ -398,7 +398,7 @@ Weight: 2~
 STATISTICS:
 
 Weight: 3~
-@11012 = ~Cloak of the Wolf: Relair's Mistake 
+@11012 = ~Cloak of the Wolf: Relair's Mistake
 A great amount of irony surrounds the creation of this magical cloak. Relair was a mage who overestimated the amount of control he had over magic, and in the course of creating this garment, he apparently inflicted lycanthropy upon himself. The wearer can change form whenever <PRO_HESHE> wishes. Relair was not so lucky.
 
 STATISTICS:
@@ -420,7 +420,7 @@ Weight: 2~
 
 STATISTICS:
 
-Special: 
+Special:
 – Fully heals the imbiber
 – Causes imbiber to run at the first sign of trouble
 
@@ -444,6 +444,30 @@ Equipped abilities:
 – Can memorize double the amount of 1st-level wizard spells
 
 Weight: 0~
+
+@11030 = ~Viridian Mask~
+@11031 = ~Viridian Mask description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Immunity to charm and stun
+
+Weight: 1~
+
+@11032 = ~The Viridian Lord~
+@11033 = ~The Viridian Lord description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1, +3 vs. crushing
+– Charisma: +2
+– Immunity to charm and stun
+– Protects against critical hits
+
+Weight: 1~
 
 // igneous oil
 @40000 = ~Igneous Oil~
