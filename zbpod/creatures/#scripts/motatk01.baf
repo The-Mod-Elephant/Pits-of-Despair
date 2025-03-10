@@ -1,0 +1,333 @@
+/////////////////////////////////////////////////////////////////////
+// Battle Prep
+/////////////////////////////////////////////////////////////////////
+// Levels 20+
+IF
+  CheckStatGT(Myself,19,LEVEL)
+  Allegiance(Myself,ENEMY)
+  Global("MO_AssignInvisPotion","LOCALS",0)
+THEN 
+  RESPONSE #100
+    GiveItemCreate("potn10",Myself,5,0,0)   // potion of invisibility
+    SetGlobal("MO_AssignInvisPotion","LOCALS",1)
+    Continue()
+END
+
+// Levels 16-19
+IF
+  CheckStatGT(Myself,15,LEVEL)
+  CheckStatLT(Myself,20,LEVEL)
+  Allegiance(Myself,ENEMY)
+  Global("MO_AssignInvisPotion","LOCALS",0)
+THEN 
+  RESPONSE #100
+    GiveItemCreate("potn10",Myself,4,0,0)   // potion of invisibility
+    SetGlobal("MO_AssignInvisPotion","LOCALS",1)
+    Continue()
+END
+
+// Levels 11-15
+IF
+  CheckStatGT(Myself,10,LEVEL)
+  CheckStatLT(Myself,16,LEVEL)
+  Allegiance(Myself,ENEMY)
+  Global("MO_AssignInvisPotion","LOCALS",0)
+THEN 
+  RESPONSE #100
+    GiveItemCreate("potn10",Myself,3,0,0)   // potion of invisibility
+    SetGlobal("MO_AssignInvisPotion","LOCALS",1)
+    Continue()
+END
+
+// Levels 5-10
+IF
+  CheckStatGT(Myself,4,LEVEL)
+  CheckStatLT(Myself,11,LEVEL)
+  Allegiance(Myself,ENEMY)
+  Global("MO_AssignInvisPotion","LOCALS",0)
+THEN 
+  RESPONSE #100
+    GiveItemCreate("potn10",Myself,2,0,0)   // potion of invisibility
+    SetGlobal("MO_AssignInvisPotion","LOCALS",1)
+    Continue()
+END
+
+// Levels 3-4
+IF
+  CheckStatGT(Myself,2,LEVEL)
+  CheckStatLT(Myself,5,LEVEL)
+  Allegiance(Myself,ENEMY)
+  Global("MO_AssignInvisPotion","LOCALS",0)
+THEN 
+  RESPONSE #100
+    GiveItemCreate("potn10",Myself,1,0,0)   // potion of invisibility
+    SetGlobal("MO_AssignInvisPotion","LOCALS",1)
+    Continue()
+END
+
+IF
+  Detect(NearestEnemyOf(Myself))
+  Global("MO_ThiefPrep","LOCALS",0)
+  !Kit(LastSeenBy(Myself),ASSASIN)
+  DifficultyGT(HARD)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_ThiefPrep","LOCALS",1)
+    ApplySpell(Myself,WIZARD_INVISIBILITY)
+    EquipMostDamagingMelee()
+    Hide()
+END
+
+IF
+  Detect(NearestEnemyOf(Myself))
+  Global("MO_ThiefPrep","LOCALS",0)
+  Kit(LastSeenBy(Myself),ASSASIN)
+  DifficultyGT(HARD)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_ThiefPrep","LOCALS",1)
+    ApplySpell(Myself,WIZARD_INVISIBILITY)
+    ReallyForceSpell(Myself,ASSASSIN_POISON)  // SPCL423.SPL (Poison Weapon)
+    EquipMostDamagingMelee()
+    Hide()
+END
+
+IF
+  Detect(NearestEnemyOf(Myself))
+  Global("MO_ThiefPrep","LOCALS",0)
+  DifficultyLT(HARDEST)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_ThiefPrep","LOCALS",1)
+    ApplySpell(Myself,WIZARD_INVISIBILITY)  
+    EquipMostDamagingMelee()
+    Hide()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Thief Detect Illusion
+/////////////////////////////////////////////////////////////////////
+IF
+    Allegiance(Myself,ENEMY)
+    Detect([PC])
+    !See(LastSeenBy(Myself))
+    Delay(3)
+THEN
+    RESPONSE #70
+        DisplayStringHead(Myself,@18007)  // Detects Illusion
+        ReallyForceSpell(LastSeenBy(Myself),THIEF_DETECT_ILLUSION)  // SPIN805.SPL (No such index)
+    RESPONSE #30
+        DisplayStringHead(Myself,@18008)  // Fails to detect illusions
+END
+
+/////////////////////////////////////////////////////////////////////
+// Get Closer to Attack
+/////////////////////////////////////////////////////////////////////
+IF
+  Allegiance(Myself,ENEMY)
+  OR(2)
+    StateCheck(Myself,STATE_INVISIBLE)
+    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  !Range(NearestEnemyOf(Myself),4)
+THEN
+  RESPONSE #100
+    MoveToObject(NearestEnemyOf(Myself)) // move in to position
+END
+
+/////////////////////////////////////////////////////////////////////
+// Backstab Attacks 
+/////////////////////////////////////////////////////////////////////
+IF
+  ActionListEmpty()
+  OR(2)
+    StateCheck(Myself,STATE_INVISIBLE)
+    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  See([GOODCUTOFF.0.0.MAGE_ALL])
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),45)
+END
+
+IF
+  ActionListEmpty()
+  OR(2)
+    StateCheck(Myself,STATE_INVISIBLE)
+    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  See([GOODCUTOFF.0.0.DRUID_ALL])
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),45)
+END
+
+IF
+  ActionListEmpty()
+  OR(2)
+    StateCheck(Myself,STATE_INVISIBLE)
+    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  See([GOODCUTOFF.0.0.CLERIC_ALL])
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),45)
+END
+
+IF
+  ActionListEmpty()
+  OR(2)
+    StateCheck(Myself,STATE_INVISIBLE)
+    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  See([GOODCUTOFF.0.0.THIEF_ALL])
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),45)
+END
+
+IF
+  ActionListEmpty()
+  OR(2)
+    StateCheck(Myself,STATE_INVISIBLE)
+    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  See([GOODCUTOFF.0.0.BARD_ALL])
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),45)
+END
+
+IF
+  ActionListEmpty()
+  OR(2)
+    StateCheck(Myself,STATE_INVISIBLE)
+    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  See([GOODCUTOFF.0.0.RANGER_ALL])
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),45)
+END
+
+IF
+  ActionListEmpty()
+  OR(2)
+    StateCheck(Myself,STATE_INVISIBLE)
+    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  See([GOODCUTOFF.0.0.PALADIN_ALL])
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),45)
+END
+
+IF
+  ActionListEmpty()
+  OR(2)
+    StateCheck(Myself,STATE_INVISIBLE)
+    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  See([GOODCUTOFF.0.0.FIGHTER_ALL])
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),45)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Run Away!
+/////////////////////////////////////////////////////////////////////
+IF
+  GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
+  !StateCheck(Myself,STATE_INVISIBLE)
+  !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  HasItem("potn10",Myself)
+THEN
+  RESPONSE #100
+    RunAwayFrom(NearestEnemyOf(Myself),3)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Drink!
+/////////////////////////////////////////////////////////////////////
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
+  !StateCheck(Myself,STATE_INVISIBLE)
+  !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  HasItem("potn10",Myself)
+THEN
+  RESPONSE #100
+    RunAwayFrom(NearestEnemyOf(Myself),3)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    UseItem("potn10",Myself)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_AttackingTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
+  !StateCheck(Myself,STATE_INVISIBLE)
+  !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  !HasItem("potn10",Myself)
+THEN
+  RESPONSE #100
+    Continue()
+END
