@@ -249,6 +249,11 @@ ACTION_FOR_EACH wvrn IN
             WRITE_ASCII 0x280 ~mowvrn0%wvrn%~ #8 // Script Name
 END
 
+// ohb_102 Thief fight
+COPY_EXISTING ~OHBGLA01.cre~ ~override~
+    WRITE_ASCII 0x260 ~motatk01~ #8 // General Script (theif attacks)
+    WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script (generic melee)
+
 COPY ~%MOD_FOLDER%/creatures/brodle~ ~override~
 COPY_EXISTING ~ohbbrodl.cre~ ~override~
     SAY 0x08 @15013
