@@ -200,14 +200,6 @@ THEN BEGIN
   EXTEND_BOTTOM ~BALDUR.bcs~ ~%MOD_FOLDER%/scripts/zbmes.baf~
 END
 
-/* add messenger script */
-COMPILE ~%MOD_FOLDER%/test/zbme2.baf~
-/* add messenger creature */
-COPY ~%MOD_FOLDER%/creatures/messenger/zbmes.cre~ ~override/zbmes.cre~
-SAY NAME1 ~Mysterious Messenger~
-SAY NAME2 ~Mysterious Messenger~
-WRITE_ASCII 0x248 ~zbme2~ #8  // override script
-WRITE_ASCII 0x2cc ~zbmes~  #8  // dialogue file
 
 /* make eshpel conversable */
 OUTER_SET label = RESOLVE_STR_REF(~Converse~)
@@ -216,12 +208,13 @@ APPEND ~ITEMDIAL.2da~
 ~zbeshpeu %label% zbeshpeu~
 UNLESS ~zbeshpeu~
 
+// Nephetel
+INCLUDE ~%MOD_FOLDER%/nephetel/core.tpa~
+
 COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */
 		~%MOD_FOLDER%/test/zbvyan.d~ /* vyantri's new line */
-		~%MOD_FOLDER%/test/zbmes.d~ /* messenger - aka best girl in disguise lines */
 		~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */
 		~%MOD_FOLDER%/test/gaelan.d~ /* add a line to gaelan */
-		~%MOD_FOLDER%/test/zbneph.d~ /* nephetel's base dialogue file */
 		~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
