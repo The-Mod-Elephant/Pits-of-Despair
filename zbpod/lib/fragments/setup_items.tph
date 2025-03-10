@@ -7,7 +7,6 @@ INCLUDE ~zbpod/lib/royalprotector/zs_royalfunctions.tpa~
 
 //////// Angelfist +5 \\\\\\\\
 
-
 // String placements
 COPY ~%MOD_FOLDER%/items/angelfist~ ~override~
 COPY_EXISTING ~zbafistd.itm~ ~override~
