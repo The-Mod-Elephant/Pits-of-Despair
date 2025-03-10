@@ -131,13 +131,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/cutscene~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bp2scripts~
 COMPILE ~%MOD_FOLDER%/ohbvic01~ /* editing the item_roll at the bottom to be zero so we ALWAYS get loot */ /* using EVALUATE BUFFER here means it won't install where going YOLO */
 
-// Add Portrait Icons
-COPY ~%MOD_FOLDER%/spells/picon~ ~override~
-
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@18000) STR_VAR bam_file = "zbantisi" RET icon END
-COPY_EXISTING ~zbpdsim.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR match_opcode = 142 parameter2 = icon END
-
 // bucket's tp2 additions - still need to be approved and tested
 
 /* new journal entries */
@@ -212,22 +205,6 @@ COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */
 		~%MOD_FOLDER%/test/gaelan.d~ /* add a line to gaelan */
 		~%MOD_FOLDER%/test/zbneph.d~ /* nephetel's base dialogue file */
 		~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @20002 DESIGNATED 8 LABEL ~zb_pod_rm_portraits~ // REMOVE PORTRAITS
-REQUIRE_COMPONENT "zbpod.tp2" "2" @30000 // traify later
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-
-COPY_EXISTING ~zbdrclch.cre~ ~override~
-              ~ohbbrodl.cre~ ~override~
-              ~ohbbello.cre~ ~override~
-              ~ohbtartl.cre~ ~override~
-              ~ohbstirv.cre~ ~override~
-              ~ohbwing.cre~ ~override~
-
-	WRITE_ASCII 0x34 ~~ #8
-	WRITE_ASCII 0x3c ~~ #8
-BUT_ONLY
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20003 DESIGNATED 9 LABEL ~zb_keldorn_simp_nephetel_portrait~ // ADD ALT PORTRAITS
