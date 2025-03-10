@@ -215,7 +215,7 @@ COPY_EXISTING ~zbpages.itm~ ~override~
 COPY ~%MOD_FOLDER%/items/viridianmask_lord~ ~override~
 COPY_EXISTING ~zbvirida.itm~ ~override~
     SAY NAME2 @11030
-    SAY IDENTIFIED_DESC @111031
+    SAY IDENTIFIED_DESC @11031
 COPY_EXISTING ~zbviridb.itm~ ~override~
     SAY NAME2 @11032
     SAY IDENTIFIED_DESC @11033
