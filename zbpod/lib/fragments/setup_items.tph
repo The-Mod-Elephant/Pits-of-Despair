@@ -7,7 +7,6 @@ INCLUDE ~zbpod/lib/royalprotector/zs_royalfunctions.tpa~
 
 //////// Angelfist +5 \\\\\\\\
 
-
 // String placements
 COPY ~%MOD_FOLDER%/items/angelfist~ ~override~
 COPY_EXISTING ~zbafistd.itm~ ~override~
@@ -211,6 +210,15 @@ COPY_EXISTING ~zbpages.itm~ ~override~
     SAY NAME2 @18005
     SAY IDENTIFIED_DESC @18006
 
+//////// Viridian Masks \\\\\\\\
+COPY ~%MOD_FOLDER%/items/viridianmask_lord~ ~override~
+COPY_EXISTING ~zbvirida.itm~ ~override~
+    SAY NAME2 @11030
+    SAY IDENTIFIED_DESC @11031
+COPY_EXISTING ~zbviridb.itm~ ~override~
+    SAY NAME2 @11032
+    SAY IDENTIFIED_DESC @11033
+
 // Oils from ZS_WeaponOils from RoyalProtector
 COPY ~%MOD_FOLDER%/items/zs_weaponoils/~ ~override~
 COPY_EXISTING ~zswofr01.itm~ ~override~
@@ -276,98 +284,41 @@ END
 
 //////// Circlet of the Archmagi \\\\\\\\
 COPY ~%MOD_FOLDER%/items/bg1_imported_items/items/band04.itm~ ~override~
-    SAY NAME1 ~Circlet~
-    SAY NAME2 ~Circlet of the Archmagi~
-    SAY UNIDENTIFIED_DESC ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
-
-Weight: 1~
-    SAY IDENTIFIED_DESC ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
-
-Weight: 1~
+    SAY NAME1 @11001
+    SAY NAME2 @11002
+    SAY UNIDENTIFIED_DESC @11003
+    SAY IDENTIFIED_DESC @11004
 BUT_ONLY_IF_IT_CHANGES
 
 
 //////// Big Fisted Belt \\\\\\\\
 COPY ~%MOD_FOLDER%/items/bg1_imported_items/items/belt15.itm~ ~override~
-    SAY NAME1 ~Girdle~
-    SAY NAME2 ~Big-Fisted Belt~
-    SAY UNIDENTIFIED_DESC ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
-
-STATISTICS:
-
-Weight: 2~
-    SAY IDENTIFIED_DESC ~Identified description	Cursed Girdle of Hill Giant Strength: Big-Fisted Belt
-A fist-shaped brass buckle secures this belt of thick elk hide. The old bloodstains on the leather hint at unspeakable carnage, but the misspelled graffiti scratched into its surface suggests that the girdle's former owners were none too bright.
-
-STATISTICS:
-
-Equipped abilities:
-– Strength: 19
-– Intelligence: 6
-– May only be removed by a Remove Curse spell
-
-Weight: 2~
+    SAY NAME1 @11005
+    SAY NAME2 @11006
+    SAY UNIDENTIFIED_DESC @11007
+    SAY IDENTIFIED_DESC @11008
 BUT_ONLY_IF_IT_CHANGES
 
 //////// Relair's Mistake \\\\\\\\
 COPY ~%MOD_FOLDER%/items/bg1_imported_items/items/clck04.itm~ ~override~
-    SAY NAME1 ~Cloak~
-    SAY NAME2 ~Relair's Mistake~
-    SAY UNIDENTIFIED_DESC ~The cloak can be made in every possible shape with just about every type of fabric. The most common forms are a circular piece of fabric with a hole in the center for the head, and fabric draped from neck, connected by a chain, brooch, cord, or pins.
-
-STATISTICS:
-
-Weight: 3~
-    SAY IDENTIFIED_DESC ~Cloak of the Wolf: Relair's Mistake 
-A great amount of irony surrounds the creation of this magical cloak. Relair was a mage who overestimated the amount of control he had over magic, and in the course of creating this garment, he apparently inflicted lycanthropy upon himself. The wearer can change form whenever <PRO_HESHE> wishes. Relair was not so lucky.
-
-STATISTICS:
-
-Equipped abilities:
-– Polymorph into a wolf at will
-  Duration: 2 turns
-
-Weight: 3~
+    SAY NAME1 @11009
+    SAY NAME2 @11010
+    SAY UNIDENTIFIED_DESC @11011
+    SAY IDENTIFIED_DESC @11012
 BUT_ONLY_IF_IT_CHANGES
 
 //////// Durlag's Goblet \\\\\\\\
 COPY ~%MOD_FOLDER%/items/bg1_imported_items/items/misc98.itm~ ~override~
-    SAY NAME1 ~Blood-filled Goblet~
-    SAY NAME2 ~Durlag's Goblet~
-    SAY UNIDENTIFIED_DESC ~Dark and rancid blood lurks within this pewter goblet. The lip is black and caked where it appears others have tasted from it. Scratched deep into the pewter are the words "Taste My Fear."
-
-STATISTICS:
-
-Weight: 2~
-    SAY IDENTIFIED_DESC ~Scratched deep into the side of this cursed goblet are the words "Taste My Fear." It is said that one can regain lost health from the dark blood that lurks within its pewter depths. This comes with a price, however, as all who drink of the blood become cursed with the fear it brings. This effect will last up to 12 hours or until dispelled.
-
-STATISTICS:
-
-Special: 
-– Fully heals the imbiber
-– Causes imbiber to run at the first sign of trouble
-
-Duration: 12 hours
-
-Weight: 2~
+    SAY NAME1 @11013
+    SAY NAME2 @11014
+    SAY UNIDENTIFIED_DESC @11015
+    SAY IDENTIFIED_DESC @11016
 BUT_ONLY_IF_IT_CHANGES
 
 //////// Evermemory \\\\\\\\
 COPY ~%MOD_FOLDER%/items/bg1_imported_items/items/ring08.itm~ ~override~
-    SAY NAME1 ~Ring~
-    SAY NAME2 ~Evermemory~
-    SAY UNIDENTIFIED_DESC ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
-
-STATISTICS:
-
-Weight: 0~
-    SAY IDENTIFIED_DESC ~Ring of Wizardry: Evermemory
-Long ago, a grand wizard from Amn was rumored to have defied Mystra's limitations on the magical arts. Legends spoke of this wizard being able to cast spells without the limitation of memorization. In the end it was found that his powers stemmed from the several magical rings that he had made for himself. His proclaimed "everlasting memory" was a hoax, though his rings continue to be one of the most sought after items in the realms.
-
-STATISTICS:
-
-Equipped abilities:
-– Can memorize double the amount of 1st-level wizard spells
-
-Weight: 0~
+    SAY NAME1 @11017
+    SAY NAME2 @11018
+    SAY UNIDENTIFIED_DESC @11019
+    SAY IDENTIFIED_DESC @11020
 BUT_ONLY_IF_IT_CHANGES

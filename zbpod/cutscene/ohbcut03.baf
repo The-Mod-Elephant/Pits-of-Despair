@@ -62,7 +62,8 @@ THEN
 		ActionOverride(Player6,SetSequence(SEQ_AWAKE))
 		SmallWait(30)
 		SetCursorState(FALSE)
-		SetGlobal("ohb_voghiln_greeting","oh8100",1)  // TBP2 - Staging Area Map
+		StartMovie("pod")
+		SetGlobal("ohb_voghiln_greeting","oh8100",1) // TBP2 - Staging Area Map
 		FadeFromColor([60.0],0)
 		EndCutSceneMode()
 		SaveGame(0)

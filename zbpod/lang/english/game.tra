@@ -59,6 +59,7 @@ Weight: 5~
 @10013 = ~Tidal Wave: 2 stacks~
 @10014 = ~Unleashed Overwhelming Wave~
 
+@10019 = ~We probably need a unidentified description for double swords (from NWN maybe?)~ // TODO \\
 @10020 = ~Double sword~
 @10021 = ~Golden Gale +4~
 @10022 = ~Double sword general description placeholder
@@ -138,7 +139,7 @@ Proficiency Type: Bastard Sword
 Type: One-handed
 Requires:
  Strength 12
- 
+
 Weight: 10~
 
 @10042 = ~Profane +6~
@@ -239,7 +240,12 @@ Equipped abilities:
 Weight: 3~
 
 @10080 = ~Staff of Disruption +1~
-@10081 = ~This staff was created for a very specific purpose: to slay undead. Any such creature hit by it not only feels the sting of the weapon, but also has a chance of being simply blasted from existence. There are legends that speak of a priest so holy a single glancing touch could send a vampire to oblivion, but whether the weapon empowered her or she empowered it is a topic for theologians.
+@10081 = ~A cousin of the more well-known mace of disruption, this ornate staff is the invention of Thulsmine Achenfell, an aspirant necromancer from the Great Dale that sought to raise an undead army from within the Rawlinswood. His ambition proved his folly, however, as his would-be servants proved too unwieldy for him to control. The hoard turned against its master, spreading through the forest and forcing Thulsmine into a shameful retreat.
+
+Embittered by the experience, Thulsmine found his true calling when he began crafting a weapon that could fix his mistake—not out of a desire to right any wrongs, but to simply remove any evidence of his incompetence. With this, the first staff of disruption was born. So effective it was at the eradication of his undead creations that Thulsmine lost himself in the experience—quite literally. His spellbook in tatters and his undead army naught but dust, the wizard wandered the Rawlinswood until his untimely demise, perishing alone in the very woods he had once sought to conquer.
+
+It is unlikely that this staff is the same one that Thulsmine wielded, but it carries his legacy nonetheless. Infused with the same disruptive power, it still hums with the magic he used to undo his creations.
+
 
 STATISTICS:
 
@@ -328,19 +334,71 @@ Rating: ★★★☆☆ (3/5 stars)
 A work of considerable ambition, but ultimately, one that may leave you feeling more exhausted than enlightened.~
 
 @10120 = ~Mirror Mask~
-@10121 = ~Mirror mask description placeholder~
+@10121 = ~Mirror mask description placeholder
+
+Equipped abilities:
+– Immunity to all gaze attacks, such as those from vampires and basilisks
+
+Charge abilities:
+– Mirror Image twice per day
+  Special: Caster causes 5 exact duplicates of themselves to appear around them, as per the Mirror Image spell
+  Duration: 13 rounds
+
+Weight: 4~
 
 @10130 = ~Luxurious Lizardskin Leaps~
-@10131 = ~Luxurious Lizardskin Leaps description placeholder~
+@10131 = ~Luxurious Lizardskin Leaps description placeholder
+
+Equipped abilities:
+– Charisma: +2
+– Fire resistance: +30%
+– Saves vs. Breath: +1
+
+Charge abilities:
+– Misty Step twice per day
+  Special: Teleport to a nearby location instantly
+  Range: 30 ft.
+
+Weight: 4~
 
 @10140 = ~Blazing Bull~
-@10141 = ~Blazing Bull description placeholder~
+@10141 = ~Blazing Bull description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Physical damage resistance: +5%
+– Protects against critical hits
+– Gore attack: Once per round, the wearer may gore an enemy for 1d6 piercing plus 2 fire damage. Barbarians inflict double damage with this attack
+
+Weight: 2~
 
 @10150 = ~Gruumsh's Totem~
-@10151 = ~Gruumsh's Totem description placeholder~
+@10151 = ~Among the Ashmaw clan—a powerful but relatively secretive clan of orcs that once lived amongst the Sunset Mountains—the most devout servants of Gruumsh were not allowed to fall into obscurity. Death was seen as merely a threshold, and the greatest of their warriors, shamans, and chieftains were not left to decay in the frozen reaches of their homeland. Instead, their heads were severed in grizzly rituals, dried in the smoke of pinewood fires, and then serenaded in the name of Grummsh.
+
+Fashioned into easily carryable totems by shamanic magic, they were oft brought into battle by the fiercest of the Ashmaw, who sought both the wisdom and fury of their ancestors. Clutching the totem was said to awaken the rage of the dead, flooding the wielder with visions of fury and bloodshed, goading them into a battle frenzy.
+
+The shrunken head that dangles from this beaded leather cord bears the markings of a battle-scarred warrior, a singular preserved eye appearing to watch those that hold it, and his mouth caught in a voracious battle-cry.
+
+STATISTICS:
+
+Charge abilities:
+– Berserker Rage once per day
+  Special: The wielder is enraged as per the Berserker Rage skill. Half-orcs gain an additional +1 bonus to attack damage
+  Area of Effect: Self
+  Duration: 8 rounds
+
+Weight: 2~
 
 @10160 = ~Resplendent Ring~
-@10161 = ~Resplendent Ring description placeholder~
+@10161 = ~Also known as “The Hopeful” these rings are gifts from powerful mages in Thay to their agents in far off lands. As they struggle to accomplish devious and nefarious missions for the Zulkir they serve they would at times become sullen and morose for many reasons. The Zulkir ordered their use when this arose and the agent, whether deep in Zhentarim plots or fighting for their lives in Algarond against berserk Rashamar it would give them hope and courage to press on, often to their own deaths. It is a bad omen to receive these rings which are as often gained bloodily as is the intent of those who wear them.
+
+Equipped abilities:
+– Armor Class: +1
+– Saving Throws: +1
+
+Weight: 0~
 
 @10170 = ~Angelic Horseshoe~
 @10171 = ~Only four of these magnificent golden horseshoe amulets are known to exist.  According to legend, they once belonged to an astral deva who liked to polymorph herself into an equine form such as a pegasus or unicorn when on a mission in the prime material plane, often serving as the mount of a worthy hero.  During one perilous mission the deva's avatar was slain and the grieving heroes kept her horseshoes as a memento and lucky charm.
@@ -348,9 +406,9 @@ A work of considerable ambition, but ultimately, one that may leave you feeling 
 STATISTICS:
 
 Equipped abilities:
-- Charisma: +1
-- Constitution: +1
-- Luck: +1
+– Charisma: +1
+– Constitution: +1
+– Luck: +1
 
 Weight: 3~
 @10172 = ~Horseshoe Amulet~
@@ -359,7 +417,120 @@ Weight: 3~
 @10181 = ~Nine Lives description placeholder~
 
 @10190 = ~Jack of all trades~
-@10191 = ~Jack of all trades description placeholder~
+@10191 = ~This rare and wonderful cloak goes by the name Jack. Originally worn by Dapper Jack he was a peasant who grew up with nothing but an incredible will to become anything and everything. He had heard tales that Elminster, the Sage, had throughout his long life had many professions and many careers before ending up as Mystra's archmage. Dapper Jack went through life learning the finesse of a thief, the style of a fighter, the devotion of a cleric, and the determination of a mage before eventually creating this item at the end years of his own long life. It was said to strike awe into those around him and the experience of his long years woven into its thread and beating with a life all their own.
+
+Equipped abilities:
+– Pending to complete, it's a fairly complicated item!! :)
+
+Weight: 3~
+
+// Imported BG1 Items
+@11000 = ~BG Imported Items~
+@11001 = ~Circlet~
+@11002 = ~Circlet of the Archmagi~
+@11003 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
+
+Weight: 1~
+@11004 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
+
+Weight: 1~
+
+@11005 = ~Girdle~
+@11006 = ~Big-Fisted Belt~
+@11007 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like.
+
+STATISTICS:
+
+Weight: 2~
+@11008 = ~Identified description	Cursed Girdle of Hill Giant Strength: Big-Fisted Belt
+A fist-shaped brass buckle secures this belt of thick elk hide. The old bloodstains on the leather hint at unspeakable carnage, but the misspelled graffiti scratched into its surface suggests that the girdle's former owners were none too bright.
+
+STATISTICS:
+
+Equipped abilities:
+– Strength: 19
+– Intelligence: 6
+– May only be removed by a Remove Curse spell
+
+Weight: 2~
+
+@11009 = ~Cloak~
+@11010 = ~Relair's Mistake~
+@11011 = ~The cloak can be made in every possible shape with just about every type of fabric. The most common forms are a circular piece of fabric with a hole in the center for the head, and fabric draped from neck, connected by a chain, brooch, cord, or pins.
+
+STATISTICS:
+
+Weight: 3~
+@11012 = ~Cloak of the Wolf: Relair's Mistake
+A great amount of irony surrounds the creation of this magical cloak. Relair was a mage who overestimated the amount of control he had over magic, and in the course of creating this garment, he apparently inflicted lycanthropy upon himself. The wearer can change form whenever <PRO_HESHE> wishes. Relair was not so lucky.
+
+STATISTICS:
+
+Equipped abilities:
+– Polymorph into a wolf at will
+  Duration: 2 turns
+
+Weight: 3~
+
+@11013 = ~Blood-filled Goblet~
+@11014 = ~Durlag's Goblet~
+@11015 = ~Dark and rancid blood lurks within this pewter goblet. The lip is black and caked where it appears others have tasted from it. Scratched deep into the pewter are the words "Taste My Fear."
+
+STATISTICS:
+
+Weight: 2~
+@11016 = ~Scratched deep into the side of this cursed goblet are the words "Taste My Fear." It is said that one can regain lost health from the dark blood that lurks within its pewter depths. This comes with a price, however, as all who drink of the blood become cursed with the fear it brings. This effect will last up to 12 hours or until dispelled.
+
+STATISTICS:
+
+Special:
+– Fully heals the imbiber
+– Causes imbiber to run at the first sign of trouble
+
+Duration: 12 hours
+
+Weight: 2~
+
+@11017 = ~Ring~
+@11018 = ~Evermemory~
+@11019 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+
+STATISTICS:
+
+Weight: 0~
+@11020 = ~Ring of Wizardry: Evermemory
+Long ago, a grand wizard from Amn was rumored to have defied Mystra's limitations on the magical arts. Legends spoke of this wizard being able to cast spells without the limitation of memorization. In the end it was found that his powers stemmed from the several magical rings that he had made for himself. His proclaimed "everlasting memory" was a hoax, though his rings continue to be one of the most sought after items in the realms.
+
+STATISTICS:
+
+Equipped abilities:
+– Can memorize double the amount of 1st-level wizard spells
+
+Weight: 0~
+
+@11030 = ~Viridian Mask~
+@11031 = ~Viridian Mask description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Immunity to charm and stun
+
+Weight: 1~
+
+@11032 = ~The Viridian Lord~
+@11033 = ~The Viridian Lord description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1, +3 vs. crushing
+– Charisma: +2
+– Immunity to charm and stun
+– Protects against critical hits
+
+Weight: 1~
 
 // igneous oil
 @40000 = ~Igneous Oil~
