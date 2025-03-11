@@ -315,7 +315,7 @@ ACTION_FOR_EACH ranged IN
         ohbgla02 // gladiator
     BEGIN
         ACTION_IF FILE_EXISTS_IN_GAME ~%ranged%.cre~ BEGIN
-            COPY_EXISTING ~%ranged%.cre~ ~override.cre~
+            COPY_EXISTING ~%ranged%.cre~ ~override~
                 WRITE_BYTE  0x53   7            // 3/2 APR Base
                 WRITE_ASCII 0x268 ~moratk01~ #8 // Add Default Script
         END
@@ -326,7 +326,7 @@ ACTION_FOR_EACH ranged1 IN
         ohbdro02 // drow scout
     BEGIN
         ACTION_IF FILE_EXISTS_IN_GAME ~%ranged1%.cre~ BEGIN
-            COPY_EXISTING ~%ranged1%.cre~ ~override.cre~
+            COPY_EXISTING ~%ranged1%.cre~ ~override~
                 WRITE_BYTE  0x53   2            // 3/2 APR Base
                 WRITE_ASCII 0x268 ~moratk01~ #8 // Add Default Script
         END
@@ -340,7 +340,7 @@ ACTION_FOR_EACH melee IN
         ohbliz01 // lizard man chieftain
     BEGIN
         ACTION_IF FILE_EXISTS_IN_GAME ~%melee%.cre~ BEGIN
-            COPY_EXISTING ~%melee%.cre~ ~override.cre~
+            COPY_EXISTING ~%melee%.cre~ ~override~
                 WRITE_BYTE  0x53   7            // 3/2 APR Base
                 WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
         END
@@ -351,7 +351,7 @@ ACTION_FOR_EACH melee1 IN
         ohbdro01 // drow warrior
     BEGIN
         ACTION_IF FILE_EXISTS_IN_GAME ~%melee1%.cre~ BEGIN
-            COPY_EXISTING ~%melee1%.cre~ ~override.cre~
+            COPY_EXISTING ~%melee1%.cre~ ~override~
                 WRITE_BYTE  0x53   2            // 2 APR Base
                 WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
         END
