@@ -292,14 +292,14 @@ COPY_EXISTING ~OHBGLA01.cre~ ~override~
     WRITE_ASCII 0x260 ~motatk01~ #8 // General Script (theif attacks)
     WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script (generic melee)
 
-// ohb_102 Gladiator Archers
-COPY_EXISTING ~ohbgla02.cre~ ~override~
-    SET_BG2_PROFICIENCY ~PROFICIENCYLONGBOW~ 5
-
 // minotaurs gore attack
 COPY ~%MOD_FOLDER%/creatures/match2mino~ ~override~
 COPY_EXISTING ~ohbmin01.cre~ ~override~
     LPF ADD_CRE_EFFECT INT_VAR opcode = 248 timing = 9 STR_VAR resource = ~ZBGOREM0~ END
+
+// ohb_102 Gladiator Archers
+COPY_EXISTING ~ohbgla02.cre~ ~override~
+    SET_BG2_PROFICIENCY ~PROFICIENCYLONGBOW~ 5
 
 COPY_EXISTING ~ZBGOREM1.SPL~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@18004) END // add .tra ref later
