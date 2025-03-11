@@ -192,7 +192,7 @@ COPY ~%MOD_FOLDER%/items/standingovation~ ~override~
 COPY_EXISTING ~zbstabda.itm~ ~override~
     SAY NAME2 @11050
     SAY IDENTIFIED_DESC @11051
-COPY_EXISTING ~zbstabdb.spl~ ~override~
+COPY_EXISTING ~zbstandb.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@11052) END
 
 //////// Resplendent Ring \\\\\\\\
