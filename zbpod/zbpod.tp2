@@ -127,6 +127,17 @@ INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_items.tph~
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_cre.tph~
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_stores.tph~
 
+// Copy animations
+COPY ~%MOD_FOLDER%/animations/astral_demilich~ ~override~
+COPY ~%MOD_FOLDER%/animations/black_weaver~ ~override~
+COPY ~%MOD_FOLDER%/animations/couatl~ ~override~
+COPY ~%MOD_FOLDER%/animations/displacer_beast~ ~override~
+COPY ~%MOD_FOLDER%/animations/driders~ ~override~
+COPY ~%MOD_FOLDER%/animations/green_rakshasa~ ~override~
+COPY ~%MOD_FOLDER%/animations/hamatula~ ~override~
+COPY ~%MOD_FOLDER%/animations/pit_fiend~ ~override~
+COPY ~%MOD_FOLDER%/animations/red_worg~ ~override~
+
 // Fix antimagic BP2 spell so it prevents Simulacrum from being cast
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
