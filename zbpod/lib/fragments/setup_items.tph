@@ -172,7 +172,7 @@ COPY ~%MOD_FOLDER%/items/blazingbull~ ~override~
 COPY_EXISTING ~zbhlmbul.itm~ ~override~
     SAY NAME2 @10140
     SAY IDENTIFIED_DESC @10141
-COPY_EXISTING ~zbhlmbu3.itm~ ~override~
+COPY_EXISTING ~zbhlmbu3.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@18004) END
 
 //////// Gruumsh's Totem \\\\\\\\
