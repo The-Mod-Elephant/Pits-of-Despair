@@ -123,6 +123,1507 @@ THEN
     RESPONSE #100
 END
 
+IF
+  HaveSpell(BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
+  CheckStat(Myself,0,OFFENSIVE_MODIFIER)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Enrage","LOCALS")
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Enrage","LOCALS",EIGHTEEN_MINUTES)
+    ForceSpell(Myself,BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
+    RemoveSpell(BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
+    SetInterrupt(TRUE)
+END
+
+IF
+  HaveSpell(BARBARIAN_RAGE)  // SPCL152.SPL (Barbarian Rage)
+  CheckStat(Myself,0,LEVEL_DRAIN_IMMUNITY)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    ForceSpell(Myself,BARBARIAN_RAGE)  // SPCL152.SPL (Barbarian Rage)
+    RemoveSpell(BARBARIAN_RAGE)  // SPCL152.SPL (Barbarian Rage)
+    SetInterrupt(TRUE)
+END
+
+IF
+  HaveSpellRES("SPDWD02")  // Defensive Stance
+  CheckStatLT(Myself,50,RESISTSLASHING)
+  Range(NearestEnemyOf(Myself),6)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    ForceSpellRES("SPDWD02",Myself)  // Defensive Stance
+    RemoveSpellRES("SPDWD02")  // Defensive Stance
+    SetInterrupt(TRUE)
+END
+
+IF
+  HasItem("POTN11",Myself)  // Potion of Invulnerability
+  CheckStatGT(Myself,0,ARMORCLASS)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    UseItem("POTN11",Myself)  // Potion of Invulnerability
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  HasItem("POTN24",Myself)  // Potion of Defense
+  CheckStatGT(Myself,0,ARMORCLASS)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    UseItem("POTN24",Myself)  // Potion of Defense
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  HasItem("POTN14",Myself)  // Oil of Speed
+  !StateCheck(Myself,STATE_HASTED)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    UseItem("POTN14",Myself)  // Oil of Speed
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  HasItem("POTN34",Myself)  // Potion of Magic Protection
+  CheckStatLT(Myself,100,RESISTMAGIC)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    UseItem("POTN34",Myself)  // Potion of Magic Protection
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  HasItem("POTN35",Myself)  // Potion of Magic Shielding
+  CheckStatLT(Myself,50,MAGICDAMAGERESISTANCE)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    UseItem("POTN35",Myself)  // Potion of Magic Shielding
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  HasItem("POTN21",Myself)  // Potion of Clarity
+  CheckStat(Myself,0,OFFENSIVE_MODIFIER)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    UseItem("POTN21",Myself)  // Potion of Clarity
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  HaveSpell(WARRIOR_HARDINESS)  // SPCL907.SPL (Hardiness)
+  CheckStatLT(Myself,40,RESISTSLASHING)
+  Range(NearestEnemyOf(Myself),30)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WARRIOR_HARDINESS)  // SPCL907.SPL (Hardiness)
+    SetInterrupt(TRUE)
+END
+
+IF
+  HasItem("POTN45",Myself)  // Potion of Freedom
+  !CheckStatGT(Myself,0,CLERIC_FREE_ACTION)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    UseItem("POTN45",Myself)  // Potion of Freedom
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  HasItem("POTN07",Myself)  // Potion of Storm Giant Strength
+  CheckStatLT(Myself,24,STR)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    UseItem("POTN07",Myself)  // Potion of Storm Giant Strength
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  HasItem("POTN06",Myself)  // Potion of Cloud Giant Strength
+  CheckStatLT(Myself,23,STR)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    UseItem("POTN06",Myself)  // Potion of Cloud Giant Strength
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  HasItem("POTN05",Myself)  // Potion of Fire Giant Strength
+  CheckStatLT(Myself,22,STR)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    UseItem("POTN05",Myself)  // Potion of Fire Giant Strength
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  HasItem("POTN04",Myself)  // Potion of Frost Giant Strength
+  CheckStatLT(Myself,21,STR)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    UseItem("POTN04",Myself)  // Potion of Frost Giant Strength
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  HasItem("POTN12",Myself)  // Potion of Stone Giant Strength
+  CheckStatLT(Myself,20,STR)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    UseItem("POTN12",Myself)  // Potion of Stone Giant Strength
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  HasItem("POTN03",Myself)  // Potion of Hill Giant Strength
+  CheckStatLT(Myself,19,STR)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    UseItem("POTN03",Myself)  // Potion of Hill Giant Strength
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  !Difficulty(EASIEST)
+  HaveSpell(WARRIOR_GREATER_WHIRLWIND)  // SPCL901.SPL (Greater Whirlwind Attack)
+  OR(2)
+    DifficultyGT(EASY)
+    XPGT(Player1,4249999)
+  CheckStat(Myself,0,IMPROVEDHASTE)
+  Range(NearestEnemyOf(Myself),6)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WARRIOR_GREATER_WHIRLWIND)  // SPCL901.SPL (Greater Whirlwind Attack)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !Difficulty(EASIEST)
+  HaveSpell(WARRIOR_WHIRLWIND)  // SPCL900.SPL (Whirlwind Attack)
+  OR(2)
+    DifficultyGT(EASY)
+    XPGT(Player1,4249999)
+  CheckStat(Myself,0,IMPROVEDHASTE)
+  Range(NearestEnemyOf(Myself),6)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WARRIOR_WHIRLWIND)  // SPCL900.SPL (Whirlwind Attack)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !Difficulty(EASIEST)
+  OR(2)
+    DifficultyGT(EASY)
+    XPGT(Player1,4249999)
+  HaveSpell(WARRIOR_POWER_ATTACK)  // SPCL906.SPL (Power Attack)
+  !CheckStat(Myself,5,DEFENSIVE_MODIFIER)
+  See(NearestEnemyOf(Myself))
+  Range(LastSeenBy(Myself),6)
+  !General(LastSeenBy(Myself),UNDEAD)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  CheckStatGT(LastSeenBy(Myself),-4,SAVEVSDEATH)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +2
+  !HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+  !HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+  !HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WARRIOR_POWER_ATTACK)  // SPCL906.SPL (Power Attack)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !Difficulty(EASIEST)
+  OR(2)
+    DifficultyGT(EASY)
+    XPGT(Player1,4249999)
+  HaveSpell(WARRIOR_POWER_ATTACK)  // SPCL906.SPL (Power Attack)
+  !CheckStat(Myself,5,DEFENSIVE_MODIFIER)
+  See(SecondNearestEnemyOf(Myself))
+  Range(LastSeenBy(Myself),6)
+  !General(LastSeenBy(Myself),UNDEAD)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  CheckStatGT(LastSeenBy(Myself),-4,SAVEVSDEATH)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +2
+  !HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+  !HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+  !HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WARRIOR_POWER_ATTACK)  // SPCL906.SPL (Power Attack)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !Difficulty(EASIEST)
+  OR(2)
+    DifficultyGT(EASY)
+    XPGT(Player1,4249999)
+  HaveSpell(WARRIOR_POWER_ATTACK)  // SPCL906.SPL (Power Attack)
+  !CheckStat(Myself,5,DEFENSIVE_MODIFIER)
+  See(ThirdNearestEnemyOf(Myself))
+  Range(LastSeenBy(Myself),6)
+  !General(LastSeenBy(Myself),UNDEAD)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  CheckStatGT(LastSeenBy(Myself),-4,SAVEVSDEATH)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +2
+  !HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+  !HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+  !HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WARRIOR_POWER_ATTACK)  // SPCL906.SPL (Power Attack)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !Difficulty(EASIEST)
+  OR(2)
+    DifficultyGT(EASY)
+    XPGT(Player1,4249999)
+  HaveSpell(WARRIOR_POWER_ATTACK)  // SPCL906.SPL (Power Attack)
+  !CheckStat(Myself,5,DEFENSIVE_MODIFIER)
+  See(FourthNearestEnemyOf(Myself))
+  Range(LastSeenBy(Myself),6)
+  !General(LastSeenBy(Myself),UNDEAD)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  CheckStatGT(LastSeenBy(Myself),-4,SAVEVSDEATH)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +2
+  !HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+  !HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+  !HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WARRIOR_POWER_ATTACK)  // SPCL906.SPL (Power Attack)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !Difficulty(EASIEST)
+  OR(2)
+    DifficultyGT(EASY)
+    XPGT(Player1,4249999)
+  HaveSpell(WARRIOR_POWER_ATTACK)  // SPCL906.SPL (Power Attack)
+  !CheckStat(Myself,5,DEFENSIVE_MODIFIER)
+  See(FifthNearestEnemyOf(Myself))
+  Range(LastSeenBy(Myself),6)
+  !General(LastSeenBy(Myself),UNDEAD)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  CheckStatGT(LastSeenBy(Myself),-4,SAVEVSDEATH)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +2
+  !HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+  !HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+  !HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WARRIOR_POWER_ATTACK)  // SPCL906.SPL (Power Attack)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !Difficulty(EASIEST)
+  OR(2)
+    DifficultyGT(EASY)
+    XPGT(Player1,4249999)
+  HaveSpell(WARRIOR_POWER_ATTACK)  // SPCL906.SPL (Power Attack)
+  !CheckStat(Myself,5,DEFENSIVE_MODIFIER)
+  See(SixthNearestEnemyOf(Myself))
+  Range(LastSeenBy(Myself),6)
+  !General(LastSeenBy(Myself),UNDEAD)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  CheckStatGT(LastSeenBy(Myself),-4,SAVEVSDEATH)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("NPSW01",LastSeenBy(Myself))  // Sword of Arvoreen +2
+  !HasItemEquipedReal("SW1H27",LastSeenBy(Myself))  // Arbane's Sword of Agility +2
+  !HasItemEquiped("RING09",LastSeenBy(Myself))  // Edventar's Gift
+  !HasItemEquipedReal("SW2H06",LastSeenBy(Myself))  // Spider's Bane +2
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WARRIOR_POWER_ATTACK)  // SPCL906.SPL (Power Attack)
+    SetInterrupt(TRUE)
+END
+
+IF
+  HaveSpell(WARRIOR_CRITICAL_STRIKE)  // SPCL905.SPL (Critical Strike)
+  OR(2)
+    DifficultyGT(EASY)
+    XPGT(Player1,4249999)
+  !CheckStat(Myself,3,OFFENSIVE_MODIFIER)
+  Range(NearestEnemyOf(Myself),6)
+  OR(2)
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WARRIOR_CRITICAL_STRIKE)  // SPCL905.SPL (Critical Strike)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  Class(Myself,MAGE_ALL)
+  !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  !CheckStatGT(Player1,0,TRUE_SIGHT)
+  !CheckStatGT(Player2,0,TRUE_SIGHT)
+  !CheckStatGT(Player3,0,TRUE_SIGHT)
+  !CheckStatGT(Player4,0,TRUE_SIGHT)
+  !CheckStatGT(Player5,0,TRUE_SIGHT)
+  !CheckStatGT(Player6,0,TRUE_SIGHT)
+  !CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+  !CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    ForceSpell(Myself,PSIONIC_SUPERIOR_INVISIBILITY)  // SPIN544.SPL (Improved Invisibility)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  OR(2)
+    Class(Myself,PALADIN_ALL)
+    Class(Myself,MAGE_ALL)
+  !CheckStatGT(Myself,0,SHIELDGLOBE)
+  CheckStatLT(Myself,100,RESISTACID)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    ForceSpell(Myself,PSIONIC_INERTIAL_BARRIER)  // SPIN546.SPL (Inertial Barrier)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  Class(Myself,PALADIN_ALL)
+  DifficultyGT(EASY)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Disin","LOCALS")
+  OR(3)
+    See([GOODCUTOFF.0.0.THIEF_ALL])
+    See([GOODCUTOFF.0.0.MAGE_ALL])
+    See([GOODCUTOFF.0.0.BARD_ALL])
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !HasItemEquiped("CLCK26",LastSeenBy(Myself))  // Cloak of Mirroring
+  !HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+  !CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)
+  CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Disin","LOCALS",SIX_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_DISINTEGRATE)  // SPIN542.SPL (Disintegrate)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  Class(Myself,PALADIN_ALL)
+  DifficultyGT(EASY)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Disin","LOCALS")
+  See(NearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !HasItemEquiped("CLCK26",LastSeenBy(Myself))  // Cloak of Mirroring
+  !HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+  !CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)
+  CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Disin","LOCALS",SIX_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_DISINTEGRATE)  // SPIN542.SPL (Disintegrate)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  Class(Myself,PALADIN_ALL)
+  DifficultyGT(EASY)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Disin","LOCALS")
+  See(SecondNearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !HasItemEquiped("CLCK26",LastSeenBy(Myself))  // Cloak of Mirroring
+  !HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+  !CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)
+  CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Disin","LOCALS",SIX_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_DISINTEGRATE)  // SPIN542.SPL (Disintegrate)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  Class(Myself,PALADIN_ALL)
+  DifficultyGT(EASY)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Disin","LOCALS")
+  See(ThirdNearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !HasItemEquiped("CLCK26",LastSeenBy(Myself))  // Cloak of Mirroring
+  !HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+  !CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)
+  CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Disin","LOCALS",SIX_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_DISINTEGRATE)  // SPIN542.SPL (Disintegrate)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  Class(Myself,PALADIN_ALL)
+  DifficultyGT(EASY)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Disin","LOCALS")
+  See(FourthNearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !HasItemEquiped("CLCK26",LastSeenBy(Myself))  // Cloak of Mirroring
+  !HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+  !CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)
+  CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Disin","LOCALS",SIX_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_DISINTEGRATE)  // SPIN542.SPL (Disintegrate)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  Class(Myself,PALADIN_ALL)
+  DifficultyGT(EASY)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Disin","LOCALS")
+  See(FifthNearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !HasItemEquiped("CLCK26",LastSeenBy(Myself))  // Cloak of Mirroring
+  !HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+  !CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)
+  CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Disin","LOCALS",SIX_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_DISINTEGRATE)  // SPIN542.SPL (Disintegrate)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  Class(Myself,PALADIN_ALL)
+  DifficultyGT(EASY)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Disin","LOCALS")
+  See(SixthNearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !HasItemEquiped("CLCK26",LastSeenBy(Myself))  // Cloak of Mirroring
+  !HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+  !CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)
+  CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Disin","LOCALS",SIX_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_DISINTEGRATE)  // SPIN542.SPL (Disintegrate)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    Class(Myself,PALADIN_ALL)
+    Class(Myself,MAGE_ALL)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Maze","LOCALS")
+  !Difficulty(EASIEST)
+  OR(3)
+    See([GOODCUTOFF.0.0.FIGHTER_ALL])
+    See([GOODCUTOFF.0.0.CLERIC_ALL])
+    See([GOODCUTOFF.0.0.DRUID_ALL])
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+  !CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+THEN
+  RESPONSE #33
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Maze","LOCALS",FOUR_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_MAZE)  // SPIN774.SPL (Psionic Maze)
+    SetInterrupt(TRUE)
+  RESPONSE #67
+    SetGlobalTimer("OH_Psi_Maze","LOCALS",FOUR_ROUNDS)
+    Continue()
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    Class(Myself,PALADIN_ALL)
+    Class(Myself,MAGE_ALL)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Maze","LOCALS")
+  !Difficulty(EASIEST)
+  See(NearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+  !CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+THEN
+  RESPONSE #33
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Maze","LOCALS",FOUR_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_MAZE)  // SPIN774.SPL (Psionic Maze)
+    SetInterrupt(TRUE)
+  RESPONSE #67
+    SetGlobalTimer("OH_Psi_Maze","LOCALS",FOUR_ROUNDS)
+    Continue()
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    Class(Myself,PALADIN_ALL)
+    Class(Myself,MAGE_ALL)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Maze","LOCALS")
+  !Difficulty(EASIEST)
+  See(SecondNearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+  !CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+THEN
+  RESPONSE #33
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Maze","LOCALS",FOUR_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_MAZE)  // SPIN774.SPL (Psionic Maze)
+    SetInterrupt(TRUE)
+  RESPONSE #67
+    SetGlobalTimer("OH_Psi_Maze","LOCALS",FOUR_ROUNDS)
+    Continue()
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    Class(Myself,PALADIN_ALL)
+    Class(Myself,MAGE_ALL)
+  OR(2)
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Maze","LOCALS")
+  !Difficulty(EASIEST)
+  See(ThirdNearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+  !CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+THEN
+  RESPONSE #33
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Maze","LOCALS",FOUR_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_MAZE)  // SPIN774.SPL (Psionic Maze)
+    SetInterrupt(TRUE)
+  RESPONSE #67
+    SetGlobalTimer("OH_Psi_Maze","LOCALS",FOUR_ROUNDS)
+    Continue()
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    Class(Myself,PALADIN_ALL)
+    Class(Myself,MAGE_ALL)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Maze","LOCALS")
+  !Difficulty(EASIEST)
+  See(FourthNearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+  !CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+THEN
+  RESPONSE #33
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Maze","LOCALS",FOUR_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_MAZE)  // SPIN774.SPL (Psionic Maze)
+    SetInterrupt(TRUE)
+  RESPONSE #67
+    SetGlobalTimer("OH_Psi_Maze","LOCALS",FOUR_ROUNDS)
+    Continue()
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    Class(Myself,PALADIN_ALL)
+    Class(Myself,MAGE_ALL)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Maze","LOCALS")
+  !Difficulty(EASIEST)
+  See(FifthNearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+  !CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+THEN
+  RESPONSE #33
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Maze","LOCALS",FOUR_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_MAZE)  // SPIN774.SPL (Psionic Maze)
+    SetInterrupt(TRUE)
+  RESPONSE #67
+    SetGlobalTimer("OH_Psi_Maze","LOCALS",FOUR_ROUNDS)
+    Continue()
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    Class(Myself,PALADIN_ALL)
+    Class(Myself,MAGE_ALL)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Maze","LOCALS")
+  !Difficulty(EASIEST)
+  See(SixthNearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+  !CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+THEN
+  RESPONSE #33
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Maze","LOCALS",FOUR_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_MAZE)  // SPIN774.SPL (Psionic Maze)
+    SetInterrupt(TRUE)
+  RESPONSE #67
+    SetGlobalTimer("OH_Psi_Maze","LOCALS",FOUR_ROUNDS)
+    Continue()
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Blast","LOCALS")
+  !Difficulty(EASIEST)
+  OR(3)
+    See([GOODCUTOFF.0.0.FIGHTER_ALL])
+    See([GOODCUTOFF.0.0.CLERIC_ALL])
+    See([GOODCUTOFF.0.0.DRUID_ALL])
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !General(LastSeenBy(Myself),UNDEAD)
+  !Race(LastSeenBy(Myself),DEMONIC)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+  !CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+THEN
+  RESPONSE #40
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Blast","LOCALS",THREE_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psionic Blast)
+    SetInterrupt(TRUE)
+  RESPONSE #60
+    SetGlobalTimer("OH_Psi_Blast","LOCALS",THREE_ROUNDS)
+    Continue()
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Blast","LOCALS")
+  !Difficulty(EASIEST)
+  See(NearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !General(LastSeenBy(Myself),UNDEAD)
+  !Race(LastSeenBy(Myself),DEMONIC)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+  !CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+THEN
+  RESPONSE #40
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Blast","LOCALS",THREE_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psionic Blast)
+    SetInterrupt(TRUE)
+  RESPONSE #60
+    SetGlobalTimer("OH_Psi_Blast","LOCALS",THREE_ROUNDS)
+    Continue()
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Blast","LOCALS")
+  !Difficulty(EASIEST)
+  See(SecondNearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !General(LastSeenBy(Myself),UNDEAD)
+  !Race(LastSeenBy(Myself),DEMONIC)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+  !CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+THEN
+  RESPONSE #40
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Blast","LOCALS",THREE_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psionic Blast)
+    SetInterrupt(TRUE)
+  RESPONSE #60
+    SetGlobalTimer("OH_Psi_Blast","LOCALS",THREE_ROUNDS)
+    Continue()
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Blast","LOCALS")
+  !Difficulty(EASIEST)
+  See(ThirdNearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !General(LastSeenBy(Myself),UNDEAD)
+  !Race(LastSeenBy(Myself),DEMONIC)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+  !CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+THEN
+  RESPONSE #40
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Blast","LOCALS",THREE_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psionic Blast)
+    SetInterrupt(TRUE)
+  RESPONSE #60
+    SetGlobalTimer("OH_Psi_Blast","LOCALS",THREE_ROUNDS)
+    Continue()
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Blast","LOCALS")
+  !Difficulty(EASIEST)
+  See(FourthNearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !General(LastSeenBy(Myself),UNDEAD)
+  !Race(LastSeenBy(Myself),DEMONIC)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+  !CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+THEN
+  RESPONSE #40
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Blast","LOCALS",THREE_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psionic Blast)
+    SetInterrupt(TRUE)
+  RESPONSE #60
+    SetGlobalTimer("OH_Psi_Blast","LOCALS",THREE_ROUNDS)
+    Continue()
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Blast","LOCALS")
+  !Difficulty(EASIEST)
+  See(FifthNearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !General(LastSeenBy(Myself),UNDEAD)
+  !Race(LastSeenBy(Myself),DEMONIC)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+  !CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+THEN
+  RESPONSE #40
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Blast","LOCALS",THREE_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psionic Blast)
+    SetInterrupt(TRUE)
+  RESPONSE #60
+    SetGlobalTimer("OH_Psi_Blast","LOCALS",THREE_ROUNDS)
+    Continue()
+END
+
+IF
+  Race(Myself,GITHYANKI)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Psi_Blast","LOCALS")
+  !Difficulty(EASIEST)
+  See(SixthNearestEnemyOf(Myself))
+  !Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !General(LastSeenBy(Myself),UNDEAD)
+  !Race(LastSeenBy(Myself),DEMONIC)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_VISIBLE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+  !CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(LastSeenBy(Myself),1,OFFENSIVE_MODIFIER)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !HasItem("MORSWORD",LastSeenBy(Myself))  // Mordenkainen's Sword
+  !HasItemEquipedReal("SW2H21",LastSeenBy(Myself))  // Psion's Blade +5
+THEN
+  RESPONSE #40
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Psi_Blast","LOCALS",THREE_ROUNDS)
+    ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psionic Blast)
+    SetInterrupt(TRUE)
+  RESPONSE #60
+    SetGlobalTimer("OH_Psi_Blast","LOCALS",THREE_ROUNDS)
+    Continue()
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HaveSpell(KENSAI_KIA)  // SPCL144.SPL (Kai)
+  !CheckStat(Myself,2,OFFENSIVE_MODIFIER)
+  Range(NearestEnemyOf(Myself),6)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    ForceSpell(Myself,KENSAI_KIA)  // SPCL144.SPL (Kai)
+    RemoveSpell(KENSAI_KIA)  // SPCL144.SPL (Kai)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See([PC.0.0.MAGE_ALL])
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See(SecondNearest([PC.0.0.MAGE_ALL]))
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See([GOODCUTOFF])
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See(SecondNearest([GOODCUTOFF]))
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See(ThirdNearest([GOODCUTOFF]))
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See(FourthNearest([GOODCUTOFF]))
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See(FifthNearest([GOODCUTOFF]))
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See(SixthNearest([GOODCUTOFF]))
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
 /////////////////////////////////////////////////////////////////////
 // Force Break in AttackReevaluate
 /////////////////////////////////////////////////////////////////////

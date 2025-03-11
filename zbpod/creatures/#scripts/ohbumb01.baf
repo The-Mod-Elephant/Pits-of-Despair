@@ -10,6 +10,27 @@
 // 
 /////////////////////////////////////////////////////////////////////
 
+IF 
+  Detect([GOODCUTOFF])
+  Global("MO_UmberPrep","LOCALS",0)
+THEN 
+  RESPONSE #100
+    SetGlobal("MO_UmberPrep","LOCALS",1)
+    Continue()
+  RESPONSE #100
+    SetGlobal("MO_UmberPrep","LOCALS",1)
+    SetGlobalTimer("MO_ConfusionTimer","LOCALS",2)
+    Continue()
+  RESPONSE #100
+    SetGlobal("MO_UmberPrep","LOCALS",1)
+    SetGlobalTimer("MO_ConfusionTimer","LOCALS",4)
+    Continue()
+  RESPONSE #100
+    SetGlobal("MO_UmberPrep","LOCALS",1)
+    SetGlobalTimer("MO_ConfusionTimer","LOCALS",6)
+    Continue()
+END
+
 /////////////////////////////////////////////////////////////////////
 // Hulk Confusion 
 /////////////////////////////////////////////////////////////////////

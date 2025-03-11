@@ -249,16 +249,6 @@ ACTION_FOR_EACH wvrn IN
             WRITE_ASCII 0x280 ~mowvrn0%wvrn%~ #8 // Script Name
 END
 
-// ohb_102 Thief fight
-COPY_EXISTING ~OHBGLA01.cre~ ~override~
-    WRITE_ASCII 0x260 ~motatk01~ #8 // General Script (theif attacks)
-    WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script (generic melee)
-
-// ohb_104 Elder Umber Hulk fight
-COPY_EXISTING ~ohbumb01.CRE~ ~override~ 
-    WRITE_BYTE 0x24 110  // Current HP
-    WRITE_BYTE 0x26 110  // Maximum HP
-
 COPY ~%MOD_FOLDER%/creatures/brodle~ ~override~
 COPY_EXISTING ~ohbbrodl.cre~ ~override~
     SAY 0x08 @15013
@@ -297,10 +287,19 @@ COPY_EXISTING ~ohbmin01.cre~ ~override~
     SAY 0x08 @15018
     SAY 0x0c @15018
 
+// ohb_102 Thief fight
+COPY_EXISTING ~OHBGLA01.cre~ ~override~
+    WRITE_ASCII 0x260 ~motatk01~ #8 // General Script (theif attacks)
+    WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script (generic melee)
+
 // minotaurs gore attack
 COPY ~%MOD_FOLDER%/creatures/match2mino~ ~override~
 COPY_EXISTING ~ohbmin01.cre~ ~override~
     LPF ADD_CRE_EFFECT INT_VAR opcode = 248 timing = 9 STR_VAR resource = ~ZBGOREM0~ END
+
+// ohb_102 Gladiator Archers
+COPY_EXISTING ~ohbgla02.cre~ ~override~
+    SET_BG2_PROFICIENCY ~PROFICIENCYLONGBOW~ 5
 
 COPY_EXISTING ~ZBGOREM1.SPL~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@18004) END // add .tra ref later
@@ -309,6 +308,59 @@ COPY_EXISTING ~ZBGOREM1.SPL~ ~override~
 COPY_EXISTING ~ohbwing.cre~ ~override~
     SAY 0x08 @15019
     SAY 0x0c @15019
+ 
+// Add Ranged Scripts & APR Boost
+ACTION_FOR_EACH ranged IN 
+        ohborc02 // orc archer
+        ohbgla02 // gladiator
+    BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME ~%ranged%.cre~ BEGIN
+            COPY_EXISTING ~%ranged%.cre~ ~override~
+                WRITE_BYTE  0x53   7            // 3/2 APR Base
+                WRITE_ASCII 0x268 ~moratk01~ #8 // Add Default Script
+        END
+    END
+
+// Add Ranged Scripts & APR Boost (Drow)
+ACTION_FOR_EACH ranged1 IN 
+        ohbdro02 // drow scout
+    BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME ~%ranged1%.cre~ BEGIN
+            COPY_EXISTING ~%ranged1%.cre~ ~override~
+                WRITE_BYTE  0x53   2            // 3/2 APR Base
+                WRITE_ASCII 0x268 ~moratk01~ #8 // Add Default Script
+        END
+    END
+
+// Add Melee Scrips & APR Boost
+ACTION_FOR_EACH melee IN 
+        ohborc01 // orc
+        ohbmin01 // minotaur
+        ohbliz02 // lizard man elite
+        ohbliz01 // lizard man chieftain
+    BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME ~%melee%.cre~ BEGIN
+            COPY_EXISTING ~%melee%.cre~ ~override~
+                WRITE_BYTE  0x53   7            // 3/2 APR Base
+                WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
+        END
+    END
+
+// Add Melee Scrips & APR Boost (Drow)
+ACTION_FOR_EACH melee1 IN 
+        ohbdro01 // drow warrior
+    BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME ~%melee1%.cre~ BEGIN
+            COPY_EXISTING ~%melee1%.cre~ ~override~
+                WRITE_BYTE  0x53   2            // 2 APR Base
+                WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script
+        END
+    END
+
+// ohb_104 Elder Umber Hulk fight
+COPY_EXISTING ~ohbumb01.CRE~ ~override~ 
+    WRITE_BYTE 0x24 110  // Current HP
+    WRITE_BYTE 0x26 110  // Maximum HP
 
 ///////////////////////////////////////////////////////////////////////////
 // Copy .BCS file to override folder                                     //

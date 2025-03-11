@@ -123,6 +123,483 @@ THEN
     RESPONSE #100
 END
 
+IF
+  StateCheck(Myself,STATE_POISONED)
+  HasItem("POTN17",Myself)  // Elixir of Health
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    UseItem("POTN17",Myself)  // Elixir of Health
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN11",Myself)  // Potion of Invulnerability
+  CheckStatGT(Myself,0,SAVEVSSPELL)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    UseItem("POTN11",Myself)  // Potion of Invulnerability
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  StateCheck(Myself,STATE_BLIND)
+  HaveSpell(CLERIC_CURE_DISEASE)  // SPPR317.SPL (Cure Disease)
+  CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,CLERIC_CURE_DISEASE)  // SPPR317.SPL (Cure Disease)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  StateCheck(Myself,STATE_POISONED)
+  HaveSpell(CLERIC_SLOW_POISON)  // SPPR212.SPL (Slow Poison)
+  CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    Spell(Myself,CLERIC_SLOW_POISON)  // SPPR212.SPL (Slow Poison)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  HaveSpell(CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+  CheckStatLT(Myself,10,MAGICDAMAGERESISTANCE)
+  CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    Spell(Myself,CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN11",Myself)  // Potion of Invulnerability
+  CheckStatGT(Myself,0,ARMORCLASS)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    UseItem("POTN11",Myself)  // Potion of Invulnerability
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN35",Myself)  // Potion of Magic Shielding
+  CheckStatLT(Myself,50,MAGICDAMAGERESISTANCE)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    UseItem("POTN35",Myself)  // Potion of Magic Shielding
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN14",Myself)  // Oil of Speed
+  !StateCheck(Myself,STATE_HASTED)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    UseItem("POTN14",Myself)  // Oil of Speed
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN34",Myself)  // Potion of Magic Protection
+  CheckStatLT(Myself,100,RESISTMAGIC)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    UseItem("POTN34",Myself)  // Potion of Magic Protection
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN21",Myself)  // Potion of Clarity
+  CheckStat(Myself,0,OFFENSIVE_MODIFIER)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    UseItem("POTN21",Myself)  // Potion of Clarity
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN45",Myself)  // Potion of Freedom
+  !CheckStatGT(Myself,0,CLERIC_FREE_ACTION)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    UseItem("POTN45",Myself)  // Potion of Freedom
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN05",Myself)  // Potion of Fire Giant Strength
+  CheckStatLT(Myself,22,STR)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    UseItem("POTN05",Myself)  // Potion of Fire Giant Strength
+    DisplayStringHead(Myself,46150)  // *quaffs a potion*
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HaveSpell(WARRIOR_GREATER_WHIRLWIND)  // SPCL901.SPL (Greater Whirlwind Attack)
+  DifficultyGT(EASY)
+  CheckStat(Myself,0,IMPROVEDHASTE)
+  Range(NearestEnemyOf(Myself),6)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WARRIOR_GREATER_WHIRLWIND)  // SPCL901.SPL (Greater Whirlwind Attack)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HaveSpell(WARRIOR_WHIRLWIND)  // SPCL900.SPL (Whirlwind Attack)
+  DifficultyGT(EASY)
+  CheckStat(Myself,0,IMPROVEDHASTE)
+  Range(NearestEnemyOf(Myself),6)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WARRIOR_WHIRLWIND)  // SPCL900.SPL (Whirlwind Attack)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HaveSpell(WARRIOR_POWER_ATTACK)  // SPCL906.SPL (Power Attack)
+  DifficultyGT(EASY)
+  !CheckStat(Myself,5,DEFENSIVE_MODIFIER)
+  Range(NearestEnemyOf(Myself),30)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WARRIOR_POWER_ATTACK)  // SPCL906.SPL (Power Attack)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HaveSpell(WARRIOR_CRITICAL_STRIKE)  // SPCL905.SPL (Critical Strike)
+  DifficultyGT(EASY)
+  !CheckStat(Myself,3,OFFENSIVE_MODIFIER)
+  Range(NearestEnemyOf(Myself),6)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WARRIOR_CRITICAL_STRIKE)  // SPCL905.SPL (Critical Strike)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HaveSpell(ARCHER_CALL_SHOT)  // SPCL121.SPL (Called Shot)
+  !Range(NearestEnemyOf(Myself),5)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("OH_Cshot","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("OH_Cshot","LOCALS",TWO_ROUNDS)
+    SetInterrupt(FALSE)
+    Spell(Myself,ARCHER_CALL_SHOT)  // SPCL121.SPL (Called Shot)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See([GOODCUTOFF.0.0.MAGE_ALL])
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See([GOODCUTOFF])
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See(SecondNearest([GOODCUTOFF]))
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See(ThirdNearest([GOODCUTOFF]))
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See(FourthNearest([GOODCUTOFF]))
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See(FifthNearest([GOODCUTOFF]))
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  HasItem("RODS06",Myself)  // Rod of Reversal
+  See(SixthNearest([GOODCUTOFF]))
+  OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    DisplayStringHead(Myself,31971)  // *uses a wand*
+    UseItem("RODS06",LastSeenBy(Myself))  // Rod of Reversal
+    SetInterrupt(TRUE)
+END
+
 /////////////////////////////////////////////////////////////////////
 // Enemy Distance Check
 /////////////////////////////////////////////////////////////////////
