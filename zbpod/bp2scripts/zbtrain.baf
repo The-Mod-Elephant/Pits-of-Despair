@@ -14,13 +14,6 @@ THEN
 END
 
 IF
-  StateCheck([PC], STATE_REALLY_DEAD)
-THEN
-  RESPONSE #100
-    GameOver(17123) // The main character has died.
-END
-
-IF
   Global("zb_train_spawn","global",1)
 THEN
   RESPONSE #100
@@ -155,4 +148,13 @@ THEN
     ClearAllActions()
     StartCutSceneMode()
     StartCutScene("zbtrain0")
+END
+
+IF
+  StateCheck(Player1, STATE_REALLY_DEAD)
+  Global("ZB_ISDEAD","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ZB_ISDEAD","MYAREA",1)
+    GameOver(17123) // The main character has died.
 END
