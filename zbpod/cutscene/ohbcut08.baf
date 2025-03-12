@@ -50,8 +50,8 @@ THEN
         ActionOverride("ohbdulf",JumpToPoint([2720.1810]))
         ActionOverride("ohbdulf",MoveToPoint([2720.1810]))
         ActionOverride("ohbdulf",Face(SW))
-		ActionOverride("zspdnf16",JumpToPoint([4330,3065])) /* move nephetel to stand next to stannel */ 
-        ActionOverride("zspdnf16",MoveToPoint([4330,3065]))
+		ActionOverride("zspdnf16",JumpToPoint([4330.3065])) /* move nephetel to stand next to stannel */ 
+        ActionOverride("zspdnf16",MoveToPoint([4330.3065]))
         ActionOverride("zspdnf16",Face(SW))
 		CreateCreature("ohbvoghi",[2945.3025],NW)  // Voghiln the Vast
         ActionOverride("ohbvoghi",SetGlobal("OHB_TALKED_VOGHI","LOCALS",1))
