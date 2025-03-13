@@ -21,12 +21,12 @@ THEN
 		FadeToColor([50.0],0)
 		Wait(2)
 		StorePartyLocations()
-		LeaveAreaLUA("ZB0701","",[1625.480],NW) /* carries player over */
-		ActionOverride(Player2,LeaveAreaLUA("ZB0701","",[2034.873],NW))
-		ActionOverride(Player3,LeaveAreaLUA("ZB0701","",[2034.873],NW))
-		ActionOverride(Player4,LeaveAreaLUA("ZB0701","",[2034.873],NW))
-		ActionOverride(Player5,LeaveAreaLUA("ZB0701","",[2034.873],NW))
-		ActionOverride(Player6,LeaveAreaLUA("ZB0701","",[2034.873],NW))  /* carries party over, they have to be out of sight */
+		LeaveAreaLUA("ZB0701","",[1660.480],NW) /* carries player over */
+		ActionOverride(Player2,LeaveAreaLUA("ZB0701","",[1660.460],NW))
+		ActionOverride(Player3,LeaveAreaLUA("ZB0701","",[1660.440],NW))
+		ActionOverride(Player4,LeaveAreaLUA("ZB0701","",[1700.480],NW))
+		ActionOverride(Player5,LeaveAreaLUA("ZB0701","",[1700.460],NW))
+		ActionOverride(Player6,LeaveAreaLUA("ZB0701","",[1700.440],NW))
 		ApplySpell(Player1,WIZARD_INVISIBILITY)
 		ApplySpell(Player2,WIZARD_INVISIBILITY)
 		ApplySpell(Player3,WIZARD_INVISIBILITY)
