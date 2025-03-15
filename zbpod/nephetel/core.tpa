@@ -30,6 +30,7 @@ COPY ~%MOD_FOLDER%/nephetel/cre/zbmes.cre~ ~override~
 /// Dialog ///
 // Compile dialog
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/dlg/zbneph.d~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/dlg/zbmes.d~
 
 // Scripts
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/baf/zbnephs.baf~
@@ -37,6 +38,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/baf/zbnep25s.baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/baf/zbnephd.baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/baf/zbnep25d.baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/baf/zbme2.baf~
+
 
 // Appending dialog files
 // See [here](https://www.gibberlings3.net/forums/topic/15833-dialog-files-and-how-they-are-referenced/)
