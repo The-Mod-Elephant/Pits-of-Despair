@@ -125,7 +125,7 @@ END
 INCLUDE ~%MOD_FOLDER%/lib/fragments/mo_initialize.tpa~ // sets up various script variables and detectable spells
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_items.tph~
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_cre.tph~
-INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_stores.tph~
+COPY ~%MOD_FOLDER%/sto~ ~override~
 
 // Copy animations
 COPY ~%MOD_FOLDER%/animations/astral_demilich~ ~override~
