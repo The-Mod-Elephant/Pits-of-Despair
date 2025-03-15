@@ -110,6 +110,6 @@ THEN
 		EndCutSceneMode() /* exits the the StartCutSceneMode() action */
 		Wait(1)
 		FadeFromColor([50.0],0)
-		AddJournalEntry(@800001,QUEST) /* add journal entry, moved over from d file */
+		AddJournalEntry(@1,QUEST)
 		GiveItemCreate("zbpdnote",Player1,1,0,0) /* give player the note, moved over from d file */
 END

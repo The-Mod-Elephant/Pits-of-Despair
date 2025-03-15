@@ -141,7 +141,7 @@ COPY ~%MOD_FOLDER%/animations/red_worg~ ~override~
 // Fix antimagic BP2 spell so it prevents Simulacrum from being cast
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/cutscene~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/cutscene~ LOAD_TRA ~%MOD_FOLDER%/lang/%LANGUAGE%/cutscenes.tra~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bp2scripts~
 COMPILE ~%MOD_FOLDER%/ohbvic01~ /* editing the item_roll at the bottom to be zero so we ALWAYS get loot */ /* using EVALUATE BUFFER here means it won't install where going YOLO */
 
