@@ -373,7 +373,7 @@ THEN
 		TriggerActivation("ohb_messhall1",TRUE)
 		TriggerActivation("ohb_messhall2",TRUE)
 		CreateCreature("ohbdenna",[2530.3265],SE)  // Dennaton
-		CreateCreature("zspdnf16",[2520.3309],SE)  /* Nephetel, Welcoming Feast */ 
+		CreateCreature("zspdnf16",[2520.3309],SE)  /* Nephetel, Welcoming Feast */
 		ActionOverride("OHBTARTL",JumpToPoint([2570.3232]))
 		ActionOverride("OHBTARTL",Face(SSE))
 		ActionOverride("ohbcook",JumpToPoint([2375.3385]))
@@ -399,6 +399,17 @@ THEN
 		ActionOverride("ohbtimmo",Face(N))
 		ActionOverride("ohbvoghi",Face(W))
 		ActionOverride("ohblea",Face(N))
+END
+
+IF
+	See(Player1)
+	StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("ZB_NEPH_BEGIN","GLOBAL",0)
+	Global("ZB_MOVED_NEPH","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ZB_NEPH_BEGIN","GLOBAL",1)
+		ActionOverride("zspdnf16",StartDialogueNoSet([PC]))
 END
 
 IF
