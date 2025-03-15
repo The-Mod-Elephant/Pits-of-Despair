@@ -169,15 +169,31 @@ COPY_EXISTING ~zbbtlizd.itm~ ~override~
 
 //////// Blazing Bull \\\\\\\\
 COPY ~%MOD_FOLDER%/items/blazingbull~ ~override~
-COPY ~%MOD_FOLDER%/items/blazingbull/zbhlmbul.itm~ ~override~
+COPY_EXISTING ~zbhlmbul.itm~ ~override~
     SAY NAME2 @10140
     SAY IDENTIFIED_DESC @10141
+COPY_EXISTING ~zbhlmbu3.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@18004) END
 
 //////// Gruumsh's Totem \\\\\\\\
 COPY ~%MOD_FOLDER%/items/grummshtotem~ ~override~
 COPY_EXISTING ~zbrdorc0.itm~ ~override~
     SAY NAME2 @10150
     SAY IDENTIFIED_DESC @10151
+
+//////// Bear Foot \\\\\\\\
+COPY ~%MOD_FOLDER%/items/bearfoot~ ~override~
+COPY_EXISTING ~zbbearfa.itm~ ~override~
+    SAY NAME2 @11040
+    SAY IDENTIFIED_DESC @11041
+
+//////// Standing Ovation \\\\\\\\
+COPY ~%MOD_FOLDER%/items/standingovation~ ~override~
+COPY_EXISTING ~zbstabda.itm~ ~override~
+    SAY NAME2 @11050
+    SAY IDENTIFIED_DESC @11051
+COPY_EXISTING ~zbstandb.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@11052) END
 
 //////// Resplendent Ring \\\\\\\\
 COPY ~%MOD_FOLDER%/items/rrr~ ~override~

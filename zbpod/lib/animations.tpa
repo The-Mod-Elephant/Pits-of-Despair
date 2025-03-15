@@ -55,3 +55,46 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY P_ASTRAL_DEMILICH_ANIMS_Exxx BEGIN
     OUTER_SET EVAL ~slot_%folder%~ = slot   // save animation slot number for later
     APPEND ~ANIMATE.IDS~ ~0x%hexNumber% %symbol%~
 END
+// Hamatula
+ACTION_DEFINE_ASSOCIATIVE_ARRAY ZBHAMATULA_ANIMS_Exxx BEGIN
+    ~hamatula~ => ~ZBHAMATULA~
+  END
+  ACTION_PHP_EACH ZBHAMATULA_ANIMS_Exxx AS folder => symbol BEGIN
+    ACTION_BASH_FOR ~%MOD_FOLDER%/Animations/%folder%~ ~.+\.bam~ ~%MOD_FOLDER%/Animations/%folder%~ ~.+\.bmp~ BEGIN
+      COPY ~%BASH_FOR_FILESPEC%~ ~override~
+    END
+    LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 RET slot END
+    LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+    COPY ~%MOD_FOLDER%/Animations/%folder%/Exxx.ini~ ~override/%hexNumber%.ini~
+    OUTER_SET EVAL ~slot_%folder%~ = slot   // save animation slot number for later
+    APPEND ~ANIMATE.IDS~ ~0x%hexNumber% %symbol%~
+END
+
+// Pit Fiend
+ACTION_DEFINE_ASSOCIATIVE_ARRAY ZBPITFIEND_ANIMS_Exxx BEGIN
+    ~pit_fiend~ => ~ZBPITFIEND~
+  END
+  ACTION_PHP_EACH ZBPITFIEND_ANIMS_Exxx AS folder => symbol BEGIN
+    ACTION_BASH_FOR ~%MOD_FOLDER%/Animations/%folder%~ ~.+\.bam~ ~%MOD_FOLDER%/Animations/%folder%~ ~.+\.bmp~ BEGIN
+      COPY ~%BASH_FOR_FILESPEC%~ ~override~
+    END
+    LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 RET slot END
+    LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+    COPY ~%MOD_FOLDER%/Animations/%folder%/Exxx.ini~ ~override/%hexNumber%.ini~
+    OUTER_SET EVAL ~slot_%folder%~ = slot   // save animation slot number for later
+    APPEND ~ANIMATE.IDS~ ~0x%hexNumber% %symbol%~
+END
+// Black Weaver
+ACTION_DEFINE_ASSOCIATIVE_ARRAY P_BLACK_WEAVER_ANIMS_Exxx BEGIN
+    ~black_weaver~ => ~P_BLACK_WEAVER~
+  END
+  ACTION_PHP_EACH P_BLACK_WEAVER_ANIMS_Exxx AS folder => symbol BEGIN
+    ACTION_BASH_FOR ~%MOD_FOLDER%/Animations/%folder%~ ~.+\.bam~ ~%MOD_FOLDER%/Animations/%folder%~ ~.+\.bmp~ BEGIN
+      COPY ~%BASH_FOR_FILESPEC%~ ~override~
+    END
+    LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 RET slot END
+    LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+    COPY ~%MOD_FOLDER%/Animations/%folder%/Exxx.ini~ ~override/%hexNumber%.ini~
+    OUTER_SET EVAL ~slot_%folder%~ = slot   // save animation slot number for later
+    APPEND ~ANIMATE.IDS~ ~0x%hexNumber% %symbol%~
+END

@@ -532,6 +532,37 @@ Equipped abilities:
 
 Weight: 1~
 
+@11040 = ~Bearfoot~
+@11041 = ~Bearfoot description placeholder
+
+TATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Electric resistance: +50%
+– Cold resistance: +50%
+
+Weight: 4~
+
+@11050 = ~Standing Ovation~
+@11051 = ~Standing Ovation description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Saves vs. Breath: +2
+– Physical damage resistance: +10%
+– Bard Song duration is doubled
+– Adulation: When the bard kills an enemy, it receives a bardic inspiration that grants a +3 bonus to damage, saving throws, and THAC0 for 3 rounds
+
+Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
+Requires:
+ 6 Strength
+
+Weight: 8~
+
+@11052 = ~Adulation~
+
 // igneous oil
 @40000 = ~Igneous Oil~
 @40001 = ~This oil will make your weapons inflict fire damage when coated with it. Since it is a natural substance, it won't be stopped by Magic Resistance.
