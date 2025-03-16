@@ -416,11 +416,22 @@ Weight: 3~
 @10180 = ~Nine Lives~
 @10181 = ~Nine Lives description placeholder~
 
-@10190 = ~Jack of all trades~
-@10191 = ~This rare and wonderful cloak goes by the name Jack. Originally worn by Dapper Jack he was a peasant who grew up with nothing but an incredible will to become anything and everything. He had heard tales that Elminster, the Sage, had throughout his long life had many professions and many careers before ending up as Mystra's archmage. Dapper Jack went through life learning the finesse of a thief, the style of a fighter, the devotion of a cleric, and the determination of a mage before eventually creating this item at the end years of his own long life. It was said to strike awe into those around him and the experience of his long years woven into its thread and beating with a life all their own.
+@10190 = ~Jack Of All Trades~
+@10191 = ~This rare and wonderful cloak goes by the name Jack. Originally worn by Dapper Jack, he was a peasant who grew up with nothing but an incredible will to become anything and everything. He had heard tales that Elminster, the Sage, had throughout his long life, many professions and many careers before ending up as Mystra's archmage. Dapper Jack went through life learning the finesse of a thief, the style of a fighter, the devotion of a cleric, and the determination of a mage before eventually creating this item at the end years of his own long life. It was said to strike awe into those around him, and the experience of his long years was woven into its thread and beating with a life all their own.
 
 Equipped abilities:
-– Pending to complete, it's a fairly complicated item!! :)
+The benefits of this item depend on the class(es) of the wearer. The cloak will adapt to the wearer's class and the overall weight of their affinity, granting them the following abilities:
+– Full fighter proficiencies: +1 to Constitution, +5% physical and magic damage resistance. Applies to all single and multi-classed fighters, paladins, monks, and rangers
+– Partial fighter proficiencies: This only applies to Bards. No magic damage resistance is granted
+– Full priestly proficiencies: +2 to casting speed, +2 saves vs. Death. Applies to all single and multi-classed clerics
+– Partial priestly proficiencies: This only applies to Paladins and Blackguards. Bonuses are halved
+– Full rogue proficiencies: +1 to THAC0, +1 to Dexterity, +5% to thieving skills. Applies to all single and multi-classed thieves, and bards
+– Partial rogue proficiencies: This applies to Rangers and Monks. The THAC0 bonus is not granted.
+– Full druidic proficiencies: 1/HP per round regeneration, +10% resistance to elements. Applies to all single and multi-classed druids, and shamans
+– Partial druidic proficiencies: This only applies to Rangers. The regeneration bonus is three times slower and the elemental resistances are halved
+– Prepared arcane proficiency: +10% elemental and magic resistance, +2 Saves vs. Spell. Applies to all single and multi-classed mages, as well as bards
+– Spontaneous casting proficiency: One additional 4th and 5th level spell slot. Applies to all sorcerers and shamans
+
 
 Weight: 3~
 
