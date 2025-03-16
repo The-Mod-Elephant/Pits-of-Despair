@@ -82,11 +82,22 @@ COPY ~%MOD_FOLDER%/items/nephy_umbral_fang~ ~override~
 COPY_EXISTING ~zspddaga.itm~ ~override~
     SAY NAME2 @10050
     SAY IDENTIFIED_DESC @10051
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10052) END
 
 COPY_EXISTING ~zspddg01.spl~ ~override~
               ~zspddg02.spl~ ~override~
               ~zspddg03.spl~ ~override~
     SAY NAME2 @10050
+
+COPY_EXISTING ~zspddagb.itm~ ~override~
+    SAY NAME2 @10053
+    SAY IDENTIFIED_DESC @10054
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10052) END
+
+COPY_EXISTING ~zspddg04.spl~ ~override~
+              ~zspddg05.spl~ ~override~
+              ~zspddg06.spl~ ~override~
+    SAY NAME2 @10053
 
 //////// Astral Crossbow of Speed +4 \\\\\\\\
 COPY ~%MOD_FOLDER%/items/astral_crossbow~ ~override~
@@ -305,7 +316,7 @@ COPY_EXISTING ~zswoposi.spl~ ~override~
 //////// Import BG1 ITEMS \\\\\\\\
 ///////                    \\\\\\\\
 ACTION_BASH_FOR ~%MOD_FOLDER%/items/bg1_imported_items/bams~ ~*~ BEGIN
-    ACTION_IF (! FILE_EXISTS_IN_GAME ~%BASH_FOR_FILE%~) BEGIN 
+    ACTION_IF (! FILE_EXISTS_IN_GAME ~%BASH_FOR_FILE%~) BEGIN
         COPY ~%BASH_FOR_FILE%~ ~override~
     END
 END

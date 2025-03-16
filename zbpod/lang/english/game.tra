@@ -166,10 +166,8 @@ Requires:
 
 Weight: 10~
 
-@10050 = ~Phantasmal Fang +4~
-@10051 = ~This pale dagger was Nephetel's main weapon of choice. Made from the fang of a dracolich (according to her, at least), this dagger's blade radiates a powerful aura, and it gleams with an eerie ghostly sheen, etched with runes that hint at the powerful magic contained within.
-
-The essence of the dracolich lingers, and provides the user with a limited amount of the protections that liches would have.
+@10050 = ~Penumbral Fang +3~
+@10051 = ~This pale dagger is Nephetel's main weapon of choice. Made from the fang of a dracolich (according to her, at least), this dagger's blade radiates a powerful aura, and it gleams with an eerie ghostly sheen, etched with runes that hint at the powerful magic contained within. The essence of the dracolich lingers, and provides the user with a limited amount of the protections that liches would have.
 
 STATISTICS:
 
@@ -187,8 +185,8 @@ Charge abilities:
   Special: Protect against the effects of spell levels 1-5 for 1 turn
   Area of Effect: Self
 
-THAC0: +4
-Damage: 1d4+4, +1d2 cold and magic damage
+THAC0: +3
+Damage: 1d4+3, +1d2 cold and magic damage
 Damage type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger
@@ -199,6 +197,38 @@ Requires:
 Weight: 1~
 
 @10052 = ~Grave Chill~
+
+@10053 = ~Umbral Fang +6~
+@10054 = ~This pale dagger is Nephetel's main weapon of choice. Made from the fang of a dracolich (according to her, at least), this dagger's blade radiates a powerful aura, and it gleams with an eerie ghostly sheen, etched with runes that hint at the powerful magic contained within. The essence of the dracolich lingers, and provides the user with a limited amount of the protections that liches would have.
+
+Now empowered with a second fang of a dracolich, this dagger's dark power is truly an instrument of death.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to instant-death effects, paralysis, hold, and level drain
+– Immunity to cold damage
+
+Combat abilities:
+– 15% chance per hit of inflicting Grave Chill on the target, causing 2d4 cold damage instantly, and again once per round in the next 3 rounds. If a save vs. Death at -2 is failed, the target is Held for 1 round, otherwise, they are only Slowed
+– Critical hits unleash a ray of necromantic magic into the body of the victim, forcing them to save vs. Death at -2 or die. If the target has 60 hit points or less, the save vs. Death is made at -5. Even if a save is made, they still suffer 3d6 magic damage from the shock
+– +5% chance to critically hit (this weapon only)
+
+Charge abilities:
+– Lich's Essence once per day
+  Special: Protect against the effects of spell levels 1-5 for 1 turn
+  Area of Effect: Self
+
+THAC0: +6
+Damage: 1d4+6, +1d3 cold and magic damage
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
 
 @10060 = ~Astral Crowssbow of Speed +4~
 @10061 = ~This crossbow is a sleek, silvered weapon adorned with faintly glowing etchings of celestial constellations. When bolts are loaded into it, they seem to shimmer and vanish, only to reappear in the bowstring, ready to be fired. The weapon is light and easy to handle, and the wielder feels a sense of calm and focus when using it.
