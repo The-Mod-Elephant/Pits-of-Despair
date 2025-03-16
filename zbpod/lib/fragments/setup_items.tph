@@ -201,6 +201,18 @@ COPY_EXISTING ~zbrrrind.itm~ ~override~
     SAY NAME2 @10160
     SAY IDENTIFIED_DESC @10161
 
+
+//////// Blood of Orcus \\\\\\\\
+COPY ~%MOD_FOLDER%/items/bloodoforcus~ ~override~
+COPY_EXISTING ~zborcaxa.itm~ ~override~
+    SAY NAME2 @11060
+    SAY IDENTIFIED_DESC @11061
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = "-1" parameter1 = RESOLVE_STR_REF(@11064) END
+COPY_EXISTING ~zborcaxb.itm~ ~override~
+    SAY NAME2 @11062
+    SAY IDENTIFIED_DESC @11063
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = "-1" parameter1 = RESOLVE_STR_REF(@11064) END
+
 //////// Angelic Horseshoe \\\\\\\\
 COPY ~%MOD_FOLDER%/items/angelichorseshoe~ ~override~
 COPY ~%MOD_FOLDER%/items/angelichorseshoe/zbahorse.itm~ ~override~

@@ -574,6 +574,53 @@ Weight: 8~
 
 @11052 = ~Adulation~
 
+@11060 = ~Blood of Orcus +3~
+@11061 = ~Blood of Orcus description placeholder
+
+Combat abilities:
+– Limb Shatter: 4% chance per hit of reducing the HP of the target by 20%. Targets protected by Stoneskin or Iron Skins, as well as those that are incorporeal, or lacking limbs in any discernable sense (such as slimes) are immune to this effect
+– 20% chance per hit that target must save vs. Death at -2 or die from decapitation. If the target fails the save but is immune to vorpal hits, they will still suffer the effects of Limb Shatter
+
+
+STATISTICS:
+
+THAC0: +3
+Damage: 1d8+3, +1 fire damage
+Speed Factor: 4
+Proficiency Type: Axe
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 4~
+
+@11062 = ~Blood of Orcus +5~
+@11063 = ~Blood of Orcus description placeholder
+
+Combat abilities:
+– Limb Shatter: 5% chance per hit of reducing the HP of the target by 20%. Targets protected by Stoneskin or Iron Skins, as well as those that are incorporeal, or lacking limbs in any discernable sense (such as slimes) are immune to this effect
+– 20% chance per hit that target must save vs. Death at -3 or die from decapitation. If the target fails the save but is immune to vorpal hits, they will still suffer the effects of Limb Shatter
+
+Charge abilities:
+– Circle of Bones
+  Special: ????
+  Area of Effect: Self
+
+STATISTICS:
+
+THAC0: +5
+Damage: 1d8+5, +2 fire damage, +4 necrotic damage (only affects living creatures of the Prime)
+Damage type: Slashing
+Speed Factor: 2
+Proficiency Type: Axe
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 4~
+
+@11064 = ~Limb Shattered~
+
 // igneous oil
 @40000 = ~Igneous Oil~
 @40001 = ~This oil will make your weapons inflict fire damage when coated with it. Since it is a natural substance, it won't be stopped by Magic Resistance.
