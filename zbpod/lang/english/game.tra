@@ -421,8 +421,7 @@ Weight: 3~
 
 Equipped abilities:
 The benefits of this item depend on the class(es) of the wearer. The cloak will adapt to the wearer's class and the overall weight of their affinity, granting them the following abilities:
-– Full fighter proficiencies: +1 to Constitution, +5% physical and magic damage resistance. Applies to all single and multi-classed fighters, paladins, monks, and rangers
-– Partial fighter proficiencies: This only applies to Bards. No magic damage resistance is granted
+– Martial proficiencies: +1 to Constitution, +5% physical and magic damage resistance. Applies to all single and multi-classed fighters, paladins, monks, rangers, and bards
 – Full priestly proficiencies: +2 to casting speed, +2 saves vs. Death. Applies to all single and multi-classed clerics
 – Partial priestly proficiencies: This only applies to Paladins and Blackguards. Bonuses are halved
 – Full rogue proficiencies: +1 to THAC0, +1 to Dexterity, +5% to thieving skills. Applies to all single and multi-classed thieves, and bards
