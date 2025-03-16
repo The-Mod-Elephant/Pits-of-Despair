@@ -293,7 +293,7 @@ COPY_EXISTING ~zswoposi.spl~ ~override~
 //////// Import BG1 ITEMS \\\\\\\\
 ///////                    \\\\\\\\
 ACTION_BASH_FOR ~%MOD_FOLDER%/items/bg1_imported_items/bams~ ~*~ BEGIN
-    ACTION_IF (! FILE_EXISTS_IN_GAME ~%BASH_FOR_FILE%~) BEGIN
+    ACTION_IF (! FILE_EXISTS_IN_GAME ~%BASH_FOR_FILE%~) BEGIN 
         COPY ~%BASH_FOR_FILE%~ ~override~
     END
 END
