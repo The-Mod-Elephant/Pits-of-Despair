@@ -567,8 +567,8 @@ Weight: 8~
 @11061 = ~Blood of Orcus description placeholder
 
 Combat abilities:
-– Bone Shatter: 4% chance per hit of reducing the HP of the target by 20%. Targets without bones or protected by Stoneskin or Iron Skins are immune to this effect
-– 20% chance per hit that target must save vs. Death at -2 or die from decapitation. If the target is immune to vorpal hits, they will still suffers the effects of Bone Shatter
+– Limb Shatter: 4% chance per hit of reducing the HP of the target by 20%. Targets protected by Stoneskin or Iron Skins, as well as those that are incorporeal, or lacking limbs in any discernable sense (such as slimes) are immune to this effect
+– 20% chance per hit that target must save vs. Death at -2 or die from decapitation. If the target fails the save but is immune to vorpal hits, they will still suffer the effects of Limb Shatter
 
 
 STATISTICS:
@@ -583,12 +583,12 @@ Requires:
 
 Weight: 4~
 
-@11060 = ~Blood of Orcus +5~
-@11061 = ~Blood of Orcus description placeholder
+@11062 = ~Blood of Orcus +5~
+@11063 = ~Blood of Orcus description placeholder
 
 Combat abilities:
-– Bone Shatter: 4% chance per hit of reducing the HP of the target by 20%. Targets without limbs or protected by Stoneskin or Iron Skins are immune to this effect
-– 20% chance per hit that target must save vs. Death at -2 or die from decapitation. If the target is immune to vorpal hits, they will still suffers the effects of Bone Shatter
+– Limb Shatter: 5% chance per hit of reducing the HP of the target by 20%. Targets protected by Stoneskin or Iron Skins, as well as those that are incorporeal, or lacking limbs in any discernable sense (such as slimes) are immune to this effect
+– 20% chance per hit that target must save vs. Death at -3 or die from decapitation. If the target fails the save but is immune to vorpal hits, they will still suffer the effects of Limb Shatter
 
 Charge abilities:
 – Circle of Bones
@@ -607,6 +607,8 @@ Requires:
  10 Strength
 
 Weight: 4~
+
+@11064 = ~Limb Shattered~
 
 // igneous oil
 @40000 = ~Igneous Oil~
