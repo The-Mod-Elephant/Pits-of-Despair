@@ -309,9 +309,12 @@ COPY_EXISTING ~ohbwing.cre~ ~override~
     SAY 0x08 @15019
     SAY 0x0c @15019
 
+COPY ~%MOD_FOLDER%/animations/lizard_king~ ~override~
+
 // Lizard Chieftain
 ACTION_IF FILE_EXISTS_IN_GAME ~OHBLIZ01.cre~ BEGIN
     COPY_EXISTING ~OHBLIZ01.cre~ ~override~
+        WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~LIZARD_KING~))
         LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
 END
 
