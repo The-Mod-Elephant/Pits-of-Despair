@@ -166,10 +166,8 @@ Requires:
 
 Weight: 10~
 
-@10050 = ~Phantasmal Fang +4~
-@10051 = ~This pale dagger was Nephetel's main weapon of choice. Made from the fang of a dracolich (according to her, at least), this dagger's blade radiates a powerful aura, and it gleams with an eerie ghostly sheen, etched with runes that hint at the powerful magic contained within.
-
-The essence of the dracolich lingers, and provides the user with a limited amount of the protections that liches would have.
+@10050 = ~Penumbral Fang +3~
+@10051 = ~This pale dagger is Nephetel's main weapon of choice. Made from the fang of a dracolich (according to her, at least), this dagger's blade radiates a powerful aura, and it gleams with an eerie ghostly sheen, etched with runes that hint at the powerful magic contained within. The essence of the dracolich lingers, and provides the user with a limited amount of the protections that liches would have.
 
 STATISTICS:
 
@@ -187,8 +185,8 @@ Charge abilities:
   Special: Protect against the effects of spell levels 1-5 for 1 turn
   Area of Effect: Self
 
-THAC0: +4
-Damage: 1d4+4, +1d2 cold and magic damage
+THAC0: +3
+Damage: 1d4+3, +1d2 cold and magic damage
 Damage type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger
@@ -199,6 +197,38 @@ Requires:
 Weight: 1~
 
 @10052 = ~Grave Chill~
+
+@10053 = ~Umbral Fang +6~
+@10054 = ~This pale dagger is Nephetel's main weapon of choice. Made from the fang of a dracolich (according to her, at least), this dagger's blade radiates a powerful aura, and it gleams with an eerie ghostly sheen, etched with runes that hint at the powerful magic contained within. The essence of the dracolich lingers, and provides the user with a limited amount of the protections that liches would have.
+
+Now empowered with a second fang of a dracolich, this dagger's dark power is truly an instrument of death.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to instant-death effects, paralysis, hold, and level drain
+– Immunity to cold damage
+
+Combat abilities:
+– 15% chance per hit of inflicting Grave Chill on the target, causing 2d4 cold damage instantly, and again once per round in the next 3 rounds. If a save vs. Death at -2 is failed, the target is Held for 1 round, otherwise, they are only Slowed
+– Critical hits unleash a ray of necromantic magic into the body of the victim, forcing them to save vs. Death at -2 or die. If the target has 60 hit points or less, the save vs. Death is made at -5. Even if a save is made, they still suffer 3d6 magic damage from the shock
+– +5% chance to critically hit (this weapon only)
+
+Charge abilities:
+– Lich's Essence once per day
+  Special: Protect against the effects of spell levels 1-5 for 1 turn
+  Area of Effect: Self
+
+THAC0: +6
+Damage: 1d4+6, +1d3 cold and magic damage
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
 
 @10060 = ~Astral Crowssbow of Speed +4~
 @10061 = ~This crossbow is a sleek, silvered weapon adorned with faintly glowing etchings of celestial constellations. When bolts are loaded into it, they seem to shimmer and vanish, only to reappear in the bowstring, ready to be fired. The weapon is light and easy to handle, and the wielder feels a sense of calm and focus when using it.
@@ -416,11 +446,21 @@ Weight: 3~
 @10180 = ~Nine Lives~
 @10181 = ~Nine Lives description placeholder~
 
-@10190 = ~Jack of all trades~
-@10191 = ~This rare and wonderful cloak goes by the name Jack. Originally worn by Dapper Jack he was a peasant who grew up with nothing but an incredible will to become anything and everything. He had heard tales that Elminster, the Sage, had throughout his long life had many professions and many careers before ending up as Mystra's archmage. Dapper Jack went through life learning the finesse of a thief, the style of a fighter, the devotion of a cleric, and the determination of a mage before eventually creating this item at the end years of his own long life. It was said to strike awe into those around him and the experience of his long years woven into its thread and beating with a life all their own.
+@10190 = ~Jack Of All Trades~
+@10191 = ~This rare and wonderful cloak goes by the name Jack. Originally worn by Dapper Jack, he was a peasant who grew up with nothing but an incredible will to become anything and everything. He had heard tales that Elminster, the Sage, had throughout his long life, many professions and many careers before ending up as Mystra's archmage. Dapper Jack went through life learning the finesse of a thief, the style of a fighter, the devotion of a cleric, and the determination of a mage before eventually creating this item at the end years of his own long life. It was said to strike awe into those around him, and the experience of his long years was woven into its thread and beating with a life all their own.
 
 Equipped abilities:
-– Pending to complete, it's a fairly complicated item!! :)
+The benefits of this item depend on the class(es) of the wearer. The cloak will adapt to the wearer's class and the overall weight of their affinity, granting them the following abilities:
+– Martial proficiencies: +1 to Constitution, +5% physical and magic damage resistance. Applies to all single and multi-classed fighters, paladins, monks, rangers, and bards
+– Full priestly proficiencies: +2 to casting speed, +2 saves vs. Death. Applies to all single and multi-classed clerics
+– Partial priestly proficiencies: This only applies to Paladins and Blackguards. Bonuses are halved
+– Full rogue proficiencies: +1 to THAC0, +1 to Dexterity, +5% to thieving skills. Applies to all single and multi-classed thieves, and bards
+– Partial rogue proficiencies: This applies to Rangers and Monks. The THAC0 bonus is not granted.
+– Full druidic proficiencies: 1/HP per round regeneration, +10% resistance to elements. Applies to all single and multi-classed druids, and shamans
+– Partial druidic proficiencies: This only applies to Rangers. The regeneration bonus is three times slower and the elemental resistances are halved
+– Prepared arcane proficiency: +10% elemental and magic resistance, +2 Saves vs. Spell. Applies to all single and multi-classed mages, as well as bards
+– Spontaneous casting proficiency: One additional 4th and 5th level spell slot. Applies to all sorcerers and shamans
+
 
 Weight: 3~
 
@@ -562,6 +602,53 @@ Requires:
 Weight: 8~
 
 @11052 = ~Adulation~
+
+@11060 = ~Blood of Orcus +3~
+@11061 = ~Blood of Orcus description placeholder
+
+Combat abilities:
+– Limb Shatter: 4% chance per hit of reducing the HP of the target by 20%. Targets protected by Stoneskin or Iron Skins, as well as those that are incorporeal, or lacking limbs in any discernable sense (such as slimes) are immune to this effect
+– 20% chance per hit that target must save vs. Death at -2 or die from decapitation. If the target fails the save but is immune to vorpal hits, they will still suffer the effects of Limb Shatter
+
+
+STATISTICS:
+
+THAC0: +3
+Damage: 1d8+3, +1 fire damage
+Speed Factor: 4
+Proficiency Type: Axe
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 4~
+
+@11062 = ~Blood of Orcus +5~
+@11063 = ~Blood of Orcus description placeholder
+
+Combat abilities:
+– Limb Shatter: 5% chance per hit of reducing the HP of the target by 20%. Targets protected by Stoneskin or Iron Skins, as well as those that are incorporeal, or lacking limbs in any discernable sense (such as slimes) are immune to this effect
+– 20% chance per hit that target must save vs. Death at -3 or die from decapitation. If the target fails the save but is immune to vorpal hits, they will still suffer the effects of Limb Shatter
+
+Charge abilities:
+– Circle of Bones
+  Special: ????
+  Area of Effect: Self
+
+STATISTICS:
+
+THAC0: +5
+Damage: 1d8+5, +2 fire damage, +4 necrotic damage (only affects living creatures of the Prime)
+Damage type: Slashing
+Speed Factor: 2
+Proficiency Type: Axe
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 4~
+
+@11064 = ~Limb Shattered~
 
 // igneous oil
 @40000 = ~Igneous Oil~

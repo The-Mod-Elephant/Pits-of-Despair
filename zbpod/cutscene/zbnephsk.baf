@@ -5,11 +5,6 @@ THEN
 	RESPONSE #100
 		SetCutSceneBreakable(FALSE)
 		ApplySpellRES("BPDISPEL",Player1)  // No such index
-		ApplySpellRES("BPDISPEL",Player2)  // No such index
-		ApplySpellRES("BPDISPEL",Player3)  // No such index
-		ApplySpellRES("BPDISPEL",Player4)  // No such index
-		ApplySpellRES("BPDISPEL",Player5)  // No such index
-		ApplySpellRES("BPDISPEL",Player6)  // No such index
 		FadeToColor([50.0],0)
 		ActionOverride("zspdnf16",DestroySelf())
 		Wait(1)
@@ -21,7 +16,7 @@ THEN
 		RestorePartyLocations()
 		SetAreaScript("",OVERRIDE)
 		SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",0)
-		AddJournalEntry(@800001,QUEST) /* add journal entry, moved over from d file */
+		AddJournalEntry(@1,QUEST)
 		GiveItemCreate("zbpdnote",Player1,1,0,0)
 		Continue()
 END

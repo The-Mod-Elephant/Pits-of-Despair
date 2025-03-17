@@ -1,0 +1,58 @@
+// nephetel
+
+
+/// Portrait ///
+COPY  ~%MOD_FOLDER%/nephetel/portrait~ ~override~
+
+/// Creature files ///
+// SoA
+COPY ~%MOD_FOLDER%/nephetel/cre/zspdnf16.cre~ ~override~
+  SAY 0x08 @15001
+  SAY 0x0c @15001
+  WRITE_ASCII PORTRAIT_LARGE ~zdnephy~ #8
+  WRITE_ASCII PORTRAIT_SMALL ~zdnephy~ #8
+  WRITE_ASCII SCRIPT_OVERRIDE ~zbnephs~ #8
+  WRITE_ASCII DEATHVAR ~zspdnf16~ #32
+  WRITE_ASCII DIALOG ~zbneph~ #8
+
+// ToB
+COPY_EXISTING ~zspdnf16.cre~ ~override/zbnep25.cre~
+  WRITE_ASCII SCRIPT_OVERRIDE ~zbnep25s~ #8
+  WRITE_ASCII DIALOG ~zbnep25~ #8
+
+/* add messenger creature */
+COPY ~%MOD_FOLDER%/nephetel/cre/zbmes.cre~ ~override~
+  SAY NAME1 ~Mysterious Messenger~
+  SAY NAME2 ~Mysterious Messenger~
+  WRITE_ASCII SCRIPT_OVERRIDE ~zbme2~ #8
+  WRITE_ASCII DIALOG ~zbmes~ #8
+
+/// Dialog ///
+// Compile dialog
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/dlg/zbneph.d~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/dlg/zbmes.d~
+
+// Scripts
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/baf/zbnephs.baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/baf/zbnep25s.baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/baf/zbnephd.baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/baf/zbnep25d.baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/baf/zbme2.baf~
+
+
+// Appending dialog files
+// See [here](https://www.gibberlings3.net/forums/topic/15833-dialog-files-and-how-they-are-referenced/)
+// cre post_dialog_file join_dialog_file dream_script_file 25post_dialog_file 25join_dialog_file 25dream_script_file 25override_script_file
+APPEND ~pdialog.2da~
+  ~zbneph zbnephp zbnephj zbnephd zbnep25p zbnep25j zbnep25d zbnep25~
+UNLESS ~zbneph~
+
+// Banter
+// cre FILE 25FILE
+APPEND ~interdia.2da~
+  ~zbneph zbnephb zbnep25b~
+UNLESS ~zbneph~
+
+// Epilogue
+COPY ~%MOD_FOLDER%/nephetel/epilogue/zbneph.2da~ ~override~
+  REPLACE ~99999~ ~And then she lived happily ever after.~
