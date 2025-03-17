@@ -298,7 +298,35 @@ COPY_EXISTING ~ZBGOREM1.SPL~ ~override~
 COPY_EXISTING ~ohbwing.cre~ ~override~
     SAY 0x08 @15019
     SAY 0x0c @15019
- 
+
+COPY ~%MOD_FOLDER%/animations/lizard_king~ ~override~
+
+// Lizard Chieftain
+ACTION_IF FILE_EXISTS_IN_GAME ~OHBLIZ01.cre~ BEGIN
+    COPY_EXISTING ~OHBLIZ01.cre~ ~override~
+        WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~LIZARD_KING~))
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
+END
+
+// Lizard Man Elite
+ACTION_IF FILE_EXISTS_IN_GAME ~OHBLIZ02.cre~ BEGIN
+    COPY_EXISTING ~OHBLIZ02.cre~ ~override~
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
+END
+
+// Lizard Man Shaman
+ACTION_IF FILE_EXISTS_IN_GAME ~OHBLIZ03.cre~ BEGIN
+    COPY_EXISTING ~OHBLIZ03.cre~ ~override~
+        WRITE_ASCII 0x260 ~modruid1~ #8 // General Script (druid prebuff)
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
+END
+
+// Drow Priestess
+ACTION_IF FILE_EXISTS_IN_GAME ~OHBDRO04.cre~ BEGIN
+    COPY_EXISTING ~OHBDRO04.cre~ ~override~
+        WRITE_ASCII 0x260 ~mopries1~ #8 // General Script (druid prebuff)
+END
+
 // Add Ranged Scripts & APR Boost
 ACTION_FOR_EACH ranged IN 
         ohborc02 // orc archer
@@ -363,6 +391,8 @@ COPY ~%MOD_FOLDER%/creatures/#scripts/momatk01.baf~ ~override/momatk01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/mocrwl01.baf~ ~override/mocrwl01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/mowvrn01.baf~ ~override/mowvrn01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/mobear01.baf~ ~override/mobear01.bcs~
+     ~%MOD_FOLDER%/creatures/#scripts/modruid1.baf~ ~override/modruid1.bcs~
+     ~%MOD_FOLDER%/creatures/#scripts/mopries1.baf~ ~override/mopries1.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/ohbumb01.baf~ ~override/ohbumb01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/zbdom.baf~    ~override/zbdom.bcs~
   COMPILE_BAF_TO_BCS
