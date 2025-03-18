@@ -373,7 +373,7 @@ THEN
 		TriggerActivation("ohb_messhall1",TRUE)
 		TriggerActivation("ohb_messhall2",TRUE)
 		CreateCreature("ohbdenna",[2530.3265],SE)  // Dennaton
-		CreateCreature("zspdnf16",[2520.3309],SE)  /* Nephetel, Welcoming Feast */
+		CreateCreature("zbneph",[2520.3309],SE)  /* Nephetel, Welcoming Feast */
 		ActionOverride("OHBTARTL",JumpToPoint([2570.3232]))
 		ActionOverride("OHBTARTL",Face(SSE))
 		ActionOverride("ohbcook",JumpToPoint([2375.3385]))
@@ -409,7 +409,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("ZB_NEPH_BEGIN","GLOBAL",1)
-		ActionOverride("zspdnf16",StartDialogueNoSet([PC]))
+		ActionOverride("zbneph",StartDialogueNoSet([PC]))
 END
 
 IF

@@ -17,7 +17,7 @@ IF
 THEN
     RESPONSE #100
     SetGlobal("ZBNEPHXP","GLOBAL",1)
-    AddXPObject("ZSPDNF16",120000)
+    AddXPObject("zbneph",120000)
 END
 
 IF
@@ -28,7 +28,7 @@ IF
 THEN
     RESPONSE #100
     SetGlobal("ZBNEPHXP","GLOBAL",1)
-    AddXPObject("ZSPDNF16",450000)
+    AddXPObject("zbneph",450000)
 END
 
 IF
@@ -39,7 +39,7 @@ IF
 THEN
     RESPONSE #100
     SetGlobal("ZBNEPHXP","GLOBAL",1)
-    AddXPObject("ZSPDNF16",900000)
+    AddXPObject("zbneph",900000)
 END
 
 IF
@@ -50,7 +50,7 @@ IF
 THEN
     RESPONSE #100
     SetGlobal("ZBNEPHXP","GLOBAL",1)
-    AddXPObject("ZSPDNF16",900000)
+    AddXPObject("zbneph",900000)
 END
 
 
@@ -62,7 +62,7 @@ IF
 THEN
     RESPONSE #100
     SetGlobal("ZBNEPHXP","GLOBAL",1)
-    AddXPObject("ZSPDNF16",1600000)
+    AddXPObject("zbneph",1600000)
 END
 
 IF
@@ -73,5 +73,5 @@ IF
 THEN
     RESPONSE #100
     SetGlobal("ZBNEPHXP","GLOBAL",1)
-    AddXPObject("ZSPDNF16",2400000)
+    AddXPObject("zbneph",2400000)
 END
