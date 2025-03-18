@@ -9,8 +9,8 @@ COPY  ~%MOD_FOLDER%/nephetel/portrait~ ~override~
 COPY ~%MOD_FOLDER%/nephetel/cre/zspdnf16.cre~ ~override~
   SAY 0x08 @15001
   SAY 0x0c @15001
-  WRITE_ASCII PORTRAIT_LARGE ~zdnephy~ #8
-  WRITE_ASCII PORTRAIT_SMALL ~zdnephy~ #8
+  WRITE_ASCII PORTRAIT_LARGE ~zbnephy~ #8
+  WRITE_ASCII PORTRAIT_SMALL ~zbnephy~ #8
   WRITE_ASCII SCRIPT_OVERRIDE ~zbnephs~ #8
   WRITE_ASCII DEATHVAR ~zspdnf16~ #32
   WRITE_ASCII DIALOG ~zbneph~ #8
