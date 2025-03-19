@@ -1,10 +1,3 @@
-// creator  : weidu (version 24900)
-// argument : OHBJOKER.DLG
-// game     : ..
-// source   : ../DATA/BLACKPITS.BIF
-// dialog   : ..\lang\en_us\dialog.tlk
-// dialogF  : (none)
-
 BEGIN ~OHBJOKER~
 
 IF ~  GlobalGT("ohb_finale","global",7)

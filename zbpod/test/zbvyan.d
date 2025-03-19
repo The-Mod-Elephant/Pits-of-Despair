@@ -16,5 +16,5 @@ END
 CHAIN TRINNK01 ZBPODMOVE
 ~I've seen no sign of him. Take a seat, why don't you? I'll bring you something to drink.~
 = ~We even have a bard performing soon, it should make your wait that much easier.~
-DO ~SetGlobal("ZBPODSTART","GLOBAL",1) ClearAllActions() StartCutSceneMode() StartCutScene("podstr")~
+DO ~SetGlobal("ZBPODSTART","GLOBAL",1) ClearAllActions() StartCutSceneMode() StartCutScene("zbpodstr")~
 EXIT

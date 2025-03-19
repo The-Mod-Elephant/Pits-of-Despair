@@ -47,16 +47,14 @@ THEN
 		ActionOverride(Player5,FaceObject("ohbjoker"))  // Joker
 		ActionOverride(Player6,FaceObject("ohbjoker"))  // Joker
 		MoveViewPoint([672.468],INSTANT)
+		SetGlobal("ZBCUT00SKIP_CUTSCENE_BREAKABLE","GLOBAL",1)
 		SetAreaScript("zbcut00s",OVERRIDE)
 		SetGlobal("ZBBP2inBG2","GLOBAL",1) /* newly added line, to check that we're playing Pits of Despair during dialogue, interjections, etc */ 
 		SetGlobal("OHB_TALKED_BELLOWGULP","GLOBAL",1) /* take a sledgehammer to Bello's intro dialogue, skipping straight to his main merchant dialogue */ 
-		SetGlobal("ZBCUT00SKIP_CUTSCENE_BREAKABLE","GLOBAL",1)
+		SmallWait(1)
 		SetCutSceneBreakable(TRUE)
 		Wait(2)
 		DisplayStringPoint([672.468],@3675)  // It has been several months since your escape from Baeloth's Black Pits. Tales of your deeds have spread far and wide, and bards sing of them wherever you travel...
-		Wait(5)
-		// FadeToColor([0.0],0) /* we've already done a fade in vyantri's dialogue to move areas */ 
-		Wait(5)
 		FadeFromColor([60.0],0)
 		Wait(5) /* changed from smallwait(12) */ 
 		DisplayStringHead("ohbjoker",@3676)  // ...And so it came that Baeloth's game was quickly turned to naught.
@@ -75,7 +73,6 @@ THEN
 		DisplayStringHead("OHBPOL",@3682)  // You are a talented entertainer, madam, but do not insult my intelligence. The story you told is naught but a story. It never happened.
 		Wait(7)
 		SetCutSceneBreakable(FALSE)
-		SetGlobal("BD_CUTSCENE_BREAKABLE","GLOBAL",0)
 		SetAreaScript("",OVERRIDE)
 		ActionOverride("ohbjoker",StartDialogueNoSet(Player1))
 END
