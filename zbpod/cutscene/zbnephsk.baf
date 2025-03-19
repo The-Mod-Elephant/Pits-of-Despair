@@ -1,4 +1,5 @@
 IF
+	CutSceneBroken()
 	Global("zbnephcutscene","GLOBAL",1)
 	Global("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",1)
 THEN

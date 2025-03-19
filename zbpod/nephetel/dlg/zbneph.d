@@ -33,7 +33,7 @@ SAY ~Hero of Baldur's Gate, eh? The star in the night sky as far as Dennaton is 
 + ~Global("nepharena1","LOCALS",0)~ + ~Who are you?~ + zbnepharena1
 + ~Global("nepharena2","LOCALS",0)~ + ~How did you come to this place?~ + zbnepharena2
 + ~Global("nepharena3","LOCALS",0)~ + ~Would you be interested in helping me escape this place?~ + zbnepharena3
-+ ~Global("nepharena4","LOCALS",0)~ + ~You look familiar. There was this messenger who got me into this mess and your voice sounds supsiciously similar.~ + zbnepharena4
++ ~Global("nepharena4","LOCALS",0)~ + ~You look familiar. There was this messenger who got me into this mess and your voice sounds suspiciously similar.~ + zbnepharena4
 + ~Global("nepharena5","LOCALS",0)~ + ~You stood next to Dennaton during the feast. Are you two close?~ + zbnepharena5
 ++ ~I'll let you get back to whatever you were doing.~ EXIT /* reword this line bucket omg */
 END
@@ -70,7 +70,7 @@ SAY ~Anything else I can clear up for you?~
 + ~Global("nepharena1","LOCALS",0)~ + ~Who are you?~ + zbnepharena1
 + ~Global("nepharena2","LOCALS",0)~ + ~How did you come to this place?~ + zbnepharena2
 + ~Global("nepharena3","LOCALS",0)~ + ~Would you be interested in helping me escape this place?~ + zbnepharena3
-+ ~Global("nepharena4","LOCALS",0)~ + ~You look familiar. There was this messenger who got me into this mess and your voice sounds supsiciously similar.~ + zbnepharena4
++ ~Global("nepharena4","LOCALS",0)~ + ~You look familiar. There was this messenger who got me into this mess and your voice sounds suspiciously similar.~ + zbnepharena4
 + ~Global("nepharena5","LOCALS",0)~ + ~You stood next to Dennaton during the feast. Are you two close?~ + zbnepharena5
 ++ ~I'll let you get back to whatever you were doing.~ EXIT /* reword this line bucket omg */
 END

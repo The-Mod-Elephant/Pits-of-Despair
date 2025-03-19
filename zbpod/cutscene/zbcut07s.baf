@@ -1,0 +1,25 @@
+IF
+	Global("ZBCUT07SKIP_CUTSCENE_BREAKABLE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetCutSceneBreakable(FALSE)
+		ClearAllActions()
+		FadeToColor([50.0],0)
+		ActionOverride("ohbdenna",MoveToPoint([3385.2870]))
+		ActionOverride("ohbwing",ReallyForceSpell(Myself,DRYAD_TELEPORT))  // SPWI995.SPL (Dimension Door)
+		ActionOverride("ohbhort",MoveToPoint([2801.3231]))
+		ActionOverride("ohbhort",SetSequence(SEQ_AWAKE))
+		ActionOverride("ohbvoghi",SetSequence(SEQ_AWAKE))
+		ActionOverride("ohbfeldr",SetSequence(SEQ_AWAKE))
+		ActionOverride("ohbfeldr",FaceObject("ohbtartl"))  // Tartle
+		ActionOverride("ohbtartl",Face(SE))
+		Wait(1)
+		ActionOverride("ohbtartl",MoveToPoint([3385.2870]))
+		MoveToPoint([2484.3314])
+		ActionOverride("ohbcook",Face(E))
+		FadeFromColor([50.0],0)
+		SetAreaScript("",OVERRIDE)
+		SetGlobal("ZBCUT07SKIP_CUTSCENE_BREAKABLE","GLOBAL",0)
+		ActionOverride("ohbcook",StartDialogueNoSet(Player1))
+END
+
