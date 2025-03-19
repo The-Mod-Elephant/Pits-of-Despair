@@ -277,6 +277,15 @@ COPY_EXISTING ~ohbmin01.cre~ ~override~
     SAY 0x08 @15018
     SAY 0x0c @15018
 
+// ohb_101 Orc Warrior
+COPY_EXISTING ~OHBORC01.cre~ ~override~
+    SET_BG2_PROFICIENCY ~PROFICIENCYHALBERD~ 5
+
+// ohb_101 Orc Archer
+COPY_EXISTING ~OHBORC02.cre~ ~override~
+    WRITE_BYTE 0x23c 17  // Dexterity    
+    REPLACE_CRE_ITEM ~BRAC04~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~GLOVES~ EQUIP // Dale's Protectors
+
 // ohb_102 Thief fight
 COPY_EXISTING ~OHBGLA01.cre~ ~override~
     WRITE_ASCII 0x260 ~motatk01~ #8 // General Script (theif attacks)
@@ -305,20 +314,20 @@ COPY ~%MOD_FOLDER%/animations/lizard_king~ ~override~
 ACTION_IF FILE_EXISTS_IN_GAME ~OHBLIZ01.cre~ BEGIN
     COPY_EXISTING ~OHBLIZ01.cre~ ~override~
         WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~LIZARD_KING~))
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 3 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
 END
 
 // Lizard Man Elite
 ACTION_IF FILE_EXISTS_IN_GAME ~OHBLIZ02.cre~ BEGIN
     COPY_EXISTING ~OHBLIZ02.cre~ ~override~
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 3 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
 END
 
 // Lizard Man Shaman
 ACTION_IF FILE_EXISTS_IN_GAME ~OHBLIZ03.cre~ BEGIN
     COPY_EXISTING ~OHBLIZ03.cre~ ~override~
         WRITE_ASCII 0x260 ~modruid1~ #8 // General Script (druid prebuff)
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 3 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
 END
 
 // Drow Priestess
