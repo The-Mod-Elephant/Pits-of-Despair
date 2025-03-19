@@ -212,10 +212,10 @@ UNLESS ~zbeshpeu~
 INCLUDE ~%MOD_FOLDER%/nephetel/core.tpa~
 
 COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */
-		~%MOD_FOLDER%/test/zbvyan.d~ /* vyantri's new line */
-		~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */
-		~%MOD_FOLDER%/test/gaelan.d~ /* add a line to gaelan */
-		~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */
+        ~%MOD_FOLDER%/test/zbvyan.d~ /* vyantri's new line */
+        ~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */
+        ~%MOD_FOLDER%/test/gaelan.d~ /* add a line to gaelan */
+        ~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20003 DESIGNATED 9 LABEL ~zb_keldorn_simp_nephetel_portrait~ // ADD ALT PORTRAITS
