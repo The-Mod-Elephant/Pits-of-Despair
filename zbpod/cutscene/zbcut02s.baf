@@ -3,6 +3,7 @@ IF
 THEN
   RESPONSE #100
     SetCutSceneBreakable(FALSE)
+		ClearAllActions()
     ActionOverride("ohbjoker",Polymorph(CLERIC_FEMALE_ELF))
 		ActionOverride("ohbjoker",SetName(90404))  // Joker
 		ActionOverride("ohbdorma",Polymorph(DJINNI_LEGS))
