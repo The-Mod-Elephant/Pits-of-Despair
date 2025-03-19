@@ -284,6 +284,7 @@ COPY_EXISTING ~OHBORC01.cre~ ~override~
 // ohb_101 Orc Archer
 COPY_EXISTING ~OHBORC02.cre~ ~override~
     WRITE_BYTE 0x23c 17  // Dexterity    
+    REPLACE_CRE_ITEM ~BRAC04~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~GLOVES~ EQUIP // Dale's Protectors
 
 // ohb_102 Thief fight
 COPY_EXISTING ~OHBGLA01.cre~ ~override~
