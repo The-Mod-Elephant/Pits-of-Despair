@@ -6,7 +6,7 @@ THEN
 		SetCutSceneBreakable(FALSE)
 		ApplySpellRES("BPDISPEL",Player1)  // No such index
 		FadeToColor([50.0],0)
-		ActionOverride("zspdnf16",DestroySelf())
+		ActionOverride("zbneph",DestroySelf())
 		Wait(1)
 		ActionOverride("zbvamp",DestroySelf())
 		Wait(1)

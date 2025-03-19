@@ -6,17 +6,17 @@ COPY  ~%MOD_FOLDER%/nephetel/portrait~ ~override~
 
 /// Creature files ///
 // SoA
-COPY ~%MOD_FOLDER%/nephetel/cre/zspdnf16.cre~ ~override~
+COPY ~%MOD_FOLDER%/nephetel/cre/zbneph.cre~ ~override~
   SAY 0x08 @15001
   SAY 0x0c @15001
-  WRITE_ASCII PORTRAIT_LARGE ~zdnephy~ #8
-  WRITE_ASCII PORTRAIT_SMALL ~zdnephy~ #8
+  WRITE_ASCII PORTRAIT_LARGE ~zbnephy~ #8
+  WRITE_ASCII PORTRAIT_SMALL ~zbnephy~ #8
   WRITE_ASCII SCRIPT_OVERRIDE ~zbnephs~ #8
-  WRITE_ASCII DEATHVAR ~zspdnf16~ #32
+  WRITE_ASCII DEATHVAR ~zbneph~ #32
   WRITE_ASCII DIALOG ~zbneph~ #8
 
 // ToB
-COPY_EXISTING ~zspdnf16.cre~ ~override/zbnep25.cre~
+COPY_EXISTING ~zbneph.cre~ ~override/zbnep25.cre~
   WRITE_ASCII SCRIPT_OVERRIDE ~zbnep25s~ #8
   WRITE_ASCII DIALOG ~zbnep25~ #8
 

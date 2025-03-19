@@ -23,26 +23,26 @@ THEN
 		StorePartyLocations()
 		LeaveAreaLUA("ZB0701","",[1660.480],NW) /* carries player over */
 		ApplySpell(Player1,WIZARD_INVISIBILITY)
-		CreateCreature("zspdnf16",[1560.680],NE)  /* spawns in nephetel */
+		CreateCreature("zbneph",[1560.680],NE)  /* spawns in nephetel */
 		CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */
 		Explore()
-		MoveViewObject("zspdnf16",INSTANT)
+		MoveViewObject("zbneph",INSTANT)
 		SetAreaScript("zbnephsk",OVERRIDE)
 		SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",1)
 		SetCutSceneBreakable(TRUE)
 		Wait(2)
 		FadeFromColor([30.0],0)
 		MoveViewPoint([1670.680],INSTANT)
-		ActionOverride("zspdnf16",FaceObject("zbvamp"))
-		ActionOverride("zbvamp",FaceObject("zspdnf16"))
+		ActionOverride("zbneph",FaceObject("zbvamp"))
+		ActionOverride("zbvamp",FaceObject("zbneph"))
 		Wait(3)
 		DisplayStringHead("zbvamp",@1800000)  /* ~Have you found any information about the book?~ */
 		Wait(5)
-		DisplayStringHead("zspdnf16",@1800001)  /* ~No. All anyone can talk about is this Hero of Baldur’s Gate.~ */
+		DisplayStringHead("zbneph",@1800001)  /* ~No. All anyone can talk about is this Hero of Baldur’s Gate.~ */
 		Wait(5)
-		DisplayStringHead("zspdnf16",@1800002) /* ~Every tavern or noble house I scout there is someone who is saying they saved this or defeated that.~ */
+		DisplayStringHead("zbneph",@1800002) /* ~Every tavern or noble house I scout there is someone who is saying they saved this or defeated that.~ */
 		Wait(5)
-		DisplayStringHead("zspdnf16",@1800003) /* ~Quite annoying.~ */
+		DisplayStringHead("zbneph",@1800003) /* ~Quite annoying.~ */
 		Wait(5)
 		ActionOverride("zbvamp",MoveToPoint([1670.600])) /* pacing north */
 		Wait(3)
@@ -50,19 +50,19 @@ THEN
 		Wait(3)
 		DisplayStringHead("zbvamp",@1800004) /* ~Who are they? What do you know about them?~ */
 		Wait(5)
-		DisplayStringHead("zspdnf16",@1800005) /* ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~ */
+		DisplayStringHead("zbneph",@1800005) /* ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~ */
 		Wait(5)
 		ActionOverride("zbvamp",MoveToPoint([1670.680])) /* pacing back to usual spot */
-		ActionOverride("zbvamp",FaceObject("zspdnf16"))
+		ActionOverride("zbvamp",FaceObject("zbneph"))
 		DisplayStringHead("zbvamp",@1800006) /* ~Is it anything like the weapon in the Pits?~ */
 		Wait(5)
-		ActionOverride("zspdnf16",Face(W)) /* nephetel faces away */
+		ActionOverride("zbneph",Face(W)) /* nephetel faces away */
 		Wait(2)
-		DisplayStringHead("zspdnf16",@1800007) /* ~No, not like Enegar. They are free of the Cult and choose of their own free will.~ */
+		DisplayStringHead("zbneph",@1800007) /* ~No, not like Enegar. They are free of the Cult and choose of their own free will.~ */
 		Wait(5)
-		ActionOverride("zspdnf16",FaceObject("zbvamp")) /* she turns back */
+		ActionOverride("zbneph",FaceObject("zbvamp")) /* she turns back */
 		Wait(2)
-		DisplayStringHead("zspdnf16",@1800008) /* ~No one has spoken as to why, but I will investigate.~ */
+		DisplayStringHead("zbneph",@1800008) /* ~No one has spoken as to why, but I will investigate.~ */
 		Wait(5)
 		ActionOverride("zbvamp",SwingOnce()) /* quick attack animation */
 		Wait(2)
@@ -73,19 +73,19 @@ THEN
 		DisplayStringHead("zbvamp",@1800011) /* ~I expect a full report on this 'Hero' when next we meet.~ */
 		PlaySound("VAMPFX07") /* plays the vampire sound */
 		Wait(5)
-		ActionOverride("zspdnf16",MoveToPoint([1444.912])) /* neph moving south */
+		ActionOverride("zbneph",MoveToPoint([1444.912])) /* neph moving south */
 		Wait(2)
-		ActionOverride("zbvamp",FaceObject("zspdnf16"))
+		ActionOverride("zbvamp",FaceObject("zbneph"))
 		Wait(2)
-		ActionOverride("zspdnf16",FaceObject("zbvamp"))
+		ActionOverride("zbneph",FaceObject("zbvamp"))
 		Wait(2)
-		DisplayStringHead("zspdnf16",@1800012) /* ~Of course, Spymaster.~ */
+		DisplayStringHead("zbneph",@1800012) /* ~Of course, Spymaster.~ */
 		Wait(5)
 		FadeToColor([50.0],0)
 		SetCutSceneBreakable(FALSE)
 		SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",0)
 		SetAreaScript("",OVERRIDE)
-		ActionOverride("zspdnf16",DestroySelf())
+		ActionOverride("zbneph",DestroySelf())
 		Wait(1)
 		ActionOverride("zbvamp",DestroySelf())
 		Wait(1)
