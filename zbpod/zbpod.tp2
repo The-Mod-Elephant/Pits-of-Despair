@@ -190,9 +190,6 @@ COPY ~%MOD_FOLDER%/wav/oh95~ ~override~
 COPY ~%MOD_FOLDER%/wav/oh96~ ~override~
 COPY ~%MOD_FOLDER%/wav/zb~ ~override~
 
-/* cutscene to transfer to OH8000 */
-COMPILE ~%MOD_FOLDER%/test/podstr.baf~
-
 /* add messenger timer */
 COPY_EXISTING ~BALDUR.bcs~ ~%workspace%/~
 ACTION_IF NOT FILE_CONTAINS ~%workspace%/BALDUR.bcs~ ~ZBPodMessengerSpawned~
