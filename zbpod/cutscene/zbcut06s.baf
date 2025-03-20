@@ -27,6 +27,7 @@ THEN
 		FadeFromColor([50.0],0)
 		SetAreaScript("",OVERRIDE)
 		SetGlobal("ZBCUT06SKIP_CUTSCENE_BREAKABLE","GLOBAL",0)
+		Wait(2)
 		ActionOverride("ohbtartl",StartDialogueNoSet(Player1))
 END
 
