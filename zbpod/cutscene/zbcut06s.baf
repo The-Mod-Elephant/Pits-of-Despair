@@ -3,6 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		SetCutSceneBreakable(FALSE)
+		ClearAllActions()
 		FadeToColor([50.0],0)
 		MoveViewPoint([2665.3355],INSTANT)
 		ActionOverride(Player1,JumpToPoint([2720.3295]))

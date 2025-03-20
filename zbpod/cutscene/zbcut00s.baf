@@ -3,6 +3,7 @@ IF
 THEN
   RESPONSE #100
     SetCutSceneBreakable(FALSE)
+    ClearAllActions()
     SetGlobal("ZBCUT00SKIP_CUTSCENE_BREAKABLE","GLOBAL",0)
     SetAreaScript("",OVERRIDE)
     FadeFromColor([10.0],0)
