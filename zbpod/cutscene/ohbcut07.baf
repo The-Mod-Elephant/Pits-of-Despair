@@ -16,7 +16,7 @@ THEN
 		ActionOverride("ohbhort",FaceObject("ohbvoghi"))  // Voghiln the Vast
 		SmallWait(3)
 		DisplayStringHead("ohbvoghi",90589)  // Bring it on, baboon!
-		DisplayStringHead("zbneph","Why are these idiots fighting? *sigh*") // Why are these idiots fighting? *sigh*
+		DisplayStringHead("zbneph",@100) // Why are these idiots fighting? *sigh*
 		SmallWait(25)
 		ActionOverride("ohbvoghi",SetSequence(SEQ_ATTACK_BACKSLASH))
 		ActionOverride("ohbfeldr",FaceObject("ohbvoghi"))  // Voghiln the Vast
