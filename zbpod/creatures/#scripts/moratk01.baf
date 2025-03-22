@@ -11,6 +11,42 @@
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
+// Delay start to buff
+/////////////////////////////////////////////////////////////////////
+IF 
+  Global("MO_DelayStart","LOCALS",0)
+  OR(17)
+    Race(Myself,HUMAN)
+    Race(Myself,ELF)
+    Race(Myself,HALF_ELF)
+    Race(Myself,DWARF)
+    Race(Myself,HALFLING)
+    Race(Myself,GNOME)
+    Race(Myself,HALFORC)
+    Race(Myself,GNOLL)
+    Race(Myself,HOBGOBLIN)
+    Race(Myself,GITHYANKI)
+    Race(Myself,YUANTI)
+    Race(Myself,ORC)
+    Race(Myself,OGRE)
+    Race(Myself,GENIE)
+    Race(Myself,KUO-TOA)
+    Race(Myself,HALF_DRAGON)
+    Race(Myself,TIEFLING)
+THEN 
+  RESPONSE #100
+    SetGlobal("MO_DelayStart","LOCALS",1)
+    SetGlobalTimer("MO_DelayStartTimer","LOCALS",6)
+END
+
+IF 
+  GlobalTimerNotExpired("MO_DelayStartTimer","LOCALS")
+THEN 
+  RESPONSE #100
+    NoAction()
+END
+
+/////////////////////////////////////////////////////////////////////
 // Assign Potion
 /////////////////////////////////////////////////////////////////////
 // ToB Levels - 20+

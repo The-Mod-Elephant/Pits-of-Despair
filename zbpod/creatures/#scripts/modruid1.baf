@@ -3,21 +3,26 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18024)  // ~grasps a talisman around their neck tightly~
     SpellNoDec(Myself,CLERIC_BLESS)
     Continue()
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18024)  // ~grasps a talisman around their neck tightly~
     SpellNoDec(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
     Continue()
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18024)  // ~grasps a talisman around their neck tightly~
     SpellNoDec(Myself,CLERIC_PHYSICAL_MIRROR)
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18024)  // ~grasps a talisman around their neck tightly~
     SpellNoDec(Myself,CLERIC_TRUE_SIGHT)
     Continue()
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18024)  // ~grasps a talisman around their neck tightly~
     SpellNoDec(Myself,CLERIC_IRONSKIN)  // SPPR506.SPL (Iron Skins)
     Continue()
 END

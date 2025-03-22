@@ -330,11 +330,17 @@ ACTION_IF FILE_EXISTS_IN_GAME ~OHBLIZ03.cre~ BEGIN
         LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 3 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
 END
 
-// Drow Priestess
-ACTION_IF FILE_EXISTS_IN_GAME ~OHBDRO04.cre~ BEGIN
-    COPY_EXISTING ~OHBDRO04.cre~ ~override~
-        WRITE_ASCII 0x260 ~mopries1~ #8 // General Script (druid prebuff)
-END
+
+// Add Prebuff Priest
+ACTION_FOR_EACH priest IN 
+        OHBORC03 // orc priest
+        OHBDRO04 // drow priestess
+    BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME ~%priest%.cre~ BEGIN
+            COPY_EXISTING ~%priest%.cre~ ~override~
+                WRITE_ASCII 0x260 ~mopries1~ #8 // General Script (druid prebuff)
+        END
+    END
 
 // Drow Mage
 ACTION_IF FILE_EXISTS_IN_GAME ~OHBDRO03.cre~ BEGIN

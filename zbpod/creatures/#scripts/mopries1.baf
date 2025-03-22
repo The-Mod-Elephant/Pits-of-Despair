@@ -1,28 +1,64 @@
+/////////////////////////////////////////////////////////////////////
+// PREP==0 - Created Defenses - Levels 11--21 
+/////////////////////////////////////////////////////////////////////
 IF
   Global("Prep","LOCALS",0)
+  CheckStatGT(Myself,10,LEVEL)
+  CheckStatLT(Myself,22,LEVEL)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18023)  // ~murmurs a prayer over their holy symbol~
     SpellNoDec(Myself,CLERIC_BLESS)
     Continue()
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18023)  // ~murmurs a prayer over their holy symbol~
     SpellNoDec(Myself,CLERIC_RIGHTEOUS_MAGIC)
     Continue()
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18023)  // ~murmurs a prayer over their holy symbol~
     SpellNoDec(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
     Continue()
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18023)  // ~murmurs a prayer over their holy symbol~
     SpellNoDec(Myself,CLERIC_PHYSICAL_MIRROR)
     Continue()
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18023)  // ~murmurs a prayer over their holy symbol~
     SpellNoDec(Myself,NPC_BLADE_BARRIER)
     Continue()
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18023)  // ~murmurs a prayer over their holy symbol~
+    SpellNoDec(Myself,CLERIC_TRUE_SIGHT)
+    Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
+// PREP==0 - Created Defenses - Levels 11--13 (lvl 6 spells)
+/////////////////////////////////////////////////////////////////////
+IF
+  Global("Prep","LOCALS",0)
+  CheckStatGT(Myself,8,LEVEL)
+  CheckStatLT(Myself,11,LEVEL)
+THEN
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18023)  // ~murmurs a prayer over their holy symbol~
+    SpellNoDec(Myself,CLERIC_BLESS)
+    Continue()
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18023)  // ~murmurs a prayer over their holy symbol~
+    SpellNoDec(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+    Continue()
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18023)  // ~murmurs a prayer over their holy symbol~
     SpellNoDec(Myself,CLERIC_TRUE_SIGHT)
     Continue()
 END
