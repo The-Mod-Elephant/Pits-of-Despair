@@ -16,8 +16,6 @@ THEN
 		ActionOverride("ohbhort",FaceObject("ohbvoghi"))  // Voghiln the Vast
 		SmallWait(3)
 		DisplayStringHead("ohbvoghi",90589)  // Bring it on, baboon!
-		DisplayStringHead("zbneph",@100) // Why are these idiots fighting? *sigh*
-		SmallWait(25)
 		ActionOverride("ohbvoghi",SetSequence(SEQ_ATTACK_BACKSLASH))
 		ActionOverride("ohbfeldr",FaceObject("ohbvoghi"))  // Voghiln the Vast
 		SmallWait(7)
@@ -44,6 +42,8 @@ THEN
 		ActionOverride("ohbvoghi",Attack("ohbhort"))  // Hort Il-D'rth
 		SmallWait(10)
 		DisplayStringHead("ohbfeldr",90590)  // To the pain!
+		Wait(2)
+		DisplayStringHead("zbneph",@100) // Why are these idiots fighting? *sigh*
 		ActionOverride("ohbfeldr",Attack("ohbvoghi"))  // Voghiln the Vast
 		SmallWait(10)
 		ActionOverride("ohbfeldr",SetSequence(SEQ_READY))
