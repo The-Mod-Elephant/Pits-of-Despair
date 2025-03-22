@@ -373,7 +373,7 @@ THEN
 		TriggerActivation("ohb_messhall1",TRUE)
 		TriggerActivation("ohb_messhall2",TRUE)
 		CreateCreature("ohbdenna",[2530.3265],SE)  // Dennaton
-		CreateCreature("zbneph",[2957.3293],NW)  /* Nephetel, Welcoming Feast */
+		CreateCreature("zbneph",[2987.3288],NW)  /* Nephetel, Welcoming Feast */
 		ActionOverride("OHBTARTL",JumpToPoint([2570.3232]))
 		ActionOverride("OHBTARTL",Face(SSE))
 		ActionOverride("ohbcook",JumpToPoint([2375.3385]))
