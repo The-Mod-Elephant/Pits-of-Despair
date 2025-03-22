@@ -65,6 +65,28 @@ THEN
     Continue()
 END
 
+/////////////////////////////////////////////////////////////////////
+// Delay start to buff
+/////////////////////////////////////////////////////////////////////
+IF 
+  Global("MO_DelayStart","LOCALS",0)
+THEN 
+  RESPONSE #100
+    SetGlobal("MO_DelayStart","LOCALS",1)
+    SetGlobalTimer("MO_DelayStartTimer","LOCALS",6)
+END
+
+IF 
+  GlobalTimerNotExpired("MO_DelayStartTimer","LOCALS")
+THEN 
+  RESPONSE #100
+    NoAction()
+END
+
+
+/////////////////////////////////////////////////////////////////////
+// Thief Prep
+/////////////////////////////////////////////////////////////////////
 IF
   Detect(NearestEnemyOf(Myself))
   Global("MO_ThiefPrep","LOCALS",0)
