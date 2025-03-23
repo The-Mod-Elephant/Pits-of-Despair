@@ -33,6 +33,7 @@ IF
     Race(Myself,KUO-TOA)
     Race(Myself,HALF_DRAGON)
     Race(Myself,TIEFLING)
+  False()
 THEN 
   RESPONSE #100
     SetGlobal("MO_DelayStart","LOCALS",1)
@@ -41,6 +42,7 @@ END
 
 IF 
   GlobalTimerNotExpired("MO_DelayStartTimer","LOCALS")
+  False()
 THEN 
   RESPONSE #100
     NoAction()

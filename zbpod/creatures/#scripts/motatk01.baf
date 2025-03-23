@@ -70,6 +70,7 @@ END
 /////////////////////////////////////////////////////////////////////
 IF 
   Global("MO_DelayStart","LOCALS",0)
+  False()
 THEN 
   RESPONSE #100
     SetGlobal("MO_DelayStart","LOCALS",1)
@@ -78,6 +79,7 @@ END
 
 IF 
   GlobalTimerNotExpired("MO_DelayStartTimer","LOCALS")
+  False()
 THEN 
   RESPONSE #100
     NoAction()

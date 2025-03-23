@@ -4,25 +4,37 @@ THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
     DisplayStringHead(Myself,@18024)  // ~grasps a talisman around their neck tightly~
-    SpellNoDec(Myself,CLERIC_BLESS)
+    ReallyForceSpell(Myself,CLERIC_BLESS)
+    ReallyForceSpell(Myself,CLERIC_IRONSKIN)  // SPPR506.SPL (Iron Skins)
     Continue()
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
     DisplayStringHead(Myself,@18024)  // ~grasps a talisman around their neck tightly~
-    SpellNoDec(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+    ReallyForceSpell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+    ReallyForceSpell(Myself,CLERIC_IRONSKIN)  // SPPR506.SPL (Iron Skins)
     Continue()
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
     DisplayStringHead(Myself,@18024)  // ~grasps a talisman around their neck tightly~
-    SpellNoDec(Myself,CLERIC_PHYSICAL_MIRROR)
-  RESPONSE #100
-    SetGlobal("Prep","LOCALS",1)
-    DisplayStringHead(Myself,@18024)  // ~grasps a talisman around their neck tightly~
-    SpellNoDec(Myself,CLERIC_TRUE_SIGHT)
+    ReallyForceSpell(Myself,CLERIC_BLESS)
+    ReallyForceSpell(Myself,CLERIC_PHYSICAL_MIRROR)
     Continue()
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
     DisplayStringHead(Myself,@18024)  // ~grasps a talisman around their neck tightly~
-    SpellNoDec(Myself,CLERIC_IRONSKIN)  // SPPR506.SPL (Iron Skins)
+    ReallyForceSpell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+    ReallyForceSpell(Myself,CLERIC_PHYSICAL_MIRROR)
+    Continue()
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18024)  // ~grasps a talisman around their neck tightly~
+    ReallyForceSpell(Myself,CLERIC_BLESS)
+    ReallyForceSpell(Myself,CLERIC_TRUE_SIGHT)
+    Continue()
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18024)  // ~grasps a talisman around their neck tightly~
+    ReallyForceSpell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+    ReallyForceSpell(Myself,CLERIC_TRUE_SIGHT)
     Continue()
 END
