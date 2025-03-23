@@ -2190,7 +2190,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @2152 = ~One more thing, <CHARNAME>. I've been saving a special draught for just the right occasion. These potions will restore both mind and spirit. Drink up! This is no time to be weary.~
 @2153 = ~<CHARNAME>! I've found you, and not a moment too soon! You're in danger! DANGER, I TELL YOU!~ [OH90429]
 /* altering Najim lines to remove Baeloth's Pits references, keeping them vague so it might just be a RANDOM djinni you've never met teleports in and warns you */
-@2154 = ~What's going on?~
+@2154 = ~Who are you?~ /* Changed due to the fact that he doesn't know you */
 @2155 = ~What a shock. Danger and I always seem to go hand in hand.~
 @2156 = ~This doesn't have anything to do with the tavern that burned down last week, does it? Because I wasn't involved.~
 /* end of Najim altered lines */
