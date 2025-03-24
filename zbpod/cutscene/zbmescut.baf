@@ -14,7 +14,7 @@ THEN
 		/* actions start here */
 		SetGlobal("zbnephcutscene","GLOBAL",1) /* we don't want the cutscene to repeat */
 		Wait(2)
-		DisplayStringHead(Player1,@1800013)
+		DisplayStringHead(Player1,@23)
 		Wait(2)
 		PlaySound("MISC_03A")
 		PlayDead(45)
@@ -36,41 +36,41 @@ THEN
 		ActionOverride("zbneph",FaceObject("zbvamp"))
 		ActionOverride("zbvamp",FaceObject("zbneph"))
 		Wait(3)
-		DisplayStringHead("zbvamp",@1800000)  /* ~Have you found any information about the book?~ */
+		DisplayStringHead("zbvamp",@10)  /* ~Have you found any information about the book?~ */
 		Wait(5)
-		DisplayStringHead("zbneph",@1800001)  /* ~No. All anyone can talk about is this Hero of Baldur’s Gate.~ */
+		DisplayStringHead("zbneph",@11)  /* ~No. All anyone can talk about is this Hero of Baldur’s Gate.~ */
 		Wait(5)
-		DisplayStringHead("zbneph",@1800002) /* ~Every tavern or noble house I scout there is someone who is saying they saved this or defeated that.~ */
+		DisplayStringHead("zbneph",@12) /* ~Every tavern or noble house I scout there is someone who is saying they saved this or defeated that.~ */
 		Wait(5)
-		DisplayStringHead("zbneph",@1800003) /* ~Quite annoying.~ */
+		DisplayStringHead("zbneph",@13) /* ~Quite annoying.~ */
 		Wait(5)
 		ActionOverride("zbvamp",MoveToPoint([1670.600])) /* pacing north */
 		Wait(3)
 		ActionOverride("zbvamp",MoveToPoint([1670.752])) /* pacing south */
 		Wait(3)
-		DisplayStringHead("zbvamp",@1800004) /* ~Who are they? What do you know about them?~ */
+		DisplayStringHead("zbvamp",@14) /* ~Who are they? What do you know about them?~ */
 		Wait(5)
-		DisplayStringHead("zbneph",@1800005) /* ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~ */
+		DisplayStringHead("zbneph",@15) /* ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~ */
 		Wait(5)
 		ActionOverride("zbvamp",MoveToPoint([1670.680])) /* pacing back to usual spot */
 		ActionOverride("zbvamp",FaceObject("zbneph"))
-		DisplayStringHead("zbvamp",@1800006) /* ~Is it anything like the weapon in the Pits?~ */
+		DisplayStringHead("zbvamp",@16) /* ~Is it anything like the weapon in the Pits?~ */
 		Wait(5)
 		ActionOverride("zbneph",Face(W)) /* nephetel faces away */
 		Wait(2)
-		DisplayStringHead("zbneph",@1800007) /* ~No, not like Enegar. They are free of the Cult and choose of their own free will.~ */
+		DisplayStringHead("zbneph",@17) /* ~No, not like Enegar. They are free of the Cult and choose of their own free will.~ */
 		Wait(5)
 		ActionOverride("zbneph",FaceObject("zbvamp")) /* she turns back */
 		Wait(2)
-		DisplayStringHead("zbneph",@1800008) /* ~No one has spoken as to why, but I will investigate.~ */
+		DisplayStringHead("zbneph",@18) /* ~No one has spoken as to why, but I will investigate.~ */
 		Wait(5)
 		ActionOverride("zbvamp",SwingOnce()) /* quick attack animation */
 		Wait(2)
-		DisplayStringHead("zbvamp",@1800009) /* ~Good. Good. I know you will find the Book.~ */
+		DisplayStringHead("zbvamp",@19) /* ~Good. Good. I know you will find the Book.~ */
 		Wait(5)
-		DisplayStringHead("zbvamp",@1800010) /* ~Our Master will be very… very pleased, he has assured me.~ */
+		DisplayStringHead("zbvamp",@20) /* ~Our Master will be very… very pleased, he has assured me.~ */
 		Wait(5)
-		DisplayStringHead("zbvamp",@1800011) /* ~I expect a full report on this 'Hero' when next we meet.~ */
+		DisplayStringHead("zbvamp",@21) /* ~I expect a full report on this 'Hero' when next we meet.~ */
 		PlaySound("VAMPFX07") /* plays the vampire sound */
 		Wait(5)
 		ActionOverride("zbneph",MoveToPoint([1444.912])) /* neph moving south */
@@ -79,7 +79,7 @@ THEN
 		Wait(2)
 		ActionOverride("zbneph",FaceObject("zbvamp"))
 		Wait(2)
-		DisplayStringHead("zbneph",@1800012) /* ~Of course, Spymaster.~ */
+		DisplayStringHead("zbneph",@22) /* ~Of course, Spymaster.~ */
 		Wait(5)
 		FadeToColor([50.0],0)
 		SetCutSceneBreakable(FALSE)

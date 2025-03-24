@@ -1,29 +1,33 @@
 @1= ~Pits of Despair
 
 A messenger delivered a note from Vyatri, an innkeeper in Tradesmeet, who requested that we visit his establishment. A ring was enclosed with the letter, along with promises of further rewards, if we meet a Djinni there.~
-@3675 = ~It has been several months since you defeated Sarevok in Baldur's Gate. Tales of your deeds, and whispers of your dark heritage, have spread far and wide, Even bards sing of them wherever you travel ...~
-@3676 = ~Along the Sword Coast they travelled with stealth, wits and brawn.~
-@3677 = ~Investigating matters of iron, wayward bandits and then learnt they are a Bhaalspawn.~
-@3678 = ~The final battle: a city, breath held, nearing a most unwelcome fate.~
-@3679 = ~But they rose to the challenge, ending the crisis, and became the Heroes of Baldur's Gate.~
+@2 = ~It has been several months since you defeated Sarevok in Baldur's Gate. Tales of your deeds, and whispers of your dark heritage, have spread far and wide, Even bards sing of them wherever you travel ...~
+@3 = ~Along the Sword Coast they travelled with stealth, wits and brawn.~
+@4 = ~Investigating matters of iron, wayward bandits and then learnt they are a Bhaalspawn.~
+@5 = ~The final battle: a city, breath held, nearing a most unwelcome fate.~
+@6 = ~But they rose to the challenge, ending the crisis, and became the Heroes of Baldur's Gate.~
 /* above line changes end here */ 
-@3680 = ~A decent yarn, though a bit TOO fantastic if you ask me.~
-@3681 = ~Thank you. It is an amazing tale, all the more so for the fact that it actually happened.~
-@3682 = ~You are a talented entertainer, madam, but do not insult my intelligence. The story you told is naught but a story. It never happened.~
-@1800000 = ~Have you found any information about the book?~
-@1800001 = ~No. All anyone can talk about is this Hero of Baldur's Gate.~
-@1800002 = ~Every tavern or noble house I scout there is someone who is saying they saved this or defeated that.~
-@1800003 = ~Quite annoying.~
-@1800004 = ~Who are they? What do you know about them?~
-@1800005 = ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~
-@1800006 = ~Is it anything like the weapon in the Pits?~
-@1800007 = ~No, not like Enegar. They are free of the Cult and choose of their own free will.~
-@1800008 = ~No one has spoken as to why, but I will investigate.~
-@1800009 = ~Good. Good. I know you will find the Book.~
-@1800010 = ~Our Master will be very… very pleased, he has assured me.~
-@1800011 = ~I expect a full report on this 'Hero' when next we meet.~
-@1800012 = ~Of course, Spymaster.~
-@1800013 = ~Your head spins suddenly...~
-@1800014 = ~*quaffs a potion*~
+@7 = ~A decent yarn, though a bit TOO fantastic if you ask me.~
+@8 = ~Thank you. It is an amazing tale, all the more so for the fact that it actually happened.~
+@9 = ~You are a talented entertainer, madam, but do not insult my intelligence. The story you told is naught but a story. It never happened.~
+
+/* 1st Cutscene Infamy */
+@10 = ~And? What of the book?~
+@11 = ~No. All anyone can talk about is this Hero of Baldur's Gate.~
+@12 = ~Every tavern or noble house I scout there is someone who is saying they saved this or defeated that.~
+@13 = ~Quite annoying.~
+@14 = ~Who are they? What do you know about them?~
+@15 = ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~
+@16 = ~Is it anything like the weapon in the Pits?~
+@17 = ~No, not like Enegar. They are free of the Cult and choose of their own free will.~
+@18 = ~No one has spoken as to why, but I will investigate.~
+@19 = ~Good. Good. I know you will find the Book.~
+@20 = ~Our Master will be very… very pleased, he has assured me.~
+@21 = ~I expect a full report on this 'Hero' when next we meet.~
+@22 = ~Of course, Spymaster.~
+/* End of 1st Cutscene Infamy */
+
+@23 = ~Your head spins suddenly...~
+@24 = ~*quaffs a potion*~
 
 @100 = ~Why are these idiots fighting? *sigh*~

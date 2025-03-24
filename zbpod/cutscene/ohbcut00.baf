@@ -54,23 +54,23 @@ THEN
 		SmallWait(1)
 		SetCutSceneBreakable(TRUE)
 		Wait(2)
-		DisplayStringPoint([672.468],@3675)  // It has been several months since your escape from Baeloth's Black Pits. Tales of your deeds have spread far and wide, and bards sing of them wherever you travel...
+		DisplayStringPoint([672.468],@2)  // It has been several months since your escape from Baeloth's Black Pits. Tales of your deeds have spread far and wide, and bards sing of them wherever you travel...
 		FadeFromColor([60.0],0)
 		Wait(5) /* changed from smallwait(12) */ 
-		DisplayStringHead("ohbjoker",@3676)  // ...And so it came that Baeloth's game was quickly turned to naught.
+		DisplayStringHead("ohbjoker",@3)  // ...And so it came that Baeloth's game was quickly turned to naught.
 		Wait(3)
-		DisplayStringHead("ohbjoker",@3677)  // The swords were sheathed, the spells unweaved, the final battle fought.
+		DisplayStringHead("ohbjoker",@4)  // The swords were sheathed, the spells unweaved, the final battle fought.
 		Wait(3)
-		DisplayStringHead("ohbjoker",@3678)  // Our heroes' wits had solved the pits; their freedom did they win.
+		DisplayStringHead("ohbjoker",@5)  // Our heroes' wits had solved the pits; their freedom did they win.
 		Wait(3)
-		DisplayStringHead("ohbjoker",@3679)  // So fled the cage 'midst Baeloth's rage upon a mighty djinni.
+		DisplayStringHead("ohbjoker",@6)  // So fled the cage 'midst Baeloth's rage upon a mighty djinni.
 		Wait(3)
 		SmallWait(7)
-		DisplayStringHead("OHBTHASS",@3680)  // A decent yarn, though a bit TOO fantastic if you ask me.
+		DisplayStringHead("OHBTHASS",@7)  // A decent yarn, though a bit TOO fantastic if you ask me.
 		Wait(5)
-		DisplayStringHead("OHBJOKER",@3681)  // Thank you. It is an amazing tale, all the more so for the fact that it actually happened.
+		DisplayStringHead("OHBJOKER",@8)  // Thank you. It is an amazing tale, all the more so for the fact that it actually happened.
 		Wait(5)
-		DisplayStringHead("OHBPOL",@3682)  // You are a talented entertainer, madam, but do not insult my intelligence. The story you told is naught but a story. It never happened.
+		DisplayStringHead("OHBPOL",@9)  // You are a talented entertainer, madam, but do not insult my intelligence. The story you told is naught but a story. It never happened.
 		Wait(7)
 		SetCutSceneBreakable(FALSE)
 		SetAreaScript("",OVERRIDE)
