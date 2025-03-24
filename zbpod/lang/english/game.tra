@@ -837,20 +837,16 @@ Weight: 1~
 @18004 = ~Gore~
 
 @18005 = ~Shadow Thief Report~
-@18006 = ~A report, handwritten by a member of the Shadow Thieves, recounting a meeting between one Lady Katarina and Lord Dominick. While much of the report rambles on about Lord Dominick's daily tasks, a particular passage catches your attention:
+@18006 = ~A handwritten transcript, detailing a meeting between one Lady Katarina, and Lord Dominick. Some member of the Shadow Thieves has crafted this extensive document, meticulously capturing even  Lord Dominick's more banal ramblings. A few passages catch your eye:
 
-Lady Katarina: ... you are quite funny my Lord Dominic, I am so happy that you responded to my letter.
-Dominick: Thank you, Lady Katarina.
-Lady Katarin: You are so much more handsome than your mother told me. Why don't we have another bottle of wine?
-Dominick: Yes, of course! Servant!
-Lady Katarina: Oh my, this is absolutely delicious… One might think you are trying to get me drunk, young sir… Now, you said you knew the Hero of Baldur's Gate?
-Dominick: I… I apologize, my lady, I do not exactly know them… but I was in Baldur's Gate when they saved the city. Me and my father were visiting during the crisis and the near war and witnessed it all first hand through the gossip of the guilds!
-Lady Katarina: Oh. You are so naughty, to have lied to me. You wouldn't lie to me now that we are good friends, would you, my dear boy?
-Dominick: Never, Mish Katarina. You can trusht me. They were so brave and incredible. The evil war… warrior Sarevok was killing everyone and it was he who nearly started the war! The hero came from Candlekeep and they were related! Related, I say!
-Lady Katarina: Tell me ALL about it, have you heard of what they have been doing here in Amn, why are they here?
+Lady Katarina: I salute your taste,  my Lord Dominic,  exactly the delightful earthy tones you described- my, is that the bottle gone? One might suspect a less honorable and handsome man of plying me with drink... oh, but wait, we still need another bottle! I meant to toast the Hero of Baldur's Gate, and hear the story of how you knew them!
+Dominick: I… I apoloshize, my lady, when I said I knew the Hero, I meant more from... um, afar. I was there, though, Baldur's Gate, when they saved the city! Me and my father, we were vishiting... right, right in the thick of it on a visit, heard of the near war, everything!
+Lady Katarina: Oh. What a sly rascal, to have deceived so... You wouldn't lie to me now that we are such good friends, would you, my dear?
+Dominick: Never, Mish Katarina. You can trust me. They were so brave and incredible. The evil war… warrior Sarevok was killing everyone and it was he who nearly started the war! The hero came from Candlekeep and they were related! Related, I say!
+Lady Katarina: Do continue! I cannot deny an appetite for such gossip... have you heard anything of the Hero being here Amn? Have you any notion of why they might be?
 Dominick: OH, yesh! First there wasesh this mad mage Irenikish and he caught the hero becaush he was a CH… ILD OF BHAAAL and...
 
-The report gets increasingly less coherent as the informer,  who'd written said report, tries to mimick Dominick's slurred form of speech. From what you can glean, eventually Lord Dominick falls unconsious and the Lady Katarina leaves for the night.~
+The remainder of the transcript becomes increasingly incoherent, as Lord Dominic's inebriation overcomes first intelligibility and then, eventually, consciousness.~
 
 @18007 = ~Detects Illusion~
 @18008 = ~Fails to detect illusions~

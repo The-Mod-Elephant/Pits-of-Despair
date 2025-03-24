@@ -13,20 +13,19 @@ A messenger delivered a note from Vyatri, an innkeeper in Tradesmeet, who reques
 
 /* 1st Cutscene Infamy */
 @10 = ~And? What of the book?~
-@11 = ~No. All anyone can talk about is this Hero of Baldur's Gate.~
-@12 = ~Every tavern or noble house I scout there is someone who is saying they saved this or defeated that.~
-@13 = ~Quite annoying.~
+@11 = ~Nothing. The Hero of Baldur's Gate, that's the only gossip on anyone's lips. Defeated this, saved that, wore the most splendid things. One talkative lord was very keen to inform me of the Hero's preferences in breakfast jam.~
+@12 = ~Tell me of these tales.~
+@13 = ~Of the.. jam? Oh! the Hero! They say they are a Bhaalspawn. One of the children of the Lord of Murder.~
 @14 = ~Who are they? What do you know about them?~
 @15 = ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~
-@16 = ~Is it anything like the weapon in the Pits?~
-@17 = ~No, not like Enegar. They are free of the Cult and choose of their own free will.~
+@16 = ~Is <PRO_HESHE> anything like the weapon in the Pits?~
+@17 = ~No, not like Enegar. This child of Bhaal appears free from control of the Cult...~
 @18 = ~No one has spoken as to why, but I will investigate.~
 @19 = ~Good. Good. I know you will find the Book.~
 @20 = ~Our Master will be very… very pleased, he has assured me.~
-@21 = ~I expect a full report on this 'Hero' when next we meet.~
+@21 = ~I expect a full report on this “Hero” next we meet.~
 @22 = ~Of course, Spymaster.~
 /* End of 1st Cutscene Infamy */
-
 @23 = ~Your head spins suddenly...~
 
 @100 = ~Why are these idiots fighting? *sigh*~
