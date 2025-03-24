@@ -13,19 +13,21 @@ A messenger delivered a note from Vyatri, an innkeeper in Tradesmeet, who reques
 
 /* 1st Cutscene Infamy */
 @10 = ~And? What of the book?~
-@11 = ~Nothing. The Hero of Baldur's Gate, that's the only gossip on anyone's lips. Defeated this, saved that, wore the most splendid things. One talkative lord was very keen to inform me of the Hero's preferences in breakfast jam.~
-@12 = ~Tell me of these tales.~
-@13 = ~Of the.. jam? Oh! the Hero! They say they are a Bhaalspawn. One of the children of the Lord of Murder.~
-@14 = ~Who are they? What do you know about them?~
-@15 = ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~
-@16 = ~Is <PRO_HESHE> anything like the weapon in the Pits?~
-@17 = ~No, not like Enegar. This child of Bhaal appears free from control of the Cult...~
-@18 = ~No one has spoken as to why, but I will investigate.~
-@19 = ~Good. Good. I know you will find the Book.~
-@20 = ~Our Master will be very… very pleased, he has assured me.~
-@21 = ~I expect a full report on this “Hero” next we meet.~
-@22 = ~Of course, Spymaster.~
+@11 = ~Nothing. The Hero of Baldur's Gate, that's the only gossip on anyone's lips.~
+@12 = ~Defeated this, saved that, wore the most splendid things.~
+@13 = ~One talkative lord was very keen to inform me of the Hero's preferences in breakfast jam.~
+@14 = ~Tell me of these tales.~
+@15 = ~Of the.. jam? Oh! the Hero! They say they are a Bhaalspawn. One of the children of the Lord of Murder.~
+@16 = ~Who are they? What do you know about them?~
+@17 = ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~
+@18 = ~Is <PRO_HESHE> anything like the weapon in the Pits?~
+@19 = ~No, not like Enegar. This child of Bhaal appears free from control of the Cult...~
+@20 = ~No one has spoken as to why, but I will investigate.~
+@21 = ~Good. Good. I know you will find the Book.~
+@22 = ~Our Master will be very… very pleased, he has assured me.~
+@23 = ~I expect a full report on this “Hero” next we meet.~
+@24 = ~Of course, Spymaster.~
 /* End of 1st Cutscene Infamy */
-@23 = ~Your head spins suddenly...~
+@25 = ~Your head spins suddenly...~
 
 @100 = ~Why are these idiots fighting? *sigh*~
