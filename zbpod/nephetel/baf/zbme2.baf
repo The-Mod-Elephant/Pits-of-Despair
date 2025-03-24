@@ -1,23 +1,23 @@
-/* messenger approaches and starts the dialogue */ 
+/* messenger approaches and starts the dialogue */
 IF
-Global("ZBPodSummonsReceived","GLOBAL",2)
-See([PC])
+  Global("ZBPodSummonsReceived","GLOBAL",2)
+  See([PC])
 THEN
-RESPONSE #100
-SetGlobal("ZBPodSummonsReceived","GLOBAL",3)
-MoveToObject([PC])
-StartDialogueNoSet(Player1)
+  RESPONSE #100
+    SetGlobal("ZBPodSummonsReceived","GLOBAL",3)
+    MoveToObject([PC])
+    StartDialogueNoSet(Player1)
 END
 
 /* if the messenger, for some reason, can't see CHARNAME
 despite being spawned next to them
-scoot back over */ 
+scoot back over */
 IF
-Global("ZBPodSummonsReceived","GLOBAL",2)
-!See([PC])
+  Global("ZBPodSummonsReceived","GLOBAL",2)
+  !See([PC])
 THEN
-RESPONSE #100
-MoveToObject([PC])
+  RESPONSE #100
+    MoveToObject([PC])
 END
 
 IF
@@ -25,5 +25,4 @@ IF
 THEN
   RESPONSE #100
     EscapeArea()
-END 
-  
+END
