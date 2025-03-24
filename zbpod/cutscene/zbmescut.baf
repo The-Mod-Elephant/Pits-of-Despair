@@ -45,7 +45,7 @@ THEN
 		DisplayStringHead("zbneph",@13) /* ~One talkative lord was very keen to inform me of the Hero's preferences in breakfast jam.~ */
 		Wait(9)
 		DisplayStringHead("zbvamp",@14) /* ~Tell me of these tales.~ */
-		Wait(2)
+		Wait(4)
 		DisplayStringHead("zbneph",@15) /* ~Of the.. jam? Oh! the Hero! They say they are a Bhaalspawn. One of the children of the Lord of Murder.~ */
 		Wait(5)
 		ActionOverride("zbvamp",MoveToPoint([1670.600])) /* pacing north */
