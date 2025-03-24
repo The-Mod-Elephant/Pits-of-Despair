@@ -345,6 +345,7 @@ ACTION_FOR_EACH priest IN
 // Drow Mage
 ACTION_IF FILE_EXISTS_IN_GAME ~OHBDRO03.cre~ BEGIN
     COPY_EXISTING ~OHBDRO03.cre~ ~override~
+        WRITE_ASCII 0x260 ~momage1~ #8 // General Script (mage prebuff)
         ADD_MEMORIZED_SPELL ~SPWI313~ #2 ~wizard~ ( 2 ) // Skull Trap
         ADD_MEMORIZED_SPELL ~SPWI712~ #6 ~wizard~ ( 2 ) // Delayed Blast Fireball
 END
@@ -415,6 +416,7 @@ COPY ~%MOD_FOLDER%/creatures/#scripts/momatk01.baf~ ~override/momatk01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/mobear01.baf~ ~override/mobear01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/modruid1.baf~ ~override/modruid1.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/mopries1.baf~ ~override/mopries1.bcs~
+     ~%MOD_FOLDER%/creatures/#scripts/momage1.baf~  ~override/momage1.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/ohbumb01.baf~ ~override/ohbumb01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/zbdom.baf~    ~override/zbdom.bcs~
   COMPILE_BAF_TO_BCS

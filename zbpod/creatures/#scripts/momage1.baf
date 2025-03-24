@@ -1,0 +1,46 @@
+/////////////////////////////////////////////////////////////////////
+// PREP==0 - Created Defenses - Levels 11--21 
+/////////////////////////////////////////////////////////////////////
+IF
+  Global("Prep","LOCALS",0)
+  //CheckStatGT(Myself,10,LEVEL)
+  //CheckStatLT(Myself,22,LEVEL)
+THEN
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18025)  // ~twists a magical ring on their finger~
+    ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+    ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    Continue()
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18025)  // ~twists a magical ring on their finger~
+    ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+    ReallyForceSpell(Myself,WIZARD_MANTLE)
+    Continue()
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18025)  // ~twists a magical ring on their finger~
+    ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+    ReallyForceSpell(Myself,WIZARD_HASTE)
+    Continue()
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18025)  // ~twists a magical ring on their finger~
+    ReallyForceSpell(Myself,WIZARD_HASTE)
+    ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+    Continue()
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18025)  // ~twists a magical ring on their finger~
+    ReallyForceSpell(Myself,WIZARD_HASTE)
+    ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
+    Continue()
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    DisplayStringHead(Myself,@18025)  // ~twists a magical ring on their finger~
+    ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+    ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+    Continue()
+END
+
