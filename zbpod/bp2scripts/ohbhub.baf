@@ -402,8 +402,7 @@ THEN
 END
 
 IF
-	See(Player1)
-	StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 	Global("ZB_NEPH_BEGIN","GLOBAL",0)
 	Global("ZB_MOVED_NEPH","GLOBAL",1)
 THEN
