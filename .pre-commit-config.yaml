@@ -1,0 +1,37 @@
+default_install_hook_types: [pre-commit]
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v5.0.0
+  hooks:
+    - id: end-of-file-fixer
+      stages: [pre-commit]
+    - id: trailing-whitespace
+      stages: [pre-commit]
+    - id: check-case-conflict
+      stages: [pre-commit]
+    - id: check-merge-conflict
+      stages: [pre-commit]
+    - id: forbid-new-submodules
+      stages: [pre-commit]
+    - id: check-builtin-literals
+      stages: [pre-commit]
+    - id: mixed-line-ending
+      args:
+        - "--fix=lf"
+      stages: [pre-commit]
+
+- repo: https://github.com/jumanjihouse/pre-commit-hooks
+  rev: 3.0.0
+  hooks:
+    - id: git-dirty
+      stages: [pre-commit]
+    - id: git-check
+      stages: [pre-commit]
+
+- repo: https://github.com/Lucas-C/pre-commit-hooks
+  rev: v1.5.5
+  hooks:
+    - id: forbid-tabs
+      stages: [pre-commit]
+    - id: remove-tabs
+      stages: [pre-commit]

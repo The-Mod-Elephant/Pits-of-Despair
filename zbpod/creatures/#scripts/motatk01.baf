@@ -6,7 +6,7 @@ IF
   CheckStatGT(Myself,19,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignInvisPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     GiveItemCreate("potn10",Myself,5,0,0)   // potion of invisibility
     SetGlobal("MO_AssignInvisPotion","LOCALS",1)
@@ -19,7 +19,7 @@ IF
   CheckStatLT(Myself,20,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignInvisPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     GiveItemCreate("potn10",Myself,4,0,0)   // potion of invisibility
     SetGlobal("MO_AssignInvisPotion","LOCALS",1)
@@ -32,7 +32,7 @@ IF
   CheckStatLT(Myself,16,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignInvisPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     GiveItemCreate("potn10",Myself,3,0,0)   // potion of invisibility
     SetGlobal("MO_AssignInvisPotion","LOCALS",1)
@@ -45,7 +45,7 @@ IF
   CheckStatLT(Myself,11,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignInvisPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     GiveItemCreate("potn10",Myself,2,0,0)   // potion of invisibility
     SetGlobal("MO_AssignInvisPotion","LOCALS",1)
@@ -58,7 +58,7 @@ IF
   CheckStatLT(Myself,5,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignInvisPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     GiveItemCreate("potn10",Myself,1,0,0)   // potion of invisibility
     SetGlobal("MO_AssignInvisPotion","LOCALS",1)
@@ -68,19 +68,19 @@ END
 /////////////////////////////////////////////////////////////////////
 // Delay start to buff
 /////////////////////////////////////////////////////////////////////
-IF 
+IF
   Global("MO_DelayStart","LOCALS",0)
   False()
-THEN 
+THEN
   RESPONSE #100
     SetGlobal("MO_DelayStart","LOCALS",1)
     SetGlobalTimer("MO_DelayStartTimer","LOCALS",6)
 END
 
-IF 
+IF
   GlobalTimerNotExpired("MO_DelayStartTimer","LOCALS")
   False()
-THEN 
+THEN
   RESPONSE #100
     NoAction()
 END
@@ -123,7 +123,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("MO_ThiefPrep","LOCALS",1)
-    ApplySpell(Myself,WIZARD_INVISIBILITY)  
+    ApplySpell(Myself,WIZARD_INVISIBILITY)
     EquipMostDamagingMelee()
     Hide()
 END
@@ -159,7 +159,7 @@ THEN
 END
 
 /////////////////////////////////////////////////////////////////////
-// Backstab Attacks 
+// Backstab Attacks
 /////////////////////////////////////////////////////////////////////
 IF
   ActionListEmpty()

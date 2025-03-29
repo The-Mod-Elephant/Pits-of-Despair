@@ -1,10 +1,9 @@
 IF
-	Opened([PC])
+    Opened([PC])
 THEN
-	RESPONSE #100
-		PlaySound("")
-		SetGlobal("ohb_finale_captain_bark","oh8100",1)  // TBP2 - Staging Area Map
-		SetGlobal("ohb_finale_captain_bark2","oh8100",1)  // TBP2 - Staging Area Map
-		Unlock("door0003")
+    RESPONSE #100
+        PlaySound("")
+        SetGlobal("ohb_finale_captain_bark","oh8100",1)  // TBP2 - Staging Area Map
+        SetGlobal("ohb_finale_captain_bark2","oh8100",1)  // TBP2 - Staging Area Map
+        Unlock("door0003")
 END
-

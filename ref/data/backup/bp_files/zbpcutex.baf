@@ -1,57 +1,56 @@
 IF
-	True()
+    True()
 THEN
-	RESPONSE #100
-		CutSceneId(Player1)
-		PlaySound("BP2POS_1")
-		UnlockScroll()
-		CopyGroundPilesTo("OH8100",[4609.3104])  // TBP2 - Staging Area Map
-		SetGlobal("ohb_spawn_gladiators","myarea",0)
-		SmallWait(5)
-		DestroyGroundPiles()
-		ClearAllActions()
-		SetGlobal("OHB_BATTLE_COMPLETE","GLOBAL",0)
-		SetGlobal("OHB_DULF_TIMER","GLOBAL",0)
-		MoveViewPoint([4670.3135],INSTANT)
-		ActionOverride(Player2,LeaveAreaLUA("OH8100","",[4975.2980],SW))  // TBP2 - Staging Area Map
-		ActionOverride(Player3,LeaveAreaLUA("OH8100","",[5055.3005],SW))  // TBP2 - Staging Area Map
-		ActionOverride(Player4,LeaveAreaLUA("OH8100","",[5025.2955],SW))  // TBP2 - Staging Area Map
-		ActionOverride(Player5,LeaveAreaLUA("OH8100","",[5105.2980],SW))  // TBP2 - Staging Area Map
-		ActionOverride(Player6,LeaveAreaLUA("OH8100","",[5075.2930],SW))  // TBP2 - Staging Area Map
-		LeaveAreaLUAPanic("OH8100","",[5005.3030],SW)  // TBP2 - Staging Area Map
-		LeaveAreaLUA("OH8100","",[5005.3030],SW)  // TBP2 - Staging Area Map
-		MultiPlayerSync()
-		Wait(1)
-		AdvanceTime(ONE_HOUR)
-		Wait(2)
-		ApplySpellRES("BPDISPEL",Player1)  // No such index
-		ApplySpellRES("BPDISPEL",Player2)  // No such index
-		ApplySpellRES("BPDISPEL",Player3)  // No such index
-		ApplySpellRES("BPDISPEL",Player4)  // No such index
-		ApplySpellRES("BPDISPEL",Player5)  // No such index
-		ApplySpellRES("BPDISPEL",Player6)  // No such index
-		ApplySpell(Player1,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
-		ActionOverride(Player2,ApplySpell(Player2,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
-		ActionOverride(Player3,ApplySpell(Player3,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
-		ActionOverride(Player4,ApplySpell(Player4,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
-		ActionOverride(Player5,ApplySpell(Player5,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
-		ActionOverride(Player6,ApplySpell(Player6,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
-		ApplySpellRES("SPSREST",Player1)  // No such index
-		ApplySpellRES("SPSREST",Player2)  // No such index
-		ApplySpellRES("SPSREST",Player3)  // No such index
-		ApplySpellRES("SPSREST",Player4)  // No such index
-		ApplySpellRES("SPSREST",Player5)  // No such index
-		ApplySpellRES("SPSREST",Player6)  // No such index
-		Wait(1)
-		FadeFromColor([30.0],0)
-		ActionOverride(Player2,MoveToPoint([4640.3085]))
-		ActionOverride(Player3,MoveToPoint([4720.3110]))
-		ActionOverride(Player4,MoveToPoint([4690.3060]))
-		ActionOverride(Player5,MoveToPoint([4770.3085]))
-		ActionOverride(Player6,MoveToPoint([4740.3035]))
-		MoveToPoint([4670.3135])
-		SetGlobal("ohb_plot_cutscene","global",1)
-		EndCutSceneMode()
-		SaveGame(0)
+    RESPONSE #100
+        CutSceneId(Player1)
+        PlaySound("BP2POS_1")
+        UnlockScroll()
+        CopyGroundPilesTo("OH8100",[4609.3104])  // TBP2 - Staging Area Map
+        SetGlobal("ohb_spawn_gladiators","myarea",0)
+        SmallWait(5)
+        DestroyGroundPiles()
+        ClearAllActions()
+        SetGlobal("OHB_BATTLE_COMPLETE","GLOBAL",0)
+        SetGlobal("OHB_DULF_TIMER","GLOBAL",0)
+        MoveViewPoint([4670.3135],INSTANT)
+        ActionOverride(Player2,LeaveAreaLUA("OH8100","",[4975.2980],SW))  // TBP2 - Staging Area Map
+        ActionOverride(Player3,LeaveAreaLUA("OH8100","",[5055.3005],SW))  // TBP2 - Staging Area Map
+        ActionOverride(Player4,LeaveAreaLUA("OH8100","",[5025.2955],SW))  // TBP2 - Staging Area Map
+        ActionOverride(Player5,LeaveAreaLUA("OH8100","",[5105.2980],SW))  // TBP2 - Staging Area Map
+        ActionOverride(Player6,LeaveAreaLUA("OH8100","",[5075.2930],SW))  // TBP2 - Staging Area Map
+        LeaveAreaLUAPanic("OH8100","",[5005.3030],SW)  // TBP2 - Staging Area Map
+        LeaveAreaLUA("OH8100","",[5005.3030],SW)  // TBP2 - Staging Area Map
+        MultiPlayerSync()
+        Wait(1)
+        AdvanceTime(ONE_HOUR)
+        Wait(2)
+        ApplySpellRES("BPDISPEL",Player1)  // No such index
+        ApplySpellRES("BPDISPEL",Player2)  // No such index
+        ApplySpellRES("BPDISPEL",Player3)  // No such index
+        ApplySpellRES("BPDISPEL",Player4)  // No such index
+        ApplySpellRES("BPDISPEL",Player5)  // No such index
+        ApplySpellRES("BPDISPEL",Player6)  // No such index
+        ApplySpell(Player1,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
+        ActionOverride(Player2,ApplySpell(Player2,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
+        ActionOverride(Player3,ApplySpell(Player3,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
+        ActionOverride(Player4,ApplySpell(Player4,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
+        ActionOverride(Player5,ApplySpell(Player5,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
+        ActionOverride(Player6,ApplySpell(Player6,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
+        ApplySpellRES("SPSREST",Player1)  // No such index
+        ApplySpellRES("SPSREST",Player2)  // No such index
+        ApplySpellRES("SPSREST",Player3)  // No such index
+        ApplySpellRES("SPSREST",Player4)  // No such index
+        ApplySpellRES("SPSREST",Player5)  // No such index
+        ApplySpellRES("SPSREST",Player6)  // No such index
+        Wait(1)
+        FadeFromColor([30.0],0)
+        ActionOverride(Player2,MoveToPoint([4640.3085]))
+        ActionOverride(Player3,MoveToPoint([4720.3110]))
+        ActionOverride(Player4,MoveToPoint([4690.3060]))
+        ActionOverride(Player5,MoveToPoint([4770.3085]))
+        ActionOverride(Player6,MoveToPoint([4740.3035]))
+        MoveToPoint([4670.3135])
+        SetGlobal("ohb_plot_cutscene","global",1)
+        EndCutSceneMode()
+        SaveGame(0)
 END
-

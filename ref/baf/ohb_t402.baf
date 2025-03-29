@@ -1,199 +1,198 @@
 IF
-	AreaCheck("OH8100")  // TBP2 - Staging Area Map
-	Global("OH_InitView","LOCALS",0)
+    AreaCheck("OH8100")  // TBP2 - Staging Area Map
+    Global("OH_InitView","LOCALS",0)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OH_InitView","LOCALS",1)
-		ChangeEnemyAlly(Myself,NEUTRAL)
-		ChangeSpecifics(Myself,200)
-		ApplySpellRES("OHBINVUL",Myself)  // No such index
-		DialogInterrupt(FALSE)
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OH_InitView","LOCALS",1)
+        ChangeEnemyAlly(Myself,NEUTRAL)
+        ChangeSpecifics(Myself,200)
+        ApplySpellRES("OHBINVUL",Myself)  // No such index
+        DialogInterrupt(FALSE)
+        SetInterrupt(TRUE)
 END
 
 IF
-	AreaCheck("OH8100")  // TBP2 - Staging Area Map
-	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
-	Range([PC],30)
+    AreaCheck("OH8100")  // TBP2 - Staging Area Map
+    !GlobalTimerNotExpired("OH_Taunt","LOCALS")
+    Range([PC],30)
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
-		FaceObject([PC])
-		DisplayStringHead(Myself,94381)  // We shall usher you into the timelessness of undeath.
+    RESPONSE #100
+        SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+        FaceObject([PC])
+        DisplayStringHead(Myself,94381)  // We shall usher you into the timelessness of undeath.
 END
 
 IF
-	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+    AreaCheck("OH8100")  // TBP2 - Staging Area Map
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	Allegiance(Myself,ENEMY)
-	Global("OHB_ENEMY_OVERRIDE","GLOBAL",1)
+    Allegiance(Myself,ENEMY)
+    Global("OHB_ENEMY_OVERRIDE","GLOBAL",1)
 THEN
-	RESPONSE #100
-		ChangeEnemyAlly(Myself,NEUTRAL)
+    RESPONSE #100
+        ChangeEnemyAlly(Myself,NEUTRAL)
 END
 
 IF
-	Allegiance(Myself,NEUTRAL)
-	Global("OHB_ENEMY_OVERRIDE","GLOBAL",0)
+    Allegiance(Myself,NEUTRAL)
+    Global("OHB_ENEMY_OVERRIDE","GLOBAL",0)
 THEN
-	RESPONSE #100
-		Enemy()
+    RESPONSE #100
+        Enemy()
 END
 
 IF
-	Global("OH_Active","LOCALS",0)
+    Global("OH_Active","LOCALS",0)
 THEN
-	RESPONSE #100
-		SetGlobal("OH_Active","LOCALS",1)
-		Continue()
+    RESPONSE #100
+        SetGlobal("OH_Active","LOCALS",1)
+        Continue()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Crit","LOCALS")
-	TookDamage()
-	DamageTakenGT(30)
+    !GlobalTimerNotExpired("OH_Crit","LOCALS")
+    TookDamage()
+    DamageTakenGT(30)
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OH_Crit","LOCALS",ONE_ROUND)
-		SetGlobal("OHB_CROWD_POS","MYAREA",1)
-		GlobalShout(9003)
-		Continue()
+    RESPONSE #100
+        SetGlobalTimer("OH_Crit","LOCALS",ONE_ROUND)
+        SetGlobal("OHB_CROWD_POS","MYAREA",1)
+        GlobalShout(9003)
+        Continue()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
-	!StateCheck(Myself,STATE_INVISIBLE)
-	Killed([PC])
+    !GlobalTimerNotExpired("OH_Taunt","LOCALS")
+    !StateCheck(Myself,STATE_INVISIBLE)
+    Killed([PC])
 THEN
-	RESPONSE #50
-		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
-		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
-		GlobalShout(9002)
-		DisplayStringHead(Myself,94392)  // Now you see the true weakness of your flesh.
-		Continue()
-	RESPONSE #50
-		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
-		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
-		GlobalShout(9002)
-		DisplayStringHead(Myself,94393)  // You never had a chance, mortal.
-		Continue()
+    RESPONSE #50
+        SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+        SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+        GlobalShout(9002)
+        DisplayStringHead(Myself,94392)  // Now you see the true weakness of your flesh.
+        Continue()
+    RESPONSE #50
+        SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+        SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+        GlobalShout(9002)
+        DisplayStringHead(Myself,94393)  // You never had a chance, mortal.
+        Continue()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
-	!StateCheck(Myself,STATE_INVISIBLE)
-	Died(NearestMyGroupOfType)
+    !GlobalTimerNotExpired("OH_Taunt","LOCALS")
+    !StateCheck(Myself,STATE_INVISIBLE)
+    Died(NearestMyGroupOfType)
 THEN
-	RESPONSE #50
-		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
-		SetGlobal("OHB_CROWD_POS","MYAREA",3)
-		GlobalShout(9011)
-		DisplayStringHead(Myself,94390)  // You shall pay for your impertinence!
-		Continue()
-	RESPONSE #50
-		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
-		SetGlobal("OHB_CROWD_POS","MYAREA",3)
-		GlobalShout(9011)
-		DisplayStringHead(Myself,94391)  // It cannot be! You cannot have defeated him!
-		Continue()
-	RESPONSE #60
-		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
-		SetGlobal("OHB_CROWD_POS","MYAREA",3)
-		GlobalShout(9011)
-		Continue()
+    RESPONSE #50
+        SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+        SetGlobal("OHB_CROWD_POS","MYAREA",3)
+        GlobalShout(9011)
+        DisplayStringHead(Myself,94390)  // You shall pay for your impertinence!
+        Continue()
+    RESPONSE #50
+        SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+        SetGlobal("OHB_CROWD_POS","MYAREA",3)
+        GlobalShout(9011)
+        DisplayStringHead(Myself,94391)  // It cannot be! You cannot have defeated him!
+        Continue()
+    RESPONSE #60
+        SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+        SetGlobal("OHB_CROWD_POS","MYAREA",3)
+        GlobalShout(9011)
+        Continue()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
-	!StateCheck(Myself,STATE_INVISIBLE)
-	HPPercentLT(Myself,31)
+    !GlobalTimerNotExpired("OH_Taunt","LOCALS")
+    !StateCheck(Myself,STATE_INVISIBLE)
+    HPPercentLT(Myself,31)
 THEN
-	RESPONSE #50
-		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94388)  // Brother! To my side—I am hurt!
-		Help()
-		Continue()
-	RESPONSE #50
-		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94389)  // You may injure me, but you shall never defeat me!
-		Help()
-		Continue()
+    RESPONSE #50
+        SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94388)  // Brother! To my side—I am hurt!
+        Help()
+        Continue()
+    RESPONSE #50
+        SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94389)  // You may injure me, but you shall never defeat me!
+        Help()
+        Continue()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
-	!StateCheck(Myself,STATE_INVISIBLE)
-	BreakingPoint()
+    !GlobalTimerNotExpired("OH_Taunt","LOCALS")
+    !StateCheck(Myself,STATE_INVISIBLE)
+    BreakingPoint()
 THEN
-	RESPONSE #50
-		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94394)  // Come, let us flee!
-		Continue()
-	RESPONSE #50
-		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94395)  // Flee! Return to the safety of our desert home!
-		Continue()
+    RESPONSE #50
+        SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94394)  // Come, let us flee!
+        Continue()
+    RESPONSE #50
+        SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94395)  // Flee! Return to the safety of our desert home!
+        Continue()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
-	!StateCheck(Myself,STATE_INVISIBLE)
-	OR(3)
-		StateCheck(NearestMyGroupOfType,STATE_IMMOBILE)
-		StateCheck(SecondNearestMyGroupOfType,STATE_IMMOBILE)
-		StateCheck(ThirdNearestMyGroupOfType,STATE_IMMOBILE)
+    !GlobalTimerNotExpired("OH_Taunt","LOCALS")
+    !StateCheck(Myself,STATE_INVISIBLE)
+    OR(3)
+        StateCheck(NearestMyGroupOfType,STATE_IMMOBILE)
+        StateCheck(SecondNearestMyGroupOfType,STATE_IMMOBILE)
+        StateCheck(ThirdNearestMyGroupOfType,STATE_IMMOBILE)
 THEN
-	RESPONSE #20
-		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94396)  // Fool! You cannot disable a lich for long!
-		Continue()
-	RESPONSE #20
-		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94397)  // Your tricks shall not last long against our power!
-		Continue()
-	RESPONSE #60
-		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
-		Continue()
+    RESPONSE #20
+        SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94396)  // Fool! You cannot disable a lich for long!
+        Continue()
+    RESPONSE #20
+        SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94397)  // Your tricks shall not last long against our power!
+        Continue()
+    RESPONSE #60
+        SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+        Continue()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
-	!GlobalTimerNotExpired("OH_RTaunt","LOCALS")
-	!StateCheck(Myself,STATE_INVISIBLE)
-	Range([GOODCUTOFF],30)
+    !GlobalTimerNotExpired("OH_Taunt","LOCALS")
+    !GlobalTimerNotExpired("OH_RTaunt","LOCALS")
+    !StateCheck(Myself,STATE_INVISIBLE)
+    Range([GOODCUTOFF],30)
 THEN
-	RESPONSE #15
-		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94382)  // You cannot resist us!
-		Continue()
-	RESPONSE #15
-		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94383)  // Come and meet your eternal doom!
-		Continue()
-	RESPONSE #15
-		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94384)  // The torment of unending death shall be your final destiny!
-		Continue()
-	RESPONSE #15
-		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94385)  // You will never know the peace of death!
-		Continue()
-	RESPONSE #15
-		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94386)  // We shall end your pitiful existence.
-		Continue()
-	RESPONSE #15
-		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94387)  // We shall consume your pitiful flesh with fire!
-		Continue()
-	RESPONSE #10
-		SetGlobalTimer("OH_RTaunt","LOCALS",ONE_ROUND)
-		Continue()
+    RESPONSE #15
+        SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94382)  // You cannot resist us!
+        Continue()
+    RESPONSE #15
+        SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94383)  // Come and meet your eternal doom!
+        Continue()
+    RESPONSE #15
+        SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94384)  // The torment of unending death shall be your final destiny!
+        Continue()
+    RESPONSE #15
+        SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94385)  // You will never know the peace of death!
+        Continue()
+    RESPONSE #15
+        SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94386)  // We shall end your pitiful existence.
+        Continue()
+    RESPONSE #15
+        SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94387)  // We shall consume your pitiful flesh with fire!
+        Continue()
+    RESPONSE #10
+        SetGlobalTimer("OH_RTaunt","LOCALS",ONE_ROUND)
+        Continue()
 END
-

@@ -3,34 +3,34 @@ IF
 THEN
   RESPONSE #100
     SetCutSceneBreakable(FALSE)
-		ClearAllActions()
+        ClearAllActions()
     ActionOverride("ohbjoker",Polymorph(CLERIC_FEMALE_ELF))
-		ActionOverride("ohbjoker",SetName(90404))  // Joker
-		ActionOverride("ohbdorma",Polymorph(DJINNI_LEGS))
-		ActionOverride("ohbdorma",SetName(90405))  // Dormamus
-		ActionOverride("ohbbanno",Polymorph(GOLEM_IRON))
-		ActionOverride("ohbbanno",SetName(90406))  // Bannor
-		ActionOverride("ohbthass",Polymorph(SALAMANDER_FIRE))
-		ActionOverride("ohbthass",SetName(90408))  // Thassk Kun
-		ActionOverride("ohbpol",Polymorph(MAGE_MALE_HUMAN))
-		ActionOverride("ohbpol",SetName(90449))  // Pol Pyrrus
-		ActionOverride("ohbjoker",EquipMostDamagingMelee())
-		ActionOverride("ohbdorma",EquipMostDamagingMelee())
-		ActionOverride("ohbbanno",EquipMostDamagingMelee())
-		ActionOverride("ohbthass",EquipMostDamagingMelee())
-		ActionOverride("ohbpol",EquipMostDamagingMelee())
-		ActionOverride("ohbpol",Spell(Myself,WIZARD_PROTECTION_FROM_THE_ELEMENTS))  // SPWI702.SPL (Protection From The Elements)
-		ActionOverride("ohbthass",Spell(Myself,WIZARD_VOCALIZE))  // SPWI219.SPL (Vocalize)
-		ActionOverride("ohbjoker",Spell(Myself,WIZARD_PROTECTION_FROM_FIRE))  // SPWI319.SPL (Protection From Fire)
-		ActionOverride("ohbwing",DestroySelf())
-		SmallWait(2)
-		CreateCreature("ohbwing",[940.700],NW)  // The Winged
-		ActionOverride("ohbwing",ChangeAIScript("ohbwings",OVERRIDE))
-		ActionOverride("ohbwing",ChangeAIScript("",GENERAL))
-		ActionOverride("ohbdorma",ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED))  // SPWI418.SPL (Fire Shield (Red))
-		ActionOverride("ohbwing",JumpToPoint([1000.735]))
-		ActionOverride("ohbwing",Face(NW))
-		SmallWait(1)
-		FadeFromColor([10.0],0)
-		ActionOverride("ohbnajim",StartDialogueNoSet(Player1)) 
+        ActionOverride("ohbjoker",SetName(90404))  // Joker
+        ActionOverride("ohbdorma",Polymorph(DJINNI_LEGS))
+        ActionOverride("ohbdorma",SetName(90405))  // Dormamus
+        ActionOverride("ohbbanno",Polymorph(GOLEM_IRON))
+        ActionOverride("ohbbanno",SetName(90406))  // Bannor
+        ActionOverride("ohbthass",Polymorph(SALAMANDER_FIRE))
+        ActionOverride("ohbthass",SetName(90408))  // Thassk Kun
+        ActionOverride("ohbpol",Polymorph(MAGE_MALE_HUMAN))
+        ActionOverride("ohbpol",SetName(90449))  // Pol Pyrrus
+        ActionOverride("ohbjoker",EquipMostDamagingMelee())
+        ActionOverride("ohbdorma",EquipMostDamagingMelee())
+        ActionOverride("ohbbanno",EquipMostDamagingMelee())
+        ActionOverride("ohbthass",EquipMostDamagingMelee())
+        ActionOverride("ohbpol",EquipMostDamagingMelee())
+        ActionOverride("ohbpol",Spell(Myself,WIZARD_PROTECTION_FROM_THE_ELEMENTS))  // SPWI702.SPL (Protection From The Elements)
+        ActionOverride("ohbthass",Spell(Myself,WIZARD_VOCALIZE))  // SPWI219.SPL (Vocalize)
+        ActionOverride("ohbjoker",Spell(Myself,WIZARD_PROTECTION_FROM_FIRE))  // SPWI319.SPL (Protection From Fire)
+        ActionOverride("ohbwing",DestroySelf())
+        SmallWait(2)
+        CreateCreature("ohbwing",[940.700],NW)  // The Winged
+        ActionOverride("ohbwing",ChangeAIScript("ohbwings",OVERRIDE))
+        ActionOverride("ohbwing",ChangeAIScript("",GENERAL))
+        ActionOverride("ohbdorma",ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED))  // SPWI418.SPL (Fire Shield (Red))
+        ActionOverride("ohbwing",JumpToPoint([1000.735]))
+        ActionOverride("ohbwing",Face(NW))
+        SmallWait(1)
+        FadeFromColor([10.0],0)
+        ActionOverride("ohbnajim",StartDialogueNoSet(Player1))
 END

@@ -1,31 +1,30 @@
 IF
-	True()
+    True()
 THEN
-	RESPONSE #100
-		CutSceneId("OHBWING2")  // The Winged
-		FaceObject([PC])
-		DisplayStringHead(Myself,90595)  // Stand down, mortals.
-		Wait(1)
-		ForceSpell(Player1,HOLY_PILLAR_VISUAL)  // SPIN563.SPL (No such index)
-		ActionOverride(Player1,SetSequence(SEQ_SLEEP))
-		SmallWait(5)
-		ForceSpell(Player2,HOLY_PILLAR_VISUAL)  // SPIN563.SPL (No such index)
-		ActionOverride(Player2,SetSequence(SEQ_SLEEP))
-		SmallWait(5)
-		ForceSpell(Player3,HOLY_PILLAR_VISUAL)  // SPIN563.SPL (No such index)
-		ActionOverride(Player3,SetSequence(SEQ_SLEEP))
-		SmallWait(5)
-		ForceSpell(Player4,HOLY_PILLAR_VISUAL)  // SPIN563.SPL (No such index)
-		ActionOverride(Player4,SetSequence(SEQ_SLEEP))
-		SmallWait(5)
-		ForceSpell(Player5,HOLY_PILLAR_VISUAL)  // SPIN563.SPL (No such index)
-		ActionOverride(Player5,SetSequence(SEQ_SLEEP))
-		SmallWait(5)
-		ForceSpell(Player6,HOLY_PILLAR_VISUAL)  // SPIN563.SPL (No such index)
-		ActionOverride(Player6,SetSequence(SEQ_SLEEP))
-		Wait(2)
-		FaceObject([PC])
-		Wait(1)
-		StartDialogueNoSet([PC])
+    RESPONSE #100
+        CutSceneId("OHBWING2")  // The Winged
+        FaceObject([PC])
+        DisplayStringHead(Myself,90595)  // Stand down, mortals.
+        Wait(1)
+        ForceSpell(Player1,HOLY_PILLAR_VISUAL)  // SPIN563.SPL (No such index)
+        ActionOverride(Player1,SetSequence(SEQ_SLEEP))
+        SmallWait(5)
+        ForceSpell(Player2,HOLY_PILLAR_VISUAL)  // SPIN563.SPL (No such index)
+        ActionOverride(Player2,SetSequence(SEQ_SLEEP))
+        SmallWait(5)
+        ForceSpell(Player3,HOLY_PILLAR_VISUAL)  // SPIN563.SPL (No such index)
+        ActionOverride(Player3,SetSequence(SEQ_SLEEP))
+        SmallWait(5)
+        ForceSpell(Player4,HOLY_PILLAR_VISUAL)  // SPIN563.SPL (No such index)
+        ActionOverride(Player4,SetSequence(SEQ_SLEEP))
+        SmallWait(5)
+        ForceSpell(Player5,HOLY_PILLAR_VISUAL)  // SPIN563.SPL (No such index)
+        ActionOverride(Player5,SetSequence(SEQ_SLEEP))
+        SmallWait(5)
+        ForceSpell(Player6,HOLY_PILLAR_VISUAL)  // SPIN563.SPL (No such index)
+        ActionOverride(Player6,SetSequence(SEQ_SLEEP))
+        Wait(2)
+        FaceObject([PC])
+        Wait(1)
+        StartDialogueNoSet([PC])
 END
-

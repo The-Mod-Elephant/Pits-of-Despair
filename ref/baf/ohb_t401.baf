@@ -1,208 +1,207 @@
 IF
-	Die()
+    Die()
 THEN
-	RESPONSE #100
-		CreateVisualEffectObject("SPUNHOLY",Myself)
-		DestroySelf()
+    RESPONSE #100
+        CreateVisualEffectObject("SPUNHOLY",Myself)
+        DestroySelf()
 END
 
 IF
-	AreaCheck("OH8100")  // TBP2 - Staging Area Map
-	Global("OH_InitView","LOCALS",0)
+    AreaCheck("OH8100")  // TBP2 - Staging Area Map
+    Global("OH_InitView","LOCALS",0)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OH_InitView","LOCALS",1)
-		ChangeEnemyAlly(Myself,NEUTRAL)
-		ChangeSpecifics(Myself,200)
-		ApplySpellRES("OHBINVUL",Myself)  // No such index
-		DialogInterrupt(FALSE)
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OH_InitView","LOCALS",1)
+        ChangeEnemyAlly(Myself,NEUTRAL)
+        ChangeSpecifics(Myself,200)
+        ApplySpellRES("OHBINVUL",Myself)  // No such index
+        DialogInterrupt(FALSE)
+        SetInterrupt(TRUE)
 END
 
 IF
-	AreaCheck("OH8100")  // TBP2 - Staging Area Map
-	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
-	Range([PC],30)
-	Name("OHBCEL01",Myself)  // Ariziel
+    AreaCheck("OH8100")  // TBP2 - Staging Area Map
+    !GlobalTimerNotExpired("OH_Taunt","LOCALS")
+    Range([PC],30)
+    Name("OHBCEL01",Myself)  // Ariziel
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
-		FaceObject([PC])
-		DisplayStringHead(Myself,94338)  // The Winged is a traitor to her own kind!
+    RESPONSE #100
+        SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+        FaceObject([PC])
+        DisplayStringHead(Myself,94338)  // The Winged is a traitor to her own kind!
 END
 
 IF
-	AreaCheck("OH8100")  // TBP2 - Staging Area Map
+    AreaCheck("OH8100")  // TBP2 - Staging Area Map
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	Allegiance(Myself,ENEMY)
-	Global("OHB_ENEMY_OVERRIDE","GLOBAL",1)
+    Allegiance(Myself,ENEMY)
+    Global("OHB_ENEMY_OVERRIDE","GLOBAL",1)
 THEN
-	RESPONSE #100
-		ChangeEnemyAlly(Myself,NEUTRAL)
+    RESPONSE #100
+        ChangeEnemyAlly(Myself,NEUTRAL)
 END
 
 IF
-	Allegiance(Myself,NEUTRAL)
-	Global("OHB_ENEMY_OVERRIDE","GLOBAL",0)
+    Allegiance(Myself,NEUTRAL)
+    Global("OHB_ENEMY_OVERRIDE","GLOBAL",0)
 THEN
-	RESPONSE #100
-		Enemy()
+    RESPONSE #100
+        Enemy()
 END
 
 IF
-	Global("OH_Active","LOCALS",0)
+    Global("OH_Active","LOCALS",0)
 THEN
-	RESPONSE #100
-		SetGlobal("OH_Active","LOCALS",1)
-		Continue()
+    RESPONSE #100
+        SetGlobal("OH_Active","LOCALS",1)
+        Continue()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Crit","LOCALS")
-	TookDamage()
-	DamageTakenGT(30)
+    !GlobalTimerNotExpired("OH_Crit","LOCALS")
+    TookDamage()
+    DamageTakenGT(30)
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OH_Crit","LOCALS",ONE_ROUND)
-		SetGlobal("OHB_CROWD_POS","MYAREA",1)
-		GlobalShout(9003)
-		Continue()
+    RESPONSE #100
+        SetGlobalTimer("OH_Crit","LOCALS",ONE_ROUND)
+        SetGlobal("OHB_CROWD_POS","MYAREA",1)
+        GlobalShout(9003)
+        Continue()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
-	!StateCheck(Myself,STATE_INVISIBLE)
-	Killed([PC])
+    !GlobalTimerNotExpired("OH_Taunt","LOCALS")
+    !StateCheck(Myself,STATE_INVISIBLE)
+    Killed([PC])
 THEN
-	RESPONSE #50
-		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
-		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
-		GlobalShout(9002)
-		DisplayStringHead(Myself,94349)  // Your weak flesh fails before my blade!
-		Continue()
-	RESPONSE #50
-		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
-		SetGlobal("OHB_CROWD_NEG","MYAREA",2)
-		GlobalShout(9002)
-		DisplayStringHead(Myself,94350)  // How easily you fell.
-		Continue()
+    RESPONSE #50
+        SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+        SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+        GlobalShout(9002)
+        DisplayStringHead(Myself,94349)  // Your weak flesh fails before my blade!
+        Continue()
+    RESPONSE #50
+        SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+        SetGlobal("OHB_CROWD_NEG","MYAREA",2)
+        GlobalShout(9002)
+        DisplayStringHead(Myself,94350)  // How easily you fell.
+        Continue()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
-	!StateCheck(Myself,STATE_INVISIBLE)
-	Died(NearestMyGroupOfType)
+    !GlobalTimerNotExpired("OH_Taunt","LOCALS")
+    !StateCheck(Myself,STATE_INVISIBLE)
+    Died(NearestMyGroupOfType)
 THEN
-	RESPONSE #20
-		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
-		SetGlobal("OHB_CROWD_POS","MYAREA",3)
-		GlobalShout(9011)
-		DisplayStringHead(Myself,94347)  // I shall repay you for this!
-		Continue()
-	RESPONSE #20
-		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
-		SetGlobal("OHB_CROWD_POS","MYAREA",3)
-		GlobalShout(9011)
-		DisplayStringHead(Myself,94348)  // You will pay for their death!
-		Continue()
-	RESPONSE #60
-		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
-		SetGlobal("OHB_CROWD_POS","MYAREA",3)
-		GlobalShout(9011)
-		Continue()
+    RESPONSE #20
+        SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+        SetGlobal("OHB_CROWD_POS","MYAREA",3)
+        GlobalShout(9011)
+        DisplayStringHead(Myself,94347)  // I shall repay you for this!
+        Continue()
+    RESPONSE #20
+        SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+        SetGlobal("OHB_CROWD_POS","MYAREA",3)
+        GlobalShout(9011)
+        DisplayStringHead(Myself,94348)  // You will pay for their death!
+        Continue()
+    RESPONSE #60
+        SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+        SetGlobal("OHB_CROWD_POS","MYAREA",3)
+        GlobalShout(9011)
+        Continue()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
-	!StateCheck(Myself,STATE_INVISIBLE)
-	HPPercentLT(Myself,31)
+    !GlobalTimerNotExpired("OH_Taunt","LOCALS")
+    !StateCheck(Myself,STATE_INVISIBLE)
+    HPPercentLT(Myself,31)
 THEN
-	RESPONSE #50
-		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94345)  // To my side! I am wounded!
-		Help()
-		Continue()
-	RESPONSE #50
-		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94346)  // Heavens protect me!
-		Help()
-		Continue()
+    RESPONSE #50
+        SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94345)  // To my side! I am wounded!
+        Help()
+        Continue()
+    RESPONSE #50
+        SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94346)  // Heavens protect me!
+        Help()
+        Continue()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
-	!StateCheck(Myself,STATE_INVISIBLE)
-	BreakingPoint()
+    !GlobalTimerNotExpired("OH_Taunt","LOCALS")
+    !StateCheck(Myself,STATE_INVISIBLE)
+    BreakingPoint()
 THEN
-	RESPONSE #50
-		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94351)  // Flee! Make haste!
-		Continue()
-	RESPONSE #50
-		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94352)  // Retreat! The gladiator is too powerful!
-		Continue()
+    RESPONSE #50
+        SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94351)  // Flee! Make haste!
+        Continue()
+    RESPONSE #50
+        SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94352)  // Retreat! The gladiator is too powerful!
+        Continue()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
-	!StateCheck(Myself,STATE_INVISIBLE)
-	OR(3)
-		StateCheck(NearestMyGroupOfType,STATE_IMMOBILE)
-		StateCheck(SecondNearestMyGroupOfType,STATE_IMMOBILE)
-		StateCheck(ThirdNearestMyGroupOfType,STATE_IMMOBILE)
+    !GlobalTimerNotExpired("OH_Taunt","LOCALS")
+    !StateCheck(Myself,STATE_INVISIBLE)
+    OR(3)
+        StateCheck(NearestMyGroupOfType,STATE_IMMOBILE)
+        StateCheck(SecondNearestMyGroupOfType,STATE_IMMOBILE)
+        StateCheck(ThirdNearestMyGroupOfType,STATE_IMMOBILE)
 THEN
-	RESPONSE #20
-		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94353)  // You cannot hope to hold a deva.
-		Continue()
-	RESPONSE #20
-		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94354)  // Your tricks cannot overpower the might of the heavens.
-		Continue()
-	RESPONSE #60
-		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
-		Continue()
+    RESPONSE #20
+        SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94353)  // You cannot hope to hold a deva.
+        Continue()
+    RESPONSE #20
+        SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94354)  // Your tricks cannot overpower the might of the heavens.
+        Continue()
+    RESPONSE #60
+        SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)
+        Continue()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Taunt","LOCALS")
-	!GlobalTimerNotExpired("OH_RTaunt","LOCALS")
-	!StateCheck(Myself,STATE_INVISIBLE)
-	Range([GOODCUTOFF],30)
+    !GlobalTimerNotExpired("OH_Taunt","LOCALS")
+    !GlobalTimerNotExpired("OH_RTaunt","LOCALS")
+    !StateCheck(Myself,STATE_INVISIBLE)
+    Range([GOODCUTOFF],30)
 THEN
-	RESPONSE #15
-		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94339)  // Bring forth the Winged!
-		Continue()
-	RESPONSE #15
-		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94340)  // We challenge the Winged to a battle of honor!
-		Continue()
-	RESPONSE #15
-		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94341)  // Dennaton, give us the Winged to battle!
-		Continue()
-	RESPONSE #15
-		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94342)  // You will die, mortal.
-		Continue()
-	RESPONSE #15
-		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94343)  // You cannot stand against the power of the heavens.
-		Continue()
-	RESPONSE #15
-		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94344)  // You shall not prevail.
-		Continue()
-	RESPONSE #10
-		SetGlobalTimer("OH_RTaunt","LOCALS",ONE_ROUND)
-		Continue()
+    RESPONSE #15
+        SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94339)  // Bring forth the Winged!
+        Continue()
+    RESPONSE #15
+        SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94340)  // We challenge the Winged to a battle of honor!
+        Continue()
+    RESPONSE #15
+        SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94341)  // Dennaton, give us the Winged to battle!
+        Continue()
+    RESPONSE #15
+        SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94342)  // You will die, mortal.
+        Continue()
+    RESPONSE #15
+        SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94343)  // You cannot stand against the power of the heavens.
+        Continue()
+    RESPONSE #15
+        SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
+        DisplayStringHead(Myself,94344)  // You shall not prevail.
+        Continue()
+    RESPONSE #10
+        SetGlobalTimer("OH_RTaunt","LOCALS",ONE_ROUND)
+        Continue()
 END
-

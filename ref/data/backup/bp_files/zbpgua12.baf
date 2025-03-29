@@ -1,42 +1,41 @@
 IF
-	GlobalGT("OHB_FINALE","GLOBAL",0)
+    GlobalGT("OHB_FINALE","GLOBAL",0)
 THEN
-	RESPONSE #100
-		DestroySelf()
+    RESPONSE #100
+        DestroySelf()
 END
 
 IF
-	GlobalLT("OHB_FOOD_FIGHT","oh8100",4)  // TBP2 - Staging Area Map
-	See([PC])
-	Range(LastSeenBy(Myself),13)
-	!GlobalTimerNotExpired("ohb_guard_intro_ot","locals")
+    GlobalLT("OHB_FOOD_FIGHT","oh8100",4)  // TBP2 - Staging Area Map
+    See([PC])
+    Range(LastSeenBy(Myself),13)
+    !GlobalTimerNotExpired("ohb_guard_intro_ot","locals")
 THEN
-	RESPONSE #100
-		DisplayStringHead(Myself,90512)  // Get to the banquet hall 'fore I get prickly on yer arse, performer.
-		SetGlobalTimer("ohb_guard_intro_ot","locals",FOUR_ROUNDS)
-	RESPONSE #100
-		DisplayStringHead(Myself,90512)  // Get to the banquet hall 'fore I get prickly on yer arse, performer.
-		SetGlobalTimer("ohb_guard_intro_ot","locals",SIX_ROUNDS)
-	RESPONSE #100
-		DisplayStringHead(Myself,90512)  // Get to the banquet hall 'fore I get prickly on yer arse, performer.
-		SetGlobalTimer("ohb_guard_intro_ot","locals",EIGHT_ROUNDS)
-	RESPONSE #100
-		DisplayStringHead(Myself,90516)  // You heard the orders. Get to the banquet hall!
-		SetGlobalTimer("ohb_guard_intro_ot","locals",FOUR_ROUNDS)
-	RESPONSE #100
-		DisplayStringHead(Myself,90516)  // You heard the orders. Get to the banquet hall!
-		SetGlobalTimer("ohb_guard_intro_ot","locals",SIX_ROUNDS)
-	RESPONSE #100
-		DisplayStringHead(Myself,90516)  // You heard the orders. Get to the banquet hall!
-		SetGlobalTimer("ohb_guard_intro_ot","locals",EIGHT_ROUNDS)
-	RESPONSE #100
-		DisplayStringHead(Myself,90517)  // Keep moving. The banquet hall's straight ahead.
-		SetGlobalTimer("ohb_guard_intro_ot","locals",FOUR_ROUNDS)
-	RESPONSE #100
-		DisplayStringHead(Myself,90517)  // Keep moving. The banquet hall's straight ahead.
-		SetGlobalTimer("ohb_guard_intro_ot","locals",SIX_ROUNDS)
-	RESPONSE #100
-		DisplayStringHead(Myself,90517)  // Keep moving. The banquet hall's straight ahead.
-		SetGlobalTimer("ohb_guard_intro_ot","locals",EIGHT_ROUNDS)
+    RESPONSE #100
+        DisplayStringHead(Myself,90512)  // Get to the banquet hall 'fore I get prickly on yer arse, performer.
+        SetGlobalTimer("ohb_guard_intro_ot","locals",FOUR_ROUNDS)
+    RESPONSE #100
+        DisplayStringHead(Myself,90512)  // Get to the banquet hall 'fore I get prickly on yer arse, performer.
+        SetGlobalTimer("ohb_guard_intro_ot","locals",SIX_ROUNDS)
+    RESPONSE #100
+        DisplayStringHead(Myself,90512)  // Get to the banquet hall 'fore I get prickly on yer arse, performer.
+        SetGlobalTimer("ohb_guard_intro_ot","locals",EIGHT_ROUNDS)
+    RESPONSE #100
+        DisplayStringHead(Myself,90516)  // You heard the orders. Get to the banquet hall!
+        SetGlobalTimer("ohb_guard_intro_ot","locals",FOUR_ROUNDS)
+    RESPONSE #100
+        DisplayStringHead(Myself,90516)  // You heard the orders. Get to the banquet hall!
+        SetGlobalTimer("ohb_guard_intro_ot","locals",SIX_ROUNDS)
+    RESPONSE #100
+        DisplayStringHead(Myself,90516)  // You heard the orders. Get to the banquet hall!
+        SetGlobalTimer("ohb_guard_intro_ot","locals",EIGHT_ROUNDS)
+    RESPONSE #100
+        DisplayStringHead(Myself,90517)  // Keep moving. The banquet hall's straight ahead.
+        SetGlobalTimer("ohb_guard_intro_ot","locals",FOUR_ROUNDS)
+    RESPONSE #100
+        DisplayStringHead(Myself,90517)  // Keep moving. The banquet hall's straight ahead.
+        SetGlobalTimer("ohb_guard_intro_ot","locals",SIX_ROUNDS)
+    RESPONSE #100
+        DisplayStringHead(Myself,90517)  // Keep moving. The banquet hall's straight ahead.
+        SetGlobalTimer("ohb_guard_intro_ot","locals",EIGHT_ROUNDS)
 END
-

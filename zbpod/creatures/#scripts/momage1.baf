@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////
-// PREP==0 - Created Defenses - Levels 11--21 
+// PREP==0 - Created Defenses - Levels 11--21
 /////////////////////////////////////////////////////////////////////
 IF
   Global("Prep","LOCALS",0)
@@ -43,4 +43,3 @@ THEN
     ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
     Continue()
 END
-

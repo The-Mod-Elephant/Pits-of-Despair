@@ -1,26 +1,25 @@
 IF
-	ActionListEmpty()
-	See(NearestEnemyOf(Myself))
-	!Range(NearestEnemyOf(Myself),6)
-	!InParty(NearestEnemyOf(Myself))
-	!StateCheck(Myself,STATE_INVISIBLE)
-	CheckStatLT(Myself,1,SANCTUARY)
+    ActionListEmpty()
+    See(NearestEnemyOf(Myself))
+    !Range(NearestEnemyOf(Myself),6)
+    !InParty(NearestEnemyOf(Myself))
+    !StateCheck(Myself,STATE_INVISIBLE)
+    CheckStatLT(Myself,1,SANCTUARY)
 THEN
-	RESPONSE #100
-		EquipRanged()
-		AttackReevaluate(NearestEnemyOf(Myself),30)
+    RESPONSE #100
+        EquipRanged()
+        AttackReevaluate(NearestEnemyOf(Myself),30)
 END
 
 IF
-	ActionListEmpty()
-	See(NearestEnemyOf(Myself))
-	Range(NearestEnemyOf(Myself),6)
-	!StateCheck(Myself,STATE_INVISIBLE)
-	CheckStatLT(Myself,1,SANCTUARY)
-	!InParty(NearestEnemyOf(Myself))
+    ActionListEmpty()
+    See(NearestEnemyOf(Myself))
+    Range(NearestEnemyOf(Myself),6)
+    !StateCheck(Myself,STATE_INVISIBLE)
+    CheckStatLT(Myself,1,SANCTUARY)
+    !InParty(NearestEnemyOf(Myself))
 THEN
-	RESPONSE #100
-		EquipMostDamagingMelee()
-		AttackReevaluate(NearestEnemyOf(Myself),30)
+    RESPONSE #100
+        EquipMostDamagingMelee()
+        AttackReevaluate(NearestEnemyOf(Myself),30)
 END
-

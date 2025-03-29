@@ -1,82 +1,81 @@
 IF
-	Global("ZBCUTSCENE_2","GLOBAL",0)
+    Global("ZBCUTSCENE_2","GLOBAL",0)
 THEN
-	RESPONSE #100
-		CutSceneId(Player1)
-		SetGlobal("ZBCUTSCENE_2","GLOBAL",1)
-		SetAreaScript("zbcut02s",OVERRIDE)
-		SetGlobal("ZBCUT02SKIP_CUTSCENE_BREAKABLE","GLOBAL",1)
-		SetCutSceneBreakable(TRUE)
-		Wait(1)
-		CreateVisualEffectObject("SPFLESHS","ohbjoker")  // Joker
-		CreateVisualEffectObject("SPFLESHS","ohbdorma")  // Dormamus
-		CreateVisualEffectObject("SPFLESHS","ohbbanno")  // Bannor
-		CreateVisualEffectObject("SPFLESHS","ohbthass")  // Thassk Kun
-		CreateVisualEffectObject("SPFLESHS","ohbpol")  // Pol Pyrrus
-		DisplayStringHead("OHBJOKER",90437)  // *clap* *clap* Bravo, fool. Your desperate efforts prove futile after all!
-		SmallWait(10)
-		CreateVisualEffectObject("SPDISPMA","ohbjoker")  // Joker
-		CreateVisualEffectObject("SPDISPMA","ohbdorma")  // Dormamus
-		CreateVisualEffectObject("SPDISPMA","ohbbanno")  // Bannor
-		CreateVisualEffectObject("SPDISPMA","ohbthass")  // Thassk Kun
-		CreateVisualEffectObject("SPDISPMA","ohbpol")  // Pol Pyrrus
-		SmallWait(10)
-		ActionOverride("ohbjoker",Polymorph(CLERIC_FEMALE_ELF))
-		ActionOverride("ohbjoker",SetName(90404))  // Joker
-		ActionOverride("ohbdorma",Polymorph(DJINNI_LEGS))
-		ActionOverride("ohbdorma",SetName(90405))  // Dormamus
-		ActionOverride("ohbbanno",Polymorph(GOLEM_IRON))
-		ActionOverride("ohbbanno",SetName(90406))  // Bannor
-		ActionOverride("ohbthass",Polymorph(SALAMANDER_FIRE))
-		ActionOverride("ohbthass",SetName(90408))  // Thassk Kun
-		ActionOverride("ohbpol",Polymorph(MAGE_MALE_HUMAN))
-		ActionOverride("ohbpol",SetName(90449))  // Pol Pyrrus
-		ActionOverride("ohbjoker",EquipMostDamagingMelee())
-		ActionOverride("ohbdorma",EquipMostDamagingMelee())
-		ActionOverride("ohbbanno",EquipMostDamagingMelee())
-		ActionOverride("ohbthass",EquipMostDamagingMelee())
-		ActionOverride("ohbpol",EquipMostDamagingMelee())
-		SoundActivate("Main Ambient",FALSE)
-		Wait(2)
-		ActionOverride("ohbpol",Spell(Myself,WIZARD_PROTECTION_FROM_THE_ELEMENTS))  // SPWI702.SPL (Protection From The Elements)
-		SmallWait(10)
-		ActionOverride("ohbthass",Spell(Myself,WIZARD_VOCALIZE))  // SPWI219.SPL (Vocalize)
-		SmallWait(5)
-		ActionOverride("ohbjoker",Spell(Myself,WIZARD_PROTECTION_FROM_FIRE))  // SPWI319.SPL (Protection From Fire)
-		CreateVisualEffect("SPSPEV",[940.700])
-		SmallWait(5)
-		SmallWait(4)
-		CreateCreature("ohbwing",[940.700],NW)  // The Winged
-		ActionOverride("ohbwing",ChangeAIScript("ohbwings",OVERRIDE))
-		ActionOverride("ohbwing",ChangeAIScript("",GENERAL))
-		SmallWait(5)
-		ActionOverride("ohbwing",Face(SE))
-		SmallWait(1)
-		ActionOverride("ohbdorma",SetSequence(SEQ_CAST))
-		ActionOverride("ohbdorma",ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED))  // SPWI418.SPL (Fire Shield (Red))
-		SmallWait(1)
-		ActionOverride("ohbwing",MoveToPoint([1000.735]))
-		SmallWait(9)
-		SmallWait(1)
-		ActionOverride("ohbwing",SetSequence(SEQ_CAST))
-		SmallWait(5)
-		PlaySound("amb_d22a")
-		SmallWait(4)
-		SmallWait(1)
-		ActionOverride("ohbwing",SetSequence(SEQ_CONJURE))
-		SmallWait(9)
-		SmallWait(10)
-		SmallWait(4)
-		ActionOverride("ohbwing",SetSequence(SEQ_CAST))
-		SmallWait(5)
-		CreateVisualEffect("ohbglyph",[1030.745])
-		SmallWait(1)
-		SmallWait(3)
-		ActionOverride("ohbwing",Face(NW))
-		SmallWait(20)
-		SetCutSceneBreakable(FALSE)
-		SetGlobal("BD_CUTSCENE_BREAKABLE","GLOBAL",0)
-		SetAreaScript("",OVERRIDE)
-		ActionOverride("ohbnajim",StartDialogueNoSet(Player1))
+    RESPONSE #100
+        CutSceneId(Player1)
+        SetGlobal("ZBCUTSCENE_2","GLOBAL",1)
+        SetAreaScript("zbcut02s",OVERRIDE)
+        SetGlobal("ZBCUT02SKIP_CUTSCENE_BREAKABLE","GLOBAL",1)
+        SetCutSceneBreakable(TRUE)
+        Wait(1)
+        CreateVisualEffectObject("SPFLESHS","ohbjoker")  // Joker
+        CreateVisualEffectObject("SPFLESHS","ohbdorma")  // Dormamus
+        CreateVisualEffectObject("SPFLESHS","ohbbanno")  // Bannor
+        CreateVisualEffectObject("SPFLESHS","ohbthass")  // Thassk Kun
+        CreateVisualEffectObject("SPFLESHS","ohbpol")  // Pol Pyrrus
+        DisplayStringHead("OHBJOKER",90437)  // *clap* *clap* Bravo, fool. Your desperate efforts prove futile after all!
+        SmallWait(10)
+        CreateVisualEffectObject("SPDISPMA","ohbjoker")  // Joker
+        CreateVisualEffectObject("SPDISPMA","ohbdorma")  // Dormamus
+        CreateVisualEffectObject("SPDISPMA","ohbbanno")  // Bannor
+        CreateVisualEffectObject("SPDISPMA","ohbthass")  // Thassk Kun
+        CreateVisualEffectObject("SPDISPMA","ohbpol")  // Pol Pyrrus
+        SmallWait(10)
+        ActionOverride("ohbjoker",Polymorph(CLERIC_FEMALE_ELF))
+        ActionOverride("ohbjoker",SetName(90404))  // Joker
+        ActionOverride("ohbdorma",Polymorph(DJINNI_LEGS))
+        ActionOverride("ohbdorma",SetName(90405))  // Dormamus
+        ActionOverride("ohbbanno",Polymorph(GOLEM_IRON))
+        ActionOverride("ohbbanno",SetName(90406))  // Bannor
+        ActionOverride("ohbthass",Polymorph(SALAMANDER_FIRE))
+        ActionOverride("ohbthass",SetName(90408))  // Thassk Kun
+        ActionOverride("ohbpol",Polymorph(MAGE_MALE_HUMAN))
+        ActionOverride("ohbpol",SetName(90449))  // Pol Pyrrus
+        ActionOverride("ohbjoker",EquipMostDamagingMelee())
+        ActionOverride("ohbdorma",EquipMostDamagingMelee())
+        ActionOverride("ohbbanno",EquipMostDamagingMelee())
+        ActionOverride("ohbthass",EquipMostDamagingMelee())
+        ActionOverride("ohbpol",EquipMostDamagingMelee())
+        SoundActivate("Main Ambient",FALSE)
+        Wait(2)
+        ActionOverride("ohbpol",Spell(Myself,WIZARD_PROTECTION_FROM_THE_ELEMENTS))  // SPWI702.SPL (Protection From The Elements)
+        SmallWait(10)
+        ActionOverride("ohbthass",Spell(Myself,WIZARD_VOCALIZE))  // SPWI219.SPL (Vocalize)
+        SmallWait(5)
+        ActionOverride("ohbjoker",Spell(Myself,WIZARD_PROTECTION_FROM_FIRE))  // SPWI319.SPL (Protection From Fire)
+        CreateVisualEffect("SPSPEV",[940.700])
+        SmallWait(5)
+        SmallWait(4)
+        CreateCreature("ohbwing",[940.700],NW)  // The Winged
+        ActionOverride("ohbwing",ChangeAIScript("ohbwings",OVERRIDE))
+        ActionOverride("ohbwing",ChangeAIScript("",GENERAL))
+        SmallWait(5)
+        ActionOverride("ohbwing",Face(SE))
+        SmallWait(1)
+        ActionOverride("ohbdorma",SetSequence(SEQ_CAST))
+        ActionOverride("ohbdorma",ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED))  // SPWI418.SPL (Fire Shield (Red))
+        SmallWait(1)
+        ActionOverride("ohbwing",MoveToPoint([1000.735]))
+        SmallWait(9)
+        SmallWait(1)
+        ActionOverride("ohbwing",SetSequence(SEQ_CAST))
+        SmallWait(5)
+        PlaySound("amb_d22a")
+        SmallWait(4)
+        SmallWait(1)
+        ActionOverride("ohbwing",SetSequence(SEQ_CONJURE))
+        SmallWait(9)
+        SmallWait(10)
+        SmallWait(4)
+        ActionOverride("ohbwing",SetSequence(SEQ_CAST))
+        SmallWait(5)
+        CreateVisualEffect("ohbglyph",[1030.745])
+        SmallWait(1)
+        SmallWait(3)
+        ActionOverride("ohbwing",Face(NW))
+        SmallWait(20)
+        SetCutSceneBreakable(FALSE)
+        SetGlobal("BD_CUTSCENE_BREAKABLE","GLOBAL",0)
+        SetAreaScript("",OVERRIDE)
+        ActionOverride("ohbnajim",StartDialogueNoSet(Player1))
 END
-

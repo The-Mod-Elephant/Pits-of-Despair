@@ -48,7 +48,7 @@ THEN
     RESPONSE #100
         SetGlobal("ohb_item_reward","global",3)
         SetGlobal("ohb_item_prob_low","global",45)
-        SetGlobal("ohb_item_prob_high","global",20) 
+        SetGlobal("ohb_item_prob_high","global",20)
 END
 
 IF
@@ -78,4 +78,3 @@ THEN
         SetGlobal("ohb_item_reward","global",6)
         SetGlobal("ohb_item_roll","global",1) /* we always want our rolls to be higher than this */
 END
-

@@ -1,77 +1,76 @@
 IF
-	Unlocked([PC])
-	PartyHasItem("OHBKEY02")  // Key to the Hunters' Lounge
-	Global("OHB_DRGD_KEY","OH8100",0)  // TBP2 - Staging Area Map
-	!StateCheck("ohbdrgd",STATE_REALLY_DEAD)  // Guard
+    Unlocked([PC])
+    PartyHasItem("OHBKEY02")  // Key to the Hunters' Lounge
+    Global("OHB_DRGD_KEY","OH8100",0)  // TBP2 - Staging Area Map
+    !StateCheck("ohbdrgd",STATE_REALLY_DEAD)  // Guard
 THEN
-	RESPONSE #100
-		DisplayStringHead("ohbdrgd",101152)  // They're giving keys to slaves now? Bad policy, but it's not my problem.
-		SetGlobal("OHB_DRGD_KEY","OH8100",1)  // TBP2 - Staging Area Map
+    RESPONSE #100
+        DisplayStringHead("ohbdrgd",101152)  // They're giving keys to slaves now? Bad policy, but it's not my problem.
+        SetGlobal("OHB_DRGD_KEY","OH8100",1)  // TBP2 - Staging Area Map
 END
 
 IF
-	Unlocked([PC])
-	!PartyHasItem("OHBKEY02")  // Key to the Hunters' Lounge
-	!StateCheck("ohbdrgd",STATE_REALLY_DEAD)  // Guard
+    Unlocked([PC])
+    !PartyHasItem("OHBKEY02")  // Key to the Hunters' Lounge
+    !StateCheck("ohbdrgd",STATE_REALLY_DEAD)  // Guard
 THEN
-	RESPONSE #100
-		ActionOverride("ohbdrgd",Enemy())
+    RESPONSE #100
+        ActionOverride("ohbdrgd",Enemy())
 END
 
 IF
-	PickLockFailed([PC])
-	!Allegiance("ohbdrgd",ENEMY)  // Guard
-	!StateCheck("ohbdrgd",STATE_REALLY_DEAD)  // Guard
+    PickLockFailed([PC])
+    !Allegiance("ohbdrgd",ENEMY)  // Guard
+    !StateCheck("ohbdrgd",STATE_REALLY_DEAD)  // Guard
 THEN
-	RESPONSE #100
-		ClearAllActions()
-		ActionOverride("ohbdrgd",FaceObject(Nearest([PC])))
-		SmallWait(2)
-		ActionOverride("ohbdrgd",SetSequence(SEQ_ATTACK_SLASH))
-		DisplayStringHead("ohbdrgd",61862)  // Declare yourself!
+    RESPONSE #100
+        ClearAllActions()
+        ActionOverride("ohbdrgd",FaceObject(Nearest([PC])))
+        SmallWait(2)
+        ActionOverride("ohbdrgd",SetSequence(SEQ_ATTACK_SLASH))
+        DisplayStringHead("ohbdrgd",61862)  // Declare yourself!
 END
 
 IF
-	Opened([ANYONE])
+    Opened([ANYONE])
 THEN
-	RESPONSE #100
-		SetGlobalTimer("ohb_door11_close","oh8100",THREE_ROUNDS)  // TBP2 - Staging Area Map
+    RESPONSE #100
+        SetGlobalTimer("ohb_door11_close","oh8100",THREE_ROUNDS)  // TBP2 - Staging Area Map
 END
 
 IF
-	!Range([PC],6)
-	GlobalTimerExpired("ohb_door11_close","oh8100")  // TBP2 - Staging Area Map
-	OpenState("door0011",TRUE)
-	!Allegiance("ohbdrgd",ENEMY)  // Guard
-	!StateCheck("ohbdrgd",STATE_REALLY_DEAD)  // Guard
+    !Range([PC],6)
+    GlobalTimerExpired("ohb_door11_close","oh8100")  // TBP2 - Staging Area Map
+    OpenState("door0011",TRUE)
+    !Allegiance("ohbdrgd",ENEMY)  // Guard
+    !StateCheck("ohbdrgd",STATE_REALLY_DEAD)  // Guard
 THEN
-	RESPONSE #100
-		CloseDoor("door0011")
+    RESPONSE #100
+        CloseDoor("door0011")
 END
 
 IF
-	Range([PC],6)
-	GlobalGT("OHB_GCENTRY","OH8100",0)  // TBP2 - Staging Area Map
-	GlobalTimerExpired("ohb_door11_close","oh8100")  // TBP2 - Staging Area Map
-	OpenState("door0011",TRUE)
-	!Allegiance("ohbdrgd",ENEMY)  // Guard
-	!StateCheck("ohbdrgd",STATE_REALLY_DEAD)  // Guard
+    Range([PC],6)
+    GlobalGT("OHB_GCENTRY","OH8100",0)  // TBP2 - Staging Area Map
+    GlobalTimerExpired("ohb_door11_close","oh8100")  // TBP2 - Staging Area Map
+    OpenState("door0011",TRUE)
+    !Allegiance("ohbdrgd",ENEMY)  // Guard
+    !StateCheck("ohbdrgd",STATE_REALLY_DEAD)  // Guard
 THEN
-	RESPONSE #100
-		DisplayStringHead("ohbdrgd",101147)  // Captain said you can pass. Go on, he's waiting for you.
-		SetGlobalTimer("ohb_door11_close","oh8100",THREE_ROUNDS)  // TBP2 - Staging Area Map
+    RESPONSE #100
+        DisplayStringHead("ohbdrgd",101147)  // Captain said you can pass. Go on, he's waiting for you.
+        SetGlobalTimer("ohb_door11_close","oh8100",THREE_ROUNDS)  // TBP2 - Staging Area Map
 END
 
 IF
-	Range([PC],6)
-	HasItemEquiped("OHBNOSHU",LastTrigger)  // Noser Uniform
-	GlobalTimerExpired("ohb_door11_close","oh8100")  // TBP2 - Staging Area Map
-	OpenState("door0011",TRUE)
-	!Allegiance("ohbdrgd",ENEMY)  // Guard
-	!StateCheck("ohbdrgd",STATE_REALLY_DEAD)  // Guard
+    Range([PC],6)
+    HasItemEquiped("OHBNOSHU",LastTrigger)  // Noser Uniform
+    GlobalTimerExpired("ohb_door11_close","oh8100")  // TBP2 - Staging Area Map
+    OpenState("door0011",TRUE)
+    !Allegiance("ohbdrgd",ENEMY)  // Guard
+    !StateCheck("ohbdrgd",STATE_REALLY_DEAD)  // Guard
 THEN
-	RESPONSE #100
-		DisplayStringHead("ohbdrgd",101151)  // Move along, Noser. Go up or get out, make up your mind.
-		SetGlobalTimer("ohb_door11_close","oh8100",THREE_ROUNDS)  // TBP2 - Staging Area Map
+    RESPONSE #100
+        DisplayStringHead("ohbdrgd",101151)  // Move along, Noser. Go up or get out, make up your mind.
+        SetGlobalTimer("ohb_door11_close","oh8100",THREE_ROUNDS)  // TBP2 - Staging Area Map
 END
-

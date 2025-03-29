@@ -1,34 +1,33 @@
 IF
-	True()
+    True()
 THEN
-	RESPONSE #100
-		CutSceneId("ohbwing")  // The Winged
-		FadeToColor([20.0],0)
-		Wait(2)
-		MoveViewPoint([790.620],INSTANT)
-		CreateCreature("cutspy",[730.560],N)  // No such index
-		JumpToPoint([790.620])
-		Face(NW)
-		FadeFromColor([20.0],0)
-		Wait(1)
-		SetSequence(SEQ_HEAD_TURN)
-		DisplayStringHead(Myself,90466)  // Bind and ready them for transport. Dennaton will pay us handsomely for these ones.
-		Wait(1)
-		SetSequence(SEQ_CONJURE)
-		SmallWait(15)
-		SetSequence(SEQ_CAST)
-		ReallyForceSpellRES("ohbsuza1",Player1)  // No such index
-		ReallyForceSpellRES("ohbsuza1",Player2)  // No such index
-		ReallyForceSpellRES("ohbsuza1",Player3)  // No such index
-		ReallyForceSpellRES("ohbsuza1",Player4)  // No such index
-		ReallyForceSpellRES("ohbsuza1",Player5)  // No such index
-		ReallyForceSpellRES("ohbsuza1",Player6)  // No such index
-		ReallyForceSpellRES("ohbsuza1","ohbnajim")  // No such index
-		Wait(3)
-		FadeToColor([20.0],0)
-		Wait(2)
-		ReallyForceSpellPointRES("ohbsuza2",[1.1])  // No such index
-		Wait(1)
-		StartCutScene("ohbcut03")
+    RESPONSE #100
+        CutSceneId("ohbwing")  // The Winged
+        FadeToColor([20.0],0)
+        Wait(2)
+        MoveViewPoint([790.620],INSTANT)
+        CreateCreature("cutspy",[730.560],N)  // No such index
+        JumpToPoint([790.620])
+        Face(NW)
+        FadeFromColor([20.0],0)
+        Wait(1)
+        SetSequence(SEQ_HEAD_TURN)
+        DisplayStringHead(Myself,90466)  // Bind and ready them for transport. Dennaton will pay us handsomely for these ones.
+        Wait(1)
+        SetSequence(SEQ_CONJURE)
+        SmallWait(15)
+        SetSequence(SEQ_CAST)
+        ReallyForceSpellRES("ohbsuza1",Player1)  // No such index
+        ReallyForceSpellRES("ohbsuza1",Player2)  // No such index
+        ReallyForceSpellRES("ohbsuza1",Player3)  // No such index
+        ReallyForceSpellRES("ohbsuza1",Player4)  // No such index
+        ReallyForceSpellRES("ohbsuza1",Player5)  // No such index
+        ReallyForceSpellRES("ohbsuza1",Player6)  // No such index
+        ReallyForceSpellRES("ohbsuza1","ohbnajim")  // No such index
+        Wait(3)
+        FadeToColor([20.0],0)
+        Wait(2)
+        ReallyForceSpellPointRES("ohbsuza2",[1.1])  // No such index
+        Wait(1)
+        StartCutScene("ohbcut03")
 END
-

@@ -1,41 +1,40 @@
 IF
-	True()
+    True()
 THEN
-	RESPONSE #100
-		CutSceneId("ohbdenna")  // Dennaton
-		FadeFromColor([10.0],0)
-		CreateCreature("cutspy",[2665.3355],S)  // No such index
-		MoveViewPoint([2665.3355],INSTANT)
-		ActionOverride(Player1,JumpToPoint([3160.3180]))
-		ActionOverride(Player2,JumpToPoint([3140.3150]))
-		ActionOverride(Player3,JumpToPoint([3180.3155]))
-		ActionOverride(Player4,JumpToPoint([3160.3120]))
-		ActionOverride(Player5,JumpToPoint([3225.3120]))
-		ActionOverride(Player6,JumpToPoint([3210.3080]))
-		SmallWait(1)
-		ActionOverride(Player1,MoveToPoint([2720.3295]))
-		SmallWait(1)
-		ActionOverride(Player2,MoveToPoint([2575.3395]))
-		SmallWait(1)
-		ActionOverride(Player3,MoveToPoint([2755.3315]))
-		SmallWait(1)
-		ActionOverride(Player4,MoveToPoint([2615.3410]))
-		SmallWait(1)
-		ActionOverride(Player5,MoveToPoint([2850.3385]))
-		SmallWait(1)
-		ActionOverride(Player6,MoveToPoint([2715.3490]))
-		Wait(10)
-		ActionOverride(Player1,FaceObject("ohbdenna"))  // Dennaton
-		ActionOverride(Player2,FaceObject("ohbdenna"))  // Dennaton
-		ActionOverride(Player3,FaceObject("ohbdenna"))  // Dennaton
-		ActionOverride(Player4,FaceObject("ohbdenna"))  // Dennaton
-		ActionOverride(Player5,FaceObject("ohbdenna"))  // Dennaton
-		ActionOverride(Player6,FaceObject("ohbdenna"))  // Dennaton
-		ActionOverride("ohbgezzt",Face(W))
-		ActionOverride("ohbfeldr",Face(W))
-		Wait(1)
-		ActionOverride("cutspy",DestroySelf())
-		SmallWait(1)
-		ActionOverride("ohbtartl",StartDialogueNoSet(Player1))
+    RESPONSE #100
+        CutSceneId("ohbdenna")  // Dennaton
+        FadeFromColor([10.0],0)
+        CreateCreature("cutspy",[2665.3355],S)  // No such index
+        MoveViewPoint([2665.3355],INSTANT)
+        ActionOverride(Player1,JumpToPoint([3160.3180]))
+        ActionOverride(Player2,JumpToPoint([3140.3150]))
+        ActionOverride(Player3,JumpToPoint([3180.3155]))
+        ActionOverride(Player4,JumpToPoint([3160.3120]))
+        ActionOverride(Player5,JumpToPoint([3225.3120]))
+        ActionOverride(Player6,JumpToPoint([3210.3080]))
+        SmallWait(1)
+        ActionOverride(Player1,MoveToPoint([2720.3295]))
+        SmallWait(1)
+        ActionOverride(Player2,MoveToPoint([2575.3395]))
+        SmallWait(1)
+        ActionOverride(Player3,MoveToPoint([2755.3315]))
+        SmallWait(1)
+        ActionOverride(Player4,MoveToPoint([2615.3410]))
+        SmallWait(1)
+        ActionOverride(Player5,MoveToPoint([2850.3385]))
+        SmallWait(1)
+        ActionOverride(Player6,MoveToPoint([2715.3490]))
+        Wait(10)
+        ActionOverride(Player1,FaceObject("ohbdenna"))  // Dennaton
+        ActionOverride(Player2,FaceObject("ohbdenna"))  // Dennaton
+        ActionOverride(Player3,FaceObject("ohbdenna"))  // Dennaton
+        ActionOverride(Player4,FaceObject("ohbdenna"))  // Dennaton
+        ActionOverride(Player5,FaceObject("ohbdenna"))  // Dennaton
+        ActionOverride(Player6,FaceObject("ohbdenna"))  // Dennaton
+        ActionOverride("ohbgezzt",Face(W))
+        ActionOverride("ohbfeldr",Face(W))
+        Wait(1)
+        ActionOverride("cutspy",DestroySelf())
+        SmallWait(1)
+        ActionOverride("ohbtartl",StartDialogueNoSet(Player1))
 END
-

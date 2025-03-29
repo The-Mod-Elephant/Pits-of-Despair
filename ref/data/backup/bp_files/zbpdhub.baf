@@ -1,702 +1,701 @@
 IF
-	Global("OHB_START_HUB","MYAREA",0)
+    Global("OHB_START_HUB","MYAREA",0)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_START_HUB","MYAREA",1)
-		SetGlobal("OHB_HERO","GLOBAL",10)
-		SetGlobal("ohb_villain","global",10)
-		SetGlobal("OHB_ANTI_DENNATON","GLOBAL",0)
-		SetGlobal("TIER","GLOBAL",0)
-		SetGlobal("BLACK_PITS","GLOBAL",0)
-		Explore()
-		ActionOverride("ohbdrgd",DestroySelf())
-		ActionOverride("ohbbrans",DestroySelf())
-		ActionOverride("ohbleoka",DestroySelf())
-		CreateCreature("ohbstirv",[2440.2900],NW)  // Stirv the Creature Wrangler - Stirv
-		CreateCreature("ohbmena1",[2460.2785],S)  // Vampiric Wolf
-		CreateCreature("ohbmena2",[2100.3000],SE)  // Dangerous Moose
-		CreateCreature("ohbmena3",[2575.3005],NW)  // Grizzly Bear
-		CreateCreature("ohbmena4",[2470.3080],NW)  // Mountain Lion
-		CreateCreature("ohbmena5",[2260.2900],SE)  // Boalisk
-		CreateCreature("ohbmena6",[2365.3160],NW)  // Carrion Crawler
-		CreateCreature("ohbmena7",[1950.3120],SE)  // Vortex Spider
-		CreateCreature("ohbmena8",[2180.3235],N)  // Greater Wyvern
-		ActionOverride("ohbimim",SetNumTimesTalkedTo(1))
+    RESPONSE #100
+        SetGlobal("OHB_START_HUB","MYAREA",1)
+        SetGlobal("OHB_HERO","GLOBAL",10)
+        SetGlobal("ohb_villain","global",10)
+        SetGlobal("OHB_ANTI_DENNATON","GLOBAL",0)
+        SetGlobal("TIER","GLOBAL",0)
+        SetGlobal("BLACK_PITS","GLOBAL",0)
+        Explore()
+        ActionOverride("ohbdrgd",DestroySelf())
+        ActionOverride("ohbbrans",DestroySelf())
+        ActionOverride("ohbleoka",DestroySelf())
+        CreateCreature("ohbstirv",[2440.2900],NW)  // Stirv the Creature Wrangler - Stirv
+        CreateCreature("ohbmena1",[2460.2785],S)  // Vampiric Wolf
+        CreateCreature("ohbmena2",[2100.3000],SE)  // Dangerous Moose
+        CreateCreature("ohbmena3",[2575.3005],NW)  // Grizzly Bear
+        CreateCreature("ohbmena4",[2470.3080],NW)  // Mountain Lion
+        CreateCreature("ohbmena5",[2260.2900],SE)  // Boalisk
+        CreateCreature("ohbmena6",[2365.3160],NW)  // Carrion Crawler
+        CreateCreature("ohbmena7",[1950.3120],SE)  // Vortex Spider
+        CreateCreature("ohbmena8",[2180.3235],N)  // Greater Wyvern
+        ActionOverride("ohbimim",SetNumTimesTalkedTo(1))
 END
 
 IF
-	NumInPartyAlive(0)
+    NumInPartyAlive(0)
 THEN
-	RESPONSE #100
-		GameOver(103098)  // The party has been killed. You must restart the game.
+    RESPONSE #100
+        GameOver(103098)  // The party has been killed. You must restart the game.
 END
 
 IF
-	Global("OHB_ANTIMAGIC","GLOBAL",0)
-	AreaCheckAllegiance(PC)
+    Global("OHB_ANTIMAGIC","GLOBAL",0)
+    AreaCheckAllegiance(PC)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_ANTIMAGIC","GLOBAL",1)
-		ApplySpellRES("OHBANTIM",Player1)  // No such index
-		ApplySpellRES("OHBANTIM",Player2)  // No such index
-		ApplySpellRES("OHBANTIM",Player3)  // No such index
-		ApplySpellRES("OHBANTIM",Player4)  // No such index
-		ApplySpellRES("OHBANTIM",Player5)  // No such index
-		ApplySpellRES("OHBANTIM",Player6)  // No such index
+    RESPONSE #100
+        SetGlobal("OHB_ANTIMAGIC","GLOBAL",1)
+        ApplySpellRES("OHBANTIM",Player1)  // No such index
+        ApplySpellRES("OHBANTIM",Player2)  // No such index
+        ApplySpellRES("OHBANTIM",Player3)  // No such index
+        ApplySpellRES("OHBANTIM",Player4)  // No such index
+        ApplySpellRES("OHBANTIM",Player5)  // No such index
+        ApplySpellRES("OHBANTIM",Player6)  // No such index
 END
 
 IF
-	Global("OHB_ANTIMAGIC","GLOBAL",2)
-	AreaCheckAllegiance(PC)
+    Global("OHB_ANTIMAGIC","GLOBAL",2)
+    AreaCheckAllegiance(PC)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_ANTIMAGIC","GLOBAL",3)
-		ApplySpellRES("OHBAMREM",Player1)  // No such index
-		ApplySpellRES("OHBAMREM",Player2)  // No such index
-		ApplySpellRES("OHBAMREM",Player3)  // No such index
-		ApplySpellRES("OHBAMREM",Player4)  // No such index
-		ApplySpellRES("OHBAMREM",Player5)  // No such index
-		ApplySpellRES("OHBAMREM",Player6)  // No such index
+    RESPONSE #100
+        SetGlobal("OHB_ANTIMAGIC","GLOBAL",3)
+        ApplySpellRES("OHBAMREM",Player1)  // No such index
+        ApplySpellRES("OHBAMREM",Player2)  // No such index
+        ApplySpellRES("OHBAMREM",Player3)  // No such index
+        ApplySpellRES("OHBAMREM",Player4)  // No such index
+        ApplySpellRES("OHBAMREM",Player5)  // No such index
+        ApplySpellRES("OHBAMREM",Player6)  // No such index
 END
 
 IF
-	Global("TIER","GLOBAL",0)
-	Global("OHB_INITREP","OH8100",0)  // TBP2 - Staging Area Map
-	AreaCheckAllegiance(PC)
-	OR(2)
-		ReputationLT(Player1,10)
-		ReputationGT(Player1,12)
+    Global("TIER","GLOBAL",0)
+    Global("OHB_INITREP","OH8100",0)  // TBP2 - Staging Area Map
+    AreaCheckAllegiance(PC)
+    OR(2)
+        ReputationLT(Player1,10)
+        ReputationGT(Player1,12)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_INITREP","OH8100",1)  // TBP2 - Staging Area Map
-		ReputationSet(10)
-		Continue()
+    RESPONSE #100
+        SetGlobal("OHB_INITREP","OH8100",1)  // TBP2 - Staging Area Map
+        ReputationSet(10)
+        Continue()
 END
 
 IF
-	Global("ohb_plot_cutscene","global",1)
-	Global("OHB_LAST_BATTLE","GLOBAL",404)
+    Global("ohb_plot_cutscene","global",1)
+    Global("OHB_LAST_BATTLE","GLOBAL",404)
 THEN
-	RESPONSE #100
-		SetCursorState(TRUE)
-		SmallWait(1)
-		MoveViewPoint([4470.3168],BD_NORMAL)
-		SetGlobal("ohb_plot_cutscene","global",2)
-		Wait(2)
-		ActionOverride("ohbtartl",MoveToPoint([4395.3175]))
-		Wait(1)
-		ActionOverride("ohbtartl",DisplayStringHead(Myself,92861))  // Brodle! BRODLE! Where are you, you flea-bitten louse?
-		Wait(6)
-		ActionOverride("ohbbrodl",JumpToPoint([4205.3075]))
-		SmallWait(1)
-		ActionOverride("ohbbrodl",MoveToPoint([4310.3110]))
-		Wait(1)
-		ActionOverride("ohbtartl",Face(NW))
-		SmallWait(8)
-		ActionOverride("ohbbrodl",FaceObject("ohbtartl"))  // Tartle
-		ActionOverride("ohbbrodl",DisplayStringHead(Myself,92862))  // Yes, Tartle. What is it now?
-		Wait(3)
-		ActionOverride("ohbtartl",DisplayStringHead(Myself,92863))  // It's the Winged! That dim-witted planetar and her crew have been gone much too long—
-		Wait(5)
-		SmallWait(5)
-		ActionOverride("ohbbrodl",DisplayStringHead(Myself,92864))  // Shh! Be quiet! If that gets out, how long do you think it'll be before someone takes advantage of it?!
-		Wait(6)
-		SmallWait(5)
-		ActionOverride("ohbtartl",DisplayStringHead(Myself,92865))  // You don't understand! Dennaton sent the Hunters after somethin' big—really big—and now he's scared they've all been killed!
-		Wait(7)
-		ActionOverride("ohbbrodl",DisplayStringHead(Myself,92866))  // Yes, I heard you. EVERYONE heard you. Control yourself!
-		Wait(4)
-		SmallWait(8)
-		ActionOverride("ohbtartl",DisplayStringHead(Myself,92867))  // Gods, can you imagine if the slaves heard about this? Once again, I have to think of everything around here! Now I've got to go rally the guards in case anyone tries anything!
-		Wait(6)
-		SmallWait(5)
-		ActionOverride("ohbtartl",MoveToPoint([4000.3100]))
-		Wait(1)
-		ActionOverride("ohbberyl",ChangeAIScript("mage18c",CLASS))
-		ActionOverride("ohbberyl",MoveToPoint([4000.3150]))
-		ActionOverride("ohbarzol",MoveToPoint([4000.3050]))
-		Wait(3)
-		ActionOverride("ohbbrodl",FaceObject("ohbtartl"))  // Tartle
-		Wait(1)
-		ChangeEnemyAlly("ohblea",GOODCUTOFF)  // Lea Gosh'Aar
-		ChangeEnemyAlly("ohbvoghi",GOODCUTOFF)  // Voghiln the Vast
-		ChangeEnemyAlly("ohbgerro",GOODCUTOFF)  // Gerrold Darkfellow
-		ActionOverride("ohbellra",JumpToPoint([3920.2730]))
-		ActionOverride("ohbellra",Face(N))
-		ActionOverride("ohblea",EscapeAreaMove("OH8200",1385,955,E))  // TBP2 - Arena 1
-		ActionOverride("ohbvoghi",EscapeAreaMove("OH8200",1195,865,N))  // TBP2 - Arena 1
-		ActionOverride("ohbgerro",EscapeAreaMove("OH8200",1250,935,NE))  // TBP2 - Arena 1
-		ActionOverride("ohbtartl",EscapeAreaMove("OH8300",1115,1025,SW))  // TBP2 - Arena 2
-		ActionOverride("ohbarzol",EscapeAreaMove("OH8300",1065,975,SW))  // TBP2 - Arena 2
-		ActionOverride("ohbberyl",EscapeAreaMove("OH8300",1165,1075,SW))  // TBP2 - Arena 2
-		ActionOverride("ohbsymm",EscapeAreaMove("OH8300",850,975,S))  // TBP2 - Arena 2
-		Wait(1)
-		ActionOverride("ohbbrodl",DisplayStringHead(Myself,92868))  // Hmm... 
-		Wait(2)
-		ActionOverride("ohbbrodl",FaceObject([PC]))
-		SmallWait(5)
-		ActionOverride("ohbbrodl",MoveToPoint([4590.3120]))
-		SmallWait(35)
-		ActionOverride("ohbbrodl",Face(E))
-		SmallWait(5)
-		ActionOverride("ohbbrodl",StartDialogueNoSet([PC]))
+    RESPONSE #100
+        SetCursorState(TRUE)
+        SmallWait(1)
+        MoveViewPoint([4470.3168],BD_NORMAL)
+        SetGlobal("ohb_plot_cutscene","global",2)
+        Wait(2)
+        ActionOverride("ohbtartl",MoveToPoint([4395.3175]))
+        Wait(1)
+        ActionOverride("ohbtartl",DisplayStringHead(Myself,92861))  // Brodle! BRODLE! Where are you, you flea-bitten louse?
+        Wait(6)
+        ActionOverride("ohbbrodl",JumpToPoint([4205.3075]))
+        SmallWait(1)
+        ActionOverride("ohbbrodl",MoveToPoint([4310.3110]))
+        Wait(1)
+        ActionOverride("ohbtartl",Face(NW))
+        SmallWait(8)
+        ActionOverride("ohbbrodl",FaceObject("ohbtartl"))  // Tartle
+        ActionOverride("ohbbrodl",DisplayStringHead(Myself,92862))  // Yes, Tartle. What is it now?
+        Wait(3)
+        ActionOverride("ohbtartl",DisplayStringHead(Myself,92863))  // It's the Winged! That dim-witted planetar and her crew have been gone much too long—
+        Wait(5)
+        SmallWait(5)
+        ActionOverride("ohbbrodl",DisplayStringHead(Myself,92864))  // Shh! Be quiet! If that gets out, how long do you think it'll be before someone takes advantage of it?!
+        Wait(6)
+        SmallWait(5)
+        ActionOverride("ohbtartl",DisplayStringHead(Myself,92865))  // You don't understand! Dennaton sent the Hunters after somethin' big—really big—and now he's scared they've all been killed!
+        Wait(7)
+        ActionOverride("ohbbrodl",DisplayStringHead(Myself,92866))  // Yes, I heard you. EVERYONE heard you. Control yourself!
+        Wait(4)
+        SmallWait(8)
+        ActionOverride("ohbtartl",DisplayStringHead(Myself,92867))  // Gods, can you imagine if the slaves heard about this? Once again, I have to think of everything around here! Now I've got to go rally the guards in case anyone tries anything!
+        Wait(6)
+        SmallWait(5)
+        ActionOverride("ohbtartl",MoveToPoint([4000.3100]))
+        Wait(1)
+        ActionOverride("ohbberyl",ChangeAIScript("mage18c",CLASS))
+        ActionOverride("ohbberyl",MoveToPoint([4000.3150]))
+        ActionOverride("ohbarzol",MoveToPoint([4000.3050]))
+        Wait(3)
+        ActionOverride("ohbbrodl",FaceObject("ohbtartl"))  // Tartle
+        Wait(1)
+        ChangeEnemyAlly("ohblea",GOODCUTOFF)  // Lea Gosh'Aar
+        ChangeEnemyAlly("ohbvoghi",GOODCUTOFF)  // Voghiln the Vast
+        ChangeEnemyAlly("ohbgerro",GOODCUTOFF)  // Gerrold Darkfellow
+        ActionOverride("ohbellra",JumpToPoint([3920.2730]))
+        ActionOverride("ohbellra",Face(N))
+        ActionOverride("ohblea",EscapeAreaMove("OH8200",1385,955,E))  // TBP2 - Arena 1
+        ActionOverride("ohbvoghi",EscapeAreaMove("OH8200",1195,865,N))  // TBP2 - Arena 1
+        ActionOverride("ohbgerro",EscapeAreaMove("OH8200",1250,935,NE))  // TBP2 - Arena 1
+        ActionOverride("ohbtartl",EscapeAreaMove("OH8300",1115,1025,SW))  // TBP2 - Arena 2
+        ActionOverride("ohbarzol",EscapeAreaMove("OH8300",1065,975,SW))  // TBP2 - Arena 2
+        ActionOverride("ohbberyl",EscapeAreaMove("OH8300",1165,1075,SW))  // TBP2 - Arena 2
+        ActionOverride("ohbsymm",EscapeAreaMove("OH8300",850,975,S))  // TBP2 - Arena 2
+        Wait(1)
+        ActionOverride("ohbbrodl",DisplayStringHead(Myself,92868))  // Hmm...
+        Wait(2)
+        ActionOverride("ohbbrodl",FaceObject([PC]))
+        SmallWait(5)
+        ActionOverride("ohbbrodl",MoveToPoint([4590.3120]))
+        SmallWait(35)
+        ActionOverride("ohbbrodl",Face(E))
+        SmallWait(5)
+        ActionOverride("ohbbrodl",StartDialogueNoSet([PC]))
 END
 
 IF
-	Global("ohb_plot_cutscene","global",1)
-	GlobalLT("OHB_LAST_BATTLE","GLOBAL",404)
-	OR(2)
-		Global("ohb_item_reward","global",10)
-		Global("ohb_item_reward","global",11)
+    Global("ohb_plot_cutscene","global",1)
+    GlobalLT("OHB_LAST_BATTLE","GLOBAL",404)
+    OR(2)
+        Global("ohb_item_reward","global",10)
+        Global("ohb_item_reward","global",11)
 THEN
-	RESPONSE #100
-		SetCursorState(TRUE)
-		SetGlobal("ohb_plot_cutscene","global",2)
-		ActionOverride("ohbbrodl",JumpToPoint([4160.3085]))
-		SmallWait(1)
-		ActionOverride("ohbbrodl",MoveToPoint([4615.3135]))
-		Wait(5)
-		SmallWait(5)
-		ActionOverride("ohbbrodl",StartDialogueNoSet([PC]))
+    RESPONSE #100
+        SetCursorState(TRUE)
+        SetGlobal("ohb_plot_cutscene","global",2)
+        ActionOverride("ohbbrodl",JumpToPoint([4160.3085]))
+        SmallWait(1)
+        ActionOverride("ohbbrodl",MoveToPoint([4615.3135]))
+        Wait(5)
+        SmallWait(5)
+        ActionOverride("ohbbrodl",StartDialogueNoSet([PC]))
 END
 
 IF
-	Global("OHB_BRODLE_BANREQUEST","global",1)
-	Global("ohb_plot_cutscene","global",1)
-	GlobalLT("OHB_LAST_BATTLE","GLOBAL",404)
-	GlobalGT("OHB_LAST_BATTLE","GLOBAL",204)
+    Global("OHB_BRODLE_BANREQUEST","global",1)
+    Global("ohb_plot_cutscene","global",1)
+    GlobalLT("OHB_LAST_BATTLE","GLOBAL",404)
+    GlobalGT("OHB_LAST_BATTLE","GLOBAL",204)
 THEN
-	RESPONSE #100
-		SetCursorState(TRUE)
-		SetGlobal("ohb_plot_cutscene","global",2)
-		SetGlobal("OHB_BRODLE_BANREQUEST","GLOBAL",2)
-		ActionOverride("ohbbrodl",JumpToPoint([4160.3085]))
-		SmallWait(1)
-		ActionOverride("ohbbrodl",MoveToPoint([4615.3135]))
-		Wait(5)
-		SmallWait(5)
-		ActionOverride("ohbbrodl",StartDialogueNoSet([PC]))
+    RESPONSE #100
+        SetCursorState(TRUE)
+        SetGlobal("ohb_plot_cutscene","global",2)
+        SetGlobal("OHB_BRODLE_BANREQUEST","GLOBAL",2)
+        ActionOverride("ohbbrodl",JumpToPoint([4160.3085]))
+        SmallWait(1)
+        ActionOverride("ohbbrodl",MoveToPoint([4615.3135]))
+        Wait(5)
+        SmallWait(5)
+        ActionOverride("ohbbrodl",StartDialogueNoSet([PC]))
 END
 
 IF
-	Global("OHB_BRODLE_LIEUTENANT","global",1)
-	Global("ohb_plot_cutscene","global",1)
-	GlobalLT("OHB_LAST_BATTLE","GLOBAL",404)
-	GlobalGT("OHB_LAST_BATTLE","GLOBAL",204)
+    Global("OHB_BRODLE_LIEUTENANT","global",1)
+    Global("ohb_plot_cutscene","global",1)
+    GlobalLT("OHB_LAST_BATTLE","GLOBAL",404)
+    GlobalGT("OHB_LAST_BATTLE","GLOBAL",204)
 THEN
-	RESPONSE #100
-		SetCursorState(TRUE)
-		SetGlobal("ohb_plot_cutscene","global",2)
-		SetGlobal("OHB_BRODLE_LIEUTENANT","GLOBAL",2)
-		ActionOverride("ohbbrodl",JumpToPoint([4160.3085]))
-		SmallWait(1)
-		ActionOverride("ohbbrodl",MoveToPoint([4615.3135]))
-		Wait(5)
-		SmallWait(5)
-		ActionOverride("ohbbrodl",StartDialogueNoSet([PC]))
+    RESPONSE #100
+        SetCursorState(TRUE)
+        SetGlobal("ohb_plot_cutscene","global",2)
+        SetGlobal("OHB_BRODLE_LIEUTENANT","GLOBAL",2)
+        ActionOverride("ohbbrodl",JumpToPoint([4160.3085]))
+        SmallWait(1)
+        ActionOverride("ohbbrodl",MoveToPoint([4615.3135]))
+        Wait(5)
+        SmallWait(5)
+        ActionOverride("ohbbrodl",StartDialogueNoSet([PC]))
 END
 
 IF
-	Global("ohb_plot_cutscene","global",1)
+    Global("ohb_plot_cutscene","global",1)
 THEN
-	RESPONSE #100
-		SetGlobal("ohb_plot_cutscene","global",0)
+    RESPONSE #100
+        SetGlobal("ohb_plot_cutscene","global",0)
 END
 
 IF
-	Global("ohb_plot_cutscene","global",3)
+    Global("ohb_plot_cutscene","global",3)
 THEN
-	RESPONSE #100
-		SetGlobal("ohb_plot_cutscene","global",0)
-		SetCursorState(FALSE)
+    RESPONSE #100
+        SetGlobal("ohb_plot_cutscene","global",0)
+        SetCursorState(FALSE)
 END
 
 IF
-	Global("ohb_battle_xp_award","global",500000)
+    Global("ohb_battle_xp_award","global",500000)
 THEN
-	RESPONSE #100
-		SetGlobal("ohb_battle_xp_award","global",0)
-		AddXPObject(Player1,500000)
-		AddXPObject(Player2,500000)
-		AddXPObject(Player3,500000)
-		AddXPObject(Player4,500000)
-		AddXPObject(Player5,500000)
-		AddXPObject(Player6,500000)
+    RESPONSE #100
+        SetGlobal("ohb_battle_xp_award","global",0)
+        AddXPObject(Player1,500000)
+        AddXPObject(Player2,500000)
+        AddXPObject(Player3,500000)
+        AddXPObject(Player4,500000)
+        AddXPObject(Player5,500000)
+        AddXPObject(Player6,500000)
 END
 
 IF
-	Global("ohb_battle_xp_award","global",250000)
+    Global("ohb_battle_xp_award","global",250000)
 THEN
-	RESPONSE #100
-		SetGlobal("ohb_battle_xp_award","global",0)
-		AddXPObject(Player1,250000)
-		AddXPObject(Player2,250000)
-		AddXPObject(Player3,250000)
-		AddXPObject(Player4,250000)
-		AddXPObject(Player5,250000)
-		AddXPObject(Player6,250000)
+    RESPONSE #100
+        SetGlobal("ohb_battle_xp_award","global",0)
+        AddXPObject(Player1,250000)
+        AddXPObject(Player2,250000)
+        AddXPObject(Player3,250000)
+        AddXPObject(Player4,250000)
+        AddXPObject(Player5,250000)
+        AddXPObject(Player6,250000)
 END
 
 IF
-	Global("OHB_FOOD_FIGHT","MYAREA",1)
+    Global("OHB_FOOD_FIGHT","MYAREA",1)
 THEN
-	RESPONSE #100
-		ClearAllActions()
-		SetGlobal("OHB_FOOD_FIGHT","MYAREA",2)
-		TriggerActivation("ohb_messhall1",TRUE)
-		TriggerActivation("ohb_messhall2",TRUE)
-		CreateCreature("ohbdenna",[2530.3265],SE)  // Dennaton
-		ActionOverride("OHBTARTL",JumpToPoint([2570.3232]))
-		ActionOverride("OHBTARTL",Face(SSE))
-		ActionOverride("ohbcook",JumpToPoint([2375.3385]))
-		ActionOverride("ohbcook",Face(SSE))
-		ActionOverride("ohbdulf",JumpToPoint([2510.3435]))
-		ActionOverride("ohbellra",JumpToPoint([2555.3455]))
-		ActionOverride("ohbtimmo",JumpToPoint([2455.3475]))
-		ActionOverride("ohbmercy",JumpToPoint([2500.3495]))
-		ActionOverride("ohbvoghi",JumpToPoint([2775.3250]))
-		ActionOverride("ohbfeldr",JumpToPoint([2825.3265]))
-		ActionOverride("ohbgezzt",JumpToPoint([2900.3350]))
-		ActionOverride("ohbhort",JumpToPoint([2835.3205]))
-		ActionOverride("ohbvoghi",DestroyItem("amul28"))  // Amulet of the Master Harper
-		ActionOverride("ohbfeldr",DestroyItem("amul26"))  // Amulet of Cheetah Speed
-		ActionOverride("ohbfeldr",DestroyItem("sw1h10"))  // The Shadow's Blade +3
-		GiveItemCreate("sw1h10","ohbfeldr",1,0,0)  // The Shadow's Blade +3
-		ActionOverride("ohbdulf",Face(N))
-		ActionOverride("ohbellra",Face(N))
-		ActionOverride("ohbgezzt",Face(W))
-		ActionOverride("ohbmercy",Face(N))
-		ActionOverride("ohbhort",Face(W))
-		ActionOverride("ohbfeldr",Face(W))
-		ActionOverride("ohbtimmo",Face(N))
-		ActionOverride("ohbvoghi",Face(W))
-		ActionOverride("ohblea",Face(N))
+    RESPONSE #100
+        ClearAllActions()
+        SetGlobal("OHB_FOOD_FIGHT","MYAREA",2)
+        TriggerActivation("ohb_messhall1",TRUE)
+        TriggerActivation("ohb_messhall2",TRUE)
+        CreateCreature("ohbdenna",[2530.3265],SE)  // Dennaton
+        ActionOverride("OHBTARTL",JumpToPoint([2570.3232]))
+        ActionOverride("OHBTARTL",Face(SSE))
+        ActionOverride("ohbcook",JumpToPoint([2375.3385]))
+        ActionOverride("ohbcook",Face(SSE))
+        ActionOverride("ohbdulf",JumpToPoint([2510.3435]))
+        ActionOverride("ohbellra",JumpToPoint([2555.3455]))
+        ActionOverride("ohbtimmo",JumpToPoint([2455.3475]))
+        ActionOverride("ohbmercy",JumpToPoint([2500.3495]))
+        ActionOverride("ohbvoghi",JumpToPoint([2775.3250]))
+        ActionOverride("ohbfeldr",JumpToPoint([2825.3265]))
+        ActionOverride("ohbgezzt",JumpToPoint([2900.3350]))
+        ActionOverride("ohbhort",JumpToPoint([2835.3205]))
+        ActionOverride("ohbvoghi",DestroyItem("amul28"))  // Amulet of the Master Harper
+        ActionOverride("ohbfeldr",DestroyItem("amul26"))  // Amulet of Cheetah Speed
+        ActionOverride("ohbfeldr",DestroyItem("sw1h10"))  // The Shadow's Blade +3
+        GiveItemCreate("sw1h10","ohbfeldr",1,0,0)  // The Shadow's Blade +3
+        ActionOverride("ohbdulf",Face(N))
+        ActionOverride("ohbellra",Face(N))
+        ActionOverride("ohbgezzt",Face(W))
+        ActionOverride("ohbmercy",Face(N))
+        ActionOverride("ohbhort",Face(W))
+        ActionOverride("ohbfeldr",Face(W))
+        ActionOverride("ohbtimmo",Face(N))
+        ActionOverride("ohbvoghi",Face(W))
+        ActionOverride("ohblea",Face(N))
 END
 
 IF
-	Global("OHB_START_BATTLE","GLOBAL",1)
-	Global("ohb_plot_cutscene","global",0)
+    Global("OHB_START_BATTLE","GLOBAL",1)
+    Global("ohb_plot_cutscene","global",0)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_BATTLE_COMPLETE","GLOBAL",0)
-		ClearAllActions()
-		Continue()
+    RESPONSE #100
+        SetGlobal("OHB_BATTLE_COMPLETE","GLOBAL",0)
+        ClearAllActions()
+        Continue()
 END
 
 IF
-	Global("OHB_START_BATTLE","GLOBAL",1)
-	Global("OHB_ARENA","GLOBAL",1)
-	Global("ohb_plot_cutscene","global",0)
+    Global("OHB_START_BATTLE","GLOBAL",1)
+    Global("OHB_ARENA","GLOBAL",1)
+    Global("ohb_plot_cutscene","global",0)
 THEN
-	RESPONSE #100
-		StartCutSceneMode()
-		StartCutScene("ohbaren2")
+    RESPONSE #100
+        StartCutSceneMode()
+        StartCutScene("ohbaren2")
 END
 
 IF
-	Global("OHB_START_BATTLE","GLOBAL",1)
-	Global("OHB_ARENA","GLOBAL",2)
-	Global("ohb_plot_cutscene","global",0)
+    Global("OHB_START_BATTLE","GLOBAL",1)
+    Global("OHB_ARENA","GLOBAL",2)
+    Global("ohb_plot_cutscene","global",0)
 THEN
-	RESPONSE #100
-		StartCutSceneMode()
-		StartCutScene("ohbaren3")
+    RESPONSE #100
+        StartCutSceneMode()
+        StartCutScene("ohbaren3")
 END
 
 IF
-	Global("OHB_START_BATTLE","GLOBAL",1)
-	Global("OHB_ARENA","GLOBAL",3)
-	Global("ohb_plot_cutscene","global",0)
+    Global("OHB_START_BATTLE","GLOBAL",1)
+    Global("OHB_ARENA","GLOBAL",3)
+    Global("ohb_plot_cutscene","global",0)
 THEN
-	RESPONSE #100
-		StartCutSceneMode()
-		StartCutScene("ohbaren4")
+    RESPONSE #100
+        StartCutSceneMode()
+        StartCutScene("ohbaren4")
 END
 
 IF
-	Global("ohb_finale","global",2)
-	GlobalLT("ohb_leokas_bribe","global",5)
-	Dead("ohbleoka")  // Leokas
-	CombatCounter(0)
+    Global("ohb_finale","global",2)
+    GlobalLT("ohb_leokas_bribe","global",5)
+    Dead("ohbleoka")  // Leokas
+    CombatCounter(0)
 THEN
-	RESPONSE #100
-		SetGlobal("ohb_finale","global",3)
+    RESPONSE #100
+        SetGlobal("ohb_finale","global",3)
 END
 
 IF
-	OR(2)
-		Global("ohb_finale","global",2)
-		Global("ohb_finale","global",3)
-	PartyHasItem("ohbkey03")  // Guard Captain's Key
+    OR(2)
+        Global("ohb_finale","global",2)
+        Global("ohb_finale","global",3)
+    PartyHasItem("ohbkey03")  // Guard Captain's Key
 THEN
-	RESPONSE #100
-		SetGlobal("ohb_finale","global",4)
+    RESPONSE #100
+        SetGlobal("ohb_finale","global",4)
 END
 
 IF
-	Global("OHB_BRODLE_LIEUTENANT","GLOBAL",3)
+    Global("OHB_BRODLE_LIEUTENANT","GLOBAL",3)
 THEN
-	RESPONSE #100
-		CreateCreature("ohbleoka",[580.2445],SE)  // Leokas
-		SetGlobal("OHB_BRODLE_LIEUTENANT","GLOBAL",4)
+    RESPONSE #100
+        CreateCreature("ohbleoka",[580.2445],SE)  // Leokas
+        SetGlobal("OHB_BRODLE_LIEUTENANT","GLOBAL",4)
 END
 
 IF
-	Global("TIER","GLOBAL",0)
-	GlobalGT("OHB_FOOD_FIGHT","MYAREA",3)
+    Global("TIER","GLOBAL",0)
+    GlobalGT("OHB_FOOD_FIGHT","MYAREA",3)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("TIER","GLOBAL",1)
-		SetGlobal("BLACK_PITS","GLOBAL",1)
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("TIER","GLOBAL",1)
+        SetGlobal("BLACK_PITS","GLOBAL",1)
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("TIER","GLOBAL",1)
-	GlobalGT("OHB_LAST_BATTLE","GLOBAL",104)
+    Global("TIER","GLOBAL",1)
+    GlobalGT("OHB_LAST_BATTLE","GLOBAL",104)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("TIER","GLOBAL",2)
-		SetGlobal("BLACK_PITS","GLOBAL",2)
-		CreateCreature("ohbdrgd",[444.2544],SW)  // Guard
-		AddStoreItem("OHBSDWM","DAGG13",1,1)  // Pixie Prick +3
-		AddStoreItem("OHBSDWM","DAGG12",1,1)  // Firetooth +3
-		AddStoreItem("OHBSDWM","SW1H24",1,1)  // The Burning Earth +1
-		AddStoreItem("OHBSDWM","SW1H31",1,1)  // Daystar +2
-		AddStoreItem("OHBSDWM","SW1H36",1,1)  // Namarra +2
-		AddStoreItem("OHBSDWM","SW1H32",1,1)  // Peridan +2
-		AddStoreItem("OHBSDWM","SW1H38",1,1)  // Jhor the Bleeder +2
-		AddStoreItem("OHBSDWM","SW1H39",1,1)  // Blade of Searing +3
-		AddStoreItem("OHBSDWM","SW1H40",1,1)  // Blade of Roses +3
-		AddStoreItem("OHBSDWM","SW1H45",1,1)  // Malakar +2
-		AddStoreItem("OHBSDWM","AX1H12",1,1)  // Stonefire +3
-		AddStoreItem("OHBSDWM","AX1H13",1,1)  // Frostreaver +3
-		AddStoreItem("OHBSDWM","AX1H10",1,1)  // Azuredge +3
-		AddStoreItem("OHBSDWM","HALB04",1,1)  // Dragon's Bane +3
-		AddStoreItem("OHBSDWM","WA2HALB",1,1)  // Harmonium Halberd +3
-		AddStoreItem("OHBSDWM","WAS2H",1,1)  // Joril's Dagger +3
-		AddStoreItem("OHBSDWM","WASPEAR",1,1)  // Spear of Kuldahar +3
-		AddStoreItem("OHBSDWM","WASTAFF",1,1)  // Staff of Arundel +3
-		AddStoreItem("OHBSDWM","STAF13",1,1)  // Staff of Thunder and Lightning +2
-		AddStoreItem("OHBSDWM","STAF23",1,1)  // Serpent Shaft
-		AddStoreItem("OHBSDWM","STAF15",1,1)  // Staff of Air +2
-		AddStoreItem("OHBSDWM","STAF16",1,1)  // Staff of Earth +2
-		AddStoreItem("OHBSDWM","STAF17",1,1)  // Staff of Fire +2
-		AddStoreItem("OHBSDWM","BLUN18",1,1)  // Skullcrusher +3
-		AddStoreItem("OHBSDWM","BLUN22",1,1)  // Blackblood +3
-		AddStoreItem("OHBSDWM","BOW11",1,1)  // Strong Arm +2
-		AddStoreItem("OHBSDWM","BOW12",1,1)  // Elven Court Bow +3
-		AddStoreItem("OHBSDWM","BOW15",1,1)  // Tansheron's Bow +3
-		AddStoreItem("OHBSDWM","DART08",1,1)  // Crimson Dart +3
-		AddStoreItem("OHBSDWM","QUIVER01",1,1)  // Quiver of Plenty +1
-		AddStoreItem("OHBSDWM","QUIVER02",1,1)  // Case of Plenty +1
-		AddStoreItem("OHBSDWM","QUIVER05",1,1)  // Bag of Plenty +1
-		AddStoreItem("OHBHUEGR","HELM07",1,1)  // Helm of Balduran
-		AddStoreItem("OHBHUEGR","HELM16",1,1)  // Helm of Brilliance
-		AddStoreItem("OHBHUEGR","HELM17",1,1)  // Skull of Death
-		AddStoreItem("OHBHUEGR","HELM21",1,1)  // Dragon Helm
-		AddStoreItem("OHBHUEGR","SHLD23",1,1)  // Fortress Shield +3
-		AddStoreItem("OHBHUEGR","SHLD25",1,1)  // Shield of Harmony +2
-		AddStoreItem("OHBHUEGR","SHLD27",1,1)  // Saving Grace +3
-		AddStoreItem("OHBHUEGR","LEAT14",1,1)  // The Night's Gift +5
-		AddStoreItem("OHBHUEGR","LEAT17",1,1)  // Armor of Deep Night +4
-		AddStoreItem("OHBHUEGR","LEAT18",1,1)  // Armor of the Viper +5
-		AddStoreItem("OHBHUEGR","CHAN10",1,1)  // Jester's Chain +4
-		AddStoreItem("OHBHUEGR","CHAN14",1,1)  // Sylvan Chain +2
-		AddStoreItem("OHBHUEGR","CHAN15",1,1)  // Melodic Chain +3
-		AddStoreItem("OHBHUEGR","CHAN18",1,1)  // Armor of Faith +3
-		AddStoreItem("OHBHUEGR","PLAT13",1,1)  // Gorgon Plate +4
-		AddStoreItem("OHBHUEGR","PLAT15",1,1)  // Pride of the Legion +2
-		AddStoreItem("OHBHUEGR","WA2PLAT",1,1)  // Plate of Balduran
-		AddStoreItem("OHBIMIM","HELM23",1,1)  // Golden Ioun Stone
-		AddStoreItem("OHBIMIM","HELM25",1,1)  // Silver Ioun Stone
-		AddStoreItem("OHBIMIM","HELM24",1,1)  // Obsidian Ioun Stone
-		AddStoreItem("OHBIMIM","CLCK15",1,1)  // Robe of the Good Archmagi
-		AddStoreItem("OHBIMIM","CLCK16",1,1)  // Robe of the Neutral Archmagi
-		AddStoreItem("OHBIMIM","CLCK17",1,1)  // Robe of the Evil Archmagi
-		AddStoreItem("OHBIMIM","CLCK02",1,1)  // The Spirit's Shield +2
-		AddStoreItem("OHBIMIM","CLCK23",1,1)  // Cloak of Elvenkind
-		AddStoreItem("OHBIMIM","BOOT01",1,1)  // The Paws of the Cheetah
-		AddStoreItem("OHBIMIM","BOOT07",1,1)  // Boots of Elvenkind
-		AddStoreItem("OHBIMIM","MISC8J",1,1)  // Boots of the West
-		AddStoreItem("OHBIMIM","BOOT11",1,1)  // Boots of Etherealness
-		AddStoreItem("OHBIMIM","BRAC13",3,1)  // Bracers of Defense AC 5
-		AddStoreItem("OHBIMIM","BRAC14",2,1)  // Bracers of Defense AC 4
-		AddStoreItem("OHBIMIM","BRAC15",1,1)  // Bracers of Defense AC 3
-		AddStoreItem("OHBIMIM","BRAC16",2,1)  // Bracers of Blinding Strike
-		AddStoreItem("OHBIMIM","BRAC10",1,1)  // Legacy of the Masters
-		AddStoreItem("OHBIMIM","BELT06",1,1)  // Girdle of Hill Giant Strength
-		AddStoreItem("OHBIMIM","BELT10",1,1)  // Belt of Inertial Barrier
-		AddStoreItem("OHBIMIM","AMUL22",1,1)  // Periapt of Proof Against Poison
-		AddStoreItem("OHBIMIM","WA2AMU",1,1)  // Sensate Amulet
-		AddStoreItem("OHBIMIM","RING07",1,1)  // The Guard's Ring +2
-		AddStoreItem("OHBIMIM","WA2RING",1,1)  // Mercykiller Ring
-		AddStoreItem("OHBIMIM","RING34",1,1)  // Ring of Spell Turning
-		AddStoreItem("OHBIMIM","RING28",1,1)  // Ring of Air Control
-		AddStoreItem("OHBIMIM","RING29",1,1)  // Ring of Earth Control
-		AddStoreItem("OHBIMIM","RING31",1,1)  // Ring of Regeneration
-		AddStoreItem("OHBIMIM","RING40",1,1)  // Ring of Acuity
-		AddStoreItem("OHBIMIM","RING22",1,1)  // Honorary Ring of Sune
-		AddStoreItem("OHBIMIM","RODS03",5,1)  // Rod of Resurrection
-		AddStoreItem("OHBIMIM","RODS06",5,1)  // Rod of Reversal
-		AddStoreItem("OHBCONCO","POTN55",0,1)  // Potion of Superior Healing
-		AddStoreItem("OHBSDWM","AROW06",5,1)  // Arrow of Detonation
-		AddStoreItem("OHBSDWM","AROW07",10,1)  // Arrow of Dispelling
-		AddStoreItem("OHBCONCO","POTN03",10,1)  // Potion of Hill Giant Strength
-		AddStoreItem("OHBCONCO","POTN12",5,1)  // Potion of Stone Giant Strength
-		AddStoreItem("OHBCONCO","POTN04",4,1)  // Potion of Frost Giant Strength
-		AddStoreItem("OHBCONCO","POTN05",3,1)  // Potion of Fire Giant Strength
-		AddStoreItem("OHBCONCO","POTN06",2,1)  // Potion of Cloud Giant Strength
-		AddStoreItem("OHBCONCO","POTN07",1,1)  // Potion of Storm Giant Strength
-		AddStoreItem("OHBCONCO","POTN09",10,1)  // Potion of Heroism
-		AddStoreItem("OHBCONCO","POTN14",5,1)  // Oil of Speed
-		AddStoreItem("OHBCONCO","POTN41",5,1)  // Potion of Power
-		AddStoreItem("OHBCONCO","POTN34",5,1)  // Potion of Magic Protection
-		AddStoreItem("OHBCONCO","POTN35",5,1)  // Potion of Magic Shielding
-		AddStoreItem("OHBCONCO","POTN11",5,1)  // Potion of Invulnerability
-		AddStoreItem("OHBCONCO","POTN10",15,1)  // Potion of Invisibility
-		AddStoreItem("OHBCONCO","POTN21",10,1)  // Potion of Clarity
-		AddStoreItem("OHBCONCO","POTN45",10,1)  // Potion of Freedom
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("TIER","GLOBAL",2)
+        SetGlobal("BLACK_PITS","GLOBAL",2)
+        CreateCreature("ohbdrgd",[444.2544],SW)  // Guard
+        AddStoreItem("OHBSDWM","DAGG13",1,1)  // Pixie Prick +3
+        AddStoreItem("OHBSDWM","DAGG12",1,1)  // Firetooth +3
+        AddStoreItem("OHBSDWM","SW1H24",1,1)  // The Burning Earth +1
+        AddStoreItem("OHBSDWM","SW1H31",1,1)  // Daystar +2
+        AddStoreItem("OHBSDWM","SW1H36",1,1)  // Namarra +2
+        AddStoreItem("OHBSDWM","SW1H32",1,1)  // Peridan +2
+        AddStoreItem("OHBSDWM","SW1H38",1,1)  // Jhor the Bleeder +2
+        AddStoreItem("OHBSDWM","SW1H39",1,1)  // Blade of Searing +3
+        AddStoreItem("OHBSDWM","SW1H40",1,1)  // Blade of Roses +3
+        AddStoreItem("OHBSDWM","SW1H45",1,1)  // Malakar +2
+        AddStoreItem("OHBSDWM","AX1H12",1,1)  // Stonefire +3
+        AddStoreItem("OHBSDWM","AX1H13",1,1)  // Frostreaver +3
+        AddStoreItem("OHBSDWM","AX1H10",1,1)  // Azuredge +3
+        AddStoreItem("OHBSDWM","HALB04",1,1)  // Dragon's Bane +3
+        AddStoreItem("OHBSDWM","WA2HALB",1,1)  // Harmonium Halberd +3
+        AddStoreItem("OHBSDWM","WAS2H",1,1)  // Joril's Dagger +3
+        AddStoreItem("OHBSDWM","WASPEAR",1,1)  // Spear of Kuldahar +3
+        AddStoreItem("OHBSDWM","WASTAFF",1,1)  // Staff of Arundel +3
+        AddStoreItem("OHBSDWM","STAF13",1,1)  // Staff of Thunder and Lightning +2
+        AddStoreItem("OHBSDWM","STAF23",1,1)  // Serpent Shaft
+        AddStoreItem("OHBSDWM","STAF15",1,1)  // Staff of Air +2
+        AddStoreItem("OHBSDWM","STAF16",1,1)  // Staff of Earth +2
+        AddStoreItem("OHBSDWM","STAF17",1,1)  // Staff of Fire +2
+        AddStoreItem("OHBSDWM","BLUN18",1,1)  // Skullcrusher +3
+        AddStoreItem("OHBSDWM","BLUN22",1,1)  // Blackblood +3
+        AddStoreItem("OHBSDWM","BOW11",1,1)  // Strong Arm +2
+        AddStoreItem("OHBSDWM","BOW12",1,1)  // Elven Court Bow +3
+        AddStoreItem("OHBSDWM","BOW15",1,1)  // Tansheron's Bow +3
+        AddStoreItem("OHBSDWM","DART08",1,1)  // Crimson Dart +3
+        AddStoreItem("OHBSDWM","QUIVER01",1,1)  // Quiver of Plenty +1
+        AddStoreItem("OHBSDWM","QUIVER02",1,1)  // Case of Plenty +1
+        AddStoreItem("OHBSDWM","QUIVER05",1,1)  // Bag of Plenty +1
+        AddStoreItem("OHBHUEGR","HELM07",1,1)  // Helm of Balduran
+        AddStoreItem("OHBHUEGR","HELM16",1,1)  // Helm of Brilliance
+        AddStoreItem("OHBHUEGR","HELM17",1,1)  // Skull of Death
+        AddStoreItem("OHBHUEGR","HELM21",1,1)  // Dragon Helm
+        AddStoreItem("OHBHUEGR","SHLD23",1,1)  // Fortress Shield +3
+        AddStoreItem("OHBHUEGR","SHLD25",1,1)  // Shield of Harmony +2
+        AddStoreItem("OHBHUEGR","SHLD27",1,1)  // Saving Grace +3
+        AddStoreItem("OHBHUEGR","LEAT14",1,1)  // The Night's Gift +5
+        AddStoreItem("OHBHUEGR","LEAT17",1,1)  // Armor of Deep Night +4
+        AddStoreItem("OHBHUEGR","LEAT18",1,1)  // Armor of the Viper +5
+        AddStoreItem("OHBHUEGR","CHAN10",1,1)  // Jester's Chain +4
+        AddStoreItem("OHBHUEGR","CHAN14",1,1)  // Sylvan Chain +2
+        AddStoreItem("OHBHUEGR","CHAN15",1,1)  // Melodic Chain +3
+        AddStoreItem("OHBHUEGR","CHAN18",1,1)  // Armor of Faith +3
+        AddStoreItem("OHBHUEGR","PLAT13",1,1)  // Gorgon Plate +4
+        AddStoreItem("OHBHUEGR","PLAT15",1,1)  // Pride of the Legion +2
+        AddStoreItem("OHBHUEGR","WA2PLAT",1,1)  // Plate of Balduran
+        AddStoreItem("OHBIMIM","HELM23",1,1)  // Golden Ioun Stone
+        AddStoreItem("OHBIMIM","HELM25",1,1)  // Silver Ioun Stone
+        AddStoreItem("OHBIMIM","HELM24",1,1)  // Obsidian Ioun Stone
+        AddStoreItem("OHBIMIM","CLCK15",1,1)  // Robe of the Good Archmagi
+        AddStoreItem("OHBIMIM","CLCK16",1,1)  // Robe of the Neutral Archmagi
+        AddStoreItem("OHBIMIM","CLCK17",1,1)  // Robe of the Evil Archmagi
+        AddStoreItem("OHBIMIM","CLCK02",1,1)  // The Spirit's Shield +2
+        AddStoreItem("OHBIMIM","CLCK23",1,1)  // Cloak of Elvenkind
+        AddStoreItem("OHBIMIM","BOOT01",1,1)  // The Paws of the Cheetah
+        AddStoreItem("OHBIMIM","BOOT07",1,1)  // Boots of Elvenkind
+        AddStoreItem("OHBIMIM","MISC8J",1,1)  // Boots of the West
+        AddStoreItem("OHBIMIM","BOOT11",1,1)  // Boots of Etherealness
+        AddStoreItem("OHBIMIM","BRAC13",3,1)  // Bracers of Defense AC 5
+        AddStoreItem("OHBIMIM","BRAC14",2,1)  // Bracers of Defense AC 4
+        AddStoreItem("OHBIMIM","BRAC15",1,1)  // Bracers of Defense AC 3
+        AddStoreItem("OHBIMIM","BRAC16",2,1)  // Bracers of Blinding Strike
+        AddStoreItem("OHBIMIM","BRAC10",1,1)  // Legacy of the Masters
+        AddStoreItem("OHBIMIM","BELT06",1,1)  // Girdle of Hill Giant Strength
+        AddStoreItem("OHBIMIM","BELT10",1,1)  // Belt of Inertial Barrier
+        AddStoreItem("OHBIMIM","AMUL22",1,1)  // Periapt of Proof Against Poison
+        AddStoreItem("OHBIMIM","WA2AMU",1,1)  // Sensate Amulet
+        AddStoreItem("OHBIMIM","RING07",1,1)  // The Guard's Ring +2
+        AddStoreItem("OHBIMIM","WA2RING",1,1)  // Mercykiller Ring
+        AddStoreItem("OHBIMIM","RING34",1,1)  // Ring of Spell Turning
+        AddStoreItem("OHBIMIM","RING28",1,1)  // Ring of Air Control
+        AddStoreItem("OHBIMIM","RING29",1,1)  // Ring of Earth Control
+        AddStoreItem("OHBIMIM","RING31",1,1)  // Ring of Regeneration
+        AddStoreItem("OHBIMIM","RING40",1,1)  // Ring of Acuity
+        AddStoreItem("OHBIMIM","RING22",1,1)  // Honorary Ring of Sune
+        AddStoreItem("OHBIMIM","RODS03",5,1)  // Rod of Resurrection
+        AddStoreItem("OHBIMIM","RODS06",5,1)  // Rod of Reversal
+        AddStoreItem("OHBCONCO","POTN55",0,1)  // Potion of Superior Healing
+        AddStoreItem("OHBSDWM","AROW06",5,1)  // Arrow of Detonation
+        AddStoreItem("OHBSDWM","AROW07",10,1)  // Arrow of Dispelling
+        AddStoreItem("OHBCONCO","POTN03",10,1)  // Potion of Hill Giant Strength
+        AddStoreItem("OHBCONCO","POTN12",5,1)  // Potion of Stone Giant Strength
+        AddStoreItem("OHBCONCO","POTN04",4,1)  // Potion of Frost Giant Strength
+        AddStoreItem("OHBCONCO","POTN05",3,1)  // Potion of Fire Giant Strength
+        AddStoreItem("OHBCONCO","POTN06",2,1)  // Potion of Cloud Giant Strength
+        AddStoreItem("OHBCONCO","POTN07",1,1)  // Potion of Storm Giant Strength
+        AddStoreItem("OHBCONCO","POTN09",10,1)  // Potion of Heroism
+        AddStoreItem("OHBCONCO","POTN14",5,1)  // Oil of Speed
+        AddStoreItem("OHBCONCO","POTN41",5,1)  // Potion of Power
+        AddStoreItem("OHBCONCO","POTN34",5,1)  // Potion of Magic Protection
+        AddStoreItem("OHBCONCO","POTN35",5,1)  // Potion of Magic Shielding
+        AddStoreItem("OHBCONCO","POTN11",5,1)  // Potion of Invulnerability
+        AddStoreItem("OHBCONCO","POTN10",15,1)  // Potion of Invisibility
+        AddStoreItem("OHBCONCO","POTN21",10,1)  // Potion of Clarity
+        AddStoreItem("OHBCONCO","POTN45",10,1)  // Potion of Freedom
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("TIER","GLOBAL",2)
-	GlobalGT("OHB_LAST_BATTLE","GLOBAL",204)
+    Global("TIER","GLOBAL",2)
+    GlobalGT("OHB_LAST_BATTLE","GLOBAL",204)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("TIER","GLOBAL",3)
-		SetGlobal("BLACK_PITS","GLOBAL",3)
-		AddStoreItem("OHBSDWM","SW1H25",1,1)  // Kundane +2
-		AddStoreItem("OHBSDWM","SW1H30",1,1)  // Belm +2
-		AddStoreItem("OHBSDWM","WA2DAK",1,1)  // Dak'kon's Zerth Blade +2
-		AddStoreItem("OHBSDWM","WANINJA",1,1)  // Ninjatō of the Scarlet Brotherhood +3
-		AddStoreItem("OHBSDWM","SW1H66",1,1)  // Yamato +4
-		AddStoreItem("OHBSDWM","SW1H28",1,1)  // Cutthroat +4
-		AddStoreItem("OHBSDWM","DAGG14",1,1)  // Boneblade +4
-		AddStoreItem("OHBSDWM","SW2H09",1,1)  // Warblade +4
-		AddStoreItem("OHBSDWM","HALB06",1,1)  // Blackmist +4
-		AddStoreItem("OHBSDWM","SPER10",1,1)  // Spear of Withering +4
-		AddStoreItem("OHBSDWM","HAMM06",1,1)  // Dwarven Thrower +3
-		AddStoreItem("OHBSDWM","WAFLAIL",1,1)  // Defender of Easthaven +3
-		AddStoreItem("OHBSDWM","STAF12",10,1)  // Staff of Power
-		AddStoreItem("OHBSDWM","RODS04",1,1)  // Rod of Smiting
-		AddStoreItem("OHBSDWM","STAF20",1,1)  // Staff of Rhynn +4
-		AddStoreItem("OHBSDWM","BOW10",1,1)  // Heartseeker +3
-		AddStoreItem("OHBSDWM","BOW13",1,1)  // Mana Bow +4
-		AddStoreItem("OHBHUEGR","HELM32",1,1)  // Helm of the Rock
-		AddStoreItem("OHBHUEGR","SHLD22",1,1)  // Sentinel +4
-		AddStoreItem("OHBHUEGR","PLAT18",1,1)  // Red Dragon Scale
-		AddStoreItem("OHBHUEGR","CHAN11",1,1)  // Crimson Chain +5
-		AddStoreItem("OHBHUEGR","PLAT16",1,1)  // Armor of the Hart +3
-		AddStoreItem("OHBIMIM","HELM26",1,1)  // Lavender Ioun Stone
-		AddStoreItem("OHBIMIM","CLCK06",1,1)  // Whispers of Silence
-		AddStoreItem("OHBIMIM","BOOT01",1,1)  // The Paws of the Cheetah
-		AddStoreItem("OHBIMIM","BRAC23",1,1)  // Blessed Bracers
-		AddStoreItem("OHBIMIM","BRAC25",1,1)  // Wondrous Gloves
-		AddStoreItem("OHBIMIM","BELT07",1,1)  // Girdle of Stone Giant Strength
-		AddStoreItem("OHBIMIM","AMUL20",1,1)  // Kaligun's Amulet of Magic Resistance
-		AddStoreItem("OHBIMIM","AMUL26",1,1)  // Amulet of Cheetah Speed
-		AddStoreItem("OHBIMIM","RING33",1,1)  // Ring of the Ram
-		AddStoreItem("OHBIMIM","RING27",1,1)  // Ring of Fire Control
-		AddStoreItem("OHBIMIM","RING09",1,1)  // Edventar's Gift
-		AddStoreItem("OHBIMIM","RING42",1,1)  // The Specter's Ring
-		AddStoreItem("OHBIMIM","RING46",1,1)  // Ring of Anti-Venom
-		AddStoreItem("OHBSDWM","AROW06",5,1)  // Arrow of Detonation
-		AddStoreItem("OHBSDWM","AROW07",10,1)  // Arrow of Dispelling
-		AddStoreItem("OHBCONCO","POTN03",10,1)  // Potion of Hill Giant Strength
-		AddStoreItem("OHBCONCO","POTN12",5,1)  // Potion of Stone Giant Strength
-		AddStoreItem("OHBCONCO","POTN04",4,1)  // Potion of Frost Giant Strength
-		AddStoreItem("OHBCONCO","POTN05",3,1)  // Potion of Fire Giant Strength
-		AddStoreItem("OHBCONCO","POTN06",2,1)  // Potion of Cloud Giant Strength
-		AddStoreItem("OHBCONCO","POTN07",1,1)  // Potion of Storm Giant Strength
-		AddStoreItem("OHBCONCO","POTN09",10,1)  // Potion of Heroism
-		AddStoreItem("OHBCONCO","POTN14",5,1)  // Oil of Speed
-		AddStoreItem("OHBCONCO","POTN41",5,1)  // Potion of Power
-		AddStoreItem("OHBCONCO","POTN34",5,1)  // Potion of Magic Protection
-		AddStoreItem("OHBCONCO","POTN35",5,1)  // Potion of Magic Shielding
-		AddStoreItem("OHBCONCO","POTN11",5,1)  // Potion of Invulnerability
-		AddStoreItem("OHBCONCO","POTN10",15,1)  // Potion of Invisibility
-		AddStoreItem("OHBCONCO","POTN21",10,1)  // Potion of Clarity
-		AddStoreItem("OHBCONCO","POTN45",10,1)  // Potion of Freedom
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("TIER","GLOBAL",3)
+        SetGlobal("BLACK_PITS","GLOBAL",3)
+        AddStoreItem("OHBSDWM","SW1H25",1,1)  // Kundane +2
+        AddStoreItem("OHBSDWM","SW1H30",1,1)  // Belm +2
+        AddStoreItem("OHBSDWM","WA2DAK",1,1)  // Dak'kon's Zerth Blade +2
+        AddStoreItem("OHBSDWM","WANINJA",1,1)  // Ninjatō of the Scarlet Brotherhood +3
+        AddStoreItem("OHBSDWM","SW1H66",1,1)  // Yamato +4
+        AddStoreItem("OHBSDWM","SW1H28",1,1)  // Cutthroat +4
+        AddStoreItem("OHBSDWM","DAGG14",1,1)  // Boneblade +4
+        AddStoreItem("OHBSDWM","SW2H09",1,1)  // Warblade +4
+        AddStoreItem("OHBSDWM","HALB06",1,1)  // Blackmist +4
+        AddStoreItem("OHBSDWM","SPER10",1,1)  // Spear of Withering +4
+        AddStoreItem("OHBSDWM","HAMM06",1,1)  // Dwarven Thrower +3
+        AddStoreItem("OHBSDWM","WAFLAIL",1,1)  // Defender of Easthaven +3
+        AddStoreItem("OHBSDWM","STAF12",10,1)  // Staff of Power
+        AddStoreItem("OHBSDWM","RODS04",1,1)  // Rod of Smiting
+        AddStoreItem("OHBSDWM","STAF20",1,1)  // Staff of Rhynn +4
+        AddStoreItem("OHBSDWM","BOW10",1,1)  // Heartseeker +3
+        AddStoreItem("OHBSDWM","BOW13",1,1)  // Mana Bow +4
+        AddStoreItem("OHBHUEGR","HELM32",1,1)  // Helm of the Rock
+        AddStoreItem("OHBHUEGR","SHLD22",1,1)  // Sentinel +4
+        AddStoreItem("OHBHUEGR","PLAT18",1,1)  // Red Dragon Scale
+        AddStoreItem("OHBHUEGR","CHAN11",1,1)  // Crimson Chain +5
+        AddStoreItem("OHBHUEGR","PLAT16",1,1)  // Armor of the Hart +3
+        AddStoreItem("OHBIMIM","HELM26",1,1)  // Lavender Ioun Stone
+        AddStoreItem("OHBIMIM","CLCK06",1,1)  // Whispers of Silence
+        AddStoreItem("OHBIMIM","BOOT01",1,1)  // The Paws of the Cheetah
+        AddStoreItem("OHBIMIM","BRAC23",1,1)  // Blessed Bracers
+        AddStoreItem("OHBIMIM","BRAC25",1,1)  // Wondrous Gloves
+        AddStoreItem("OHBIMIM","BELT07",1,1)  // Girdle of Stone Giant Strength
+        AddStoreItem("OHBIMIM","AMUL20",1,1)  // Kaligun's Amulet of Magic Resistance
+        AddStoreItem("OHBIMIM","AMUL26",1,1)  // Amulet of Cheetah Speed
+        AddStoreItem("OHBIMIM","RING33",1,1)  // Ring of the Ram
+        AddStoreItem("OHBIMIM","RING27",1,1)  // Ring of Fire Control
+        AddStoreItem("OHBIMIM","RING09",1,1)  // Edventar's Gift
+        AddStoreItem("OHBIMIM","RING42",1,1)  // The Specter's Ring
+        AddStoreItem("OHBIMIM","RING46",1,1)  // Ring of Anti-Venom
+        AddStoreItem("OHBSDWM","AROW06",5,1)  // Arrow of Detonation
+        AddStoreItem("OHBSDWM","AROW07",10,1)  // Arrow of Dispelling
+        AddStoreItem("OHBCONCO","POTN03",10,1)  // Potion of Hill Giant Strength
+        AddStoreItem("OHBCONCO","POTN12",5,1)  // Potion of Stone Giant Strength
+        AddStoreItem("OHBCONCO","POTN04",4,1)  // Potion of Frost Giant Strength
+        AddStoreItem("OHBCONCO","POTN05",3,1)  // Potion of Fire Giant Strength
+        AddStoreItem("OHBCONCO","POTN06",2,1)  // Potion of Cloud Giant Strength
+        AddStoreItem("OHBCONCO","POTN07",1,1)  // Potion of Storm Giant Strength
+        AddStoreItem("OHBCONCO","POTN09",10,1)  // Potion of Heroism
+        AddStoreItem("OHBCONCO","POTN14",5,1)  // Oil of Speed
+        AddStoreItem("OHBCONCO","POTN41",5,1)  // Potion of Power
+        AddStoreItem("OHBCONCO","POTN34",5,1)  // Potion of Magic Protection
+        AddStoreItem("OHBCONCO","POTN35",5,1)  // Potion of Magic Shielding
+        AddStoreItem("OHBCONCO","POTN11",5,1)  // Potion of Invulnerability
+        AddStoreItem("OHBCONCO","POTN10",15,1)  // Potion of Invisibility
+        AddStoreItem("OHBCONCO","POTN21",10,1)  // Potion of Clarity
+        AddStoreItem("OHBCONCO","POTN45",10,1)  // Potion of Freedom
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("TIER","GLOBAL",3)
-	GlobalGT("OHB_LAST_BATTLE","GLOBAL",304)
+    Global("TIER","GLOBAL",3)
+    GlobalGT("OHB_LAST_BATTLE","GLOBAL",304)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("TIER","GLOBAL",4)
-		SetGlobal("BLACK_PITS","GLOBAL",4)
-		AddStoreItem("OHBSDWM","DAGG20",1,1)  // Life-Stealer +4
-		AddStoreItem("OHBSDWM","SW1H64",1,1)  // Purifier +4
-		AddStoreItem("OHBSDWM","SW1H67",1,1)  // Usuno's Blade +4
-		AddStoreItem("OHBSDWM","SW1H68",1,1)  // Spectral Brand +4
-		AddStoreItem("OHBSDWM","AX1H16",1,1)  // K'logarath +4
-		AddStoreItem("OHBSDWM","SW2H08",1,1)  // Soul Reaver +4
-		AddStoreItem("OHBSDWM","HALB05",1,1)  // Dragon's Breath +4
-		AddStoreItem("OHBSDWM","BLUN25",1,1)  // Mace of Disruption +2
-		AddStoreItem("OHBSDWM","BLUN35",1,1)  // Ice Star +4
-		AddStoreItem("OHBSDWM","BLUN27",1,1)  // Club of Detonation +5
-		AddStoreItem("OHBSDWM","STAF14",1,1)  // Staff of the Woodlands +4
-		AddStoreItem("OHBSDWM","STAF21",1,1)  // Staff of the Ram +4
-		AddStoreItem("OHBSDWM","BOW19",1,1)  // Shortbow of Gesen
-		AddStoreItem("OHBSDWM","BOW22",1,1)  // Taralash +4
-		AddStoreItem("OHBSDWM","BOW21",1,1)  // Darkfire Bow +5
-		AddStoreItem("OHBSDWM","SLNG08",1,1)  // Erinne Sling +4
-		AddStoreItem("OHBSDWM","WASLING",1,1)  // Sling of Everard +5
-		AddStoreItem("OHBSDWM","OHAROW50",0,1)  // Arrow +4
-		AddStoreItem("OHBSDWM","OHBOLT50",0,1)  // Bolt +4
-		AddStoreItem("OHBHUEGR","HELM30",1,1)  // Thieves' Hood
-		AddStoreItem("OHBHUEGR","WA2HELM",1,1)  // Vhailor's Helm
-		AddStoreItem("OHBHUEGR","SHLD31",1,1)  // Darksteel Shield +4
-		AddStoreItem("OHBHUEGR","LEAT23",1,1)  // Studded Leather of Thorns +6
-		AddStoreItem("OHBHUEGR","CHAN20",1,1)  // White Dragon Scale
-		AddStoreItem("OHBHUEGR","PLAT20",1,1)  // Blue Dragon Plate
-		AddStoreItem("OHBIMIM","CLCK24",1,1)  // Cloak of Reflection
-		AddStoreItem("OHBIMIM","CLCK32",1,1)  // Montolio's Cloak
-		AddStoreItem("OHBIMIM","BOOT01",1,1)  // The Paws of the Cheetah
-		AddStoreItem("OHBIMIM","BRAC26",1,1)  // Tzu-Zan's Bracers
-		AddStoreItem("OHBIMIM","BELT08",1,1)  // Girdle of Frost Giant Strength
-		AddStoreItem("OHBIMIM","AMUL17",10,1)  // Greenstone Amulet
-		AddStoreItem("OHBIMIM","AMUL28",1,1)  // Amulet of the Master Harper
-		AddStoreItem("OHBIMIM","RING41",1,1)  // The Warder's Signet +3
-		AddStoreItem("OHBIMIM","RING44",1,1)  // Heartwood Ring
-		AddStoreItem("OHBIMIM","RING08",1,1)  // Reaching Ring
-		AddStoreItem("OHBSDWM","AROW06",5,1)  // Arrow of Detonation
-		AddStoreItem("OHBSDWM","AROW07",10,1)  // Arrow of Dispelling
-		AddStoreItem("OHBCONCO","POTN03",10,1)  // Potion of Hill Giant Strength
-		AddStoreItem("OHBCONCO","POTN12",5,1)  // Potion of Stone Giant Strength
-		AddStoreItem("OHBCONCO","POTN04",4,1)  // Potion of Frost Giant Strength
-		AddStoreItem("OHBCONCO","POTN05",3,1)  // Potion of Fire Giant Strength
-		AddStoreItem("OHBCONCO","POTN06",2,1)  // Potion of Cloud Giant Strength
-		AddStoreItem("OHBCONCO","POTN07",1,1)  // Potion of Storm Giant Strength
-		AddStoreItem("OHBCONCO","POTN09",10,1)  // Potion of Heroism
-		AddStoreItem("OHBCONCO","POTN14",5,1)  // Oil of Speed
-		AddStoreItem("OHBCONCO","POTN41",5,1)  // Potion of Power
-		AddStoreItem("OHBCONCO","POTN34",5,1)  // Potion of Magic Protection
-		AddStoreItem("OHBCONCO","POTN35",5,1)  // Potion of Magic Shielding
-		AddStoreItem("OHBCONCO","POTN11",5,1)  // Potion of Invulnerability
-		AddStoreItem("OHBCONCO","POTN10",15,1)  // Potion of Invisibility
-		AddStoreItem("OHBCONCO","POTN21",10,1)  // Potion of Clarity
-		AddStoreItem("OHBCONCO","POTN45",10,1)  // Potion of Freedom
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("TIER","GLOBAL",4)
+        SetGlobal("BLACK_PITS","GLOBAL",4)
+        AddStoreItem("OHBSDWM","DAGG20",1,1)  // Life-Stealer +4
+        AddStoreItem("OHBSDWM","SW1H64",1,1)  // Purifier +4
+        AddStoreItem("OHBSDWM","SW1H67",1,1)  // Usuno's Blade +4
+        AddStoreItem("OHBSDWM","SW1H68",1,1)  // Spectral Brand +4
+        AddStoreItem("OHBSDWM","AX1H16",1,1)  // K'logarath +4
+        AddStoreItem("OHBSDWM","SW2H08",1,1)  // Soul Reaver +4
+        AddStoreItem("OHBSDWM","HALB05",1,1)  // Dragon's Breath +4
+        AddStoreItem("OHBSDWM","BLUN25",1,1)  // Mace of Disruption +2
+        AddStoreItem("OHBSDWM","BLUN35",1,1)  // Ice Star +4
+        AddStoreItem("OHBSDWM","BLUN27",1,1)  // Club of Detonation +5
+        AddStoreItem("OHBSDWM","STAF14",1,1)  // Staff of the Woodlands +4
+        AddStoreItem("OHBSDWM","STAF21",1,1)  // Staff of the Ram +4
+        AddStoreItem("OHBSDWM","BOW19",1,1)  // Shortbow of Gesen
+        AddStoreItem("OHBSDWM","BOW22",1,1)  // Taralash +4
+        AddStoreItem("OHBSDWM","BOW21",1,1)  // Darkfire Bow +5
+        AddStoreItem("OHBSDWM","SLNG08",1,1)  // Erinne Sling +4
+        AddStoreItem("OHBSDWM","WASLING",1,1)  // Sling of Everard +5
+        AddStoreItem("OHBSDWM","OHAROW50",0,1)  // Arrow +4
+        AddStoreItem("OHBSDWM","OHBOLT50",0,1)  // Bolt +4
+        AddStoreItem("OHBHUEGR","HELM30",1,1)  // Thieves' Hood
+        AddStoreItem("OHBHUEGR","WA2HELM",1,1)  // Vhailor's Helm
+        AddStoreItem("OHBHUEGR","SHLD31",1,1)  // Darksteel Shield +4
+        AddStoreItem("OHBHUEGR","LEAT23",1,1)  // Studded Leather of Thorns +6
+        AddStoreItem("OHBHUEGR","CHAN20",1,1)  // White Dragon Scale
+        AddStoreItem("OHBHUEGR","PLAT20",1,1)  // Blue Dragon Plate
+        AddStoreItem("OHBIMIM","CLCK24",1,1)  // Cloak of Reflection
+        AddStoreItem("OHBIMIM","CLCK32",1,1)  // Montolio's Cloak
+        AddStoreItem("OHBIMIM","BOOT01",1,1)  // The Paws of the Cheetah
+        AddStoreItem("OHBIMIM","BRAC26",1,1)  // Tzu-Zan's Bracers
+        AddStoreItem("OHBIMIM","BELT08",1,1)  // Girdle of Frost Giant Strength
+        AddStoreItem("OHBIMIM","AMUL17",10,1)  // Greenstone Amulet
+        AddStoreItem("OHBIMIM","AMUL28",1,1)  // Amulet of the Master Harper
+        AddStoreItem("OHBIMIM","RING41",1,1)  // The Warder's Signet +3
+        AddStoreItem("OHBIMIM","RING44",1,1)  // Heartwood Ring
+        AddStoreItem("OHBIMIM","RING08",1,1)  // Reaching Ring
+        AddStoreItem("OHBSDWM","AROW06",5,1)  // Arrow of Detonation
+        AddStoreItem("OHBSDWM","AROW07",10,1)  // Arrow of Dispelling
+        AddStoreItem("OHBCONCO","POTN03",10,1)  // Potion of Hill Giant Strength
+        AddStoreItem("OHBCONCO","POTN12",5,1)  // Potion of Stone Giant Strength
+        AddStoreItem("OHBCONCO","POTN04",4,1)  // Potion of Frost Giant Strength
+        AddStoreItem("OHBCONCO","POTN05",3,1)  // Potion of Fire Giant Strength
+        AddStoreItem("OHBCONCO","POTN06",2,1)  // Potion of Cloud Giant Strength
+        AddStoreItem("OHBCONCO","POTN07",1,1)  // Potion of Storm Giant Strength
+        AddStoreItem("OHBCONCO","POTN09",10,1)  // Potion of Heroism
+        AddStoreItem("OHBCONCO","POTN14",5,1)  // Oil of Speed
+        AddStoreItem("OHBCONCO","POTN41",5,1)  // Potion of Power
+        AddStoreItem("OHBCONCO","POTN34",5,1)  // Potion of Magic Protection
+        AddStoreItem("OHBCONCO","POTN35",5,1)  // Potion of Magic Shielding
+        AddStoreItem("OHBCONCO","POTN11",5,1)  // Potion of Invulnerability
+        AddStoreItem("OHBCONCO","POTN10",15,1)  // Potion of Invisibility
+        AddStoreItem("OHBCONCO","POTN21",10,1)  // Potion of Clarity
+        AddStoreItem("OHBCONCO","POTN45",10,1)  // Potion of Freedom
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("TIER","GLOBAL",4)
-	GlobalGT("OHB_LAST_BATTLE","GLOBAL",403)
-	Global("OHB_final_restock","GLOBAL",0)
+    Global("TIER","GLOBAL",4)
+    GlobalGT("OHB_LAST_BATTLE","GLOBAL",403)
+    Global("OHB_final_restock","GLOBAL",0)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_final_restock","GLOBAL",1)
-		AddStoreItem("OHBSDWM","AX1H15",1,1)  // Axe of the Unyielding +5
-		AddStoreItem("OHBSDWM","HAMM11",1,1)  // Runehammer +5
-		AddStoreItem("OHBSDWM","SW2H18",1,1)  // Gram the Sword of Grief +5
-		AddStoreItem("OHBSDWM","SPER12",1,1)  // Ixil's Spike +6
-		AddStoreItem("OHBHUEGR","SHLD32",1,1)  // Shield of the Order +4
-		AddStoreItem("OHBHUEGR","LEAT24",1,1)  // Grandmaster's Armor +6
-		AddStoreItem("OHBHUEGR","CHAN19",1,1)  // Aslyferund Elven Chain +5
-		AddStoreItem("OHBHUEGR","PLAT21",1,1)  // Enkidu's Full Plate +3
-		AddStoreItem("OHBIMIM","WA2ROBE",1,1)  // Robe of Vecna
-		AddStoreItem("OHBIMIM","BOOT01",1,1)  // The Paws of the Cheetah
-		AddStoreItem("OHBIMIM","BOOT12",1,1)  // Gargoyle Boots
-		AddStoreItem("OHBIMIM","BELT11",1,1)  // Girdle of Fire Giant Strength
-		AddStoreItem("OHBSDWM","AROW06",5,1)  // Arrow of Detonation
-		AddStoreItem("OHBSDWM","AROW07",10,1)  // Arrow of Dispelling
-		AddStoreItem("OHBCONCO","POTN03",10,1)  // Potion of Hill Giant Strength
-		AddStoreItem("OHBCONCO","POTN12",5,1)  // Potion of Stone Giant Strength
-		AddStoreItem("OHBCONCO","POTN04",4,1)  // Potion of Frost Giant Strength
-		AddStoreItem("OHBCONCO","POTN05",3,1)  // Potion of Fire Giant Strength
-		AddStoreItem("OHBCONCO","POTN06",2,1)  // Potion of Cloud Giant Strength
-		AddStoreItem("OHBCONCO","POTN07",1,1)  // Potion of Storm Giant Strength
-		AddStoreItem("OHBCONCO","POTN09",10,1)  // Potion of Heroism
-		AddStoreItem("OHBCONCO","POTN14",5,1)  // Oil of Speed
-		AddStoreItem("OHBCONCO","POTN41",5,1)  // Potion of Power
-		AddStoreItem("OHBCONCO","POTN34",5,1)  // Potion of Magic Protection
-		AddStoreItem("OHBCONCO","POTN35",5,1)  // Potion of Magic Shielding
-		AddStoreItem("OHBCONCO","POTN11",5,1)  // Potion of Invulnerability
-		AddStoreItem("OHBCONCO","POTN10",15,1)  // Potion of Invisibility
-		AddStoreItem("OHBCONCO","POTN21",10,1)  // Potion of Clarity
-		AddStoreItem("OHBCONCO","POTN45",10,1)  // Potion of Freedom
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_final_restock","GLOBAL",1)
+        AddStoreItem("OHBSDWM","AX1H15",1,1)  // Axe of the Unyielding +5
+        AddStoreItem("OHBSDWM","HAMM11",1,1)  // Runehammer +5
+        AddStoreItem("OHBSDWM","SW2H18",1,1)  // Gram the Sword of Grief +5
+        AddStoreItem("OHBSDWM","SPER12",1,1)  // Ixil's Spike +6
+        AddStoreItem("OHBHUEGR","SHLD32",1,1)  // Shield of the Order +4
+        AddStoreItem("OHBHUEGR","LEAT24",1,1)  // Grandmaster's Armor +6
+        AddStoreItem("OHBHUEGR","CHAN19",1,1)  // Aslyferund Elven Chain +5
+        AddStoreItem("OHBHUEGR","PLAT21",1,1)  // Enkidu's Full Plate +3
+        AddStoreItem("OHBIMIM","WA2ROBE",1,1)  // Robe of Vecna
+        AddStoreItem("OHBIMIM","BOOT01",1,1)  // The Paws of the Cheetah
+        AddStoreItem("OHBIMIM","BOOT12",1,1)  // Gargoyle Boots
+        AddStoreItem("OHBIMIM","BELT11",1,1)  // Girdle of Fire Giant Strength
+        AddStoreItem("OHBSDWM","AROW06",5,1)  // Arrow of Detonation
+        AddStoreItem("OHBSDWM","AROW07",10,1)  // Arrow of Dispelling
+        AddStoreItem("OHBCONCO","POTN03",10,1)  // Potion of Hill Giant Strength
+        AddStoreItem("OHBCONCO","POTN12",5,1)  // Potion of Stone Giant Strength
+        AddStoreItem("OHBCONCO","POTN04",4,1)  // Potion of Frost Giant Strength
+        AddStoreItem("OHBCONCO","POTN05",3,1)  // Potion of Fire Giant Strength
+        AddStoreItem("OHBCONCO","POTN06",2,1)  // Potion of Cloud Giant Strength
+        AddStoreItem("OHBCONCO","POTN07",1,1)  // Potion of Storm Giant Strength
+        AddStoreItem("OHBCONCO","POTN09",10,1)  // Potion of Heroism
+        AddStoreItem("OHBCONCO","POTN14",5,1)  // Oil of Speed
+        AddStoreItem("OHBCONCO","POTN41",5,1)  // Potion of Power
+        AddStoreItem("OHBCONCO","POTN34",5,1)  // Potion of Magic Protection
+        AddStoreItem("OHBCONCO","POTN35",5,1)  // Potion of Magic Shielding
+        AddStoreItem("OHBCONCO","POTN11",5,1)  // Potion of Invulnerability
+        AddStoreItem("OHBCONCO","POTN10",15,1)  // Potion of Invisibility
+        AddStoreItem("OHBCONCO","POTN21",10,1)  // Potion of Clarity
+        AddStoreItem("OHBCONCO","POTN45",10,1)  // Potion of Freedom
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("ohb_rat_droppings","global",1)
+    Global("ohb_rat_droppings","global",1)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("ohb_rat_droppings","global",2)
-		AddStoreItem("OHBCONCO","ohbcom04",1,1)  // Rat Droppings
-		AddStoreItem("OHBmolza","ohbcom10",1,1)  // Powdered Quartz
-		CreateCreature("rat",[1600.3485],S)  // Rat
-		SmallWait(5)
-		ActionOverride("rat",GiveItemCreate("ohbcom04",Myself,1,0,0))  // Rat Droppings
-		SmallWait(1)
-		ActionOverride("rat",DropInventory())
-		SmallWait(1)
-		ActionOverride("rat",DestroySelf())
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("ohb_rat_droppings","global",2)
+        AddStoreItem("OHBCONCO","ohbcom04",1,1)  // Rat Droppings
+        AddStoreItem("OHBmolza","ohbcom10",1,1)  // Powdered Quartz
+        CreateCreature("rat",[1600.3485],S)  // Rat
+        SmallWait(5)
+        ActionOverride("rat",GiveItemCreate("ohbcom04",Myself,1,0,0))  // Rat Droppings
+        SmallWait(1)
+        ActionOverride("rat",DropInventory())
+        SmallWait(1)
+        ActionOverride("rat",DestroySelf())
+        SetInterrupt(TRUE)
 END
 
 IF
-	GlobalGT("OHB_GEZZT_POISON","GLOBAL",0)
-	Global("ohb_lotus_root","global",0)
+    GlobalGT("OHB_GEZZT_POISON","GLOBAL",0)
+    Global("ohb_lotus_root","global",0)
 THEN
-	RESPONSE #100
-		SetGlobal("ohb_lotus_root","global",1)
-		AddStoreItem("OHBCONCO","ohbcom03",1,1)  // Lotus Root
-		AddStoreItem("OHBmolza","ohbptn09",1,1)  // Distilled Alcohol
+    RESPONSE #100
+        SetGlobal("ohb_lotus_root","global",1)
+        AddStoreItem("OHBCONCO","ohbcom03",1,1)  // Lotus Root
+        AddStoreItem("OHBmolza","ohbptn09",1,1)  // Distilled Alcohol
 END
 
 IF
-	GlobalGT("OHB_FELDR_POISON","GLOBAL",0)
-	Global("ohb_rose_petals","global",0)
+    GlobalGT("OHB_FELDR_POISON","GLOBAL",0)
+    Global("ohb_rose_petals","global",0)
 THEN
-	RESPONSE #100
-		SetGlobal("ohb_rose_petals","global",1)
-		AddStoreItem("OHBMOLZA","ohbcom09",1,1)  // Rose Petals
-		AddStoreItem("OHBconco","ohbptn08",1,1)  // Wine Vinegar
+    RESPONSE #100
+        SetGlobal("ohb_rose_petals","global",1)
+        AddStoreItem("OHBMOLZA","ohbcom09",1,1)  // Rose Petals
+        AddStoreItem("OHBconco","ohbptn08",1,1)  // Wine Vinegar
 END
 
 IF
-	Global("ohb_barkskin_potion","oh8100",1)  // TBP2 - Staging Area Map
+    Global("ohb_barkskin_potion","oh8100",1)  // TBP2 - Staging Area Map
 THEN
-	RESPONSE #100
-		SetGlobal("ohb_barkskin_potion","oh8100",1)  // TBP2 - Staging Area Map
-		AddStoreItem("OHBMOLZA","ohbptn01",1,1)  // Potion of Barkskin
+    RESPONSE #100
+        SetGlobal("ohb_barkskin_potion","oh8100",1)  // TBP2 - Staging Area Map
+        AddStoreItem("OHBMOLZA","ohbptn01",1,1)  // Potion of Barkskin
 END
 
 IF
-	GlobalGT("OHB_final_restock","GLOBAL",0)
-	Global("OHB_WINGED_GAUNTLET","GLOBAL",0)
-	Contains("OHBGLOV1","Winged Chest")  // The Winged's Gauntlet
+    GlobalGT("OHB_final_restock","GLOBAL",0)
+    Global("OHB_WINGED_GAUNTLET","GLOBAL",0)
+    Contains("OHBGLOV1","Winged Chest")  // The Winged's Gauntlet
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_WINGED_GAUNTLET","GLOBAL",2)
-		ActionOverride("Winged Chest",DestroyItem("OHBGLOV1"))  // The Winged's Gauntlet
+    RESPONSE #100
+        SetGlobal("OHB_WINGED_GAUNTLET","GLOBAL",2)
+        ActionOverride("Winged Chest",DestroyItem("OHBGLOV1"))  // The Winged's Gauntlet
 END
 
 IF
-	Global("OHB_WINGED_GAUNTLET","GLOBAL",0)
-	!Contains("OHBGLOV1","Winged Chest")  // The Winged's Gauntlet
+    Global("OHB_WINGED_GAUNTLET","GLOBAL",0)
+    !Contains("OHBGLOV1","Winged Chest")  // The Winged's Gauntlet
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_WINGED_GAUNTLET","GLOBAL",1)
+    RESPONSE #100
+        SetGlobal("OHB_WINGED_GAUNTLET","GLOBAL",1)
 END
 
 IF
-	Global("OHB_WINGED_GAUNTLET","GLOBAL",1)
-	Contains("OHBGLOV1","Winged Chest")  // The Winged's Gauntlet
+    Global("OHB_WINGED_GAUNTLET","GLOBAL",1)
+    Contains("OHBGLOV1","Winged Chest")  // The Winged's Gauntlet
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_WINGED_GAUNTLET","GLOBAL",0)
+    RESPONSE #100
+        SetGlobal("OHB_WINGED_GAUNTLET","GLOBAL",0)
 END
-

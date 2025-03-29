@@ -1,0 +1,51 @@
+name: main
+on:
+  push:
+    branches:
+    - main
+    tags:
+    - "*"
+  pull_request:
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        set-safe-directory: true
+        fetch-depth: 0
+    - uses: actions/setup-python@v5
+    - uses: pre-commit/action@v3.0.1
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Archive release artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: zbpod
+          path: zbpod
+  packager:
+    needs: [release]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+    steps:
+      - name: Initial setup
+        run: |
+          git config --global core.ignorecase true
+      - name: Clone repository using 'github.ref' from release
+        uses: actions/checkout@master
+      - name: Create Infinity Engine Mod Packages (.iemod and .zip)
+        uses: ALIENQuake/CreateIEModZipPackage@master
+        id: CreateIEModZipPackage
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload iemod package to latest release
+        uses: svenstaro/upload-release-action@v1-release
+        if: github.ref != 'refs/heads/master'
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{ steps.CreateIEModZipPackage.outputs.PackageBaseName }}.iemod
+          asset_name: ${{ steps.CreateIEModZipPackage.outputs.PackageBaseName }}.iemod
+          tag: ${{ github.ref }}
+          overwrite: true

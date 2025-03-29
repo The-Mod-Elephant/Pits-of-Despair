@@ -1,336 +1,335 @@
 IF
-	Global("TIER","GLOBAL",1)
-	Global("OHB_VIEW","OH8100",0)  // TBP2 - Staging Area Map
+    Global("TIER","GLOBAL",1)
+    Global("OHB_VIEW","OH8100",0)  // TBP2 - Staging Area Map
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",101)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBORC03",[2951.2595],N)  // Orc Priest
-		CreateCreature("OHBORC01",[2823.2549],SW)  // Orc
-		CreateCreature("OHBORC02",[2871.2500],W)  // Orc Archer
-		CreateCreature("OHBORC02",[2952.2488],N)  // Orc Archer
-		CreateCreature("OHBORC02",[3030.2511],NE)  // Orc Archer
-		CreateCreature("OHBORC01",[3080.2571],E)  // Orc
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",101)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBORC03",[2951.2595],N)  // Orc Priest
+        CreateCreature("OHBORC01",[2823.2549],SW)  // Orc
+        CreateCreature("OHBORC02",[2871.2500],W)  // Orc Archer
+        CreateCreature("OHBORC02",[2952.2488],N)  // Orc Archer
+        CreateCreature("OHBORC02",[3030.2511],NE)  // Orc Archer
+        CreateCreature("OHBORC01",[3080.2571],E)  // Orc
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",101)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",101)
+    Global("OHB_VIEW","OH8100",101)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",101)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",102)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBMIN01",[2951.2595],N)  // Minotaur
-		CreateCreature("OHBGLA01",[2823.2549],SW)  // Gladiator
-		CreateCreature("OHBGLA02",[2871.2500],W)  // Gladiator
-		CreateCreature("OHBGLA02",[2952.2488],N)  // Gladiator
-		CreateCreature("OHBGLA02",[3030.2511],NE)  // Gladiator
-		CreateCreature("OHBGLA01",[3080.2571],E)  // Gladiator
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",102)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBMIN01",[2951.2595],N)  // Minotaur
+        CreateCreature("OHBGLA01",[2823.2549],SW)  // Gladiator
+        CreateCreature("OHBGLA02",[2871.2500],W)  // Gladiator
+        CreateCreature("OHBGLA02",[2952.2488],N)  // Gladiator
+        CreateCreature("OHBGLA02",[3030.2511],NE)  // Gladiator
+        CreateCreature("OHBGLA01",[3080.2571],E)  // Gladiator
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",102)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",102)
+    Global("OHB_VIEW","OH8100",102)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",102)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",103)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBLIZ01",[2951.2595],N)  // Lizard Man Chieftain
-		CreateCreature("OHBLIZ02",[2823.2549],SW)  // Lizard Man Elite
-		CreateCreature("OHBLIZ02",[2871.2500],W)  // Lizard Man Elite
-		CreateCreature("OHBLIZ03",[2952.2488],N)  // Lizard Man Shaman
-		CreateCreature("OHBLIZ02",[3030.2511],NE)  // Lizard Man Elite
-		CreateCreature("OHBLIZ02",[3080.2571],E)  // Lizard Man Elite
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",103)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBLIZ01",[2951.2595],N)  // Lizard Man Chieftain
+        CreateCreature("OHBLIZ02",[2823.2549],SW)  // Lizard Man Elite
+        CreateCreature("OHBLIZ02",[2871.2500],W)  // Lizard Man Elite
+        CreateCreature("OHBLIZ03",[2952.2488],N)  // Lizard Man Shaman
+        CreateCreature("OHBLIZ02",[3030.2511],NE)  // Lizard Man Elite
+        CreateCreature("OHBLIZ02",[3080.2571],E)  // Lizard Man Elite
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",103)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",103)
+    Global("OHB_VIEW","OH8100",103)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",103)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",104)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("ohbumb01",[2951.2595],N)  // Umber Hulk Elder
-		CreateCreature("ohbumb01",[2823.2549],SW)  // Umber Hulk Elder
-		CreateCreature("ohbumb01",[2871.2500],W)  // Umber Hulk Elder
-		CreateCreature("ohbumb01",[2952.2488],N)  // Umber Hulk Elder
-		CreateCreature("ohbumb01",[3030.2511],NE)  // Umber Hulk Elder
-		CreateCreature("ohbumb01",[3080.2571],E)  // Umber Hulk Elder
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",104)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("ohbumb01",[2951.2595],N)  // Umber Hulk Elder
+        CreateCreature("ohbumb01",[2823.2549],SW)  // Umber Hulk Elder
+        CreateCreature("ohbumb01",[2871.2500],W)  // Umber Hulk Elder
+        CreateCreature("ohbumb01",[2952.2488],N)  // Umber Hulk Elder
+        CreateCreature("ohbumb01",[3030.2511],NE)  // Umber Hulk Elder
+        CreateCreature("ohbumb01",[3080.2571],E)  // Umber Hulk Elder
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",104)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",104)
+    Global("OHB_VIEW","OH8100",104)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",104)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",105)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBDRO04",[2951.2595],N)  // Drow Priestess
-		CreateCreature("OHBDRO01",[2823.2549],SW)  // Drow Warrior
-		CreateCreature("OHBDRO02",[2871.2500],W)  // Drow Scout
-		CreateCreature("OHBDRO03",[2952.2488],N)  // Drow Wizard
-		CreateCreature("OHBDRO02",[3030.2511],NE)  // Drow Scout
-		CreateCreature("OHBDRO01",[3080.2571],E)  // Drow Warrior
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",105)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBDRO04",[2951.2595],N)  // Drow Priestess
+        CreateCreature("OHBDRO01",[2823.2549],SW)  // Drow Warrior
+        CreateCreature("OHBDRO02",[2871.2500],W)  // Drow Scout
+        CreateCreature("OHBDRO03",[2952.2488],N)  // Drow Wizard
+        CreateCreature("OHBDRO02",[3030.2511],NE)  // Drow Scout
+        CreateCreature("OHBDRO01",[3080.2571],E)  // Drow Warrior
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",105)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",105)
+    Global("OHB_VIEW","OH8100",105)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",105)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",201)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBVMP01",[2951.2595],N)  // Gaul
-		CreateCreature("OHBVMP03",[2823.2549],SW)  // Vampire
-		CreateCreature("OHBVMP02",[2871.2500],W)  // Vampire
-		CreateCreature("OHBVMP02",[2952.2488],N)  // Vampire
-		CreateCreature("OHBVMP02",[3030.2511],NE)  // Vampire
-		CreateCreature("OHBVMP03",[3080.2571],E)  // Vampire
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",201)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBVMP01",[2951.2595],N)  // Gaul
+        CreateCreature("OHBVMP03",[2823.2549],SW)  // Vampire
+        CreateCreature("OHBVMP02",[2871.2500],W)  // Vampire
+        CreateCreature("OHBVMP02",[2952.2488],N)  // Vampire
+        CreateCreature("OHBVMP02",[3030.2511],NE)  // Vampire
+        CreateCreature("OHBVMP03",[3080.2571],E)  // Vampire
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",201)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",201)
+    Global("OHB_VIEW","OH8100",201)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",201)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",202)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBGIT01",[2951.2595],N)  // Anti-Paladin
-		CreateCreature("OHBGIT02",[2823.2549],SW)  // Warrior
-		CreateCreature("OHBGIT02",[2871.2500],W)  // Warrior
-		CreateCreature("OHBGIT03",[2952.2488],N)  // Gish
-		CreateCreature("OHBGIT02",[3030.2511],NE)  // Warrior
-		CreateCreature("OHBGIT02",[3080.2571],E)  // Warrior
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",202)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBGIT01",[2951.2595],N)  // Anti-Paladin
+        CreateCreature("OHBGIT02",[2823.2549],SW)  // Warrior
+        CreateCreature("OHBGIT02",[2871.2500],W)  // Warrior
+        CreateCreature("OHBGIT03",[2952.2488],N)  // Gish
+        CreateCreature("OHBGIT02",[3030.2511],NE)  // Warrior
+        CreateCreature("OHBGIT02",[3080.2571],E)  // Warrior
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",202)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",202)
+    Global("OHB_VIEW","OH8100",202)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",202)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",203)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBSAH01",[2951.2595],N)  // Sahuagin Prince
-		CreateCreature("OHBEWWEI",[2823.2549],SW)  // Greater Water Weird
-		CreateCreature("OHBEWWEI",[2871.2500],W)  // Greater Water Weird
-		CreateCreature("OHBEWWEI",[2952.2488],N)  // Greater Water Weird
-		CreateCreature("OHBEWWEI",[3030.2511],NE)  // Greater Water Weird
-		CreateCreature("OHBEWWEI",[3080.2571],E)  // Greater Water Weird
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",203)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBSAH01",[2951.2595],N)  // Sahuagin Prince
+        CreateCreature("OHBEWWEI",[2823.2549],SW)  // Greater Water Weird
+        CreateCreature("OHBEWWEI",[2871.2500],W)  // Greater Water Weird
+        CreateCreature("OHBEWWEI",[2952.2488],N)  // Greater Water Weird
+        CreateCreature("OHBEWWEI",[3030.2511],NE)  // Greater Water Weird
+        CreateCreature("OHBEWWEI",[3080.2571],E)  // Greater Water Weird
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",203)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",203)
+    Global("OHB_VIEW","OH8100",203)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",203)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",204)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBMARDI",[2951.2595],N)  // Mardii
-		CreateCreature("OHBEAI01",[2823.2549],SW)  // Greater Air Elemental
-		CreateCreature("OHBEEA01",[2952.2488],N)  // Greater Earth Elemental
-		CreateCreature("OHBEFI01",[3080.2571],E)  // Greater Fire Elemental
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",204)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBMARDI",[2951.2595],N)  // Mardii
+        CreateCreature("OHBEAI01",[2823.2549],SW)  // Greater Air Elemental
+        CreateCreature("OHBEEA01",[2952.2488],N)  // Greater Earth Elemental
+        CreateCreature("OHBEFI01",[3080.2571],E)  // Greater Fire Elemental
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",204)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",204)
+    Global("OHB_VIEW","OH8100",204)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",204)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",205)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBDEV01",[2951.2595],N)  // Maadrazel
-		CreateCreature("OHBDEV02",[2823.2549],SW)  // Cornugon
-		CreateCreature("OHBDEV03",[2952.2488],N)  // Gelugon
-		CreateCreature("OHBDEV04",[3080.2571],E)  // Erinyes
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",205)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBDEV01",[2951.2595],N)  // Maadrazel
+        CreateCreature("OHBDEV02",[2823.2549],SW)  // Cornugon
+        CreateCreature("OHBDEV03",[2952.2488],N)  // Gelugon
+        CreateCreature("OHBDEV04",[3080.2571],E)  // Erinyes
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",205)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",205)
+    Global("OHB_VIEW","OH8100",205)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",205)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",301)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBSMNK1",[2951.2595],N)  // Sun Soul Monk
-		CreateCreature("OHBSMNK2",[2823.2549],SW)  // Sun Soul Monk
-		CreateCreature("OHBSMNK2",[2871.2500],W)  // Sun Soul Monk
-		CreateCreature("OHBDMNK1",[2952.2488],N)  // Dark Moon Monk
-		CreateCreature("OHBDMNK2",[3030.2511],NE)  // Dark Moon Monk
-		CreateCreature("OHBDMNK2",[3080.2571],E)  // Dark Moon Monk
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",301)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBSMNK1",[2951.2595],N)  // Sun Soul Monk
+        CreateCreature("OHBSMNK2",[2823.2549],SW)  // Sun Soul Monk
+        CreateCreature("OHBSMNK2",[2871.2500],W)  // Sun Soul Monk
+        CreateCreature("OHBDMNK1",[2952.2488],N)  // Dark Moon Monk
+        CreateCreature("OHBDMNK2",[3030.2511],NE)  // Dark Moon Monk
+        CreateCreature("OHBDMNK2",[3080.2571],E)  // Dark Moon Monk
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",301)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",301)
+    Global("OHB_VIEW","OH8100",301)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",301)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",302)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBGOL01",[2951.2595],N)  // Greater Clay Golem
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",302)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBGOL01",[2951.2595],N)  // Greater Clay Golem
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",302)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",302)
+    Global("OHB_VIEW","OH8100",302)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",302)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",303)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBLIC01",[2951.2595],N)  // Leah Redsun
-		CreateCreature("OHBGOLB1",[2823.2549],SW)  // Greater Bone Golem
-		CreateCreature("OHBGOLB1",[2871.2500],W)  // Greater Bone Golem
-		CreateCreature("OHBGOLB1",[2952.2488],N)  // Greater Bone Golem
-		CreateCreature("OHBGOLB1",[3030.2511],NE)  // Greater Bone Golem
-		CreateCreature("OHBGOLB1",[3080.2571],E)  // Greater Bone Golem
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",303)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBLIC01",[2951.2595],N)  // Leah Redsun
+        CreateCreature("OHBGOLB1",[2823.2549],SW)  // Greater Bone Golem
+        CreateCreature("OHBGOLB1",[2871.2500],W)  // Greater Bone Golem
+        CreateCreature("OHBGOLB1",[2952.2488],N)  // Greater Bone Golem
+        CreateCreature("OHBGOLB1",[3030.2511],NE)  // Greater Bone Golem
+        CreateCreature("OHBGOLB1",[3080.2571],E)  // Greater Bone Golem
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",303)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",303)
+    Global("OHB_VIEW","OH8100",303)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",303)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",304)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBRAK01",[2951.2595],N)  // Maharajah
-		CreateCreature("OHBRAK02",[2823.2549],SW)  // Ruhk
-		CreateCreature("OHBRAK03",[2871.2500],W)  // Rakshasa
-		CreateCreature("OHBRAK03",[2952.2488],N)  // Rakshasa
-		CreateCreature("OHBRAK03",[3030.2511],NE)  // Rakshasa
-		CreateCreature("OHBRAK02",[3080.2571],E)  // Ruhk
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",304)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBRAK01",[2951.2595],N)  // Maharajah
+        CreateCreature("OHBRAK02",[2823.2549],SW)  // Ruhk
+        CreateCreature("OHBRAK03",[2871.2500],W)  // Rakshasa
+        CreateCreature("OHBRAK03",[2952.2488],N)  // Rakshasa
+        CreateCreature("OHBRAK03",[3030.2511],NE)  // Rakshasa
+        CreateCreature("OHBRAK02",[3080.2571],E)  // Ruhk
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",304)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",304)
+    Global("OHB_VIEW","OH8100",304)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",304)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",305)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBMND02",[2951.2595],N)  // Ulitharid
-		CreateCreature("OHBMND01",[2823.2549],SW)  // Mind Flayer
-		CreateCreature("OHBMND01",[2952.2488],N)  // Mind Flayer
-		CreateCreature("OHBMND01",[3080.2571],E)  // Mind Flayer
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",305)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBMND02",[2951.2595],N)  // Ulitharid
+        CreateCreature("OHBMND01",[2823.2549],SW)  // Mind Flayer
+        CreateCreature("OHBMND01",[2952.2488],N)  // Mind Flayer
+        CreateCreature("OHBMND01",[3080.2571],E)  // Mind Flayer
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",305)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",305)
+    Global("OHB_VIEW","OH8100",305)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",305)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",401)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBCEL01",[2951.2595],N)  // Ariziel
-		CreateCreature("OHBCEL02",[2823.2549],SW)  // Fallen Astral Deva
-		CreateCreature("OHBCEL03",[2871.2500],W)  // Fallen Monadic Deva
-		CreateCreature("OHBCEL03",[2952.2488],N)  // Fallen Monadic Deva
-		CreateCreature("OHBCEL03",[3030.2511],NE)  // Fallen Monadic Deva
-		CreateCreature("OHBCEL02",[3080.2571],E)  // Fallen Astral Deva
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",401)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBCEL01",[2951.2595],N)  // Ariziel
+        CreateCreature("OHBCEL02",[2823.2549],SW)  // Fallen Astral Deva
+        CreateCreature("OHBCEL03",[2871.2500],W)  // Fallen Monadic Deva
+        CreateCreature("OHBCEL03",[2952.2488],N)  // Fallen Monadic Deva
+        CreateCreature("OHBCEL03",[3030.2511],NE)  // Fallen Monadic Deva
+        CreateCreature("OHBCEL02",[3080.2571],E)  // Fallen Astral Deva
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",401)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",401)
+    Global("OHB_VIEW","OH8100",401)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",401)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",402)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBDLI02",[2952.2488],N)  // Kazon
-		CreateCreature("OHBDLI01",[3030.2511],NE)  // Dogar
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",402)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBDLI02",[2952.2488],N)  // Kazon
+        CreateCreature("OHBDLI01",[3030.2511],NE)  // Dogar
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",402)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",402)
+    Global("OHB_VIEW","OH8100",402)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",402)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",403)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBDRAG1",[2951.2595],N)  // Yllaxxia
-		CreateCreature("OHBDRAG2",[2823.2549],SW)  // Orluss
-		CreateCreature("OHBDRAG3",[3080.2571],E)  // Nyzzlar
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",403)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBDRAG1",[2951.2595],N)  // Yllaxxia
+        CreateCreature("OHBDRAG2",[2823.2549],SW)  // Orluss
+        CreateCreature("OHBDRAG3",[3080.2571],E)  // Nyzzlar
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",403)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",403)
+    Global("OHB_VIEW","OH8100",403)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",403)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",404)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		CreateCreature("OHBBCLT3",[2951.2595],N)  // Enegar
-		CreateCreature("OHBBCLT2",[2823.2549],SW)  // Bhaal Cultist
-		CreateCreature("OHBBCLT1",[2871.2500],W)  // Bhaal Cultist
-		CreateCreature("OHBBCLT4",[2952.2488],N)  // Kastulor
-		CreateCreature("OHBBCLT1",[3030.2511],NE)  // Bhaal Cultist
-		CreateCreature("OHBBCLT1",[3080.2571],E)  // Bhaal Cultist
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",404)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        CreateCreature("OHBBCLT3",[2951.2595],N)  // Enegar
+        CreateCreature("OHBBCLT2",[2823.2549],SW)  // Bhaal Cultist
+        CreateCreature("OHBBCLT1",[2871.2500],W)  // Bhaal Cultist
+        CreateCreature("OHBBCLT4",[2952.2488],N)  // Kastulor
+        CreateCreature("OHBBCLT1",[3030.2511],NE)  // Bhaal Cultist
+        CreateCreature("OHBBCLT1",[3080.2571],E)  // Bhaal Cultist
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_VIEW","OH8100",404)  // TBP2 - Staging Area Map
-	Global("OHB_LAST_BATTLE","GLOBAL",404)
+    Global("OHB_VIEW","OH8100",404)  // TBP2 - Staging Area Map
+    Global("OHB_LAST_BATTLE","GLOBAL",404)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OHB_VIEW","OH8100",405)  // TBP2 - Staging Area Map
-		ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
-		SmallWait(5)
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OHB_VIEW","OH8100",405)  // TBP2 - Staging Area Map
+        ReallyForceSpellPointRES("ohbunvie",[2951.2595])  // No such index
+        SmallWait(5)
+        SetInterrupt(TRUE)
 END
-

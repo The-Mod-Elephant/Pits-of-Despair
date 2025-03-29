@@ -139,9 +139,9 @@ EndCutSceneMode()
 ~ EXIT
 END
 
-/* GOOD ITEM REWARD TRACK */ 
+/* GOOD ITEM REWARD TRACK */
 
-/* good track, first response */ 
+/* good track, first response */
 IF ~  Global("ohb_item_reward","global",10)
 RandomNum(4,1)
 ~ THEN BEGIN 3
@@ -375,7 +375,7 @@ GiveItemCreate("SW1H61",LastTalkedToBy,1,0,0)
 SetGlobal("ohb_item_reward","global",0)
 ~ GOTO 7
 END
-/* good track, second response */ 
+/* good track, second response */
 IF ~  Global("ohb_item_reward","global",10)
 RandomNum(4,2)
 ~ THEN BEGIN 4
@@ -609,7 +609,7 @@ GiveItemCreate("SW1H61",LastTalkedToBy,1,0,0)
 SetGlobal("ohb_item_reward","global",0)
 ~ GOTO 7
 END
-/* good track, third response */ 
+/* good track, third response */
 IF ~  Global("ohb_item_reward","global",10)
 RandomNum(4,3)
 ~ THEN BEGIN zbadd1
@@ -843,7 +843,7 @@ GiveItemCreate("SW1H61",LastTalkedToBy,1,0,0)
 SetGlobal("ohb_item_reward","global",0)
 ~ GOTO 7
 END
-/* good track, fourth response */ 
+/* good track, fourth response */
 IF ~  Global("ohb_item_reward","global",10)
 RandomNum(4,4)
 ~ THEN BEGIN zbadd2
@@ -1078,7 +1078,7 @@ SetGlobal("ohb_item_reward","global",0)
 ~ GOTO 7
 END
 
-/* GREAT ITEM REWARD TRACK */ 
+/* GREAT ITEM REWARD TRACK */
 /* great item reward track, first response */
 IF ~  Global("ohb_item_reward","global",11)
 RandomNum(4,1)
@@ -1547,7 +1547,7 @@ GiveItemCreate("SW1H63",LastTalkedToBy,1,0,0)
 SetGlobal("ohb_item_reward","global",0)
 ~ GOTO 7
 END
-/* great item reward track, third response */ 
+/* great item reward track, third response */
 IF ~  Global("ohb_item_reward","global",11)
 RandomNum(4,3)
 ~ THEN BEGIN zbadd3

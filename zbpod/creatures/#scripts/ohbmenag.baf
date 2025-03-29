@@ -1,9 +1,9 @@
 // Stolen from WOLF.BCS
 IF
-	StateCheck(Myself,STATE_PANIC)
+    StateCheck(Myself,STATE_PANIC)
 THEN
-	RESPONSE #100
-		RandomWalkContinuous()
+    RESPONSE #100
+        RandomWalkContinuous()
 END
 
 IF
@@ -32,20 +32,20 @@ THEN
 END
 
 IF
-	Delay(5)
-	See(NearestEnemyOf(Myself))
-	NumCreatureGT([ENEMY],1)
+    Delay(5)
+    See(NearestEnemyOf(Myself))
+    NumCreatureGT([ENEMY],1)
 THEN
-	RESPONSE #100
-		MoveToObject(NearestEnemyOf(Myself))
+    RESPONSE #100
+        MoveToObject(NearestEnemyOf(Myself))
     Continue()
 END
 
 IF
-	See(NearestEnemyOf(Myself))
+    See(NearestEnemyOf(Myself))
 THEN
-	RESPONSE #100
-		AttackReevaluate(NearestEnemyOf(Myself),30)
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),30)
 END
 
 IF

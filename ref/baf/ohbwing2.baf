@@ -1,172 +1,171 @@
 IF
-	NumberOfTimesTalkedTo(0)
-	Detect([PC])
-	!StateCheck([PC],STATE_REALLY_DEAD)
-	Global("OHB_WARN","GLOBAL",1)
+    NumberOfTimesTalkedTo(0)
+    Detect([PC])
+    !StateCheck([PC],STATE_REALLY_DEAD)
+    Global("OHB_WARN","GLOBAL",1)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		ClearAllActions()
-		StartCutSceneMode()
-		MultiPlayerSync()
-		StartCutScene("OHBCUT55")
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        ClearAllActions()
+        StartCutSceneMode()
+        MultiPlayerSync()
+        StartCutScene("OHBCUT55")
 END
 
 IF
-	NumberOfTimesTalkedTo(0)
-	Detect([PC])
-	!StateCheck([PC],STATE_REALLY_DEAD)
-	Global("OHB_WARN","GLOBAL",3)
+    NumberOfTimesTalkedTo(0)
+    Detect([PC])
+    !StateCheck([PC],STATE_REALLY_DEAD)
+    Global("OHB_WARN","GLOBAL",3)
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OH_WKill","LOCALS",THREE_ROUNDS)
-		StartDialogueNoSet([PC])
+    RESPONSE #100
+        SetGlobalTimer("OH_WKill","LOCALS",THREE_ROUNDS)
+        StartDialogueNoSet([PC])
 END
 
 IF
-	GlobalTimerExpired("OH_WKill","LOCALS")
+    GlobalTimerExpired("OH_WKill","LOCALS")
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		ForceSpell(Myself,DO_NOTHING)  // SPIN905.SPL (No such index)
-		Wait(1)
-		Kill(Player1)
-		Kill(Player2)
-		Kill(Player3)
-		Kill(Player4)
-		Kill(Player5)
-		Kill(Player6)
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        ForceSpell(Myself,DO_NOTHING)  // SPIN905.SPL (No such index)
+        Wait(1)
+        Kill(Player1)
+        Kill(Player2)
+        Kill(Player3)
+        Kill(Player4)
+        Kill(Player5)
+        Kill(Player6)
+        SetInterrupt(TRUE)
 END
 
 IF
-	!Detect([PC])
-	!Detect(Player1)
-	InMyArea(Player1)
-	!StateCheck(Player1,STATE_REALLY_DEAD)
+    !Detect([PC])
+    !Detect(Player1)
+    InMyArea(Player1)
+    !StateCheck(Player1,STATE_REALLY_DEAD)
 THEN
-	RESPONSE #100
-		ForceSpellRES("OHBTELWE",Player1)  // Teleport Without Error
+    RESPONSE #100
+        ForceSpellRES("OHBTELWE",Player1)  // Teleport Without Error
 END
 
 IF
-	!Detect([PC])
-	!Detect(Player2)
-	InMyArea(Player2)
-	!StateCheck(Player2,STATE_REALLY_DEAD)
+    !Detect([PC])
+    !Detect(Player2)
+    InMyArea(Player2)
+    !StateCheck(Player2,STATE_REALLY_DEAD)
 THEN
-	RESPONSE #100
-		ForceSpellRES("OHBTELWE",Player2)  // Teleport Without Error
+    RESPONSE #100
+        ForceSpellRES("OHBTELWE",Player2)  // Teleport Without Error
 END
 
 IF
-	!Detect([PC])
-	!Detect(Player3)
-	InMyArea(Player3)
-	!StateCheck(Player3,STATE_REALLY_DEAD)
+    !Detect([PC])
+    !Detect(Player3)
+    InMyArea(Player3)
+    !StateCheck(Player3,STATE_REALLY_DEAD)
 THEN
-	RESPONSE #100
-		ForceSpellRES("OHBTELWE",Player3)  // Teleport Without Error
+    RESPONSE #100
+        ForceSpellRES("OHBTELWE",Player3)  // Teleport Without Error
 END
 
 IF
-	!Detect([PC])
-	!Detect(Player4)
-	InMyArea(Player4)
-	!StateCheck(Player4,STATE_REALLY_DEAD)
+    !Detect([PC])
+    !Detect(Player4)
+    InMyArea(Player4)
+    !StateCheck(Player4,STATE_REALLY_DEAD)
 THEN
-	RESPONSE #100
-		ForceSpellRES("OHBTELWE",Player4)  // Teleport Without Error
+    RESPONSE #100
+        ForceSpellRES("OHBTELWE",Player4)  // Teleport Without Error
 END
 
 IF
-	!Detect([PC])
-	!Detect(Player5)
-	InMyArea(Player5)
-	!StateCheck(Player5,STATE_REALLY_DEAD)
+    !Detect([PC])
+    !Detect(Player5)
+    InMyArea(Player5)
+    !StateCheck(Player5,STATE_REALLY_DEAD)
 THEN
-	RESPONSE #100
-		ForceSpellRES("OHBTELWE",Player5)  // Teleport Without Error
+    RESPONSE #100
+        ForceSpellRES("OHBTELWE",Player5)  // Teleport Without Error
 END
 
 IF
-	!Detect([PC])
-	!Detect(Player6)
-	InMyArea(Player6)
-	!StateCheck(Player6,STATE_REALLY_DEAD)
+    !Detect([PC])
+    !Detect(Player6)
+    InMyArea(Player6)
+    !StateCheck(Player6,STATE_REALLY_DEAD)
 THEN
-	RESPONSE #100
-		ForceSpellRES("OHBTELWE",Player6)  // Teleport Without Error
+    RESPONSE #100
+        ForceSpellRES("OHBTELWE",Player6)  // Teleport Without Error
 END
 
 IF
-	OR(6)
-		See(Player1)
-		See(Player2)
-		See(Player3)
-		See(Player4)
-		See(Player5)
-		See(Player6)
-	False()
+    OR(6)
+        See(Player1)
+        See(Player2)
+        See(Player3)
+        See(Player4)
+        See(Player5)
+        See(Player6)
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	See(SixthNearestEnemyOf(Myself))
-	False()
+    See(SixthNearestEnemyOf(Myself))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	See(FifthNearestEnemyOf(Myself))
-	False()
+    See(FifthNearestEnemyOf(Myself))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	See(FourthNearestEnemyOf(Myself))
-	False()
+    See(FourthNearestEnemyOf(Myself))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	See(ThirdNearestEnemyOf(Myself))
-	False()
+    See(ThirdNearestEnemyOf(Myself))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	See(SecondNearestEnemyOf(Myself))
-	False()
+    See(SecondNearestEnemyOf(Myself))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	False()
+    See(NearestEnemyOf(Myself))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	Allegiance(Myself,ENEMY)
-	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
-	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+    Allegiance(Myself,ENEMY)
+    !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+    !Allegiance(LastSeenBy(Myself),EVILCUTOFF)
 THEN
-	RESPONSE #100
-		AttackReevaluate(LastSeenBy(Myself),15)
+    RESPONSE #100
+        AttackReevaluate(LastSeenBy(Myself),15)
 END
-

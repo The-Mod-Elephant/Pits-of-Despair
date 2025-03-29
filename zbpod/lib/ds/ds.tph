@@ -2,10 +2,10 @@
 // August 2020 - DavidW
 //
 // Changes:
-//	- we now keep our own local copy of stats.ids and splstate.ids data, to avoid having to run CLEAR_IDS_MAP a bazillion times
+//  - we now keep our own local copy of stats.ids and splstate.ids data, to avoid having to run CLEAR_IDS_MAP a bazillion times
 //  - removed the need for AUTO_EVAL_STRINGS
 //  - restored this text!
-//	- rather belatedly started a v4.xx chain (really 3.96 ought to have been 4.0, since it was rewritten pretty much from scratch, but I don't want to rewrite history by changing it now)
+//  - rather belatedly started a v4.xx chain (really 3.96 ought to have been 4.0, since it was rewritten pretty much from scratch, but I don't want to rewrite history by changing it now)
 
 // Detectable Spells v3.96
 //  January 2019 - David Wallace ('DavidW')
@@ -28,14 +28,14 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-DEFINE_ACTION_FUNCTION detectable_spells 
+DEFINE_ACTION_FUNCTION detectable_spells
    INT_VAR fix_khelben=1
 BEGIN
-	// make sure stats.ids is properly set
+    // make sure stats.ids is properly set
    LAF ds_stat_entries END
    // load current contents of stats.ids and splstate.ids
- 	LAF ds_load_ids STR_VAR ids=stats RET_ARRAY ds_ids_map_stats=ids_map END
-	LAF ds_load_ids STR_VAR ids=splstate RET_ARRAY ds_ids_map_splstate=ids_map END
+    LAF ds_load_ids STR_VAR ids=stats RET_ARRAY ds_ids_map_stats=ids_map END
+    LAF ds_load_ids STR_VAR ids=splstate RET_ARRAY ds_ids_map_splstate=ids_map END
    // process main tables
    ACTION_FOR_EACH table_name IN ds_simple ds_142_variable ds_other_clone buff_misc BEGIN
       LAF ds_process_table INT_VAR complain=0 STR_VAR table=EVAL ".../ds-inline/%table_name%.2da" RET_ARRAY ds_ids_map_stats ds_ids_map_splstate END
@@ -403,13 +403,13 @@ DEFINE_ACTION_FUNCTION ds_process_table
            default_stat=""
    RET_ARRAY ds_ids_map_stats ds_ids_map_splstate
 BEGIN
-	// load IDS, if not already done
-	ACTION_IF !VARIABLE_IS_SET $ds_ids_map_stats("DS_IDS_MAP_LOADED") BEGIN
-		LAF ds_load_ids STR_VAR ids=stats RET_ARRAY ds_ids_map_stats=ids_map END
-	END
-	ACTION_IF !VARIABLE_IS_SET $ds_ids_map_splstate("DS_IDS_MAP_LOADED") BEGIN
-		LAF ds_load_ids STR_VAR ids=splstate RET_ARRAY ds_ids_map_splstate=ids_map END
-	END
+    // load IDS, if not already done
+    ACTION_IF !VARIABLE_IS_SET $ds_ids_map_stats("DS_IDS_MAP_LOADED") BEGIN
+        LAF ds_load_ids STR_VAR ids=stats RET_ARRAY ds_ids_map_stats=ids_map END
+    END
+    ACTION_IF !VARIABLE_IS_SET $ds_ids_map_splstate("DS_IDS_MAP_LOADED") BEGIN
+        LAF ds_load_ids STR_VAR ids=splstate RET_ARRAY ds_ids_map_splstate=ids_map END
+    END
 
    COPY - "%table%" override
         // remove comments
@@ -471,15 +471,15 @@ DEFINE_ACTION_FUNCTION ds_make_detectable
            resource=""
            match_resource="SAME"
    RET_ARRAY ds_ids_map_stats
-			 ds_ids_map_splstate
+             ds_ids_map_splstate
 BEGIN
-  	  // load IDS, if not already done
-	  ACTION_IF !VARIABLE_IS_SET $ds_ids_map_stats("DS_IDS_MAP_LOADED") BEGIN
-		LAF ds_load_ids STR_VAR ids=stats RET_ARRAY ds_ids_map_stats=ids_map END
-	  END
-	  ACTION_IF !VARIABLE_IS_SET $ds_ids_map_splstate("DS_IDS_MAP_LOADED") BEGIN
-		LAF ds_load_ids STR_VAR ids=splstate RET_ARRAY ds_ids_map_splstate=ids_map END
-	  END
+      // load IDS, if not already done
+      ACTION_IF !VARIABLE_IS_SET $ds_ids_map_stats("DS_IDS_MAP_LOADED") BEGIN
+        LAF ds_load_ids STR_VAR ids=stats RET_ARRAY ds_ids_map_stats=ids_map END
+      END
+      ACTION_IF !VARIABLE_IS_SET $ds_ids_map_splstate("DS_IDS_MAP_LOADED") BEGIN
+        LAF ds_load_ids STR_VAR ids=splstate RET_ARRAY ds_ids_map_splstate=ids_map END
+      END
 
 
    // identify the resource
@@ -584,16 +584,16 @@ BEGIN
    // initialise
    INNER_ACTION BEGIN
       LAF ds_set_vars RET is_tobex enhanced_edition END
-  	  // load IDS, if not already done
-	  ACTION_IF !VARIABLE_IS_SET $ds_ids_map_stats("DS_IDS_MAP_LOADED") BEGIN
-		LAF ds_load_ids STR_VAR ids=stats RET_ARRAY ds_ids_map_stats=ids_map END
-	  END
-	  ACTION_IF !VARIABLE_IS_SET $ds_ids_map_splstate("DS_IDS_MAP_LOADED") BEGIN
-		LAF ds_load_ids STR_VAR ids=splstate RET_ARRAY ds_ids_map_splstate=ids_map END
-	  END
+      // load IDS, if not already done
+      ACTION_IF !VARIABLE_IS_SET $ds_ids_map_stats("DS_IDS_MAP_LOADED") BEGIN
+        LAF ds_load_ids STR_VAR ids=stats RET_ARRAY ds_ids_map_stats=ids_map END
+      END
+      ACTION_IF !VARIABLE_IS_SET $ds_ids_map_splstate("DS_IDS_MAP_LOADED") BEGIN
+        LAF ds_load_ids STR_VAR ids=splstate RET_ARRAY ds_ids_map_splstate=ids_map END
+      END
 
    END
-   
+
    // see if it's forced
    SET enforce_splstate=0
 
@@ -614,7 +614,7 @@ BEGIN
    PATCH_IF VARIABLE_IS_SET $ds_ids_map_stats("%id%") BEGIN
     SET check_stats=$ds_ids_map_stats("%id%")
    END ELSE BEGIN
-	SET check_stats="-1"
+    SET check_stats="-1"
    END
    SET check_stats = IDS_OF_SYMBOL (stats "%id%")
    PATCH_IF (!enforce_splstate && ( check_stats >=89 && (check_stats<=134 || check_stats>=156) && ( check_stats<256 || is_tobex ) )) BEGIN
@@ -640,12 +640,12 @@ BEGIN
        PATCH_IF enhanced_edition BEGIN
            // is it in SPLSTATE?
            PATCH_IF VARIABLE_IS_SET $ds_ids_map_splstate("%id%") BEGIN
-			   // if it's there already, just use it
-			   SET stat_ind = $ds_ids_map_splstate("%id%")
+               // if it's there already, just use it
+               SET stat_ind = $ds_ids_map_splstate("%id%")
            END ELSE BEGIN
                // get a new value
                LPF ds_add_entry STR_VAR id file=splstate RET stat_ind END
-			   SET $ds_ids_map_splstate("%id%")=stat_ind
+               SET $ds_ids_map_splstate("%id%")=stat_ind
            END
            SPRINT stat_type splstate
            SET stat_opcode=328
@@ -656,7 +656,7 @@ BEGIN
              // get a new value
              LPF ds_add_entry INT_VAR min=401 STR_VAR id file=stats RET stat_ind END
              SET $ds_ids_map_stats("%id%")=stat_ind
-			 SPRINT stat_type stats
+             SPRINT stat_type stats
              SET stat_opcode=318
              SET stat_param=stat_ind + 0x10000
           END ELSE BEGIN
@@ -948,12 +948,12 @@ COPY_EXISTING ~spwi705.spl~ override
         READ_SHORT ef_off+ef_ind*0x30 opcode
         READ_LONG ef_off+ef_ind*0x30+4 par1
         READ_LONG ef_off+ef_ind*0x30+8 par2
-        PATCH_IF (opcode!=233 || par1!=1 || par2!=132) // 
-              && (opcode!=233 || par1!=0 || par2!=116) // 
-              && (opcode!=233 || par1!=0 || par2!=129) // 
-              && (opcode!=282 || par1!=0 || par2!=5)   // 
-              && (opcode!=282 || par1!=0 || par2!=7)   // 
-              && (opcode!=282 || par1!=0 || par2!=21)  // 
+        PATCH_IF (opcode!=233 || par1!=1 || par2!=132) //
+              && (opcode!=233 || par1!=0 || par2!=116) //
+              && (opcode!=233 || par1!=0 || par2!=129) //
+              && (opcode!=282 || par1!=0 || par2!=5)   //
+              && (opcode!=282 || par1!=0 || par2!=7)   //
+              && (opcode!=282 || par1!=0 || par2!=21)  //
         BEGIN
           fubar=1
           PATCH_PRINT ~Detectable Spells: SPWI705.SPL is broken in unknown manner, restoring from a backup~
@@ -989,12 +989,12 @@ COPY_EXISTING ~spwi705.spl~ override
           READ_SHORT ef_off+(k+ef_ind+local_delta)*0x30 opcode
           READ_LONG ef_off+(k+ef_ind+local_delta)*0x30+4 par1
           READ_LONG ef_off+(k+ef_ind+local_delta)*0x30+8 par2
-          PATCH_IF (opcode=233 && par1=1 && par2=132) // 
-                || (opcode=233 && par1=0 && par2=116) // 
-                || (opcode=233 && par1=0 && par2=129) // 
-                || (opcode=282 && par1=0 && par2=5)   // 
-                || (opcode=282 && par1=0 && par2=7)   // 
-                || (opcode=282 && par1=0 && par2=21)  // 
+          PATCH_IF (opcode=233 && par1=1 && par2=132) //
+                || (opcode=233 && par1=0 && par2=116) //
+                || (opcode=233 && par1=0 && par2=129) //
+                || (opcode=282 && par1=0 && par2=5)   //
+                || (opcode=282 && par1=0 && par2=7)   //
+                || (opcode=282 && par1=0 && par2=21)  //
           BEGIN
             DELETE_BYTES ef_off+(k+ef_ind+local_delta)*0x30 0x30
             delta -=1
@@ -1013,7 +1013,7 @@ ACTION_IF fubar BEGIN
   COPY_EXISTING ~spwi705.spl~ override
     READ_ASCII 0x0 data (0x64)
   BUT_ONLY
-  
+
   CREATE SPL "spwi705"
     WRITE_ASCIIE 0x0 "%data%"
     WRITE_SHORT 0x68 1
@@ -1033,7 +1033,7 @@ ACTION_IF fubar BEGIN
                            STR_VAR resource=~spattck1~ END
     LPF ~ADD_SPELL_EFFECT~ INT_VAR opcode=139 parameter1=40690 parameter2=0 timing=1 duration=0 target=2 power=7 resist_dispel=2 END
     LPF ~ADD_SPELL_EFFECT~ INT_VAR opcode=240 parameter1=0 parameter2=28 timing=1 duration=0 target=2 power=7 resist_dispel=2 END
-    
+
     LPF ~ADD_SPELL_EFFECT~ INT_VAR opcode=230 parameter1=8 parameter2=1 timing=4 duration=7 target=2 power=7 resist_dispel=2 END
     LPF ~ADD_SPELL_EFFECT~ INT_VAR opcode=177 parameter1=0 parameter2=2 timing=3 duration=7 target=2 power=7 resist_dispel=2
                            STR_VAR resource=~spattck1~ END
@@ -1061,12 +1061,12 @@ DEFINE_ACTION_FUNCTION ds_detectable_weapon_enchantment BEGIN
 
 LAF ds_resolve_stat STR_VAR id=~WEAPON_ENCHANTMENT~ END
 
-COPY_EXISTING_REGEXP GLOB ~.*\.itm~ override 
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ override
 PATCH_TRY
-PATCH_IF SOURCE_SIZE>0x71 BEGIN 
+PATCH_IF SOURCE_SIZE>0x71 BEGIN
  LPF ~FJ_SPL_ITM_REINDEX~ END
 
-  
+
   READ_LONG  0x64 ab_off
   READ_SHORT 0x68 ab_num
 
@@ -1116,7 +1116,7 @@ PATCH_IF SOURCE_SIZE>0x71 BEGIN
   END // PATCH_IF weapon=1
 END
 WITH DEFAULT
-	PATCH_WARN "Detectable Spells has had to skip file %SOURCE_FILE% (error message was: %ERROR_MESSAGE%). Installation will continue, but there may be instabilities."
+    PATCH_WARN "Detectable Spells has had to skip file %SOURCE_FILE% (error message was: %ERROR_MESSAGE%). Installation will continue, but there may be instabilities."
 END
 BUT_ONLY
 
@@ -1127,7 +1127,7 @@ END // end of function
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 
-// Tightly based on Nythrun's ~fj_spl_itm_reindex~ patch 
+// Tightly based on Nythrun's ~fj_spl_itm_reindex~ patch
 
 DEFINE_PATCH_FUNCTION ~FJ_SPL_ITM_REINDEX~ BEGIN
 
@@ -1188,20 +1188,20 @@ END // end of function
 //////////////////////////////////////////////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION ds_load_ids
-	STR_VAR ids=""
-	RET_ARRAY ids_map
+    STR_VAR ids=""
+    RET_ARRAY ids_map
 BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME "%ids%.ids" BEGIN
-	COPY_EXISTING "%ids%.ids" "override"
-		READ_2DA_ENTRIES_NOW _ds_ids_entries 2
-		FOR (row=0;row<_ds_ids_entries;++row) BEGIN
-			READ_2DA_ENTRY_FORMER _ds_ids_entries row 0 val
-			PATCH_IF IS_AN_INT val BEGIN
-				READ_2DA_ENTRY_FORMER _ds_ids_entries row 1 var
-				SET $ids_map("%var%")=val
-			END
-		END
-	BUT_ONLY
+    COPY_EXISTING "%ids%.ids" "override"
+        READ_2DA_ENTRIES_NOW _ds_ids_entries 2
+        FOR (row=0;row<_ds_ids_entries;++row) BEGIN
+            READ_2DA_ENTRY_FORMER _ds_ids_entries row 0 val
+            PATCH_IF IS_AN_INT val BEGIN
+                READ_2DA_ENTRY_FORMER _ds_ids_entries row 1 var
+                SET $ids_map("%var%")=val
+            END
+        END
+    BUT_ONLY
   END
   OUTER_SET $ids_map("DS_IDS_MAP_LOADED")=1
 END

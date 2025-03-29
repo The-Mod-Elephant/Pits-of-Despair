@@ -1,1216 +1,1215 @@
 IF
-	OnCreation()
-THEN
-	RESPONSE #100
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",0)
-		RealSetGlobalTimer("CAST_STORM_SHIELD","LOCALS",0)
-		RealSetGlobalTimer("AOE_FOG","LOCALS",0)
-		SetGlobal("SPELLCAST","LOCALS",0)
-		Continue()
-END
-
-IF
-	HaveSpell(CLERIC_ZONE_OF_SWEET_AIR)  // SPPR318.SPL (Zone of Sweet Air)
-	RealGlobalTimerExpired("AOE_FOG","LOCALS")
-	OR(24)
-		SpellCast(NearestEnemyOfType([0.0.0.MAGE_ALL]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
-		SpellCast(NearestEnemyOfType([0.0.0.CLERIC_ALL]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
-		SpellCast(NearestEnemyOfType([0.0.0.SORCERER]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
-		SpellCast(NearestEnemyOfType([0.0.0.DRUID_ALL]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
-		SpellCast(NearestEnemyOfType([0.0.0.MONK]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
-		SpellCast(NearestEnemyOfType([0.0.0.BARD_ALL]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
-		SpellCast(NearestEnemyOfType([0.0.0.THIEF_ALL]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
-		SpellCast(NearestEnemyOfType([0.0.0.FIGHTER_ALL]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
-		SpellCast(NearestEnemyOfType([0.0.0.MAGE_ALL]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
-		SpellCast(NearestEnemyOfType([0.0.0.CLERIC_ALL]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
-		SpellCast(NearestEnemyOfType([0.0.0.SORCERER]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
-		SpellCast(NearestEnemyOfType([0.0.0.DRUID_ALL]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
-		SpellCast(NearestEnemyOfType([0.0.0.MONK]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
-		SpellCast(NearestEnemyOfType([0.0.0.BARD_ALL]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
-		SpellCast(NearestEnemyOfType([0.0.0.THIEF_ALL]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
-		SpellCast(NearestEnemyOfType([0.0.0.FIGHTER_ALL]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
-		SpellCast(NearestEnemyOfType([0.0.0.MAGE_ALL]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
-		SpellCast(NearestEnemyOfType([0.0.0.CLERIC_ALL]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
-		SpellCast(NearestEnemyOfType([0.0.0.SORCERER]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
-		SpellCast(NearestEnemyOfType([0.0.0.DRUID_ALL]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
-		SpellCast(NearestEnemyOfType([0.0.0.MONK]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
-		SpellCast(NearestEnemyOfType([0.0.0.BARD_ALL]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
-		SpellCast(NearestEnemyOfType([0.0.0.THIEF_ALL]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
-		SpellCast(NearestEnemyOfType([0.0.0.FIGHTER_ALL]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
-THEN
-	RESPONSE #100
-		RealSetGlobalTimer("AOE_FOG","LOCALS",TEN_ROUNDS)
-		Continue()
-END
-
-IF
-	Global("MYSELF_HURT","LOCALS",0)
-	Global("FRIEND_HURT","LOCALS",0)
-	OR(9)
-		Heard(NearestMyGroupOfType,HEALME)
-		Heard(SecondNearestMyGroupOfType,HEALME)
-		Heard(ThirdNearestMyGroupOfType,HEALME)
-		Heard(FourthNearestMyGroupOfType,HEALME)
-		Heard(FifthNearestMyGroupOfType,HEALME)
-		Heard(SixthNearestMyGroupOfType,HEALME)
-		Heard(SeventhNearestMyGroupOfType,HEALME)
-		Heard(EighthNearestMyGroupOfType,HEALME)
-		Heard(NinthNearestMyGroupOfType,HEALME)
-THEN
-	RESPONSE #100
-		SetGlobal("FRIEND_HURT","LOCALS",1)
+    OnCreation()
+THEN
+    RESPONSE #100
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",0)
+        RealSetGlobalTimer("CAST_STORM_SHIELD","LOCALS",0)
+        RealSetGlobalTimer("AOE_FOG","LOCALS",0)
+        SetGlobal("SPELLCAST","LOCALS",0)
+        Continue()
+END
+
+IF
+    HaveSpell(CLERIC_ZONE_OF_SWEET_AIR)  // SPPR318.SPL (Zone of Sweet Air)
+    RealGlobalTimerExpired("AOE_FOG","LOCALS")
+    OR(24)
+        SpellCast(NearestEnemyOfType([0.0.0.MAGE_ALL]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
+        SpellCast(NearestEnemyOfType([0.0.0.CLERIC_ALL]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
+        SpellCast(NearestEnemyOfType([0.0.0.SORCERER]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
+        SpellCast(NearestEnemyOfType([0.0.0.DRUID_ALL]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
+        SpellCast(NearestEnemyOfType([0.0.0.MONK]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
+        SpellCast(NearestEnemyOfType([0.0.0.BARD_ALL]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
+        SpellCast(NearestEnemyOfType([0.0.0.THIEF_ALL]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
+        SpellCast(NearestEnemyOfType([0.0.0.FIGHTER_ALL]),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
+        SpellCast(NearestEnemyOfType([0.0.0.MAGE_ALL]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
+        SpellCast(NearestEnemyOfType([0.0.0.CLERIC_ALL]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
+        SpellCast(NearestEnemyOfType([0.0.0.SORCERER]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
+        SpellCast(NearestEnemyOfType([0.0.0.DRUID_ALL]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
+        SpellCast(NearestEnemyOfType([0.0.0.MONK]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
+        SpellCast(NearestEnemyOfType([0.0.0.BARD_ALL]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
+        SpellCast(NearestEnemyOfType([0.0.0.THIEF_ALL]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
+        SpellCast(NearestEnemyOfType([0.0.0.FIGHTER_ALL]),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
+        SpellCast(NearestEnemyOfType([0.0.0.MAGE_ALL]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
+        SpellCast(NearestEnemyOfType([0.0.0.CLERIC_ALL]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
+        SpellCast(NearestEnemyOfType([0.0.0.SORCERER]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
+        SpellCast(NearestEnemyOfType([0.0.0.DRUID_ALL]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
+        SpellCast(NearestEnemyOfType([0.0.0.MONK]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
+        SpellCast(NearestEnemyOfType([0.0.0.BARD_ALL]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
+        SpellCast(NearestEnemyOfType([0.0.0.THIEF_ALL]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
+        SpellCast(NearestEnemyOfType([0.0.0.FIGHTER_ALL]),WIZARD_DEATH_FOG)  // SPWI614.SPL (Death Fog)
+THEN
+    RESPONSE #100
+        RealSetGlobalTimer("AOE_FOG","LOCALS",TEN_ROUNDS)
+        Continue()
+END
+
+IF
+    Global("MYSELF_HURT","LOCALS",0)
+    Global("FRIEND_HURT","LOCALS",0)
+    OR(9)
+        Heard(NearestMyGroupOfType,HEALME)
+        Heard(SecondNearestMyGroupOfType,HEALME)
+        Heard(ThirdNearestMyGroupOfType,HEALME)
+        Heard(FourthNearestMyGroupOfType,HEALME)
+        Heard(FifthNearestMyGroupOfType,HEALME)
+        Heard(SixthNearestMyGroupOfType,HEALME)
+        Heard(SeventhNearestMyGroupOfType,HEALME)
+        Heard(EighthNearestMyGroupOfType,HEALME)
+        Heard(NinthNearestMyGroupOfType,HEALME)
+THEN
+    RESPONSE #100
+        SetGlobal("FRIEND_HURT","LOCALS",1)
 END
-
-IF
-	HPPercentLT(LastHeardBy(Myself),50)
-	HaveSpell(CLERIC_HEAL)  // SPPR607.SPL (Heal)
-	OR(2)
-		Global("MYSELF_HURT","LOCALS",1)
-		Global("FRIEND_HURT","LOCALS",1)
-THEN
-	RESPONSE #70
-		Spell(LastHeardBy(Myself),CLERIC_HEAL)  // SPPR607.SPL (Heal)
-		SetGlobal("MYSELF_HURT","LOCALS",0)
-		SetGlobal("FRIEND_HURT","LOCALS",0)
-	RESPONSE #30
-		Continue()
+
+IF
+    HPPercentLT(LastHeardBy(Myself),50)
+    HaveSpell(CLERIC_HEAL)  // SPPR607.SPL (Heal)
+    OR(2)
+        Global("MYSELF_HURT","LOCALS",1)
+        Global("FRIEND_HURT","LOCALS",1)
+THEN
+    RESPONSE #70
+        Spell(LastHeardBy(Myself),CLERIC_HEAL)  // SPPR607.SPL (Heal)
+        SetGlobal("MYSELF_HURT","LOCALS",0)
+        SetGlobal("FRIEND_HURT","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_REGENERATE)  // SPPR711.SPL (Regeneration)
-	OR(2)
-		Global("MYSELF_HURT","LOCALS",1)
-		Global("FRIEND_HURT","LOCALS",1)
-THEN
-	RESPONSE #70
-		Spell(LastHeardBy(Myself),CLERIC_REGENERATE)  // SPPR711.SPL (Regeneration)
-		SetGlobal("MYSELF_HURT","LOCALS",0)
-		SetGlobal("FRIEND_HURT","LOCALS",0)
-	RESPONSE #30
-		Continue()
+    HaveSpell(CLERIC_REGENERATE)  // SPPR711.SPL (Regeneration)
+    OR(2)
+        Global("MYSELF_HURT","LOCALS",1)
+        Global("FRIEND_HURT","LOCALS",1)
+THEN
+    RESPONSE #70
+        Spell(LastHeardBy(Myself),CLERIC_REGENERATE)  // SPPR711.SPL (Regeneration)
+        SetGlobal("MYSELF_HURT","LOCALS",0)
+        SetGlobal("FRIEND_HURT","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)  // SPPR502.SPL (Cure Critical Wounds)
-	OR(2)
-		Global("MYSELF_HURT","LOCALS",1)
-		Global("FRIEND_HURT","LOCALS",1)
+    HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)  // SPPR502.SPL (Cure Critical Wounds)
+    OR(2)
+        Global("MYSELF_HURT","LOCALS",1)
+        Global("FRIEND_HURT","LOCALS",1)
 THEN
-	RESPONSE #70
-		Spell(LastHeardBy(Myself),CLERIC_CURE_CRITICAL_WOUNDS)  // SPPR502.SPL (Cure Critical Wounds)
-		SetGlobal("MYSELF_HURT","LOCALS",0)
-		SetGlobal("FRIEND_HURT","LOCALS",0)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastHeardBy(Myself),CLERIC_CURE_CRITICAL_WOUNDS)  // SPPR502.SPL (Cure Critical Wounds)
+        SetGlobal("MYSELF_HURT","LOCALS",0)
+        SetGlobal("FRIEND_HURT","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Cure Serious Wounds)
-	OR(2)
-		Global("MYSELF_HURT","LOCALS",1)
-		Global("FRIEND_HURT","LOCALS",1)
+    HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Cure Serious Wounds)
+    OR(2)
+        Global("MYSELF_HURT","LOCALS",1)
+        Global("FRIEND_HURT","LOCALS",1)
 THEN
-	RESPONSE #70
-		Spell(LastHeardBy(Myself),CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Cure Serious Wounds)
-		SetGlobal("MYSELF_HURT","LOCALS",0)
-		SetGlobal("FRIEND_HURT","LOCALS",0)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastHeardBy(Myself),CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Cure Serious Wounds)
+        SetGlobal("MYSELF_HURT","LOCALS",0)
+        SetGlobal("FRIEND_HURT","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)  // SPPR315.SPL (Cure Medium Wounds)
-	OR(2)
-		Global("MYSELF_HURT","LOCALS",1)
-		Global("FRIEND_HURT","LOCALS",1)
+    HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)  // SPPR315.SPL (Cure Medium Wounds)
+    OR(2)
+        Global("MYSELF_HURT","LOCALS",1)
+        Global("FRIEND_HURT","LOCALS",1)
 THEN
-	RESPONSE #70
-		Spell(LastHeardBy(Myself),CLERIC_CURE_MEDIUM_WOUNDS)  // SPPR315.SPL (Cure Medium Wounds)
-		SetGlobal("MYSELF_HURT","LOCALS",0)
-		SetGlobal("FRIEND_HURT","LOCALS",0)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastHeardBy(Myself),CLERIC_CURE_MEDIUM_WOUNDS)  // SPPR315.SPL (Cure Medium Wounds)
+        SetGlobal("MYSELF_HURT","LOCALS",0)
+        SetGlobal("FRIEND_HURT","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-	OR(2)
-		Global("MYSELF_HURT","LOCALS",1)
-		Global("FRIEND_HURT","LOCALS",1)
+    HaveSpell(CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
+    OR(2)
+        Global("MYSELF_HURT","LOCALS",1)
+        Global("FRIEND_HURT","LOCALS",1)
 THEN
-	RESPONSE #70
-		Spell(LastHeardBy(Myself),CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-		SetGlobal("MYSELF_HURT","LOCALS",0)
-		SetGlobal("FRIEND_HURT","LOCALS",0)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastHeardBy(Myself),CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
+        SetGlobal("MYSELF_HURT","LOCALS",0)
+        SetGlobal("FRIEND_HURT","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CURE_LIGHT_WOUNDS)  // SPPR103.SPL (Cure Light Wounds)
-	OR(2)
-		Global("MYSELF_HURT","LOCALS",1)
-		Global("FRIEND_HURT","LOCALS",1)
+    HaveSpell(CLERIC_CURE_LIGHT_WOUNDS)  // SPPR103.SPL (Cure Light Wounds)
+    OR(2)
+        Global("MYSELF_HURT","LOCALS",1)
+        Global("FRIEND_HURT","LOCALS",1)
 THEN
-	RESPONSE #100
-		Spell(LastHeardBy(Myself),CLERIC_CURE_LIGHT_WOUNDS)  // SPPR103.SPL (Cure Light Wounds)
-		SetGlobal("MYSELF_HURT","LOCALS",0)
-		SetGlobal("FRIEND_HURT","LOCALS",0)
+    RESPONSE #100
+        Spell(LastHeardBy(Myself),CLERIC_CURE_LIGHT_WOUNDS)  // SPPR103.SPL (Cure Light Wounds)
+        SetGlobal("MYSELF_HURT","LOCALS",0)
+        SetGlobal("FRIEND_HURT","LOCALS",0)
 END
 
 IF
-	RealGlobalTimerNotExpired("AOE_FOG","LOCALS")
-	HaveSpell(CLERIC_ZONE_OF_SWEET_AIR)  // SPPR318.SPL (Zone of Sweet Air)
+    RealGlobalTimerNotExpired("AOE_FOG","LOCALS")
+    HaveSpell(CLERIC_ZONE_OF_SWEET_AIR)  // SPPR318.SPL (Zone of Sweet Air)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_ZONE_OF_SWEET_AIR)  // SPPR318.SPL (Zone of Sweet Air)
-		RealSetGlobalTimer("AOE_FOG","LOCALS",0)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_ZONE_OF_SWEET_AIR)  // SPPR318.SPL (Zone of Sweet Air)
+        RealSetGlobalTimer("AOE_FOG","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_SLOW_POISON)  // SPPR212.SPL (Slow Poison)
-	StateCheck(LastHeardBy(Myself),STATE_POISONED)
-	OR(2)
-		Global("MYSELF_DEBUFFED","LOCALS",1)
-		Global("FRIEND_DEBUFFED","LOCALS",1)
+    HaveSpell(CLERIC_SLOW_POISON)  // SPPR212.SPL (Slow Poison)
+    StateCheck(LastHeardBy(Myself),STATE_POISONED)
+    OR(2)
+        Global("MYSELF_DEBUFFED","LOCALS",1)
+        Global("FRIEND_DEBUFFED","LOCALS",1)
 THEN
-	RESPONSE #70
-		Spell(LastHeardBy(Myself),CLERIC_SLOW_POISON)  // SPPR212.SPL (Slow Poison)
-		SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
-		SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastHeardBy(Myself),CLERIC_SLOW_POISON)  // SPPR212.SPL (Slow Poison)
+        SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
+        SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_NEUTRALIZE_POISON)  // SPPR404.SPL (Neutralize Poison)
-	StateCheck(LastHeardBy(Myself),STATE_POISONED)
-	OR(2)
-		Global("MYSELF_DEBUFFED","LOCALS",1)
-		Global("FRIEND_DEBUFFED","LOCALS",1)
+    HaveSpell(CLERIC_NEUTRALIZE_POISON)  // SPPR404.SPL (Neutralize Poison)
+    StateCheck(LastHeardBy(Myself),STATE_POISONED)
+    OR(2)
+        Global("MYSELF_DEBUFFED","LOCALS",1)
+        Global("FRIEND_DEBUFFED","LOCALS",1)
 THEN
-	RESPONSE #70
-		Spell(LastHeardBy(Myself),CLERIC_NEUTRALIZE_POISON)  // SPPR404.SPL (Neutralize Poison)
-		SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
-		SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastHeardBy(Myself),CLERIC_NEUTRALIZE_POISON)  // SPPR404.SPL (Neutralize Poison)
+        SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
+        SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
-	StateCheck(LastHeardBy(Myself),STATE_PANIC)
-	OR(2)
-		Global("MYSELF_DEBUFFED","LOCALS",1)
-		Global("FRIEND_DEBUFFED","LOCALS",1)
+    HaveSpell(CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
+    StateCheck(LastHeardBy(Myself),STATE_PANIC)
+    OR(2)
+        Global("MYSELF_DEBUFFED","LOCALS",1)
+        Global("FRIEND_DEBUFFED","LOCALS",1)
 THEN
-	RESPONSE #70
-		Spell(LastHeardBy(Myself),CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
-		SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
-		SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastHeardBy(Myself),CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
+        SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
+        SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_REMOVE_PARALYSIS)  // SPPR308.SPL (Remove Paralysis)
-	CheckStatGT(LastHeardBy(Myself),0,HELD)
-	OR(2)
-		Global("MYSELF_DEBUFFED","LOCALS",1)
-		Global("FRIEND_DEBUFFED","LOCALS",1)
+    HaveSpell(CLERIC_REMOVE_PARALYSIS)  // SPPR308.SPL (Remove Paralysis)
+    CheckStatGT(LastHeardBy(Myself),0,HELD)
+    OR(2)
+        Global("MYSELF_DEBUFFED","LOCALS",1)
+        Global("FRIEND_DEBUFFED","LOCALS",1)
 THEN
-	RESPONSE #70
-		Spell(LastHeardBy(Myself),CLERIC_REMOVE_PARALYSIS)  // SPPR308.SPL (Remove Paralysis)
-		SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
-		SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastHeardBy(Myself),CLERIC_REMOVE_PARALYSIS)  // SPPR308.SPL (Remove Paralysis)
+        SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
+        SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_FREE_ACTION)  // SPPR403.SPL (Free Action)
-	OR(3)
-		CheckStatGT(LastHeardBy(Myself),0,HELD)
-		CheckStatGT(LastHeardBy(Myself),0,GREASE)
-		CheckStatGT(LastHeardBy(Myself),0,WEB)
-	OR(2)
-		Global("MYSELF_DEBUFFED","LOCALS",1)
-		Global("FRIEND_DEBUFFED","LOCALS",1)
+    HaveSpell(CLERIC_FREE_ACTION)  // SPPR403.SPL (Free Action)
+    OR(3)
+        CheckStatGT(LastHeardBy(Myself),0,HELD)
+        CheckStatGT(LastHeardBy(Myself),0,GREASE)
+        CheckStatGT(LastHeardBy(Myself),0,WEB)
+    OR(2)
+        Global("MYSELF_DEBUFFED","LOCALS",1)
+        Global("FRIEND_DEBUFFED","LOCALS",1)
 THEN
-	RESPONSE #70
-		Spell(LastHeardBy(Myself),CLERIC_FREE_ACTION)  // SPPR403.SPL (Free Action)
-		SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
-		SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastHeardBy(Myself),CLERIC_FREE_ACTION)  // SPPR403.SPL (Free Action)
+        SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
+        SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CURE_DISEASE)  // SPPR317.SPL (Cure Disease)
-	StateCheck(LastHeardBy(Myself),STATE_DISEASED)
-	OR(2)
-		Global("MYSELF_DEBUFFED","LOCALS",1)
-		Global("FRIEND_DEBUFFED","LOCALS",1)
+    HaveSpell(CLERIC_CURE_DISEASE)  // SPPR317.SPL (Cure Disease)
+    StateCheck(LastHeardBy(Myself),STATE_DISEASED)
+    OR(2)
+        Global("MYSELF_DEBUFFED","LOCALS",1)
+        Global("FRIEND_DEBUFFED","LOCALS",1)
 THEN
-	RESPONSE #70
-		Spell(LastHeardBy(Myself),CLERIC_CURE_DISEASE)  // SPPR317.SPL (Cure Disease)
-		SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
-		SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastHeardBy(Myself),CLERIC_CURE_DISEASE)  // SPPR317.SPL (Cure Disease)
+        SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
+        SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_LESSER_RESTORATION)  // SPPR417.SPL (Lesser Restoration)
-	OR(2)
-		StateCheck(LastHeardBy(Myself),STATE_DISEASED)
-		CheckStatGT(LastHeardBy(Myself),0,LEVELDRAIN)
-	OR(2)
-		Global("MYSELF_DEBUFFED","LOCALS",1)
-		Global("FRIEND_DEBUFFED","LOCALS",1)
+    HaveSpell(CLERIC_LESSER_RESTORATION)  // SPPR417.SPL (Lesser Restoration)
+    OR(2)
+        StateCheck(LastHeardBy(Myself),STATE_DISEASED)
+        CheckStatGT(LastHeardBy(Myself),0,LEVELDRAIN)
+    OR(2)
+        Global("MYSELF_DEBUFFED","LOCALS",1)
+        Global("FRIEND_DEBUFFED","LOCALS",1)
 THEN
-	RESPONSE #70
-		Spell(LastHeardBy(Myself),CLERIC_LESSER_RESTORATION)  // SPPR417.SPL (Lesser Restoration)
-		SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
-		SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastHeardBy(Myself),CLERIC_LESSER_RESTORATION)  // SPPR417.SPL (Lesser Restoration)
+        SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
+        SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_RESTORATION)  // SPPR713.SPL (Greater Restoration)
-	OR(6)
-		StateCheck(LastHeardBy(Myself),STATE_DISEASED)
-		StateCheck(LastHeardBy(Myself),STATE_CONFUSED)
-		StateCheck(LastHeardBy(Myself),STATE_BERSERK)
-		StateCheck(LastHeardBy(Myself),STATE_POISONED)
-		StateCheck(LastHeardBy(Myself),STATE_FEEBLEMINDED)
-		CheckStatGT(LastHeardBy(Myself),0,LEVELDRAIN)
-	OR(2)
-		Global("MYSELF_DEBUFFED","LOCALS",1)
-		Global("FRIEND_DEBUFFED","LOCALS",1)
+    HaveSpell(CLERIC_RESTORATION)  // SPPR713.SPL (Greater Restoration)
+    OR(6)
+        StateCheck(LastHeardBy(Myself),STATE_DISEASED)
+        StateCheck(LastHeardBy(Myself),STATE_CONFUSED)
+        StateCheck(LastHeardBy(Myself),STATE_BERSERK)
+        StateCheck(LastHeardBy(Myself),STATE_POISONED)
+        StateCheck(LastHeardBy(Myself),STATE_FEEBLEMINDED)
+        CheckStatGT(LastHeardBy(Myself),0,LEVELDRAIN)
+    OR(2)
+        Global("MYSELF_DEBUFFED","LOCALS",1)
+        Global("FRIEND_DEBUFFED","LOCALS",1)
 THEN
-	RESPONSE #70
-		Spell(LastHeardBy(Myself),CLERIC_RESTORATION)  // SPPR713.SPL (Greater Restoration)
-		SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
-		SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastHeardBy(Myself),CLERIC_RESTORATION)  // SPPR713.SPL (Greater Restoration)
+        SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
+        SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_DISPEL_MAGIC)  // SPPR303.SPL (Dispel Magic)
-	OR(2)
-		Global("MYSELF_DEBUFFED","LOCALS",1)
-		Global("FRIEND_DEBUFFED","LOCALS",1)
+    HaveSpell(CLERIC_DISPEL_MAGIC)  // SPPR303.SPL (Dispel Magic)
+    OR(2)
+        Global("MYSELF_DEBUFFED","LOCALS",1)
+        Global("FRIEND_DEBUFFED","LOCALS",1)
 THEN
-	RESPONSE #70
-		Spell(LastHeardBy(Myself),CLERIC_DISPEL_MAGIC)  // SPPR303.SPL (Dispel Magic)
-		SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
-		SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastHeardBy(Myself),CLERIC_DISPEL_MAGIC)  // SPPR303.SPL (Dispel Magic)
+        SetGlobal("MYSELF_DEBUFFED","LOCALS",0)
+        SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpellRES("SPCL721")  // Storm Shield
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpellRES("SPCL721")  // Storm Shield
 THEN
-	RESPONSE #99
-		SpellRES("SPCL721",Myself)  // Storm Shield
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #1
-		Continue()
+    RESPONSE #99
+        SpellRES("SPCL721",Myself)  // Storm Shield
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #1
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpellRES("SPCL741")  // Boon of Lathander
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpellRES("SPCL741")  // Boon of Lathander
 THEN
-	RESPONSE #99
-		SpellRES("SPCL741",Myself)  // Boon of Lathander
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #1
-		Continue()
+    RESPONSE #99
+        SpellRES("SPCL741",Myself)  // Boon of Lathander
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #1
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
-	OR(4)
-		Class(NearestEnemyOfType,MAGE_ALL)
-		Class(NearestEnemyOfType,SORCERER)
-		Class(NearestEnemyOfType,DRUID_ALL)
-		Class(NearestEnemyOfType,CLERIC_ALL)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
+    OR(4)
+        Class(NearestEnemyOfType,MAGE_ALL)
+        Class(NearestEnemyOfType,SORCERER)
+        Class(NearestEnemyOfType,DRUID_ALL)
+        Class(NearestEnemyOfType,CLERIC_ALL)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_IRONSKIN)  // SPPR506.SPL (Iron Skins)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_IRONSKIN)  // SPPR506.SPL (Iron Skins)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_IRONSKIN)  // SPPR506.SPL (Iron Skins)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_IRONSKIN)  // SPPR506.SPL (Iron Skins)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_MAGIC_RESISTANCE)  // SPPR509.SPL (Magic Resistance)
-	OR(4)
-		Class(NearestEnemyOfType,MAGE_ALL)
-		Class(NearestEnemyOfType,SORCERER)
-		Class(NearestEnemyOfType,DRUID_ALL)
-		Class(NearestEnemyOfType,CLERIC_ALL)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_MAGIC_RESISTANCE)  // SPPR509.SPL (Magic Resistance)
+    OR(4)
+        Class(NearestEnemyOfType,MAGE_ALL)
+        Class(NearestEnemyOfType,SORCERER)
+        Class(NearestEnemyOfType,DRUID_ALL)
+        Class(NearestEnemyOfType,CLERIC_ALL)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_MAGIC_RESISTANCE)  // SPPR509.SPL (Magic Resistance)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_MAGIC_RESISTANCE)  // SPPR509.SPL (Magic Resistance)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
-	OR(2)
-		StateCheck(NearestEnemyOfType,STATE_INVISIBLE)
-		StateCheck(NearestEnemyOfType,STATE_IMPROVEDINVISIBILITY)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+    OR(2)
+        StateCheck(NearestEnemyOfType,STATE_INVISIBLE)
+        StateCheck(NearestEnemyOfType,STATE_IMPROVEDINVISIBILITY)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_CHAOTIC_COMMANDS)  // SPPR508.SPL (Chaotic Commands)
-	OR(6)
-		Class(NearestEnemyOfType,MAGE_ALL)
-		Class(NearestEnemyOfType,SORCERER)
-		Class(NearestEnemyOfType,DRUID_ALL)
-		Class(NearestEnemyOfType,CLERIC_ALL)
-		Class(NearestEnemyOfType,MIND_FLAYER)
-		Class(NearestEnemyOfType,UMBERHULK)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_CHAOTIC_COMMANDS)  // SPPR508.SPL (Chaotic Commands)
+    OR(6)
+        Class(NearestEnemyOfType,MAGE_ALL)
+        Class(NearestEnemyOfType,SORCERER)
+        Class(NearestEnemyOfType,DRUID_ALL)
+        Class(NearestEnemyOfType,CLERIC_ALL)
+        Class(NearestEnemyOfType,MIND_FLAYER)
+        Class(NearestEnemyOfType,UMBERHULK)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_CHAOTIC_COMMANDS)  // SPPR508.SPL (Chaotic Commands)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_CHAOTIC_COMMANDS)  // SPPR508.SPL (Chaotic Commands)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_PIXIE_DUST)  // SPPR516.SPL (Pixie Dust)
-	!Range(NearestEnemyOf(Myself),20)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_PIXIE_DUST)  // SPPR516.SPL (Pixie Dust)
+    !Range(NearestEnemyOf(Myself),20)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_PIXIE_DUST)  // SPPR516.SPL (Pixie Dust)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_PIXIE_DUST)  // SPPR516.SPL (Pixie Dust)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_DEATH_WARD)  // SPPR409.SPL (Death Ward)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_DEATH_WARD)  // SPPR409.SPL (Death Ward)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_DEATH_WARD)  // SPPR409.SPL (Death Ward)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_DEATH_WARD)  // SPPR409.SPL (Death Ward)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_FREE_ACTION)  // SPPR403.SPL (Free Action)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_FREE_ACTION)  // SPPR403.SPL (Free Action)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_FREE_ACTION)  // SPPR403.SPL (Free Action)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_FREE_ACTION)  // SPPR403.SPL (Free Action)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_HOLY_POWER)  // SPPR412.SPL (Holy Power)
-	Range(NearestEnemyOf(Myself),5)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_HOLY_POWER)  // SPPR412.SPL (Holy Power)
+    Range(NearestEnemyOf(Myself),5)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_HOLY_POWER)  // SPPR412.SPL (Holy Power)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_HOLY_POWER)  // SPPR412.SPL (Holy Power)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_NEGATIVE_PLANE_PROTECTION)  // SPPR413.SPL (Negative Plane Protection)
-	OR(2)
-		General(NearestEnemyOfType,UNDEAD)
-		Race(NearestEnemyOfType,STATUE)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_NEGATIVE_PLANE_PROTECTION)  // SPPR413.SPL (Negative Plane Protection)
+    OR(2)
+        General(NearestEnemyOfType,UNDEAD)
+        Race(NearestEnemyOfType,STATUE)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_REPULSE_UNDEAD)  // SPPR515.SPL (Repulse Undead)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_REPULSE_UNDEAD)  // SPPR515.SPL (Repulse Undead)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_PROTECTION_FROM_EVIL_10_FOOT)  // SPPR408.SPL (Protection From Evil, 10' Radius)
-	OR(3)
-		Alignment(NearestEnemyOfType,CHAOTIC_EVIL)
-		Alignment(NearestEnemyOfType,NEUTRAL_EVIL)
-		Alignment(NearestEnemyOfType,LAWFUL_EVIL)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_PROTECTION_FROM_EVIL_10_FOOT)  // SPPR408.SPL (Protection From Evil, 10' Radius)
+    OR(3)
+        Alignment(NearestEnemyOfType,CHAOTIC_EVIL)
+        Alignment(NearestEnemyOfType,NEUTRAL_EVIL)
+        Alignment(NearestEnemyOfType,LAWFUL_EVIL)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_PROTECTION_FROM_EVIL_10_FOOT)  // SPPR408.SPL (Protection From Evil, 10' Radius)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_PROTECTION_FROM_EVIL_10_FOOT)  // SPPR408.SPL (Protection From Evil, 10' Radius)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_PROTECTION_FROM_LIGHTNING)  // SPPR407.SPL (Protection From Lightning)
-	OR(4)
-		Class(NearestEnemyOfType,MAGE_ALL)
-		Class(NearestEnemyOfType,SORCERER)
-		Class(NearestEnemyOfType,DRUID_ALL)
-		Class(NearestEnemyOfType,CLERIC_ALL)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_PROTECTION_FROM_LIGHTNING)  // SPPR407.SPL (Protection From Lightning)
+    OR(4)
+        Class(NearestEnemyOfType,MAGE_ALL)
+        Class(NearestEnemyOfType,SORCERER)
+        Class(NearestEnemyOfType,DRUID_ALL)
+        Class(NearestEnemyOfType,CLERIC_ALL)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_PROTECTION_FROM_LIGHTNING)  // SPPR407.SPL (Protection From Lightning)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_PROTECTION_FROM_LIGHTNING)  // SPPR407.SPL (Protection From Lightning)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_STRENGTH_OF_ONE)  // SPPR312.SPL (Strength of One)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_STRENGTH_OF_ONE)  // SPPR312.SPL (Strength of One)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_STRENGTH_OF_ONE)  // SPPR312.SPL (Strength of One)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_STRENGTH_OF_ONE)  // SPPR312.SPL (Strength of One)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_PROTECTION_FROM_FIRE)  // SPPR306.SPL (Protection From Fire)
-	OR(7)
-		Class(NearestEnemyOfType,MAGE_ALL)
-		Class(NearestEnemyOfType,SORCERER)
-		Class(NearestEnemyOfType,DRUID_ALL)
-		Class(NearestEnemyOfType,CLERIC_ALL)
-		Class(NearestEnemyOfType,ELEMENTAL_FIRE)
-		Class(NearestEnemyOfType,RED_DRAGON)
-		Class(NearestEnemyOfType,SILVER_DRAGON)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_PROTECTION_FROM_FIRE)  // SPPR306.SPL (Protection From Fire)
+    OR(7)
+        Class(NearestEnemyOfType,MAGE_ALL)
+        Class(NearestEnemyOfType,SORCERER)
+        Class(NearestEnemyOfType,DRUID_ALL)
+        Class(NearestEnemyOfType,CLERIC_ALL)
+        Class(NearestEnemyOfType,ELEMENTAL_FIRE)
+        Class(NearestEnemyOfType,RED_DRAGON)
+        Class(NearestEnemyOfType,SILVER_DRAGON)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_PROTECTION_FROM_FIRE)  // SPPR306.SPL (Protection From Fire)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_PROTECTION_FROM_FIRE)  // SPPR306.SPL (Protection From Fire)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Chant)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Chant)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Chant)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Chant)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_BARKSKIN)  // SPPR202.SPL (Barkskin)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_BARKSKIN)  // SPPR202.SPL (Barkskin)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_BARKSKIN)  // SPPR202.SPL (Barkskin)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_BARKSKIN)  // SPPR202.SPL (Barkskin)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_AID)  // SPPR201.SPL (Aid)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_AID)  // SPPR201.SPL (Aid)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_AID)  // SPPR201.SPL (Aid)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_AID)  // SPPR201.SPL (Aid)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpellRES("SPPR210")  // Resist Fire and Cold
-	OR(7)
-		Class(NearestEnemyOfType,MAGE_ALL)
-		Class(NearestEnemyOfType,SORCERER)
-		Class(NearestEnemyOfType,DRUID_ALL)
-		Class(NearestEnemyOfType,CLERIC_ALL)
-		Class(NearestEnemyOfType,ELEMENTAL_FIRE)
-		Class(NearestEnemyOfType,RED_DRAGON)
-		Class(NearestEnemyOfType,SILVER_DRAGON)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpellRES("SPPR210")  // Resist Fire and Cold
+    OR(7)
+        Class(NearestEnemyOfType,MAGE_ALL)
+        Class(NearestEnemyOfType,SORCERER)
+        Class(NearestEnemyOfType,DRUID_ALL)
+        Class(NearestEnemyOfType,CLERIC_ALL)
+        Class(NearestEnemyOfType,ELEMENTAL_FIRE)
+        Class(NearestEnemyOfType,RED_DRAGON)
+        Class(NearestEnemyOfType,SILVER_DRAGON)
 THEN
-	RESPONSE #70
-		SpellRES("SPPR210",Myself)  // Resist Fire and Cold
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        SpellRES("SPPR210",Myself)  // Resist Fire and Cold
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_BLESS)  // SPPR101.SPL (Bless)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_BLESS)  // SPPR101.SPL (Bless)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_BLESS)  // SPPR101.SPL (Bless)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_BLESS)  // SPPR101.SPL (Bless)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_PROTECT_FROM_EVIL)  // SPPR107.SPL (Protection From Evil)
-	OR(3)
-		Alignment(NearestEnemyOfType,CHAOTIC_EVIL)
-		Alignment(NearestEnemyOfType,NEUTRAL_EVIL)
-		Alignment(NearestEnemyOfType,LAWFUL_EVIL)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_PROTECT_FROM_EVIL)  // SPPR107.SPL (Protection From Evil)
+    OR(3)
+        Alignment(NearestEnemyOfType,CHAOTIC_EVIL)
+        Alignment(NearestEnemyOfType,NEUTRAL_EVIL)
+        Alignment(NearestEnemyOfType,LAWFUL_EVIL)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_PROTECT_FROM_EVIL)  // SPPR107.SPL (Protection From Evil)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_PROTECT_FROM_EVIL)  // SPPR107.SPL (Protection From Evil)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_FLAME_BLADE)  // SPPR206.SPL (Flame Blade)
-	HPPercentLT(Myself,50)
-	!HasItemEquiped("SHAMMR",Myself)  // Spiritual Hammer
-	!HasItemEquiped("SHAMMR2",Myself)  // Spiritual Hammer
-	!HasItemEquiped("SHAMMR3",Myself)  // Spiritual Hammer
-	!HasItemEquiped("FBLADE",Myself)  // Flame Blade
-	!HasItemEquiped("SHILLE",Myself)  // Shillelagh
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_FLAME_BLADE)  // SPPR206.SPL (Flame Blade)
+    HPPercentLT(Myself,50)
+    !HasItemEquiped("SHAMMR",Myself)  // Spiritual Hammer
+    !HasItemEquiped("SHAMMR2",Myself)  // Spiritual Hammer
+    !HasItemEquiped("SHAMMR3",Myself)  // Spiritual Hammer
+    !HasItemEquiped("FBLADE",Myself)  // Flame Blade
+    !HasItemEquiped("SHILLE",Myself)  // Shillelagh
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_FLAME_BLADE)  // SPPR206.SPL (Flame Blade)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_FLAME_BLADE)  // SPPR206.SPL (Flame Blade)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_FLAME_BLADE)  // SPPR206.SPL (Flame Blade)
-	HPPercentLT(Myself,50)
-	!HasItemEquiped("SHAMMR",Myself)  // Spiritual Hammer
-	!HasItemEquiped("SHAMMR2",Myself)  // Spiritual Hammer
-	!HasItemEquiped("SHAMMR3",Myself)  // Spiritual Hammer
-	!HasItemEquiped("FBLADE",Myself)  // Flame Blade
-	!HasItemEquiped("SHILLE",Myself)  // Shillelagh
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_FLAME_BLADE)  // SPPR206.SPL (Flame Blade)
+    HPPercentLT(Myself,50)
+    !HasItemEquiped("SHAMMR",Myself)  // Spiritual Hammer
+    !HasItemEquiped("SHAMMR2",Myself)  // Spiritual Hammer
+    !HasItemEquiped("SHAMMR3",Myself)  // Spiritual Hammer
+    !HasItemEquiped("FBLADE",Myself)  // Flame Blade
+    !HasItemEquiped("SHILLE",Myself)  // Shillelagh
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_FLAME_BLADE)  // SPPR206.SPL (Flame Blade)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_FLAME_BLADE)  // SPPR206.SPL (Flame Blade)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_SHILLELAGH)  // SPPR110.SPL (Shillelagh)
-	!HasItemEquiped("SHAMMR",Myself)  // Spiritual Hammer
-	!HasItemEquiped("SHAMMR2",Myself)  // Spiritual Hammer
-	!HasItemEquiped("SHAMMR3",Myself)  // Spiritual Hammer
-	!HasItemEquiped("FBLADE",Myself)  // Flame Blade
-	!HasItemEquiped("SHILLE",Myself)  // Shillelagh
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_SHILLELAGH)  // SPPR110.SPL (Shillelagh)
+    !HasItemEquiped("SHAMMR",Myself)  // Spiritual Hammer
+    !HasItemEquiped("SHAMMR2",Myself)  // Spiritual Hammer
+    !HasItemEquiped("SHAMMR3",Myself)  // Spiritual Hammer
+    !HasItemEquiped("FBLADE",Myself)  // Flame Blade
+    !HasItemEquiped("SHILLE",Myself)  // Shillelagh
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_SHILLELAGH)  // SPPR110.SPL (Shillelagh)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_SHILLELAGH)  // SPPR110.SPL (Shillelagh)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
-	HaveSpell(CLERIC_SHILLELAGH)  // SPPR110.SPL (Shillelagh)
+    RealGlobalTimerExpired("SPELL_BUFF","LOCALS")
+    HaveSpell(CLERIC_SHILLELAGH)  // SPPR110.SPL (Shillelagh)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_SHILLELAGH)  // SPPR110.SPL (Shillelagh)
-		RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_SHILLELAGH)  // SPPR110.SPL (Shillelagh)
+        RealSetGlobalTimer("SPELL_BUFF","LOCALS",TWO_MINUTES)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_FINGER_OF_DEATH)  // SPPR708.SPL (Finger of Death)
+    HaveSpell(CLERIC_FINGER_OF_DEATH)  // SPPR708.SPL (Finger of Death)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_FINGER_OF_DEATH)  // SPPR708.SPL (Finger of Death)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_FINGER_OF_DEATH)  // SPPR708.SPL (Finger of Death)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CREEPING_DOOM)  // SPPR717.SPL (Creeping Doom)
+    HaveSpell(CLERIC_CREEPING_DOOM)  // SPPR717.SPL (Creeping Doom)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_CREEPING_DOOM)  // SPPR717.SPL (Creeping Doom)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_CREEPING_DOOM)  // SPPR717.SPL (Creeping Doom)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_SUNRAY)  // SPPR707.SPL (Sunray)
-	Range(LastSeenBy(Myself),20)
+    HaveSpell(CLERIC_SUNRAY)  // SPPR707.SPL (Sunray)
+    Range(LastSeenBy(Myself),20)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_SUNRAY)  // SPPR707.SPL (Sunray)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_SUNRAY)  // SPPR707.SPL (Sunray)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_FIRE_STORM)  // SPPR705.SPL (Fire Storm)
-	!Class(LastSeenBy(Myself),ELEMENTAL_FIRE)
-	!Range(LastSeenBy(Myself),20)
+    HaveSpell(CLERIC_FIRE_STORM)  // SPPR705.SPL (Fire Storm)
+    !Class(LastSeenBy(Myself),ELEMENTAL_FIRE)
+    !Range(LastSeenBy(Myself),20)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_FIRE_STORM)  // SPPR705.SPL (Fire Storm)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_FIRE_STORM)  // SPPR705.SPL (Fire Storm)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_EARTHQUAKE)  // SPPR720.SPL (Earthquake)
-	!Range(LastSeenBy(Myself),20)
+    HaveSpell(CLERIC_EARTHQUAKE)  // SPPR720.SPL (Earthquake)
+    !Range(LastSeenBy(Myself),20)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_EARTHQUAKE)  // SPPR720.SPL (Earthquake)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_EARTHQUAKE)  // SPPR720.SPL (Earthquake)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_HARM)  // SPPR608.SPL (Harm)
+    HaveSpell(CLERIC_HARM)  // SPPR608.SPL (Harm)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_HARM)  // SPPR608.SPL (Harm)
-		AttackReevaluate(LastSeenBy(Myself),30)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_HARM)  // SPPR608.SPL (Harm)
+        AttackReevaluate(LastSeenBy(Myself),30)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_BOLT_OF_GLORY)  // SPPR612.SPL (Bolt of Glory)
+    HaveSpell(CLERIC_BOLT_OF_GLORY)  // SPPR612.SPL (Bolt of Glory)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_BOLT_OF_GLORY)  // SPPR612.SPL (Bolt of Glory)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_BOLT_OF_GLORY)  // SPPR612.SPL (Bolt of Glory)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_DOLOROUS_DECAY)  // SPPR610.SPL (Dolorous Decay)
+    HaveSpell(CLERIC_DOLOROUS_DECAY)  // SPPR610.SPL (Dolorous Decay)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_DOLOROUS_DECAY)  // SPPR610.SPL (Dolorous Decay)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_DOLOROUS_DECAY)  // SPPR610.SPL (Dolorous Decay)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_SOL_SEARING_ORB)  // SPPR614.SPL (Sol's Searing Orb)
-	!Class(LastSeenBy(Myself),ELEMENTAL_FIRE)
+    HaveSpell(CLERIC_SOL_SEARING_ORB)  // SPPR614.SPL (Sol's Searing Orb)
+    !Class(LastSeenBy(Myself),ELEMENTAL_FIRE)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_SOL_SEARING_ORB)  // SPPR614.SPL (Sol's Searing Orb)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_SOL_SEARING_ORB)  // SPPR614.SPL (Sol's Searing Orb)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_FALSE_DAWN)  // SPPR609.SPL (False Dawn)
-	General(LastSeenBy(Myself),UNDEAD)
-	Range(LastSeenBy(Myself),20)
+    HaveSpell(CLERIC_FALSE_DAWN)  // SPPR609.SPL (False Dawn)
+    General(LastSeenBy(Myself),UNDEAD)
+    Range(LastSeenBy(Myself),20)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_FALSE_DAWN)  // SPPR609.SPL (False Dawn)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_FALSE_DAWN)  // SPPR609.SPL (False Dawn)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flame Strike)
-	!Class(LastSeenBy(Myself),ELEMENTAL_FIRE)
+    HaveSpell(CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flame Strike)
+    !Class(LastSeenBy(Myself),ELEMENTAL_FIRE)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flame Strike)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flame Strike)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_SLAY_LIVING)  // SPPR511.SPL (Slay Living)
+    HaveSpell(CLERIC_SLAY_LIVING)  // SPPR511.SPL (Slay Living)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_SLAY_LIVING)  // SPPR511.SPL (Slay Living)
-		AttackReevaluate(LastSeenBy(Myself),45)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_SLAY_LIVING)  // SPPR511.SPL (Slay Living)
+        AttackReevaluate(LastSeenBy(Myself),45)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CAUSE_CRITICAL_WOUNDS)  // SPPR510.SPL (Cause Critical Wounds)
+    HaveSpell(CLERIC_CAUSE_CRITICAL_WOUNDS)  // SPPR510.SPL (Cause Critical Wounds)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_CAUSE_CRITICAL_WOUNDS)  // SPPR510.SPL (Cause Critical Wounds)
-		AttackReevaluate(LastSeenBy(Myself),30)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_CAUSE_CRITICAL_WOUNDS)  // SPPR510.SPL (Cause Critical Wounds)
+        AttackReevaluate(LastSeenBy(Myself),30)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_POISON)  // SPPR411.SPL (Poison)
+    HaveSpell(CLERIC_POISON)  // SPPR411.SPL (Poison)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_POISON)  // SPPR411.SPL (Poison)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_POISON)  // SPPR411.SPL (Poison)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CAUSE_SERIOUS_WOUNDS)  // SPPR414.SPL (Cause Serious Wounds)
+    HaveSpell(CLERIC_CAUSE_SERIOUS_WOUNDS)  // SPPR414.SPL (Cause Serious Wounds)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_CAUSE_SERIOUS_WOUNDS)  // SPPR414.SPL (Cause Serious Wounds)
-		AttackReevaluate(LastSeenBy(Myself),30)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_CAUSE_SERIOUS_WOUNDS)  // SPPR414.SPL (Cause Serious Wounds)
+        AttackReevaluate(LastSeenBy(Myself),30)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CALL_LIGHTNING)  // SPPR302.SPL (Call Lightning)
-	AreaType(OUTDOOR)
+    HaveSpell(CLERIC_CALL_LIGHTNING)  // SPPR302.SPL (Call Lightning)
+    AreaType(OUTDOOR)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_CALL_LIGHTNING)  // SPPR302.SPL (Call Lightning)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_CALL_LIGHTNING)  // SPPR302.SPL (Call Lightning)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_HOLY_SMITE)  // SPPR313.SPL (Holy Smite)
-	OR(3)
-		Alignment(LastSeenBy(Myself),CHAOTIC_EVIL)
-		Alignment(LastSeenBy(Myself),NEUTRAL_EVIL)
-		Alignment(LastSeenBy(Myself),LAWFUL_EVIL)
+    HaveSpell(CLERIC_HOLY_SMITE)  // SPPR313.SPL (Holy Smite)
+    OR(3)
+        Alignment(LastSeenBy(Myself),CHAOTIC_EVIL)
+        Alignment(LastSeenBy(Myself),NEUTRAL_EVIL)
+        Alignment(LastSeenBy(Myself),LAWFUL_EVIL)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_HOLY_SMITE)  // SPPR313.SPL (Holy Smite)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_HOLY_SMITE)  // SPPR313.SPL (Holy Smite)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
-	OR(3)
-		Alignment(LastSeenBy(Myself),CHAOTIC_GOOD)
-		Alignment(LastSeenBy(Myself),NEUTRAL_GOOD)
-		Alignment(LastSeenBy(Myself),LAWFUL_GOOD)
+    HaveSpell(CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+    OR(3)
+        Alignment(LastSeenBy(Myself),CHAOTIC_GOOD)
+        Alignment(LastSeenBy(Myself),NEUTRAL_GOOD)
+        Alignment(LastSeenBy(Myself),LAWFUL_GOOD)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_MAGIC_STONE)  // SPPR106.SPL (Magical Stone)
+    HaveSpell(CLERIC_MAGIC_STONE)  // SPPR106.SPL (Magical Stone)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_CALL_LIGHTNING)  // SPPR302.SPL (Call Lightning)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_CALL_LIGHTNING)  // SPPR302.SPL (Call Lightning)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_HOLY_WORD)  // SPPR710.SPL (Holy Word)
-	Range(LastSeenBy(Myself),20)
-	OR(3)
-		Alignment(LastSeenBy(Myself),CHAOTIC_EVIL)
-		Alignment(LastSeenBy(Myself),NEUTRAL_EVIL)
-		Alignment(LastSeenBy(Myself),LAWFUL_EVIL)
+    HaveSpell(CLERIC_HOLY_WORD)  // SPPR710.SPL (Holy Word)
+    Range(LastSeenBy(Myself),20)
+    OR(3)
+        Alignment(LastSeenBy(Myself),CHAOTIC_EVIL)
+        Alignment(LastSeenBy(Myself),NEUTRAL_EVIL)
+        Alignment(LastSeenBy(Myself),LAWFUL_EVIL)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_HOLY_WORD)  // SPPR710.SPL (Holy Word)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_HOLY_WORD)  // SPPR710.SPL (Holy Word)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
-	Range(LastSeenBy(Myself),20)
-	OR(3)
-		Alignment(LastSeenBy(Myself),CHAOTIC_GOOD)
-		Alignment(LastSeenBy(Myself),NEUTRAL_GOOD)
-		Alignment(LastSeenBy(Myself),LAWFUL_GOOD)
+    HaveSpell(CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+    Range(LastSeenBy(Myself),20)
+    OR(3)
+        Alignment(LastSeenBy(Myself),CHAOTIC_GOOD)
+        Alignment(LastSeenBy(Myself),NEUTRAL_GOOD)
+        Alignment(LastSeenBy(Myself),LAWFUL_GOOD)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_NATURE_BEAUTY)  // SPPR704.SPL (Nature's Beauty)
-	Range(LastSeenBy(Myself),5)
+    HaveSpell(CLERIC_NATURE_BEAUTY)  // SPPR704.SPL (Nature's Beauty)
+    Range(LastSeenBy(Myself),5)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_NATURE_BEAUTY)  // SPPR704.SPL (Nature's Beauty)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_NATURE_BEAUTY)  // SPPR704.SPL (Nature's Beauty)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CONFUSION)  // SPPR709.SPL (Confusion)
-	OR(2)
-		!StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
-		!StateCheck(LastSeenBy(Myself),STATE_BERSERK)
+    HaveSpell(CLERIC_CONFUSION)  // SPPR709.SPL (Confusion)
+    OR(2)
+        !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+        !StateCheck(LastSeenBy(Myself),STATE_BERSERK)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_CONFUSION)  // SPPR709.SPL (Confusion)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_CONFUSION)  // SPPR709.SPL (Confusion)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_GREATER_COMMAND)  // SPPR512.SPL (Greater Command)
-	!StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
-	!StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+    HaveSpell(CLERIC_GREATER_COMMAND)  // SPPR512.SPL (Greater Command)
+    !StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+    !StateCheck(LastSeenBy(Myself),STATE_STUNNED)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_GREATER_COMMAND)  // SPPR512.SPL (Greater Command)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_GREATER_COMMAND)  // SPPR512.SPL (Greater Command)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_INSECT_PLAGUE)  // SPPR517.SPL (Insect Plague)
+    HaveSpell(CLERIC_INSECT_PLAGUE)  // SPPR517.SPL (Insect Plague)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)  // SPPR517.SPL (Insect Plague)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)  // SPPR517.SPL (Insect Plague)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_MENTAL_DOMINATION)  // SPPR405.SPL (Mental Domination)
-	!StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+    HaveSpell(CLERIC_MENTAL_DOMINATION)  // SPPR405.SPL (Mental Domination)
+    !StateCheck(LastSeenBy(Myself),STATE_CHARMED)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_MENTAL_DOMINATION)  // SPPR405.SPL (Mental Domination)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_MENTAL_DOMINATION)  // SPPR405.SPL (Mental Domination)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Cloak of Fear)
-	!StateCheck(LastSeenBy(Myself),STATE_PANIC)
+    HaveSpell(CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Cloak of Fear)
+    !StateCheck(LastSeenBy(Myself),STATE_PANIC)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Cloak of Fear)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Cloak of Fear)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_MISCAST_MAGIC)  // SPPR310.SPL (Miscast Magic)
-	OR(4)
-		Class(LastSeenBy(Myself),MAGE_ALL)
-		Class(LastSeenBy(Myself),SORCERER)
-		Class(LastSeenBy(Myself),CLERIC_ALL)
-		Class(LastSeenBy(Myself),DRUID_ALL)
+    HaveSpell(CLERIC_MISCAST_MAGIC)  // SPPR310.SPL (Miscast Magic)
+    OR(4)
+        Class(LastSeenBy(Myself),MAGE_ALL)
+        Class(LastSeenBy(Myself),SORCERER)
+        Class(LastSeenBy(Myself),CLERIC_ALL)
+        Class(LastSeenBy(Myself),DRUID_ALL)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_MISCAST_MAGIC)  // SPPR310.SPL (Miscast Magic)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_MISCAST_MAGIC)  // SPPR310.SPL (Miscast Magic)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_INVISIBILITY_PURGE)  // SPPR309.SPL (Invisibility Purge)
-	OR(2)
-		StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-		StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+    HaveSpell(CLERIC_INVISIBILITY_PURGE)  // SPPR309.SPL (Invisibility Purge)
+    OR(2)
+        StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+        StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_INVISIBILITY_PURGE)  // SPPR309.SPL (Invisibility Purge)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_INVISIBILITY_PURGE)  // SPPR309.SPL (Invisibility Purge)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_RIGID_THINKING)  // SPPR311.SPL (Rigid Thinking)
-	!StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+    HaveSpell(CLERIC_RIGID_THINKING)  // SPPR311.SPL (Rigid Thinking)
+    !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_RIGID_THINKING)  // SPPR311.SPL (Rigid Thinking)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_RIGID_THINKING)  // SPPR311.SPL (Rigid Thinking)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_SUMMON_INSECTS)  // SPPR319.SPL (Summon Insects)
-	OR(4)
-		Class(LastSeenBy(Myself),MAGE_ALL)
-		Class(LastSeenBy(Myself),SORCERER)
-		Class(LastSeenBy(Myself),CLERIC_ALL)
-		Class(LastSeenBy(Myself),DRUID_ALL)
+    HaveSpell(CLERIC_SUMMON_INSECTS)  // SPPR319.SPL (Summon Insects)
+    OR(4)
+        Class(LastSeenBy(Myself),MAGE_ALL)
+        Class(LastSeenBy(Myself),SORCERER)
+        Class(LastSeenBy(Myself),CLERIC_ALL)
+        Class(LastSeenBy(Myself),DRUID_ALL)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_SUMMON_INSECTS)  // SPPR319.SPL (Summon Insects)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_SUMMON_INSECTS)  // SPPR319.SPL (Summon Insects)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Silence, 15' Radius)
-	!Range(LastSeenBy(Myself),15)
-	OR(4)
-		Class(LastSeenBy(Myself),MAGE_ALL)
-		Class(LastSeenBy(Myself),SORCERER)
-		Class(LastSeenBy(Myself),CLERIC_ALL)
-		Class(LastSeenBy(Myself),DRUID_ALL)
+    HaveSpell(CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Silence, 15' Radius)
+    !Range(LastSeenBy(Myself),15)
+    OR(4)
+        Class(LastSeenBy(Myself),MAGE_ALL)
+        Class(LastSeenBy(Myself),SORCERER)
+        Class(LastSeenBy(Myself),CLERIC_ALL)
+        Class(LastSeenBy(Myself),DRUID_ALL)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Silence, 15' Radius)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Silence, 15' Radius)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Hold Person)
-	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+    HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Hold Person)
+    !CheckStatGT(LastSeenBy(Myself),0,HELD)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_CHARM_PERSON)  // SPPR204.SPL (Charm Person or Mammal)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_CHARM_PERSON)  // SPPR204.SPL (Charm Person or Mammal)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_DOOM)  // SPPR113.SPL (Doom)
+    HaveSpell(CLERIC_DOOM)  // SPPR113.SPL (Doom)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_DOOM)  // SPPR113.SPL (Doom)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_DOOM)  // SPPR113.SPL (Doom)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_ENTANGLE)  // SPPR105.SPL (Entangle)
-	!Range(LastSeenBy(Myself),20)
+    HaveSpell(CLERIC_ENTANGLE)  // SPPR105.SPL (Entangle)
+    !Range(LastSeenBy(Myself),20)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_ENTANGLE)  // SPPR105.SPL (Entangle)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_ENTANGLE)  // SPPR105.SPL (Entangle)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CHARM_PERSON)  // SPPR204.SPL (Charm Person or Mammal)
-	!StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+    HaveSpell(CLERIC_CHARM_PERSON)  // SPPR204.SPL (Charm Person or Mammal)
+    !StateCheck(LastSeenBy(Myself),STATE_CHARMED)
 THEN
-	RESPONSE #70
-		Spell(LastSeenBy(Myself),CLERIC_CHARM_PERSON)  // SPPR204.SPL (Charm Person or Mammal)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(LastSeenBy(Myself),CLERIC_CHARM_PERSON)  // SPPR204.SPL (Charm Person or Mammal)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_GATE)  // SPPR703.SPL (Gate)
+    HaveSpell(CLERIC_GATE)  // SPPR703.SPL (Gate)
 THEN
-	RESPONSE #70
-		ApplySpell(Myself,CLERIC_PROTECT_FROM_EVIL)  // SPPR107.SPL (Protection From Evil)
-		Spell(Myself,CLERIC_GATE)  // SPPR703.SPL (Gate)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        ApplySpell(Myself,CLERIC_PROTECT_FROM_EVIL)  // SPPR107.SPL (Protection From Evil)
+        Spell(Myself,CLERIC_GATE)  // SPPR703.SPL (Gate)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CONJURE_EARTH_ELEMENTAL)  // SPPR702.SPL (Conjure Earth Elemental)
+    HaveSpell(CLERIC_CONJURE_EARTH_ELEMENTAL)  // SPPR702.SPL (Conjure Earth Elemental)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_CONJURE_EARTH_ELEMENTAL)  // SPPR702.SPL (Conjure Earth Elemental)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_CONJURE_EARTH_ELEMENTAL)  // SPPR702.SPL (Conjure Earth Elemental)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_AERIAL_SERVANT)  // SPPR601.SPL (Aerial Servant)
+    HaveSpell(CLERIC_AERIAL_SERVANT)  // SPPR601.SPL (Aerial Servant)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_AERIAL_SERVANT)  // SPPR601.SPL (Aerial Servant)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_AERIAL_SERVANT)  // SPPR601.SPL (Aerial Servant)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CONJURE_FIRE_ELEMENTAL)  // SPPR605.SPL (Conjure Fire Elemental)
+    HaveSpell(CLERIC_CONJURE_FIRE_ELEMENTAL)  // SPPR605.SPL (Conjure Fire Elemental)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_CONJURE_FIRE_ELEMENTAL)  // SPPR605.SPL (Conjure Fire Elemental)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_CONJURE_FIRE_ELEMENTAL)  // SPPR605.SPL (Conjure Fire Elemental)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CONJURE_ANIMALS)  // SPPR604.SPL (Conjure Animals)
+    HaveSpell(CLERIC_CONJURE_ANIMALS)  // SPPR604.SPL (Conjure Animals)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_CONJURE_ANIMALS)  // SPPR604.SPL (Conjure Animals)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_CONJURE_ANIMALS)  // SPPR604.SPL (Conjure Animals)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_ANIMAL_SUMMONING_3)  // SPPR602.SPL (Animal Summoning III)
+    HaveSpell(CLERIC_ANIMAL_SUMMONING_3)  // SPPR602.SPL (Animal Summoning III)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_ANIMAL_SUMMONING_3)  // SPPR602.SPL (Animal Summoning III)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_ANIMAL_SUMMONING_3)  // SPPR602.SPL (Animal Summoning III)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_ANIMAL_SUMMONING_2)  // SPPR501.SPL (Animal Summoning II)
+    HaveSpell(CLERIC_ANIMAL_SUMMONING_2)  // SPPR501.SPL (Animal Summoning II)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_ANIMAL_SUMMONING_2)  // SPPR501.SPL (Animal Summoning II)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_ANIMAL_SUMMONING_2)  // SPPR501.SPL (Animal Summoning II)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_ANIMAL_SUMMONING_1)  // SPPR402.SPL (Animal Summoning I)
+    HaveSpell(CLERIC_ANIMAL_SUMMONING_1)  // SPPR402.SPL (Animal Summoning I)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_ANIMAL_SUMMONING_1)  // SPPR402.SPL (Animal Summoning I)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_ANIMAL_SUMMONING_1)  // SPPR402.SPL (Animal Summoning I)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_CALL_WOODLAND_BEINGS)  // SPPR410.SPL (Call Woodland Beings)
+    HaveSpell(CLERIC_CALL_WOODLAND_BEINGS)  // SPPR410.SPL (Call Woodland Beings)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_CALL_WOODLAND_BEINGS)  // SPPR410.SPL (Call Woodland Beings)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_CALL_WOODLAND_BEINGS)  // SPPR410.SPL (Call Woodland Beings)
+    RESPONSE #30
+        Continue()
 END
 
 IF
-	HaveSpell(CLERIC_ANIMATE_DEAD)  // SPPR301.SPL (Animate Dead)
+    HaveSpell(CLERIC_ANIMATE_DEAD)  // SPPR301.SPL (Animate Dead)
 THEN
-	RESPONSE #70
-		Spell(Myself,CLERIC_ANIMATE_DEAD)  // SPPR301.SPL (Animate Dead)
-	RESPONSE #30
-		Continue()
+    RESPONSE #70
+        Spell(Myself,CLERIC_ANIMATE_DEAD)  // SPPR301.SPL (Animate Dead)
+    RESPONSE #30
+        Continue()
 END
-

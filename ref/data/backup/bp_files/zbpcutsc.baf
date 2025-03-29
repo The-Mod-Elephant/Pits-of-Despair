@@ -1,14 +1,13 @@
 IF
-	GlobalTimerExpired("OH_dself","LOCALS")
+    GlobalTimerExpired("OH_dself","LOCALS")
 THEN
-	RESPONSE #100
-		DestroySelf()
+    RESPONSE #100
+        DestroySelf()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_dself","LOCALS")
+    !GlobalTimerNotExpired("OH_dself","LOCALS")
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OH_dself","LOCALS",THREE_ROUNDS)
+    RESPONSE #100
+        SetGlobalTimer("OH_dself","LOCALS",THREE_ROUNDS)
 END
-

@@ -1,635 +1,634 @@
 IF
-	Global("OH_Active","LOCALS",0)
-	OR(3)
-		See(NearestEnemyOf(Myself))
-		AttackedBy([ANYONE],DEFAULT)
-		TookDamage()
+    Global("OH_Active","LOCALS",0)
+    OR(3)
+        See(NearestEnemyOf(Myself))
+        AttackedBy([ANYONE],DEFAULT)
+        TookDamage()
 THEN
-	RESPONSE #100
-		SetGlobal("OH_Active","LOCALS",1)
-		SetGlobalTimer("OH_Rest","LOCALS",EIGHT_HOURS)
-		Enemy()
-		Shout(ASSIST)
-		Continue()
+    RESPONSE #100
+        SetGlobal("OH_Active","LOCALS",1)
+        SetGlobalTimer("OH_Rest","LOCALS",EIGHT_HOURS)
+        Enemy()
+        Shout(ASSIST)
+        Continue()
 END
 
 IF
-	Global("OH_Active","LOCALS",0)
-	Heard([EVILCUTOFF],ASSIST)
-	Range(LastHeardBy(Myself),25)
+    Global("OH_Active","LOCALS",0)
+    Heard([EVILCUTOFF],ASSIST)
+    Range(LastHeardBy(Myself),25)
 THEN
-	RESPONSE #100
-		SetGlobal("OH_Active","LOCALS",1)
-		SetGlobalTimer("OH_Rest","LOCALS",EIGHT_HOURS)
-		Enemy()
-		Shout(ASSIST)
+    RESPONSE #100
+        SetGlobal("OH_Active","LOCALS",1)
+        SetGlobalTimer("OH_Rest","LOCALS",EIGHT_HOURS)
+        Enemy()
+        Shout(ASSIST)
 END
 
 IF
-	OR(4)
-		Global("OH_Active","LOCALS",0)
-		!Allegiance(Myself,EVILCUTOFF)
-		StateCheck(Myself,STATE_IMMOBILE)
-		StateCheck(Myself,STATE_REALLY_DEAD)
+    OR(4)
+        Global("OH_Active","LOCALS",0)
+        !Allegiance(Myself,EVILCUTOFF)
+        StateCheck(Myself,STATE_IMMOBILE)
+        StateCheck(Myself,STATE_REALLY_DEAD)
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Rest","LOCALS")
+    !GlobalTimerNotExpired("OH_Rest","LOCALS")
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OH_Rest","LOCALS",EIGHT_HOURS)
-		ApplySpell(Myself,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
-		Rest()
+    RESPONSE #100
+        SetGlobalTimer("OH_Rest","LOCALS",EIGHT_HOURS)
+        ApplySpell(Myself,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
+        Rest()
 END
 
 IF
-	Global("OH_Active","LOCALS",1)
-	!InActiveArea(Myself)
-	!See([GOODCUTOFF])
+    Global("OH_Active","LOCALS",1)
+    !InActiveArea(Myself)
+    !See([GOODCUTOFF])
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	StateCheck(Myself,STATE_PANIC)
+    StateCheck(Myself,STATE_PANIC)
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	HitBy([ANYONE],COLD)
-	!StateCheck(Myself,STATE_SLOWED)
-	!GlobalTimerNotExpired("OHBewwsl","LOCALS")
+    HitBy([ANYONE],COLD)
+    !StateCheck(Myself,STATE_SLOWED)
+    !GlobalTimerNotExpired("OHBewwsl","LOCALS")
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OHBewwsl","LOCALS",TWO_ROUNDS)
-		ApplySpellRES("OHBewwsl",Myself)  // No such index
+    RESPONSE #100
+        SetGlobalTimer("OHBewwsl","LOCALS",TWO_ROUNDS)
+        ApplySpellRES("OHBewwsl",Myself)  // No such index
 END
 
 IF
-	!GlobalTimerNotExpired("OHBdrown","LOCALS")
-	DifficultyGT(EASY)
-	See([GOODCUTOFF.HUMANOID])
-	InWeaponRange(LastSeenBy(Myself))
-	StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
-	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
-	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
-	!CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
-	!HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
-	Delay(6)
+    !GlobalTimerNotExpired("OHBdrown","LOCALS")
+    DifficultyGT(EASY)
+    See([GOODCUTOFF.HUMANOID])
+    InWeaponRange(LastSeenBy(Myself))
+    StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
+    !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+    CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+    !CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+    !HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+    Delay(6)
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OHBdrown","LOCALS",ONE_ROUND)
-		ForceSpellRES("OHBdrown",LastSeenBy(Myself))  // Drown
+    RESPONSE #100
+        SetGlobalTimer("OHBdrown","LOCALS",ONE_ROUND)
+        ForceSpellRES("OHBdrown",LastSeenBy(Myself))  // Drown
 END
 
 IF
-	!GlobalTimerNotExpired("OHBdrown","LOCALS")
-	DifficultyGT(EASY)
-	See(SecondNearest([GOODCUTOFF.HUMANOID]))
-	InWeaponRange(LastSeenBy(Myself))
-	StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
-	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
-	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
-	!CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
-	!HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
-	Delay(6)
+    !GlobalTimerNotExpired("OHBdrown","LOCALS")
+    DifficultyGT(EASY)
+    See(SecondNearest([GOODCUTOFF.HUMANOID]))
+    InWeaponRange(LastSeenBy(Myself))
+    StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
+    !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+    CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+    !CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+    !HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+    Delay(6)
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OHBdrown","LOCALS",ONE_ROUND)
-		ForceSpellRES("OHBdrown",LastSeenBy(Myself))  // Drown
+    RESPONSE #100
+        SetGlobalTimer("OHBdrown","LOCALS",ONE_ROUND)
+        ForceSpellRES("OHBdrown",LastSeenBy(Myself))  // Drown
 END
 
 IF
-	!GlobalTimerNotExpired("OHBdrown","LOCALS")
-	DifficultyGT(EASY)
-	See(ThirdNearest([GOODCUTOFF.HUMANOID]))
-	InWeaponRange(LastSeenBy(Myself))
-	StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
-	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
-	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
-	!CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
-	!HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
-	Delay(6)
+    !GlobalTimerNotExpired("OHBdrown","LOCALS")
+    DifficultyGT(EASY)
+    See(ThirdNearest([GOODCUTOFF.HUMANOID]))
+    InWeaponRange(LastSeenBy(Myself))
+    StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
+    !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+    CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+    !CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+    !HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+    Delay(6)
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OHBdrown","LOCALS",ONE_ROUND)
-		ForceSpellRES("OHBdrown",LastSeenBy(Myself))  // Drown
+    RESPONSE #100
+        SetGlobalTimer("OHBdrown","LOCALS",ONE_ROUND)
+        ForceSpellRES("OHBdrown",LastSeenBy(Myself))  // Drown
 END
 
 IF
-	!GlobalTimerNotExpired("OHBdrown","LOCALS")
-	DifficultyGT(EASY)
-	See(FourthNearest([GOODCUTOFF.HUMANOID]))
-	InWeaponRange(LastSeenBy(Myself))
-	StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
-	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
-	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
-	!CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
-	!HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
-	Delay(6)
+    !GlobalTimerNotExpired("OHBdrown","LOCALS")
+    DifficultyGT(EASY)
+    See(FourthNearest([GOODCUTOFF.HUMANOID]))
+    InWeaponRange(LastSeenBy(Myself))
+    StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
+    !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+    CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+    !CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+    !HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+    Delay(6)
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OHBdrown","LOCALS",ONE_ROUND)
-		ForceSpellRES("OHBdrown",LastSeenBy(Myself))  // Drown
+    RESPONSE #100
+        SetGlobalTimer("OHBdrown","LOCALS",ONE_ROUND)
+        ForceSpellRES("OHBdrown",LastSeenBy(Myself))  // Drown
 END
 
 IF
-	!GlobalTimerNotExpired("OHBdrown","LOCALS")
-	DifficultyGT(EASY)
-	See(FifthNearest([GOODCUTOFF.HUMANOID]))
-	InWeaponRange(LastSeenBy(Myself))
-	StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
-	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
-	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
-	!CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
-	!HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
-	Delay(6)
+    !GlobalTimerNotExpired("OHBdrown","LOCALS")
+    DifficultyGT(EASY)
+    See(FifthNearest([GOODCUTOFF.HUMANOID]))
+    InWeaponRange(LastSeenBy(Myself))
+    StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
+    !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+    CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+    !CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+    !HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+    Delay(6)
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OHBdrown","LOCALS",ONE_ROUND)
-		ForceSpellRES("OHBdrown",LastSeenBy(Myself))  // Drown
+    RESPONSE #100
+        SetGlobalTimer("OHBdrown","LOCALS",ONE_ROUND)
+        ForceSpellRES("OHBdrown",LastSeenBy(Myself))  // Drown
 END
 
 IF
-	!GlobalTimerNotExpired("OHBdrown","LOCALS")
-	DifficultyGT(EASY)
-	See(SixthNearest([GOODCUTOFF.HUMANOID]))
-	InWeaponRange(LastSeenBy(Myself))
-	StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
-	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
-	CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
-	!CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
-	!HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
-	Delay(6)
+    !GlobalTimerNotExpired("OHBdrown","LOCALS")
+    DifficultyGT(EASY)
+    See(SixthNearest([GOODCUTOFF.HUMANOID]))
+    InWeaponRange(LastSeenBy(Myself))
+    StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
+    !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+    CheckStatGT(LastSeenBy(Myself),0,SAVEVSDEATH)
+    !CheckStatGT(LastSeenBy(Myself),0,DEATH_WARD)
+    !HasItemEquipedReal("SW1H71",LastSeenBy(Myself))  // Hindo's Doom +4
+    Delay(6)
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OHBdrown","LOCALS",ONE_ROUND)
-		ForceSpellRES("OHBdrown",LastSeenBy(Myself))  // Drown
+    RESPONSE #100
+        SetGlobalTimer("OHBdrown","LOCALS",ONE_ROUND)
+        ForceSpellRES("OHBdrown",LastSeenBy(Myself))  // Drown
 END
 
 IF
-	OR(6)
-		See(Player1)
-		See(Player2)
-		See(Player3)
-		See(Player4)
-		See(Player5)
-		See(Player6)
-	InWeaponRange(LastSeenBy(Myself))
-	False()
+    OR(6)
+        See(Player1)
+        See(Player2)
+        See(Player3)
+        See(Player4)
+        See(Player5)
+        See(Player6)
+    InWeaponRange(LastSeenBy(Myself))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	InWeaponRange([GOODCUTOFF])
-	See([GOODCUTOFF])
-	False()
+    InWeaponRange([GOODCUTOFF])
+    See([GOODCUTOFF])
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT(SixthNearest([GOODCUTOFF.HUMANOID]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(SixthNearest([GOODCUTOFF.HUMANOID]),STATE_PANIC)
-	CheckStatGT(SixthNearest([GOODCUTOFF.HUMANOID]),0,SAVEVSDEATH)
-	!Kit(SixthNearest([GOODCUTOFF.HUMANOID]),INQUISITOR)
-	!Kit(SixthNearest([GOODCUTOFF.HUMANOID]),UNDEADHUNTER)
-	!CheckStatGT(SixthNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT(SixthNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_FREE_ACTION)
-	!CheckStat(SixthNearest([GOODCUTOFF.HUMANOID]),1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",SixthNearest([GOODCUTOFF.HUMANOID]))  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",SixthNearest([GOODCUTOFF.HUMANOID]))  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",SixthNearest([GOODCUTOFF.HUMANOID]))  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",SixthNearest([GOODCUTOFF.HUMANOID]))  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",SixthNearest([GOODCUTOFF.HUMANOID]))  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",SixthNearest([GOODCUTOFF.HUMANOID]))  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",SixthNearest([GOODCUTOFF.HUMANOID]))  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",SixthNearest([GOODCUTOFF.HUMANOID]))  // Ixil's Spike +6
-	InWeaponRange(SixthNearest([GOODCUTOFF.HUMANOID]))
-	See(SixthNearest([GOODCUTOFF.HUMANOID]))
-	False()
+    !CheckStatGT(SixthNearest([GOODCUTOFF.HUMANOID]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck(SixthNearest([GOODCUTOFF.HUMANOID]),STATE_PANIC)
+    CheckStatGT(SixthNearest([GOODCUTOFF.HUMANOID]),0,SAVEVSDEATH)
+    !Kit(SixthNearest([GOODCUTOFF.HUMANOID]),INQUISITOR)
+    !Kit(SixthNearest([GOODCUTOFF.HUMANOID]),UNDEADHUNTER)
+    !CheckStatGT(SixthNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT(SixthNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_FREE_ACTION)
+    !CheckStat(SixthNearest([GOODCUTOFF.HUMANOID]),1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",SixthNearest([GOODCUTOFF.HUMANOID]))  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",SixthNearest([GOODCUTOFF.HUMANOID]))  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",SixthNearest([GOODCUTOFF.HUMANOID]))  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",SixthNearest([GOODCUTOFF.HUMANOID]))  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",SixthNearest([GOODCUTOFF.HUMANOID]))  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",SixthNearest([GOODCUTOFF.HUMANOID]))  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",SixthNearest([GOODCUTOFF.HUMANOID]))  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",SixthNearest([GOODCUTOFF.HUMANOID]))  // Ixil's Spike +6
+    InWeaponRange(SixthNearest([GOODCUTOFF.HUMANOID]))
+    See(SixthNearest([GOODCUTOFF.HUMANOID]))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT(FifthNearest([GOODCUTOFF.HUMANOID]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(FifthNearest([GOODCUTOFF.HUMANOID]),STATE_PANIC)
-	CheckStatGT(FifthNearest([GOODCUTOFF.HUMANOID]),0,SAVEVSDEATH)
-	!Kit(FifthNearest([GOODCUTOFF.HUMANOID]),INQUISITOR)
-	!Kit(FifthNearest([GOODCUTOFF.HUMANOID]),UNDEADHUNTER)
-	!CheckStatGT(FifthNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT(FifthNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_FREE_ACTION)
-	!CheckStat(FifthNearest([GOODCUTOFF.HUMANOID]),1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",FifthNearest([GOODCUTOFF.HUMANOID]))  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",FifthNearest([GOODCUTOFF.HUMANOID]))  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",FifthNearest([GOODCUTOFF.HUMANOID]))  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",FifthNearest([GOODCUTOFF.HUMANOID]))  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",FifthNearest([GOODCUTOFF.HUMANOID]))  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",FifthNearest([GOODCUTOFF.HUMANOID]))  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",FifthNearest([GOODCUTOFF.HUMANOID]))  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",FifthNearest([GOODCUTOFF.HUMANOID]))  // Ixil's Spike +6
-	InWeaponRange(FifthNearest([GOODCUTOFF.HUMANOID]))
-	See(FifthNearest([GOODCUTOFF.HUMANOID]))
-	False()
+    !CheckStatGT(FifthNearest([GOODCUTOFF.HUMANOID]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck(FifthNearest([GOODCUTOFF.HUMANOID]),STATE_PANIC)
+    CheckStatGT(FifthNearest([GOODCUTOFF.HUMANOID]),0,SAVEVSDEATH)
+    !Kit(FifthNearest([GOODCUTOFF.HUMANOID]),INQUISITOR)
+    !Kit(FifthNearest([GOODCUTOFF.HUMANOID]),UNDEADHUNTER)
+    !CheckStatGT(FifthNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT(FifthNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_FREE_ACTION)
+    !CheckStat(FifthNearest([GOODCUTOFF.HUMANOID]),1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",FifthNearest([GOODCUTOFF.HUMANOID]))  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",FifthNearest([GOODCUTOFF.HUMANOID]))  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",FifthNearest([GOODCUTOFF.HUMANOID]))  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",FifthNearest([GOODCUTOFF.HUMANOID]))  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",FifthNearest([GOODCUTOFF.HUMANOID]))  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",FifthNearest([GOODCUTOFF.HUMANOID]))  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",FifthNearest([GOODCUTOFF.HUMANOID]))  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",FifthNearest([GOODCUTOFF.HUMANOID]))  // Ixil's Spike +6
+    InWeaponRange(FifthNearest([GOODCUTOFF.HUMANOID]))
+    See(FifthNearest([GOODCUTOFF.HUMANOID]))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT(FourthNearest([GOODCUTOFF.HUMANOID]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(FourthNearest([GOODCUTOFF.HUMANOID]),STATE_PANIC)
-	CheckStatGT(FourthNearest([GOODCUTOFF.HUMANOID]),0,SAVEVSDEATH)
-	!Kit(FourthNearest([GOODCUTOFF.HUMANOID]),INQUISITOR)
-	!Kit(FourthNearest([GOODCUTOFF.HUMANOID]),UNDEADHUNTER)
-	!CheckStatGT(FourthNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT(FourthNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_FREE_ACTION)
-	!CheckStat(FourthNearest([GOODCUTOFF.HUMANOID]),1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",FourthNearest([GOODCUTOFF.HUMANOID]))  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",FourthNearest([GOODCUTOFF.HUMANOID]))  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",FourthNearest([GOODCUTOFF.HUMANOID]))  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",FourthNearest([GOODCUTOFF.HUMANOID]))  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",FourthNearest([GOODCUTOFF.HUMANOID]))  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",FourthNearest([GOODCUTOFF.HUMANOID]))  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",FourthNearest([GOODCUTOFF.HUMANOID]))  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",FourthNearest([GOODCUTOFF.HUMANOID]))  // Ixil's Spike +6
-	InWeaponRange(FourthNearest([GOODCUTOFF.HUMANOID]))
-	See(FourthNearest([GOODCUTOFF.HUMANOID]))
-	False()
+    !CheckStatGT(FourthNearest([GOODCUTOFF.HUMANOID]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck(FourthNearest([GOODCUTOFF.HUMANOID]),STATE_PANIC)
+    CheckStatGT(FourthNearest([GOODCUTOFF.HUMANOID]),0,SAVEVSDEATH)
+    !Kit(FourthNearest([GOODCUTOFF.HUMANOID]),INQUISITOR)
+    !Kit(FourthNearest([GOODCUTOFF.HUMANOID]),UNDEADHUNTER)
+    !CheckStatGT(FourthNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT(FourthNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_FREE_ACTION)
+    !CheckStat(FourthNearest([GOODCUTOFF.HUMANOID]),1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",FourthNearest([GOODCUTOFF.HUMANOID]))  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",FourthNearest([GOODCUTOFF.HUMANOID]))  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",FourthNearest([GOODCUTOFF.HUMANOID]))  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",FourthNearest([GOODCUTOFF.HUMANOID]))  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",FourthNearest([GOODCUTOFF.HUMANOID]))  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",FourthNearest([GOODCUTOFF.HUMANOID]))  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",FourthNearest([GOODCUTOFF.HUMANOID]))  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",FourthNearest([GOODCUTOFF.HUMANOID]))  // Ixil's Spike +6
+    InWeaponRange(FourthNearest([GOODCUTOFF.HUMANOID]))
+    See(FourthNearest([GOODCUTOFF.HUMANOID]))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT(ThirdNearest([GOODCUTOFF.HUMANOID]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(ThirdNearest([GOODCUTOFF.HUMANOID]),STATE_PANIC)
-	CheckStatGT(ThirdNearest([GOODCUTOFF.HUMANOID]),0,SAVEVSDEATH)
-	!Kit(ThirdNearest([GOODCUTOFF.HUMANOID]),INQUISITOR)
-	!Kit(ThirdNearest([GOODCUTOFF.HUMANOID]),UNDEADHUNTER)
-	!CheckStatGT(ThirdNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT(ThirdNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_FREE_ACTION)
-	!CheckStat(ThirdNearest([GOODCUTOFF.HUMANOID]),1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Ixil's Spike +6
-	InWeaponRange(ThirdNearest([GOODCUTOFF.HUMANOID]))
-	See(ThirdNearest([GOODCUTOFF.HUMANOID]))
-	False()
+    !CheckStatGT(ThirdNearest([GOODCUTOFF.HUMANOID]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck(ThirdNearest([GOODCUTOFF.HUMANOID]),STATE_PANIC)
+    CheckStatGT(ThirdNearest([GOODCUTOFF.HUMANOID]),0,SAVEVSDEATH)
+    !Kit(ThirdNearest([GOODCUTOFF.HUMANOID]),INQUISITOR)
+    !Kit(ThirdNearest([GOODCUTOFF.HUMANOID]),UNDEADHUNTER)
+    !CheckStatGT(ThirdNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT(ThirdNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_FREE_ACTION)
+    !CheckStat(ThirdNearest([GOODCUTOFF.HUMANOID]),1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",ThirdNearest([GOODCUTOFF.HUMANOID]))  // Ixil's Spike +6
+    InWeaponRange(ThirdNearest([GOODCUTOFF.HUMANOID]))
+    See(ThirdNearest([GOODCUTOFF.HUMANOID]))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT(SecondNearest([GOODCUTOFF.HUMANOID]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(SecondNearest([GOODCUTOFF.HUMANOID]),STATE_PANIC)
-	CheckStatGT(SecondNearest([GOODCUTOFF.HUMANOID]),0,SAVEVSDEATH)
-	!Kit(SecondNearest([GOODCUTOFF.HUMANOID]),INQUISITOR)
-	!Kit(SecondNearest([GOODCUTOFF.HUMANOID]),UNDEADHUNTER)
-	!CheckStatGT(SecondNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT(SecondNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_FREE_ACTION)
-	!CheckStat(SecondNearest([GOODCUTOFF.HUMANOID]),1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",SecondNearest([GOODCUTOFF.HUMANOID]))  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",SecondNearest([GOODCUTOFF.HUMANOID]))  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",SecondNearest([GOODCUTOFF.HUMANOID]))  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",SecondNearest([GOODCUTOFF.HUMANOID]))  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",SecondNearest([GOODCUTOFF.HUMANOID]))  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",SecondNearest([GOODCUTOFF.HUMANOID]))  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",SecondNearest([GOODCUTOFF.HUMANOID]))  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",SecondNearest([GOODCUTOFF.HUMANOID]))  // Ixil's Spike +6
-	InWeaponRange(SecondNearest([GOODCUTOFF.HUMANOID]))
-	See(SecondNearest([GOODCUTOFF.HUMANOID]))
-	False()
+    !CheckStatGT(SecondNearest([GOODCUTOFF.HUMANOID]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck(SecondNearest([GOODCUTOFF.HUMANOID]),STATE_PANIC)
+    CheckStatGT(SecondNearest([GOODCUTOFF.HUMANOID]),0,SAVEVSDEATH)
+    !Kit(SecondNearest([GOODCUTOFF.HUMANOID]),INQUISITOR)
+    !Kit(SecondNearest([GOODCUTOFF.HUMANOID]),UNDEADHUNTER)
+    !CheckStatGT(SecondNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT(SecondNearest([GOODCUTOFF.HUMANOID]),0,CLERIC_FREE_ACTION)
+    !CheckStat(SecondNearest([GOODCUTOFF.HUMANOID]),1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",SecondNearest([GOODCUTOFF.HUMANOID]))  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",SecondNearest([GOODCUTOFF.HUMANOID]))  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",SecondNearest([GOODCUTOFF.HUMANOID]))  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",SecondNearest([GOODCUTOFF.HUMANOID]))  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",SecondNearest([GOODCUTOFF.HUMANOID]))  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",SecondNearest([GOODCUTOFF.HUMANOID]))  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",SecondNearest([GOODCUTOFF.HUMANOID]))  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",SecondNearest([GOODCUTOFF.HUMANOID]))  // Ixil's Spike +6
+    InWeaponRange(SecondNearest([GOODCUTOFF.HUMANOID]))
+    See(SecondNearest([GOODCUTOFF.HUMANOID]))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT([GOODCUTOFF.HUMANOID],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck([GOODCUTOFF.HUMANOID],STATE_PANIC)
-	CheckStatGT([GOODCUTOFF.HUMANOID],0,SAVEVSDEATH)
-	!Kit([GOODCUTOFF.HUMANOID],INQUISITOR)
-	!Kit([GOODCUTOFF.HUMANOID],UNDEADHUNTER)
-	!CheckStatGT([GOODCUTOFF.HUMANOID],0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT([GOODCUTOFF.HUMANOID],0,CLERIC_FREE_ACTION)
-	!CheckStat([GOODCUTOFF.HUMANOID],1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",[GOODCUTOFF.HUMANOID])  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",[GOODCUTOFF.HUMANOID])  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",[GOODCUTOFF.HUMANOID])  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",[GOODCUTOFF.HUMANOID])  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",[GOODCUTOFF.HUMANOID])  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",[GOODCUTOFF.HUMANOID])  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",[GOODCUTOFF.HUMANOID])  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",[GOODCUTOFF.HUMANOID])  // Ixil's Spike +6
-	InWeaponRange([GOODCUTOFF.HUMANOID])
-	See([GOODCUTOFF.HUMANOID])
-	False()
+    !CheckStatGT([GOODCUTOFF.HUMANOID],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck([GOODCUTOFF.HUMANOID],STATE_PANIC)
+    CheckStatGT([GOODCUTOFF.HUMANOID],0,SAVEVSDEATH)
+    !Kit([GOODCUTOFF.HUMANOID],INQUISITOR)
+    !Kit([GOODCUTOFF.HUMANOID],UNDEADHUNTER)
+    !CheckStatGT([GOODCUTOFF.HUMANOID],0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT([GOODCUTOFF.HUMANOID],0,CLERIC_FREE_ACTION)
+    !CheckStat([GOODCUTOFF.HUMANOID],1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",[GOODCUTOFF.HUMANOID])  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",[GOODCUTOFF.HUMANOID])  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",[GOODCUTOFF.HUMANOID])  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",[GOODCUTOFF.HUMANOID])  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",[GOODCUTOFF.HUMANOID])  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",[GOODCUTOFF.HUMANOID])  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",[GOODCUTOFF.HUMANOID])  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",[GOODCUTOFF.HUMANOID])  // Ixil's Spike +6
+    InWeaponRange([GOODCUTOFF.HUMANOID])
+    See([GOODCUTOFF.HUMANOID])
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT(ThirdNearest([PC.0.0.THIEF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(ThirdNearest([PC.0.0.THIEF]),STATE_PANIC)
-	CheckStatGT(ThirdNearest([PC.0.0.THIEF]),0,SAVEVSDEATH)
-	!CheckStatGT(ThirdNearest([PC.0.0.THIEF]),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT(ThirdNearest([PC.0.0.THIEF]),0,CLERIC_FREE_ACTION)
-	!CheckStat(ThirdNearest([PC.0.0.THIEF]),1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",ThirdNearest([PC.0.0.THIEF]))  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",ThirdNearest([PC.0.0.THIEF]))  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",ThirdNearest([PC.0.0.THIEF]))  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",ThirdNearest([PC.0.0.THIEF]))  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",ThirdNearest([PC.0.0.THIEF]))  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",ThirdNearest([PC.0.0.THIEF]))  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",ThirdNearest([PC.0.0.THIEF]))  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",ThirdNearest([PC.0.0.THIEF]))  // Ixil's Spike +6
-	InWeaponRange(ThirdNearest([PC.0.0.THIEF]))
-	See(ThirdNearest([PC.0.0.THIEF]))
-	False()
+    !CheckStatGT(ThirdNearest([PC.0.0.THIEF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck(ThirdNearest([PC.0.0.THIEF]),STATE_PANIC)
+    CheckStatGT(ThirdNearest([PC.0.0.THIEF]),0,SAVEVSDEATH)
+    !CheckStatGT(ThirdNearest([PC.0.0.THIEF]),0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT(ThirdNearest([PC.0.0.THIEF]),0,CLERIC_FREE_ACTION)
+    !CheckStat(ThirdNearest([PC.0.0.THIEF]),1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",ThirdNearest([PC.0.0.THIEF]))  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",ThirdNearest([PC.0.0.THIEF]))  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",ThirdNearest([PC.0.0.THIEF]))  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",ThirdNearest([PC.0.0.THIEF]))  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",ThirdNearest([PC.0.0.THIEF]))  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",ThirdNearest([PC.0.0.THIEF]))  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",ThirdNearest([PC.0.0.THIEF]))  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",ThirdNearest([PC.0.0.THIEF]))  // Ixil's Spike +6
+    InWeaponRange(ThirdNearest([PC.0.0.THIEF]))
+    See(ThirdNearest([PC.0.0.THIEF]))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT(SecondNearest([PC.0.0.THIEF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(SecondNearest([PC.0.0.THIEF]),STATE_PANIC)
-	CheckStatGT(SecondNearest([PC.0.0.THIEF]),0,SAVEVSDEATH)
-	!CheckStatGT(SecondNearest([PC.0.0.THIEF]),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT(SecondNearest([PC.0.0.THIEF]),0,CLERIC_FREE_ACTION)
-	!CheckStat(SecondNearest([PC.0.0.THIEF]),1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",SecondNearest([PC.0.0.THIEF]))  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",SecondNearest([PC.0.0.THIEF]))  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",SecondNearest([PC.0.0.THIEF]))  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",SecondNearest([PC.0.0.THIEF]))  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",SecondNearest([PC.0.0.THIEF]))  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",SecondNearest([PC.0.0.THIEF]))  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",SecondNearest([PC.0.0.THIEF]))  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",SecondNearest([PC.0.0.THIEF]))  // Ixil's Spike +6
-	InWeaponRange(SecondNearest([PC.0.0.THIEF]))
-	See(SecondNearest([PC.0.0.THIEF]))
-	False()
+    !CheckStatGT(SecondNearest([PC.0.0.THIEF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck(SecondNearest([PC.0.0.THIEF]),STATE_PANIC)
+    CheckStatGT(SecondNearest([PC.0.0.THIEF]),0,SAVEVSDEATH)
+    !CheckStatGT(SecondNearest([PC.0.0.THIEF]),0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT(SecondNearest([PC.0.0.THIEF]),0,CLERIC_FREE_ACTION)
+    !CheckStat(SecondNearest([PC.0.0.THIEF]),1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",SecondNearest([PC.0.0.THIEF]))  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",SecondNearest([PC.0.0.THIEF]))  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",SecondNearest([PC.0.0.THIEF]))  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",SecondNearest([PC.0.0.THIEF]))  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",SecondNearest([PC.0.0.THIEF]))  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",SecondNearest([PC.0.0.THIEF]))  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",SecondNearest([PC.0.0.THIEF]))  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",SecondNearest([PC.0.0.THIEF]))  // Ixil's Spike +6
+    InWeaponRange(SecondNearest([PC.0.0.THIEF]))
+    See(SecondNearest([PC.0.0.THIEF]))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT([PC.0.0.THIEF],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck([PC.0.0.THIEF],STATE_PANIC)
-	CheckStatGT([PC.0.0.THIEF],0,SAVEVSDEATH)
-	!CheckStatGT([PC.0.0.THIEF],0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT([PC.0.0.THIEF],0,CLERIC_FREE_ACTION)
-	!CheckStat([PC.0.0.THIEF],1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",[PC.0.0.THIEF])  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",[PC.0.0.THIEF])  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",[PC.0.0.THIEF])  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",[PC.0.0.THIEF])  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",[PC.0.0.THIEF])  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",[PC.0.0.THIEF])  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",[PC.0.0.THIEF])  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",[PC.0.0.THIEF])  // Ixil's Spike +6
-	InWeaponRange([PC.0.0.THIEF])
-	See([PC.0.0.THIEF])
-	False()
+    !CheckStatGT([PC.0.0.THIEF],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck([PC.0.0.THIEF],STATE_PANIC)
+    CheckStatGT([PC.0.0.THIEF],0,SAVEVSDEATH)
+    !CheckStatGT([PC.0.0.THIEF],0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT([PC.0.0.THIEF],0,CLERIC_FREE_ACTION)
+    !CheckStat([PC.0.0.THIEF],1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",[PC.0.0.THIEF])  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",[PC.0.0.THIEF])  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",[PC.0.0.THIEF])  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",[PC.0.0.THIEF])  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",[PC.0.0.THIEF])  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",[PC.0.0.THIEF])  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",[PC.0.0.THIEF])  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",[PC.0.0.THIEF])  // Ixil's Spike +6
+    InWeaponRange([PC.0.0.THIEF])
+    See([PC.0.0.THIEF])
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT(ThirdNearest([PC.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(ThirdNearest([PC.0.0.BARD_ALL]),STATE_PANIC)
-	CheckStatGT(ThirdNearest([PC.0.0.BARD_ALL]),0,SAVEVSDEATH)
-	!CheckStatGT(ThirdNearest([PC.0.0.BARD_ALL]),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT(ThirdNearest([PC.0.0.BARD_ALL]),0,CLERIC_FREE_ACTION)
-	!CheckStat(ThirdNearest([PC.0.0.BARD_ALL]),1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",ThirdNearest([PC.0.0.BARD_ALL]))  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",ThirdNearest([PC.0.0.BARD_ALL]))  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",ThirdNearest([PC.0.0.BARD_ALL]))  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",ThirdNearest([PC.0.0.BARD_ALL]))  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",ThirdNearest([PC.0.0.BARD_ALL]))  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",ThirdNearest([PC.0.0.BARD_ALL]))  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",ThirdNearest([PC.0.0.BARD_ALL]))  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",ThirdNearest([PC.0.0.BARD_ALL]))  // Ixil's Spike +6
-	InWeaponRange(ThirdNearest([PC.0.0.BARD_ALL]))
-	See(ThirdNearest([PC.0.0.BARD_ALL]))
-	False()
+    !CheckStatGT(ThirdNearest([PC.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck(ThirdNearest([PC.0.0.BARD_ALL]),STATE_PANIC)
+    CheckStatGT(ThirdNearest([PC.0.0.BARD_ALL]),0,SAVEVSDEATH)
+    !CheckStatGT(ThirdNearest([PC.0.0.BARD_ALL]),0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT(ThirdNearest([PC.0.0.BARD_ALL]),0,CLERIC_FREE_ACTION)
+    !CheckStat(ThirdNearest([PC.0.0.BARD_ALL]),1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",ThirdNearest([PC.0.0.BARD_ALL]))  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",ThirdNearest([PC.0.0.BARD_ALL]))  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",ThirdNearest([PC.0.0.BARD_ALL]))  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",ThirdNearest([PC.0.0.BARD_ALL]))  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",ThirdNearest([PC.0.0.BARD_ALL]))  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",ThirdNearest([PC.0.0.BARD_ALL]))  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",ThirdNearest([PC.0.0.BARD_ALL]))  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",ThirdNearest([PC.0.0.BARD_ALL]))  // Ixil's Spike +6
+    InWeaponRange(ThirdNearest([PC.0.0.BARD_ALL]))
+    See(ThirdNearest([PC.0.0.BARD_ALL]))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(SecondNearest([PC.0.0.BARD_ALL]),STATE_PANIC)
-	CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),0,SAVEVSDEATH)
-	!CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),0,CLERIC_FREE_ACTION)
-	!CheckStat(SecondNearest([PC.0.0.BARD_ALL]),1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",SecondNearest([PC.0.0.BARD_ALL]))  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",SecondNearest([PC.0.0.BARD_ALL]))  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",SecondNearest([PC.0.0.BARD_ALL]))  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",SecondNearest([PC.0.0.BARD_ALL]))  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",SecondNearest([PC.0.0.BARD_ALL]))  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",SecondNearest([PC.0.0.BARD_ALL]))  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",SecondNearest([PC.0.0.BARD_ALL]))  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",SecondNearest([PC.0.0.BARD_ALL]))  // Ixil's Spike +6
-	InWeaponRange(SecondNearest([PC.0.0.BARD_ALL]))
-	See(SecondNearest([PC.0.0.BARD_ALL]))
-	False()
+    !CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck(SecondNearest([PC.0.0.BARD_ALL]),STATE_PANIC)
+    CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),0,SAVEVSDEATH)
+    !CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),0,CLERIC_FREE_ACTION)
+    !CheckStat(SecondNearest([PC.0.0.BARD_ALL]),1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",SecondNearest([PC.0.0.BARD_ALL]))  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",SecondNearest([PC.0.0.BARD_ALL]))  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",SecondNearest([PC.0.0.BARD_ALL]))  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",SecondNearest([PC.0.0.BARD_ALL]))  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",SecondNearest([PC.0.0.BARD_ALL]))  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",SecondNearest([PC.0.0.BARD_ALL]))  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",SecondNearest([PC.0.0.BARD_ALL]))  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",SecondNearest([PC.0.0.BARD_ALL]))  // Ixil's Spike +6
+    InWeaponRange(SecondNearest([PC.0.0.BARD_ALL]))
+    See(SecondNearest([PC.0.0.BARD_ALL]))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT([PC.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck([PC.0.0.BARD_ALL],STATE_PANIC)
-	CheckStatGT([PC.0.0.BARD_ALL],0,SAVEVSDEATH)
-	!CheckStatGT([PC.0.0.BARD_ALL],0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT([PC.0.0.BARD_ALL],0,CLERIC_FREE_ACTION)
-	!CheckStat([PC.0.0.BARD_ALL],1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",[PC.0.0.BARD_ALL])  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",[PC.0.0.BARD_ALL])  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",[PC.0.0.BARD_ALL])  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",[PC.0.0.BARD_ALL])  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",[PC.0.0.BARD_ALL])  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",[PC.0.0.BARD_ALL])  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",[PC.0.0.BARD_ALL])  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",[PC.0.0.BARD_ALL])  // Ixil's Spike +6
-	InWeaponRange([PC.0.0.BARD_ALL])
-	See([PC.0.0.BARD_ALL])
-	False()
+    !CheckStatGT([PC.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck([PC.0.0.BARD_ALL],STATE_PANIC)
+    CheckStatGT([PC.0.0.BARD_ALL],0,SAVEVSDEATH)
+    !CheckStatGT([PC.0.0.BARD_ALL],0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT([PC.0.0.BARD_ALL],0,CLERIC_FREE_ACTION)
+    !CheckStat([PC.0.0.BARD_ALL],1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",[PC.0.0.BARD_ALL])  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",[PC.0.0.BARD_ALL])  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",[PC.0.0.BARD_ALL])  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",[PC.0.0.BARD_ALL])  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",[PC.0.0.BARD_ALL])  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",[PC.0.0.BARD_ALL])  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",[PC.0.0.BARD_ALL])  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",[PC.0.0.BARD_ALL])  // Ixil's Spike +6
+    InWeaponRange([PC.0.0.BARD_ALL])
+    See([PC.0.0.BARD_ALL])
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT(ThirdNearest([PC.0.0.MAGE_THIEF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(ThirdNearest([PC.0.0.MAGE_THIEF]),STATE_PANIC)
-	CheckStatGT(ThirdNearest([PC.0.0.MAGE_THIEF]),0,SAVEVSDEATH)
-	!CheckStatGT(ThirdNearest([PC.0.0.MAGE_THIEF]),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT(ThirdNearest([PC.0.0.MAGE_THIEF]),0,CLERIC_FREE_ACTION)
-	!CheckStat(ThirdNearest([PC.0.0.MAGE_THIEF]),1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Ixil's Spike +6
-	InWeaponRange(ThirdNearest([PC.0.0.MAGE_THIEF]))
-	See(ThirdNearest([PC.0.0.MAGE_THIEF]))
-	False()
+    !CheckStatGT(ThirdNearest([PC.0.0.MAGE_THIEF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck(ThirdNearest([PC.0.0.MAGE_THIEF]),STATE_PANIC)
+    CheckStatGT(ThirdNearest([PC.0.0.MAGE_THIEF]),0,SAVEVSDEATH)
+    !CheckStatGT(ThirdNearest([PC.0.0.MAGE_THIEF]),0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT(ThirdNearest([PC.0.0.MAGE_THIEF]),0,CLERIC_FREE_ACTION)
+    !CheckStat(ThirdNearest([PC.0.0.MAGE_THIEF]),1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",ThirdNearest([PC.0.0.MAGE_THIEF]))  // Ixil's Spike +6
+    InWeaponRange(ThirdNearest([PC.0.0.MAGE_THIEF]))
+    See(ThirdNearest([PC.0.0.MAGE_THIEF]))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT(SecondNearest([PC.0.0.MAGE_THIEF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(SecondNearest([PC.0.0.MAGE_THIEF]),STATE_PANIC)
-	CheckStatGT(SecondNearest([PC.0.0.MAGE_THIEF]),0,SAVEVSDEATH)
-	!CheckStatGT(SecondNearest([PC.0.0.MAGE_THIEF]),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT(SecondNearest([PC.0.0.MAGE_THIEF]),0,CLERIC_FREE_ACTION)
-	!CheckStat(SecondNearest([PC.0.0.MAGE_THIEF]),1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",SecondNearest([PC.0.0.MAGE_THIEF]))  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",SecondNearest([PC.0.0.MAGE_THIEF]))  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",SecondNearest([PC.0.0.MAGE_THIEF]))  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",SecondNearest([PC.0.0.MAGE_THIEF]))  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",SecondNearest([PC.0.0.MAGE_THIEF]))  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",SecondNearest([PC.0.0.MAGE_THIEF]))  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",SecondNearest([PC.0.0.MAGE_THIEF]))  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",SecondNearest([PC.0.0.MAGE_THIEF]))  // Ixil's Spike +6
-	InWeaponRange(SecondNearest([PC.0.0.MAGE_THIEF]))
-	See(SecondNearest([PC.0.0.MAGE_THIEF]))
-	False()
+    !CheckStatGT(SecondNearest([PC.0.0.MAGE_THIEF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck(SecondNearest([PC.0.0.MAGE_THIEF]),STATE_PANIC)
+    CheckStatGT(SecondNearest([PC.0.0.MAGE_THIEF]),0,SAVEVSDEATH)
+    !CheckStatGT(SecondNearest([PC.0.0.MAGE_THIEF]),0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT(SecondNearest([PC.0.0.MAGE_THIEF]),0,CLERIC_FREE_ACTION)
+    !CheckStat(SecondNearest([PC.0.0.MAGE_THIEF]),1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",SecondNearest([PC.0.0.MAGE_THIEF]))  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",SecondNearest([PC.0.0.MAGE_THIEF]))  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",SecondNearest([PC.0.0.MAGE_THIEF]))  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",SecondNearest([PC.0.0.MAGE_THIEF]))  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",SecondNearest([PC.0.0.MAGE_THIEF]))  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",SecondNearest([PC.0.0.MAGE_THIEF]))  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",SecondNearest([PC.0.0.MAGE_THIEF]))  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",SecondNearest([PC.0.0.MAGE_THIEF]))  // Ixil's Spike +6
+    InWeaponRange(SecondNearest([PC.0.0.MAGE_THIEF]))
+    See(SecondNearest([PC.0.0.MAGE_THIEF]))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT([PC.0.0.MAGE_THIEF],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck([PC.0.0.MAGE_THIEF],STATE_PANIC)
-	CheckStatGT([PC.0.0.MAGE_THIEF],0,SAVEVSDEATH)
-	!CheckStatGT([PC.0.0.MAGE_THIEF],0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT([PC.0.0.MAGE_THIEF],0,CLERIC_FREE_ACTION)
-	!CheckStat([PC.0.0.MAGE_THIEF],1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",[PC.0.0.MAGE_THIEF])  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",[PC.0.0.MAGE_THIEF])  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",[PC.0.0.MAGE_THIEF])  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",[PC.0.0.MAGE_THIEF])  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",[PC.0.0.MAGE_THIEF])  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",[PC.0.0.MAGE_THIEF])  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",[PC.0.0.MAGE_THIEF])  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",[PC.0.0.MAGE_THIEF])  // Ixil's Spike +6
-	InWeaponRange([PC.0.0.MAGE_THIEF])
-	See([PC.0.0.MAGE_THIEF])
-	False()
+    !CheckStatGT([PC.0.0.MAGE_THIEF],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck([PC.0.0.MAGE_THIEF],STATE_PANIC)
+    CheckStatGT([PC.0.0.MAGE_THIEF],0,SAVEVSDEATH)
+    !CheckStatGT([PC.0.0.MAGE_THIEF],0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT([PC.0.0.MAGE_THIEF],0,CLERIC_FREE_ACTION)
+    !CheckStat([PC.0.0.MAGE_THIEF],1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",[PC.0.0.MAGE_THIEF])  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",[PC.0.0.MAGE_THIEF])  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",[PC.0.0.MAGE_THIEF])  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",[PC.0.0.MAGE_THIEF])  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",[PC.0.0.MAGE_THIEF])  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",[PC.0.0.MAGE_THIEF])  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",[PC.0.0.MAGE_THIEF])  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",[PC.0.0.MAGE_THIEF])  // Ixil's Spike +6
+    InWeaponRange([PC.0.0.MAGE_THIEF])
+    See([PC.0.0.MAGE_THIEF])
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT(ThirdNearest([PC.0.0.MAGE]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(ThirdNearest([PC.0.0.MAGE]),STATE_PANIC)
-	CheckStatGT(ThirdNearest([PC.0.0.MAGE]),0,SAVEVSDEATH)
-	!CheckStatGT(ThirdNearest([PC.0.0.MAGE]),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT(ThirdNearest([PC.0.0.MAGE]),0,CLERIC_FREE_ACTION)
-	!CheckStat(ThirdNearest([PC.0.0.MAGE]),1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",ThirdNearest([PC.0.0.MAGE]))  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",ThirdNearest([PC.0.0.MAGE]))  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",ThirdNearest([PC.0.0.MAGE]))  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",ThirdNearest([PC.0.0.MAGE]))  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",ThirdNearest([PC.0.0.MAGE]))  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",ThirdNearest([PC.0.0.MAGE]))  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",ThirdNearest([PC.0.0.MAGE]))  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",ThirdNearest([PC.0.0.MAGE]))  // Ixil's Spike +6
-	InWeaponRange(ThirdNearest([PC.0.0.MAGE]))
-	See(ThirdNearest([PC.0.0.MAGE]))
-	False()
+    !CheckStatGT(ThirdNearest([PC.0.0.MAGE]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck(ThirdNearest([PC.0.0.MAGE]),STATE_PANIC)
+    CheckStatGT(ThirdNearest([PC.0.0.MAGE]),0,SAVEVSDEATH)
+    !CheckStatGT(ThirdNearest([PC.0.0.MAGE]),0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT(ThirdNearest([PC.0.0.MAGE]),0,CLERIC_FREE_ACTION)
+    !CheckStat(ThirdNearest([PC.0.0.MAGE]),1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",ThirdNearest([PC.0.0.MAGE]))  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",ThirdNearest([PC.0.0.MAGE]))  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",ThirdNearest([PC.0.0.MAGE]))  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",ThirdNearest([PC.0.0.MAGE]))  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",ThirdNearest([PC.0.0.MAGE]))  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",ThirdNearest([PC.0.0.MAGE]))  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",ThirdNearest([PC.0.0.MAGE]))  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",ThirdNearest([PC.0.0.MAGE]))  // Ixil's Spike +6
+    InWeaponRange(ThirdNearest([PC.0.0.MAGE]))
+    See(ThirdNearest([PC.0.0.MAGE]))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT(SecondNearest([PC.0.0.MAGE]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(SecondNearest([PC.0.0.MAGE]),STATE_PANIC)
-	CheckStatGT(SecondNearest([PC.0.0.MAGE]),0,SAVEVSDEATH)
-	!CheckStatGT(SecondNearest([PC.0.0.MAGE]),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT(SecondNearest([PC.0.0.MAGE]),0,CLERIC_FREE_ACTION)
-	!CheckStat(SecondNearest([PC.0.0.MAGE]),1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",SecondNearest([PC.0.0.MAGE]))  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",SecondNearest([PC.0.0.MAGE]))  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",SecondNearest([PC.0.0.MAGE]))  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",SecondNearest([PC.0.0.MAGE]))  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",SecondNearest([PC.0.0.MAGE]))  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",SecondNearest([PC.0.0.MAGE]))  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",SecondNearest([PC.0.0.MAGE]))  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",SecondNearest([PC.0.0.MAGE]))  // Ixil's Spike +6
-	InWeaponRange(SecondNearest([PC.0.0.MAGE]))
-	See(SecondNearest([PC.0.0.MAGE]))
-	False()
+    !CheckStatGT(SecondNearest([PC.0.0.MAGE]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck(SecondNearest([PC.0.0.MAGE]),STATE_PANIC)
+    CheckStatGT(SecondNearest([PC.0.0.MAGE]),0,SAVEVSDEATH)
+    !CheckStatGT(SecondNearest([PC.0.0.MAGE]),0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT(SecondNearest([PC.0.0.MAGE]),0,CLERIC_FREE_ACTION)
+    !CheckStat(SecondNearest([PC.0.0.MAGE]),1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",SecondNearest([PC.0.0.MAGE]))  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",SecondNearest([PC.0.0.MAGE]))  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",SecondNearest([PC.0.0.MAGE]))  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",SecondNearest([PC.0.0.MAGE]))  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",SecondNearest([PC.0.0.MAGE]))  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",SecondNearest([PC.0.0.MAGE]))  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",SecondNearest([PC.0.0.MAGE]))  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",SecondNearest([PC.0.0.MAGE]))  // Ixil's Spike +6
+    InWeaponRange(SecondNearest([PC.0.0.MAGE]))
+    See(SecondNearest([PC.0.0.MAGE]))
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!CheckStatGT([PC.0.0.MAGE],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck([PC.0.0.MAGE],STATE_PANIC)
-	CheckStatGT([PC.0.0.MAGE],0,SAVEVSDEATH)
-	!CheckStatGT([PC.0.0.MAGE],0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStatGT([PC.0.0.MAGE],0,CLERIC_FREE_ACTION)
-	!CheckStat([PC.0.0.MAGE],1,OFFENSIVE_MODIFIER)
-	!HasItemEquiped("RING09",[PC.0.0.MAGE])  // Edventar's Gift
-	!HasItemEquipedReal("NPSW01",[PC.0.0.MAGE])  // Sword of Arvoreen +3
-	!HasItemEquipedReal("SW1H27",[PC.0.0.MAGE])  // Arbane's Sword of Agility +2
-	!HasItemEquipedReal("SW2H06",[PC.0.0.MAGE])  // Spider's Bane +2
-	!HasItemEquiped("SHLD25",[PC.0.0.MAGE])  // Shield of Harmony +2
-	!HasItemEquipedReal("SPER07",[PC.0.0.MAGE])  // Spear of the Unicorn +2
-	!HasItemEquipedReal("BLUN30",[PC.0.0.MAGE])  // Flail of Ages +5
-	!HasItemEquipedReal("SPER12",[PC.0.0.MAGE])  // Ixil's Spike +6
-	InWeaponRange([PC.0.0.MAGE])
-	See([PC.0.0.MAGE])
-	False()
+    !CheckStatGT([PC.0.0.MAGE],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !StateCheck([PC.0.0.MAGE],STATE_PANIC)
+    CheckStatGT([PC.0.0.MAGE],0,SAVEVSDEATH)
+    !CheckStatGT([PC.0.0.MAGE],0,CLERIC_CHAOTIC_COMMANDS)
+    !CheckStatGT([PC.0.0.MAGE],0,CLERIC_FREE_ACTION)
+    !CheckStat([PC.0.0.MAGE],1,OFFENSIVE_MODIFIER)
+    !HasItemEquiped("RING09",[PC.0.0.MAGE])  // Edventar's Gift
+    !HasItemEquipedReal("NPSW01",[PC.0.0.MAGE])  // Sword of Arvoreen +3
+    !HasItemEquipedReal("SW1H27",[PC.0.0.MAGE])  // Arbane's Sword of Agility +2
+    !HasItemEquipedReal("SW2H06",[PC.0.0.MAGE])  // Spider's Bane +2
+    !HasItemEquiped("SHLD25",[PC.0.0.MAGE])  // Shield of Harmony +2
+    !HasItemEquipedReal("SPER07",[PC.0.0.MAGE])  // Spear of the Unicorn +2
+    !HasItemEquipedReal("BLUN30",[PC.0.0.MAGE])  // Flail of Ages +5
+    !HasItemEquipedReal("SPER12",[PC.0.0.MAGE])  // Ixil's Spike +6
+    InWeaponRange([PC.0.0.MAGE])
+    See([PC.0.0.MAGE])
+    False()
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
-	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-	Allegiance(LastSeenBy(Myself),GOODCUTOFF)
-	InWeaponRange(LastSeenBy(Myself))
+    !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+    !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+    Allegiance(LastSeenBy(Myself),GOODCUTOFF)
+    InWeaponRange(LastSeenBy(Myself))
 THEN
-	RESPONSE #100
-		AttackReevaluate(LastSeenBy(Myself),15)
+    RESPONSE #100
+        AttackReevaluate(LastSeenBy(Myself),15)
 END
-

@@ -1,86 +1,85 @@
 IF
-	Global("OHB_305_COUNTER","MYAREA",0)
+    Global("OHB_305_COUNTER","MYAREA",0)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_305_COUNTER","MYAREA",1)
-		SetGlobalTimer("OHB_305_TIMER","MYAREA",TWO_TURNS)
+    RESPONSE #100
+        SetGlobal("OHB_305_COUNTER","MYAREA",1)
+        SetGlobalTimer("OHB_305_TIMER","MYAREA",TWO_TURNS)
 END
 
 IF
-	Global("OH_PBarrier","LOCALS",0)
+    Global("OH_PBarrier","LOCALS",0)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OH_PBarrier","LOCALS",1)
-		SetSequence(SEQ_CAST)
-		CreateVisualEffectObject("SPFLESHS",Myself)
-		DisplayString(Myself,101772)  // Psionic Barrier
-		FillSlot(SLOT_AMULET)
-		SetInterrupt(FALSE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OH_PBarrier","LOCALS",1)
+        SetSequence(SEQ_CAST)
+        CreateVisualEffectObject("SPFLESHS",Myself)
+        DisplayString(Myself,101772)  // Psionic Barrier
+        FillSlot(SLOT_AMULET)
+        SetInterrupt(FALSE)
 END
 
 IF
-	Global("OH_PBarrier","LOCALS",1)
-	NumDeadGT("OHBMND01",2)  // Mind Flayer
+    Global("OH_PBarrier","LOCALS",1)
+    NumDeadGT("OHBMND01",2)  // Mind Flayer
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OH_PBarrier","LOCALS",2)
-		DestroyItem("MINHP1")  // No such index
-		DestroyItem("INVULNER")  // Ring
-		DestroyItem("CAMBION")  // No such index
-		SmallWait(5)
-		Kill(Myself)
-		ReallyForceSpellDead(Myself,FLASHY_DEATH_1)  // SPIN782.SPL (No such index)
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OH_PBarrier","LOCALS",2)
+        DestroyItem("MINHP1")  // No such index
+        DestroyItem("INVULNER")  // Ring
+        DestroyItem("CAMBION")  // No such index
+        SmallWait(5)
+        Kill(Myself)
+        ReallyForceSpellDead(Myself,FLASHY_DEATH_1)  // SPIN782.SPL (No such index)
+        SetInterrupt(TRUE)
 END
 
 IF
-	GlobalTimerExpired("OHB_305_TIMER","MYAREA")
-	Global("OHB_BATTLE_COMPLETE","GLOBAL",0)
-	Global("OH_Killed_Party","LOCALS",0)
+    GlobalTimerExpired("OHB_305_TIMER","MYAREA")
+    Global("OHB_BATTLE_COMPLETE","GLOBAL",0)
+    Global("OH_Killed_Party","LOCALS",0)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("OH_Killed_Party","LOCALS",1)
-		ClearAllActions()
-		StartCutSceneMode()
-		MultiPlayerSync()
-		MoveViewObject(Myself,INSTANT)
-		DestroyItem("CAMBION")  // No such index
-		CreateVisualEffectObject("SPROTECT",Myself)
-		Wait(1)
-		CreateVisualEffectObject("SPROTECT",Myself)
-		Wait(1)
-		CreateVisualEffectObject("SPROTECT",Myself)
-		ForceSpell(Myself,DO_NOTHING)  // SPIN905.SPL (No such index)
-		Wait(3)
-		ReallyForceSpell(Myself,MIND_FLAYER_PSIONIC_BLAST)  // SPIN974.SPL (Psionic Blast)
-		CreateVisualEffectObject("SPFLESHS",Myself)
-		SmallWait(5)
-		CreateVisualEffectObject("SPDEATH3",Player1)
-		CreateVisualEffectObject("SPDEATH3",Player2)
-		CreateVisualEffectObject("SPDEATH3",Player3)
-		CreateVisualEffectObject("SPDEATH3",Player4)
-		CreateVisualEffectObject("SPDEATH3",Player5)
-		CreateVisualEffectObject("SPDEATH3",Player6)
-		SmallWait(5)
-		MultiPlayerSync()
-		EndCutSceneMode()
-		Kill(Player1)
-		Kill(Player2)
-		Kill(Player3)
-		Kill(Player4)
-		Kill(Player5)
-		Kill(Player6)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("OH_Killed_Party","LOCALS",1)
+        ClearAllActions()
+        StartCutSceneMode()
+        MultiPlayerSync()
+        MoveViewObject(Myself,INSTANT)
+        DestroyItem("CAMBION")  // No such index
+        CreateVisualEffectObject("SPROTECT",Myself)
+        Wait(1)
+        CreateVisualEffectObject("SPROTECT",Myself)
+        Wait(1)
+        CreateVisualEffectObject("SPROTECT",Myself)
+        ForceSpell(Myself,DO_NOTHING)  // SPIN905.SPL (No such index)
+        Wait(3)
+        ReallyForceSpell(Myself,MIND_FLAYER_PSIONIC_BLAST)  // SPIN974.SPL (Psionic Blast)
+        CreateVisualEffectObject("SPFLESHS",Myself)
+        SmallWait(5)
+        CreateVisualEffectObject("SPDEATH3",Player1)
+        CreateVisualEffectObject("SPDEATH3",Player2)
+        CreateVisualEffectObject("SPDEATH3",Player3)
+        CreateVisualEffectObject("SPDEATH3",Player4)
+        CreateVisualEffectObject("SPDEATH3",Player5)
+        CreateVisualEffectObject("SPDEATH3",Player6)
+        SmallWait(5)
+        MultiPlayerSync()
+        EndCutSceneMode()
+        Kill(Player1)
+        Kill(Player2)
+        Kill(Player3)
+        Kill(Player4)
+        Kill(Player5)
+        Kill(Player6)
 END
 
 IF
-	!GlobalTimerNotExpired("OH_VFX","LOCALS")
-	GlobalTimerNotExpired("OHB_305_TIMER","MYAREA")
+    !GlobalTimerNotExpired("OH_VFX","LOCALS")
+    GlobalTimerNotExpired("OHB_305_TIMER","MYAREA")
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OH_VFX","LOCALS",TWO_ROUNDS)
-		ForceSpell(Myself,DO_NOTHING)  // SPIN905.SPL (No such index)
+    RESPONSE #100
+        SetGlobalTimer("OH_VFX","LOCALS",TWO_ROUNDS)
+        ForceSpell(Myself,DO_NOTHING)  // SPIN905.SPL (No such index)
 END
-

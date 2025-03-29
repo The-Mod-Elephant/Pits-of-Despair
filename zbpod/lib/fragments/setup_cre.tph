@@ -22,7 +22,7 @@ COPY_EXISTING ~ohbstirv.cre~ ~override~
 COPY ~%MOD_FOLDER%/creatures/mutvampworg~ ~override~
 
 // Create 5 unique instances of vampiric worgs
-ACTION_FOR_EACH wolf IN 
+ACTION_FOR_EACH wolf IN
         1
         2
         3
@@ -46,7 +46,7 @@ ACTION_FOR_EACH wolf IN
             REMOVE_CRE_ITEM minhp1
             WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
             WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~P_RED_WORG~))
-END    
+END
 
 // All moosey moose related code goes here
 COPY ~%MOD_FOLDER%/creatures/mutdiremoose~ ~override~
@@ -67,7 +67,7 @@ COPY_EXISTING "zbmoose2.spl" "override" // next the unconsciousness effect
 COMPILE "%MOD_FOLDER%/creatures/#scripts/zbmostmp.baf" // compile the script that makes the moose stomp selectively
 
 // Create 3 unique instances of moose
-ACTION_FOR_EACH moose IN 
+ACTION_FOR_EACH moose IN
         1
         2
         3
@@ -90,7 +90,7 @@ END
 COPY ~%MOD_FOLDER%/creatures/mutdirebear~ ~override~
 
 // Create 2 unique instances of bears
-ACTION_FOR_EACH bear IN 
+ACTION_FOR_EACH bear IN
         1
         2
         3
@@ -103,7 +103,7 @@ ACTION_FOR_EACH bear IN
             WRITE_ASCII 0x258 ~mobear01~      #8 // Add Race Script
             WRITE_ASCII 0x268 ~momatk01~      #8 // Add Default Script
             WRITE_ASCII 0x280 ~mobear0%bear%~ #8 // Script Name
-END 
+END
 
 // start of dire lion related code
 /*
@@ -141,7 +141,7 @@ ACTION_BASH_FOR ~%MOD_FOLDER%/animations/displacer_beast~ ~^.+.bam$~ BEGIN
 END
 
 // Create 5 unique instances of displacer beasts
-ACTION_FOR_EACH displacer IN 
+ACTION_FOR_EACH displacer IN
         1
         2
         3
@@ -163,7 +163,7 @@ COPY ~%MOD_FOLDER%/creatures/displacer/modisp01.itm~ ~override~  // Claws
 
 COPY ~%MOD_FOLDER%/creatures/mutboalisk~ ~override~
 // Create 2 unique instances of boalisk
-ACTION_FOR_EACH boa IN 
+ACTION_FOR_EACH boa IN
         1
         2
     BEGIN
@@ -181,7 +181,7 @@ END
 
 COPY ~%MOD_FOLDER%/creatures/mutcarrion~ ~override~
 // Create 3 unique instances of carrion crawlers
-ACTION_FOR_EACH crawl IN 
+ACTION_FOR_EACH crawl IN
         1
         2
         3
@@ -199,7 +199,7 @@ END
 
 COPY ~%MOD_FOLDER%/creatures/mutvortex~ ~override~
 // Create 2 unique instances of vortex spiders
-ACTION_FOR_EACH spdr IN 
+ACTION_FOR_EACH spdr IN
         1
         2
     BEGIN
@@ -218,7 +218,7 @@ END
 
 COPY ~%MOD_FOLDER%/creatures/mutgwyvern~ ~override~
 // Create 2 unique instances of wyverns
-ACTION_FOR_EACH wvrn IN 
+ACTION_FOR_EACH wvrn IN
         1
         2
     BEGIN
@@ -283,7 +283,7 @@ COPY_EXISTING ~OHBORC01.cre~ ~override~
 
 // ohb_101 Orc Archer
 COPY_EXISTING ~OHBORC02.cre~ ~override~
-    WRITE_BYTE 0x23c 17  // Dexterity    
+    WRITE_BYTE 0x23c 17  // Dexterity
     REPLACE_CRE_ITEM ~BRAC04~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~GLOVES~ EQUIP // Dale's Protectors
 
 // ohb_102 Thief fight
@@ -303,7 +303,7 @@ COPY_EXISTING ~ohbgla02.cre~ ~override~
 COPY_EXISTING ~ZBGOREM1.SPL~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@18004) END // add .tra ref later
 
-	COPY ~%MOD_FOLDER%/creatures/thewinged~ ~override~
+    COPY ~%MOD_FOLDER%/creatures/thewinged~ ~override~
 COPY_EXISTING ~ohbwing.cre~ ~override~
     SAY 0x08 @15019
     SAY 0x0c @15019
@@ -332,7 +332,7 @@ END
 
 
 // Add Prebuff Priest
-ACTION_FOR_EACH priest IN 
+ACTION_FOR_EACH priest IN
         OHBORC03 // orc priest
         OHBDRO04 // drow priestess
     BEGIN
@@ -351,7 +351,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~OHBDRO03.cre~ BEGIN
 END
 
 // Add Ranged Scripts & APR Boost
-ACTION_FOR_EACH ranged IN 
+ACTION_FOR_EACH ranged IN
         ohborc02 // orc archer
         ohbgla02 // gladiator
     BEGIN
@@ -363,7 +363,7 @@ ACTION_FOR_EACH ranged IN
     END
 
 // Add Ranged Scripts & APR Boost (Drow)
-ACTION_FOR_EACH ranged1 IN 
+ACTION_FOR_EACH ranged1 IN
         ohbdro02 // drow scout
     BEGIN
         ACTION_IF FILE_EXISTS_IN_GAME ~%ranged1%.cre~ BEGIN
@@ -374,7 +374,7 @@ ACTION_FOR_EACH ranged1 IN
     END
 
 // Add Melee Scrips & APR Boost
-ACTION_FOR_EACH melee IN 
+ACTION_FOR_EACH melee IN
         ohborc01 // orc
         ohbmin01 // minotaur
         ohbliz02 // lizard man elite
@@ -388,7 +388,7 @@ ACTION_FOR_EACH melee IN
     END
 
 // Add Melee Scrips & APR Boost (Drow)
-ACTION_FOR_EACH melee1 IN 
+ACTION_FOR_EACH melee1 IN
         ohbdro01 // drow warrior
     BEGIN
         ACTION_IF FILE_EXISTS_IN_GAME ~%melee1%.cre~ BEGIN
@@ -399,7 +399,7 @@ ACTION_FOR_EACH melee1 IN
     END
 
 // ohb_104 Elder Umber Hulk fight
-COPY_EXISTING ~ohbumb01.CRE~ ~override~ 
+COPY_EXISTING ~ohbumb01.CRE~ ~override~
     WRITE_BYTE 0x24 110  // Current HP
     WRITE_BYTE 0x26 110  // Maximum HP
 

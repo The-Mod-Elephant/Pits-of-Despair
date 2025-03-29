@@ -1,32 +1,31 @@
 IF
-	Global("OHB_503","GLOBAL",1)
-	Global("OHB_START_BATTLE","GLOBAL",2)
-	Global("ohb_spawn_gladiators","myarea",0)
+    Global("OHB_503","GLOBAL",1)
+    Global("OHB_START_BATTLE","GLOBAL",2)
+    Global("ohb_spawn_gladiators","myarea",0)
 THEN
-	RESPONSE #100
-		StartCutSceneMode()
-		SetGlobal("ohb_spawn_gladiators","myarea",1)
-		FadeFromColor([20.0],0)
-		CreateCreature("OHB3IREN",[1363.887],SSW)  // Jon Irenicus
-		CreateCreature("OHB3BODH",[1388.925],SSW)  // Bodhi
-		CreateCreature("OHB3DEM1",[1402.822],SSW)  // Cornugon
-		CreateCreature("OHB3DEM2",[1461.871],SSW)  // Cornugon
-		CreateCreature("OHB3DEM3",[1443.830],SSW)  // Cornugon
-		CreateCreature("OHB3VMP1",[1465.923],SSW)  // Vampire
-		CreateCreature("OHB3VMP2",[1450.986],SSW)  // Vampire
-		CreateCreature("OHB3VMP3",[1483.963],SSW)  // Vampire
-		SmallWait(25)
-		ActionOverride("ohbelgia",StartDialogueNoSet(Player1))
+    RESPONSE #100
+        StartCutSceneMode()
+        SetGlobal("ohb_spawn_gladiators","myarea",1)
+        FadeFromColor([20.0],0)
+        CreateCreature("OHB3IREN",[1363.887],SSW)  // Jon Irenicus
+        CreateCreature("OHB3BODH",[1388.925],SSW)  // Bodhi
+        CreateCreature("OHB3DEM1",[1402.822],SSW)  // Cornugon
+        CreateCreature("OHB3DEM2",[1461.871],SSW)  // Cornugon
+        CreateCreature("OHB3DEM3",[1443.830],SSW)  // Cornugon
+        CreateCreature("OHB3VMP1",[1465.923],SSW)  // Vampire
+        CreateCreature("OHB3VMP2",[1450.986],SSW)  // Vampire
+        CreateCreature("OHB3VMP3",[1483.963],SSW)  // Vampire
+        SmallWait(25)
+        ActionOverride("ohbelgia",StartDialogueNoSet(Player1))
 END
 
 IF
-	Global("OHB_START_BATTLE","GLOBAL",3)
+    Global("OHB_START_BATTLE","GLOBAL",3)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_503","GLOBAL",2)
-		SetGlobal("OHB_START_BATTLE","GLOBAL",4)
-		UnhideGUI()
-		SetGlobal("ohb_spawn_gladiators","myarea",0)
-		SetCursorState(FALSE)
+    RESPONSE #100
+        SetGlobal("OHB_503","GLOBAL",2)
+        SetGlobal("OHB_START_BATTLE","GLOBAL",4)
+        UnhideGUI()
+        SetGlobal("ohb_spawn_gladiators","myarea",0)
+        SetCursorState(FALSE)
 END
-

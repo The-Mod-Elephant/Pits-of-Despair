@@ -1,6 +1,6 @@
-/* extending Vyatri's dialogue so we can move the players to the new area 
-might not need to append them all but i'm doing it as a failsafe. 
-will need to adjust global numbers to account for having the letter etc - this is just to check if it works... */ 
+/* extending Vyatri's dialogue so we can move the players to the new area
+might not need to append them all but i'm doing it as a failsafe.
+will need to adjust global numbers to account for having the letter etc - this is just to check if it works... */
 EXTEND_BOTTOM TRINNK01 0
 + ~PartyHasItem("zbpdnote") Global("ZBPODSTART","GLOBAL",0)~ + ~I received your note. Has the djinni arrived yet?~ EXTERN TRINNK01 ZBPODMOVE
 END
