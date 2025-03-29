@@ -1,22 +1,22 @@
 BEGIN ZBNEPH
 
 /// Introduction ///
-IF ~Global("ZB_NEPH_BEGIN", "GLOBAL",1) ReputationLT(Player1,7)~ THEN BEGIN zbnepharenaintro1
+IF ~Global("ZB_NEPH_INTRO", "GLOBAL",0) ReputationLT(Player1,7)~ THEN BEGIN zbnepharenaintro1
   SAY @36 /* Your reputation has preceded you. You certainly don’t mind getting your hands dirty. */
-  IF ~~ THEN REPLY @12 /* Hello, who might you be? */ DO ~SetGlobal("ZB_NEPH_BEGIN","GLOBAL",2)~ GOTO zbneph1
-  IF ~~ THEN REPLY @13 /* You've heard true, what is your name? */ DO ~SetGlobal("ZB_NEPH_BEGIN","GLOBAL",2)~ GOTO zbneph1
+  IF ~~ THEN REPLY @12 /* Hello, who might you be? */ DO ~SetGlobal("ZB_NEPH_INTRO","GLOBAL",1)~ GOTO zbneph1
+  IF ~~ THEN REPLY @13 /* You've heard true, what is your name? */ DO ~SetGlobal("ZB_NEPH_INTRO","GLOBAL",1)~ GOTO zbneph1
 END
 
-IF ~Global("ZB_NEPH_BEGIN", "GLOBAL",1) ReputationGT(Player1,15)~ THEN BEGIN zbnepharenaintro2
+IF ~Global("ZB_NEPH_INTRO", "GLOBAL",0) ReputationGT(Player1,15)~ THEN BEGIN zbnepharenaintro2
   SAY @37 /* People seem to know you as someone who they can count on when they are in need. */
-  IF ~~ THEN REPLY @12 /* Hello, who might you be? */ DO ~SetGlobal("ZB_NEPH_BEGIN","GLOBAL",2)~ GOTO zbneph1
-  IF ~~ THEN REPLY @13 /* You've heard true, what is your name? */ DO ~SetGlobal("ZB_NEPH_BEGIN","GLOBAL",2)~ GOTO zbneph1
+  IF ~~ THEN REPLY @12 /* Hello, who might you be? */ DO ~SetGlobal("ZB_NEPH_INTRO","GLOBAL",1)~ GOTO zbneph1
+  IF ~~ THEN REPLY @13 /* You've heard true, what is your name? */ DO ~SetGlobal("ZB_NEPH_INTRO","GLOBAL",1)~ GOTO zbneph1
 END
 
-IF ~Global("ZB_NEPH_BEGIN", "GLOBAL",1) ReputationGT(Player1,6) ReputationLT(Player1,17)~ THEN BEGIN zbnepharenaintro3
+IF ~Global("ZB_NEPH_INTRO", "GLOBAL",0) ReputationGT(Player1,6) ReputationLT(Player1,17)~ THEN BEGIN zbnepharenaintro3
   SAY @11 /* Well look here, a mighty Bhaalspawn. They say that you are one of a kind, more than your brothers and sisters in Murder. */
-  IF ~~ THEN REPLY @12 /* Hello, who might you be? */ DO ~SetGlobal("ZB_NEPH_BEGIN","GLOBAL",2)~ GOTO zbneph1
-  IF ~~ THEN REPLY @13 /* You've heard true, what is your name? */ DO ~SetGlobal("ZB_NEPH_BEGIN","GLOBAL",2)~ GOTO zbneph1
+  IF ~~ THEN REPLY @12 /* Hello, who might you be? */ DO ~SetGlobal("ZB_NEPH_INTRO","GLOBAL",1)~ GOTO zbneph1
+  IF ~~ THEN REPLY @13 /* You've heard true, what is your name? */ DO ~SetGlobal("ZB_NEPH_INTRO","GLOBAL",1)~ GOTO zbneph1
 END
 
 IF ~~ BEGIN zbneph1
@@ -40,19 +40,18 @@ END
 ///
 
 /* main arena hub */
-IF ~IsGabber(Player1) Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",1)~ THEN BEGIN zbnepharenahub01
+IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",1)~ THEN BEGIN zbnepharenahub01
   SAY @21 /* Known as the Hero of Baldur's Gate? Hmm, and as far as Dennaton is concerned the main attraction in his three ring circus. You don't look as savage as I expected, I can see why he was interested in you. */ /* Known as the Hero of Baldur’s Gate? Hmm, and as far as Dennaton is concerned the main attraction in his three ring circus. You don’t look as savage as I expected, I can see why he was interested in you. */
-  IF ~~ THEN GOTO zbnepharenahub
+  IF ~~ THEN DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",10)~ GOTO zbnepharenahub
 END
 
-IF ~IsGabber(Player1) Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",2)~ THEN BEGIN zbnepharenahub02
+IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",2)~ THEN BEGIN zbnepharenahub02
   SAY @38 /* I thought the 'Hero' of Baldur's Gate didn't need my advice.
    */
-  IF ~~ THEN GOTO zbnepharenahub
+  IF ~~ THEN DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",10)~ GOTO zbnepharenahub
 END
 
-
-IF ~~ THEN BEGIN zbnepharenahub
+IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",10)~ THEN BEGIN zbnepharenahub
 SAY @22 /* What can I do for you? */
 + ~Global("nepharena1","LOCALS",0)~ + @23 /* How did you come to this place? */ + zbnepharena2
 + ~Global("nepharena2","LOCALS",0)~ + @39 /* I only know your name, tell me a bit about yourself? */ + zbnepharena2
