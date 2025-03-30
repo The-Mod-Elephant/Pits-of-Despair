@@ -1,8 +1,8 @@
 BEGIN ZBNEPH
 
 /// Introduction ///
-IF ~Global("ZB_NEPH_BEGIN","GLOBAL",1) Global("ZB_NEPH_INTRO", "GLOBAL",0) ReputationLT(Player1,7)~ THEN BEGIN zbnepharenaintro1
-  SAY @36 /* Your reputation has preceded you. You certainly don’t mind getting your hands dirty. */
+IF ~Global("ZB_NEPH_BEGIN","GLOBAL",1) Global("ZB_NEPH_INTRO","GLOBAL",0) ReputationLT(Player1,7)~ THEN BEGIN zbnepharenaintro1
+  SAY @36 /* Your reputation has preceded you. You certainly don't mind getting your hands dirty. */ /* Your reputation has preceded you. You certainly don’t mind getting your hands dirty. */
   IF ~~ THEN REPLY @12 /* Hello, who might you be? */ DO ~SetGlobal("ZB_NEPH_INTRO","GLOBAL",1)~ GOTO zbneph1
   IF ~~ THEN REPLY @13 /* You've heard true, what is your name? */ DO ~SetGlobal("ZB_NEPH_INTRO","GLOBAL",1)~ GOTO zbneph1
 END
@@ -46,14 +46,19 @@ IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",1)~ THEN BEGIN zbnepharenahub01
 END
 
 IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",2)~ THEN BEGIN zbnepharenahub02
-  SAY @38 /* I thought the 'Hero' of Baldur's Gate didn't need my advice.
-   */
+  SAY @38 /* I thought the 'Hero' of Baldur's Gate didn't need my advice. */
   IF ~~ THEN DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",10)~ GOTO zbnepharenahub
+END
+
+// After Match 2 - After Dennaton kills part of a gladiatorial party
+IF ~Global("ZB_NEPH_INTERJECT_1","GLOBAL",1)~ THEN BEGIN zbnephinterjectmatch2
+  SAY @41 /* As you see, anyone can be replaced here. Even the most loyal are enslaved in some way. Whether it is money, magic, or by force. It's detestable but that is the way it works here. */
+  IF ~~ THEN DO ~SetGlobal("ZB_NEPH_INTERJECT_1","GLOBAL",2)~ EXIT
 END
 
 IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",10)~ THEN BEGIN zbnepharenahub
 SAY @22 /* What can I do for you? */
-+ ~Global("nepharena1","LOCALS",0)~ + @23 /* How did you come to this place? */ + zbnepharena2
++ ~Global("nepharena1","LOCALS",0)~ + @23 /* How did you come to this place? */ + zbnepharena1
 + ~Global("nepharena2","LOCALS",0)~ + @39 /* I only know your name, tell me a bit about yourself? */ + zbnepharena2
 + ~Global("nepharena3","LOCALS",0)~ + @24 /* Do you have any ideas on how to escape this place? */ + zbnepharena3
 + ~Global("nepharena4","LOCALS",0)~ + @25 /* You look familiar. There was a messenger who got me into this mess and your voice sounds suspiciously similar. */ + zbnepharena4
@@ -62,12 +67,12 @@ END
 
 IF ~~ zbnepharena1
 SAY @29 /* I got trapped in a spider's web and found myself here, just like you. */
-IF ~~ DO ~SetGlobal("nepharen1","LOCALS",1)~ + zbnepharenahub2
+IF ~~ DO ~SetGlobal("nepharena1","LOCALS",1)~ + zbnepharenahub2
 END
 
 IF ~~ zbnepharena2
 SAY @40 /* Hah! I'm just your average, helpful tiefling. */
-IF ~~ DO ~SetGlobal("nepharen2","LOCALS",1)~ + zbnepharenahub2
+IF ~~ DO ~SetGlobal("nepharena2","LOCALS",1)~ + zbnepharenahub2
 END
 
 IF ~~ zbnepharena3
