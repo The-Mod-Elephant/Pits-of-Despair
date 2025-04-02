@@ -286,16 +286,17 @@ COPY_EXISTING ~OHBORC02.cre~ ~override~
     WRITE_BYTE 0x23c 17  // Dexterity    
     REPLACE_CRE_ITEM ~BRAC04~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~GLOVES~ EQUIP // Dale's Protectors
 
-// ohb_102 Thief fight
-COPY_EXISTING ~OHBGLA01.cre~ ~override~
-    WRITE_ASCII 0x260 ~motatk01~ #8 // General Script (theif attacks)
-    WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script (generic melee)
-
 // minotaurs gore attack
 COPY ~%MOD_FOLDER%/creatures/match2mino~ ~override~
 COPY_EXISTING ~ohbmin01.cre~ ~override~
     LPF ADD_CRE_EFFECT INT_VAR opcode = 248 timing = 9 STR_VAR resource = ~ZBGOREM0~ END
 
+// ohb_102 Thief fight
+COPY_EXISTING ~OHBGLA01.cre~ ~override~
+    WRITE_SHORT 0x246 0x4021       // Shadowdancer
+    WRITE_ASCII 0x260 ~motatk01~ #8 // General Script (theif attacks)
+    WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script (generic melee)
+    
 // ohb_102 Gladiator Archers
 COPY_EXISTING ~ohbgla02.cre~ ~override~
     SET_BG2_PROFICIENCY ~PROFICIENCYLONGBOW~ 5
@@ -329,7 +330,6 @@ ACTION_IF FILE_EXISTS_IN_GAME ~OHBLIZ03.cre~ BEGIN
         WRITE_ASCII 0x260 ~modruid1~ #8 // General Script (druid prebuff)
         LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 3 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
 END
-
 
 // Add Prebuff Priest
 ACTION_FOR_EACH priest IN 

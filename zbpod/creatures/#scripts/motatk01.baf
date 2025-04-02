@@ -92,7 +92,7 @@ END
 IF
   Detect(NearestEnemyOf(Myself))
   Global("MO_ThiefPrep","LOCALS",0)
-  !Kit(LastSeenBy(Myself),ASSASIN)
+  !Kit(Myself,ASSASIN)
   DifficultyGT(HARD)
 THEN
   RESPONSE #100
@@ -105,7 +105,7 @@ END
 IF
   Detect(NearestEnemyOf(Myself))
   Global("MO_ThiefPrep","LOCALS",0)
-  Kit(LastSeenBy(Myself),ASSASIN)
+  Kit(Myself,ASSASIN)
   DifficultyGT(HARD)
 THEN
   RESPONSE #100
@@ -126,6 +126,34 @@ THEN
     ApplySpell(Myself,WIZARD_INVISIBILITY)  
     EquipMostDamagingMelee()
     Hide()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Shadowstep - When low on health, shadowstep to run away
+/////////////////////////////////////////////////////////////////////
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  !GlobalTimerNotExpired("BD_SSTEP","LOCALS")
+  Kit(Myself,SHADOWDANCER)
+  HPPercentLT(Myself,50)
+  Range(NearestEnemyOf(Myself),6)
+  Global("MO_Shadowstep","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("BD_SSTEP","LOCALS",7)
+    SetGlobal("MO_Shadowstep","LOCALS",1)
+    SetInterrupt(FALSE)
+    SpellNoDecRES("SPSD02",Myself)  // Shadowstep
+    SetInterrupt(TRUE)
+END
+
+IF
+  GlobalTimerNotExpired("BD_SSTEP","LOCALS")
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    RunAwayFrom(NearestEnemyOf(Myself),15) // One second running away before re-evaluate
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -311,6 +339,25 @@ IF
 THEN
   RESPONSE #100
     AttackReevaluate(LastSeenBy(Myself),45)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Run and hide in plain sight!
+/////////////////////////////////////////////////////////////////////
+IF
+  Allegiance(Myself,ENEMY)
+  !StateCheck(Myself,STATE_INVISIBLE)
+  !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  Kit(Myself,SHADOWDANCER)
+  //!HasItemSlot(Myself,SLOT_MISC)
+  !ButtonDisabled(BUTTON_STEALTH)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    RunAwayFrom(NearestEnemyOf(Myself),3)
+    DisplayStringHead(Myself,101647)  // *attempts to hide in shadows*
+    Hide()
+    SetInterrupt(TRUE)
 END
 
 /////////////////////////////////////////////////////////////////////
