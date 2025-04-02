@@ -464,6 +464,24 @@ The benefits of this item depend on the class(es) of the wearer. The cloak will 
 
 Weight: 3~
 
+@10200 = ~Festering Maw +3~
+@10201 = ~Forged in the petrid expanse of the Vast Swamp, the Festering Maw is an enchanted halberd passed from Lizard King to Lizard King as a symbol of their reign. Its jagged blade, imbued with a venomous enchantment, is said to have been quenched in the blood of a thousand foes, leaving a legacy of rot and ruin in its wake. Legends whisper that the weapon hungers for flesh, its eerie green glow pulsing with each life it claims, a testament to the enduring dominion of the swamp tribes’ rulers.
+
+STATISTICS:
+
+Combat abilities:
+– 15% chance of inflicting disease on hit target
+
+THAC0: +3
+Damage: 1d10+3 (piercing)
+Speed Factor: 6
+Proficiency Type: Halberd
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 11~
+
 // Imported BG1 Items
 @11000 = ~BG Imported Items~
 @11001 = ~Circlet~

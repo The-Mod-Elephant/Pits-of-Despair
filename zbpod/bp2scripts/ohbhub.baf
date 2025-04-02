@@ -564,6 +564,7 @@ THEN
 		AddStoreItem("OHBSDWM","SW2H09",1,1)  // Warblade +4
 		AddStoreItem("OHBSDWM","HALB06",1,1)  // Blackmist +4
 		AddStoreItem("OHBSDWM","SPER10",1,1)  // Spear of Withering +4
+		AddStoreItem("OHBSDWM","zbfmaw",1,1)  // Festering Maw +3 (NEW)
 		AddStoreItem("OHBSDWM","HAMM06",1,1)  // Dwarven Thrower +3
 		AddStoreItem("OHBSDWM","WAFLAIL",1,1)  // Defender of Easthaven +3
 		AddStoreItem("OHBSDWM","STAF12",10,1)  // Staff of Power
