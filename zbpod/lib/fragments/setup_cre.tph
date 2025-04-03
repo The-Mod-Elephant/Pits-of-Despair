@@ -422,3 +422,5 @@ COPY ~%MOD_FOLDER%/creatures/#scripts/momatk01.baf~ ~override/momatk01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/ohbumb01.baf~ ~override/ohbumb01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/zbdom.baf~    ~override/zbdom.bcs~
   COMPILE_BAF_TO_BCS
+
+EXTEND_TOP ~nymph.bcs~ ~%MOD_FOLDER%/creatures/#scripts/mohunt1.baf~
