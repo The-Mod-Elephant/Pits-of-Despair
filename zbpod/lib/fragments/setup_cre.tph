@@ -409,6 +409,7 @@ COPY_EXISTING ~ohbumb01.CRE~ ~override~
 ///////////////////////////////////////////////////////////////////////////
 COPY ~%MOD_FOLDER%/creatures/#scripts/momatk01.baf~ ~override/momatk01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/moratk01.baf~ ~override/moratk01.bcs~
+     ~%MOD_FOLDER%/creatures/#scripts/motatk01.baf~ ~override/motatk01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/modisp01.baf~ ~override/modisp01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/mospdr02.baf~ ~override/mospdr02.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/mosnek01.baf~ ~override/mosnek01.bcs~

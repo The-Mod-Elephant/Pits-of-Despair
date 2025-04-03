@@ -610,6 +610,19 @@ THEN
 		SetInterrupt(TRUE)
 END
 
+/*
+IF
+	!Global("OHB_103","GLOBAL",0)
+	Global("MO_AddFestMaw","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("MO_AddFestMaw","GLOBAL",1)
+		AddStoreItem("OHBSDWM","zbfmaw",1,1)  // Festering Maw +3 (NEW)
+		SetInterrupt(TRUE)
+END
+*/
+
 IF
 	Global("TIER","GLOBAL",3)
 	GlobalGT("OHB_LAST_BATTLE","GLOBAL",304)
