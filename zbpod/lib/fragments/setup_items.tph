@@ -361,3 +361,14 @@ COPY ~%MOD_FOLDER%/items/bg1_imported_items/items/ring08.itm~ ~override~
     SAY UNIDENTIFIED_DESC @11019
     SAY IDENTIFIED_DESC @11020
 BUT_ONLY_IF_IT_CHANGES
+
+//////// FESTERING MAW +3 \\\\\\\\
+COPY ~%MOD_FOLDER%/items/festeringmaw~ ~override~
+COPY_EXISTING ~zbfmaw.itm~ ~override~
+    SAY NAME2 @10200
+    SAY IDENTIFIED_DESC @10201
+
+/*
+COPY_EXISTING ~ohbsdwm.sto~ ~override~
+  ADD_STORE_ITEM ~zbfmaw~ #0 #0 #0 ~IDENTIFIED~ #1
+  */

@@ -296,7 +296,7 @@ COPY_EXISTING ~OHBGLA01.cre~ ~override~
     WRITE_SHORT 0x246 0x4021       // Shadowdancer
     WRITE_ASCII 0x260 ~motatk01~ #8 // General Script (theif attacks)
     WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script (generic melee)
-    
+
 // ohb_102 Gladiator Archers
 COPY_EXISTING ~ohbgla02.cre~ ~override~
     SET_BG2_PROFICIENCY ~PROFICIENCYLONGBOW~ 5
@@ -316,6 +316,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~OHBLIZ01.cre~ BEGIN
     COPY_EXISTING ~OHBLIZ01.cre~ ~override~
         WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~LIZARD_KING~))
         LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 3 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
+        REPLACE_CRE_ITEM ~zbfmaw~  #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~WEAPON1~ EQUIP // Festering Maw +3
 END
 
 // Lizard Man Elite
