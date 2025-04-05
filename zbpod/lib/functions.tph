@@ -998,7 +998,7 @@ END
 
 // Camdawg's Portrait Icon Function //
 DEFINE_ACTION_FUNCTION cd_new_portrait_icon
-  INT_VAR string = 0
+  INT_VAR description = 0
   STR_VAR bam_file = "****"
   RET     icon
   BEGIN
@@ -1008,6 +1008,6 @@ DEFINE_ACTION_FUNCTION cd_new_portrait_icon
     READ_2DA_ENTRY (count - 1) 0 3 icon
     SET icon += 1
 
-  APPEND ~statdesc.2da~ ~%icon% %string% %bam_file%~
-
+  APPEND ~statdesc.2da~ ~%icon%         %description%         %bam_file%~
+  BUT_ONLY_IF_IT_CHANGES
 END
