@@ -1,27 +1,26 @@
 IF
-	Dead("ohbellra")  // Brother Ellraish
+    Dead("ohbellra")  // Brother Ellraish
 THEN
-	RESPONSE #100
-		DestroySelf()
+    RESPONSE #100
+        DestroySelf()
 END
 
 IF
-	Global("OHB_START_BATTLE","GLOBAL",2)
-	OR(3)
-		AreaCheck("OH8200")  // TBP2 - Arena 1
-		AreaCheck("OH8300")  // TBP2 - Arena 2
-		AreaCheck("OH8400")  // TBP2 - Arena 3
+    Global("OHB_START_BATTLE","GLOBAL",2)
+    OR(3)
+        AreaCheck("OH8200")  // TBP2 - Arena 1
+        AreaCheck("OH8300")  // TBP2 - Arena 2
+        AreaCheck("OH8400")  // TBP2 - Arena 3
 THEN
-	RESPONSE #100
-		NoAction()
+    RESPONSE #100
+        NoAction()
 END
 
 IF
-	Global("ohb_ellraish_hired","global",3)
-	!AreaCheck("oh8100")  // TBP2 - Staging Area Map
+    Global("ohb_ellraish_hired","global",3)
+    !AreaCheck("oh8100")  // TBP2 - Staging Area Map
 THEN
-	RESPONSE #100
-		SetGlobal("ohb_ellraish_hired","global",4)
-		EquipMostDamagingMelee()
+    RESPONSE #100
+        SetGlobal("ohb_ellraish_hired","global",4)
+        EquipMostDamagingMelee()
 END
-

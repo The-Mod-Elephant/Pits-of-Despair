@@ -1,79 +1,78 @@
 IF
-	True()
+    True()
 THEN
-	RESPONSE #100
-		CutSceneId(Player1)
-		SetGlobal("OHB_BP2_CAPTURE","GLOBAL",1)
-		Explore()
-		ChangeAIScript("OHBPLOT",OVERRIDE)
-		ActionOverride(Player2,ChangeAIScript("OHBPLOT",OVERRIDE))
-		ActionOverride(Player3,ChangeAIScript("OHBPLOT",OVERRIDE))
-		ActionOverride(Player4,ChangeAIScript("OHBPLOT",OVERRIDE))
-		ActionOverride(Player5,ChangeAIScript("OHBPLOT",OVERRIDE))
-		ActionOverride(Player6,ChangeAIScript("OHBPLOT",OVERRIDE))
-		ApplySpellRES("SPBP001",Player1)  // No such index
-		ApplySpellRES("SPBP001",Player2)  // No such index
-		ApplySpellRES("SPBP001",Player3)  // No such index
-		ApplySpellRES("SPBP001",Player4)  // No such index
-		ApplySpellRES("SPBP001",Player5)  // No such index
-		ApplySpellRES("SPBP001",Player6)  // No such index
-		//ReallyForceSpell(Player1,LOSE_ALL)  SPIN838.SPL (Loses all Bhaal powers)
-		CreateCreature("ohbbarte",[489.405],SE)  // Bartender
-		CreateCreature("ohbjoker",[585.473],SE)  // Joker
-		ActionOverride("ohbjoker",Polymorph(NOBLE_WOMAN))
-		ActionOverride("ohbjoker",SetName(1083))  // Bard
-		CreateCreature("ohbdorma",[786.391],SW)  // Dormamus
-		ActionOverride("ohbdorma",Polymorph(STATIC_PEASANT_MAN_CHAIR))
-		ActionOverride("ohbdorma",SetName(93613))  // Fan
-		CreateCreature("ohbbanno",[498.577],E)  // Bannor
-		ActionOverride("ohbbanno",Polymorph(PEASANT_MAN))
-		ActionOverride("ohbbanno",SetName(93613))  // Fan
-		CreateCreature("ohbthass",[753.665],NW)  // Thassk Kun
-		ActionOverride("ohbthass",Polymorph(STATIC_PEASANT_MAN_CHAIR))
-		ActionOverride("ohbthass",SetName(93613))  // Fan
-		CreateCreature("ohbpol",[882.557],W)  // Pol Pyrrus
-		ActionOverride("ohbpol",Polymorph(STATIC_PEASANT_MAN_CHAIR))
-		ActionOverride("ohbpol",SetName(93613))  // Fan
-		JumpToPoint([697.458])
-		ActionOverride(Player2,JumpToPoint([766.482]))
-		ActionOverride(Player3,JumpToPoint([592.533]))
-		ActionOverride(Player4,JumpToPoint([653.577]))
-		ActionOverride(Player5,JumpToPoint([701.596]))
-		ActionOverride(Player6,JumpToPoint([744.557]))
-		FaceObject("ohbjoker")  // Joker
-		ActionOverride(Player2,FaceObject("ohbjoker"))  // Joker
-		ActionOverride(Player3,FaceObject("ohbjoker"))  // Joker
-		ActionOverride(Player4,FaceObject("ohbjoker"))  // Joker
-		ActionOverride(Player5,FaceObject("ohbjoker"))  // Joker
-		ActionOverride(Player6,FaceObject("ohbjoker"))  // Joker
-		MoveViewPoint([672.468],INSTANT)
-		SetGlobal("ZBCUT00SKIP_CUTSCENE_BREAKABLE","GLOBAL",1)
-		SetAreaScript("zbcut00s",OVERRIDE)
-		SetGlobal("ZBBP2inBG2","GLOBAL",1) /* newly added line, to check that we're playing Pits of Despair during dialogue, interjections, etc */
-		SetGlobal("OHB_TALKED_BELLOWGULP","GLOBAL",1) /* take a sledgehammer to Bello's intro dialogue, skipping straight to his main merchant dialogue */
-		SmallWait(1)
-		SetCutSceneBreakable(TRUE)
-		Wait(2)
-		DisplayStringPoint([672.468],@2)  // It has been several months since your escape from Baeloth's Black Pits. Tales of your deeds have spread far and wide, and bards sing of them wherever you travel...
-		FadeFromColor([60.0],0)
-		Wait(5) /* changed from smallwait(12) */
-		DisplayStringHead("ohbjoker",@3)  // ...And so it came that Baeloth's game was quickly turned to naught.
-		Wait(3)
-		DisplayStringHead("ohbjoker",@4)  // The swords were sheathed, the spells unweaved, the final battle fought.
-		Wait(3)
-		DisplayStringHead("ohbjoker",@5)  // Our heroes' wits had solved the pits; their freedom did they win.
-		Wait(3)
-		DisplayStringHead("ohbjoker",@6)  // So fled the cage 'midst Baeloth's rage upon a mighty djinni.
-		Wait(3)
-		SmallWait(7)
-		DisplayStringHead("OHBTHASS",@7)  // A decent yarn, though a bit TOO fantastic if you ask me.
-		Wait(5)
-		DisplayStringHead("OHBJOKER",@8)  // Thank you. It is an amazing tale, all the more so for the fact that it actually happened.
-		Wait(5)
-		DisplayStringHead("OHBPOL",@9)  // You are a talented entertainer, madam, but do not insult my intelligence. The story you told is naught but a story. It never happened.
-		Wait(7)
-		SetCutSceneBreakable(FALSE)
-		SetAreaScript("",OVERRIDE)
-		ActionOverride("ohbjoker",StartDialogueNoSet(Player1))
+    RESPONSE #100
+        CutSceneId(Player1)
+        SetGlobal("OHB_BP2_CAPTURE","GLOBAL",1)
+        Explore()
+        ChangeAIScript("OHBPLOT",OVERRIDE)
+        ActionOverride(Player2,ChangeAIScript("OHBPLOT",OVERRIDE))
+        ActionOverride(Player3,ChangeAIScript("OHBPLOT",OVERRIDE))
+        ActionOverride(Player4,ChangeAIScript("OHBPLOT",OVERRIDE))
+        ActionOverride(Player5,ChangeAIScript("OHBPLOT",OVERRIDE))
+        ActionOverride(Player6,ChangeAIScript("OHBPLOT",OVERRIDE))
+        ApplySpellRES("SPBP001",Player1)  // No such index
+        ApplySpellRES("SPBP001",Player2)  // No such index
+        ApplySpellRES("SPBP001",Player3)  // No such index
+        ApplySpellRES("SPBP001",Player4)  // No such index
+        ApplySpellRES("SPBP001",Player5)  // No such index
+        ApplySpellRES("SPBP001",Player6)  // No such index
+        //ReallyForceSpell(Player1,LOSE_ALL)  SPIN838.SPL (Loses all Bhaal powers)
+        CreateCreature("ohbbarte",[489.405],SE)  // Bartender
+        CreateCreature("ohbjoker",[585.473],SE)  // Joker
+        ActionOverride("ohbjoker",Polymorph(NOBLE_WOMAN))
+        ActionOverride("ohbjoker",SetName(1083))  // Bard
+        CreateCreature("ohbdorma",[786.391],SW)  // Dormamus
+        ActionOverride("ohbdorma",Polymorph(STATIC_PEASANT_MAN_CHAIR))
+        ActionOverride("ohbdorma",SetName(93613))  // Fan
+        CreateCreature("ohbbanno",[498.577],E)  // Bannor
+        ActionOverride("ohbbanno",Polymorph(PEASANT_MAN))
+        ActionOverride("ohbbanno",SetName(93613))  // Fan
+        CreateCreature("ohbthass",[753.665],NW)  // Thassk Kun
+        ActionOverride("ohbthass",Polymorph(STATIC_PEASANT_MAN_CHAIR))
+        ActionOverride("ohbthass",SetName(93613))  // Fan
+        CreateCreature("ohbpol",[882.557],W)  // Pol Pyrrus
+        ActionOverride("ohbpol",Polymorph(STATIC_PEASANT_MAN_CHAIR))
+        ActionOverride("ohbpol",SetName(93613))  // Fan
+        JumpToPoint([697.458])
+        ActionOverride(Player2,JumpToPoint([766.482]))
+        ActionOverride(Player3,JumpToPoint([592.533]))
+        ActionOverride(Player4,JumpToPoint([653.577]))
+        ActionOverride(Player5,JumpToPoint([701.596]))
+        ActionOverride(Player6,JumpToPoint([744.557]))
+        FaceObject("ohbjoker")  // Joker
+        ActionOverride(Player2,FaceObject("ohbjoker"))  // Joker
+        ActionOverride(Player3,FaceObject("ohbjoker"))  // Joker
+        ActionOverride(Player4,FaceObject("ohbjoker"))  // Joker
+        ActionOverride(Player5,FaceObject("ohbjoker"))  // Joker
+        ActionOverride(Player6,FaceObject("ohbjoker"))  // Joker
+        MoveViewPoint([672.468],INSTANT)
+        SetGlobal("ZBCUT00SKIP_CUTSCENE_BREAKABLE","GLOBAL",1)
+        SetAreaScript("zbcut00s",OVERRIDE)
+        SetGlobal("ZBBP2inBG2","GLOBAL",1) /* newly added line, to check that we're playing Pits of Despair during dialogue, interjections, etc */
+        SetGlobal("OHB_TALKED_BELLOWGULP","GLOBAL",1) /* take a sledgehammer to Bello's intro dialogue, skipping straight to his main merchant dialogue */
+        SmallWait(1)
+        SetCutSceneBreakable(TRUE)
+        Wait(2)
+        DisplayStringPoint([672.468],@2)  // It has been several months since your escape from Baeloth's Black Pits. Tales of your deeds have spread far and wide, and bards sing of them wherever you travel...
+        FadeFromColor([60.0],0)
+        Wait(5) /* changed from smallwait(12) */
+        DisplayStringHead("ohbjoker",@3)  // ...And so it came that Baeloth's game was quickly turned to naught.
+        Wait(3)
+        DisplayStringHead("ohbjoker",@4)  // The swords were sheathed, the spells unweaved, the final battle fought.
+        Wait(3)
+        DisplayStringHead("ohbjoker",@5)  // Our heroes' wits had solved the pits; their freedom did they win.
+        Wait(3)
+        DisplayStringHead("ohbjoker",@6)  // So fled the cage 'midst Baeloth's rage upon a mighty djinni.
+        Wait(3)
+        SmallWait(7)
+        DisplayStringHead("OHBTHASS",@7)  // A decent yarn, though a bit TOO fantastic if you ask me.
+        Wait(5)
+        DisplayStringHead("OHBJOKER",@8)  // Thank you. It is an amazing tale, all the more so for the fact that it actually happened.
+        Wait(5)
+        DisplayStringHead("OHBPOL",@9)  // You are a talented entertainer, madam, but do not insult my intelligence. The story you told is naught but a story. It never happened.
+        Wait(7)
+        SetCutSceneBreakable(FALSE)
+        SetAreaScript("",OVERRIDE)
+        ActionOverride("ohbjoker",StartDialogueNoSet(Player1))
 END
-

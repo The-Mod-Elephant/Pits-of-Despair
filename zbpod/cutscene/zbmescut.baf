@@ -6,99 +6,99 @@
   fires AFTER nephetel / mysterious messenger gives charname the note */
 
 IF
-	True()
-	Global("zbnephcutscene","GLOBAL",0) /* we haven't seen the cutscene */
+    True()
+    Global("zbnephcutscene","GLOBAL",0) /* we haven't seen the cutscene */
 THEN
-	RESPONSE #100
-		CutSceneID(Player1) /* who performs the action */
-		/* actions start here */
-		SetGlobal("zbnephcutscene","GLOBAL",1) /* we don't want the cutscene to repeat */
-		Wait(2)
-		DisplayStringHead(Player1,@25)
-		Wait(2)
-		PlaySound("MISC_03A")
-		PlayDead(45)
-		FadeToColor([50.0],0)
-		Wait(2)
-		StorePartyLocations()
-		LeaveAreaLUA("ZB0701","",[1660.480],NW) /* carries player over */
-		ApplySpell(Player1,WIZARD_INVISIBILITY)
-		CreateCreature("zbneph",[1560.680],NE)  /* spawns in nephetel */
-		CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */
-		Explore()
-		MoveViewObject("zbneph",INSTANT)
-		SetAreaScript("zbnephsk",OVERRIDE)
-		SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",1)
-		SetCutSceneBreakable(TRUE)
-		Wait(2)
-		FadeFromColor([30.0],0)
-		MoveViewPoint([1670.680],INSTANT)
-		ActionOverride("zbneph",FaceObject("zbvamp"))
-		ActionOverride("zbvamp",FaceObject("zbneph"))
-		Wait(3)
-		DisplayStringHead("zbvamp",@10)  /* ~And? What of the book?~ */
-		Wait(5)
-		DisplayStringHead("zbneph",@11)  /* ~Nothing. The Hero of Baldur's Gate, that's the only gossip on anyone's lips.~ */
-		Wait(5)
-		DisplayStringHead("zbneph",@12)  /* ~Defeated this, saved that, wore the most splendid things.~ */
-		Wait(5)
-		DisplayStringHead("zbneph",@13) /* ~One talkative lord was very keen to inform me of the Hero's preferences in breakfast jam.~ */
-		Wait(9)
-		DisplayStringHead("zbvamp",@14) /* ~Tell me of these tales.~ */
-		Wait(4)
-		DisplayStringHead("zbneph",@15) /* ~Of the.. jam? Oh! the Hero! They say they are a Bhaalspawn. One of the children of the Lord of Murder.~ */
-		Wait(5)
-		ActionOverride("zbvamp",MoveToPoint([1670.600])) /* pacing north */
-		Wait(3)
-		ActionOverride("zbvamp",MoveToPoint([1670.752])) /* pacing south */
-		Wait(3)
-		DisplayStringHead("zbvamp",@16) /* ~Who are they? What do you know about them?~ */
-		Wait(5)
-		DisplayStringHead("zbneph",@17) /* ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~ */
-		Wait(5)
-		ActionOverride("zbvamp",MoveToPoint([1670.680])) /* pacing back to usual spot */
-		ActionOverride("zbvamp",FaceObject("zbneph"))
-		DisplayStringHead("zbvamp",@18) /* ~Is <PRO_HESHE> anything like the weapon in the Pits?~ */
-		Wait(5)
-		ActionOverride("zbneph",Face(W)) /* nephetel faces away */
-		Wait(2)
-		DisplayStringHead("zbneph",@19) /* ~No, not like Enegar. This child of Bhaal appears free from control of the Cult...~ */
-		Wait(5)
-		ActionOverride("zbneph",FaceObject("zbvamp")) /* she turns back */
-		Wait(2)
-		DisplayStringHead("zbneph",@20) /* ~No one has spoken as to why, but I will investigate.~ */
-		Wait(5)
-		ActionOverride("zbvamp",SwingOnce()) /* quick attack animation */
-		Wait(2)
-		DisplayStringHead("zbvamp",@21) /* ~Good. Good. I know you will find the Book.~ */
-		Wait(5)
-		DisplayStringHead("zbvamp",@22) /* ~Our Master will be very… very pleased, he has assured me.~ */
-		Wait(5)
-		DisplayStringHead("zbvamp",@23) /* ~I expect a full report on this “Hero” next we meet.~ */
-		PlaySound("VAMPFX07") /* plays the vampire sound */
-		Wait(5)
-		ActionOverride("zbneph",MoveToPoint([1444.912])) /* neph moving south */
-		Wait(2)
-		ActionOverride("zbvamp",FaceObject("zbneph"))
-		Wait(2)
-		ActionOverride("zbneph",FaceObject("zbvamp"))
-		Wait(2)
-		DisplayStringHead("zbneph",@24) /* ~Of course, Spymaster.~ */
-		Wait(5)
-		FadeToColor([50.0],0)
-		SetCutSceneBreakable(FALSE)
-		SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",0)
-		SetAreaScript("",OVERRIDE)
-		ActionOverride("zbneph",DestroySelf())
-		Wait(1)
-		ActionOverride("zbvamp",DestroySelf())
-		Wait(1)
-		RestorePartyLocations()
-		ApplySpellRES("BPDISPEL",Player1)  // No such index
-		// Actions end here
-		EndCutSceneMode() /* exits the the StartCutSceneMode() action */
-		Wait(1)
-		FadeFromColor([50.0],0)
-		AddJournalEntry(@1,QUEST)
-		GiveItemCreate("zbpdnote",Player1,1,0,0) /* give player the note, moved over from d file */
+    RESPONSE #100
+        CutSceneID(Player1) /* who performs the action */
+        /* actions start here */
+        SetGlobal("zbnephcutscene","GLOBAL",1) /* we don't want the cutscene to repeat */
+        Wait(2)
+        DisplayStringHead(Player1,@25)
+        Wait(2)
+        PlaySound("MISC_03A")
+        PlayDead(45)
+        FadeToColor([50.0],0)
+        Wait(2)
+        StorePartyLocations()
+        LeaveAreaLUA("ZB0701","",[1660.480],NW) /* carries player over */
+        ApplySpell(Player1,WIZARD_INVISIBILITY)
+        CreateCreature("zbneph",[1560.680],NE)  /* spawns in nephetel */
+        CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */
+        Explore()
+        MoveViewObject("zbneph",INSTANT)
+        SetAreaScript("zbnephsk",OVERRIDE)
+        SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",1)
+        SetCutSceneBreakable(TRUE)
+        Wait(2)
+        FadeFromColor([30.0],0)
+        MoveViewPoint([1670.680],INSTANT)
+        ActionOverride("zbneph",FaceObject("zbvamp"))
+        ActionOverride("zbvamp",FaceObject("zbneph"))
+        Wait(3)
+        DisplayStringHead("zbvamp",@10)  /* ~And? What of the book?~ */
+        Wait(5)
+        DisplayStringHead("zbneph",@11)  /* ~Nothing. The Hero of Baldur's Gate, that's the only gossip on anyone's lips.~ */
+        Wait(5)
+        DisplayStringHead("zbneph",@12)  /* ~Defeated this, saved that, wore the most splendid things.~ */
+        Wait(5)
+        DisplayStringHead("zbneph",@13) /* ~One talkative lord was very keen to inform me of the Hero's preferences in breakfast jam.~ */
+        Wait(9)
+        DisplayStringHead("zbvamp",@14) /* ~Tell me of these tales.~ */
+        Wait(4)
+        DisplayStringHead("zbneph",@15) /* ~Of the.. jam? Oh! the Hero! They say they are a Bhaalspawn. One of the children of the Lord of Murder.~ */
+        Wait(5)
+        ActionOverride("zbvamp",MoveToPoint([1670.600])) /* pacing north */
+        Wait(3)
+        ActionOverride("zbvamp",MoveToPoint([1670.752])) /* pacing south */
+        Wait(3)
+        DisplayStringHead("zbvamp",@16) /* ~Who are they? What do you know about them?~ */
+        Wait(5)
+        DisplayStringHead("zbneph",@17) /* ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~ */
+        Wait(5)
+        ActionOverride("zbvamp",MoveToPoint([1670.680])) /* pacing back to usual spot */
+        ActionOverride("zbvamp",FaceObject("zbneph"))
+        DisplayStringHead("zbvamp",@18) /* ~Is <PRO_HESHE> anything like the weapon in the Pits?~ */
+        Wait(5)
+        ActionOverride("zbneph",Face(W)) /* nephetel faces away */
+        Wait(2)
+        DisplayStringHead("zbneph",@19) /* ~No, not like Enegar. This child of Bhaal appears free from control of the Cult...~ */
+        Wait(5)
+        ActionOverride("zbneph",FaceObject("zbvamp")) /* she turns back */
+        Wait(2)
+        DisplayStringHead("zbneph",@20) /* ~No one has spoken as to why, but I will investigate.~ */
+        Wait(5)
+        ActionOverride("zbvamp",SwingOnce()) /* quick attack animation */
+        Wait(2)
+        DisplayStringHead("zbvamp",@21) /* ~Good. Good. I know you will find the Book.~ */
+        Wait(5)
+        DisplayStringHead("zbvamp",@22) /* ~Our Master will be very… very pleased, he has assured me.~ */
+        Wait(5)
+        DisplayStringHead("zbvamp",@23) /* ~I expect a full report on this “Hero” next we meet.~ */
+        PlaySound("VAMPFX07") /* plays the vampire sound */
+        Wait(5)
+        ActionOverride("zbneph",MoveToPoint([1444.912])) /* neph moving south */
+        Wait(2)
+        ActionOverride("zbvamp",FaceObject("zbneph"))
+        Wait(2)
+        ActionOverride("zbneph",FaceObject("zbvamp"))
+        Wait(2)
+        DisplayStringHead("zbneph",@24) /* ~Of course, Spymaster.~ */
+        Wait(5)
+        FadeToColor([50.0],0)
+        SetCutSceneBreakable(FALSE)
+        SetGlobal("ZBNEPH_CUTSCENE_BREAKABLE","GLOBAL",0)
+        SetAreaScript("",OVERRIDE)
+        ActionOverride("zbneph",DestroySelf())
+        Wait(1)
+        ActionOverride("zbvamp",DestroySelf())
+        Wait(1)
+        RestorePartyLocations()
+        ApplySpellRES("BPDISPEL",Player1)  // No such index
+        // Actions end here
+        EndCutSceneMode() /* exits the the StartCutSceneMode() action */
+        Wait(1)
+        FadeFromColor([50.0],0)
+        AddJournalEntry(@1,QUEST)
+        GiveItemCreate("zbpdnote",Player1,1,0,0) /* give player the note, moved over from d file */
 END

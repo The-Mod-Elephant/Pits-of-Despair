@@ -1,36 +1,35 @@
 IF
-	Opened([ANYONE])
-	Global("OHB_BURN_BOOK","MYAREA",0)
+    Opened([ANYONE])
+    Global("OHB_BURN_BOOK","MYAREA",0)
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OHB_BURN_BOOK","MYAREA",TEN_ROUNDS)
+    RESPONSE #100
+        SetGlobalTimer("OHB_BURN_BOOK","MYAREA",TEN_ROUNDS)
 END
 
 IF
-	!Global("OHB_BOOK_BURN","MYAREA",1)
-	GlobalTimerExpired("OHB_BURN_BOOK","MYAREA")
-	HasItem("ohbbook2",Myself)  // Thassk's Journal
+    !Global("OHB_BOOK_BURN","MYAREA",1)
+    GlobalTimerExpired("OHB_BURN_BOOK","MYAREA")
+    HasItem("ohbbook2",Myself)  // Thassk's Journal
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_BURN_BOOK","MYAREA",1)
-		CreateItem("ohbcom11",1,0,0)  // Disintegrated Item
-		DestroyItem("ohbbook2")  // Thassk's Journal
-		CreateVisualEffect("SPMETSWA",[2942.192])
+    RESPONSE #100
+        SetGlobal("OHB_BURN_BOOK","MYAREA",1)
+        CreateItem("ohbcom11",1,0,0)  // Disintegrated Item
+        DestroyItem("ohbbook2")  // Thassk's Journal
+        CreateVisualEffect("SPMETSWA",[2942.192])
 END
 
 IF
-	GlobalTimerExpired("OHB_BURN_BOOK","MYAREA")
-	!HasItem("ohbbook2",Myself)  // Thassk's Journal
-	PartyHasItem("OHBBOOK2")  // Thassk's Journal
-	!Global("OHB_BOOK_BURN","MYAREA",1)
+    GlobalTimerExpired("OHB_BURN_BOOK","MYAREA")
+    !HasItem("ohbbook2",Myself)  // Thassk's Journal
+    PartyHasItem("OHBBOOK2")  // Thassk's Journal
+    !Global("OHB_BOOK_BURN","MYAREA",1)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_BURN_BOOK","MYAREA",1)
-		ActionOverride(Player1,TransformItem("ohbbook2","ohbcom11"))  // Thassk's Journal
-		ActionOverride(Player2,TransformItem("ohbbook2","ohbcom11"))  // Thassk's Journal
-		ActionOverride(Player3,TransformItem("ohbbook2","ohbcom11"))  // Thassk's Journal
-		ActionOverride(Player4,TransformItem("ohbbook2","ohbcom11"))  // Thassk's Journal
-		ActionOverride(Player5,TransformItem("ohbbook2","ohbcom11"))  // Thassk's Journal
-		ActionOverride(Player6,TransformItem("ohbbook2","ohbcom11"))  // Thassk's Journal
+    RESPONSE #100
+        SetGlobal("OHB_BURN_BOOK","MYAREA",1)
+        ActionOverride(Player1,TransformItem("ohbbook2","ohbcom11"))  // Thassk's Journal
+        ActionOverride(Player2,TransformItem("ohbbook2","ohbcom11"))  // Thassk's Journal
+        ActionOverride(Player3,TransformItem("ohbbook2","ohbcom11"))  // Thassk's Journal
+        ActionOverride(Player4,TransformItem("ohbbook2","ohbcom11"))  // Thassk's Journal
+        ActionOverride(Player5,TransformItem("ohbbook2","ohbcom11"))  // Thassk's Journal
+        ActionOverride(Player6,TransformItem("ohbbook2","ohbcom11"))  // Thassk's Journal
 END
-

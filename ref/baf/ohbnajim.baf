@@ -1,11 +1,10 @@
 IF
-	AreaCheck("OH8400")  // TBP2 - Arena 3
-	Allegiance(Myself,NEUTRAL)
-	Global("OH_Active","LOCALS",0)
+    AreaCheck("OH8400")  // TBP2 - Arena 3
+    Allegiance(Myself,NEUTRAL)
+    Global("OH_Active","LOCALS",0)
 THEN
-	RESPONSE #100
-		SetGlobal("OH_Active","LOCALS",1)
-		ChangeEnemyAlly(Myself,GOODBUTBLUE)
-		ChangeAIScript("OHBNAJI2",DEFAULT)
+    RESPONSE #100
+        SetGlobal("OH_Active","LOCALS",1)
+        ChangeEnemyAlly(Myself,GOODBUTBLUE)
+        ChangeAIScript("OHBNAJI2",DEFAULT)
 END
-

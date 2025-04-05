@@ -1,80 +1,79 @@
 IF
-	GlobalGT("tier","GLOBAL",1)
-	Global("OHB_SOUSCHEF_PLOT","GLOBAL",0)
-	Global("ohb_finale","GLOBAL",0)
+    GlobalGT("tier","GLOBAL",1)
+    Global("OHB_SOUSCHEF_PLOT","GLOBAL",0)
+    Global("ohb_finale","GLOBAL",0)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_SOUSCHEF_PLOT","GLOBAL",1)
-		JumpToPoint([2247.3485])
-		MoveToPoint([2247.3485])
-		Face(SE)
-		ActionOverride("ohbshort",JumpToPoint([2209.3488]))
-		ActionOverride("ohbshort",MoveToPoint([2209.3488]))
-		ActionOverride("ohbshort",Face(S))
+    RESPONSE #100
+        SetGlobal("OHB_SOUSCHEF_PLOT","GLOBAL",1)
+        JumpToPoint([2247.3485])
+        MoveToPoint([2247.3485])
+        Face(SE)
+        ActionOverride("ohbshort",JumpToPoint([2209.3488]))
+        ActionOverride("ohbshort",MoveToPoint([2209.3488]))
+        ActionOverride("ohbshort",Face(S))
 END
 
 IF
-	Global("OHB_SOUSCHEF_PLOT","GLOBAL",1)
-	Global("ohb_finale","GLOBAL",0)
-	See([PC])
-	Range(LastSeenBy(Myself),20)
+    Global("OHB_SOUSCHEF_PLOT","GLOBAL",1)
+    Global("ohb_finale","GLOBAL",0)
+    See([PC])
+    Range(LastSeenBy(Myself),20)
 THEN
-	RESPONSE #100
-		StartDialogueNoSet(LastSeenBy(Myself))
+    RESPONSE #100
+        StartDialogueNoSet(LastSeenBy(Myself))
 END
 
 IF
-	OR(2)
-		Global("ohb_hide_cook","locals",1)
-		Global("ohb_hide_cook","locals",2)
-	Global("ohb_finale","GLOBAL",0)
+    OR(2)
+        Global("ohb_hide_cook","locals",1)
+        Global("ohb_hide_cook","locals",2)
+    Global("ohb_finale","GLOBAL",0)
 THEN
-	RESPONSE #100
-		ClearAllActions()
-		StartCutSceneMode()
-		FadeToColor([20.0],0)
-		Wait(2)
-		IncrementGlobal("ohb_hide_cook","locals",2)
-		JumpToPoint([2209.3488])
-		MoveToPoint([2209.3488])
-		Face(S)
-		ActionOverride("ohbshort",JumpToPoint([2247.3485]))
-		ActionOverride("ohbshort",MoveToPoint([2247.3485]))
-		ActionOverride("ohbshort",Face(SE))
-		ActionOverride(Player1,JumpToPoint([2236.3519]))
-		ActionOverride(Player2,JumpToPoint([2176.3528]))
-		ActionOverride(Player3,JumpToPoint([2298.3512]))
-		ActionOverride(Player4,JumpToPoint([2217.3558]))
-		ActionOverride(Player5,JumpToPoint([2281.3550]))
-		ActionOverride(Player6,JumpToPoint([2258.3594]))
-		MoveViewObject(Myself,INSTANT)
-		FadeFromColor([20.0],0)
-		Wait(2)
-		EndCutSceneMode()
-		StartDialogueNoSet(Player1)
+    RESPONSE #100
+        ClearAllActions()
+        StartCutSceneMode()
+        FadeToColor([20.0],0)
+        Wait(2)
+        IncrementGlobal("ohb_hide_cook","locals",2)
+        JumpToPoint([2209.3488])
+        MoveToPoint([2209.3488])
+        Face(S)
+        ActionOverride("ohbshort",JumpToPoint([2247.3485]))
+        ActionOverride("ohbshort",MoveToPoint([2247.3485]))
+        ActionOverride("ohbshort",Face(SE))
+        ActionOverride(Player1,JumpToPoint([2236.3519]))
+        ActionOverride(Player2,JumpToPoint([2176.3528]))
+        ActionOverride(Player3,JumpToPoint([2298.3512]))
+        ActionOverride(Player4,JumpToPoint([2217.3558]))
+        ActionOverride(Player5,JumpToPoint([2281.3550]))
+        ActionOverride(Player6,JumpToPoint([2258.3594]))
+        MoveViewObject(Myself,INSTANT)
+        FadeFromColor([20.0],0)
+        Wait(2)
+        EndCutSceneMode()
+        StartDialogueNoSet(Player1)
 END
 
 IF
-	GlobalGT("OHB_SOUSCHEF_PLOT","GLOBAL",1)
-	Global("ohb_mardu_moveback","locals",0)
-	Global("ohb_finale","GLOBAL",0)
+    GlobalGT("OHB_SOUSCHEF_PLOT","GLOBAL",1)
+    Global("ohb_mardu_moveback","locals",0)
+    Global("ohb_finale","GLOBAL",0)
 THEN
-	RESPONSE #100
-		SetGlobal("ohb_mardu_moveback","locals",1)
-		SetGlobal("ohb_hide_cook","locals",0)
-		OpenDoor("door0005")
-		ActionOverride("ohbshort",MoveToPoint([1523.3072]))
-		MoveToPoint([1298.3167])
+    RESPONSE #100
+        SetGlobal("ohb_mardu_moveback","locals",1)
+        SetGlobal("ohb_hide_cook","locals",0)
+        OpenDoor("door0005")
+        ActionOverride("ohbshort",MoveToPoint([1523.3072]))
+        MoveToPoint([1298.3167])
 END
 
 IF
-	Global("ohb_finale","global",5)
-	Global("ohb_cook_dead","global",2)
-	Global("ohb_finale_move","locals",0)
+    Global("ohb_finale","global",5)
+    Global("ohb_cook_dead","global",2)
+    Global("ohb_finale_move","locals",0)
 THEN
-	RESPONSE #100
-		SetGlobal("ohb_finale_move","locals",1)
-		JumpToPoint([4100.3170])
-		Face(W)
+    RESPONSE #100
+        SetGlobal("ohb_finale_move","locals",1)
+        JumpToPoint([4100.3170])
+        Face(W)
 END
-

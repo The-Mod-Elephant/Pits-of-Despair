@@ -1,21 +1,20 @@
 IF
-	HPPercentLT(Myself,50)
-	Global("OHB_NAJIM","GLOBAL",1)
+    HPPercentLT(Myself,50)
+    Global("OHB_NAJIM","GLOBAL",1)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_NAJIM","GLOBAL",2)
-		ClearAllActions()
-		StartCutSceneMode()
-		StartCutScene("ohbcut11")
+    RESPONSE #100
+        SetGlobal("OHB_NAJIM","GLOBAL",2)
+        ClearAllActions()
+        StartCutSceneMode()
+        StartCutScene("ohbcut11")
 END
 
 IF
-	Global("ohb_finale","GLOBAL",8)
-	Global("OHB_NAJIM","GLOBAL",4)
-	Delay(1)
+    Global("ohb_finale","GLOBAL",8)
+    Global("OHB_NAJIM","GLOBAL",4)
+    Delay(1)
 THEN
-	RESPONSE #100
-		SetName(74108)  // Najim
-		StartDialogueNoSet(Myself)
+    RESPONSE #100
+        SetName(74108)  // Najim
+        StartDialogueNoSet(Myself)
 END
-

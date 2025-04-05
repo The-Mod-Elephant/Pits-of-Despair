@@ -1,24 +1,23 @@
 IF
-	True()
+    True()
 THEN
-	RESPONSE #100
-		CutSceneId(Player1)
-		SetGlobal("OHB_START_BATTLE","GLOBAL",9)
-		FadeToColor([30.0],0)
-		SmallWait(35)
-		ActionOverride("ohbtartl",Face(SW))
-		SmallWait(5)
-		ActionOverride(Player2,LeaveAreaLUA("OH8400","",[804.1049],NE))  // TBP2 - Arena 3
-		ActionOverride(Player3,LeaveAreaLUA("OH8400","",[842.1083],NE))  // TBP2 - Arena 3
-		ActionOverride(Player4,LeaveAreaLUA("OH8400","",[720.1028],NE))  // TBP2 - Arena 3
-		ActionOverride(Player5,LeaveAreaLUA("OH8400","",[756.1073],NE))  // TBP2 - Arena 3
-		ActionOverride(Player6,LeaveAreaLUA("OH8400","",[790.1109],NE))  // TBP2 - Arena 3
-		LeaveAreaLUAPanic("OH8400","",[773.1011],NE)  // TBP2 - Arena 3
-		LeaveAreaLUA("OH8400","",[773.1011],NE)  // TBP2 - Arena 3
-		MultiPlayerSync()
-		Wait(2)
-		SetGlobal("OHB_START_BATTLE","GLOBAL",2)
-		SetCursorState(TRUE)
-		EndCutSceneMode()
+    RESPONSE #100
+        CutSceneId(Player1)
+        SetGlobal("OHB_START_BATTLE","GLOBAL",9)
+        FadeToColor([30.0],0)
+        SmallWait(35)
+        ActionOverride("ohbtartl",Face(SW))
+        SmallWait(5)
+        ActionOverride(Player2,LeaveAreaLUA("OH8400","",[804.1049],NE))  // TBP2 - Arena 3
+        ActionOverride(Player3,LeaveAreaLUA("OH8400","",[842.1083],NE))  // TBP2 - Arena 3
+        ActionOverride(Player4,LeaveAreaLUA("OH8400","",[720.1028],NE))  // TBP2 - Arena 3
+        ActionOverride(Player5,LeaveAreaLUA("OH8400","",[756.1073],NE))  // TBP2 - Arena 3
+        ActionOverride(Player6,LeaveAreaLUA("OH8400","",[790.1109],NE))  // TBP2 - Arena 3
+        LeaveAreaLUAPanic("OH8400","",[773.1011],NE)  // TBP2 - Arena 3
+        LeaveAreaLUA("OH8400","",[773.1011],NE)  // TBP2 - Arena 3
+        MultiPlayerSync()
+        Wait(2)
+        SetGlobal("OHB_START_BATTLE","GLOBAL",2)
+        SetCursorState(TRUE)
+        EndCutSceneMode()
 END
-

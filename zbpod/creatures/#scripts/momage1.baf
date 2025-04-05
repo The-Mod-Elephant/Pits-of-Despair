@@ -43,4 +43,3 @@ THEN
     ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
     Continue()
 END
-

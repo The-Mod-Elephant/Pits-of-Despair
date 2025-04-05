@@ -1,59 +1,58 @@
 IF
-	Global("OHB_NOOBER","GLOBAL",2)
+    Global("OHB_NOOBER","GLOBAL",2)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_NOOBER","GLOBAL",3)
-		HideGUI()
-		FadeToColor([60.0],0)
-		SmallWait(75)
-		StorePartyLocations()
-		CreateCreature("ohb6noob",[2749.2402],SE)  // Noober
-		ActionOverride("ohbelgia",JumpToPoint([3055.2188]))
-		ActionOverride(Player1,JumpToPoint([2840.2475]))
-		ActionOverride(Player2,JumpToPoint([2895.2519]))
-		ActionOverride(Player3,JumpToPoint([2843.2544]))
-		ActionOverride(Player4,JumpToPoint([2914.2473]))
-		ActionOverride(Player5,JumpToPoint([2789.2523]))
-		ActionOverride(Player6,JumpToPoint([2894.2420]))
-		ActionOverride(Player1,FaceObject("ohb6noob"))  // Noober
-		ActionOverride(Player2,FaceObject("ohb6noob"))  // Noober
-		ActionOverride(Player3,FaceObject("ohb6noob"))  // Noober
-		ActionOverride(Player4,FaceObject("ohb6noob"))  // Noober
-		ActionOverride(Player5,FaceObject("ohb6noob"))  // Noober
-		ActionOverride(Player6,FaceObject("ohb6noob"))  // Noober
-		MoveViewObject("ohb6noob",INSTANT)  // Noober
-		Wait(1)
-		FadeFromColor([60.0],0)
-		Wait(2)
-		EndCutSceneMode()
-		ActionOverride("ohbelgia",StartDialogueNoSet(Player1))
+    RESPONSE #100
+        SetGlobal("OHB_NOOBER","GLOBAL",3)
+        HideGUI()
+        FadeToColor([60.0],0)
+        SmallWait(75)
+        StorePartyLocations()
+        CreateCreature("ohb6noob",[2749.2402],SE)  // Noober
+        ActionOverride("ohbelgia",JumpToPoint([3055.2188]))
+        ActionOverride(Player1,JumpToPoint([2840.2475]))
+        ActionOverride(Player2,JumpToPoint([2895.2519]))
+        ActionOverride(Player3,JumpToPoint([2843.2544]))
+        ActionOverride(Player4,JumpToPoint([2914.2473]))
+        ActionOverride(Player5,JumpToPoint([2789.2523]))
+        ActionOverride(Player6,JumpToPoint([2894.2420]))
+        ActionOverride(Player1,FaceObject("ohb6noob"))  // Noober
+        ActionOverride(Player2,FaceObject("ohb6noob"))  // Noober
+        ActionOverride(Player3,FaceObject("ohb6noob"))  // Noober
+        ActionOverride(Player4,FaceObject("ohb6noob"))  // Noober
+        ActionOverride(Player5,FaceObject("ohb6noob"))  // Noober
+        ActionOverride(Player6,FaceObject("ohb6noob"))  // Noober
+        MoveViewObject("ohb6noob",INSTANT)  // Noober
+        Wait(1)
+        FadeFromColor([60.0],0)
+        Wait(2)
+        EndCutSceneMode()
+        ActionOverride("ohbelgia",StartDialogueNoSet(Player1))
 END
 
 IF
-	Global("OHB_NOOBER","GLOBAL",4)
+    Global("OHB_NOOBER","GLOBAL",4)
 THEN
-	RESPONSE #100
-		ActionOverride("ohb6noob",StartDialogueNoSet(Player1))
+    RESPONSE #100
+        ActionOverride("ohb6noob",StartDialogueNoSet(Player1))
 END
 
 IF
-	Global("OHB_NOOBER","GLOBAL",5)
+    Global("OHB_NOOBER","GLOBAL",5)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_NOOBER","GLOBAL",6)
-		ClearAllActions()
-		StartCutSceneMode()
-		FadeToColor([60.0],0)
-		UnlockScroll()
-		SmallWait(60)
-		RestorePartyLocations()
-		ActionOverride("ohb6noob",DestroySelf())
-		ActionOverride("ohbelgia",JumpToPoint([4560.3160]))
-		ActionOverride("ohbelgia",Face(SW))
-		MultiPlayerSync()
-		SetGlobal("OHB_AUTOSAVE","GLOBAL",1)
-		SetCursorState(TRUE)
-		EndCutSceneMode()
-		SetAreaScript("ohbpost",DEFAULT)
+    RESPONSE #100
+        SetGlobal("OHB_NOOBER","GLOBAL",6)
+        ClearAllActions()
+        StartCutSceneMode()
+        FadeToColor([60.0],0)
+        UnlockScroll()
+        SmallWait(60)
+        RestorePartyLocations()
+        ActionOverride("ohb6noob",DestroySelf())
+        ActionOverride("ohbelgia",JumpToPoint([4560.3160]))
+        ActionOverride("ohbelgia",Face(SW))
+        MultiPlayerSync()
+        SetGlobal("OHB_AUTOSAVE","GLOBAL",1)
+        SetCursorState(TRUE)
+        EndCutSceneMode()
+        SetAreaScript("ohbpost",DEFAULT)
 END
-

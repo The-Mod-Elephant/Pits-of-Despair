@@ -1,84 +1,83 @@
 IF
-	!GlobalTimerNotExpired("OH_Cast","LOCALS")
-	See(NearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    See(NearestEnemyOf(Myself))
+    !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("OH_Cast","LOCALS",TWO_ROUNDS)
-		ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",TWO_ROUNDS)
+        ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
+        SetInterrupt(TRUE)
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Cast","LOCALS")
-	See(SecondNearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    See(SecondNearestEnemyOf(Myself))
+    !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("OH_Cast","LOCALS",TWO_ROUNDS)
-		ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",TWO_ROUNDS)
+        ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
+        SetInterrupt(TRUE)
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Cast","LOCALS")
-	See(ThirdNearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    See(ThirdNearestEnemyOf(Myself))
+    !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("OH_Cast","LOCALS",TWO_ROUNDS)
-		ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",TWO_ROUNDS)
+        ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
+        SetInterrupt(TRUE)
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Cast","LOCALS")
-	See(FourthNearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    See(FourthNearestEnemyOf(Myself))
+    !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("OH_Cast","LOCALS",TWO_ROUNDS)
-		ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",TWO_ROUNDS)
+        ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
+        SetInterrupt(TRUE)
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Cast","LOCALS")
-	See(FourthNearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    See(FourthNearestEnemyOf(Myself))
+    !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("OH_Cast","LOCALS",TWO_ROUNDS)
-		ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",TWO_ROUNDS)
+        ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
+        SetInterrupt(TRUE)
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Cast","LOCALS")
-	See(FifthNearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    See(FifthNearestEnemyOf(Myself))
+    !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("OH_Cast","LOCALS",TWO_ROUNDS)
-		ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",TWO_ROUNDS)
+        ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
+        SetInterrupt(TRUE)
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Cast","LOCALS")
-	See(SixthNearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    See(SixthNearestEnemyOf(Myself))
+    !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("OH_Cast","LOCALS",TWO_ROUNDS)
-		ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",TWO_ROUNDS)
+        ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
+        SetInterrupt(TRUE)
 END
-

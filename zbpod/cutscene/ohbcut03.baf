@@ -1,71 +1,70 @@
 IF
-	True()
+    True()
 THEN
-	RESPONSE #100
-		CutSceneId(Player1)
-		ApplySpellRES("BPDISPEL",Player1)  // No such index
-		ApplySpellRES("BPDISPEL",Player2)  // No such index
-		ApplySpellRES("BPDISPEL",Player3)  // No such index
-		ApplySpellRES("BPDISPEL",Player4)  // No such index
-		ApplySpellRES("BPDISPEL",Player5)  // No such index
-		ApplySpellRES("BPDISPEL",Player6)  // No such index
-		ApplySpell(Player1,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
-		ActionOverride(Player2,ApplySpell(Player2,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
-		ActionOverride(Player3,ApplySpell(Player3,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
-		ActionOverride(Player4,ApplySpell(Player4,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
-		ActionOverride(Player5,ApplySpell(Player5,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
-		ActionOverride(Player6,ApplySpell(Player6,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
-		ActionOverride("ohbbarte",ApplySpellRES("SPSREST",Player1))  // No such index
-		ActionOverride("ohbbarte",ApplySpellRES("SPSREST",Player2))  // No such index
-		ActionOverride("ohbbarte",ApplySpellRES("SPSREST",Player3))  // No such index
-		ActionOverride("ohbbarte",ApplySpellRES("SPSREST",Player4))  // No such index
-		ActionOverride("ohbbarte",ApplySpellRES("SPSREST",Player5))  // No such index
-		ActionOverride("ohbbarte",ApplySpellRES("SPSREST",Player6))  // No such index
-		SetGlobal("sprite_is_deadohbnajim","global",0)
-		SetGlobal("sprite_is_deadohbbanno","global",0)
-		SetGlobal("sprite_is_deadohbdorma","global",0)
-		SetGlobal("sprite_is_deadohbjoker","global",0)
-		SetGlobal("sprite_is_deadohbpol","global",0)
-		SetGlobal("sprite_is_deadohbthass","global",0)
-		SetGlobal("sprite_is_deadohbwing","global",0)
-		SetMasterArea("OH8100")  // TBP2 - Staging Area Map
-		ActionOverride("ohbnajim",DestroySelf())
-		ActionOverride("ohbbanno",DestroySelf())
-		ActionOverride("ohbdorma",DestroySelf())
-		ActionOverride("ohbjoker",DestroySelf())
-		ActionOverride("ohbpol",DestroySelf())
-		ActionOverride("ohbthass",DestroySelf())
-		ActionOverride("ohbwing",DestroySelf())
-		Wait(3)
-		ActionOverride(Player2,LeaveAreaLUA("OH8100","",[2450.1375],S))  // TBP2 - Staging Area Map
-		ActionOverride(Player3,LeaveAreaLUA("OH8100","",[2543.1376],S))  // TBP2 - Staging Area Map
-		ActionOverride(Player4,LeaveAreaLUA("OH8100","",[2496.1345],S))  // TBP2 - Staging Area Map
-		ActionOverride(Player5,LeaveAreaLUA("OH8100","",[2585.1342],S))  // TBP2 - Staging Area Map
-		ActionOverride(Player6,LeaveAreaLUA("OH8100","",[2540.1308],S))  // TBP2 - Staging Area Map
-		LeaveAreaLUAPanic("OH8100","",[2499.1409],S)  // TBP2 - Staging Area Map
-		LeaveAreaLUA("OH8100","",[2499.1409],S)  // TBP2 - Staging Area Map
-		MultiPlayerSync()
-		FadeToColor([0.0],0)
-		SetSequence(SEQ_SLEEP)
-		ActionOverride(Player2,SetSequence(SEQ_SLEEP))
-		ActionOverride(Player3,SetSequence(SEQ_SLEEP))
-		ActionOverride(Player4,SetSequence(SEQ_SLEEP))
-		ActionOverride(Player5,SetSequence(SEQ_SLEEP))
-		ActionOverride(Player6,SetSequence(SEQ_SLEEP))
-		Wait(1)
-		SmallWait(65)
-		SetSequence(SEQ_AWAKE)
-		ActionOverride(Player2,SetSequence(SEQ_AWAKE))
-		ActionOverride(Player3,SetSequence(SEQ_AWAKE))
-		ActionOverride(Player4,SetSequence(SEQ_AWAKE))
-		ActionOverride(Player5,SetSequence(SEQ_AWAKE))
-		ActionOverride(Player6,SetSequence(SEQ_AWAKE))
-		SmallWait(30)
-		SetCursorState(FALSE)
-		StartMovie("pod")
-		SetGlobal("ohb_voghiln_greeting","oh8100",1) // TBP2 - Staging Area Map
-		FadeFromColor([60.0],0)
-		EndCutSceneMode()
-		SaveGame(0)
+    RESPONSE #100
+        CutSceneId(Player1)
+        ApplySpellRES("BPDISPEL",Player1)  // No such index
+        ApplySpellRES("BPDISPEL",Player2)  // No such index
+        ApplySpellRES("BPDISPEL",Player3)  // No such index
+        ApplySpellRES("BPDISPEL",Player4)  // No such index
+        ApplySpellRES("BPDISPEL",Player5)  // No such index
+        ApplySpellRES("BPDISPEL",Player6)  // No such index
+        ApplySpell(Player1,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
+        ActionOverride(Player2,ApplySpell(Player2,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
+        ActionOverride(Player3,ApplySpell(Player3,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
+        ActionOverride(Player4,ApplySpell(Player4,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
+        ActionOverride(Player5,ApplySpell(Player5,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
+        ActionOverride(Player6,ApplySpell(Player6,RESTORE_FULL_HEALTH))  // SPIN746.SPL (No such index)
+        ActionOverride("ohbbarte",ApplySpellRES("SPSREST",Player1))  // No such index
+        ActionOverride("ohbbarte",ApplySpellRES("SPSREST",Player2))  // No such index
+        ActionOverride("ohbbarte",ApplySpellRES("SPSREST",Player3))  // No such index
+        ActionOverride("ohbbarte",ApplySpellRES("SPSREST",Player4))  // No such index
+        ActionOverride("ohbbarte",ApplySpellRES("SPSREST",Player5))  // No such index
+        ActionOverride("ohbbarte",ApplySpellRES("SPSREST",Player6))  // No such index
+        SetGlobal("sprite_is_deadohbnajim","global",0)
+        SetGlobal("sprite_is_deadohbbanno","global",0)
+        SetGlobal("sprite_is_deadohbdorma","global",0)
+        SetGlobal("sprite_is_deadohbjoker","global",0)
+        SetGlobal("sprite_is_deadohbpol","global",0)
+        SetGlobal("sprite_is_deadohbthass","global",0)
+        SetGlobal("sprite_is_deadohbwing","global",0)
+        SetMasterArea("OH8100")  // TBP2 - Staging Area Map
+        ActionOverride("ohbnajim",DestroySelf())
+        ActionOverride("ohbbanno",DestroySelf())
+        ActionOverride("ohbdorma",DestroySelf())
+        ActionOverride("ohbjoker",DestroySelf())
+        ActionOverride("ohbpol",DestroySelf())
+        ActionOverride("ohbthass",DestroySelf())
+        ActionOverride("ohbwing",DestroySelf())
+        Wait(3)
+        ActionOverride(Player2,LeaveAreaLUA("OH8100","",[2450.1375],S))  // TBP2 - Staging Area Map
+        ActionOverride(Player3,LeaveAreaLUA("OH8100","",[2543.1376],S))  // TBP2 - Staging Area Map
+        ActionOverride(Player4,LeaveAreaLUA("OH8100","",[2496.1345],S))  // TBP2 - Staging Area Map
+        ActionOverride(Player5,LeaveAreaLUA("OH8100","",[2585.1342],S))  // TBP2 - Staging Area Map
+        ActionOverride(Player6,LeaveAreaLUA("OH8100","",[2540.1308],S))  // TBP2 - Staging Area Map
+        LeaveAreaLUAPanic("OH8100","",[2499.1409],S)  // TBP2 - Staging Area Map
+        LeaveAreaLUA("OH8100","",[2499.1409],S)  // TBP2 - Staging Area Map
+        MultiPlayerSync()
+        FadeToColor([0.0],0)
+        SetSequence(SEQ_SLEEP)
+        ActionOverride(Player2,SetSequence(SEQ_SLEEP))
+        ActionOverride(Player3,SetSequence(SEQ_SLEEP))
+        ActionOverride(Player4,SetSequence(SEQ_SLEEP))
+        ActionOverride(Player5,SetSequence(SEQ_SLEEP))
+        ActionOverride(Player6,SetSequence(SEQ_SLEEP))
+        Wait(1)
+        SmallWait(65)
+        SetSequence(SEQ_AWAKE)
+        ActionOverride(Player2,SetSequence(SEQ_AWAKE))
+        ActionOverride(Player3,SetSequence(SEQ_AWAKE))
+        ActionOverride(Player4,SetSequence(SEQ_AWAKE))
+        ActionOverride(Player5,SetSequence(SEQ_AWAKE))
+        ActionOverride(Player6,SetSequence(SEQ_AWAKE))
+        SmallWait(30)
+        SetCursorState(FALSE)
+        StartMovie("pod")
+        SetGlobal("ohb_voghiln_greeting","oh8100",1) // TBP2 - Staging Area Map
+        FadeFromColor([60.0],0)
+        EndCutSceneMode()
+        SaveGame(0)
 END
-

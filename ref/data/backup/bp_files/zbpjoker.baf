@@ -1,44 +1,43 @@
 IF
-	Global("ohb_finale","global",8)
-	Global("OHB_POISON_JOKER","global",7)
-	Delay(6)
+    Global("ohb_finale","global",8)
+    Global("OHB_POISON_JOKER","global",7)
+    Delay(6)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_POISON_JOKER","global",20)
-		DisplayStringHead(Myself,100613)  // Whoa! I don't feel so well. What's happening to me?
-		ReallyForceSpellRES("ohbjoke1",Myself)  // <NO TEXT>
+    RESPONSE #100
+        SetGlobal("OHB_POISON_JOKER","global",20)
+        DisplayStringHead(Myself,100613)  // Whoa! I don't feel so well. What's happening to me?
+        ReallyForceSpellRES("ohbjoke1",Myself)  // <NO TEXT>
 END
 
 IF
-	Global("ohb_finale","global",8)
-	Global("OHB_POISON_JOKER","global",8)
-	Delay(6)
+    Global("ohb_finale","global",8)
+    Global("OHB_POISON_JOKER","global",8)
+    Delay(6)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_POISON_JOKER","global",20)
-		DisplayStringHead(Myself,100613)  // Whoa! I don't feel so well. What's happening to me?
-		ReallyForceSpellRES("ohbjoke2",Myself)  // <NO TEXT>
+    RESPONSE #100
+        SetGlobal("OHB_POISON_JOKER","global",20)
+        DisplayStringHead(Myself,100613)  // Whoa! I don't feel so well. What's happening to me?
+        ReallyForceSpellRES("ohbjoke2",Myself)  // <NO TEXT>
 END
 
 IF
-	Global("ohb_finale","global",8)
-	Global("OHB_POISON_JOKER","global",9)
-	Delay(6)
+    Global("ohb_finale","global",8)
+    Global("OHB_POISON_JOKER","global",9)
+    Delay(6)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_POISON_JOKER","global",20)
-		DisplayStringHead(Myself,100613)  // Whoa! I don't feel so well. What's happening to me?
-		ReallyForceSpellRES("ohbjoke3",Myself)  // <NO TEXT>
+    RESPONSE #100
+        SetGlobal("OHB_POISON_JOKER","global",20)
+        DisplayStringHead(Myself,100613)  // Whoa! I don't feel so well. What's happening to me?
+        ReallyForceSpellRES("ohbjoke3",Myself)  // <NO TEXT>
 END
 
 IF
-	Global("ohb_finale","global",8)
-	Global("OHB_POISON_JOKER","global",10)
-	Delay(6)
+    Global("ohb_finale","global",8)
+    Global("OHB_POISON_JOKER","global",10)
+    Delay(6)
 THEN
-	RESPONSE #100
-		SetGlobal("OHB_POISON_JOKER","global",21)
-		DisplayStringHead("ohbjoker",100613)  // Whoa! I don't feel so well. What's happening to me?
-		SetGlobalTimer("OHB_POISON_JOKER_finale","global",8)
+    RESPONSE #100
+        SetGlobal("OHB_POISON_JOKER","global",21)
+        DisplayStringHead("ohbjoker",100613)  // Whoa! I don't feel so well. What's happening to me?
+        SetGlobalTimer("OHB_POISON_JOKER_finale","global",8)
 END
-

@@ -304,7 +304,7 @@ COPY_EXISTING ~ohbgla02.cre~ ~override~
 COPY_EXISTING ~ZBGOREM1.SPL~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@18004) END // add .tra ref later
 
-	COPY ~%MOD_FOLDER%/creatures/thewinged~ ~override~
+    COPY ~%MOD_FOLDER%/creatures/thewinged~ ~override~
 COPY_EXISTING ~ohbwing.cre~ ~override~
     SAY 0x08 @15019
     SAY 0x0c @15019

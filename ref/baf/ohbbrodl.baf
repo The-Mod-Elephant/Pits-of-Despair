@@ -1,74 +1,73 @@
 IF
-	Global("OHB_TALKED_BRODLE2","LOCALS",0)
-	!See("ohbtartl")  // Tartle
-	See([PC])
-	Range(LastSeenBy(Myself),10)
-	GlobalGT("OHB_LAST_BATTLE","GLOBAL",104)
-	GlobalLT("OHB_LAST_BATTLE","GLOBAL",404)
+    Global("OHB_TALKED_BRODLE2","LOCALS",0)
+    !See("ohbtartl")  // Tartle
+    See([PC])
+    Range(LastSeenBy(Myself),10)
+    GlobalGT("OHB_LAST_BATTLE","GLOBAL",104)
+    GlobalLT("OHB_LAST_BATTLE","GLOBAL",404)
 THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		FaceObject(LastSeenBy(Myself))
-		SmallWait(5)
-		StartDialogueNoSet(LastSeenBy(Myself))
-		SetInterrupt(TRUE)
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        FaceObject(LastSeenBy(Myself))
+        SmallWait(5)
+        StartDialogueNoSet(LastSeenBy(Myself))
+        SetInterrupt(TRUE)
 END
 
 IF
-	Global("OHB_brodle_uprising_ready","GLOBAL",1)
-	Detect([PC])
+    Global("OHB_brodle_uprising_ready","GLOBAL",1)
+    Detect([PC])
 THEN
-	RESPONSE #100
-		StartCutSceneMode()
-		ClearAllActions()
-		SetGlobal("OHB_brodle_uprising_ready","GLOBAL",2)
-		FadeToColor([20.0],0)
-		Wait(3)
-		MoveViewPoint([2260.1510],INSTANT)
-		ActionOverride(Player1,JumpToPoint([2195.1685]))
-		ActionOverride(Player2,JumpToPoint([2235.1715]))
-		ActionOverride(Player3,JumpToPoint([2125.1725]))
-		ActionOverride(Player4,JumpToPoint([2205.1760]))
-		ActionOverride(Player5,JumpToPoint([2110.1790]))
-		ActionOverride(Player6,JumpToPoint([2195.1825]))
-		Wait(1)
-		ActionOverride(Player1,MoveToPoint([2265.1555]))
-		ActionOverride(Player2,MoveToPoint([2280.1620]))
-		ActionOverride(Player3,MoveToPoint([2200.1625]))
-		ActionOverride(Player4,MoveToPoint([2245.1670]))
-		ActionOverride(Player5,MoveToPoint([2180.1685]))
-		ActionOverride(Player6,MoveToPoint([2270.1705]))
-		ActionOverride("ohbgezzt",MoveToPoint([2420.1365]))
-		ActionOverride("ohbfeldr",MoveToPoint([2475.1450]))
-		ActionOverride("ohbtimmo",MoveToPoint([2490.1395]))
-		ActionOverride("ohbmercy",MoveToPoint([2410.1530]))
-		ActionOverride("ohbhort",MoveToPoint([2155.1365]))
-		ActionOverride("ohbdulf",MoveToPoint([2126.1475]))
-		FadeFromColor([20.0],0)
-		Wait(2)
-		ActionOverride(Player1,FaceObject("ohbbrodl"))  // Brodle
-		ActionOverride(Player2,FaceObject("ohbbrodl"))  // Brodle
-		ActionOverride(Player3,FaceObject("ohbbrodl"))  // Brodle
-		ActionOverride(Player4,FaceObject("ohbbrodl"))  // Brodle
-		ActionOverride(Player5,FaceObject("ohbbrodl"))  // Brodle
-		ActionOverride(Player6,FaceObject("ohbbrodl"))  // Brodle
-		ActionOverride("ohbgezzt",FaceObject("ohbbrodl"))  // Brodle
-		ActionOverride("ohbfeldr",FaceObject("ohbbrodl"))  // Brodle
-		ActionOverride("ohbtimmo",FaceObject("ohbbrodl"))  // Brodle
-		ActionOverride("ohbmercy",FaceObject("ohbbrodl"))  // Brodle
-		ActionOverride("ohbhort",FaceObject("ohbbrodl"))  // Brodle
-		ActionOverride("ohbdulf",FaceObject("ohbbrodl"))  // Brodle
-		FaceObject(Player1)
-		Wait(1)
-		SmallWait(5)
-		StartDialogueNoSet(Player1)
+    RESPONSE #100
+        StartCutSceneMode()
+        ClearAllActions()
+        SetGlobal("OHB_brodle_uprising_ready","GLOBAL",2)
+        FadeToColor([20.0],0)
+        Wait(3)
+        MoveViewPoint([2260.1510],INSTANT)
+        ActionOverride(Player1,JumpToPoint([2195.1685]))
+        ActionOverride(Player2,JumpToPoint([2235.1715]))
+        ActionOverride(Player3,JumpToPoint([2125.1725]))
+        ActionOverride(Player4,JumpToPoint([2205.1760]))
+        ActionOverride(Player5,JumpToPoint([2110.1790]))
+        ActionOverride(Player6,JumpToPoint([2195.1825]))
+        Wait(1)
+        ActionOverride(Player1,MoveToPoint([2265.1555]))
+        ActionOverride(Player2,MoveToPoint([2280.1620]))
+        ActionOverride(Player3,MoveToPoint([2200.1625]))
+        ActionOverride(Player4,MoveToPoint([2245.1670]))
+        ActionOverride(Player5,MoveToPoint([2180.1685]))
+        ActionOverride(Player6,MoveToPoint([2270.1705]))
+        ActionOverride("ohbgezzt",MoveToPoint([2420.1365]))
+        ActionOverride("ohbfeldr",MoveToPoint([2475.1450]))
+        ActionOverride("ohbtimmo",MoveToPoint([2490.1395]))
+        ActionOverride("ohbmercy",MoveToPoint([2410.1530]))
+        ActionOverride("ohbhort",MoveToPoint([2155.1365]))
+        ActionOverride("ohbdulf",MoveToPoint([2126.1475]))
+        FadeFromColor([20.0],0)
+        Wait(2)
+        ActionOverride(Player1,FaceObject("ohbbrodl"))  // Brodle
+        ActionOverride(Player2,FaceObject("ohbbrodl"))  // Brodle
+        ActionOverride(Player3,FaceObject("ohbbrodl"))  // Brodle
+        ActionOverride(Player4,FaceObject("ohbbrodl"))  // Brodle
+        ActionOverride(Player5,FaceObject("ohbbrodl"))  // Brodle
+        ActionOverride(Player6,FaceObject("ohbbrodl"))  // Brodle
+        ActionOverride("ohbgezzt",FaceObject("ohbbrodl"))  // Brodle
+        ActionOverride("ohbfeldr",FaceObject("ohbbrodl"))  // Brodle
+        ActionOverride("ohbtimmo",FaceObject("ohbbrodl"))  // Brodle
+        ActionOverride("ohbmercy",FaceObject("ohbbrodl"))  // Brodle
+        ActionOverride("ohbhort",FaceObject("ohbbrodl"))  // Brodle
+        ActionOverride("ohbdulf",FaceObject("ohbbrodl"))  // Brodle
+        FaceObject(Player1)
+        Wait(1)
+        SmallWait(5)
+        StartDialogueNoSet(Player1)
 END
 
 IF
-	Global("ohb_finale","global",5)
-	Detect([PC])
+    Global("ohb_finale","global",5)
+    Detect([PC])
 THEN
-	RESPONSE #100
-		StartDialogueNoSet(Player1)
+    RESPONSE #100
+        StartDialogueNoSet(Player1)
 END
-

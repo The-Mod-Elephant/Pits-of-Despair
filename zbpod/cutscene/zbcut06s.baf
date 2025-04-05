@@ -1,33 +1,32 @@
 IF
-	Global("ZBCUT06SKIP_CUTSCENE_BREAKABLE","GLOBAL",1)
+    Global("ZBCUT06SKIP_CUTSCENE_BREAKABLE","GLOBAL",1)
 THEN
-	RESPONSE #100
-		SetCutSceneBreakable(FALSE)
-		ClearAllActions()
-		FadeToColor([50.0],0)
-		MoveViewPoint([2665.3355],INSTANT)
-		ActionOverride(Player1,JumpToPoint([2720.3295]))
-		ActionOverride(Player2,JumpToPoint([2575.3395]))
-		ActionOverride(Player3,JumpToPoint([2755.3315]))
-		ActionOverride(Player4,JumpToPoint([2615.3410]))
-		ActionOverride(Player5,JumpToPoint([2850.3385]))
-		ActionOverride(Player6,JumpToPoint([2715.3490]))
-		SmallWait(1)
-		ActionOverride(Player1,FaceObject("ohbdenna"))  // Dennaton
-		ActionOverride(Player2,FaceObject("ohbdenna"))  // Dennaton
-		ActionOverride(Player3,FaceObject("ohbdenna"))  // Dennaton
-		ActionOverride(Player4,FaceObject("ohbdenna"))  // Dennaton
-		ActionOverride(Player5,FaceObject("ohbdenna"))  // Dennaton
-		ActionOverride(Player6,FaceObject("ohbdenna"))  // Dennaton
-		ActionOverride("ohbgezzt",Face(W))
-		ActionOverride("ohbfeldr",Face(W))
-		SmallWait(1)
-		ActionOverride("cutspy",DestroySelf())
-		SmallWait(1)
-		FadeFromColor([50.0],0)
-		SetAreaScript("",OVERRIDE)
-		SetGlobal("ZBCUT06SKIP_CUTSCENE_BREAKABLE","GLOBAL",0)
-		Wait(2)
-		ActionOverride("ohbtartl",StartDialogueNoSet(Player1))
+    RESPONSE #100
+        SetCutSceneBreakable(FALSE)
+        ClearAllActions()
+        FadeToColor([50.0],0)
+        MoveViewPoint([2665.3355],INSTANT)
+        ActionOverride(Player1,JumpToPoint([2720.3295]))
+        ActionOverride(Player2,JumpToPoint([2575.3395]))
+        ActionOverride(Player3,JumpToPoint([2755.3315]))
+        ActionOverride(Player4,JumpToPoint([2615.3410]))
+        ActionOverride(Player5,JumpToPoint([2850.3385]))
+        ActionOverride(Player6,JumpToPoint([2715.3490]))
+        SmallWait(1)
+        ActionOverride(Player1,FaceObject("ohbdenna"))  // Dennaton
+        ActionOverride(Player2,FaceObject("ohbdenna"))  // Dennaton
+        ActionOverride(Player3,FaceObject("ohbdenna"))  // Dennaton
+        ActionOverride(Player4,FaceObject("ohbdenna"))  // Dennaton
+        ActionOverride(Player5,FaceObject("ohbdenna"))  // Dennaton
+        ActionOverride(Player6,FaceObject("ohbdenna"))  // Dennaton
+        ActionOverride("ohbgezzt",Face(W))
+        ActionOverride("ohbfeldr",Face(W))
+        SmallWait(1)
+        ActionOverride("cutspy",DestroySelf())
+        SmallWait(1)
+        FadeFromColor([50.0],0)
+        SetAreaScript("",OVERRIDE)
+        SetGlobal("ZBCUT06SKIP_CUTSCENE_BREAKABLE","GLOBAL",0)
+        Wait(2)
+        ActionOverride("ohbtartl",StartDialogueNoSet(Player1))
 END
-

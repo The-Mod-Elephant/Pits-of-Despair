@@ -1,9 +1,8 @@
 IF
-	Entered([ANYONE])
-	!HasItemEquiped("OHBNOSHU",LastTrigger)  // Noser Uniform
+    Entered([ANYONE])
+    !HasItemEquiped("OHBNOSHU",LastTrigger)  // Noser Uniform
 THEN
-	RESPONSE #100
-		DisplayString(LastTrigger,14381)  // Trap Sprung
-		ForceSpell(LastTrigger,WIZARD_MELF_ACID_ARROW)  // SPWI211.SPL (Melf's Acid Arrow)
+    RESPONSE #100
+        DisplayString(LastTrigger,14381)  // Trap Sprung
+        ForceSpell(LastTrigger,WIZARD_MELF_ACID_ARROW)  // SPWI211.SPL (Melf's Acid Arrow)
 END
-

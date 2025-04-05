@@ -1,78 +1,77 @@
 IF
-	ActionListEmpty()
-	!GlobalTimerNotExpired("OH_Cast","LOCALS")
-	!GlobalTimerNotExpired("OH_Dhar","LOCALS")
-	HaveSpell(CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
-	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
-	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-	!StateCheck(Myself,STATE_SILENCED)
-	CheckStat(Myself,0,CLERIC_DEFENSIVE_HARMONY)
-	Range(NearestEnemyOf(Myself),30)
-	Range([GOODCUTOFF],12)
-	Range(SecondNearest([GOODCUTOFF]),12)
+    ActionListEmpty()
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    !GlobalTimerNotExpired("OH_Dhar","LOCALS")
+    HaveSpell(CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+    CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+    !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+    !StateCheck(Myself,STATE_SILENCED)
+    CheckStat(Myself,0,CLERIC_DEFENSIVE_HARMONY)
+    Range(NearestEnemyOf(Myself),30)
+    Range([GOODCUTOFF],12)
+    Range(SecondNearest([GOODCUTOFF]),12)
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-		SetGlobalTimer("OH_Dhar","LOCALS",FOUR_ROUNDS)
-		Spell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        SetGlobalTimer("OH_Dhar","LOCALS",FOUR_ROUNDS)
+        Spell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
 END
 
 IF
-	ActionListEmpty()
-	!GlobalTimerNotExpired("OH_Cast","LOCALS")
-	HaveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
-	!StateCheck(Myself,STATE_DRAWUPONHOLYMIGHT)
-	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
-	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-	!StateCheck(Myself,STATE_SILENCED)
-	Range(NearestEnemyOf(Myself),30)
+    ActionListEmpty()
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    HaveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+    !StateCheck(Myself,STATE_DRAWUPONHOLYMIGHT)
+    CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+    !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+    !StateCheck(Myself,STATE_SILENCED)
+    Range(NearestEnemyOf(Myself),30)
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-		Spell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
 END
 
 IF
-	ActionListEmpty()
-	!GlobalTimerNotExpired("OH_Cast","LOCALS")
-	HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Chant)
-	!StateCheck(Myself,STATE_CHANT)
-	Range([GOODCUTOFF],12)
-	Range(SecondNearest([GOODCUTOFF]),12)
-	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
-	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-	!StateCheck(Myself,STATE_SILENCED)
-	Range(NearestEnemyOf(Myself),30)
+    ActionListEmpty()
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Chant)
+    !StateCheck(Myself,STATE_CHANT)
+    Range([GOODCUTOFF],12)
+    Range(SecondNearest([GOODCUTOFF]),12)
+    CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+    !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+    !StateCheck(Myself,STATE_SILENCED)
+    Range(NearestEnemyOf(Myself),30)
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-		Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Chant)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Chant)
 END
 
 IF
-	!GlobalTimerNotExpired("OH_Cast","LOCALS")
-	HaveSpell(CLERIC_BLESS)  // SPPR101.SPL (Bless)
-	!StateCheck(Myself,STATE_BLESS)
-	Range([GOODCUTOFF],12)
-	Range(SecondNearest([GOODCUTOFF]),12)
-	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
-	!StateCheck(Myself,STATE_SILENCED)
-	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-	Range(NearestEnemyOf(Myself),30)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    HaveSpell(CLERIC_BLESS)  // SPPR101.SPL (Bless)
+    !StateCheck(Myself,STATE_BLESS)
+    Range([GOODCUTOFF],12)
+    Range(SecondNearest([GOODCUTOFF]),12)
+    CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+    !StateCheck(Myself,STATE_SILENCED)
+    !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+    Range(NearestEnemyOf(Myself),30)
 THEN
-	RESPONSE #100
-		SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-		Spell(Myself,CLERIC_BLESS)  // SPPR101.SPL (Bless)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(Myself,CLERIC_BLESS)  // SPPR101.SPL (Bless)
 END
 
 IF
-	ActionListEmpty()
-	!StateCheck(Myself,STATE_INVISIBLE)
-	CheckStatLT(Myself,1,SANCTUARY)
-	See(NearestEnemyOf(Myself))
-	!InParty(NearestEnemyOf(Myself))
+    ActionListEmpty()
+    !StateCheck(Myself,STATE_INVISIBLE)
+    CheckStatLT(Myself,1,SANCTUARY)
+    See(NearestEnemyOf(Myself))
+    !InParty(NearestEnemyOf(Myself))
 THEN
-	RESPONSE #100
-		AttackReevaluate(NearestEnemyOf(Myself),30)
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),30)
 END
-
