@@ -76,7 +76,7 @@ PlaySound("BP2POS_1")
 // ~ GOTO 12
 //   IF ~~ THEN REPLY @554 /* Not particularly. */ GOTO 13
   IF ~~ THEN REPLY @555 /* Why should I address these peasants? To gaze upon my magnificence is more than they deserve! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
-  SetGlobal("ohb_item_reward","global",1) 
+  SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 14
 END
@@ -107,7 +107,7 @@ Wait(1)
 UnhideGUI()
 EndCutSceneMode()
 ~ EXIT
-END 
+END
 
 IF ~~ THEN BEGIN 12
   SAY @558 /* My friends, our fledgling composer needs a patron. Will any of you help <PRO_HIMHER> make sweet music for you? For now, we shall let <PRO_HIMHER> demonstrate <PRO_HISHER> talent by hearing the tune <PRO_HESHE> plays with the instruments at hand! Combatants, to arms! */
@@ -135,7 +135,7 @@ Wait(1)
 UnhideGUI()
 EndCutSceneMode()
 ~ EXIT
-END 
+END
 
 IF ~~ THEN BEGIN 14
   SAY @560 /* Listen to the boos! So raucous! So beautiful! The applause will be thunderous the day you are brought low! Perhaps today? Let's find out! Combatants, to arms! */

@@ -172,7 +172,7 @@ THEN
 		Continue()
 	RESPONSE #20
 		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,95552)  // Get up and fight the apes! 
+		DisplayStringHead(Myself,95552)  // Get up and fight the apes!
 		Continue()
 	RESPONSE #60
 		SetGlobalTimer("OH_Taunt","LOCALS",ONE_ROUND)

@@ -12,9 +12,9 @@ THEN
     ReallyForceSpell(Myself,VORTEX_WEB)  // SPIN575.SPL (Vortex Web)
 END
 */
-IF 
+IF
   OnCreation()
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_VortexTimer","LOCALS",6)
 END

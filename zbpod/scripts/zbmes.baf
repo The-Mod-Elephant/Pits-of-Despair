@@ -1,32 +1,32 @@
-/* extending main BALDUR script, yikes, because i don't know an easier way to manage this 
-if someone else has a better solution PLEASE change this */ 
+/* extending main BALDUR script, yikes, because i don't know an easier way to manage this
+if someone else has a better solution PLEASE change this */
 
 /* set conditions for messenger to appear */
 
 IF
 Global("ZBPodSummonsReceived","GLOBAL",0) /* we haven't received the summons */
-GlobalGT("Chapter","GLOBAL",1) /* it can't happen before chapter 3 */ 
+GlobalGT("Chapter","GLOBAL",1) /* it can't happen before chapter 3 */
 !Global("Chapter","GLOBAL",4)
-!Global("Chapter","GLOBAL",5) /* messenger shouldn't spawn during brynnlaw or underdark chapters */ 
-XPGT(Player1,725000) /* player needs to have a certain level of experience */ 
+!Global("Chapter","GLOBAL",5) /* messenger shouldn't spawn during brynnlaw or underdark chapters */
+XPGT(Player1,725000) /* player needs to have a certain level of experience */
 THEN
 RESPONSE #100
 SetGlobal("ZBPodSummonsReceived","GLOBAL",1)
-SetGlobalTimer("ZBPodMessengerArrives","GLOBAL",EIGHT_HOURS) /* set the timer for eight hours */ 
+SetGlobalTimer("ZBPodMessengerArrives","GLOBAL",EIGHT_HOURS) /* set the timer for eight hours */
 Continue()
 END
 
-/* the messenger shows up */ 
+/* the messenger shows up */
 IF
 Global("ZBPodSummonsReceived","GLOBAL",1)
-GlobalTimerExpired("ZBPodMessengerArrives","GLOBAL") /* the timer has expired */ 
+GlobalTimerExpired("ZBPodMessengerArrives","GLOBAL") /* the timer has expired */
 AreaType(CITY) /* messenger can only approach in the city */
-CombatCounter(0) /* we're not in combat */ 
+CombatCounter(0) /* we're not in combat */
 Global("ZBPodMessengerSpawned","GLOBAL",0)
 THEN
 RESPONSE #100
 SetGlobal("ZBPodMessengerSpawned","GLOBAL",1)
-CreateCreatureObject("zbmes",Player1,0,0,0) 
+CreateCreatureObject("zbmes",Player1,0,0,0)
 SetGlobal("ZBPodSummonsReceived","GLOBAL",2) /* we don't want the messenger to keep showing up */
 Continue()
 END
@@ -39,4 +39,4 @@ THEN
     ClearAllActions()
     StartCutSceneMode()
     StartCutScene("zbmescut")
-END 
+END

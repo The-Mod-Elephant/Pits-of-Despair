@@ -1,10 +1,10 @@
 /*
-  bucketfulofsunshine, 20241108: comments are about the line BELOW them 
+  bucketfulofsunshine, 20241108: comments are about the line BELOW them
   several lines from Dennaton's dialog file - OHBDENNA - remain untouched as aren't present within this tra
-  heavy edits, outside of single line rewrites are needed for OHBBELLO, OHBNAJIM & OHBSTANN - which are part of this tra file 
-  complete rewrites will be needed for large parts of the dialogue if the player isn't trapped and can leave freely - version 2.0? 
+  heavy edits, outside of single line rewrites are needed for OHBBELLO, OHBNAJIM & OHBSTANN - which are part of this tra file
+  complete rewrites will be needed for large parts of the dialogue if the player isn't trapped and can leave freely - version 2.0?
                                                                                                                                   */
-																															 
+
 @0    = ~I tire of this prattle. Take them!~ [OH90460]
 @1    = ~Such a creature is beyond even our power. Send us on a suicide mission like that again and our relationship—to say nothing of your life—will be at an end.~ [OH100573]
 @2    = ~You fought a tarrasque and lived? Impressive!~
@@ -295,7 +295,7 @@
 @285  = ~If he stays out of my way, he'll be fine.~
 @286  = ~He's still my blood. I must protect him. Please, don't harm him.~ [OH92894]
 @287  = ~If he gets in my way, he's a dead halfling.~
-/* removing references to baeloth's pits - BHAALSPAWN might be more suitable here */ 
+/* removing references to baeloth's pits - BHAALSPAWN might be more suitable here */
 @288  = ~Then I suppose I should be thankful that I struck the deal with our friend here! The Hero of Baldur's Gate is the logical choice to lead this uprising.~ [OH92900]
 @289  = ~Thank you! We should head to the barracks immediately. With luck, we can take the guards by surprise and eliminate them before they know what's happening.~ [OH92901]
 @290  = ~No. We should strike Dennaton first.~
@@ -555,7 +555,7 @@
 @543  = ~Hmm... We shall see.~
 @544  = ~I'd better.~
 @545  = ~You don't have to like it, <CHARNAME>. You just have to fight, and if you don't? Well, then you shall be killed. A shame to lose one of your talent, but the show will go on.~ [OH90570]
-/* removing references, voiced line will need to be altered, cut after 'of course' */ 
+/* removing references, voiced line will need to be altered, cut after 'of course' */
 @546  = ~Of course you shall have one! How about "The Ravager"? No, no, no, no... "Infinite Desolation"? No, I don't like that... Of course! You are "The Hero of Baldur's Gate"!~ [ZBPOD1]
 @547  = ~Oh, you'll find the money more than sufficient, don't you worry about that. You just keep them coming back for more.~ [OH90592]
 /* removing references to Baeloth's Pit - voice file should also be removed. Cut after 'something truly extraordinary'. */
@@ -573,7 +573,7 @@
 @558  = ~My friends, our fledgling composer needs a patron. Will any of you help <PRO_HIMHER> make sweet music for you? For now, we shall let <PRO_HIMHER> demonstrate <PRO_HISHER> talent by hearing the tune <PRO_HESHE> plays with the instruments at hand! Combatants, to arms!~ [OH94518]
 @559  = ~Inspiring stuff, <CHARNAME>. Very well, then. Combatants, to arms!~ [OH94519]
 @560  = ~Listen to the boos! So raucous! So beautiful! The applause will be thunderous the day you are brought low! Perhaps today? Let's find out! Combatants, to arms!~ [OH94520]
-/* removing references to Baeloth's Pits - need to remove or alter voiced line, cutting it after 'newest attraction' */ 
+/* removing references to Baeloth's Pits - need to remove or alter voiced line, cutting it after 'newest attraction' */
 @561  = ~Ladies and gentlemen, I welcome you again to our main event. You've already met our next combatant! Once again, I give you our newest attraction, the Hero of Baldur's Gate, <CHARNAME>!~ [ZBPOD2]
 @562  = ~This challenger is entirely homegrown. There's not a craven orc in the bunch! They're the top gladiatorial team out of Raskilov's Academy of Might from right here in Thay. I give you "Raskilov's Ragers!"~ [OH94042]
 @563  = ~Everyone, please settle down and return to your seats! I'm afraid we can't pay out the bets on the last match, as it was interfered with. All wagers will be pushed to the next one!~ [OH94057]
@@ -581,20 +581,20 @@
 @565  = ~As for you "performers," let this be a lesson to you. There will be no changes to the script, and the script is this: You fight. Fight well, and you live. Fight poorly, you die. It's hardly original, but it's a crowd-pleaser.~ [OH94061]
 @566  = ~*ahem* Attention, everyone! We are ready once more for today's main event. We've decided to keep what remains of "Raskilov's Ragers," and we're throwing in some minotaurs to help them out!~ [OH94062]
 @567  = ~Before we start, <CHARNAME>, would you like to address your adoring fans?~ [OH94064]
-/* removing references to Baeloth's Pits */ 
+/* removing references to Baeloth's Pits */
 @568  = ~I am a humble <PRO_MANWOMAN>. I scraped by as best I could in Baldur's Gate. Faced with trained gladiators, I only hope I last long enough to provide the entertainment you deserve.~
 @569  = ~Really, Dennaton? You claim to provide entertainment available nowhere else. This fight will be over in seconds, and you know it.~
 @570  = ~I destroyed some orcs for your amusement—these gladiators will be no different. But you, my people, deserve more! Give me the proper tools, and I swear the front row will drip red with blood!~
 @571  = ~Not at all.~
 @572  = ~Thayan gladiators? Ha! A nation of weaklings! No Thayan can stand against me!~
-/* removing references to Baeloth's Pit - voice line needs to be removed 
+/* removing references to Baeloth's Pit - voice line needs to be removed
 i think removing the OH94073 and only keeping the brackets MIGHT work but I need to check */
 @573  = ~Amazing! The Hero of Baldur's Gate just convinced the crowd THEY'RE the underdog! Even more amazingly, they've convinced a crowd of Thayans to ROOT for the underdog! Good show! Combatants, to arms!~ [zblank]
 @574  = ~If it would ease your conscience, I can make sure your future battles are VERY DIFFICULT. Now, combatants, to arms!~ [OH94075]
 @575  = ~How can you resist a champion who begs for the opportunity to entertain you more?! Dig deep, and be generous, but above all, enjoy the show! Combatants, to arms!~ [OH94076]
 @576  = ~Boring, boring, boring! But have it your way. All right, combatants, to arms!~ [OH94077]
 @577  = ~A nation's pride has been wounded! Can Thay's sons and daughters bring honor to our homeland? We shall see! Combatants, to arms!~ [OH94078]
-/* removing references to Baeloth's Pits - voiced line will need to be cut or altered, cut after 'top of our ladder' */ 
+/* removing references to Baeloth's Pits - voiced line will need to be cut or altered, cut after 'top of our ladder' */
 @578  = ~Welcome once more to the unequaled drama of the center arena! Again, I give you a <PRO_MANWOMAN> of unmatched reputation and skill, steadily clawing <PRO_HISHER> way to the top of our ladder. Please give a warm Thayan welcome to the Hero of Baldur's Gate—<CHARNAME>!~ [OH94124]
 @579  = ~Speaking of clawing, our next challengers hail from the marshes of Chult. It takes more than just a scaly hide and forked tongue to reach the top of the lizardman heap, and this tribal chieftain did it quicker than most. Throw in his elite guard, and it's sure to be hiss-sterical!~ [OH94126]
 @580  = ~But before we begin—<CHARNAME>, is there anything you'd like to say to your adoring fans?~ [OH94127]
@@ -623,11 +623,11 @@ i think removing the OH94073 and only keeping the brackets MIGHT work but I need
 @601  = ~The Bhaalspawn wants to give us a show. What a generous and giving spirit! Won't you be as generous for your favorite performer? While you decide, let the killing commence! Combatants, to arms!~ [ZBLANK]
 @602  = ~*sigh* Combatants, to arms!~ [OH94208]
 @603  = ~Aha! Then we are fortunate that two nightmares clash here today. Worry not, my patrons—in moments, only one will be left. Combatants! To arms!~ [OH94209]
-/* removing references, voiced line will need to be altered, cut after 'light to all' */ 
+/* removing references, voiced line will need to be altered, cut after 'light to all' */
 @604  = ~Come one, come all, to the greatest show this side of the Astral Plane! Once more, I bring you a performer that's slowly but surely winning hearts... and minds! In a world bereft of heroes, they fill the void, a beacon of light to all! I give you the Hero of Baldur's Gate, <CHARNAME>!~ [ZBPOD4]
-/* removing references, voiced line will need to be altered, cut after 'depths of infamy' */ 
+/* removing references, voiced line will need to be altered, cut after 'depths of infamy' */
 @605  = ~Ladies and gentlemen, let me present a performer who continues to explore new and greater depths of infamy! Come on, everyone—let's REALLY hear the boos for the Hero of Baldur's Gate, <CHARNAME>!~ [ZBPOD5]
-/* removing references, voiced line will need to be altered, cut after 'lofty reputation' */ 
+/* removing references, voiced line will need to be altered, cut after 'lofty reputation' */
 @606  = ~Come one, come all, to the greatest show this side of the Astral Plane! Once again, I bring you a performer whose skill is matched only by their lofty reputation. I give you the Hero of Baldur's Gate, <CHARNAME>!~ [ZBPOD6]
 @607  = ~Our challengers are some of the most despicable creatures in all of Toril! The bane of all who walk in the sun, these ancient enemies of Thay are so depraved that even the light itself hates them. Fear? Loathing? Disgust? You'll feel them all for the drow of House Aiel'for!~ [OH94223]
 @608  = ~Before we begin, <CHARNAME>, have you anything you'd like to say?~ [OH94224]
@@ -640,11 +640,11 @@ i think removing the OH94073 and only keeping the brackets MIGHT work but I need
 @615  = ~I tire of these repeated insults, <CHARNAME>. But the show must go on! Should you live, we'll "discuss" this later. For now, combatants—~ [OH94231]
 /* removing references, voiced line will need to be removed
 Using BHAALSPAWN against because the title is overused
-If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind thanks :) */ 
+If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind thanks :) */
 @616  = ~Do you hear that? The Bhaalspawn asks us to help create a masterpiece of death! Clearly, <PRO_HESHE> has the talent—will someone give <PRO_HIMHER> the tools? Questions to ponder, but for now, combatants—~ [ZBLANK]
 @617  = ~I'd think one of your experience would concentrate more on surviving than such idle fantasies. But enough. It is time to raise the curtain on this act! Combatants, to arms!~ [OH94233]
 @618  = ~Can't you at least TRY to be a little bit interesting? *sigh* Very well. Combatants, to arms!~ [OH94234]
-/* removing references to Baeloths' Pit */ 
+/* removing references to Baeloths' Pit */
 @619  = ~Amazing! This day, I have witnessed something I never imagined I'd see: The drow are the champions of the Thayan people! Come, dark heroes! Slay the Bhaalspawn... if you can! Combatants, to arms!~ [OH94235]
 @620  = ~YOU WRETCHED WENCH! THREATENING ME?! IN MY OWN ARENA?!~ [OH94242]
 @621  = ~What are you all looking at?! You lot just kill each other. You in the stands... GET TO THE CHEERING, NOW!~ [OH94243]
@@ -681,7 +681,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @652  = ~Save your breath? I should've saved my money for a true performer. Let the combat begin.~ [OH94897]
 @653  = ~We are called weak and cowardly! Well, let us see how this performer fares against the masters of planar travel! Combatants, to arms!~ [OH94898]
 @654  = ~You have seen your champion fight denizens of the surface realm and the Underdark, prevailing again and again. Now your beloved hero shall defend you against a new threat!~ [OH95069]
-/* removing references, voiced line will need to removed */ 
+/* removing references, voiced line will need to removed */
 @655  = ~You have seen the Hero of Baldur's Gate fight denizens of the surface realm and the Underdark and prevail every time! Now, they will face a new foe for your entertainment!~ [ZBLANK]
 @656  = ~Neither denizens of the surface realm nor the Underdark have been able to lay the enemy of Thay low! Now, the villain <CHARNAME> will face their greatest challenge yet!~ [OH95072]
 @657  = ~From the deepest oceans, I have captured strange and bizarre creatures the likes of which not even Thay's most learned scholars know. Look and wonder!~ [OH95073]
@@ -861,7 +861,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @831  = ~Behold, my generous patrons and patronesses! Behold the pitiless, the vicious, the arrogant archnemesis of Thay, <CHARNAME>!~ [OH95591]
 @832  = ~You have seen them vanquish beasts from the Underdark, from the depths of the seas, from the reaches of other planes of existence. This performer has defeated wizards, liches, even dragons ancient as the world itself!~ [OH95592]
 @833  = ~You have seen all things, mortal and immortal, but there is one thing you have yet to experience... the power of the gods themselves!~ [OH95593]
-/* CHARNAME is also a Bhaalspawn and several lines should be altered, voiced file should be removed */ 
+/* CHARNAME is also a Bhaalspawn and several lines should be altered, voiced file should be removed */
 @834  = ~YES! People of Thay, I give you the offspring of Bhaal himself, with their faithful cultists, here to battle to the bitter death! Sibling versus sibling. A fight not seen since <CHARNAME>'s battle against Sarevok.~ [ZBLANK]
 @835  = ~You've had the opportunity to address the audience many times, performer. This may be your last. Have you anything to say?~ [OH95596]
 @836  = ~The Thayan peoples' devotion and love gives me the strength to overcome even those through who share Bhaal's blood!~
@@ -869,14 +869,14 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @838  = ~Am I to face the power of the gods themselves unaided? Have I not won favor enough to be granted some token of appreciation to bolster me in my darkest hour?~
 @839  = ~I have no words left for the crowd.~
 @840  = ~These Bhaalspawn and their cultists will fall! And the people of Thay will join them soon after!~
-/* Here's where the conversation ends - check if further edits are needed above */ 
+/* Here's where the conversation ends - check if further edits are needed above */
 @841  = ~This claim will be put to the ultimate test! Prepare yourself! The battle begins!~ [OH95602]
 @842  = ~I swear, even if you prevail here, you will suffer a slow and painful death by my hand. Now, fight and die!~ [OH95603]
 @843  = ~Surely not! People of Thay, show your generosity to this humble performer! Give <PRO_HIMHER> aid in this time of need! Now, let the battle begin!~ [OH95604]
 @844  = ~No more words for the crowd? Perhaps I have no coin for you... Begin the battle!~ [OH95605]
 @845  = ~Steady yourselves, my guests. Take your seats and do not be afraid. You will not be harmed. After this battle, <CHARNAME> will be... dealt with.~ [OH95606]
 @846  = ~My performers are victorious! ~ [OH96046]
-/* removing references to Baeloth's pit - voice line needs to be removed - using line with multiple (heroes), since that was used in vanilla text, but can be altered to simple 'Bhaalspawn has won' instead */ 
+/* removing references to Baeloth's pit - voice line needs to be removed - using line with multiple (heroes), since that was used in vanilla text, but can be altered to simple 'Bhaalspawn has won' instead */
 @847  = ~The heroes of Baldur's Gate have won!~ [zblank]
 @848  = ~A victory worthy of the epics!~ [OH96048]
 @849  = ~You've really made a mess of things, <CHARNAME>. You could've had wealth, glory, immortality... Instead, you will die, your body dumped in an unmarked grave. And for what?~ [OH100555]
@@ -948,7 +948,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @915  = ~Think of yourselves as my guests, my dear, and of the arena as... an inn. An inn for people who fight and kill others for money and entertainment.~ [OH90559]
 @916  = ~Next is a wizard of deceptive power. His aging body may seem past its prime, but his mind is sharp as any blade. I give you Dulf "The Ancient Threat" Ebonbeard!~ [OH90560]
 @917  = ~Right, with that cleared up, we can turn to the show itself. As a great bard once said, "All the world's a stage, and all of us merely players! Each of us in our time will play many parts!"~ [OH90572]
-/* removing references to Baeloth's Pits */ 
+/* removing references to Baeloth's Pits */
 @918  = ~So now we decide which part each of you shall play. Our main star will be <CHARNAME>, who is already renowned for defeating Sarevok at Baldur's Gate.~ [OH90573]
 @919  = ~Oh, by the Nine Hells, why do you interrupt me?! Have I ever not paid before? You'll get your money. Now—~ [OH94237]
 @920  = ~I can't get it right now! There's a match about to start. Immediately afterwards, I'll—~ [OH94239]
@@ -1639,7 +1639,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @1605 = ~Maybe. Let me see your selection.~
 @1606 = ~Not right now. Another time, perhaps.~
 @1607 = ~Let me see your selection of magical trinkets.~
-/* removing references to Baeloth's Pit */ 
+/* removing references to Baeloth's Pit */
 @1608 = ~What's an illithid doing here?~
 @1609 = ~Shouldn't you be able to communicate telepathically?~
 @1610 = ~I've no time for this.~
@@ -1680,7 +1680,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @1645 = ~Sounds good to me. Let's see what you've got.~
 @1646 = ~Maybe later. I need to go now.~
 @1647 = ~A mushroom? Really? Is this supposed to be funny?~
-/* removing references to Baeloth's Pit */ 
+/* removing references to Baeloth's Pit */
 @1648 = ~It sounds fantastic, I know, but it IS true. I can prove it—unless I'm much mistaken, the Hero of Baldur's Gate is among us this very minute. Everyone, say hello to <CHARNAME>—our tale's protagonist in the flesh!~
 @1649 = ~It is true. How did you know it was me?~
 @1650 = ~What? Where?~
@@ -1691,7 +1691,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @1655 = ~Ooh, plucky, isn't <PRO_HESHE>? I like it!~
 @1656 = ~Gee, leave it to the mark to figure out the plot first! I'd practically fall asleep waiting for some of you to quit wagging your jaws!~
 @1657 = ~Come now! I know it's you. I know everything worth knowing, and your fame has spread far and wide.~
-/* removing references to Baeloth's Pit */ 
+/* removing references to Baeloth's Pit */
 @1658 = ~Hah! The Bhaalspawn does not lack for ego.~
 @1659 = ~Bet it does.~
 @1660 = ~I've heard tell of a performer with a drink I've yet to taste. Well, let's see it, then. Amaze me.~
@@ -2804,7 +2804,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @2765 = ~<CHARNAME>. The rampant rumors of your recent residence are ratified. I am not surprised to see you here. Do not be shocked. My profession requires I know all persons of prominence and prosperity parading in the pit. Now you shall know my name.~ [OH92316]
 @2766 = ~I am the sultan of scholars! The regent of recorders! The baron of bards! Sought by pashas, kings, lords, and emperors alike to chronicle the conquests and catastrophes of our time. ~ [OH92317]
 @2767 = ~Dennaton caught you too, huh?~
-/* removing black pits references by renaming the book baeloth's writing */ 
+/* removing black pits references by renaming the book baeloth's writing */
 @2768 = ~Caught? No, no, my sad, cynical soldier of ill fortune. I am here of my own consent, to craft "The Pits of Despair: Bhaalspawn you best beware." That's the working title of my current compendium of characters cunning, captivating, and—in your case—contentious and cantankerous.~
 @2769 = ~What?~
 @2770 = ~I am the renowned, the beloved, the exalted, the inestimable Stannel Eibor! May you rejoice in the good fortune of meeting me in person!~ [OH92318]
@@ -2813,7 +2813,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @2773 = ~Stannel Eibor? Sounds like a disease.~
 @2774 = ~You find my phonetics familiar? Please indulge my egotistic interest and inform me who speaks so similarly to this simple scribe. A king, perhaps? The lord of a great city?~ [OH92322]
 @2775 = ~Neither a king nor a lord. It was Baeloth the Entertainer.~
-/* removing references to Baeloth's Pits */ 
+/* removing references to Baeloth's Pits */
 @2776 = ~A drow I met while traversing the Sword Coast. Baeloth was his name.~
 /* removing references to Baeloth's Pits */
 @2777 = ~His name, I believe, was Baeloth. We travelled together for a time.~
@@ -2876,7 +2876,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @2834 = ~Dennaton wanted the crowd warmed up, so I was forced to put the orcs down.~
 @2835 = ~A senseless battle. I've faced more formidable summer breezes. I can't believe anyone found that slaughter entertaining.~
 @2836 = ~It was over the moment I walked into the arena. In only a few seconds, I personally slew a dozen orcs!~
-/* removing references of baeloth's pits, altering voiced line */ 
+/* removing references of baeloth's pits, altering voiced line */
 @2837 = ~I'm sure prevailing over that pack of portly pig-people proved a perplexing puzzle for a preeminent pugilist like the purported "Hero of Baldur's Gate."~ [ZBPOD8]
 /* changes 'butcher' to 'Bhaalspawn' for BG2EE tie-in */
 @2838 = ~But let's not belabor the business! How's this sound: "Bagged from their natural habitat, a bold band of orcs bravely battled a bloodthirsty Bhaalspawn!"~ [OH94543]
@@ -2904,7 +2904,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @2860 = ~I can see the day I have to thrash you coming already.~
 @2861 = ~You are, as ever, a scintillating subject! This chronicle is SURE to be a bestseller!~ [OH94189]
 @2862 = ~So, you were pitted against some dangerous denizens of the depths! Umber hulks, correct?~ [OH94210]
-/* vanilla had a typo, i'm fixing it because why not? */ 
+/* vanilla had a typo, i'm fixing it because why not? */
 @2863 = ~Aye. Their ability to confuse was challenging, but ultimately I triumphed!~
 @2864 = ~They were just mindless beasts doing what they do. Unfortunately, I had little choice but to kill them.~
 @2865 = ~They WERE umber hulks. Now they're DEAD umber hulks.~
@@ -3058,10 +3058,10 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 /* removing several lines that don't take charname's bhaalspawn heritage into account */
 @3011 = ~You have beaten Bhaal's brood! Impossible... You share a sire but—how did you do it?~ [ZBLANK]
 @3012 = ~The Lord of Murder preys on the innocent. His taint influences our actions. My siblings have to be eliminated, no matter the cost.~
-@3013 = ~We may share divine power, but they still fell before a superior tactician.~ 
+@3013 = ~We may share divine power, but they still fell before a superior tactician.~
 @3014 = ~My inherited power has reached godlike proportions! I am ready to begin my ascent!~
 @3015 = ~Brazen boasting from a blundering battler. Let me show you how it's done: "The cultists collapsed in confusion as the opposing Bhaalspawn bitterly battled each other. <CHARNAME> surveyed the scene from safety."~ [OH95628]
-/* here's where the edits for the above end */ 
+/* here's where the edits for the above end */
 @3016 = ~Lies! Nothing but lies!~
 @3017 = ~Your lies will be forgotten, as will you. Write what you want.~
 @3018 = ~When the time is right, you will pay for your insults.~
@@ -3286,7 +3286,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @3237 = ~Oh, ya think so, do you? First, explain why Dennaton has me running this place if I'm so lazy and stupid? Didn't think about that, did you, genius? And second... well, I forgot what I was going to say, but it would have been good!~ [OH88374]
 @3238 = ~I'm sure it would have been. Now can we discuss something else?~
 @3239 = ~Whatever. Look, I need to go. Excuse me.~
-/* removing references to Baeloth's pits - voice line will need to be removed */ 
+/* removing references to Baeloth's pits - voice line will need to be removed */
 @3240 = ~Of course! Anything for the Hero of Baldur's Gate!~ [OH88377]
 @3241 = ~During the welcoming feast, I noticed some tension between you and Brodle. What was that about?~
 @3242 = ~How'd you get to be in charge around here?~

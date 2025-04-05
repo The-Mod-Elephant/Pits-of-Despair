@@ -1,8 +1,8 @@
-/* adding a few lines if the player ran through BPinBG1 
-   adding the connective tissue as it were 
-   only useful for EET installs */ 
+/* adding a few lines if the player ran through BPinBG1
+   adding the connective tissue as it were
+   only useful for EET installs */
 
-/* player can indicate they know bellowgulp 
+/* player can indicate they know bellowgulp
 extend_top bad, i know, but the chance of anyone else doing interjections here is near 0. i'm doing the thing. */
 EXTEND_TOP OHBBELLO 9
    IF ~Global("BPINBG","GLOBAL",1) Global("ZBBELLOCROSSMOD","LOCALS",0)~ THEN REPLY ~Bellowgulp! It's me, <CHARNAME>! What are you doing here?~ DO ~SetGlobal("ZBBELLOCROSSMOD","LOCALS",1)~

@@ -207,7 +207,7 @@ THEN
 		Continue()
 	RESPONSE #15
 		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)
-		DisplayStringHead(Myself,94526)  // AARGH! 
+		DisplayStringHead(Myself,94526)  // AARGH!
 		Continue()
 	RESPONSE #15
 		SetGlobalTimer("OH_RTaunt","LOCALS",THREE_ROUNDS)

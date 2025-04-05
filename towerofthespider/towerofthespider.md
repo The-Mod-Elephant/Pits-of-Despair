@@ -12,7 +12,7 @@ Upper layers Top 2 layers: Necromancy Tower
 
 1. Entrance of Tower. Cannot exit without the Red Wizard Sigil found on XXX. Wide double doors to be able to allow large creatures or wagon loads of supplies through. Heavily guarded, DO NOT OPEN.
     - Living Statues or Guardian (big strong) beholder with 18 eyes, just has to watch like the under-dark beholder who guards the chest
-    - Heavily guarded soldiers and statues 
+    - Heavily guarded soldiers and statues
 
 2. Commoner Entrance, Spiral Stairs down to Black Pits. Large and covered in ornamental rugs, separator down the middle with railing meant to have large numbers of people at once use.
 
@@ -46,7 +46,7 @@ Upper layers Top 2 layers: Necromancy Tower
 8. Cloaking magic weapons store, heavily guarded with cleric at front
     - Living weapons
 
-9. Stairs up, private entrance for VIPs, secret phase for the magic door, (riddle magic mouth door), cursed if you guess wrong to open the door. 
+9. Stairs up, private entrance for VIPs, secret phase for the magic door, (riddle magic mouth door), cursed if you guess wrong to open the door.
 
 ### Swamp Tower Level 2
 
@@ -83,7 +83,7 @@ Liches and demons, Yugoloths
 
 3. Outside bridge walk, webs
 - Super high level drow
-- Webs 
+- Webs
 - Ancient Driders
 
 4. Polygon room with storage areas

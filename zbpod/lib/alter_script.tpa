@@ -21,11 +21,11 @@ BEGIN
        END
    BUT_ONLY
    OUTER_SPRINT internal_insert_data "%internal_insert_data%"^"%WNL%"
-   LAF internal_script_block_master 
+   LAF internal_script_block_master
      INT_VAR only_once insert_above
      STR_VAR internal_insert_data script match_function
            match match1 match2 match3 match4 match5
-           type=insert 
+           type=insert
    END
 END
 
@@ -53,11 +53,11 @@ BEGIN
        END
    BUT_ONLY
    OUTER_SPRINT internal_insert_data "%internal_insert_data%"^"%WNL%"
-   LAF internal_script_block_master 
+   LAF internal_script_block_master
      INT_VAR only_once insert_above replace
      STR_VAR internal_insert_data script match_function
            match match1 match2 match3 match4 match5
-           type=insert 
+           type=insert
    END
 END
 
@@ -118,7 +118,7 @@ BEGIN
    LAF internal_script_block_master
      INT_VAR only_once insert_above
      STR_VAR script match_function patch patch_original
-           match match1 match2 match3 match4 match5 
+           match match1 match2 match3 match4 match5
            swap_out swap_out1 swap_out2 swap_out3 swap_out4 swap_out5
            swap_in swap_in1 swap_in2 swap_in3 swap_in4 swap_in5
            original_swap_out original_swap_out1 original_swap_out2 original_swap_out3 original_swap_out4 original_swap_out5
@@ -156,7 +156,7 @@ BEGIN
    LAF internal_script_block_master
      INT_VAR only_once recompile
      STR_VAR script match_function patch
-           match match1 match2 match3 match4 match5 
+           match match1 match2 match3 match4 match5
            swap_out swap_out1 swap_out2 swap_out3 swap_out4 swap_out5
            swap_in swap_in1 swap_in2 swap_in3 swap_in4 swap_in5
            type=alter
