@@ -11,7 +11,7 @@
 // This function expands opcode 298 functionality, so that it can be used to execute arbitrary cutscene content.
 // Only Enhanced Edition games are supported.
 //
-// STR_VAR script       (optional) Script content as string that should be added to the cutscene script. 
+// STR_VAR script       (optional) Script content as string that should be added to the cutscene script.
 // STR_VAR baf_file     (optional) Script source file path with cutscene content.
 // STR_VAR bcs_resource (optional) Name of a BCS game resource with cutscene content.
 // RET value            Non-zero value used for Global("CUT250","GLOBAL") to identify the specified cutscene script block(s).

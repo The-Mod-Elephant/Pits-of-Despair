@@ -38,7 +38,7 @@ THEN
 		CloseDoor("Dormamus_door")
 		Lock("Dormamus_door")
 		Wait(2)
-		DisplayStringHead("ohbdorma",92809)  // Out to stretch your legs, Najim? 
+		DisplayStringHead("ohbdorma",92809)  // Out to stretch your legs, Najim?
 		Wait(3)
 		DisplayStringHead("ohbdorma",92811)  // Your stroll is over. Back in the bottle with you.
 		Wait(3)
