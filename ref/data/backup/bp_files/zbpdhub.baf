@@ -131,7 +131,7 @@ THEN
 		ActionOverride("ohbberyl",EscapeAreaMove("OH8300",1165,1075,SW))  // TBP2 - Arena 2
 		ActionOverride("ohbsymm",EscapeAreaMove("OH8300",850,975,S))  // TBP2 - Arena 2
 		Wait(1)
-		ActionOverride("ohbbrodl",DisplayStringHead(Myself,92868))  // Hmm... 
+		ActionOverride("ohbbrodl",DisplayStringHead(Myself,92868))  // Hmm...
 		Wait(2)
 		ActionOverride("ohbbrodl",FaceObject([PC]))
 		SmallWait(5)

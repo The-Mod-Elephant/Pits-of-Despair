@@ -8,7 +8,7 @@ END
 /////////////////////////////////////////////////////////////////////
 // Insect Plague
 /////////////////////////////////////////////////////////////////////
-IF 
+IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
@@ -26,7 +26,7 @@ THEN
     SetInterrupt(TRUE)
 END
 
-IF 
+IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
@@ -44,7 +44,7 @@ THEN
     SetInterrupt(TRUE)
 END
 
-IF 
+IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)

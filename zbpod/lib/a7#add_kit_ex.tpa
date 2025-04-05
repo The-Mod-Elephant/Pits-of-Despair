@@ -1,7 +1,7 @@
 /*
  * ADD_KIT_EX - A full ADD_KIT replacement that is compatible with both classic and Enhanced Edition games.
  * GET_KIT_EX - A function for retrieving attributes of any given kit.
- * Author: Argent77 
+ * Author: Argent77
  * Multiclass kit code: based on "qd_multiclass" by Aquadrizzt and Subtledoctor
  * Licence: public domain
  * Date: 2019-08-19

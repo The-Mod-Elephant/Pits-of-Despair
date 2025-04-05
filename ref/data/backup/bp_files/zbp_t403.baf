@@ -21,7 +21,7 @@ THEN
 	RESPONSE #100
 		SetGlobalTimer("OH_Taunt","LOCALS",THREE_ROUNDS)
 		FaceObject([PC])
-		DisplayStringHead(Myself,94424)  // Are you the reason I am here, puny thing? Am I to have an appetizer before I unleash my vengeance on the entire nation of Thay? So be it. 
+		DisplayStringHead(Myself,94424)  // Are you the reason I am here, puny thing? Am I to have an appetizer before I unleash my vengeance on the entire nation of Thay? So be it.
 END
 
 IF
