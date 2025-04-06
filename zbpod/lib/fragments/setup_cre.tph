@@ -293,7 +293,7 @@ COPY_EXISTING ~ohbmin01.cre~ ~override~
 
 // ohb_102 Thief fight
 COPY_EXISTING ~OHBGLA01.cre~ ~override~
-    WRITE_SHORT 0x246 0x4021       // Shadowdancer
+    WRITE_SHORT 0x246 0x400A        // Assassin
     WRITE_ASCII 0x260 ~motatk01~ #8 // General Script (theif attacks)
     WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script (generic melee)
 
