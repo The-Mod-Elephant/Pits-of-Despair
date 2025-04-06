@@ -153,7 +153,7 @@ END
 
 /**
  * Adds a new entry to a specified IDS file and returns its IDS value.
- * 
+ *
  * INT_VAR minValue       Minimum IDS value to consider. (Default: 0)
  * INT_VAR maxValue       Maximum IDS value to consider. (Default: 255)
  * INT_VAR preferredValue Try this IDS value first if available. (Default: unset)
@@ -193,7 +193,7 @@ BEGIN
         END
       END
     END
-    
+
     // Looking for available IDS slot
     ACTION_IF (value = "-1") BEGIN
       OUTER_PATCH ~~ BEGIN
@@ -231,7 +231,7 @@ BEGIN
 END
 
 /**
- * Adds a new entry to SPLPROT.2DA and returns its index. If an identical entry already exists it will return 
+ * Adds a new entry to SPLPROT.2DA and returns its index. If an identical entry already exists it will return
  * the index of that entry instead.
  * INT_VAR stat     A code from STATS.IDS or an extended stat code starting at 0x100 (256).
  * STR_VAR value    Either a numeric value that is evaluated by "stat", or a default value "*" for specific stats.
@@ -310,7 +310,7 @@ OUTER_TEXT_SPRINT animationSlotsPath ".../inlined/creature/animation/slots.txt"
  * INT_VAR slotMin    Lowest available creature animation slot for the animation.
  * INT_VAR slotMax    Highest available creature animation slot for the animation.
  * INT_VAR slotSteps  How many slots to skip after each iteration, starting from slotMin.
- *                    Setting this parameter is useful if compatible animation slots are always 
+ *                    Setting this parameter is useful if compatible animation slots are always
  *                    a fixed distance apart (e.g. at a distance of 0x10 each)
  * RET slot           A free animation slot. Returns -1 if none found.
  */
@@ -339,7 +339,7 @@ BEGIN
       LOOKUP_IDS_SYMBOL_OF_INT name ~animate~ idx
       PATCH_IF (~%name%~ STRING_EQUAL ~%idx%~) BEGIN
         LPF TO_HEX_NUMBER INT_VAR value = idx minDigits = 4 RET hexNumber END
-        PATCH_IF (NOT FILE_EXISTS_IN_GAME ~%hexNumber%.ini~ AND 
+        PATCH_IF (NOT FILE_EXISTS_IN_GAME ~%hexNumber%.ini~ AND
                   ~%slotList%~ STRING_CONTAINS_REGEXP ~"%hexNumber%"~ != 0) BEGIN
           SET slot = idx
           SET idx = slotMax
@@ -824,7 +824,7 @@ END
 
 
 /**
- * Adds the specified bright tint (opcode 52) to the current CRE resource 
+ * Adds the specified bright tint (opcode 52) to the current CRE resource
  * unless it has been recolored already.
  */
 DEFINE_PATCH_FUNCTION APPLY_GOLEM_TINT_BRIGHT
@@ -878,7 +878,7 @@ BEGIN
 END
 
 /**
- * Adds "Stone Golem" color effect to the current CRE resource unless it has 
+ * Adds "Stone Golem" color effect to the current CRE resource unless it has
  * been recolored already.
  */
 DEFINE_PATCH_FUNCTION APPLY_STONE_GOLEM_TINT
@@ -888,7 +888,7 @@ BEGIN
 END
 
 /**
- * Adds "Brain Golem" color effect to the current CRE resource unless it has 
+ * Adds "Brain Golem" color effect to the current CRE resource unless it has
  * been recolored already.
  */
 DEFINE_PATCH_FUNCTION APPLY_BRAIN_GOLEM_TINT
@@ -998,7 +998,7 @@ END
 
 // Camdawg's Portrait Icon Function //
 DEFINE_ACTION_FUNCTION cd_new_portrait_icon
-  INT_VAR string = 0
+  INT_VAR description = 0
   STR_VAR bam_file = "****"
   RET     icon
   BEGIN
@@ -1008,6 +1008,6 @@ DEFINE_ACTION_FUNCTION cd_new_portrait_icon
     READ_2DA_ENTRY (count - 1) 0 3 icon
     SET icon += 1
 
-  APPEND ~statdesc.2da~ ~%icon% %string% %bam_file%~
-
+  APPEND ~statdesc.2da~ ~%icon%         %description%         %bam_file%~
+  BUT_ONLY_IF_IT_CHANGES
 END

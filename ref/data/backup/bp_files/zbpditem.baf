@@ -195,7 +195,7 @@ THEN
 	RESPONSE #100
 		GiveItem("POTN52",LastHeardBy(Myself))  // Potion of Extra Healing
 		DisplayString(Myself,26797)  // You would miss them anyway. Think of them fondly and move on.
-		DisplayString(LastHeardBy(Myself),26798)  // There must be a way to reconcile this matter. 
+		DisplayString(LastHeardBy(Myself),26798)  // There must be a way to reconcile this matter.
 		SetGlobal("FRIEND_HURT","LOCALS",0)
 END
 
@@ -215,7 +215,7 @@ THEN
 	RESPONSE #100
 		GiveItem("POTN08",LastHeardBy(Myself))  // Potion of Healing
 		DisplayString(Myself,26797)  // You would miss them anyway. Think of them fondly and move on.
-		DisplayString(LastHeardBy(Myself),26798)  // There must be a way to reconcile this matter. 
+		DisplayString(LastHeardBy(Myself),26798)  // There must be a way to reconcile this matter.
 		SetGlobal("FRIEND_HURT","LOCALS",0)
 END
 
@@ -366,7 +366,7 @@ THEN
 	RESPONSE #100
 		GiveItem("POTN20",LastHeardBy(Myself))  // Antidote
 		DisplayString(Myself,26797)  // You would miss them anyway. Think of them fondly and move on.
-		DisplayString(LastHeardBy(Myself),26798)  // There must be a way to reconcile this matter. 
+		DisplayString(LastHeardBy(Myself),26798)  // There must be a way to reconcile this matter.
 		SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
 END
 
@@ -381,7 +381,7 @@ THEN
 	RESPONSE #100
 		GiveItem("POTN17",LastHeardBy(Myself))  // Elixir of Health
 		DisplayString(Myself,26797)  // You would miss them anyway. Think of them fondly and move on.
-		DisplayString(LastHeardBy(Myself),26798)  // There must be a way to reconcile this matter. 
+		DisplayString(LastHeardBy(Myself),26798)  // There must be a way to reconcile this matter.
 		SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
 END
 
@@ -398,7 +398,7 @@ THEN
 	RESPONSE #100
 		GiveItem("POTN45",LastHeardBy(Myself))  // Potion of Freedom
 		DisplayString(Myself,26797)  // You would miss them anyway. Think of them fondly and move on.
-		DisplayString(LastHeardBy(Myself),26798)  // There must be a way to reconcile this matter. 
+		DisplayString(LastHeardBy(Myself),26798)  // There must be a way to reconcile this matter.
 		SetGlobal("FRIEND_DEBUFFED","LOCALS",0)
 END
 

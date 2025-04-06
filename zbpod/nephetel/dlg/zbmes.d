@@ -10,15 +10,15 @@ END
 
 IF ~~ THEN BEGIN zbmessenger1
 SAY @5 /* Thank you, this'll feed my twelve sick children and dying grandmother just fine. */
-IF ~~ DO ~SetGlobal("ZBPodSummonsReceived","GLOBAL",4) 
-GiveItemCreate("zbrrrind",Player1,1,0,0) 
+IF ~~ DO ~SetGlobal("ZBPodSummonsReceived","GLOBAL",4)
+GiveItemCreate("zbrrrind",Player1,1,0,0)
 TakePartyGold(1) ~ EXIT
 END
 
-IF ~~ THEN BEGIN zbmessenger1.5 /* the 5 gold variant */ 
+IF ~~ THEN BEGIN zbmessenger1.5 /* the 5 gold variant */
 SAY @5 /* Thank you, this'll feed my twelve sick children and dying grandmother just fine. */
-IF ~~ DO ~SetGlobal("ZBPodSummonsReceived","GLOBAL",4) 
-GiveItemCreate("zbrrrind",Player1,1,0,0) 
+IF ~~ DO ~SetGlobal("ZBPodSummonsReceived","GLOBAL",4)
+GiveItemCreate("zbrrrind",Player1,1,0,0)
 TakePartyGold(5)~ EXIT
 END
 
@@ -31,6 +31,6 @@ END
 
 IF ~~ THEN BEGIN zbmessenger3
 SAY @10 /* I suppose the high and mighty hero can't be bothered to spare a single pitiful coin. */
-IF ~~ DO ~SetGlobal("ZBPodSummonsReceived","GLOBAL",4) 
+IF ~~ DO ~SetGlobal("ZBPodSummonsReceived","GLOBAL",4)
 GiveItemCreate("zbrrrind",Player1,1,0,0)~ EXIT
 END

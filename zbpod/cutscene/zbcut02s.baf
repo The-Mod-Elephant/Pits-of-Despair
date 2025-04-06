@@ -32,5 +32,5 @@ THEN
 		ActionOverride("ohbwing",Face(NW))
 		SmallWait(1)
 		FadeFromColor([10.0],0)
-		ActionOverride("ohbnajim",StartDialogueNoSet(Player1)) 
+		ActionOverride("ohbnajim",StartDialogueNoSet(Player1))
 END

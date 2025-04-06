@@ -4,16 +4,16 @@
 /////////////////////////////////////////////////////////////////////
 //        Version 1
 // Generic melee script w/ no priority for damage type
-// 
-// 
 //
-// 
+//
+//
+//
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
 // Delay start to buff
 /////////////////////////////////////////////////////////////////////
-IF 
+IF
   Global("MO_DelayStart","LOCALS",0)
   OR(17)
     Race(Myself,HUMAN)
@@ -34,16 +34,16 @@ IF
     Race(Myself,HALF_DRAGON)
     Race(Myself,TIEFLING)
   False()
-THEN 
+THEN
   RESPONSE #100
     SetGlobal("MO_DelayStart","LOCALS",1)
     SetGlobalTimer("MO_DelayStartTimer","LOCALS",6)
 END
 
-IF 
+IF
   GlobalTimerNotExpired("MO_DelayStartTimer","LOCALS")
   False()
-THEN 
+THEN
   RESPONSE #100
     NoAction()
 END
@@ -74,7 +74,7 @@ IF
   CheckStatGT(Myself,19,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     GiveItemCreate("POTN07",Myself,1,0,0)     // potn storm giant
@@ -136,7 +136,7 @@ IF
   CheckStatLT(Myself,20,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     GiveItemCreate("POTN06",Myself,1,0,0)     // potn cloud giant
@@ -198,7 +198,7 @@ IF
   CheckStatLT(Myself,18,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     GiveItemCreate("POTN05",Myself,1,0,0)     // potn fire giant
@@ -260,7 +260,7 @@ IF
   CheckStatLT(Myself,15,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     GiveItemCreate("POTN04",Myself,1,0,0)     // potn frost giant
@@ -322,7 +322,7 @@ IF
   CheckStatLT(Myself,12,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     GiveItemCreate("POTN12",Myself,1,0,0)     // potn stone giant
@@ -384,7 +384,7 @@ IF
   CheckStatLT(Myself,9,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     GiveItemCreate("POTN03",Myself,1,0,0)     // potn hill giant
