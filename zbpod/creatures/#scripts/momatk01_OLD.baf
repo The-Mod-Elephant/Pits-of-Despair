@@ -4,16 +4,16 @@
 /////////////////////////////////////////////////////////////////////
 //        Version 1
 // Generic melee script w/ no priority for damage type
+// 
+// 
 //
-//
-//
-//
+// 
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
 // Delay start to buff
 /////////////////////////////////////////////////////////////////////
-IF
+IF 
   Global("MO_DelayStart","LOCALS",0)
   OR(17)
     Race(Myself,HUMAN)
@@ -34,16 +34,16 @@ IF
     Race(Myself,HALF_DRAGON)
     Race(Myself,TIEFLING)
   False()
-THEN
+THEN 
   RESPONSE #100
     SetGlobal("MO_DelayStart","LOCALS",1)
     SetGlobalTimer("MO_DelayStartTimer","LOCALS",6)
 END
 
-IF
+IF 
   GlobalTimerNotExpired("MO_DelayStartTimer","LOCALS")
   False()
-THEN
+THEN 
   RESPONSE #100
     NoAction()
 END
@@ -74,51 +74,41 @@ IF
   CheckStatGT(Myself,19,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN
+THEN 
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN07",Myself,1,0,0)     // potn storm giant
     UseItem("POTN07",Myself)
     DisplayStringHead(Myself,@18022)  // ~quaffs a potion of storm giant strength~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN34",Myself,1,0,0)     // potn magic protection
     UseItem("POTN34",Myself)
     DisplayStringHead(Myself,@18014)  // ~quaffs a potion of magic protection~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN42",Myself,1,0,0)     // potn regeneration
     UseItem("POTN42",Myself)
     DisplayStringHead(Myself,@18017)  // ~quaffs a potion of regeneration~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN35",Myself,1,0,0)     // potn magic shielding
     UseItem("POTN35",Myself)
     DisplayStringHead(Myself,@18019)  // ~quaffs a potion of magic shielding~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN33",Myself,1,0,0)     // potn magic blocking
     UseItem("POTN33",Myself)
     DisplayStringHead(Myself,@18021)  // ~quaffs a potion of magic blocking~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
 END
 
@@ -146,51 +136,41 @@ IF
   CheckStatLT(Myself,20,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN
+THEN 
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN06",Myself,1,0,0)     // potn cloud giant
     UseItem("POTN06",Myself)
     DisplayStringHead(Myself,@18020)  // ~quaffs a potion of cloud giant strength~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN34",Myself,1,0,0)     // potn magic protection
     UseItem("POTN34",Myself)
     DisplayStringHead(Myself,@18014)  // ~quaffs a potion of magic protection~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN42",Myself,1,0,0)     // potn regeneration
     UseItem("POTN42",Myself)
     DisplayStringHead(Myself,@18017)  // ~quaffs a potion of regeneration~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN35",Myself,1,0,0)     // potn magic shielding
     UseItem("POTN35",Myself)
     DisplayStringHead(Myself,@18019)  // ~quaffs a potion of magic shielding~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN14",Myself,1,0,0)     // potn speed
     UseItem("POTN14",Myself)
     DisplayStringHead(Myself,@18009)  // ~applies an oil of speed~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
 END
 
@@ -218,51 +198,41 @@ IF
   CheckStatLT(Myself,18,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN
+THEN 
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN05",Myself,1,0,0)     // potn fire giant
     UseItem("POTN05",Myself)
     DisplayStringHead(Myself,@18018)  // ~quaffs a potion of fire giant strength~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN34",Myself,1,0,0)     // potn magic protection
     UseItem("POTN34",Myself)
     DisplayStringHead(Myself,@18014)  // ~quaffs a potion of magic protection~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN42",Myself,1,0,0)     // potn regeneration
     UseItem("POTN42",Myself)
     DisplayStringHead(Myself,@18017)  // ~quaffs a potion of regeneration~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN11",Myself,1,0,0)     // potn invulnerability
     UseItem("POTN11",Myself)
     DisplayStringHead(Myself,@18010)  // ~quaffs a potion of invulnerability~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN14",Myself,1,0,0)     // potn speed
     UseItem("POTN14",Myself)
     DisplayStringHead(Myself,@18009)  // ~applies an oil of speed~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
 END
 
@@ -290,51 +260,41 @@ IF
   CheckStatLT(Myself,15,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN
+THEN 
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN04",Myself,1,0,0)     // potn frost giant
     UseItem("POTN04",Myself)
     DisplayStringHead(Myself,@18016)  // ~quaffs a potion of frost giant strength~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN34",Myself,1,0,0)     // potn magic protection
     UseItem("POTN34",Myself)
     DisplayStringHead(Myself,@18014)  // ~quaffs a potion of magic protection~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN02",Myself,1,0,0)     // potn fire resist
     UseItem("POTN02",Myself)
     DisplayStringHead(Myself,@18011)  // ~quaffs a potion of fire resistance~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN11",Myself,1,0,0)     // potn invulnerability
     UseItem("POTN11",Myself)
     DisplayStringHead(Myself,@18010)  // ~quaffs a potion of invulnerability~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN14",Myself,1,0,0)     // potn speed
     UseItem("POTN14",Myself)
     DisplayStringHead(Myself,@18009)  // ~applies an oil of speed~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
 END
 
@@ -362,51 +322,41 @@ IF
   CheckStatLT(Myself,12,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN
+THEN 
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN12",Myself,1,0,0)     // potn stone giant
     UseItem("POTN12",Myself)
     DisplayStringHead(Myself,@18015)  // ~quaffs a potion of stone giant strength~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN34",Myself,1,0,0)     // potn magic protection
     UseItem("POTN34",Myself)
     DisplayStringHead(Myself,@18014)  // ~quaffs a potion of magic protection~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN02",Myself,1,0,0)     // potn fire resist
     UseItem("POTN02",Myself)
     DisplayStringHead(Myself,@18011)  // ~quaffs a potion of fire resistance~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN11",Myself,1,0,0)     // potn invulnerability
     UseItem("POTN11",Myself)
     DisplayStringHead(Myself,@18010)  // ~quaffs a potion of invulnerability~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN14",Myself,1,0,0)     // potn speed
     UseItem("POTN14",Myself)
     DisplayStringHead(Myself,@18009)  // ~applies an oil of speed~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
 END
 
@@ -434,51 +384,41 @@ IF
   CheckStatLT(Myself,9,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN
+THEN 
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN03",Myself,1,0,0)     // potn hill giant
     UseItem("POTN03",Myself)
     DisplayStringHead(Myself,@18013)  // ~quaffs a potion of hill giant strength~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN09",Myself,1,0,0)     // potn heroism
     UseItem("POTN09",Myself)
     DisplayStringHead(Myself,@18012)  // ~quaffs a potion of heroism~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN02",Myself,1,0,0)     // potn fire resist
     UseItem("POTN02",Myself)
     DisplayStringHead(Myself,@18011)  // ~quaffs a potion of fire resistance~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN11",Myself,1,0,0)     // potn invulnerability
     UseItem("POTN11",Myself)
     DisplayStringHead(Myself,@18010)  // ~quaffs a potion of invulnerability~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     GiveItemCreate("POTN14",Myself,1,0,0)     // potn speed
     UseItem("POTN14",Myself)
     DisplayStringHead(Myself,@18009)  // ~applies an oil of speed~
     SetGlobal("MO_AssignPotion","LOCALS",1)
-    SetInterrupt(TRUE)
     Continue()
 END
 
@@ -493,9 +433,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     UseItem("POTN55",Myself)  // ~Potion of Superior Healing~
-    SetInterrupt(TRUE)
 END
 
 IF
@@ -506,9 +444,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     UseItem("POTN52",Myself)  // ~Potion of Extra Healing~
-    SetInterrupt(TRUE)
 END
 
 IF
@@ -519,9 +455,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
     UseItem("POTN08",Myself)  // ~Potion of Healing~
-    SetInterrupt(TRUE)
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -2103,406 +2037,234 @@ THEN
 END
 
 /////////////////////////////////////////////////////////////////////
+// Force Break in AttackReevaluate
+/////////////////////////////////////////////////////////////////////
+IF
+  !GlobalTimerNotExpired("MO_AttackingTimer","LOCALS")
+  Global("MO_Attacking","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",0)
+    Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
 // Attack
 /////////////////////////////////////////////////////////////////////
 IF
-  OR(6)
-    See(Player1)
-    See(Player2)
-    See(Player3)
-    See(Player4)
-    See(Player5)
-    See(Player6)
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
+  GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
   See(NearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
-  See(SixthNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
-  See(FifthNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
-  See(FourthNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
-  See(ThirdNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
-  See(SecondNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
-  See(NearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
-  !StateCheck(SixthNearestEnemyOf(Myself),STATE_PANIC)
-  See(SixthNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
-  !StateCheck(FifthNearestEnemyOf(Myself),STATE_PANIC)
-  See(FifthNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
-  !StateCheck(FourthNearestEnemyOf(Myself),STATE_PANIC)
-  See(FourthNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
-  !StateCheck(ThirdNearestEnemyOf(Myself),STATE_PANIC)
-  See(ThirdNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
-  !StateCheck(SecondNearestEnemyOf(Myself),STATE_PANIC)
-  See(SecondNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
-  !StateCheck(NearestEnemyOf(Myself),STATE_PANIC)
-  See(NearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
-  !StateCheck(SixthNearestEnemyOf(Myself),STATE_PANIC)
-  CheckStatLT(SixthNearestEnemyOf(Myself),1,STONESKINS)
-  !StateCheck(SixthNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
-  See(SixthNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
-  !StateCheck(FifthNearestEnemyOf(Myself),STATE_PANIC)
-  CheckStatLT(FifthNearestEnemyOf(Myself),1,STONESKINS)
-  !StateCheck(FifthNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
-  See(FifthNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
-  !StateCheck(FourthNearestEnemyOf(Myself),STATE_PANIC)
-  CheckStatLT(FourthNearestEnemyOf(Myself),1,STONESKINS)
-  !StateCheck(FourthNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
-  See(FourthNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
-  !StateCheck(ThirdNearestEnemyOf(Myself),STATE_PANIC)
-  CheckStatLT(ThirdNearestEnemyOf(Myself),1,STONESKINS)
-  !StateCheck(ThirdNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
-  See(ThirdNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
-  !StateCheck(SecondNearestEnemyOf(Myself),STATE_PANIC)
-  CheckStatLT(SecondNearestEnemyOf(Myself),1,STONESKINS)
-  !StateCheck(SecondNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
-  See(SecondNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
-  !StateCheck(NearestEnemyOf(Myself),STATE_PANIC)
-  CheckStatLT(NearestEnemyOf(Myself),1,STONESKINS)
-  !StateCheck(NearestEnemyOf(Myself),STATE_MIRRORIMAGE)
-  See(NearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  DifficultyGT(EASY)
-  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
-  StateCheck(SixthNearestEnemyOf(Myself),STATE_IMMOBILE)
-  See(SixthNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  DifficultyGT(EASY)
-  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
-  StateCheck(FifthNearestEnemyOf(Myself),STATE_IMMOBILE)
-  See(FifthNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  DifficultyGT(EASY)
-  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
-  StateCheck(FourthNearestEnemyOf(Myself),STATE_IMMOBILE)
-  See(FourthNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  DifficultyGT(EASY)
-  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
-  StateCheck(ThirdNearestEnemyOf(Myself),STATE_IMMOBILE)
-  See(ThirdNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  DifficultyGT(EASY)
-  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
-  StateCheck(SecondNearestEnemyOf(Myself),STATE_IMMOBILE)
-  See(SecondNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  DifficultyGT(EASY)
-  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
-  StateCheck(NearestEnemyOf(Myself),STATE_IMMOBILE)
-  See(NearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  DifficultyGT(EASY)
-  Race(Myself,SPIDER)
-  CheckStatGT(SixthNearestEnemyOf(Myself),0,WEB)
-  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
-  See(SixthNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  DifficultyGT(EASY)
-  Race(Myself,SPIDER)
-  CheckStatGT(FifthNearestEnemyOf(Myself),0,WEB)
-  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
-  See(FifthNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  DifficultyGT(EASY)
-  Race(Myself,SPIDER)
-  CheckStatGT(FourthNearestEnemyOf(Myself),0,WEB)
-  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
-  See(FourthNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  DifficultyGT(EASY)
-  Race(Myself,SPIDER)
-  CheckStatGT(ThirdNearestEnemyOf(Myself),0,WEB)
-  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
-  See(ThirdNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  DifficultyGT(EASY)
-  Race(Myself,SPIDER)
-  CheckStatGT(SecondNearestEnemyOf(Myself),0,WEB)
-  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
-  See(SecondNearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
-  DifficultyGT(EASY)
-  Race(Myself,SPIDER)
-  CheckStatGT(NearestEnemyOf(Myself),0,WEB)
-  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
-  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
-  See(NearestEnemyOf(Myself))
-  False()
-THEN
-  RESPONSE #100
-    NoAction()
-END
-
-IF
   Allegiance(Myself,ENEMY)
-  See(LastSeenBy(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   OR(2)
     CheckStatLT(Myself,1,SANCTUARY)
     HPPercentGT(Myself,49)
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
 THEN
   RESPONSE #100
-    AttackOneRound(LastSeenBy(Myself))
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(NearestEnemyOf(Myself),30)
 END
 
 IF
-  !Allegiance(Myself,ENEMY)
-  See(LastSeenBy(Myself))
-  Allegiance(LastSeenBy(Myself),ENEMY)
+  GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  See(SecondNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   OR(2)
     CheckStatLT(Myself,1,SANCTUARY)
     HPPercentGT(Myself,49)
+  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
 THEN
   RESPONSE #100
-    AttackOneRound(LastSeenBy(Myself))
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(SecondNearestEnemyOf(Myself),30)
+END
+
+IF
+  GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  See(ThirdNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  OR(2)
+    CheckStatLT(Myself,1,SANCTUARY)
+    HPPercentGT(Myself,49)
+  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(ThirdNearestEnemyOf(Myself),30)
+END
+
+IF
+  GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  See(FourthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  OR(2)
+    CheckStatLT(Myself,1,SANCTUARY)
+    HPPercentGT(Myself,49)
+  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(FourthNearestEnemyOf(Myself),30)
+END
+
+IF
+  GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  See(FifthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  OR(2)
+    CheckStatLT(Myself,1,SANCTUARY)
+    HPPercentGT(Myself,49)
+  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(FifthNearestEnemyOf(Myself),30)
+END
+
+IF
+  GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  See(SixthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  OR(2)
+    CheckStatLT(Myself,1,SANCTUARY)
+    HPPercentGT(Myself,49)
+  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(SixthNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  See(NearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  OR(2)
+    CheckStatLT(Myself,1,SANCTUARY)
+    HPPercentGT(Myself,49)
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  See(SecondNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  OR(2)
+    CheckStatLT(Myself,1,SANCTUARY)
+    HPPercentGT(Myself,49)
+  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(SecondNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  See(ThirdNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  OR(2)
+    CheckStatLT(Myself,1,SANCTUARY)
+    HPPercentGT(Myself,49)
+  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(ThirdNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  See(FourthNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  OR(2)
+    CheckStatLT(Myself,1,SANCTUARY)
+    HPPercentGT(Myself,49)
+  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(FourthNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  See(FifthNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  OR(2)
+    CheckStatLT(Myself,1,SANCTUARY)
+    HPPercentGT(Myself,49)
+  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(FifthNearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  See(SixthNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  OR(2)
+    CheckStatLT(Myself,1,SANCTUARY)
+    HPPercentGT(Myself,49)
+  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_Attacking","LOCALS",1)
+    SetGlobalTimer("MO_AttackingTimer","LOCALS",2)
+    AttackReevaluate(SixthNearestEnemyOf(Myself),30)
 END
 
 IF
