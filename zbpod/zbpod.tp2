@@ -115,7 +115,11 @@ APPEND ~MASTAREA.2da~ ~ZB0701     value      ~
 UNLESS ~ZB0701~
 
 // Copy spells and movies
-COPY ~%MOD_FOLDER%/spells/bp2~ ~override~
+COPY ~%MOD_FOLDER%/spells~ ~override~
+COPY ~%MOD_FOLDER%/spells/zbantisb.bam~ ~override/zbantisc.bam~
+// Patch in portrait icon
+OUTER_SET description = RESOLVE_STR_REF(@18000)
+LAUNCH_ACTION_FUNCTION cd_new_portrait_icon INT_VAR description = description STR_VAR bam_file="zbantisb" END
 COPY ~%MOD_FOLDER%/movie/pod.wbm~ ~movies~ /* adding directly to movies, not override, because otherwise it doesn't work. this isn't ideal. */
 
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~p_cta1.bam~ THEN BEGIN

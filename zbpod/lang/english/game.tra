@@ -337,18 +337,7 @@ Equipped abilities:
 
 Weight: 0~
 
-@10110 = ~Rod of Illusive Protections~
-@10111 = ~This rod is a slender, tacky, and heavily adorned length of polished wood, capped with a fairly big and multi-colored gemstone. It is said to have been created by a rich illusionist, who was only known by the people around them as "The Illusive Man". He was known for using manipulation and trickery to get what he wanted, and the rod is said to be a reflection of that. In the end, The Illusive Man was betrayed by his own illusions, and the rod was lost to time.
-
-STATISTICS:
-
-Charge abilities:
-– Illusive Protection once per day
-  Special: Caster is protected by a combination of Mirror Image, Improved Invisibility, and Blur cast at level 20
-  Range: Caster only
-  Area of Effect: 1 creature
-
-Weight: 3~
+@10110 = ~Searing Smite~
 
 @10112 = ~Vyatri's Note~ //quest
 @10113 = ~The Pits of Despair: Desperate and True by Baeloth Barrityl Dictated but not read~
@@ -470,7 +459,7 @@ Weight: 3~
 STATISTICS:
 
 Combat abilities:
-– Each successful hit inflicts disease on the target if a save vs. poison is failed. The afflicted individual suffers 1 poison damage per round and is slowed for one turn. 
+– Each successful hit inflicts disease on the target if a save vs. poison is failed. The afflicted individual suffers 1 poison damage per round and is slowed for one turn.
 
 THAC0: +3
 Damage: 1d10+3 (piercing)

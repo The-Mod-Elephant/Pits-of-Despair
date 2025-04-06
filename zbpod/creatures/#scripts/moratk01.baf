@@ -3,17 +3,17 @@
 //            moratk01
 /////////////////////////////////////////////////////////////////////
 //        Version 1
-// Generic ranged script 
-// 
-// 
+// Generic ranged script
 //
-// 
+//
+//
+//
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
 // Delay start to buff
 /////////////////////////////////////////////////////////////////////
-IF 
+IF
   Global("MO_DelayStart","LOCALS",0)
   OR(17)
     Race(Myself,HUMAN)
@@ -34,16 +34,16 @@ IF
     Race(Myself,HALF_DRAGON)
     Race(Myself,TIEFLING)
   False()
-THEN 
+THEN
   RESPONSE #100
     SetGlobal("MO_DelayStart","LOCALS",1)
     SetGlobalTimer("MO_DelayStartTimer","LOCALS",6)
 END
 
-IF 
+IF
   GlobalTimerNotExpired("MO_DelayStartTimer","LOCALS")
   False()
-THEN 
+THEN
   RESPONSE #100
     NoAction()
 END
@@ -74,7 +74,7 @@ IF
   CheckStatGT(Myself,19,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
@@ -146,7 +146,7 @@ IF
   CheckStatLT(Myself,20,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
@@ -218,7 +218,7 @@ IF
   CheckStatLT(Myself,18,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
@@ -290,7 +290,7 @@ IF
   CheckStatLT(Myself,15,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
@@ -362,7 +362,7 @@ IF
   CheckStatLT(Myself,12,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
@@ -434,7 +434,7 @@ IF
   CheckStatLT(Myself,9,LEVEL)
   Allegiance(Myself,ENEMY)
   Global("MO_AssignPotion","LOCALS",0)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
@@ -1081,7 +1081,7 @@ END
 /////////////////////////////////////////////////////////////////////
 // Enemy Distance Check
 /////////////////////////////////////////////////////////////////////
-IF 
+IF
   Range(NearestEnemyOf(Myself),5)
   IsWeaponRanged(Myself)
   !HasItem("melfmet",Myself)  // Melf's Minute Meteor
@@ -1091,7 +1091,7 @@ THEN
     Continue()
 END
 
-IF 
+IF
   OR(2)
     !Range(NearestEnemyOf(Myself),5)
     GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
