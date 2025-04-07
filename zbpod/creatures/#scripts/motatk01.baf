@@ -190,7 +190,7 @@ END
 // Backstab Attacks
 /////////////////////////////////////////////////////////////////////
 IF
-  ActionListEmpty()
+  //ActionListEmpty()
   OR(2)
     StateCheck(Myself,STATE_INVISIBLE)
     StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
@@ -209,7 +209,7 @@ THEN
 END
 
 IF
-  ActionListEmpty()
+  //ActionListEmpty()
   OR(2)
     StateCheck(Myself,STATE_INVISIBLE)
     StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
@@ -228,7 +228,7 @@ THEN
 END
 
 IF
-  ActionListEmpty()
+  //ActionListEmpty()
   OR(2)
     StateCheck(Myself,STATE_INVISIBLE)
     StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
@@ -247,7 +247,7 @@ THEN
 END
 
 IF
-  ActionListEmpty()
+  //ActionListEmpty()
   OR(2)
     StateCheck(Myself,STATE_INVISIBLE)
     StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
@@ -266,7 +266,7 @@ THEN
 END
 
 IF
-  ActionListEmpty()
+  //ActionListEmpty()
   OR(2)
     StateCheck(Myself,STATE_INVISIBLE)
     StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
@@ -285,7 +285,7 @@ THEN
 END
 
 IF
-  ActionListEmpty()
+  //ActionListEmpty()
   OR(2)
     StateCheck(Myself,STATE_INVISIBLE)
     StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
@@ -304,7 +304,7 @@ THEN
 END
 
 IF
-  ActionListEmpty()
+  //ActionListEmpty()
   OR(2)
     StateCheck(Myself,STATE_INVISIBLE)
     StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
@@ -323,7 +323,7 @@ THEN
 END
 
 IF
-  ActionListEmpty()
+  //ActionListEmpty()
   OR(2)
     StateCheck(Myself,STATE_INVISIBLE)
     StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)

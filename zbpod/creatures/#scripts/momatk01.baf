@@ -2490,7 +2490,7 @@ IF
     HPPercentGT(Myself,49)
 THEN
   RESPONSE #100
-    AttackOneRound(LastSeenBy(Myself))
+    AttackReevaluate(LastSeenBy(Myself),30)
 END
 
 IF
@@ -2502,7 +2502,7 @@ IF
     HPPercentGT(Myself,49)
 THEN
   RESPONSE #100
-    AttackOneRound(LastSeenBy(Myself))
+    AttackReevaluate(LastSeenBy(Myself),30)
 END
 
 IF
