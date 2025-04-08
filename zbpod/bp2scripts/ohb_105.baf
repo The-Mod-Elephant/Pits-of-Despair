@@ -14,6 +14,15 @@ THEN
 END
 
 IF
+	Global("ZB_SPAWN_NEPHY_FIGHT5","GLOBAL",1)
+THEN
+	RESPONSE #100
+	SetGlobal("ZB_SPAWN_NEPHY_FIGHT5","GLOBAL",2)
+	CreateCreature("ZBNEPH",[920.1150],SW)  // Neph
+	SmallWait(5)
+END
+
+IF
 	Global("OHB_105","GLOBAL",1)
 	Global("OHB_START_BATTLE","GLOBAL",2)
 	Global("ohb_spawn_gladiators","myarea",0)
