@@ -372,3 +372,9 @@ COPY_EXISTING ~zbfmaw.itm~ ~override~
 COPY_EXISTING ~ohbsdwm.sto~ ~override~
   ADD_STORE_ITEM ~zbfmaw~ #0 #0 #0 ~IDENTIFIED~ #1
   */
+
+COPY ~%MOD_FOLDER%/items/unbroken~ ~override~
+COPY_EXISTING ~zbneck0.itm~ ~override~
+    SAY NAME2 @10220
+    SAY IDENTIFIED_DESC @10221
+
