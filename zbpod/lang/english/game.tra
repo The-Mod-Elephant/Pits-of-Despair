@@ -471,6 +471,32 @@ Requires:
 
 Weight: 11~
 
+
+@10220 = ~Unbroken~
+@10221 = ~Unbroken description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Constitution: +1
+– Magic resistance: +10%
+– Immunity to Maze and Imprisonment
+
+Charge ability:
+– Once per day, cast Freedom
+  Special: Anyone under the effect of imprisonment or maze are freed immediately upon casting
+  Area of Effect: Everyone in the area
+
+Weight: 3~
+
+@10210 = ~Binky~
+@10211 = ~This is the skeleton of a racing lizard that Jan received by trading Lissa's prize turnip for.
+
+STATISTICS:
+– Luck: +1
+
+Weight: 1~
+
 // Imported BG1 Items
 @11000 = ~BG Imported Items~
 @11001 = ~Circlet~
