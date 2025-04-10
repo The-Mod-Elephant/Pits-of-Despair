@@ -175,6 +175,7 @@ END
 /////////////////////////////////////////////////////////////////////
 // Get Closer to Attack
 /////////////////////////////////////////////////////////////////////
+/*
 IF
   Allegiance(Myself,ENEMY)
   OR(2)
@@ -185,160 +186,570 @@ THEN
   RESPONSE #100
     MoveToObject(NearestEnemyOf(Myself)) // move in to position
 END
+*/
+
+/////////////////////////////////////////////////////////////////////
+// Select Backstab Weapon when Invisible
+/////////////////////////////////////////////////////////////////////
+IF 
+  StateCheck(Myself,STATE_INVISIBLE)
+  IsWeaponRanged(Myself)
+  !HasItem("melfmet",Myself)  // Melf's Minute Meteor
+THEN
+  RESPONSE #100
+    EquipMostDamagingMelee()
+    Continue()
+END
 
 /////////////////////////////////////////////////////////////////////
 // Backstab Attacks
 /////////////////////////////////////////////////////////////////////
 IF
-  //ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  See([GOODCUTOFF.0.0.MAGE_ALL])
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  See([GOODCUTOFF])
+  False()
 THEN
   RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
+    Continue()
 END
 
 IF
-  //ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  See([GOODCUTOFF.0.0.DRUID_ALL])
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  OR(6)
+    See(Player1)
+    See(Player2)
+    See(Player3)
+    See(Player4)
+    See(Player5)
+    See(Player6)
+  False()
 THEN
   RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
+    NoAction()
 END
 
 IF
-  //ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs(SixthNearest([GOODCUTOFF]),MAINHAND)
+  WeaponCanDamage(SixthNearest([GOODCUTOFF]),MAINHAND)
+  CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
+  !StateCheck(SixthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+  !StateCheck(SixthNearest([GOODCUTOFF]),STATE_PANIC)
+  !CheckStatGT(SixthNearest([GOODCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(SixthNearest([GOODCUTOFF]),BARBARIAN)
+  See(SixthNearest([GOODCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs(FifthNearest([GOODCUTOFF]),MAINHAND)
+  WeaponCanDamage(FifthNearest([GOODCUTOFF]),MAINHAND)
+  CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
+  !StateCheck(FifthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+  !StateCheck(FifthNearest([GOODCUTOFF]),STATE_PANIC)
+  !CheckStatGT(FifthNearest([GOODCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(FifthNearest([GOODCUTOFF]),BARBARIAN)
+  See(FifthNearest([GOODCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs(FourthNearest([GOODCUTOFF]),MAINHAND)
+  WeaponCanDamage(FourthNearest([GOODCUTOFF]),MAINHAND)
+  CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
+  !StateCheck(FourthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+  !StateCheck(FourthNearest([GOODCUTOFF]),STATE_PANIC)
+  !CheckStatGT(FourthNearest([GOODCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(FourthNearest([GOODCUTOFF]),BARBARIAN)
+  See(FourthNearest([GOODCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs(ThirdNearest([GOODCUTOFF]),MAINHAND)
+  WeaponCanDamage(ThirdNearest([GOODCUTOFF]),MAINHAND)
+  CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+  !StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+  !StateCheck(ThirdNearest([GOODCUTOFF]),STATE_PANIC)
+  !CheckStatGT(ThirdNearest([GOODCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(ThirdNearest([GOODCUTOFF]),BARBARIAN)
+  See(ThirdNearest([GOODCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs(SecondNearest([GOODCUTOFF]),MAINHAND)
+  WeaponCanDamage(SecondNearest([GOODCUTOFF]),MAINHAND)
+  CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+  !StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+  !StateCheck(SecondNearest([GOODCUTOFF]),STATE_PANIC)
+  !CheckStatGT(SecondNearest([GOODCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(SecondNearest([GOODCUTOFF]),BARBARIAN)
+  See(SecondNearest([GOODCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs([GOODCUTOFF],MAINHAND)
+  WeaponCanDamage([GOODCUTOFF],MAINHAND)
+  CheckStatLT([GOODCUTOFF],1,STONESKINS)
+  !StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
+  !StateCheck([GOODCUTOFF],STATE_PANIC)
+  !CheckStatGT([GOODCUTOFF],0,IMMUNITY_TO_BACKSTAB)
+  !Kit([GOODCUTOFF],BARBARIAN)
+  See([GOODCUTOFF])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),MAINHAND)
+  WeaponCanDamage(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),MAINHAND)
+  CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
+  !StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
+  !StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_PANIC)
+  !CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
+  False()
+THEN
+    RESPONSE #100
+        Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([GOODCUTOFF.0.0.CLERIC_ALL],MAINHAND)
+  WeaponCanDamage([GOODCUTOFF.0.0.CLERIC_ALL],MAINHAND)
+  CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],1,STONESKINS)
+  !StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_MIRRORIMAGE)
+  !StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_PANIC)
+  !CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,IMMUNITY_TO_BACKSTAB)
   See([GOODCUTOFF.0.0.CLERIC_ALL])
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  False()
 THEN
   RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
+    Continue()
 END
 
 IF
-  //ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  See([GOODCUTOFF.0.0.THIEF_ALL])
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),MAINHAND)
+  WeaponCanDamage(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),MAINHAND)
+  CheckStatLT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),1,STONESKINS)
+  !StateCheck(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_MIRRORIMAGE)
+  !StateCheck(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_PANIC)
+  !CheckStatGT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]))
+  False()
 THEN
   RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
+    Continue()
 END
 
 IF
-  //ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([GOODCUTOFF.0.0.BARD_ALL],MAINHAND)
+  WeaponCanDamage([GOODCUTOFF.0.0.BARD_ALL],MAINHAND)
+  CheckStatLT([GOODCUTOFF.0.0.BARD_ALL],1,STONESKINS)
+  !StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_MIRRORIMAGE)
+  !StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_PANIC)
+  !CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],0,IMMUNITY_TO_BACKSTAB)
   See([GOODCUTOFF.0.0.BARD_ALL])
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  False()
 THEN
   RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
+    Continue()
 END
 
 IF
-  //ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  See([GOODCUTOFF.0.0.RANGER_ALL])
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),MAINHAND)
+  WeaponCanDamage(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),MAINHAND)
+  CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
+  !StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
+  !StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_PANIC)
+  !CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]))
+  False()
 THEN
   RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
+    Continue()
 END
 
 IF
-  //ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  See([GOODCUTOFF.0.0.PALADIN_ALL])
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([GOODCUTOFF.0.0.DRUID_ALL],MAINHAND)
+  WeaponCanDamage([GOODCUTOFF.0.0.DRUID_ALL],MAINHAND)
+  CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],1,STONESKINS)
+  !StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_MIRRORIMAGE)
+  !StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_PANIC)
+  !CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,IMMUNITY_TO_BACKSTAB)
+  See([GOODCUTOFF.0.0.DRUID_ALL])
+  False()
 THEN
   RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
+    Continue()
 END
 
 IF
-  //ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  See([GOODCUTOFF.0.0.FIGHTER_ALL])
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  WeaponCanDamage(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+  !StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+  !StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_PANIC)
+  !CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+  False()
 THEN
   RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  WeaponCanDamage(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+  !StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+  !StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_PANIC)
+  !CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([GOODCUTOFF.0.0.MAGE_ALL],MAINHAND)
+  WeaponCanDamage([GOODCUTOFF.0.0.MAGE_ALL],MAINHAND)
+  CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+  !StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
+  !StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_PANIC)
+  !CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,IMMUNITY_TO_BACKSTAB)
+  See([GOODCUTOFF.0.0.MAGE_ALL])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(Player6,MAINHAND)
+  WeaponCanDamage(Player6,MAINHAND)
+  StateCheck(Player6,STATE_IMMOBILE)
+  See(Player6)
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(Player5,MAINHAND)
+  WeaponCanDamage(Player5,MAINHAND)
+  StateCheck(Player5,STATE_IMMOBILE)
+  See(Player5)
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(Player4,MAINHAND)
+  WeaponCanDamage(Player4,MAINHAND)
+  StateCheck(Player4,STATE_IMMOBILE)
+  See(Player4)
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(Player3,MAINHAND)
+  WeaponCanDamage(Player3,MAINHAND)
+  StateCheck(Player3,STATE_IMMOBILE)
+  See(Player3)
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(Player2,MAINHAND)
+  WeaponCanDamage(Player2,MAINHAND)
+  StateCheck(Player2,STATE_IMMOBILE)
+  See(Player2)
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(Player1,MAINHAND)
+  WeaponCanDamage(Player1,MAINHAND)
+  StateCheck(Player1,STATE_IMMOBILE)
+  See(Player1)
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(ThirdNearest([GOODCUTOFF]),MAINHAND)
+  WeaponCanDamage(ThirdNearest([GOODCUTOFF]),MAINHAND)
+  CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+  !StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+  StateCheck(ThirdNearest([GOODCUTOFF]),STATE_IMMOBILE)
+  !CheckStatGT(ThirdNearest([GOODCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(ThirdNearest([GOODCUTOFF]),BARBARIAN)
+  See(ThirdNearest([GOODCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([GOODCUTOFF]),MAINHAND)
+  WeaponCanDamage(SecondNearest([GOODCUTOFF]),MAINHAND)
+  CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+  !StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+  StateCheck(SecondNearest([GOODCUTOFF]),STATE_IMMOBILE)
+  !CheckStatGT(SecondNearest([GOODCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(SecondNearest([GOODCUTOFF]),BARBARIAN)
+  See(SecondNearest([GOODCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([GOODCUTOFF],MAINHAND)
+  WeaponCanDamage([GOODCUTOFF],MAINHAND)
+  CheckStatLT([GOODCUTOFF],1,STONESKINS)
+  !StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
+  StateCheck([GOODCUTOFF],STATE_IMMOBILE)
+  !CheckStatGT([GOODCUTOFF],0,IMMUNITY_TO_BACKSTAB)
+  !Kit([GOODCUTOFF],BARBARIAN)
+  See([GOODCUTOFF])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),MAINHAND)
+  WeaponCanDamage(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),MAINHAND)
+  CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
+  !StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
+  StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_IMMOBILE)
+  !CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([GOODCUTOFF.0.0.CLERIC_ALL],MAINHAND)
+  WeaponCanDamage([GOODCUTOFF.0.0.CLERIC_ALL],MAINHAND)
+  CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],1,STONESKINS)
+  !StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_MIRRORIMAGE)
+  StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_IMMOBILE)
+  !CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,IMMUNITY_TO_BACKSTAB)
+  See([GOODCUTOFF.0.0.CLERIC_ALL])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),MAINHAND)
+  WeaponCanDamage(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),MAINHAND)
+  CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
+  !StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
+  StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_IMMOBILE)
+  !CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([GOODCUTOFF.0.0.DRUID_ALL],MAINHAND)
+  WeaponCanDamage([GOODCUTOFF.0.0.DRUID_ALL],MAINHAND)
+  CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],1,STONESKINS)
+  !StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_MIRRORIMAGE)
+  StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_IMMOBILE)
+  !CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,IMMUNITY_TO_BACKSTAB)
+  See([GOODCUTOFF.0.0.DRUID_ALL])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  WeaponCanDamage(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+  !StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+  StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
+  !CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  WeaponCanDamage(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+  !StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+  StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
+  !CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([GOODCUTOFF.0.0.MAGE_ALL],MAINHAND)
+  WeaponCanDamage([GOODCUTOFF.0.0.MAGE_ALL],MAINHAND)
+  CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+  !StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
+  StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_IMMOBILE)
+  !CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,IMMUNITY_TO_BACKSTAB)
+  See([GOODCUTOFF.0.0.MAGE_ALL])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  See(LastSeenBy(Myself))
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),15)
 END
 
 /////////////////////////////////////////////////////////////////////
