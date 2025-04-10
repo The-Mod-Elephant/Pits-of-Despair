@@ -1,5 +1,3 @@
-// these are all placeholder values, they will likely require adjustment
-
 IF
     InParty(Myself)
     Global("ZBNEPHXP","GLOBAL",0)
@@ -53,7 +51,6 @@ THEN
     AddXPObject("zbneph",900000)
 END
 
-
 IF
     InParty(Myself)
     Global("ZBNEPHXP","GLOBAL",0)
@@ -74,4 +71,19 @@ THEN
     RESPONSE #100
     SetGlobal("ZBNEPHXP","GLOBAL",1)
     AddXPObject("zbneph",2400000)
+END
+
+IF
+    AreaCheck("OH8100")  // TBP2 - Staging Area Map
+    Global("ZB_INTERVIEW","GLOBAL",1)
+    Range([PC],30)
+    See([PC])
+THEN
+    RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobal("ZB_INTERVIEW","GLOBAL",2)
+    FaceObject([PC])
+    SmallWait(5)
+    StartDialogueNoSet([PC])
+    SetInterrupt(TRUE)
 END

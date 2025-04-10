@@ -464,27 +464,9 @@ SetGlobal("OHB_102","GLOBAL",1)
 SetGlobal("OHB_ARENA","GLOBAL",2)
 SetGlobal("OHB_INTERVIEW","GLOBAL",1)
 ~ EXIT
-  IF ~  Global("OHB_LAST_BATTLE","GLOBAL",102)
-~ THEN REPLY @3252 /* I'd like to fight my next battle. */ DO ~SetCutSceneLite(TRUE)
-SetGlobal("OHB_START_BATTLE","GLOBAL",1)
-SetGlobal("OHB_103","GLOBAL",1)
-SetGlobal("OHB_ARENA","GLOBAL",3)
-SetGlobal("OHB_INTERVIEW","GLOBAL",1)
-~ EXIT
-  IF ~  Global("OHB_LAST_BATTLE","GLOBAL",103)
-~ THEN REPLY @3252 /* I'd like to fight my next battle. */ DO ~SetCutSceneLite(TRUE)
-SetGlobal("OHB_START_BATTLE","GLOBAL",1)
-SetGlobal("OHB_104","GLOBAL",1)
-SetGlobal("OHB_ARENA","GLOBAL",1)
-SetGlobal("OHB_INTERVIEW","GLOBAL",1)
-~ EXIT
-  IF ~  Global("OHB_LAST_BATTLE","GLOBAL",104)
-~ THEN REPLY @3252 /* I'd like to fight my next battle. */ DO ~SetCutSceneLite(TRUE)
-SetGlobal("OHB_START_BATTLE","GLOBAL",1)
-SetGlobal("OHB_105","GLOBAL",1)
-SetGlobal("OHB_ARENA","GLOBAL",3)
-SetGlobal("OHB_INTERVIEW","GLOBAL",1)
-~ EXIT
+  IF ~Global("OHB_LAST_BATTLE","GLOBAL",102)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ EXTERN ~ZBNEPH~ 25
+  IF ~Global("OHB_LAST_BATTLE","GLOBAL",103)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ EXTERN ~ZBNEPH~ 16
+  IF ~Global("OHB_LAST_BATTLE","GLOBAL",104)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ EXTERN ~ZBNEPH~ 24
   IF ~  Global("OHB_LAST_BATTLE","GLOBAL",105)
 ~ THEN REPLY @3252 /* I'd like to fight my next battle. */ DO ~SetCutSceneLite(TRUE)
 SetGlobal("OHB_START_BATTLE","GLOBAL",1)

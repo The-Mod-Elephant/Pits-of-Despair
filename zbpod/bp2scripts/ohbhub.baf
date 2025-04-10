@@ -422,6 +422,45 @@ THEN
 END
 
 IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("ZB_NEPH_INTERJECT_2","GLOBAL",1)
+THEN
+	RESPONSE #100
+	SetCutSceneLite(TRUE)
+	SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",2)
+	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
+	SetGlobal("OHB_103","GLOBAL",1)
+	SetGlobal("OHB_ARENA","GLOBAL",3)
+	SetGlobal("OHB_INTERVIEW","GLOBAL",1)
+END
+
+IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("ZB_NEPH_INTERJECT_3","GLOBAL",1)
+THEN
+	RESPONSE #100
+	SetCutSceneLite(TRUE)
+	SetGlobal("ZB_NEPH_INTERJECT_3","GLOBAL",2)
+	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
+	SetGlobal("OHB_104","GLOBAL",1)
+	SetGlobal("OHB_ARENA","GLOBAL",1)
+	SetGlobal("OHB_INTERVIEW","GLOBAL",1)
+END
+
+IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("ZB_NEPH_INTERJECT_4","GLOBAL",1)
+THEN
+	RESPONSE #100
+	SetCutSceneLite(TRUE)
+	SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",2)
+	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
+	SetGlobal("OHB_105","GLOBAL",1)
+	SetGlobal("OHB_ARENA","GLOBAL",3)
+	SetGlobal("OHB_INTERVIEW","GLOBAL",1)
+END
+
+IF
 	Global("OHB_START_BATTLE","GLOBAL",1)
 	Global("ohb_plot_cutscene","global",0)
 THEN
