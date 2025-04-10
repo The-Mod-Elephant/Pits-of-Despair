@@ -489,6 +489,13 @@ Charge ability:
 
 Weight: 3~
 
+@10210 = ~Binky~
+@10211 = ~This is the skeleton of a racing lizard that Jan received by trading Lissa's prize turnip for.
+
+STATISTICS:
+– Luck: +1
+
+Weight: 1~
 
 // Imported BG1 Items
 @11000 = ~BG Imported Items~
