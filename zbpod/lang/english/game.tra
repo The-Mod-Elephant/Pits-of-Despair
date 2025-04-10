@@ -241,7 +241,7 @@ Combat abilities:
 – 1 extra attack per round
 – +4 irresistible damage is inflicted against outsiders
 – Astral Drain: On hitting an outsider there is a 10% chance to etherealize part of their body, sending just that portion to the Astral Plane, separating them and causing massive damage to their being (-10% to their maximum health)
-– When no bolts are equipped, the crossbow fires phantasmal bolts that deal 1d8+4 missile damage plus 1d+2 magic damage that act as +5 projectiles
+– When no bolts are equipped, the crossbow fires phantasmal bolts that deal 1d8+4 missile damage plus 1d2 magic damage that act as +5 projectiles
 
 Charge ability:
 – Bolt of Glory once per day
@@ -260,6 +260,26 @@ Requires:
 Weight: 5~
 
 @10062 = ~Astral Drain: -10% health siphoned~
+
+@10063 = ~Astral Crossbow of Speed +2~
+@10064 = ~This crossbow is a sleek, silvered weapon adorned with faintly glowing etchings of celestial constellations. When bolts are loaded into it, they seem to shimmer and vanish, only to reappear in the bowstring, ready to be fired. The weapon is light and easy to handle, and the wielder feels a sense of calm and focus when using it.
+
+STATISTICS:
+
+Combat abilities:
+– 1 extra attack per round
+– +4 irresistible damage is inflicted against outsiders
+
+THAC0: +2, +4 against outsiders
+Damage: +2, +1 magic damage
+Damage type: Missile
+Speed Factor: 0
+Proficiency Type: Crossbow
+Type: Two-handed
+Requires:
+ 8 Strength
+
+Weight: 5~
 
 @10070 = ~The Night Sky~
 @10071 = ~The Night Sky description placeholder
