@@ -1,19 +1,23 @@
 IF
     InParty(Myself)
     Global("ZBNEPHXP","GLOBAL",0)
+    Global("ZBNEPH_JOINED_FIRST_TIME","GLOBAL",0)
     XPLT(Player1,880000)
 THEN
     RESPONSE #100
+    SetGlobal("ZBNEPH_JOINED_FIRST_TIME","GLOBAL",1)
     SetGlobal("ZBNEPHXP","GLOBAL",1)
 END
 
 IF
     InParty(Myself)
     Global("ZBNEPHXP","GLOBAL",0)
+    Global("ZBNEPH_JOINED_FIRST_TIME","GLOBAL",0)
     XPGT(Player1,900000)
     XPLT(Player1,1100000)
 THEN
     RESPONSE #100
+    SetGlobal("ZBNEPH_JOINED_FIRST_TIME","GLOBAL",1)
     SetGlobal("ZBNEPHXP","GLOBAL",1)
     AddXPObject("zbneph",120000)
 END
@@ -21,10 +25,12 @@ END
 IF
     InParty(Myself)
     Global("ZBNEPHXP","GLOBAL",0)
+    Global("ZBNEPH_JOINED_FIRST_TIME","GLOBAL",0)
     XPGT(Player1,1100000)
     XPLT(Player1,1500000)
 THEN
     RESPONSE #100
+    SetGlobal("ZBNEPH_JOINED_FIRST_TIME","GLOBAL",1)
     SetGlobal("ZBNEPHXP","GLOBAL",1)
     AddXPObject("zbneph",450000)
 END
@@ -32,10 +38,12 @@ END
 IF
     InParty(Myself)
     Global("ZBNEPHXP","GLOBAL",0)
+    Global("ZBNEPH_JOINED_FIRST_TIME","GLOBAL",0)
     XPGT(Player1,1500000)
     XPLT(Player1,2000000)
 THEN
     RESPONSE #100
+    SetGlobal("ZBNEPH_JOINED_FIRST_TIME","GLOBAL",1)
     SetGlobal("ZBNEPHXP","GLOBAL",1)
     AddXPObject("zbneph",900000)
 END
@@ -43,10 +51,12 @@ END
 IF
     InParty(Myself)
     Global("ZBNEPHXP","GLOBAL",0)
+    Global("ZBNEPH_JOINED_FIRST_TIME","GLOBAL",0)
     XPGT(Player1,1500000)
     XPLT(Player1,2000000)
 THEN
     RESPONSE #100
+    SetGlobal("ZBNEPH_JOINED_FIRST_TIME","GLOBAL",1)
     SetGlobal("ZBNEPHXP","GLOBAL",1)
     AddXPObject("zbneph",900000)
 END
@@ -54,10 +64,12 @@ END
 IF
     InParty(Myself)
     Global("ZBNEPHXP","GLOBAL",0)
+    Global("ZBNEPH_JOINED_FIRST_TIME","GLOBAL",0)
     XPGT(Player1,2000000)
     XPLT(Player1,2500000)
 THEN
     RESPONSE #100
+    SetGlobal("ZBNEPH_JOINED_FIRST_TIME","GLOBAL",1)
     SetGlobal("ZBNEPHXP","GLOBAL",1)
     AddXPObject("zbneph",1600000)
 END
@@ -65,10 +77,12 @@ END
 IF
     InParty(Myself)
     Global("ZBNEPHXP","GLOBAL",0)
+    Global("ZBNEPH_JOINED_FIRST_TIME","GLOBAL",0)
     XPGT(Player1,2500000)
     XPLT(Player1,3000000)
 THEN
     RESPONSE #100
+    SetGlobal("ZBNEPH_JOINED_FIRST_TIME","GLOBAL",1)
     SetGlobal("ZBNEPHXP","GLOBAL",1)
     AddXPObject("zbneph",2400000)
 END

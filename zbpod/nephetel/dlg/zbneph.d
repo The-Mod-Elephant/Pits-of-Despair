@@ -37,7 +37,10 @@ IF ~~ BEGIN zbneph3
   SAY @20 /* Good, a tough response. You should still heed my words. Consider fighting in the training matches in the kennel. */
   IF ~~ EXIT
 END
-///
+
+// ----------------------------------------------------
+// Pits
+// ----------------------------------------------------
 
 /* main arena hub */
 IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",1)~ THEN BEGIN zbnepharenahub01
@@ -75,7 +78,6 @@ SAY @30 /* Between the two of us, you are not the only one with a bone to pick w
 IF ~~ DO ~SetGlobal("nepharena3","LOCALS",1)~ + zbnepharenahub2
 END
 
-
 IF ~~ zbnepharena4
 SAY @31 /* Being suspicious is fine. Deception and trickery is part of my profession. But, perhaps you should take more care with your words. Hmm?. */
 IF ~~ DO ~SetGlobal("nepharena4","LOCALS",1)~ + zbnepharenahub2
@@ -90,73 +92,164 @@ SAY @33 /* Anything else I can clear up for you? */
 ++ @27 /* I'll let you get back to whatever you were doing. */ EXIT
 END
 
-// Before Match 4 - Elder Umber Hulks (monstrosities that have confusing gaze and are lightning fast with razored claws and bite attacks) think of those shell monsters from The Dark Crystal.
-IF ~Global("ZB_NEPH_INTERJECT_4","GLOBAL",0)~ 15
-  SAY @45 /* Elder Umber Hulks are extremely dangerous and fast to boot. They can easily overpower those that gaze into their eyes. There are potions that  protect from these types of effects and I happen to have one right here. Yours, for a price of course. */
-  IF ~~ THEN REPLY @46 /* I'll take it! */ DO ~SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",1) TakePartyGold(700) GiveItemCreate("POTN21",Player1,1,0,0)~ EXIT
-  IF ~~ THEN REPLY @47 /* Keep your potion, my eyes are on the prize. */ DO ~SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",1)~ GOTO 16
+IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",11)~ 15
+  SAY @57 /* Excellent! An appropriate death to our enemies. Let us speak of escape if you wish it. */
+  IF ~~ THEN REPLY @58 /* I wish to discuss escaping the Pits of Despair. */ DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",12)~ GOTO 16
 END
 
 IF ~~ 16
-  SAY @48 /* As long as you don't meet the gaze of those Umber Hulks, eh? */
-  IF ~~ EXIT
+  SAY @59 /* An opportunity has come our way, and by Tymora, it is time to take advantage. Meet me in the sleeping quarters to discuss our plan. */
+  IF ~~ DO ~FadeToColor([10.0],0)
+    Wait(1)
+    ActionOverride("zbneph",JumpToPoint([2480.1400]))
+    Wait(1)
+    FadeFromColor([20.0],0)
+  ~ EXIT
 END
 
-IF ~~ 17
-  SAY @49 /* You won't regret it. I'll meet you in the arena with my dagger drawn. */
-  IF ~~ THEN REPLY @50 /* Very well, we will take on these drow on together. */ DO ~SetGlobal("ZB_SPAWN_NEPHY_FIGHT5","GLOBAL",1)~ EXIT
+IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",12)~ 17
+  SAY @71 /* <CHARNAME>, You are here to discuss our escape from this place, yes? First, I would know why it is so important to you that you escape? */
+  IF ~~ THEN REPLY @72 /* I do not enjoy being captured and called a slave. Pretty simple, right? */ GOTO 18
+  IF ~~ THEN REPLY @73 /* My foster sister Imoen has been captured and taken by the mage Irenicus. He thought he could hold me just as Dennaton thinks now. */ GOTO 19
+  IF ~~ THEN REPLY @74 /* No one may restrain me for long and they will ALWAYS pay a price. */ GOTO 20
+  IF ~~ THEN REPLY @75 /* I am the scion of Bhaal. I shall not be questioned. */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",-1)~ GOTO 21
 END
 
 IF ~~ 18
-  SAY @51 /* Speaking of dead weight, I hope you don't die … horribly 'Hero'. */
-  IF ~~ THEN REPLY @52 /* Oof, first blood is yours. We'll do without your help. */ EXIT
+  SAY @76 /* Absolutely, we all find the shackles constraining. */
+  IF ~~ GOTO 22
 END
 
 IF ~~ 19
-  SAY @53 /* Suit yourself, 'Hero' */
-  IF ~~ EXIT
+  SAY @77 /* Then we must quickly escape so you can continue your search. */
+  IF ~~ GOTO 22
 END
 
 IF ~~ 20
-  SAY @54 /* I am a dancer in the shadows, my tricks and the shadows are the tools of my trade. */
-  IF ~~ THEN REPLY @50 /* Very well, we will take on these drow on together. */ DO ~SetGlobal("ZB_NEPHY_JOINS","GLOBAL",1)~ GOTO 17
-  IF ~~ THEN REPLY @55 /* We don't need any dead weight. */ GOTO 18
-  IF ~~ THEN REPLY @56 /* We'll be fine, I have no fear of drow. */  DO ~SetGlobal("ZB_NEPHY_JOINS","GLOBAL",1)~ GOTO 19
+  SAY @78 /* Your rage is palpable. Very interesting. */
+  IF ~~ GOTO 22
 END
 
-IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",11)~ 21
-  SAY @57 /* Excellent! An appropriate death to our enemies. Let us speak of escape if you wish it. */
-  IF ~~ THEN REPLY @58 /* I wish to discuss escaping the Pits of Despair. */ DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",12)~ GOTO 22
-END
-
-IF ~~ 22
-  SAY @59 /* An opportunity has come our way, and by Tymora, it is time to take advantage. Meet me in the sleeping quarters to discuss our plan. */
+IF ~~ 21
+  SAY @79 /* You are not worth my time. */
   IF ~~ EXIT
 END
 
-// Before Match 5 - The final match of their initial capture tuned for their level. Drow (underground evil elves with magic resistance) war party consists of a full complement of a mage and a cleric. When killed they burst into spiders that poison you and attack. The most difficult match up to this point in the content.
-CHAIN
-IF ~Global("ZB_NEPH_INTERJECT_5","GLOBAL",0)~
-THEN ZBNEPH 23
-@60 /* I spied a war party of drow who were recently captured by the Planar Hunters. Whether it is poison, magic, or their spider pets, they will use every advantage to destroy you. You would be the first to face them, so be careful.  In fact, I think you could use a hand. While most of these amateurs will charge you for their assistance, I will fight for you free and clear this time only. What say you? A favor to my new favorite gladiator. */
-DO ~SetGlobal("ZB_NEPH_INTERJECT_5","GLOBAL",1)~
-  == BVICONI IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN @61 /* Hmph. I wonder what fate befell their house? Only the weak allow themselves to be captured by surfacers. */
-  == BJAHEIR IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN @62 /* Oh really, Viconia? As I remember it, you yourself were captured at one point. */
-  == BVICONI IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID) InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN @63 /* Only for moments, then they faced justice as any who dare to chain a drow would. */
+IF ~~ 22
+  SAY @80 /* In any event, here is the plan. I have a magical charm that can release us and return to where your ring pulled you from, probably some tavern. Be warned, it will consume the ring itself. */
+  IF ~~ THEN REPLY @81 /* If you had this all this time, why wouldn't you have given me this charm immediately? */ GOTO 23
+  IF ~~ THEN REPLY @82 /* Why would you do this? Your motivations are suspect. */ GOTO 23
+  IF ~~ THEN REPLY @83 /* It can't be that simple, or anyone would escape. */ GOTO 23
+  IF ~~ THEN REPLY @84 /* I don't need your help. I will find my own path. */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",-1)~ GOTO 24
 END
-IF ~~ THEN REPLY @64 /* We'd love a hand, Nephetel. */ DO ~SetGlobal("ZB_NEPHY_JOINS","GLOBAL",1)~ GOTO 18
-IF ~~ THEN REPLY @65 /* How can you assist me? */ DO ~SetGlobal("ZB_NEPHY_JOINS","GLOBAL",1)~ GOTO 21
-IF ~~ THEN REPLY @55 /* We don't need any dead weight. */ GOTO 19
-IF ~~ THEN REPLY @66 /* I appreciate the offer, but we'll be fine on our own. */  DO ~SetGlobal("ZB_NEPHY_JOINS","GLOBAL",1)~ GOTO 20
 
-// Before Match 3 - After Dennaton kills part of a gladiatorial party
-CHAIN
-IF ~Global("ZB_NEPH_INTERJECT_3","GLOBAL",0)~
-THEN ZBNEPH 24
-@67 /* I am going to tell you a little secret, <CHARNAME>. I despise lizards. In Chult, the lizardmen are fierce warriors and their skin is very thick. Their shamans also pack a punch and are annoying because they use bugs to fight. Yuck. Please, rid Faerun of them. */
-DO ~SetGlobal("ZB_NEPH_INTERJECT_3","GLOBAL",1)~
-  // GIVES JAN BINKY THE LIZARD ITEM.
-  == BJAN IF ~!StateCheck("JAN", CD_STATE_NOTVALID) InParty("JAN")~ THEN @68 /* Oh, Nephetel, you are too harsh. I once traded Lissa's prize turnip for a racing lizard. And let me tell you, she was not happy I did. I named him Binky and he was the world to me when I was 38. In fact, he still travels with me as a necklace, see? Don't mind the bones, it just means he's lucky. */
-  == BEDWIN IF ~!StateCheck("JAN", CD_STATE_NOTVALID) InParty("JAN") !StateCheck("EDWIN", CD_STATE_NOTVALID) InParty("EDWIN")~ THEN @69 /* You let this thing travel with you? (Am I really discussing lizard bones? Inane and irritating.) */
-  == BMINSC IF ~!StateCheck("JAN", CD_STATE_NOTVALID) InParty("JAN") !StateCheck("MINSC", CD_STATE_NOTVALID) InParty("MINSC")~ THEN @70 /* Oh, that is horrible! These things are not for the likes of Boo. When his time comes I  shall bury him as a rashemi warrior in my homeland. */
-EXIT
+IF ~~ 23
+  SAY @85 /* Let us just say that I didn't know if I could trust someone with the taint of Bhaal to walk away from butchery. Will you try? */
+  IF ~~ THEN REPLY @86 /* Yes, of course. */ DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",13)~ EXIT
+  IF ~~ THEN REPLY @87 /* No, I'll stay here for the moment. */ DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",13)~ EXIT
+END
+
+IF ~~ 24
+  SAY @88 /* Fine then. You want to stay here and die, you''ll be buried within a tenday and no one will care. */
+  IF ~~ EXIT
+END
+
+IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",13)~ 25
+  SAY @89 /* Do you wish to leave this place or remain to continue fighting? */
+  IF ~~ THEN REPLY @90 /* I am ready to try your charm. You had best be telling the truth. */ DO ~
+    SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",14)
+    SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",1)
+    StartCutSceneMode()
+    StartCutScene("zbpodes1")
+  ~ EXIT
+  IF ~~ THEN REPLY @91 /* Not right now. Maybe later. */ EXIT
+END
+
+// ----------------------------------------------------
+// SoA Dialogue
+// ----------------------------------------------------
+
+// Trademeet Inn
+IF ~Global("ZB_NEPH_ESCAPE_1","GLOBAL",4)~ 26
+  SAY @92 /* Here we are, for better or worse, released from the pits. I guess this is where we part ways? */
+  IF ~~ THEN REPLY @93 /* Yes, we must go, we have business to attend to. */ GOTO ZBNEPHCOPPERCORONET
+  IF ~Global("ZB_NEPH_WHERE_GO","GLOBAL",0)~ THEN REPLY @94 /* What about you Nephetel, where will you go? */ GOTO ZBNEPHWHEREGOEXPLAIN
+  IF ~~ THEN REPLY @95 /* You have been very helpful, perhaps you could join us on our quest? */ GOTO ZBNEPHIWOULDBEHAPPY
+  IF ~~ THEN REPLY @96 /* You are at the end of your usefulness, thief. */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",-1)~ GOTO ZBNEPHEXIT
+END
+
+IF ~Global("ZB_NEPH_WHERE_GO","GLOBAL",0)~ ZBNEPHWHEREGOEXPLAIN
+  SAY @97 /* Before being lured into the intrigue of the pits, I was on a mission to find a particular tome of importance. I will continue to search for it. */
+  IF ~~ DO ~SetGlobal("ZB_NEPH_WHERE_GO","GLOBAL",1)~ GOTO 26
+END
+
+IF ~~ ZBNEPHCOPPERCORONET
+  SAY @98 /* Very well, I myself have a mission I must attend to. If you ever need my assistance seek me out at the Copper Coronet in Athkatla. Safe travels. */
+  IF ~~ DO ~
+    ApplySpell(Myself,WIZARD_INVISIBILITY)
+    Wait(1)
+    SetGlobal("ZB_NEPH_COPPERCORENT","GLOBAL",1)
+    EscapeArea()~ EXIT
+END
+
+IF ~~ ZBNEPHIWOULDBEHAPPY
+  SAY @99 /* I would be happy to, however I need to inform you that I have a mission to find a tome for my employer. If in our travels we come across it I must deliver it to him. */
+  IF ~~ DO ~
+  SetGlobal("ZB_NEPH_JOINS","GLOBAL",1) JoinParty()~ EXIT
+END
+
+IF ~~ ZBNEPHEXIT
+  SAY @100 /* You seem intent to distance yourself. I know my way out. */
+  IF ~~ DO ~
+    ApplySpell(Myself,WIZARD_INVISIBILITY)
+    Wait(1)
+    SetGlobal("ZB_NEPH_COPPERCORENT","GLOBAL",1)
+    EscapeArea()~ EXIT
+END
+
+// Copper Cornet
+
+IF ~AreaCheck("AR0406") GlobalLT("ZB_NEPHY_FRIEND","GLOBAL",0) Global("ZB_NEPH_COPPERCORENT","GLOBAL",1)~ THEN BEGIN OHHAIMARK
+  SAY @101 /* Oh look who it is, the Bhaalspawn. Have you found what you are looking for, you nearsighted gibberling? */
+  IF ~~ THEN REPLY @102 /* You know what Nephetel, I was a bit rude before. I apologize. */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",1)~ GOTO ZBNEPHREDEMPTION
+  IF ~~ THEN REPLY @103 /* No need to be rude. */ GOTO ZBNPEHNEVERFORGIVE
+  IF ~~ THEN REPLY @104 /* You are the rude gibberling. */ GOTO ZBNPEHNEVERFORGIVE
+END
+
+IF ~~ ZBNEPHFORGIVE
+  SAY @105 /* Good. Now do you want to talk about traveling together? */
+  IF ~~ GOTO ZBNEPHREDEMPTION
+END
+
+IF ~~ ZBNPEHNEVERFORGIVE
+  SAY @106 /* I'll decide what is rude, that is MY prerogative. */
+  IF ~~ THEN REPLY @107 /* My apologies. I must have stepped in it now. I am sorry if I offended you. */ GOTO ZBNEPHREDEMPTION
+  IF ~~ THEN REPLY @108 /* My oh my, what a bitch. */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",-1)~ GOTO ZBNEPHFUCKYOU
+END
+
+IF ~~ ZBNEPHFUCKYOU
+  SAY @109 /* So be it, have it your way and I will have it mine. */
+  IF ~~ DO ~
+  ApplySpell(Myself,WIZARD_INVISIBILITY)
+  Wait(1)
+  EscapeArea()~ EXIT
+END
+
+IF ~~ ZBNEPHREDEMPTION
+  SAY @110 /* Apology accepted. Now, what are you here for? Have you come to your senses and want to travel together? */
+  IF ~~ THEN REPLY @111 /* Yes, I must admit I missed you. Will you join us on our quest? */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",1)~ GOTO ZBNEPHREALLYJOIN
+  IF ~~ THEN REPLY @112 /* I wanted to see if you would join us now. We could use your help. */ GOTO ZBNEPHREALLYJOIN
+  IF ~~ THEN REPLY @113 /* I need to go. Goodbye. */ EXIT
+END
+
+IF ~GlobalGT("ZB_NEPHY_FRIEND","GLOBAL",0) Global("ZB_NEPH_COPPERCORENT","GLOBAL",1)~ ZBNEPHFREIND
+  SAY @114 /* Well hello there <CHARNAME>, you seem to be all in one piece, how can I help you? */
+  IF ~~ THEN REPLY @111 /* Yes, I must admit I missed you. Will you join us on our quest? */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",1)~ GOTO ZBNEPHREALLYJOIN
+  IF ~~ THEN REPLY @112 /* I wanted to see if you would join us now. We could use your help. */ GOTO ZBNEPHREALLYJOIN
+  IF ~~ THEN REPLY @113 /* I need to go. Goodbye. */ EXIT
+END
+
+IF ~~ZBNEPHREALLYJOIN
+  SAY @115 /*  Oh, I'll happily join your merry band. */
+  IF ~~ DO ~SetGlobal("ZB_NEPH_JOINS","GLOBAL",1) JoinParty()~ EXIT
+END

@@ -4,11 +4,13 @@
 
 WARNING! Will break the default the Black Pits 2 standalone campaign. We are not responsible for any bugs you find or if your mod installation is compromised if you attempt to play that campaign with this mod installed."
 
-@20002 = ~Add concept art portraits to select NPCs~
+@20002 = ~Improved Sounds~
 
-@20003 = ~by Keldorn's Simp~
+@20003 = ~Add concept art portraits to select NPCs~
 
-@20004 = ~by Llewren~
+@20004 = ~by Keldorn's Simp~
+
+@20005 = ~by Llewren~
 
 // warnings
 @20050 = "Not available for your game version"

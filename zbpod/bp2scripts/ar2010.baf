@@ -1,0 +1,8 @@
+IF
+  Global("ZB_NEPH_ESCAPE_1","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",3)
+    StartCutSceneMode()
+    StartCutScene("zbpodes1")
+END

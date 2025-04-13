@@ -1,0 +1,13 @@
+IF
+    Global("ZB_NEPH_ESCAPE_1","GLOBAL",3)
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        SetCutSceneBreakable(FALSE)
+        SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",4)
+        CreateCreature("ZBNEPH",[400.600],SSW)  // Neph
+        SmallWait(25)
+        FadeFromColor([20.0],0)
+        Wait(1)
+        ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
+END
