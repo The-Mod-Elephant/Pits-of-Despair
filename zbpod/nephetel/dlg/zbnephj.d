@@ -1,14 +1,14 @@
 BEGIN ZBNEPHJ
 
 /// After Match 2 - After Dennaton kills part of a gladiatorial party
-IF ~Global("ZB_NEPH_INTERJECT_2","GLOBAL",2)~ THEN BEGIN 0
+IF ~Global("ZB_NEPH_INTERJECT_2","GLOBAL",2)~ THEN BEGIN ZBNEPHJMATCH2
   SAY @41 /* As you see, anyone can be replaced here. Even the most loyal are enslaved in some way. Whether it is money, magic, or by force. It's detestable but that is the way it works here. */
   IF ~~ THEN DO ~SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",3)~ EXIT
 END
 ///
 
 /// Before Match 4 - Elder Umber Hulks
-IF ~Global("ZB_NEPH_INTERJECT_4","GLOBAL",0)~ 1
+IF ~Global("ZB_NEPH_INTERJECT_4","GLOBAL",0)~ THEN BEGIN ZBNEPHJMATCH4
   SAY @45 /* Elder Umber Hulks are extremely dangerous and fast to boot. They can easily overpower those that gaze into their eyes. There are potions that  protect from these types of effects and I happen to have one right here. Yours, for a price of course. */
   IF ~~ THEN REPLY @46 /* I'll take it! */ DO ~SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",1) TakePartyGold(700) GiveItemCreate("POTN21",Player1,1,0,0)~ EXIT
   IF ~~ THEN REPLY @47 /* Keep your potion, my eyes are on the prize. */ DO ~SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",1)~ GOTO zbnephj2
@@ -46,7 +46,7 @@ END
 // Before Match 5 - The final match of their initial capture tuned for their level. Drow (underground evil elves with magic resistance) war party consists of a full complement of a mage and a cleric. When killed they burst into spiders that poison you and attack. The most difficult match up to this point in the content.
 CHAIN
 IF ~Global("ZB_NEPH_INTERJECT_5","GLOBAL",0)~
-THEN ZBNEPHJ 7
+THEN ZBNEPHJ ZBNEPHJMATCH5
 @60 /* I spied a war party of drow who were recently captured by the Planar Hunters. Whether it is poison, magic, or their spider pets, they will use every advantage to destroy you. You would be the first to face them, so be careful.  In fact, I think you could use a hand. While most of these amateurs will charge you for their assistance, I will fight for you free and clear this time only. What say you? A favor to my new favorite gladiator. */
 DO ~SetGlobal("ZB_NEPH_INTERJECT_5","GLOBAL",1)~
   == BVICONI IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN @61 /* Hmph. I wonder what fate befell their house? Only the weak allow themselves to be captured by surfacers. */
@@ -62,7 +62,7 @@ IF ~~ THEN REPLY @66 /* I appreciate the offer, but we'll be fine on our own. */
 // Before Match 3 - After Dennaton kills part of a gladiatorial party
 CHAIN
 IF ~Global("ZB_NEPH_INTERJECT_3","GLOBAL",0)~
-THEN ZBNEPHJ 8
+THEN ZBNEPHJ ZBNEPHJMATCH3
 @67 /* I am going to tell you a little secret, <CHARNAME>. I despise lizards. In Chult, the lizardmen are fierce warriors and their skin is very thick. Their shamans also pack a punch and are annoying because they use bugs to fight. Yuck. Please, rid Faerun of them. */
 DO ~SetGlobal("ZB_NEPH_INTERJECT_3","GLOBAL",1)~
   // GIVES JAN BINKY THE LIZARD ITEM.
@@ -74,7 +74,7 @@ EXIT
 // Before match 1, If PC has completed at least 1 training match
 CHAIN
 IF ~Global("ZB_NEPH_INTERJECT_1","GLOBAL",0)~
-THEN ZBNEPHJ 9
+THEN ZBNEPHJ ZBNEPHJMATCH1R1
   @34 /* *waves* Hello 'Hero', I saw your battles with the beasts. 'Quite ferocious', but then again they were just beasts. Good job. */
 DO ~SetGlobal("ZB_NEPH_INTERJECT_1","GLOBAL",1)~
   == BEDWIN IF ~InParty("edwin") InMyArea("edwin") !StateCheck("edwin",CD_STATE_NOTVALID)~ THEN @42 /* So the strumpet has claws (Then again sometimes we like that, don't we? Hmm.). */
@@ -83,3 +83,11 @@ DO ~SetGlobal("ZB_NEPH_INTERJECT_1","GLOBAL",1)~
   == BAERIE IF ~InParty("aerie") InMyArea("aerie") !StateCheck("aerie",CD_STATE_NOTVALID)~ THEN @44 /* That is horrible, h-he is truly a despicable man */
 EXIT
 
+// Before match 1, If PC has not completed any training matches
+CHAIN
+IF ~Global("ZB_NEPH_INTERJECT_1","GLOBAL",0)~
+THEN ZBNEPHJ ZBNEPHJMATCH1R2
+  @35 /* Even though everyone laughs at the orc warband, it has cut down many unwary new gladiators. That's why Dennaton keeps tormenting the orcs. He will raise them from the dead and mock them for every failed attempt to kill even a single gladiator. */
+DO ~SetGlobal("ZB_NEPH_INTERJECT_1","GLOBAL",1)~
+  == BAERIE IF ~InParty("aerie") InMyArea("aerie") !StateCheck("aerie",CD_STATE_NOTVALID)~ THEN @44 /* That is horrible, h-he is truly a despicable man */
+EXIT
