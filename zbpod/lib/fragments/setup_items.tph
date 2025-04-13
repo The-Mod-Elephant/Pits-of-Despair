@@ -387,3 +387,6 @@ COPY_EXISTING ~zbneck0.itm~ ~override~
     SAY NAME2 @10220
     SAY IDENTIFIED_DESC @10221
 
+COPY ~%MOD_FOLDER%/items/grimsaw~ ~override~
+COPY ~%MOD_FOLDER%/items/redrobeofthay~ ~override~
+COPY ~%MOD_FOLDER%/items/dragonfly~ ~override~
