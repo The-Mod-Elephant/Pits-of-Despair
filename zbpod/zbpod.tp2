@@ -83,9 +83,6 @@ COMPILE ~%MOD_FOLDER%/ohbvic01~ /* editing the item_roll at the bottom to be zer
 /* new journal entries */
 ADD_JOURNAL TITLE (@800000) @800001 USING ~%MOD_FOLDER%/lang/english/JournalEntries.tra~
 
-// Nephetel
-INCLUDE ~%MOD_FOLDER%/nephetel/core.tpa~
-
 // Dialogs
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
                         ~%MOD_FOLDER%/dlg/ohbdenna.d~ /* still needs HEAVY edits */
@@ -107,6 +104,12 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
                         ~%MOD_FOLDER%/dlg/ohbmardu.d~
                         ~%MOD_FOLDER%/dlg/ohbvoghi.d~
                         ~%MOD_FOLDER%/dlg/ohbstirv.d~
+                        ~%MOD_FOLDER%/nephetel/dlg~
+                        ~%MOD_FOLDER%/dlg/ohbtartl.d~
+                        USING ~%MOD_FOLDER%/lang/%LANGUAGE%/neph.tra~
+
+// Nephetel
+INCLUDE ~%MOD_FOLDER%/nephetel/core.tpa~
 
 /* add messenger timer */
 COPY_EXISTING ~BALDUR.bcs~ ~%workspace%/~
