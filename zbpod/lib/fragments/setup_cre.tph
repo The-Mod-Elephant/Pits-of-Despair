@@ -1,3 +1,6 @@
+COPY ~%MOD_FOLDER%/creatures/vampire/zbvamp.cre~ ~override/zbvamp.cre~
+    WRITE_ASCII DEATHVAR ~zbvamp~ #32
+
 COPY ~%MOD_FOLDER%/creatures/deathslither_dracolich~ ~override~
 COPY_EXISTING ~zbdrclch.CRE~ ~override~
     SAY 0x08 @15000
