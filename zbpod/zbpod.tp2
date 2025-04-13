@@ -146,9 +146,9 @@ COPY ~%MOD_FOLDER%/wav/oh96~ ~override~
 COPY ~%MOD_FOLDER%/wav/zb~ ~override~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @20003 DESIGNATED 9 LABEL ~zb_keldorn_simp_nephetel_portrait~ // ADD ALT PORTRAITS
+BEGIN @20004 DESIGNATED 9 LABEL ~zb_keldorn_simp_nephetel_portrait~ // ADD ALT PORTRAITS
 REQUIRE_COMPONENT "zbpod.tp2" "2" @30000 // traify later
-SUBCOMPONENT ~Nephetel Alternate Portraits~ // traify later
+SUBCOMPONENT @20003
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY ~%MOD_FOLDER%/altportrait/keldornsimp_zbnephy.bmp~ ~override/zbnephy.bmp~
@@ -156,9 +156,9 @@ COPY ~%MOD_FOLDER%/altportrait/keldornsimp_zbnephy.bmp~ ~override/zbnephy.bmp~
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-BEGIN @20004 DESIGNATED 10 LABEL ~zb_llewren_nephetel_portrait~ // ADD ALT PORTRAITS
+BEGIN @20005 DESIGNATED 10 LABEL ~zb_llewren_nephetel_portrait~ // ADD ALT PORTRAITS
 REQUIRE_COMPONENT "zbpod.tp2" "2" @30000 // traify later
-SUBCOMPONENT ~Nephetel Alternate Portraits~ // traify later
+SUBCOMPONENT @20003
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 COPY ~%MOD_FOLDER%/altportrait/llewren_zbnephy.bmp~ ~override/zbnephy.bmp~
