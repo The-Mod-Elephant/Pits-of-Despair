@@ -17,12 +17,3 @@ DO ~SetGlobal("ZB_NEPH_INTERJECT_1","GLOBAL",1)~
   == ZBNEPHJ @35 /* Even though everyone laughs at the orc warband, it has cut down many unwary new gladiators. That's why Dennaton keeps tormenting the orcs. He will raise them from the dead and mock them for every failed attempt to kill even a single gladiator. */
   == AERIEJ IF ~InParty("aerie") InMyArea("aerie") !StateCheck("aerie",CD_STATE_NOTVALID)~ THEN @44 /* That is horrible, h-he is truly a despicable man */
 END
-
-// Before match 1, If PC has not completed at least 1 training match
-CHAIN
-IF ~Global("ZB_NEPH_INTERJECT_1","GLOBAL",0) GlobalLT("zb_train_spawn","GLOBAL",1)~
-THEN ZBNEPHJ 2
-  @35 /* Even though everyone laughs at the orc warband, it has cut down many unwary new gladiators. That's why Dennaton keeps tormenting the orcs. He will raise them from the dead and mock them for every failed attempt to kill even a single gladiator. */
-DO ~SetGlobal("ZB_NEPH_INTERJECT_1","GLOBAL",1)~
-  == AERIEJ IF ~InParty("aerie") InMyArea("aerie") !StateCheck("aerie",CD_STATE_NOTVALID)~ THEN @44 /* That is horrible, h-he is truly a despicable man */
-END
