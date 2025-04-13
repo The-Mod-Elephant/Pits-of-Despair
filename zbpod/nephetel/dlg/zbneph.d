@@ -188,8 +188,7 @@ IF ~~ ZBNEPHCOPPERCORONET
   IF ~~ DO ~
     ApplySpell(Myself,WIZARD_INVISIBILITY)
     Wait(1)
-    SetGlobal("ZB_NEPH_COPPERCORENT","GLOBAL",1)
-    EscapeArea()~ EXIT
+    MoveGlobal("AR0406","ZBNEPH",[1586.1800])~ EXIT
 END
 
 IF ~~ ZBNEPHIWOULDBEHAPPY
@@ -203,8 +202,7 @@ IF ~~ ZBNEPHEXIT
   IF ~~ DO ~
     ApplySpell(Myself,WIZARD_INVISIBILITY)
     Wait(1)
-    SetGlobal("ZB_NEPH_COPPERCORENT","GLOBAL",1)
-    EscapeArea()~ EXIT
+    MoveGlobal("AR0406","ZBNEPH",[1586.1800])~ EXIT
 END
 
 // Copper Cornet

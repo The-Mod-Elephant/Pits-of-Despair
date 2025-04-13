@@ -31,13 +31,6 @@ COPY ~%MOD_FOLDER%/nephetel/cre/zbmes.cre~ ~override~
   WRITE_ASCII SCRIPT_OVERRIDE ~zbme2~ #8
   WRITE_ASCII DIALOG ~zbmes~ #8
 
-/// Dialog ///
-// Compile dialog
-// NOTE:  DO NOT MOVE TARTL's DIALOGUE HE REFERS TO NEPH VIA LABELS WHICH DO NOT EXIST IF NOT COMPILED TOGETHER
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/dlg~
-                        ~%MOD_FOLDER%/dlg/ohbtartl.d~
-                        USING ~%MOD_FOLDER%/lang/%LANGUAGE%/neph.tra~
-
 // Scripts
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/baf~
                         USING ~%MOD_FOLDER%/lang/%LANGUAGE%/neph.tra~

@@ -73,6 +73,3 @@ UNLESS ~ZB0701~
 // Add neph to trademeet inn after escape
 EXTEND_BOTTOM ~AR2010.BCS~ ~%MOD_FOLDER%/bp2scripts/ar2010.baf~
   EVALUATE_BUFFER
-
-EXTEND_BOTTOM ~AR0406.BCS~ ~%MOD_FOLDER%/bp2scripts/ar0406.baf~
-  EVALUATE_BUFFER

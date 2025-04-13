@@ -9,7 +9,7 @@ THEN
         Wait(4)
         FadeToColor([10.0],0)
         Wait(1)
-        ActionOverride("zbneph",DestroySelf())
+        MoveGlobal("AR2010","ZBNEPH",[1586.1800])
         SmallWait(25)
         LeaveAreaLUAPanic("AR2010","",[410.640],W)
         LeaveAreaLUA("AR2010","",[410.640],W)
