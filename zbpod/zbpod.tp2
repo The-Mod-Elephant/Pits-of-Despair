@@ -93,7 +93,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
                         ~%MOD_FOLDER%/dlg/ohbnajim.d~
                         ~%MOD_FOLDER%/dlg/ohbbrodl.d~ /* still needs HEAVY edits */
                         ~%MOD_FOLDER%/dlg/ohbstann.d~
-                        ~%MOD_FOLDER%/dlg/ohbtartl.d~
                         ~%MOD_FOLDER%/dlg/ohbcook.d~
                         ~%MOD_FOLDER%/dlg/ohbcurel.d~
                         ~%MOD_FOLDER%/dlg/ohbdulf.d~
