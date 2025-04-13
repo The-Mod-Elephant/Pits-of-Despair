@@ -412,12 +412,24 @@ THEN
 END
 
 IF
-	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID) 
 	Global("ZB_NEPH_INTERJECT_1","GLOBAL",1)
 THEN
 	RESPONSE #100
-	SetCutSceneLite(TRUE)
 	SetGlobal("ZB_NEPH_INTERJECT_1","GLOBAL",2)
+	ActionOverride("zbneph",FaceObject([PC]))
+	SmallWait(5)
+	ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
+END
+
+IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("ZB_NEPH_INTERJECT_1","GLOBAL",3)
+THEN
+	RESPONSE #100
+	SetGlobal("ZB_NEPH_INTERJECT_1","GLOBAL",4)
+	ActionOverride("zbneph",SetDialog("ZBNEPH"))
+	SetCutSceneLite(TRUE)
 	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
 	SetGlobal("OHB_101","GLOBAL",1)
 	SetGlobal("OHB_ARENA","GLOBAL",1)
@@ -437,11 +449,32 @@ END
 
 IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("ZB_NEPH_INTERJECT_2","GLOBAL",3)
+THEN
+	RESPONSE #100
+	SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",3)
+	ActionOverride("zbneph",SetDialog("ZBNEPH"))
+END
+
+IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 	Global("ZB_NEPH_INTERJECT_3","GLOBAL",1)
 THEN
 	RESPONSE #100
-	SetCutSceneLite(TRUE)
 	SetGlobal("ZB_NEPH_INTERJECT_3","GLOBAL",2)
+	ActionOverride("zbneph",FaceObject([PC]))
+	SmallWait(5)
+	ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
+END
+
+IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("ZB_NEPH_INTERJECT_3","GLOBAL",3)
+THEN
+	RESPONSE #100
+	SetGlobal("ZB_NEPH_INTERJECT_3","GLOBAL",4)
+	ActionOverride("zbneph",SetDialog("ZBNEPH"))
+	SetCutSceneLite(TRUE)
 	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
 	SetGlobal("OHB_103","GLOBAL",1)
 	SetGlobal("OHB_ARENA","GLOBAL",3)
@@ -453,22 +486,45 @@ IF
 	Global("ZB_NEPH_INTERJECT_4","GLOBAL",1)
 THEN
 	RESPONSE #100
-	SetCutSceneLite(TRUE)
 	SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",2)
+	ActionOverride("zbneph",FaceObject([PC]))
+	SmallWait(5)
+	ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
+END
+
+IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("ZB_NEPH_INTERJECT_4","GLOBAL",3)
+THEN
+	RESPONSE #100
+	SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",4)
+	ActionOverride("zbneph",SetDialog("ZBNEPH"))
+	SetCutSceneLite(TRUE)
 	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
 	SetGlobal("OHB_104","GLOBAL",1)
 	SetGlobal("OHB_ARENA","GLOBAL",3)
 	SetGlobal("OHB_INTERVIEW","GLOBAL",1)
 END
 
-
 IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	Global("ZB_NEPH_INTERJECT_5","GLOBAL",1)
 THEN
 	RESPONSE #100
-	SetCutSceneLite(TRUE)
 	SetGlobal("ZB_NEPH_INTERJECT_5","GLOBAL",2)
+	ActionOverride("zbneph",FaceObject([PC]))
+	SmallWait(5)
+	ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
+END
+
+IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("ZB_NEPH_INTERJECT_5","GLOBAL",3)
+THEN
+	RESPONSE #100
+	SetGlobal("ZB_NEPH_INTERJECT_5","GLOBAL",4)
+	ActionOverride("zbneph",SetDialog("ZBNEPH"))
+	SetCutSceneLite(TRUE)
 	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
 	SetGlobal("OHB_105","GLOBAL",1)
 	SetGlobal("OHB_ARENA","GLOBAL",3)

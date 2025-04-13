@@ -50,8 +50,7 @@ END
 // Actual first battle
 IF ~~ THEN BEGIN 7
   SAY @3158 /* Fantastic! I'll let Dennaton know. He'll be thrilled! Prepare yourselves, and I'll be right back! */
-  IF ~Global("OHB_LAST_BATTLE","GLOBAL",0) GlobalGT("zb_train_spawn","GLOBAL",0)~ EXTERN ZBNEPHJ ZBNEPHJMATCH1R1
-  IF ~Global("OHB_LAST_BATTLE","GLOBAL",0) Global("zb_train_spawn","GLOBAL",0)~ EXTERN ZBNEPHJ ZBNEPHJMATCH1R2
+  IF ~~ THEN DO ~SetGlobal("ZB_NEPH_INTERJECT_1","GLOBAL",1)~ EXIT
 END
 
 IF ~~ THEN BEGIN 8
@@ -429,35 +428,24 @@ IF ~  Global("OHB_TALKED_TARTL","LOCALS",2)
 Global("ohb_finale","global",0)
 ~ THEN BEGIN 46
   SAY @3246 /* Hello again, <CHARNAME>. The arena awaits! */
-  IF ~!StateCheck(Player1,STATE_REALLY_DEAD)
-!Global("OHB_LAST_BATTLE","GLOBAL",0)
-~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
-  IF ~!StateCheck(Player1,STATE_REALLY_DEAD)
-Global("OHB_LAST_BATTLE","GLOBAL",0)
-~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 7
+  IF ~Global("OHB_LAST_BATTLE","GLOBAL",0)~ THEN GOTO 7
+  IF ~!Global("OHB_LAST_BATTLE","GLOBAL",0)~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
   IF ~~ THEN REPLY @3247 /* Before we get to that, may I ask you some questions? */ GOTO 45
-  IF ~  Global("OHB_DEBUG","GLOBAL",2)
-~ THEN REPLY @3248 /* Debug Mode On */ DO ~SetGlobal("OHB_DEBUG","GLOBAL",1)
-~ GOTO 53
-  IF ~  Global("OHB_DEBUG","GLOBAL",1)
-~ THEN REPLY @3249 /* Debug Mode Off */ DO ~SetGlobal("OHB_DEBUG","GLOBAL",2)
-~ GOTO 54
   IF ~~ THEN REPLY @3250 /* Let it. I've other things to do. */ EXIT
 END
 
 IF ~~ THEN BEGIN 47
   SAY @3251 /* Will you be fighting our latest offering? */
-  IF ~Global("OHB_LAST_BATTLE","GLOBAL",0) GlobalGT("zb_train_spawn","GLOBAL",0)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ EXTERN ZBNEPHJ ZBNEPHJMATCH1R1
-  IF ~Global("OHB_LAST_BATTLE","GLOBAL",0) Global("zb_train_spawn","GLOBAL",0)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ EXTERN ZBNEPHJ ZBNEPHJMATCH1R2
+  IF ~Global("OHB_LAST_BATTLE","GLOBAL",0)~ THEN GOTO 7
   IF ~Global("OHB_LAST_BATTLE","GLOBAL",101)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ DO ~
       SetCutSceneLite(TRUE)
       SetGlobal("OHB_START_BATTLE","GLOBAL",1)
       SetGlobal("OHB_102","GLOBAL",1)
       SetGlobal("OHB_ARENA","GLOBAL",2)
       SetGlobal("OHB_INTERVIEW","GLOBAL",1)~ EXIT
-  IF ~Global("OHB_LAST_BATTLE","GLOBAL",102)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ EXTERN ZBNEPHJ ZBNEPHJMATCH3
-  IF ~Global("OHB_LAST_BATTLE","GLOBAL",103)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ EXTERN ZBNEPHJ ZBNEPHJMATCH4
-  IF ~Global("OHB_LAST_BATTLE","GLOBAL",104)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ EXTERN ZBNEPHJ ZBNEPHJMATCH5
+  IF ~Global("OHB_LAST_BATTLE","GLOBAL",102)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ DO ~SetGlobal("ZB_NEPH_INTERJECT_3","GLOBAL",1)~ EXIT
+  IF ~Global("OHB_LAST_BATTLE","GLOBAL",103)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ DO ~SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",1)~ EXIT
+  IF ~Global("OHB_LAST_BATTLE","GLOBAL",104)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ DO ~SetGlobal("ZB_NEPH_INTERJECT_5","GLOBAL",1)~ EXIT
   IF ~Global("OHB_LAST_BATTLE","GLOBAL",105)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ DO ~SetCutSceneLite(TRUE)
 SetGlobal("OHB_START_BATTLE","GLOBAL",1)
 SetGlobal("OHB_201","GLOBAL",1)
