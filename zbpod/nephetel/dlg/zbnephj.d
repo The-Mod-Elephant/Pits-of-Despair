@@ -73,7 +73,7 @@ EXIT
 
 // Before match 1, If PC has completed at least 1 training match
 CHAIN
-IF ~Global("ZB_NEPH_INTERJECT_1","GLOBAL",0) GlobalGT("zb_train_spawn","GLOBAL",0)~
+IF ~Global("ZB_NEPH_INTERJECT_1","GLOBAL",0)~
 THEN ZBNEPHJ 9
   @34 /* *waves* Hello 'Hero', I saw your battles with the beasts. 'Quite ferocious', but then again they were just beasts. Good job. */
 DO ~SetGlobal("ZB_NEPH_INTERJECT_1","GLOBAL",1)~

@@ -51,7 +51,7 @@ END
 IF ~~ THEN BEGIN 7
   SAY @3158 /* Fantastic! I'll let Dennaton know. He'll be thrilled! Prepare yourselves, and I'll be right back! */
   IF ~Global("OHB_LAST_BATTLE","GLOBAL",0) GlobalGT("zb_train_spawn","GLOBAL",0)~ EXTERN ~ZBNEPHJ~ 9
-  IF ~Global("OHB_LAST_BATTLE","GLOBAL",0) GlobalLT("zb_train_spawn","GLOBAL",1)~ EXTERN ~ZBNEPHJ~ 10
+  IF ~Global("OHB_LAST_BATTLE","GLOBAL",0) Global("zb_train_spawn","GLOBAL",0)~ EXTERN ~ZBNEPHJ~ 10
 END
 
 IF ~~ THEN BEGIN 8
