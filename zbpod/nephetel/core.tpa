@@ -31,6 +31,10 @@ COPY ~%MOD_FOLDER%/nephetel/cre/zbmes.cre~ ~override~
   WRITE_ASCII SCRIPT_OVERRIDE ~zbme2~ #8
   WRITE_ASCII DIALOG ~zbmes~ #8
 
+// Dialogue
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/dlg~
+                        USING ~%MOD_FOLDER%/lang/%LANGUAGE%/neph.tra~
+
 // Scripts
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/baf~
                         USING ~%MOD_FOLDER%/lang/%LANGUAGE%/neph.tra~

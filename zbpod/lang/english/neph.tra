@@ -43,7 +43,7 @@
 @42   = ~So the strumpet has claws (Then again sometimes we like that, don't we? Hmm.).~
 @43   = ~You think it's a good job to destroy nature's children? We do as the balance dictates.~
 @44   = ~That is horrible, h-he is truly a despicable man~
-@45   = ~Elder Umber Hulks are extremely dangerous and fast to boot. They can easily overpower those that gaze into their eyes. There are potions that  protect from these types of effects and I happen to have one right here. Yours, for a price of course.~
+@45   = ~Elder Umber Hulks are extremely dangerous and fast to boot. They can easily overpower those that gaze into their eyes. There are potions that  protect from these types of effects and I happen to have one right here.~
 @46   = ~I'll take it!~
 @47   = ~Keep your potion, my eyes are on the prize.~
 @48   = ~As long as you don't meet the gaze of those Umber Hulks, eh?~
@@ -58,7 +58,7 @@
 @57   = ~Excellent! An appropriate death to our enemies. Let us speak of escape if you wish it.~
 @58   = ~I wish to discuss escaping the Pits of Despair.~
 @59   = ~An opportunity has come our way, and by Tymora, it is time to take advantage. Meet me in the sleeping quarters to discuss our plan.~
-@60   = ~I spied a war party of drow who were recently captured by the Planar Hunters. Whether it is poison, magic, or their spider pets, they will use every advantage to destroy you. You would be the first to face them, so be careful.  In fact, I think you could use a hand. While most of these amateurs will charge you for their assistance, I will fight for you free and clear this time only. What say you? A favor to my new favorite gladiator.~
+@60   = ~I spied a war party of drow who were recently captured by the Planar Hunters. Whether it is poison, magic, or their spider pets, they will use every advantage to destroy you. You would be the first to face them, so be careful.~
 @61   = ~Hmph. I wonder what fate befell their house? Only the weak allow themselves to be captured by surfacers.~
 @62   = ~Oh really, Viconia? As I remember it, you yourself were captured at one point.~
 @63   = ~Only for moments, then they faced justice as any who dare to chain a drow would.~
@@ -121,3 +121,5 @@
 @120  = ~Yes, please join us.~
 @121  = ~Not right now. We will contact you if we have a need for you.~
 @122  = ~I'm glad you regained your senses, lead the way.~
+@123  = ~In fact, I think you could use a hand. While most of these amateurs will charge you for their assistance, I will fight for you free and clear this time only. What say you? A favor to my new favorite gladiator.~
+@124  =~Yours, for a price of course.~
