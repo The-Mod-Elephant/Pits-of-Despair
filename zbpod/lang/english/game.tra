@@ -513,9 +513,23 @@ Weight: 3~
 @10211 = ~This is the skeleton of a racing lizard that Jan received by trading Lissa's prize turnip for.
 
 STATISTICS:
+
+Equipped abilities:
 – Luck: +1
 
 Weight: 1~
+
+@10220 = ~Keyring~
+@10221 = ~This plain brass ring is unassuming without engraving or apparent magical properties. When slipped from your finger, it transforms into a keyring adorned with an assortment of golden keys that hum with latent power.
+
+Whoever crafted this masterwork was as careful to hide themselves as their creation, but they certainly had access to an implausible number of skeleton keys, and it is unlikely this ring was not involved in many an 'impossible' heist.
+
+Equipped abilities:
+– Finds automatically traps once per round
+
+Charge abilities:
+– Cast Knock three times per day
+  Special: Opens most non-magical locks~
 
 // Imported BG1 Items
 @11000 = ~BG Imported Items~

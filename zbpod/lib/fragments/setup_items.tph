@@ -136,6 +136,12 @@ COPY_EXISTING ~zbpdnote.itm~ ~override~
     SAY NAME2 @10112
     SAY IDENTIFIED_DESC @3670
 
+///////// Key Ring \\\\\\\\
+COPY ~%MOD_FOLDER%/items/keyring~ ~override~
+COPY_EXISTING ~zbrngkdt.itm~ ~override~
+    SAY NAME2 @10220
+    SAY IDENTIFIED_DESC @10221
+
 //////// Eshpel \\\\\\\\
 INCLUDE ~%MOD_FOLDER%/lib/a7-cutscene_customization.tph~
 <<<<<<<< .../inlined/cutscene.baf
