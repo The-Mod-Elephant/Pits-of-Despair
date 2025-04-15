@@ -513,9 +513,23 @@ Weight: 3~
 @10211 = ~This is the skeleton of a racing lizard that Jan received by trading Lissa's prize turnip for.
 
 STATISTICS:
+
+Equipped abilities:
 – Luck: +1
 
 Weight: 1~
+
+@10220 = ~Keyring~
+@10221 = ~This plain brass ring is unassuming without engraving or apparent magical properties. When slipped from your finger, it transforms into a keyring adorned with an assortment of golden keys that hum with latent power.
+
+Whoever crafted this masterwork was as careful to hide themselves as their creation, but they certainly had access to an implausible number of skeleton keys, and it is unlikely this ring was not involved in many an 'impossible' heist.
+
+Equipped abilities:
+– Finds automatically traps once per round
+
+Charge abilities:
+– Cast Knock three times per day
+  Special: Opens most non-magical locks~
 
 // Imported BG1 Items
 @11000 = ~BG Imported Items~
@@ -768,7 +782,7 @@ STATISTICS:
 
 Damage: 1d2+1 poison damage
 Poisoning: Save vs. Death at +2 or suffer 6 points of poison damage over 2 rounds
-Self-damage: User suffers the same effect if their Dexterity is below 17
+Self-damage: User suffers the same effect if their Dexterity is below 16
 Duration: 1 turn
 
 Weight: 1~
@@ -783,7 +797,7 @@ STATISTICS:
 
 Damage: None
 Poisoning: Save vs. Death or fall into a deep slumber for 1 turn. Receiving further damage will awaken the target.
-Self-damage: User suffers the same effect if their Dexterity is below 17
+Self-damage: User suffers the same effect if their Dexterity is below 16
 Duration: 1 turn
 
 Weight: 1~
@@ -822,7 +836,7 @@ STATISTICS:
 
 Damage: None
 Poisoning: Save vs. Spell at +2 or become stunned for 2 rounds.
-Self-damage: User suffers the same effect if their Dexterity is below 17
+Self-damage: User suffers the same effect if their Dexterity is below 16
 Duration: 1 turn
 
 Weight: 1~
@@ -837,7 +851,7 @@ STATISTICS:
 
 Damage: +1 poison damage (non-dragons)
 Poisoning: Save vs. Death or have Strength and movement speed reduced by half for 5 rounds. Only true dragons are unaffected by this effect, and as such, close relatives like faerie dragons, dragonborn, half-dragons and wyvern will be affected.
-Self-damage: User suffers the same effect if their Dexterity is below 17
+Self-damage: User suffers the same effect if their Dexterity is below 16
 Duration: 1 turn
 
 Weight: 1~
@@ -852,11 +866,11 @@ STATISTICS:
 
 Damage: 1d3+1 poison damage (non-draconic only), or 1d6+2 poison damage (draconic only)
 Special: Dragons, half-dragons and wyverns suffer the following effects if Save vs. Spell is failed:
-  – APR reduced to 1/2 for 1 round
+  – Attacks per round reduced to 1/2 for 1 round
   – Strength is reduced by 40% for 2 rounds
-  – Casting speed, THAC0, and AC is reduced by 5 for 3 rounds
+  – Casting speed, THAC0, and Armor Class are damaged by 5 for 3 rounds
   – The pain it causes may affect concentration: 50% chance of disrupting Stoneskin or Improved Invisibility.
-Self-damage: User suffers the same effect if their Dexterity is below 17
+Self-damage: User suffers the same effect if their Dexterity is below 16
 Duration: 1 turn
 
 Weight: 1~

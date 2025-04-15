@@ -79,41 +79,41 @@ COPY_EXISTING ~ZBSTOFDD.itm~ ~override~
 
 //////// Nephy's dagger (Phantasmal Fang +4) \\\\\\\\
 COPY ~%MOD_FOLDER%/items/nephy_umbral_fang~ ~override~
-COPY_EXISTING ~zspddaga.itm~ ~override~
+COPY_EXISTING ~zbpddaga.itm~ ~override~
     SAY NAME2 @10050
     SAY IDENTIFIED_DESC @10051
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10052) END
 
-COPY_EXISTING ~zspddg01.spl~ ~override~
-              ~zspddg02.spl~ ~override~
-              ~zspddg03.spl~ ~override~
+COPY_EXISTING ~zbpddg01.spl~ ~override~
+              ~zbpddg02.spl~ ~override~
+              ~zbpddg03.spl~ ~override~
     SAY NAME2 @10050
 
-COPY_EXISTING ~zspddagb.itm~ ~override~
+COPY_EXISTING ~zbpddagb.itm~ ~override~
     SAY NAME2 @10053
     SAY IDENTIFIED_DESC @10054
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10052) END
 
-COPY_EXISTING ~zspddg04.spl~ ~override~
-              ~zspddg05.spl~ ~override~
-              ~zspddg06.spl~ ~override~
+COPY_EXISTING ~zbpddg04.spl~ ~override~
+              ~zbpddg05.spl~ ~override~
+              ~zbpddg06.spl~ ~override~
     SAY NAME2 @10053
 
 
 //////// Astral Crossbow of Speed \\\\\\\\
 COPY ~%MOD_FOLDER%/items/astral_crossbow~ ~override~
-COPY_EXISTING ~zspdxboa.itm~ ~override~
+COPY_EXISTING ~zbpdxboa.itm~ ~override~
     SAY NAME2 @10060
     SAY IDENTIFIED_DESC @10061
-COPY_EXISTING ~zspdxbob.itm~ ~override~
+COPY_EXISTING ~zbpdxbob.itm~ ~override~
     SAY NAME2 @10063
     SAY IDENTIFIED_DESC @10064
-COPY_EXISTING ~zspdxb01.spl~ ~override~
+COPY_EXISTING ~zbpdxb01.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10062) END
 
 //////// Nephy's supple gloves \\\\\\\\
 COPY ~%MOD_FOLDER%/items/nephy_gloves~ ~override~
-COPY_EXISTING ~zspdbrca.itm~ ~override~
+COPY_EXISTING ~zbpdbrca.itm~ ~override~
     SAY NAME2 @10090
     SAY IDENTIFIED_DESC @10091
     SET nephetel = RESOLVE_STR_REF(@15001)
@@ -121,12 +121,12 @@ COPY_EXISTING ~zspdbrca.itm~ ~override~
 
 //////// Nephy's Rogue's luck +1 \\\\\\\\
 COPY ~%MOD_FOLDER%/items/nephy_ring~ ~override~
-COPY_EXISTING ~zspdrnga.itm~ ~override~
+COPY_EXISTING ~zbpdrnga.itm~ ~override~
     SAY NAME2 @10100
     SAY IDENTIFIED_DESC @10101
 
 //////// Improved Rogue's luck +2 \\\\\\\\
-COPY_EXISTING ~zspdrngb.itm~ ~override~
+COPY_EXISTING ~zbpdrngb.itm~ ~override~
     SAY NAME2 @10102
     SAY IDENTIFIED_DESC @10103
 
@@ -135,6 +135,12 @@ COPY ~%MOD_FOLDER%/items/vytarinote~ ~override~
 COPY_EXISTING ~zbpdnote.itm~ ~override~
     SAY NAME2 @10112
     SAY IDENTIFIED_DESC @3670
+
+///////// Key Ring \\\\\\\\
+COPY ~%MOD_FOLDER%/items/keyring~ ~override~
+COPY_EXISTING ~zbrngkdt.itm~ ~override~
+    SAY NAME2 @10220
+    SAY IDENTIFIED_DESC @10221
 
 //////// Eshpel \\\\\\\\
 INCLUDE ~%MOD_FOLDER%/lib/a7-cutscene_customization.tph~
