@@ -629,12 +629,6 @@ THEN
 		SetGlobal("TIER","GLOBAL",2)
 		SetGlobal("BLACK_PITS","GLOBAL",2)
 		CreateCreature("ohbdrgd",[444.2544],SW)  // Guard
-		AddStoreItem("OHBSDWM","STAF15",1,1)  // Staff of Air +2
-		AddStoreItem("OHBSDWM","STAF16",1,1)  // Staff of Earth +2
-		AddStoreItem("OHBSDWM","STAF17",1,1)  // Staff of Fire +2
-		AddStoreItem("OHBSDWM","QUIVER01",1,1)  // Quiver of Plenty +1
-		AddStoreItem("OHBSDWM","QUIVER02",1,1)  // Case of Plenty +1
-		AddStoreItem("OHBSDWM","QUIVER05",1,1)  // Bag of Plenty +1
 		AddStoreItem("OHBIMIM","CLCK15",1,1)  // Robe of the Good Archmagi
 		AddStoreItem("OHBIMIM","CLCK16",1,1)  // Robe of the Neutral Archmagi
 		AddStoreItem("OHBIMIM","CLCK17",1,1)  // Robe of the Evil Archmagi
@@ -645,6 +639,7 @@ THEN
 		AddStoreItem("OHBIMIM","BRAC15",1,1)  // Bracers of Defense AC 3
 		AddStoreItem("OHBIMIM","RING31",1,1)  // Ring of Regeneration
 		AddStoreItem("OHBIMIM","RODS03",5,1)  // Rod of Resurrection
+//		AddStoreItem("OHBIMIM","",1,1)  // Dark Knight Belt
 		AddStoreItem("OHBCONCO","POTN55",0,1)  // Potion of Superior Healing
 		AddStoreItem("OHBSDWM","AROW06",5,1)  // Arrow of Detonation
 		AddStoreItem("OHBSDWM","AROW07",10,1)  // Arrow of Dispelling
@@ -673,42 +668,11 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("TIER","GLOBAL",3)
-		SetGlobal("BLACK_PITS","GLOBAL",3)
-		AddStoreItem("OHBSDWM","SW1H25",1,1)  // Kundane +2
-		AddStoreItem("OHBSDWM","SW1H30",1,1)  // Belm +2
-		AddStoreItem("OHBSDWM","WA2DAK",1,1)  // Dak'kon's Zerth Blade +2
-		AddStoreItem("OHBSDWM","WANINJA",1,1)  // Ninjatō of the Scarlet Brotherhood +3
-		AddStoreItem("OHBSDWM","SW1H66",1,1)  // Yamato +4
-		AddStoreItem("OHBSDWM","SW1H28",1,1)  // Cutthroat +4
-		AddStoreItem("OHBSDWM","DAGG14",1,1)  // Boneblade +4
-		AddStoreItem("OHBSDWM","SW2H09",1,1)  // Warblade +4
-		AddStoreItem("OHBSDWM","HALB06",1,1)  // Blackmist +4
-		AddStoreItem("OHBSDWM","SPER10",1,1)  // Spear of Withering +4
 		AddStoreItem("OHBSDWM","zbfmaw",1,1)  // Festering Maw +3 (NEW)
 		AddStoreItem("OHBSDWM","HAMM06",1,1)  // Dwarven Thrower +3
-		AddStoreItem("OHBSDWM","WAFLAIL",1,1)  // Defender of Easthaven +3
 		AddStoreItem("OHBSDWM","STAF12",10,1)  // Staff of Power
-		AddStoreItem("OHBSDWM","RODS04",1,1)  // Rod of Smiting
-		AddStoreItem("OHBSDWM","STAF20",1,1)  // Staff of Rhynn +4
-		AddStoreItem("OHBSDWM","BOW10",1,1)  // Heartseeker +3
-		AddStoreItem("OHBSDWM","BOW13",1,1)  // Mana Bow +4
-		AddStoreItem("OHBHUEGR","HELM32",1,1)  // Helm of the Rock
-		AddStoreItem("OHBHUEGR","SHLD22",1,1)  // Sentinel +4
-		AddStoreItem("OHBHUEGR","PLAT18",1,1)  // Red Dragon Scale
-		AddStoreItem("OHBHUEGR","CHAN11",1,1)  // Crimson Chain +5
-		AddStoreItem("OHBHUEGR","PLAT16",1,1)  // Armor of the Hart +3
-		AddStoreItem("OHBIMIM","HELM26",1,1)  // Lavender Ioun Stone
-		AddStoreItem("OHBIMIM","CLCK06",1,1)  // Whispers of Silence
-		AddStoreItem("OHBIMIM","BOOT01",1,1)  // The Paws of the Cheetah
-		AddStoreItem("OHBIMIM","BRAC23",1,1)  // Blessed Bracers
-		AddStoreItem("OHBIMIM","BRAC25",1,1)  // Wondrous Gloves
-		AddStoreItem("OHBIMIM","BELT07",1,1)  // Girdle of Stone Giant Strength
-		AddStoreItem("OHBIMIM","AMUL20",1,1)  // Kaligun's Amulet of Magic Resistance
-		AddStoreItem("OHBIMIM","AMUL26",1,1)  // Amulet of Cheetah Speed
 		AddStoreItem("OHBIMIM","RING33",1,1)  // Ring of the Ram
 		AddStoreItem("OHBIMIM","RING27",1,1)  // Ring of Fire Control
-		AddStoreItem("OHBIMIM","RING09",1,1)  // Edventar's Gift
-		AddStoreItem("OHBIMIM","RING42",1,1)  // The Specter's Ring
 		AddStoreItem("OHBIMIM","RING46",1,1)  // Ring of Anti-Venom
 		AddStoreItem("OHBSDWM","AROW06",5,1)  // Arrow of Detonation
 		AddStoreItem("OHBSDWM","AROW07",10,1)  // Arrow of Dispelling
@@ -752,39 +716,9 @@ THEN
 		SetGlobal("TIER","GLOBAL",4)
 		SetGlobal("BLACK_PITS","GLOBAL",4)
 		AddStoreItem("OHBSDWM","DAGG20",1,1)  // Life-Stealer +4
-		AddStoreItem("OHBSDWM","SW1H64",1,1)  // Purifier +4
-		AddStoreItem("OHBSDWM","SW1H67",1,1)  // Usuno's Blade +4
-		AddStoreItem("OHBSDWM","SW1H68",1,1)  // Spectral Brand +4
-		AddStoreItem("OHBSDWM","AX1H16",1,1)  // K'logarath +4
-		AddStoreItem("OHBSDWM","SW2H08",1,1)  // Soul Reaver +4
-		AddStoreItem("OHBSDWM","HALB05",1,1)  // Dragon's Breath +4
-		AddStoreItem("OHBSDWM","BLUN25",1,1)  // Mace of Disruption +2
-		AddStoreItem("OHBSDWM","BLUN35",1,1)  // Ice Star +4
-		AddStoreItem("OHBSDWM","BLUN27",1,1)  // Club of Detonation +5
-		AddStoreItem("OHBSDWM","STAF14",1,1)  // Staff of the Woodlands +4
-		AddStoreItem("OHBSDWM","STAF21",1,1)  // Staff of the Ram +4
-		AddStoreItem("OHBSDWM","BOW19",1,1)  // Shortbow of Gesen
-		AddStoreItem("OHBSDWM","BOW22",1,1)  // Taralash +4
-		AddStoreItem("OHBSDWM","BOW21",1,1)  // Darkfire Bow +5
-		AddStoreItem("OHBSDWM","SLNG08",1,1)  // Erinne Sling +4
-		AddStoreItem("OHBSDWM","WASLING",1,1)  // Sling of Everard +5
 		AddStoreItem("OHBSDWM","OHAROW50",0,1)  // Arrow +4
 		AddStoreItem("OHBSDWM","OHBOLT50",0,1)  // Bolt +4
-		AddStoreItem("OHBHUEGR","HELM30",1,1)  // Thieves' Hood
-		AddStoreItem("OHBHUEGR","WA2HELM",1,1)  // Vhailor's Helm
-		AddStoreItem("OHBHUEGR","SHLD31",1,1)  // Darksteel Shield +4
-		AddStoreItem("OHBHUEGR","LEAT23",1,1)  // Studded Leather of Thorns +6
-		AddStoreItem("OHBHUEGR","CHAN20",1,1)  // White Dragon Scale
-		AddStoreItem("OHBHUEGR","PLAT20",1,1)  // Blue Dragon Plate
-		AddStoreItem("OHBIMIM","CLCK24",1,1)  // Cloak of Reflection
-		AddStoreItem("OHBIMIM","CLCK32",1,1)  // Montolio's Cloak
-		AddStoreItem("OHBIMIM","BOOT01",1,1)  // The Paws of the Cheetah
-		AddStoreItem("OHBIMIM","BRAC26",1,1)  // Tzu-Zan's Bracers
-		AddStoreItem("OHBIMIM","BELT08",1,1)  // Girdle of Frost Giant Strength
 		AddStoreItem("OHBIMIM","AMUL17",10,1)  // Greenstone Amulet
-		AddStoreItem("OHBIMIM","AMUL28",1,1)  // Amulet of the Master Harper
-		AddStoreItem("OHBIMIM","RING41",1,1)  // The Warder's Signet +3
-		AddStoreItem("OHBIMIM","RING44",1,1)  // Heartwood Ring
 		AddStoreItem("OHBIMIM","RING08",1,1)  // Reaching Ring
 		AddStoreItem("OHBSDWM","AROW06",5,1)  // Arrow of Detonation
 		AddStoreItem("OHBSDWM","AROW07",10,1)  // Arrow of Dispelling
@@ -814,18 +748,6 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("OHB_final_restock","GLOBAL",1)
-		AddStoreItem("OHBSDWM","AX1H15",1,1)  // Axe of the Unyielding +5
-		AddStoreItem("OHBSDWM","HAMM11",1,1)  // Runehammer +5
-		AddStoreItem("OHBSDWM","SW2H18",1,1)  // Gram the Sword of Grief +5
-		AddStoreItem("OHBSDWM","SPER12",1,1)  // Ixil's Spike +6
-		AddStoreItem("OHBHUEGR","SHLD32",1,1)  // Shield of the Order +4
-		AddStoreItem("OHBHUEGR","LEAT24",1,1)  // Grandmaster's Armor +6
-		AddStoreItem("OHBHUEGR","CHAN19",1,1)  // Aslyferund Elven Chain +5
-		AddStoreItem("OHBHUEGR","PLAT21",1,1)  // Enkidu's Full Plate +3
-		AddStoreItem("OHBIMIM","WA2ROBE",1,1)  // Robe of Vecna
-		AddStoreItem("OHBIMIM","BOOT01",1,1)  // The Paws of the Cheetah
-		AddStoreItem("OHBIMIM","BOOT12",1,1)  // Gargoyle Boots
-		AddStoreItem("OHBIMIM","BELT11",1,1)  // Girdle of Fire Giant Strength
 		AddStoreItem("OHBSDWM","AROW06",5,1)  // Arrow of Detonation
 		AddStoreItem("OHBSDWM","AROW07",10,1)  // Arrow of Dispelling
 		AddStoreItem("OHBCONCO","POTN03",10,1)  // Potion of Hill Giant Strength
