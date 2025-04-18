@@ -123,12 +123,8 @@ APPEND ~ITEMDIAL.2da~
 ~zbeshpeu %label% zbeshpeu~
 UNLESS ~zbeshpeu~
 
-
-COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */
-        ~%MOD_FOLDER%/test/zbvyan.d~ /* vyantri's new line */
-        ~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */
-        ~%MOD_FOLDER%/test/gaelan.d~ /* add a line to gaelan */
-        ~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */
+// SoA Interjections
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/interjections/~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20002 DESIGNATED 3 LABEL ~zb_argent_sound~ // ADD ALT PORTRAITS
