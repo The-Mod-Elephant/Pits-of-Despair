@@ -5,6 +5,10 @@ THEN
 		CutSceneId("ohbdenna")  // Dennaton
 		MoveViewPoint([1360.495],BD_NORMAL)
 		Wait(1)
+		SetAreaScript("zbcut09s",OVERRIDE)
+		SetGlobal("ZBCUT09SKIP_CUTSCENE_BREAKABLE","GLOBAL",1)
+		SetCutSceneBreakable(TRUE)
+		SmallWait(25)
 		ActionOverride("ohbmerle",FaceObject("ohbimasc"))  // Imascus
 		DisplayStringHead("ohbmerle",94043)  // Imascus, Little John, the time has come! We won't get a better chance than this!
 		SmallWait(4)
@@ -109,6 +113,9 @@ THEN
 		Wait(3)
 		ActionOverride("ohbwing",ReallyForceSpell(Myself,DRYAD_TELEPORT))  // SPWI995.SPL (Dimension Door)
 		Wait(4)
+		SetCutSceneBreakable(FALSE)
+		SetAreaScript("",OVERRIDE)
+		SetGlobal("ZBCUT09SKIP_CUTSCENE_BREAKABLE","GLOBAL",2)
 		SetGlobal("OHB_EVENT_102","MYAREA",1)
 		SetGlobal("OHB_ENEMY_OVERRIDE","GLOBAL",0)
 		SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",1)

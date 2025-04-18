@@ -1,10 +1,3 @@
-// creator  : weidu (version 24900)
-// argument : OHBWING.DLG
-// game     : ..
-// source   : ../DATA/BLACKPITS.BIF
-// dialog   : ..\lang\en_us\dialog.tlk
-// dialogF  : (none)
-
 BEGIN ~OHBWING~
 
 IF ~~ THEN BEGIN 0
@@ -43,9 +36,7 @@ ActionOverride("ohbpol",Enemy())
 ~ EXIT
 END
 
-IF ~  Global("OHB_START_BATTLE","GLOBAL",3)
-Global("OHB_105","GLOBAL",1)
-~ THEN BEGIN 3
+IF ~Global("OHB_START_BATTLE","GLOBAL",3) Global("OHB_105","GLOBAL",1)~ THEN BEGIN 3
   SAY @7 /* Hold, Dennaton. These drow have not yet been paid for. */
   IF ~~ THEN EXTERN ~OHBDENNA~ 272
 END

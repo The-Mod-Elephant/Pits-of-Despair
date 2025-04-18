@@ -3298,7 +3298,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @3248 = ~Debug Mode On~
 @3249 = ~Debug Mode Off~
 @3250 = ~Let it. I've other things to do.~
-@3251 = ~Will you be fighting our latest offering?~
+@3251 = ~So, will you be fighting our latest offering?~
 @3252 = ~I'd like to fight my next battle.~
 @3253 = ~Let me fight a previous battle again.~
 @3254 = ~Actually, never mind—I shall return.~
@@ -3728,3 +3728,11 @@ Vyatri~
 @3673 = ~This has to be about one of those feuding noble nitwits, they probably cursed the ring.~
 @3674 = ~Oh no. Not Trademeet again. The stench, the manure. Animals everywhere, braying ....~
 /* changing several lines to remove Baeloth's Pit references - numbered 3675 - 3679 */
+@3680 = ~I see...~
+@3681 = ~Interesting... I'll be ready for that!~
+@3682 = ~Thanks.~
+@3683 = ~Her former...? Oh.~
+@3684 = ~Three dragons?!~
+@3685 = ~Undead, bhaalspawn? Right, hmmm.~
+@3686 = ~I am ready!~
+@3687 = ~Indeed.~
