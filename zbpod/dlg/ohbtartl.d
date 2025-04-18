@@ -27,22 +27,16 @@ IF ~~ THEN BEGIN 4
   IF ~~ THEN EXIT
 END
 
-IF ~  Global("OHB_TALKED_TARTL","LOCALS",1)
-Global("ohb_finale","global",0)
-~ THEN BEGIN 5
+IF ~Global("OHB_TALKED_TARTL","LOCALS",1) Global("ohb_finale","global",0)~ THEN BEGIN 5
   SAY @3150 /* Ah, <CHARNAME>! I've been anxiously awaiting your debut in the arena. I know what the legends say, but does the reality measure up? */
-  IF ~~ THEN REPLY @3151 /* Can reality ever measure up to a legend? */ DO ~SetGlobal("OHB_TALKED_TARTL","LOCALS",2)
-~ GOTO 6
-  IF ~~ THEN REPLY @3152 /* We shall see. */ DO ~SetGlobal("OHB_TALKED_TARTL","LOCALS",2)
-~ GOTO 33
-  IF ~~ THEN REPLY @3153 /* If anything, the legends downplay my prowess. */ DO ~SetGlobal("OHB_TALKED_TARTL","LOCALS",2)
-~ GOTO 34
+  IF ~~ THEN REPLY @3151 /* Can reality ever measure up to a legend? */ DO ~SetGlobal("OHB_TALKED_TARTL","LOCALS",2)~ GOTO 6
+  IF ~~ THEN REPLY @3152 /* We shall see. */ DO ~SetGlobal("OHB_TALKED_TARTL","LOCALS",2)~ GOTO 33
+  IF ~~ THEN REPLY @3153 /* If anything, the legends downplay my prowess. */ DO ~SetGlobal("OHB_TALKED_TARTL","LOCALS",2)~ GOTO 34
 END
 
 IF ~~ THEN BEGIN 6
   SAY @3154 /* Hmm... Perhaps not, but if anyone can do it, I'm sure it's you. Now are you ready to fight? */
-  IF ~  !StateCheck(Player1,STATE_REALLY_DEAD)
-~ THEN REPLY @3155 /* Certainly! */ GOTO 7
+  IF ~~ THEN REPLY @3155 /* Certainly! */ GOTO 7
   IF ~~ THEN REPLY @3156 /* I would rather talk a bit. */ GOTO 8
   IF ~~ THEN REPLY @3157 /* I think I need more time to prepare. */ GOTO 9
 END
@@ -174,92 +168,92 @@ END
 
 IF ~~ THEN BEGIN 18
   SAY @3193 /* Oh, it wouldn't be fair to the other combatants to say. The spontaneity is part of the fun, but I'm sure a <PRO_MANWOMAN> of your talents can adjust to any danger on the fly! */
-  IF ~~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~~ THEN REPLY @3680 /* I see... */ GOTO 47
   IF ~~ THEN REPLY @3195 /* If you won't tell me that, let's discuss something else. */ GOTO 45
   IF ~~ THEN REPLY @3196 /* I should go prepare then. Please excuse me. */ EXIT
 END
 
 IF ~~ THEN BEGIN 19
   SAY @3197 /* I probably shouldn't say, but... well, it's a pack of vampires, so cover your neck and make sure you have some protection against their unholy touch. */
-  IF ~~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~~ THEN REPLY @3681 /* Interesting... I'll be ready for that! */ GOTO 47
   IF ~~ THEN REPLY @3196 /* I should go prepare then. Please excuse me. */ EXIT
 END
 
 IF ~~ THEN BEGIN 20
   SAY @3198 /* Well, since it's you, I'll spill the beans. It's a band of githyanki. Some of them are armed with those special swords of theirs, so beware. They'll hit hard! */
-  IF ~~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~~ THEN REPLY @3680 /* I see... */ GOTO 47
   IF ~~ THEN REPLY @3196 /* I should go prepare then. Please excuse me. */ EXIT
 END
 
 IF ~~ THEN BEGIN 21
   SAY @3199 /* Fine, stop twisting my arm here! What we've got ready for you is a sahuagin sorcerer who's adept at summoning water weirds. */
-  IF ~~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~~ THEN REPLY @3682 /* Thanks. */ GOTO 47
   IF ~~ THEN REPLY @3196 /* I should go prepare then. Please excuse me. */ EXIT
 END
 
 IF ~~ THEN BEGIN 22
   SAY @3200 /* Dennaton would disapprove of my saying, but hey, you're a star, so your next opponent is Mardii, a halfling conjurer who specializes in summoning elementals. Beware, though, he's also quite the—uhh—"charmer," so protect yourself from mind spells too! */
-  IF ~~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~~ THEN REPLY @3680 /* I see... */ GOTO 47
   IF ~~ THEN REPLY @3196 /* I should go prepare then. Please excuse me. */ EXIT
 END
 
 IF ~~ THEN BEGIN 23
   SAY @3201 /* Well, I like you, and I hope you live, so I'll help you out. Watch out for this next fight. Dennaton's advertising it as the Blood War brought to the arena. We have demons. We have devils. They're as likely to kill each other as you, so maybe you should stay out of their way until one side wins... and then finish the winner off! */
-  IF ~~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~~ THEN REPLY @3682 /* Thanks. */ GOTO 47
   IF ~~ THEN REPLY @3196 /* I should go prepare then. Please excuse me. */ EXIT
 END
 
 IF ~~ THEN BEGIN 24
   SAY @3202 /* I probably shouldn't say, but... we have a group of monks from a cult known as the Twofold Trust. There's some to-do around about their belief—something about believing two goddesses are one. Eh, I'm no theologian, but I know this group is fanatical, highly resistant to mind-altering attacks, and absolutely vicious! */
-  IF ~~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~~ THEN REPLY @3681 /* Interesting... I'll be ready for that! */ GOTO 47
   IF ~~ THEN REPLY @3196 /* I should go prepare then. Please excuse me. */ EXIT
 END
 
 IF ~~ THEN BEGIN 25
   SAY @3203 /* Well, since it's you, I'll spill the beans. It's a big golem... but watch out because this golem has a unique secret. When defeated, it will shatter into several smaller golems, and believe it or not, it's the smaller ones that are the mean little buggers! */
-  IF ~~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~~ THEN REPLY @3680 /* I see... */ GOTO 47
   IF ~~ THEN REPLY @3196 /* I should go prepare then. Please excuse me. */ EXIT
 END
 
 IF ~~ THEN BEGIN 26
   SAY @3204 /* Fine, stop twisting my arm here! Dennaton actually had the Hunters travel down to the coast and drag a lich out of her crypt! Suffice it to say, she's a powerful spellcaster who can summon hoards of undead underlings. But her best trick—and this is the secret—is that she is very adept at hypnotizing her opponents and turning them against their former friends! */
-  IF ~~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~~ THEN REPLY @3682 /* Thanks. */ GOTO 47
   IF ~~ THEN REPLY @3196 /* I should go prepare then. Please excuse me. */ EXIT
 END
 
 IF ~~ THEN BEGIN 27
   SAY @3205 /* Dennaton would disapprove my saying, but hey, you're a star. Your next opponent is a trio of rakshasas. They're brutally efficient with their blades, but if you can somehow get past their innate resistance to magic, your victory should be easy. */
-  IF ~~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~~ THEN REPLY @3681 /* Interesting... I'll be ready for that! */ GOTO 47
   IF ~~ THEN REPLY @3196 /* I should go prepare then. Please excuse me. */ EXIT
 END
 
 IF ~~ THEN BEGIN 28
   SAY @3206 /* This is a tough one! You'll be facing several mind flayers, who will be looking to feast on your brains, but the real threat is their leader, who is capable of unleashing an unbelievable psionic assault that has killed all their previous opponents! To survive, you'll need to cut through his defenders quickly and then kill him before he is able to prepare his attack. Good luck! */
-  IF ~~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~~ THEN REPLY @3680 /* I see... */ GOTO 47
   IF ~~ THEN REPLY @3196 /* I should go prepare then. Please excuse me. */ EXIT
 END
 
 IF ~~ THEN BEGIN 29
   SAY @3207 /* I probably shouldn't say, but... we have some of the Winged's old comrades-in-arms who actually tried to collect a bounty on HER! Hah, they failed, and so now they're fodder for the arena! I've a feeling the Winged herself will be on hand to cheer you on against that pack of fallen devas. */
-  IF ~~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~~ THEN REPLY @3683 /* Her former...? Oh. */ GOTO 47
   IF ~~ THEN REPLY @3196 /* I should go prepare then. Please excuse me. */ EXIT
 END
 
 IF ~~ THEN BEGIN 30
   SAY @3208 /* Look, I think you should be very worried here. Next up is Dogar and Kazon. That's not one, but two, demiliches—twins in both life and death—and whatever you've heard about demiliches, I can assure you it's all true. You'll need all manner of magical defenses, and even then, know that they can strip you bare at any time. */
-  IF ~~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~~ THEN REPLY @3680 /* I see... */ GOTO 47
   IF ~~ THEN REPLY @3196 /* I should go prepare then. Please excuse me. */ EXIT
 END
 
 IF ~~ THEN BEGIN 31
   SAY @3209 /* You're now among Dennaton's top acts, so he's pitting you against his other top performers. Your next opponent is Yllaxxia, a red dragon, and her two children. That's THREE dragons. Suffice it to say, prepare yourself for flames EVERYWHERE! */
-  IF ~~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~~ THEN REPLY @3684 /* Three dragons?! */ GOTO 47
   IF ~~ THEN REPLY @3196 /* I should go prepare then. Please excuse me. */ EXIT
 END
 
 IF ~~ THEN BEGIN 32
   SAY @3210 /* I understand much of the current talk on the Sword Coast revolves around your next opponents. We have two children of the dead god, Bhaal, Lord of Murder, who have been raised by a cult to master and control their powers. They can actually manifest themselves into quasi-avatars of Bhaal, which makes them highly resistant to almost everything. Good luck. You'll need it! */
-  IF ~~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~~ THEN REPLY @3685 /* Undead, bhaalspawn? Right, hmmm. */ GOTO 47
   IF ~~ THEN REPLY @3196 /* I should go prepare then. Please excuse me. */ EXIT
 END
 
@@ -424,19 +418,18 @@ GlobalLT("OHB_TARTLE_BUTTERUP","GLOBAL",2)
   IF ~~ THEN REPLY @3163 /* Nothing. You can do nothing. Excuse me. */ EXIT
 END
 
-IF ~  Global("OHB_TALKED_TARTL","LOCALS",2)
-Global("ohb_finale","global",0)
-~ THEN BEGIN 46
+IF ~Global("OHB_TALKED_TARTL","LOCALS",2) Global("ohb_finale","global",0)~ THEN BEGIN 46
   SAY @3246 /* Hello again, <CHARNAME>. The arena awaits! */
-  IF ~Global("OHB_LAST_BATTLE","GLOBAL",0)~ THEN GOTO 7
-  IF ~!Global("OHB_LAST_BATTLE","GLOBAL",0)~ THEN REPLY @3194 /* I'm ready for my next fight. */ GOTO 47
+  IF ~Global("OHB_LAST_BATTLE","GLOBAL",0)~ THEN REPLY @3686 /* I am ready! */ GOTO 7
+  IF ~!Global("OHB_LAST_BATTLE","GLOBAL",0)~ THEN REPLY @3687 /* Indeed. */ GOTO 47
   IF ~~ THEN REPLY @3247 /* Before we get to that, may I ask you some questions? */ GOTO 45
   IF ~~ THEN REPLY @3250 /* Let it. I've other things to do. */ EXIT
 END
 
 IF ~~ THEN BEGIN 47
-  SAY @3251 /* Will you be fighting our latest offering? */
-  IF ~Global("OHB_LAST_BATTLE","GLOBAL",0)~ THEN GOTO 7
+  SAY @3251 /* So, will you be fighting our latest offering? */
+  IF ~~ THEN REPLY @3254 /* Actually, never mind—I shall return. */ EXIT
+  IF ~Global("OHB_LAST_BATTLE","GLOBAL",0)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ GOTO 7
   IF ~Global("OHB_LAST_BATTLE","GLOBAL",101)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ DO ~
       SetCutSceneLite(TRUE)
       SetGlobal("OHB_START_BATTLE","GLOBAL",1)
@@ -543,12 +536,11 @@ SetGlobal("OHB_404","GLOBAL",1)
 SetGlobal("OHB_ARENA","GLOBAL",1)
 SetGlobal("OHB_INTERVIEW","GLOBAL",1)
 ~ EXIT
-  IF ~False()// This is always FALSE
-  // OR(2)
-  //   Global("OHB_DEBUG","GLOBAL",1)
-  //   GlobalGT("OHB_LAST_BATTLE","GLOBAL",0)
-~ THEN REPLY @3253 /* Let me fight a previous battle again. */ GOTO 48
-  IF ~~ THEN REPLY @3254 /* Actually, never mind—I shall return. */ EXIT
+//   IF ~False()// This is always FALSE
+//   // OR(2)
+//   //   Global("OHB_DEBUG","GLOBAL",1)
+//   //   GlobalGT("OHB_LAST_BATTLE","GLOBAL",0)
+// ~ THEN REPLY @3253 /* Let me fight a previous battle again. */ GOTO 48
 END
 
 /* START OF DISABLED BLOCK */

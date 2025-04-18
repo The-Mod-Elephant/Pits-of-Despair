@@ -442,8 +442,9 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",2)
+	ClearAllActions()
 	ActionOverride("zbneph",FaceObject([PC]))
-	SmallWait(5)
+	SmallWait(25)
 	ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
 END
 
@@ -453,7 +454,10 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",3)
+	ClearActions("zbneph")
 	ActionOverride("zbneph",SetDialog("ZBNEPH"))
+	SmallWait(25)
+	Continue()
 END
 
 IF
@@ -462,8 +466,9 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_3","GLOBAL",2)
+	ClearAllActions()
 	ActionOverride("zbneph",FaceObject([PC]))
-	SmallWait(5)
+	SmallWait(25)
 	ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
 END
 
@@ -474,6 +479,7 @@ THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_3","GLOBAL",4)
 	ActionOverride("zbneph",SetDialog("ZBNEPH"))
+	ClearAllActions()
 	SetCutSceneLite(TRUE)
 	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
 	SetGlobal("OHB_103","GLOBAL",1)
@@ -487,8 +493,9 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",2)
+	ClearAllActions()
 	ActionOverride("zbneph",FaceObject([PC]))
-	SmallWait(5)
+	SmallWait(25)
 	ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
 END
 
@@ -499,6 +506,7 @@ THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",4)
 	ActionOverride("zbneph",SetDialog("ZBNEPH"))
+	ClearAllActions()
 	SetCutSceneLite(TRUE)
 	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
 	SetGlobal("OHB_104","GLOBAL",1)
@@ -512,8 +520,9 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_5","GLOBAL",2)
+	ClearAllActions()
 	ActionOverride("zbneph",FaceObject([PC]))
-	SmallWait(5)
+	SmallWait(25)
 	ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
 END
 
@@ -524,6 +533,7 @@ THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_5","GLOBAL",4)
 	ActionOverride("zbneph",SetDialog("ZBNEPH"))
+	ClearAllActions()
 	SetCutSceneLite(TRUE)
 	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
 	SetGlobal("OHB_105","GLOBAL",1)

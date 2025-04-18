@@ -93,7 +93,7 @@ END
 ///
 
 /// Before Match 3 - After Dennaton kills part of a gladiatorial party
-INTERJECT_COPY_TRANS ZBNEPHJ 3 ZB_NEPH_INTERJECT_3.1
+INTERJECT_COPY_TRANS ZBNEPHJ 2 ZB_NEPH_INTERJECT_3.1
   == JANJ IF ~!StateCheck("JAN", CD_STATE_NOTVALID) InParty("JAN")~ THEN @68 /* Oh, Nephetel, you are too harsh. I once traded Lissa's prize turnip for a racing lizard. And let me tell you, she was not happy I did. I named him Binky and he was the world to me when I was 38. In fact, he still travels with me as a necklace, see? Don't mind the bones, it just means he's lucky. */ DO ~GiveItemCreate("ZBBINK0",Player1,1,0,0)~
   == EDWINJ IF ~!StateCheck("JAN", CD_STATE_NOTVALID) InParty("JAN") !StateCheck("EDWIN", CD_STATE_NOTVALID) InParty("EDWIN")~ THEN @69 /* You let this thing travel with you? (Am I really discussing lizard bones? Inane and irritating.) */
   == MINSCJ IF ~!StateCheck("JAN", CD_STATE_NOTVALID) InParty("JAN") !StateCheck("MINSC", CD_STATE_NOTVALID) InParty("MINSC")~ THEN @70 /* Oh, that is horrible! These things are not for the likes of Boo. When his time comes I  shall bury him as a rashemi warrior in my homeland. */

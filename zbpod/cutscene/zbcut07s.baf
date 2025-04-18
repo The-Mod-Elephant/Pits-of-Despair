@@ -3,6 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		SetCutSceneBreakable(FALSE)
+		ClearAllActions()
 		FadeToColor([50.0],0)
 		ActionOverride("ohbdenna",MoveToPoint([3385.2870]))
 		ActionOverride("ohbwing",ReallyForceSpell(Myself,DRYAD_TELEPORT))  // SPWI995.SPL (Dimension Door)

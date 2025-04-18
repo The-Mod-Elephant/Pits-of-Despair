@@ -1,10 +1,3 @@
-// creator  : weidu (version 24900)
-// argument : OHBDENNA.DLG
-// game     : ..
-// source   : ../DATA/BLACKPITS.BIF
-// dialog   : ..\lang\en_us\dialog.tlk
-// dialogF  : (none)
-
 BEGIN ~OHBDENNA~
 
 IF ~~ THEN BEGIN 0
@@ -168,9 +161,7 @@ SetGlobal("OHB_EVENT_102_DIALOG","MYAREA",1)
 SetGlobal("ohb_spawn_gladiators","myarea",0)
 StartCutScene("ohbcut09")
 ~ EXIT
-  IF ~  !Global("OHB_EVENT_102_DIALOG","MYAREA",0)
-~ THEN DO ~SetGlobal("OHB_START_BATTLE","GLOBAL",3)
-~ GOTO 21
+  IF ~!Global("OHB_EVENT_102_DIALOG","MYAREA",0)~ THEN DO ~SetGlobal("OHB_START_BATTLE","GLOBAL",3)~ GOTO 21
 END
 
 IF ~  Global("OHB_START_BATTLE","GLOBAL",3)
@@ -208,16 +199,12 @@ Global("OHB_102","GLOBAL",1)
 Global("OHB_EVENT_102_DIALOG","MYAREA",2)
 ~ THEN BEGIN 20
   SAY @566 /* *ahem* Attention, everyone! We are ready once more for today's main event. We've decided to keep what remains of "Raskilov's Ragers," and we're throwing in some minotaurs to help them out! */
-  IF ~~ THEN DO ~SetGlobal("OHB_EVENT_102_DIALOG","MYAREA",3)
-~ GOTO 21
+  IF ~~ THEN DO ~SetGlobal("OHB_EVENT_102_DIALOG","MYAREA",3)~ GOTO 21
 END
 
 IF ~~ THEN BEGIN 21
   SAY @567 /* Before we start, <CHARNAME>, would you like to address your adoring fans? */
-  IF ~~ THEN REPLY @568 /* I am a humble <PRO_MANWOMAN>. I scraped by as best I could in Baeloth's Pits. Faced with trained gladiators, I only hope I last long enough to provide the entertainment you deserve. */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
-  SetGlobal("ohb_item_reward","global",1)
-PlaySound("BP2POS_1")
-~ GOTO 22
+  IF ~~ THEN REPLY @568 /* I am a humble <PRO_MANWOMAN>. I scraped by as best I could in Baeloth's Pits. Faced with trained gladiators, I only hope I last long enough to provide the entertainment you deserve. */ DO ~SetGlobal("ohb_raise_hero_score","global",1) SetGlobal("ohb_item_reward","global",1) PlaySound("BP2POS_1")~ GOTO 22
   // IF ~~ THEN REPLY @569 /* Really, Dennaton? You claim to provide entertainment available nowhere else. This fight will be over in seconds, and you know it. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
 // ~ GOTO 23
   // IF ~  OR(2)
@@ -225,11 +212,8 @@ PlaySound("BP2POS_1")
 // Global("ohb_102_item_great","global",0)
 // ~ THEN REPLY @570 /* I destroyed some orcs for your amusement—these gladiators will be no different. But you, my people, deserve more! Give me the proper tools, and I swear the front row will drip red with blood! */ DO ~SetGlobal("ohb_item_reward","global",1)
 // ~ GOTO 24
-  // IF ~~ THEN REPLY @571 /* Not at all. */ GOTO 25
-  IF ~~ THEN REPLY @572 /* Thayan gladiators? Ha! A nation of weaklings! No Thayan can stand against me! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
-  SetGlobal("ohb_item_reward","global",1)
-PlaySound("BP2NEG_1")
-~ GOTO 26
+  IF ~~ THEN REPLY @571 /* Not at all. */ GOTO 25
+  IF ~~ THEN REPLY @572 /* Thayan gladiators? Ha! A nation of weaklings! No Thayan can stand against me! */ DO ~SetGlobal("ohb_raise_villain_score","global",1) SetGlobal("ohb_item_reward","global",1) PlaySound("BP2NEG_1")~ GOTO 26
 END
 
 IF ~~ THEN BEGIN 22
