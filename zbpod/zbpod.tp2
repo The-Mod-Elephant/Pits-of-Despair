@@ -126,6 +126,9 @@ UNLESS ~zbeshpeu~
 // SoA Interjections
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/interjections/~
 
+// Copy vvcs
+COPY ~%MOD_FOLDER%/vvc~ ~override~
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20002 DESIGNATED 3 LABEL ~zb_argent_sound~ // ADD ALT PORTRAITS
 REQUIRE_COMPONENT "zbpod.tp2" "2" @30000 // traify later
