@@ -22,7 +22,6 @@ THEN
 		Wait(2)
 		StorePartyLocations()
 		LeaveAreaLUA("ZB0701","",[1660.480],NW) /* carries player over */
-		CreateVisualEffect("zbscry",[1660.480])
 		ApplySpell(Player1,WIZARD_INVISIBILITY)
 		CreateCreature("zbneph",[1560.680],NE)  /* spawns in nephetel */
 		CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */
@@ -34,6 +33,7 @@ THEN
 		Wait(2)
 		FadeFromColor([30.0],0)
 		MoveViewPoint([1670.680],INSTANT)
+		CreateVisualEffect("zbscry",[1670.680])
 		ActionOverride("zbneph",FaceObject("zbvamp"))
 		ActionOverride("zbvamp",FaceObject("zbneph"))
 		Wait(3)
