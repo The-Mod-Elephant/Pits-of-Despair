@@ -487,7 +487,7 @@ END
 /////////////////////////////////////////////////////////////////////
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  HasItemEquiped("POTN55",Myself)
+  HasItem("POTN55",Myself)
   HPPercentLT(Myself,60)
   Allegiance(Myself,ENEMY)
 THEN
@@ -500,7 +500,7 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  HasItemEquiped("POTN52",Myself)
+  HasItem("POTN52",Myself)
   HPPercentLT(Myself,60)
   Allegiance(Myself,ENEMY)
 THEN
@@ -513,7 +513,7 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  HasItemEquiped("POTN08",Myself)
+  HasItem("POTN08",Myself)
   HPPercentLT(Myself,60)
   Allegiance(Myself,ENEMY)
 THEN
