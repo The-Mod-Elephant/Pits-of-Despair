@@ -200,6 +200,23 @@ ACTION_FOR_EACH crawl IN
             WRITE_ASCII 0x280 ~mocrwl0%crawl%~ #8 // Script Name
 END
 
+//-------------------------------------------------------------------------
+// Vortex Spider Animations
+LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+ACTION_IF (slot <= 0) BEGIN
+  FAIL ~No free creature animation slot found.~
+END
+
+LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+APPEND ~animate.ids~ ~0x%hexNumber% zbbweave~ UNLESS ~zbbweave~
+CLEAR_IDS_MAP
+
+COPY ~%MOD_FOLDER%/animations/black_weaver/exxx.ini~ ~override/%hexNumber%.ini~
+
+ACTION_BASH_FOR ~%MOD_FOLDER%/animations/black_weaver~ ~^.+.bam$~ BEGIN
+  COPY ~%BASH_FOR_FILESPEC%~ ~override~
+END
+
 COPY ~%MOD_FOLDER%/creatures/mutvortex~ ~override~
 // Create 2 unique instances of vortex spiders
 ACTION_FOR_EACH spdr IN
@@ -209,6 +226,7 @@ ACTION_FOR_EACH spdr IN
         COPY_EXISTING ~ohbmena7.cre~ ~override/mospdr0%spdr%.cre~
             SAY 0x08 @15011
             SAY 0x0c @15011
+            WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~zbbweave~))
             WRITE_BYTE 0x53   2  // 2 APR Base
             REMOVE_CRE_ITEM minhp1
             WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
@@ -288,6 +306,14 @@ COPY_EXISTING ~OHBORC01.cre~ ~override~
 COPY_EXISTING ~OHBORC02.cre~ ~override~
     WRITE_BYTE 0x23c 17  // Dexterity
     REPLACE_CRE_ITEM ~BRAC04~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~GLOVES~ EQUIP // Dale's Protectors
+
+// ohb_101 Orc Mage
+COPY_EXISTING ~OHBORC04.cre~ ~override~
+    WRITE_ASCII 0x258 ~momage1~ #8 // Add Race Script
+    ADD_MEMORIZED_SPELL ~SPWI312~ #2 ~wizard~ ( 1 ) // Slow
+    ADD_MEMORIZED_SPELL ~SPWI401~ #3 ~wizard~ ( 1 ) // Confusion
+    ADD_MEMORIZED_SPELL ~SPWI411~ #3 ~wizard~ ( 1 ) // Emotion, Hopelessness
+    ADD_MEMORIZED_SPELL ~SPWI508~ #4 ~wizard~ ( 1 ) // Chaos
 
 // minotaurs gore attack
 COPY ~%MOD_FOLDER%/creatures/match2mino~ ~override~
