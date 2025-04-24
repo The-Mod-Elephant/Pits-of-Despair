@@ -36,6 +36,7 @@ THEN
 		CreateCreature("OHBORC02",[1625.657],SSW)  // Orc Archer
 		CreateCreature("OHBORC02",[1695.694],SSW)  // Orc Archer
 		CreateCreature("OHBORC02",[1753.736],SSW)  // Orc Archer
+		CreateCreature("OHBORC04",[1681.731],SSW)  // Orc Mage
 		SmallWait(25)
 		MoveViewPoint([1655.702],BD_NORMAL)
 		SmallWait(75)

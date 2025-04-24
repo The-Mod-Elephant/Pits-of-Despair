@@ -289,6 +289,14 @@ COPY_EXISTING ~OHBORC02.cre~ ~override~
     WRITE_BYTE 0x23c 17  // Dexterity
     REPLACE_CRE_ITEM ~BRAC04~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~GLOVES~ EQUIP // Dale's Protectors
 
+// ohb_101 Orc Mage
+COPY_EXISTING ~OHBORC04.cre~ ~override~
+    WRITE_ASCII 0x258 ~momage~ #8 // Add Race Script
+    ADD_MEMORIZED_SPELL ~SPWI312~ #2 ~wizard~ ( 1 ) // Slow
+    ADD_MEMORIZED_SPELL ~SPWI401~ #3 ~wizard~ ( 1 ) // Confusion
+    ADD_MEMORIZED_SPELL ~SPWI411~ #3 ~wizard~ ( 1 ) // Emotion, Hopelessness
+    ADD_MEMORIZED_SPELL ~SPWI508~ #4 ~wizard~ ( 1 ) // Chaos
+
 // minotaurs gore attack
 COPY ~%MOD_FOLDER%/creatures/match2mino~ ~override~
 COPY_EXISTING ~ohbmin01.cre~ ~override~
