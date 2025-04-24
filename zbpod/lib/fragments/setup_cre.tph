@@ -309,7 +309,7 @@ COPY_EXISTING ~OHBORC02.cre~ ~override~
 
 // ohb_101 Orc Mage
 COPY_EXISTING ~OHBORC04.cre~ ~override~
-    WRITE_ASCII 0x258 ~momage~ #8 // Add Race Script
+    WRITE_ASCII 0x258 ~momage1~ #8 // Add Race Script
     ADD_MEMORIZED_SPELL ~SPWI312~ #2 ~wizard~ ( 1 ) // Slow
     ADD_MEMORIZED_SPELL ~SPWI401~ #3 ~wizard~ ( 1 ) // Confusion
     ADD_MEMORIZED_SPELL ~SPWI411~ #3 ~wizard~ ( 1 ) // Emotion, Hopelessness
