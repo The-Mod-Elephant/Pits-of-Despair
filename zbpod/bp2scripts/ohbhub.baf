@@ -641,6 +641,7 @@ THEN
 		AddStoreItem("OHBIMIM","RODS03",5,1)  // Rod of Resurrection
 //		AddStoreItem("OHBIMIM","",1,1)  // Dark Knight Belt
 		AddStoreItem("OHBCONCO","POTN55",0,1)  // Potion of Superior Healing
+		AddStoreItem("OHBSDWM","zbfmaw",1,1)  // Festering Maw +3 (NEW)
 		AddStoreItem("OHBSDWM","AROW06",5,1)  // Arrow of Detonation
 		AddStoreItem("OHBSDWM","AROW07",10,1)  // Arrow of Dispelling
 		AddStoreItem("OHBCONCO","POTN03",10,1)  // Potion of Hill Giant Strength
@@ -668,7 +669,6 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("TIER","GLOBAL",3)
-		AddStoreItem("OHBSDWM","zbfmaw",1,1)  // Festering Maw +3 (NEW)
 		AddStoreItem("OHBSDWM","HAMM06",1,1)  // Dwarven Thrower +3
 		AddStoreItem("OHBSDWM","STAF12",10,1)  // Staff of Power
 		AddStoreItem("OHBIMIM","RING33",1,1)  // Ring of the Ram
