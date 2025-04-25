@@ -430,9 +430,29 @@ ACTION_FOR_EACH melee1 IN
     END
 
 // ohb_104 Elder Umber Hulk fight
-COPY_EXISTING ~ohbumb01.CRE~ ~override~
+COPY_EXISTING ~ohbumb01.cre~ ~override~
     WRITE_BYTE 0x24 110  // Current HP
     WRITE_BYTE 0x26 110  // Maximum HP
+
+//-------------------------------------------------------------------------
+// Planetar Animations
+LAF FIND_FREE_ANIM_SLOT INT_VAR 0x7F3D slotMax = slotMin + 0xff RET slot END
+ACTION_IF (slot <= 0) BEGIN
+  FAIL ~No free creature animation slot found.~
+END
+
+LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+APPEND ~animate.ids~ ~0x%hexNumber% zbfplane~ UNLESS ~zbfplane~
+CLEAR_IDS_MAP
+
+COPY ~%MOD_FOLDER%/animations/fallen_planetar/exxx.ini~ ~override/%hexNumber%.ini~
+
+ACTION_BASH_FOR ~%MOD_FOLDER%/animations/fallen_planetar~ ~^.+.bam$~ BEGIN
+  COPY ~%BASH_FOR_FILESPEC%~ ~override~
+END
+
+COPY_EXISTING ~ohbwing.cre~ ~override~
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~zbfplane~))
 
 ///////////////////////////////////////////////////////////////////////////
 // Copy .BCS file to override folder                                     //
