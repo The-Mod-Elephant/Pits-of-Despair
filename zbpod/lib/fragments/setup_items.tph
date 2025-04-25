@@ -325,23 +325,19 @@ COPY_EXISTING ~zswoposi.spl~ ~override~
 /////////                \\\\\\\\
 //////// Import BG1 ITEMS \\\\\\\\
 ///////                    \\\\\\\\
-ACTION_BASH_FOR ~%MOD_FOLDER%/items/bg1_imported_items/~ ~*~ BEGIN
-    ACTION_IF (! FILE_EXISTS_IN_GAME ~%BASH_FOR_FILE%~) BEGIN
-        COPY ~%BASH_FOR_FILE%~ ~override~
-    END
-END
 
 //////// Circlet of the Archmagi \\\\\\\\
-COPY ~%MOD_FOLDER%/items/bg1_imported_items/circletofarchmagi/zbcoa.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/bg1_imported_items/circletofarchmagi/~ ~override~
+COPY_EXISTING ~zbcoa.itm~ ~override~
     SAY NAME1 @11001
     SAY NAME2 @11002
     SAY UNIDENTIFIED_DESC @11003
     SAY IDENTIFIED_DESC @11004
 BUT_ONLY_IF_IT_CHANGES
 
-
 //////// Big Fisted Belt \\\\\\\\
-COPY ~%MOD_FOLDER%/items/bg1_imported_items/bigfistedbelt/zbbfb.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/bg1_imported_items/bigfistedbelt/~ ~override~
+COPY_EXISTING ~zbbfb.itm~  ~override~
     SAY NAME1 @11005
     SAY NAME2 @11006
     SAY UNIDENTIFIED_DESC @11007
@@ -350,6 +346,7 @@ BUT_ONLY_IF_IT_CHANGES
 
 //////// Relair's Mistake \\\\\\\\
 COPY ~%MOD_FOLDER%/items/bg1_imported_items/cloakofwolf~ ~override~
+COPY_EXISTING ~zbcotw.itm~ ~override~
     SAY NAME1 @11009
     SAY NAME2 @11010
     SAY UNIDENTIFIED_DESC @11011
@@ -358,6 +355,7 @@ BUT_ONLY_IF_IT_CHANGES
 
 //////// Durlag's Goblet \\\\\\\\
 COPY ~%MOD_FOLDER%/items/bg1_imported_items/durlagsgoblet~ ~override~
+COPY_EXISTING ~zbdurg.itm~ ~override~
     SAY NAME1 @11013
     SAY NAME2 @11014
     SAY UNIDENTIFIED_DESC @11015
@@ -366,6 +364,7 @@ BUT_ONLY_IF_IT_CHANGES
 
 //////// Evermemory \\\\\\\\
 COPY ~%MOD_FOLDER%/items/bg1_imported_items/evermemory~ ~override~
+COPY_EXISTING ~zbevmem.itm~ ~override~
     SAY NAME1 @11017
     SAY NAME2 @11018
     SAY UNIDENTIFIED_DESC @11019
@@ -381,7 +380,7 @@ COPY_EXISTING ~zbfmaw.itm~ ~override~
 /*
 COPY_EXISTING ~ohbsdwm.sto~ ~override~
   ADD_STORE_ITEM ~zbfmaw~ #0 #0 #0 ~IDENTIFIED~ #1
-  */
+*/
 
 COPY ~%MOD_FOLDER%/items/binky~ ~override~
 COPY_EXISTING ~zbbink0.itm~ ~override~
