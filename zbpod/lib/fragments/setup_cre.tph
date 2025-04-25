@@ -436,7 +436,7 @@ COPY_EXISTING ~ohbumb01.cre~ ~override~
 
 //-------------------------------------------------------------------------
 // Planetar Animations
-LAF FIND_FREE_ANIM_SLOT INT_VAR 0x7F3D slotMax = slotMin + 0xff RET slot END
+LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7F3D slotMax = slotMin + 0xff RET slot END
 ACTION_IF (slot <= 0) BEGIN
   FAIL ~No free creature animation slot found.~
 END
