@@ -325,14 +325,14 @@ COPY_EXISTING ~zswoposi.spl~ ~override~
 /////////                \\\\\\\\
 //////// Import BG1 ITEMS \\\\\\\\
 ///////                    \\\\\\\\
-ACTION_BASH_FOR ~%MOD_FOLDER%/items/bg1_imported_items/bams~ ~*~ BEGIN
+ACTION_BASH_FOR ~%MOD_FOLDER%/items/bg1_imported_items/~ ~*~ BEGIN
     ACTION_IF (! FILE_EXISTS_IN_GAME ~%BASH_FOR_FILE%~) BEGIN
         COPY ~%BASH_FOR_FILE%~ ~override~
     END
 END
 
 //////// Circlet of the Archmagi \\\\\\\\
-COPY ~%MOD_FOLDER%/items/bg1_imported_items/items/band04.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/bg1_imported_items/circletofarchmagi/zbcoa.itm~ ~override~
     SAY NAME1 @11001
     SAY NAME2 @11002
     SAY UNIDENTIFIED_DESC @11003
@@ -341,7 +341,7 @@ BUT_ONLY_IF_IT_CHANGES
 
 
 //////// Big Fisted Belt \\\\\\\\
-COPY ~%MOD_FOLDER%/items/bg1_imported_items/items/belt15.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/bg1_imported_items/bigfistedbelt/zbbfb.itm~ ~override~
     SAY NAME1 @11005
     SAY NAME2 @11006
     SAY UNIDENTIFIED_DESC @11007
@@ -349,7 +349,7 @@ COPY ~%MOD_FOLDER%/items/bg1_imported_items/items/belt15.itm~ ~override~
 BUT_ONLY_IF_IT_CHANGES
 
 //////// Relair's Mistake \\\\\\\\
-COPY ~%MOD_FOLDER%/items/bg1_imported_items/items/clck04.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/bg1_imported_items/cloakofwolf~ ~override~
     SAY NAME1 @11009
     SAY NAME2 @11010
     SAY UNIDENTIFIED_DESC @11011
@@ -357,7 +357,7 @@ COPY ~%MOD_FOLDER%/items/bg1_imported_items/items/clck04.itm~ ~override~
 BUT_ONLY_IF_IT_CHANGES
 
 //////// Durlag's Goblet \\\\\\\\
-COPY ~%MOD_FOLDER%/items/bg1_imported_items/items/misc98.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/bg1_imported_items/durlagsgoblet~ ~override~
     SAY NAME1 @11013
     SAY NAME2 @11014
     SAY UNIDENTIFIED_DESC @11015
@@ -365,7 +365,7 @@ COPY ~%MOD_FOLDER%/items/bg1_imported_items/items/misc98.itm~ ~override~
 BUT_ONLY_IF_IT_CHANGES
 
 //////// Evermemory \\\\\\\\
-COPY ~%MOD_FOLDER%/items/bg1_imported_items/items/ring08.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/bg1_imported_items/evermemory~ ~override~
     SAY NAME1 @11017
     SAY NAME2 @11018
     SAY UNIDENTIFIED_DESC @11019
