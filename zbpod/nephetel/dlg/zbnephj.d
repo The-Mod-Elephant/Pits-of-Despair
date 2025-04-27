@@ -53,7 +53,7 @@ END
 IF ~Global("ZB_NEPH_INTERJECT_5","GLOBAL",3)~ THEN BEGIN 8
   SAY @123 /* In fact, I think you could use a hand. While most of these amateurs will charge you for their assistance, I will fight for you free and clear this time only. What say you? A favor to my new favorite gladiator. */
   IF ~~ THEN REPLY @64 /* We'd love a hand, Nephetel. */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",1)~ GOTO zbneph5.2
-  IF ~~ THEN REPLY @65 /* How can you assist me? */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",1)~ GOTO zbneph5.5
+  IF ~Global("ZB_NEPH_INTERJECT_5_ONCE","GLOBAL",0)~ THEN REPLY @65 /* How can you assist me? */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",1)~ GOTO zbneph5.5
   IF ~~ THEN REPLY @55 /* We don't need any dead weight. */ GOTO zbneph5.3
   IF ~~ THEN REPLY @66 /* I appreciate the offer, but we'll be fine on our own. */  DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",1)~ GOTO zbneph5.4
 END
@@ -65,7 +65,8 @@ END
 
 IF ~Global("ZB_NEPH_INTERJECT_5","GLOBAL",3)~ THEN BEGIN zbneph5.3
   SAY @51 /* Speaking of dead weight, I hope you don't die … horribly 'Hero'. */
-  IF ~~ THEN REPLY @52 /* Oof, first blood is yours. We'll do without your help. */ EXIT
+  IF ~~ THEN REPLY @52 /* Oof, first blood is yours. We'll do without your help. */ GOTO zbneph5.4
+  IF ~~ THEN REPLY @125 /* We’ll be fine, I have no fear of drow. */ GOTO zbneph5.4
 END
 
 IF ~Global("ZB_NEPH_INTERJECT_5","GLOBAL",3)~ THEN BEGIN zbneph5.4
@@ -75,9 +76,7 @@ END
 
 IF ~Global("ZB_NEPH_INTERJECT_5","GLOBAL",3)~ THEN BEGIN zbneph5.5
   SAY @54 /* I am a dancer in the shadows, my tricks and the shadows are the tools of my trade. */
-  IF ~~ THEN REPLY @50 /* Very well, we will take on these drow on together. */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",1)~ GOTO zbneph5.2
-  IF ~~ THEN REPLY @55 /* We don't need any dead weight. */ GOTO zbneph5.3
-  IF ~~ THEN REPLY @56 /* We'll be fine, I have no fear of drow. */  DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",1)~ GOTO zbneph5.4
+  IF ~~ THEN DO ~SetGlobal("ZB_NEPH_INTERJECT_5_ONCE","GLOBAL",1)~ GOTO 8
 END
 ///
 
