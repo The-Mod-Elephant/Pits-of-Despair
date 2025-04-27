@@ -314,6 +314,7 @@ COPY_EXISTING ~OHBORC04.cre~ ~override~
     ADD_MEMORIZED_SPELL ~SPWI312~ #2 ~wizard~ ( 1 ) // Slow
     ADD_MEMORIZED_SPELL ~SPWI401~ #3 ~wizard~ ( 1 ) // Confusion
     ADD_MEMORIZED_SPELL ~SPWI411~ #3 ~wizard~ ( 1 ) // Emotion, Hopelessness
+    ADD_MEMORIZED_SPELL ~SPWI412~ #3 ~wizard~ ( 1 ) // Greater Malison
     ADD_MEMORIZED_SPELL ~SPWI508~ #4 ~wizard~ ( 1 ) // Chaos
 
 // minotaurs gore attack
