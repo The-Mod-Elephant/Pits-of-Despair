@@ -113,13 +113,14 @@
 @112  = ~I wanted to see if you would join us now. We could use your help.~
 @113  = ~I need to go. Goodbye.~
 @114  = ~Well hello there <CHARNAME>, you seem to be all in one piece, how can I help you?~
-@115  = ~ Oh, I'll happily join your merry band.~
+@115  = ~Oh, I'll happily join your merry band.~
 @116  = ~You wish to part ways?~
 @117  = ~Yes, Nephetel. We cannot continue together right now. Please meet us back at the Copper Coronet if you wish to join forces once again.~
 @118  = ~I don't know what I was thinking, of course I want you to stay.~
-@119  = ~ So the prodigal bhaalspawn returns. I assume you have changed your mind and wish to continue our journey together?~
+@119  = ~So the prodigal bhaalspawn returns. I assume you have changed your mind and wish to continue our journey together?~
 @120  = ~Yes, please join us.~
 @121  = ~Not right now. We will contact you if we have a need for you.~
 @122  = ~I'm glad you regained your senses, lead the way.~
 @123  = ~In fact, I think you could use a hand. While most of these amateurs will charge you for their assistance, I will fight for you free and clear this time only. What say you? A favor to my new favorite gladiator.~
-@124  =~Yours, for a price of course.~
+@124  = ~Yours, for a price of course.~
+@125 = ~We'll be fine, I have no fear of drow.~

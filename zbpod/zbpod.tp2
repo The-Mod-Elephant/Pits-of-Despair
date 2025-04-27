@@ -126,8 +126,9 @@ UNLESS ~zbeshpeu~
 // SoA Interjections
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/interjections/~
 
-// Copy vvcs
-COPY ~%MOD_FOLDER%/vvc~ ~override~
+// // Copy vvcs
+// COPY ~%MOD_FOLDER%/vvc~ ~override~
+COPY ~%MOD_FOLDER%/bam/scry~ ~override~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20002 DESIGNATED 3 LABEL ~zb_argent_sound~ // ADD ALT PORTRAITS
