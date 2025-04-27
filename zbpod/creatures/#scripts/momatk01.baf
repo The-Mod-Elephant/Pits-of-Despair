@@ -2254,11 +2254,13 @@ THEN
 END
 
 IF
+  DifficultyGT(NORMAL)
   WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
   !StateCheck(SixthNearestEnemyOf(Myself),STATE_PANIC)
   CheckStatLT(SixthNearestEnemyOf(Myself),1,STONESKINS)
   !StateCheck(SixthNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+  Range(SixthNearestEnemyOf(Myself),5)
   See(SixthNearestEnemyOf(Myself))
   False()
 THEN
@@ -2267,11 +2269,13 @@ THEN
 END
 
 IF
+  DifficultyGT(NORMAL)
   WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
   !StateCheck(FifthNearestEnemyOf(Myself),STATE_PANIC)
   CheckStatLT(FifthNearestEnemyOf(Myself),1,STONESKINS)
   !StateCheck(FifthNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+  Range(FifthNearestEnemyOf(Myself),5)
   See(FifthNearestEnemyOf(Myself))
   False()
 THEN
@@ -2280,11 +2284,13 @@ THEN
 END
 
 IF
+  DifficultyGT(NORMAL)
   WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
   !StateCheck(FourthNearestEnemyOf(Myself),STATE_PANIC)
   CheckStatLT(FourthNearestEnemyOf(Myself),1,STONESKINS)
   !StateCheck(FourthNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+  Range(FourthNearestEnemyOf(Myself),5)
   See(FourthNearestEnemyOf(Myself))
   False()
 THEN
@@ -2293,11 +2299,13 @@ THEN
 END
 
 IF
+  DifficultyGT(NORMAL)
   WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
   !StateCheck(ThirdNearestEnemyOf(Myself),STATE_PANIC)
   CheckStatLT(ThirdNearestEnemyOf(Myself),1,STONESKINS)
   !StateCheck(ThirdNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+  Range(ThirdNearestEnemyOf(Myself),5)
   See(ThirdNearestEnemyOf(Myself))
   False()
 THEN
@@ -2306,11 +2314,13 @@ THEN
 END
 
 IF
+  DifficultyGT(NORMAL)
   WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
   !StateCheck(SecondNearestEnemyOf(Myself),STATE_PANIC)
   CheckStatLT(SecondNearestEnemyOf(Myself),1,STONESKINS)
   !StateCheck(SecondNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+  Range(SecondNearestEnemyOf(Myself),5)
   See(SecondNearestEnemyOf(Myself))
   False()
 THEN
@@ -2319,11 +2329,13 @@ THEN
 END
 
 IF
+  DifficultyGT(NORMAL)
   WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
   !StateCheck(NearestEnemyOf(Myself),STATE_PANIC)
   CheckStatLT(NearestEnemyOf(Myself),1,STONESKINS)
   !StateCheck(NearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+  Range(NearestEnemyOf(Myself),5)
   See(NearestEnemyOf(Myself))
   False()
 THEN
