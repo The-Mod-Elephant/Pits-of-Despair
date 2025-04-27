@@ -170,7 +170,7 @@ END
 // ----------------------------------------------------
 
 // Trademeet Inn
-IF ~Global("ZB_NEPH_ESCAPE_1","GLOBAL",4)~ 26
+IF ~Global("ZB_NEPH_ESCAPE_1","GLOBAL",3)~ 26
   SAY @92 /* Here we are, for better or worse, released from the pits. I guess this is where we part ways? */
   IF ~~ THEN REPLY @93 /* Yes, we must go, we have business to attend to. */ GOTO ZBNEPHCOPPERCORONET
   IF ~Global("ZB_NEPH_WHERE_GO","GLOBAL",0)~ THEN REPLY @94 /* What about you Nephetel, where will you go? */ GOTO ZBNEPHWHEREGOEXPLAIN

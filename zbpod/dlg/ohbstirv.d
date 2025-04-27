@@ -57,8 +57,6 @@ IF ~~ THEN BEGIN 9
   EXIT
 END
 
-
-
 IF ~~ THEN BEGIN 15
   SAY @3051 /* Off with you, then. I got work to do. Daddy's coming, darlings! */
   IF ~~ THEN EXIT
