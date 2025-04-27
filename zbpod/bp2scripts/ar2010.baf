@@ -3,6 +3,6 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",3)
-    StartCutSceneMode()
-    StartCutScene("zbpodes1")
+    Wait(1)
+    ActionOverride("zbneph",StartDialogueNoSet([PC]))
 END

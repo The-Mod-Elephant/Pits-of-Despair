@@ -20,8 +20,8 @@ IF
 	Global("OHB_EVENT_102","MYAREA",0)
 THEN
 	RESPONSE #100
-		ClearAllActions()
 		StartCutSceneMode()
+		ClearAllActions()
 		SetGlobal("ohb_spawn_gladiators","myarea",1)
 		SmallWait(5)
 		ActionOverride(Player1,JumpToPoint([935.1036]))

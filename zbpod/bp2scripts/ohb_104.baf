@@ -20,6 +20,7 @@ IF
 THEN
 	RESPONSE #100
 		StartCutSceneMode()
+		ClearAllActions()
 		SetGlobal("ohb_spawn_gladiators","myarea",1)
 		SmallWait(5)
 		ActionOverride(Player1,JumpToPoint([935.1036]))

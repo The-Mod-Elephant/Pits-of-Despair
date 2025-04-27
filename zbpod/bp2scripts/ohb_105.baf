@@ -18,7 +18,7 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("ZB_SPAWN_NEPHY_FIGHT5","GLOBAL",2)
-	CreateCreature("ZBNEPH",[920.1150],SW)  // Neph
+	CreateCreature("ZBNEPH",[920.1150],N)  // Neph
 	SmallWait(5)
 END
 
@@ -29,6 +29,7 @@ IF
 THEN
 	RESPONSE #100
 		StartCutSceneMode()
+		ClearAllActions()
 		SetGlobal("ohb_spawn_gladiators","myarea",1)
 		SmallWait(5)
 		ActionOverride(Player1,JumpToPoint([935.1036]))
