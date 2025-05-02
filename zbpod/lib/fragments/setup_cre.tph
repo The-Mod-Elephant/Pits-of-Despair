@@ -483,6 +483,33 @@ COPY_EXISTING ~ohbvmp03.cre~ ~override~
     ADD_CRE_ITEM ~RING95~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~GLOVES~ EQUIP
     LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 4 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
 
+// ohb_202 - Gith Anti-Paladin
+COPY_EXISTING ~ohbgit01.cre~ ~override~
+  WRITE_BYTE 0x234 16 // Level
+  WRITE_BYTE 0x24 111 // Current HP
+  WRITE_BYTE 0x26 111 // Maximum HP
+  WRITE_BYTE 0x52   5 // thac0
+  WRITE_BYTE 0x53   2 // 2 APR Base
+  WRITE_ASCII 0x268 ~mogit02~ #8 // Add Default Script
+
+// ohb_202 - Gith Warrior
+COPY_EXISTING ~ohbgit02.cre~ ~override~
+  WRITE_BYTE 0x234 15  // Level
+  WRITE_BYTE 0x24 108  // Current HP
+  WRITE_BYTE 0x26 108  // Maximum HP
+  WRITE_BYTE 0x52   5  // thac0
+  WRITE_BYTE 0x53   2  // 2 APR Base
+  WRITE_ASCII 0x268 ~mogit01~ #8 // Add Default Script
+  REPLACE_CRE_ITEM ~OHPLAT50~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~ARMOR~   EQUIP // Plate Mail +2
+  REPLACE_CRE_ITEM ~BRAC09~   #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~GLOVES~  EQUIP // Gauntlet of Weapon Skill
+  REPLACE_CRE_ITEM ~BELT06~   #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~BELT~    EQUIP // Belt of Hill Giant
+
+// ohb_202 - Gish
+COPY_EXISTING ~ohbgit03.cre~ ~override~ 
+  WRITE_BYTE 0x53   2 // 2 APR Base
+  WRITE_ASCII 0x268 ~mogit03~ #8 // Add Default Script
+  REPLACE_CRE_ITEM ~CHAN13~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~ARMOR~   EQUIP // Elven Chain +1
+  REPLACE_CRE_ITEM ~BELT06~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~BELT~    EQUIP // Belt of Hill Giant
 
 //-------------------------------------------------------------------------
 // Planetar Animations
@@ -523,6 +550,9 @@ COPY ~%MOD_FOLDER%/creatures/#scripts/momatk01.baf~ ~override/momatk01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/momage1.baf~  ~override/momage1.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/ohbumb01.baf~ ~override/ohbumb01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/zbdom.baf~    ~override/zbdom.bcs~
+     ~%MOD_FOLDER%/creatures/#scripts/mogit01.baf~  ~override/mogit01.bcs~
+     ~%MOD_FOLDER%/creatures/#scripts/mogit02.baf~  ~override/mogit02.bcs~
+     ~%MOD_FOLDER%/creatures/#scripts/mogit03.baf~  ~override/mogit03.bcs~
   COMPILE_BAF_TO_BCS
 
 EXTEND_TOP ~nymph.bcs~ ~%MOD_FOLDER%/creatures/#scripts/mohunt1.baf~
