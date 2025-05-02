@@ -516,7 +516,6 @@ THEN
     SetGlobalTimer("MO_SweetAirTimer","GLOBAL",6)
     IncrementGlobal("MO_SweetZone","LOCALS",-1)
     SetInterrupt(FALSE)
-    DisplayStringHead(Myself,@5503)
     SpellNoDec(Myself,CLERIC_ZONE_OF_SWEET_AIR)  // SPPR318.SPL (Zone of Sweet Air)
     SetInterrupt(TRUE)
 END
@@ -544,7 +543,6 @@ THEN
     SetGlobalTimer("MO_GithFindInvisible","GLOBAL",6)
     IncrementGlobal("MO_InvisPurge","LOCALS",-1)
     SetInterrupt(FALSE)
-    DisplayStringHead(Myself,@5502)
     SpellNoDec(Myself,CLERIC_INVISIBILITY_PURGE) // SPPR309.SPL (Invisibility Purge)
     SetInterrupt(TRUE)
 END
@@ -569,7 +567,6 @@ THEN
     SetGlobalTimer("MO_GithFindInvisible","GLOBAL",6)
     IncrementGlobal("MO_InvisPurge","LOCALS",-1)
     SetInterrupt(FALSE)
-    DisplayStringHead(Myself,@5502)
     SpellNoDec(Myself,CLERIC_INVISIBILITY_PURGE) // SPPR309.SPL (Invisibility Purge)
     SetInterrupt(TRUE)
 END
@@ -594,7 +591,6 @@ THEN
     SetGlobalTimer("MO_GithFindInvisible","GLOBAL",6)
     IncrementGlobal("MO_InvisPurge","LOCALS",-1)
     SetInterrupt(FALSE)
-    DisplayStringHead(Myself,@5502)
     SpellNoDec(Myself,CLERIC_INVISIBILITY_PURGE) // SPPR309.SPL (Invisibility Purge)
     SetInterrupt(TRUE)
 END
@@ -619,7 +615,6 @@ THEN
     SetGlobalTimer("MO_GithFindInvisible","GLOBAL",6)
     IncrementGlobal("MO_InvisPurge","LOCALS",-1)
     SetInterrupt(FALSE)
-    DisplayStringHead(Myself,@5502)
     SpellNoDec(Myself,CLERIC_INVISIBILITY_PURGE) // SPPR309.SPL (Invisibility Purge)
     SetInterrupt(TRUE)
 END
@@ -644,7 +639,6 @@ THEN
     SetGlobalTimer("MO_GithFindInvisible","GLOBAL",6)
     IncrementGlobal("MO_InvisPurge","LOCALS",-1)
     SetInterrupt(FALSE)
-    DisplayStringHead(Myself,@5502)
     SpellNoDec(Myself,CLERIC_INVISIBILITY_PURGE) // SPPR309.SPL (Invisibility Purge)
     SetInterrupt(TRUE)
 END
@@ -669,7 +663,6 @@ THEN
     SetGlobalTimer("MO_GithFindInvisible","GLOBAL",6)
     IncrementGlobal("MO_InvisPurge","LOCALS",-1)
     SetInterrupt(FALSE)
-    DisplayStringHead(Myself,@5502)
     SpellNoDec(Myself,CLERIC_INVISIBILITY_PURGE) // SPPR309.SPL (Invisibility Purge)
     SetInterrupt(TRUE)
 END
@@ -694,7 +687,6 @@ THEN
     SetGlobalTimer("MO_GithFindInvisible","GLOBAL",6)
     IncrementGlobal("MO_InvisPurge","LOCALS",-1)
     SetInterrupt(FALSE)
-    DisplayStringHead(Myself,@5502)
     SpellNoDec(Myself,CLERIC_INVISIBILITY_PURGE) // SPPR309.SPL (Invisibility Purge)
     SetInterrupt(TRUE)
 END
