@@ -64,6 +64,13 @@ INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_cre.tph~
 // Copy stores
 COPY ~%MOD_FOLDER%/sto~ ~override~
 
+COPY_EXISTING ~ohbsdwm.sto~ ~override~
+  SAY 0xC @60000
+COPY_EXISTING ~ohbmhsm.sto~ ~override~
+  SAY 0xC @60001
+COPY_EXISTING ~ohbimim.sto~ ~override~
+  SAY 0xC @60002
+
 // Copy animations
 COPY ~%MOD_FOLDER%/animations/astral_demilich~ ~override~
 COPY ~%MOD_FOLDER%/animations/black_weaver~ ~override~
