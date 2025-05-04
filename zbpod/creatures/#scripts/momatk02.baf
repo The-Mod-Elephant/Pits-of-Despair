@@ -1,0 +1,180 @@
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+//            momatk02
+/////////////////////////////////////////////////////////////////////
+//        Version 1
+// Vampire attack targeting to find creatures that can be level 
+// drained.
+//
+//
+//
+/////////////////////////////////////////////////////////////////////
+IF
+    OR(3) 
+      See(NearestEnemyOfType([PC]))
+      See(WorstAC)
+      See(LastAttackerOf(Myself))
+    False()
+THEN
+    RESPONSE #100
+END
+
+IF
+  !StateCheck(SixthNearestEnemyOf(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+  See(SixthNearestEnemyOf(Myself))
+  False()
+THEN
+    RESPONSE #100
+END
+
+IF
+  !StateCheck(FifthNearestEnemyOf(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+  See(FifthNearestEnemyOf(Myself))
+  False()
+THEN
+    RESPONSE #100
+END
+
+IF
+  !StateCheck(FourthNearestEnemyOf(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+  See(FourthNearestEnemyOf(Myself))
+  False()
+THEN
+    RESPONSE #100
+END
+
+IF
+  !StateCheck(ThirdNearestEnemyOf(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+  See(ThirdNearestEnemyOf(Myself))
+  False()
+THEN
+    RESPONSE #100
+END
+
+IF
+  !StateCheck(SecondNearestEnemyOf(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+  See(SecondNearestEnemyOf(Myself))
+  False()
+THEN
+    RESPONSE #100
+END
+
+IF
+  !StateCheck(NearestEnemyOf(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  See(NearestEnemyOf(Myself))
+  False()
+THEN
+    RESPONSE #100
+END
+
+IF
+  DifficultyGT(EASY)
+  !HasItem("Amul21",SixthNearestEnemyOf(Myself)) // Amulet of Power
+  !HasItemEquiped("Blun25",SixthNearestEnemyOf(Myself)) // M of Disruption +2
+  !HasItemEquiped("solabla2",SixthNearestEnemyOf(Myself)) // Tsuki +5
+  !StateCheck(SixthNearestEnemyOf(Myself),STATE_HELPLESS)
+  CheckStat(SixthNearestEnemyOf(Myself),0,SANCTUARY)
+  !StateCheck(SixthNearestEnemyOf(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+  Range(SixthNearestEnemyOf(Myself),5)
+  See(SixthNearestEnemyOf(Myself))
+  False()
+THEN
+    RESPONSE #100
+END
+
+IF
+  DifficultyGT(EASY)
+  !HasItem("Amul21",FifthNearestEnemyOf(Myself)) // Amulet of Power
+  !HasItemEquiped("Blun25",FifthNearestEnemyOf(Myself)) // M of Disruption +2
+  !HasItemEquiped("solabla2",FifthNearestEnemyOf(Myself)) // Tsuki +5
+  !StateCheck(FifthNearestEnemyOf(Myself),STATE_HELPLESS)
+  CheckStat(FifthNearestEnemyOf(Myself),0,SANCTUARY)
+  !StateCheck(FifthNearestEnemyOf(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+  Range(FifthNearestEnemyOf(Myself),5)
+  See(FifthNearestEnemyOf(Myself))
+  False()
+THEN
+    RESPONSE #100
+END
+
+IF
+  DifficultyGT(EASY)
+  !HasItem("Amul21",FourthNearestEnemyOf(Myself)) // Amulet of Power
+  !HasItemEquiped("Blun25",FourthNearestEnemyOf(Myself)) // M of Disruption +2
+  !HasItemEquiped("solabla2",FourthNearestEnemyOf(Myself)) // Tsuki +5
+  !StateCheck(FourthNearestEnemyOf(Myself),STATE_HELPLESS)
+  CheckStat(FourthNearestEnemyOf(Myself),0,SANCTUARY)
+  !StateCheck(FourthNearestEnemyOf(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+  Range(FourthNearestEnemyOf(Myself),5)
+  See(FourthNearestEnemyOf(Myself))
+  False()
+THEN
+    RESPONSE #100
+END
+
+IF
+  DifficultyGT(EASY)
+  !HasItem("Amul21",ThirdNearestEnemyOf(Myself)) // Amulet of Power
+  !HasItemEquiped("Blun25",ThirdNearestEnemyOf(Myself)) // M of Disruption +2
+  !HasItemEquiped("solabla2",ThirdNearestEnemyOf(Myself)) // Tsuki +5
+  !StateCheck(ThirdNearestEnemyOf(Myself),STATE_HELPLESS)
+  CheckStat(ThirdNearestEnemyOf(Myself),0,SANCTUARY)
+  !StateCheck(ThirdNearestEnemyOf(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+  Range(ThirdNearestEnemyOf(Myself),5)
+  See(ThirdNearestEnemyOf(Myself))
+  False()
+THEN
+    RESPONSE #100
+END
+
+IF
+  DifficultyGT(EASY)
+  !HasItem("Amul21",SecondNearestEnemyOf(Myself)) // Amulet of Power
+  !HasItemEquiped("Blun25",SecondNearestEnemyOf(Myself)) // M of Disruption +2
+  !HasItemEquiped("solabla2",SecondNearestEnemyOf(Myself)) // Tsuki +5
+  !StateCheck(SecondNearestEnemyOf(Myself),STATE_HELPLESS)
+  CheckStat(SecondNearestEnemyOf(Myself),0,SANCTUARY)
+  !StateCheck(SecondNearestEnemyOf(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+  Range(SecondNearestEnemyOf(Myself),5)
+  See(SecondNearestEnemyOf(Myself))
+  False()
+THEN
+    RESPONSE #100
+END
+
+IF
+  DifficultyGT(EASY)
+  !HasItem("Amul21",NearestEnemyOf(Myself)) // Amulet of Power
+  !HasItemEquiped("Blun25",NearestEnemyOf(Myself)) // M of Disruption +2
+  !HasItemEquiped("solabla2",NearestEnemyOf(Myself)) // Tsuki +5
+  !StateCheck(NearestEnemyOf(Myself),STATE_HELPLESS)
+  CheckStat(NearestEnemyOf(Myself),0,SANCTUARY)
+  !StateCheck(NearestEnemyOf(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  Range(NearestEnemyOf(Myself),5)
+  See(NearestEnemyOf(Myself))
+  False()
+THEN
+    RESPONSE #100
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  See(LastSeenBy(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),30)
+END
