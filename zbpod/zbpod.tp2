@@ -71,12 +71,12 @@ COPY_EXISTING ~ohbsdwm.cre~ ~override~
   SAY NAME2 @60000
 COPY_EXISTING ~ohbmhsm.sto~ ~override~
   SAY 0xC @60001
-COPY_EXISTING ~ohbsdwm.cre~ ~override~
+COPY_EXISTING ~ohbmhsm.cre~ ~override~
   SAY NAME1 @60001
   SAY NAME2 @60001
 COPY_EXISTING ~ohbimim.sto~ ~override~
   SAY 0xC @60002
-COPY_EXISTING ~ohbsdwm.cre~ ~override~
+COPY_EXISTING ~ohbimim.cre~ ~override~
   SAY NAME1 @60002
   SAY NAME2 @60002
 
