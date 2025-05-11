@@ -55,40 +55,40 @@ END
 
 IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",10) Global("ZB_NEPH_INTRO_QUESTION","GLOBAL",0)~ THEN BEGIN zbnepharenahub
   SAY @22 /* What can I do for you? */
-  IF ~Global("ZB_NEPH_INTRO_ARENA_1","GLOBAL",0)~ THEN REPLY @23 /* How did you come to this place? */ DO ~SetGlobal("ZB_NEPH_INTRO_QUESTION","GLOBAL",1)~ GOTO zbnepharena1
-  IF ~Global("ZB_NEPH_INTRO_ARENA_2","GLOBAL",0)~ THEN REPLY @39 /* I only know your name, Could you tell me a bit about yourself? */ /* I only know your name, tell me a bit about yourself? */ DO ~SetGlobal("ZB_NEPH_INTRO_QUESTION","GLOBAL",1)~ GOTO zbnepharena2
-  IF ~Global("ZB_NEPH_INTRO_ARENA_3","GLOBAL",0)~ THEN REPLY @24 /* Do you have any ideas on how to escape this place? */ DO ~SetGlobal("ZB_NEPH_INTRO_QUESTION","GLOBAL",1)~ GOTO zbnepharena3
-  IF ~Global("ZB_NEPH_INTRO_ARENA_4","GLOBAL",0)~ THEN REPLY @25 /* You look familiar. There was a messenger who got me into this mess and your voice sounds suspiciously similar. */ DO ~SetGlobal("ZB_NEPH_INTRO_QUESTION","GLOBAL",1)~ GOTO zbnepharena4
+  IF ~Global("ZB_NEPH_INTRO_ARENA_1","GLOBAL",0)~ THEN REPLY @23 /* How did you come to this place? */ DO ~SetGlobal("ZB_NEPH_INTRO_ARENA_1","GLOBAL",1) SetGlobal("ZB_NEPH_INTRO_QUESTION","GLOBAL",1)~ GOTO zbnepharena1
+  IF ~Global("ZB_NEPH_INTRO_ARENA_2","GLOBAL",0)~ THEN REPLY @39 /* I only know your name, Could you tell me a bit about yourself? */ /* I only know your name, tell me a bit about yourself? */ DO ~SetGlobal("ZB_NEPH_INTRO_ARENA_2","GLOBAL",1) SetGlobal("ZB_NEPH_INTRO_QUESTION","GLOBAL",1)~ GOTO zbnepharena2
+  IF ~Global("ZB_NEPH_INTRO_ARENA_3","GLOBAL",0)~ THEN REPLY @24 /* Do you have any ideas on how to escape this place? */ DO ~SetGlobal("ZB_NEPH_INTRO_ARENA_3","GLOBAL",1) SetGlobal("ZB_NEPH_INTRO_QUESTION","GLOBAL",1)~ GOTO zbnepharena3
+  IF ~Global("ZB_NEPH_INTRO_ARENA_4","GLOBAL",0)~ THEN REPLY @25 /* You look familiar. There was a messenger who got me into this mess and your voice sounds suspiciously similar. */ DO ~SetGlobal("ZB_NEPH_INTRO_ARENA_4","GLOBAL",1) SetGlobal("ZB_NEPH_INTRO_QUESTION","GLOBAL",1)~ GOTO zbnepharena4
   IF ~~ THEN REPLY @27 /* I'll let you get back to whatever you were doing. */ EXIT
 END
 
 IF ~~ zbnepharena1
   SAY @29 /* I got trapped in a spider's web and found myself here, just like you. */
-  IF ~~ DO ~SetGlobal("ZB_NEPH_INTRO_ARENA_1","GLOBAL",1)~ GOTO zbnepharenahub2
+  IF ~~ GOTO zbnepharenahub2
 END
 
 IF ~~ zbnepharena2
   SAY @40 /* Hah! I'm just your average, helpful tiefling. */
-  IF ~~ DO ~SetGlobal("ZB_NEPH_INTRO_ARENA_2","GLOBAL",1)~ GOTO zbnepharenahub2
+  IF ~~ GOTO zbnepharenahub2
 END
 
 IF ~~ zbnepharena3
   SAY @30 /* Between the two of us, you are not the only one with a bone to pick with Dennaton. It is unwise to discuss it now openly, yes? Get familiar with what we're dealing with and learn the lay of the land and we'll speak again soon. */
-  IF ~~ DO ~SetGlobal("ZB_NEPH_INTRO_ARENA_3","GLOBAL",1)~ GOTO zbnepharenahub2
+  IF ~~ GOTO zbnepharenahub2
 END
 
 IF ~~ zbnepharena4
   SAY @31 /* Being suspicious is fine. Deception and trickery is part of my profession. But, perhaps you should take more care with your words. Hmm?. */
-  IF ~~ DO ~SetGlobal("ZB_NEPH_INTRO_ARENA_4","GLOBAL",1)~ GOTO zbnepharenahub2
+  IF ~~ GOTO zbnepharenahub2
 END
 
 IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",10)
     Global("ZB_NEPH_INTRO_QUESTION","GLOBAL",1)~ zbnepharenahub2
   SAY @33 /* Anything else I can clear up for you? */
-  IF ~Global("ZB_NEPH_INTRO_ARENA_1","GLOBAL",0)~ THEN REPLY @23 /* How did you come to this place? */ GOTO zbnepharena1
-  IF ~Global("ZB_NEPH_INTRO_ARENA_2","GLOBAL",0)~ THEN REPLY @39 /* I only know your name, Could you tell me a bit about yourself? */ /* I only know your name, tell me a bit about yourself? */ GOTO zbnepharena2
-  IF ~Global("ZB_NEPH_INTRO_ARENA_3","GLOBAL",0)~ THEN REPLY @24 /* Do you have any ideas on how to escape this place? */ GOTO zbnepharena3
-  IF ~Global("ZB_NEPH_INTRO_ARENA_4","GLOBAL",0)~ THEN REPLY @25 /* You look familiar. There was a messenger who got me into this mess and your voice sounds suspiciously similar. */ GOTO zbnepharena4
+  IF ~Global("ZB_NEPH_INTRO_ARENA_1","GLOBAL",0)~ THEN REPLY @23 /* How did you come to this place? */ DO ~SetGlobal("ZB_NEPH_INTRO_ARENA_1","GLOBAL",1)~ GOTO zbnepharena1
+  IF ~Global("ZB_NEPH_INTRO_ARENA_2","GLOBAL",0)~ THEN REPLY @39 /* I only know your name, Could you tell me a bit about yourself? */ /* I only know your name, tell me a bit about yourself? */ DO ~SetGlobal("ZB_NEPH_INTRO_ARENA_2","GLOBAL",1)~ GOTO zbnepharena2
+  IF ~Global("ZB_NEPH_INTRO_ARENA_3","GLOBAL",0)~ THEN REPLY @24 /* Do you have any ideas on how to escape this place? */ DO ~SetGlobal("ZB_NEPH_INTRO_ARENA_3","GLOBAL",1)~ GOTO zbnepharena3
+  IF ~Global("ZB_NEPH_INTRO_ARENA_4","GLOBAL",0)~ THEN REPLY @25 /* You look familiar. There was a messenger who got me into this mess and your voice sounds suspiciously similar. */ DO ~SetGlobal("ZB_NEPH_INTRO_ARENA_4","GLOBAL",1)~ GOTO zbnepharena4
   IF ~~ THEN REPLY @27 /* I'll let you get back to whatever you were doing. */ EXIT
 END
 
