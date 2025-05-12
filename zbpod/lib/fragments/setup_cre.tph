@@ -505,7 +505,7 @@ COPY_EXISTING ~ohbgit02.cre~ ~override~
   REPLACE_CRE_ITEM ~BELT06~   #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~BELT~    EQUIP // Belt of Hill Giant
 
 // ohb_202 - Gish
-COPY_EXISTING ~ohbgit03.cre~ ~override~ 
+COPY_EXISTING ~ohbgit03.cre~ ~override~
   WRITE_BYTE 0x53   2 // 2 APR Base
   WRITE_ASCII 0x268 ~mogit03~ #8 // Add Default Script
   REPLACE_CRE_ITEM ~CHAN13~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~ARMOR~   EQUIP // Elven Chain +1
@@ -537,7 +537,7 @@ ACTION_BASH_FOR ~%MOD_FOLDER%/animations/fallen_planetar~ ~^.+.bam$~ BEGIN
 END
 
 COPY_EXISTING ~ohbwing.cre~ ~override~
-  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~zbfplane~))
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~zbfallen_planetar~))
 
 ///////////////////////////////////////////////////////////////////////////
 // Copy .BCS file to override folder                                     //
