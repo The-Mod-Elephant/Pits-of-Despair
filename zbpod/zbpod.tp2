@@ -62,21 +62,22 @@ INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_items.tph~
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_cre.tph~
 
 // Copy stores
-COPY ~%MOD_FOLDER%/sto~ ~override~
+COPY ~%MOD_FOLDER%/stores~ ~override~
+COPY ~%MOD_FOLDER%/creatures/stores~ ~override~
 
-COPY_EXISTING ~ohbsdwm.sto~ ~override~
+COPY_EXISTING ~zbbsdwm.sto~ ~override/ohbsdwm.sto~
   SAY 0xC @60000
-COPY_EXISTING ~ohbsdwm.cre~ ~override~
+COPY_EXISTING ~zbbsdwm.cre~ ~override/ohbsdwm.cre~
   SAY NAME1 @60000
   SAY NAME2 @60000
-COPY_EXISTING ~ohbmhsm.sto~ ~override~
+COPY_EXISTING ~zbbmhsm.sto~ ~override/ohbmhsm.sto~
   SAY 0xC @60001
-COPY_EXISTING ~ohbmhsm.cre~ ~override~
+COPY_EXISTING ~zbbmhsm.cre~ ~override/ohbmhsm.cre~
   SAY NAME1 @60001
   SAY NAME2 @60001
-COPY_EXISTING ~ohbimim.sto~ ~override~
+COPY_EXISTING ~zbbimim.sto~ ~override/ohbimim.sto~
   SAY 0xC @60002
-COPY_EXISTING ~ohbimim.cre~ ~override~
+COPY_EXISTING ~zbbimim.cre~ ~override/ohbimim.cre~
   SAY NAME1 @60002
   SAY NAME2 @60002
 
