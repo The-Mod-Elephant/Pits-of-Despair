@@ -1,0 +1,15 @@
+IF
+  Global("ZB_NEPH_ESCAPE_0","GLOBAL",1)
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    SetCutSceneBreakable(FALSE)
+    SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",2)
+    FadeToColor([10.0],0)
+    Wait(1)
+    ActionOverride("zbneph",JumpToPoint([2480.1400]))
+    Wait(1)
+    FadeFromColor([20.0],0)
+    SmallWait(25)
+    EndCutSceneMode()
+END

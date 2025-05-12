@@ -99,12 +99,7 @@ END
 
 IF ~~ 16
   SAY @59 /* An opportunity has come our way, and by Tymora, it is time to take advantage. Meet me in the sleeping quarters to discuss our plan. */
-  IF ~~ DO ~FadeToColor([10.0],0)
-    Wait(1)
-    ActionOverride("zbneph",JumpToPoint([2480.1400]))
-    Wait(1)
-    FadeFromColor([20.0],0)
-  ~ EXIT
+  IF ~~ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",1) StartCutSceneMode() StartCutScene("zbpodes0")~ EXIT
 END
 
 IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",12)~ 17
@@ -188,6 +183,7 @@ IF ~~ ZBNEPHCOPPERCORONET
   IF ~~ DO ~
     ApplySpell(Myself,WIZARD_INVISIBILITY)
     Wait(1)
+    ActionOverride("ZBNEPH", MakeGlobal())
     MoveGlobal("AR0406","ZBNEPH",[1586.1800])~ EXIT
 END
 
@@ -202,6 +198,7 @@ IF ~~ ZBNEPHEXIT
   IF ~~ DO ~
     ApplySpell(Myself,WIZARD_INVISIBILITY)
     Wait(1)
+    ActionOverride("ZBNEPH", MakeGlobal())
     MoveGlobal("AR0406","ZBNEPH",[1586.1800])~ EXIT
 END
 

@@ -1,22 +1,23 @@
 IF
-    Global("ZB_NEPH_ESCAPE_1","GLOBAL",1)
+  Global("ZB_NEPH_ESCAPE_1","GLOBAL",1)
 THEN
-    RESPONSE #100
-        CutSceneId(Player1)
-        SetCutSceneBreakable(FALSE)
-        SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",2)
-        DisplayStringHead("zbneph",@101) /* Now just let me fit your ring in this … well maybe this way? Ah, that's it. Ala-khazoom. Hold on everyone! */
-        Wait(4)
-        MoveGlobal("AR2010","ZBNEPH",[1586.1800])
-        SmallWait(25)
-        LeaveAreaLUAPanic("AR2010","",[410.640],W)
-        LeaveAreaLUA("AR2010","",[410.640],W)
-        ActionOverride(Player2,LeaveAreaLUA("AR2010","",[420.640],W))
-        ActionOverride(Player3,LeaveAreaLUA("AR2010","",[430.640],W))
-        ActionOverride(Player4,LeaveAreaLUA("AR2010","",[410.650],W))
-        ActionOverride(Player5,LeaveAreaLUA("AR2010","",[420.650],W))
-        ActionOverride(Player6,LeaveAreaLUA("AR2010","",[430.650],W))
-        MultiPlayerSync()
-        SmallWait(25)
-        EndCutSceneMode()
+  RESPONSE #100
+    CutSceneId(Player1)
+    SetCutSceneBreakable(FALSE)
+    SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",2)
+    DisplayStringHead("zbneph",@101) /* Now just let me fit your ring in this … well maybe this way? Ah, that's it. Ala-khazoom. Hold on everyone! */
+    Wait(4)
+    ActionOverride("ZBNEPH", MakeGlobal())
+    MoveGlobal("AR2010","ZBNEPH",[1586.1800])
+    SmallWait(25)
+    LeaveAreaLUAPanic("AR2010","",[410.640],W)
+    LeaveAreaLUA("AR2010","",[410.640],W)
+    ActionOverride(Player2,LeaveAreaLUA("AR2010","",[420.640],W))
+    ActionOverride(Player3,LeaveAreaLUA("AR2010","",[430.640],W))
+    ActionOverride(Player4,LeaveAreaLUA("AR2010","",[410.650],W))
+    ActionOverride(Player5,LeaveAreaLUA("AR2010","",[420.650],W))
+    ActionOverride(Player6,LeaveAreaLUA("AR2010","",[430.650],W))
+    MultiPlayerSync()
+    SmallWait(25)
+    EndCutSceneMode()
 END
