@@ -1,4 +1,4 @@
-// nephetel
+// Nephetel
 
 
 /// Portrait ///
@@ -48,6 +48,13 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/dlg~
 // Scripts
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/baf~
                         USING ~%MOD_FOLDER%/lang/%LANGUAGE%/neph.tra~
+
+/* add messenger timer */
+COPY_EXISTING ~BALDUR.bcs~ ~%workspace%/~
+ACTION_IF NOT FILE_CONTAINS ~%workspace%/BALDUR.bcs~ ~ZBPodMessengerSpawned~
+THEN BEGIN
+  EXTEND_BOTTOM ~BALDUR.bcs~ ~%MOD_FOLDER%/nephetel/timers/zbmes.baf~
+END
 
 // Appending dialog files
 // See [here](https://www.gibberlings3.net/forums/topic/15833-dialog-files-and-how-they-are-referenced/)

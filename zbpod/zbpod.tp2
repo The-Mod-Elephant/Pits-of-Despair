@@ -126,13 +126,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
 // Nephetel
 INCLUDE ~%MOD_FOLDER%/nephetel/core.tpa~
 
-/* add messenger timer */
-COPY_EXISTING ~BALDUR.bcs~ ~%workspace%/~
-ACTION_IF NOT FILE_CONTAINS ~%workspace%/BALDUR.bcs~ ~ZBPodMessengerSpawned~
-THEN BEGIN
-  EXTEND_BOTTOM ~BALDUR.bcs~ ~%MOD_FOLDER%/scripts/zbmes.baf~
-END
-
 /* make eshpel conversable */
 OUTER_SET label = RESOLVE_STR_REF(~Converse~)
 

@@ -543,6 +543,19 @@ THEN
 END
 
 IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",11)
+	Global("ZB_NEPH_ESCAPE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ZB_NEPH_ESCAPE","GLOBAL",1)
+		ClearAllActions()
+		ActionOverride("zbneph",FaceObject([PC]))
+		SmallWait(25)
+		ActionOverride("zbneph",StartDialogNoSet([PC]))
+END
+
+IF
 	Global("OHB_START_BATTLE","GLOBAL",1)
 	Global("ohb_plot_cutscene","global",0)
 THEN
