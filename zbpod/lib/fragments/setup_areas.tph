@@ -74,6 +74,10 @@ UNLESS ~ZB0701~
 EXTEND_BOTTOM ~AR2010.BCS~ ~%MOD_FOLDER%/bp2scripts/ar2010.baf~
   EVALUATE_BUFFER
 
+// Add neph to trademeet inn after escape
+EXTEND_BOTTOM ~AR0406.BCS~ ~%MOD_FOLDER%/bp2scripts/ar0406.baf~
+  EVALUATE_BUFFER
+
 // Create Animal training area
 COPY_EXISTING ~OH8200.ARE~ ~override/ZB8200.ARE~
 READ_LONG   0x54 actor_off

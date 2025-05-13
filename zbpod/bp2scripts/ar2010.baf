@@ -3,6 +3,8 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",3)
+    CreateCreature("zbneph",[1586.1800],S)
+    ActionOverride("zbneph",FaceObject([PC]))
     Wait(1)
     ActionOverride("zbneph",StartDialogueNoSet([PC]))
 END
