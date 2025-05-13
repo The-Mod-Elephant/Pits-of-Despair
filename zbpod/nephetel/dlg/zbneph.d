@@ -99,15 +99,18 @@ END
 
 IF ~~ 16
   SAY @59 /* An opportunity has come our way, and by Tymora, it is time to take advantage. Meet me in the sleeping quarters to discuss our plan. */
-  IF ~~ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",1) StartCutSceneMode() StartCutScene("zbpodes0")~ EXIT
+  IF ~~ THEN REPLY @126  /* I'll see you there. */ DO ~
+  SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",1)
+  StartCutSceneMode()
+  StartCutScene("zbpodes0")~ EXIT
 END
 
-IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",12)~ 17
+IF ~Global("ZB_NEPH_ESCAPE_0","GLOBAL",2)~ 17
   SAY @71 /* <CHARNAME>, You are here to discuss our escape from this place, yes? First, I would know why it is so important to you that you escape? */
-  IF ~~ THEN REPLY @72 /* I do not enjoy being captured and called a slave. Pretty simple, right? */ GOTO 18
-  IF ~~ THEN REPLY @73 /* My foster sister Imoen has been captured and taken by the mage Irenicus. He thought he could hold me just as Dennaton thinks now. */ GOTO 19
-  IF ~~ THEN REPLY @74 /* No one may restrain me for long and they will ALWAYS pay a price. */ GOTO 20
-  IF ~~ THEN REPLY @75 /* I am the scion of Bhaal. I shall not be questioned. */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",-1)~ GOTO 21
+  IF ~~ THEN REPLY @72 /* I do not enjoy being captured and called a slave. Pretty simple, right? */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 18
+  IF ~~ THEN REPLY @73 /* My foster sister Imoen has been captured and taken by the mage Irenicus. He thought he could hold me just as Dennaton thinks now. */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 19
+  IF ~~ THEN REPLY @74 /* No one may restrain me for long and they will ALWAYS pay a price. */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 20
+  IF ~~ THEN REPLY @75 /* I am the scion of Bhaal. I shall not be questioned. */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",-1)~ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 21
 END
 
 IF ~~ 18
@@ -183,8 +186,11 @@ IF ~~ ZBNEPHCOPPERCORONET
   IF ~~ DO ~
     ApplySpell(Myself,WIZARD_INVISIBILITY)
     Wait(1)
-    ActionOverride("ZBNEPH", MakeGlobal())
-    MoveGlobal("AR0406","ZBNEPH",[1586.1800])~ EXIT
+    ActionOverride("zbneph",ReallyForceSpell(Myself,WIZARD_INVISIBILITY)
+    SmallWait(25)
+    ActionOverride("zbneph",ReallyForceSpell(Myself,DRYAD_TELEPORT))
+    SmallWait(25)
+    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",1)~ EXIT
 END
 
 IF ~~ ZBNEPHIWOULDBEHAPPY
@@ -198,8 +204,11 @@ IF ~~ ZBNEPHEXIT
   IF ~~ DO ~
     ApplySpell(Myself,WIZARD_INVISIBILITY)
     Wait(1)
-    ActionOverride("ZBNEPH", MakeGlobal())
-    MoveGlobal("AR0406","ZBNEPH",[1586.1800])~ EXIT
+    ActionOverride("zbneph",ReallyForceSpell(Myself,WIZARD_INVISIBILITY)
+    SmallWait(25)
+    ActionOverride("zbneph",ReallyForceSpell(Myself,DRYAD_TELEPORT))
+    SmallWait(25)
+    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",1)~ EXIT
 END
 
 // Copper Cornet

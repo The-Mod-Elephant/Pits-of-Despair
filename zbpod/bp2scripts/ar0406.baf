@@ -1,0 +1,7 @@
+IF
+  Global("ZB_NEPH_MOVE_COPPER","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",2)
+    CreateCreature("zbneph",[1586.1800],S)
+END
