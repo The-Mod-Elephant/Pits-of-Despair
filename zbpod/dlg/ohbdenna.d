@@ -212,7 +212,7 @@ IF ~~ THEN BEGIN 21
 // Global("ohb_102_item_great","global",0)
 // ~ THEN REPLY @570 /* I destroyed some orcs for your amusement—these gladiators will be no different. But you, my people, deserve more! Give me the proper tools, and I swear the front row will drip red with blood! */ DO ~SetGlobal("ohb_item_reward","global",1)
 // ~ GOTO 24
-  IF ~~ THEN REPLY @571 /* Not at all. */ GOTO 25
+//  IF ~~ THEN REPLY @571 /* Not at all. */ GOTO 25
   IF ~~ THEN REPLY @572 /* Thayan gladiators? Ha! A nation of weaklings! No Thayan can stand against me! */ DO ~SetGlobal("ohb_raise_villain_score","global",1) SetGlobal("ohb_item_reward","global",1) PlaySound("BP2NEG_1")~ GOTO 26
 END
 
@@ -397,7 +397,7 @@ IF ~~ THEN BEGIN 37
   SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 38
- // IF ~~ THEN REPLY @595 /* Dennaton, you disgusting piece of filth! You'd not last ten seconds in this arena! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+// IF ~~ THEN REPLY @595 /* Dennaton, you disgusting piece of filth! You'd not last ten seconds in this arena! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
 //~ GOTO 39
 //  IF ~  OR(2)
 // Global("ohb_104_item_good","global",0)
