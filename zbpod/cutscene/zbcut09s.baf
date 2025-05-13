@@ -21,7 +21,6 @@ THEN
 		SetGlobal("OHB_EVENT_102_DIALOG","MYAREA",2)
 		SetGlobal("OHB_EVENT_102","MYAREA",1)
 		SetGlobal("OHB_ENEMY_OVERRIDE","GLOBAL",0)
-		SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",1)
 		SetAreaScript("",OVERRIDE)
 		ApplySpell("ohbdenna",RESTORE_FULL_HEALTH)  // Dennaton
 		Wait(1)
