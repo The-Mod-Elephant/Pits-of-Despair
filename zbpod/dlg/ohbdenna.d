@@ -57,7 +57,7 @@ END
 IF ~~ THEN BEGIN 9
   SAY @550 /* Before we begin, <CHARNAME>, is there anything you'd like to say to the audience? */
   IF ~~ THEN REPLY @551 /* These foul beasts once committed unspeakable acts of cruelty upon the civilized people of Faerûn. Today, I enact justice in the name of all their innocent victims! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
-  SetGlobal("ohb_item_reward","global",1)
+  SetGlobal("zb_item_reward_2","global",1)
 PlaySound("BP2POS_1")
 ~ GOTO 10
   // IF ~~ THEN REPLY @552 /* This arena is as much a joke as the last. Let's get this over with, Dennaton! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
@@ -69,7 +69,7 @@ PlaySound("BP2POS_1")
 // ~ GOTO 12
 //   IF ~~ THEN REPLY @554 /* Not particularly. */ GOTO 13
   IF ~~ THEN REPLY @555 /* Why should I address these peasants? To gaze upon my magnificence is more than they deserve! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
-  SetGlobal("ohb_item_reward","global",1)
+  SetGlobal("zb_item_reward_2","global",1)
 PlaySound("BP2NEG_1")
 ~ GOTO 14
 END
@@ -506,10 +506,10 @@ END
 
 IF ~~ THEN BEGIN 47
   SAY @608 /* Before we begin, <CHARNAME>, have you anything you'd like to say? */
-  IF ~~ THEN REPLY @609 /* Fear not, good people of Thay! Your champion is here! When I am done this day, these despicable beasts will be naught but stains upon the arena floor! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
-  SetGlobal("ohb_item_reward","global",1)
-PlaySound("BP2POS_5")
-~ GOTO 48
+  IF ~~ THEN REPLY @609 /* Fear not, good people of Thay! Your champion is here! When I am done this day, these despicable beasts will be naught but stains upon the arena floor! */ DO ~
+  SetGlobal("ohb_raise_hero_score","global",1)
+  SetGlobal("zb_item_reward_5","global",1)
+  PlaySound("BP2POS_5")~ GOTO 48
  // IF ~  GlobalGT("OHB_ANTI_DENNATON","GLOBAL",2)
 // ~ THEN REPLY @610 /* I've no doubt YOU fear the drow, Dennaton. You're nothing without the Winged. One day, it'll just be you and me in this arena. Some day soon. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
 // ~ GOTO 49
@@ -522,10 +522,10 @@ PlaySound("BP2POS_5")
 // ~ THEN REPLY @611 /* Volo wrote the History of the Sword Coast. Prism sculpted the Mask of Ellesime. I shall create the greatest spectacle of gore seen this side of the Blood War. I need only the proper tools. Help me, everyone. Help me entertain YOU! */ DO ~SetGlobal("ohb_item_reward","global",1)
 // ~ GOTO 50
 // IF ~~ THEN REPLY @612 /* Nope. */ GOTO 52
-  IF ~~ THEN REPLY @613 /* Drow? Is this the best you can do? Surely even you fools know better than to fear such weaklings. I am the true dark one. FEAR ME! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
-  SetGlobal("ohb_item_reward","global",1)
-PlaySound("BP2NEG_3")
-~ GOTO 53
+  IF ~~ THEN REPLY @613 /* Drow? Is this the best you can do? Surely even you fools know better than to fear such weaklings. I am the true dark one. FEAR ME! */ DO ~
+    SetGlobal("ohb_raise_villain_score","global",1)
+    SetGlobal("zb_item_reward_5","global",1)
+    PlaySound("BP2NEG_3")~ GOTO 53
 END
 
 IF ~~ THEN BEGIN 48

@@ -8,9 +8,8 @@ IF ~~ ZBNEPHKICKOUT
     LeaveParty()
     ApplySpell(Myself,WIZARD_INVISIBILITY)
     Wait(1)
-    ActionOverride("zbneph",ReallyForceSpell(Myself,DRYAD_TELEPORT))
-    SmallWait(25)
-    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",1)~ EXIT
+    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",2)
+    MoveGlobal("AR0406","ZBNEPH",[1586.1800])~ EXIT
   IF ~~ THEN REPLY @118 /* I don't know what I was thinking, of course I want you to stay. */ DO ~JoinParty()~ EXIT
 END
 

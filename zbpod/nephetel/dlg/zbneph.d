@@ -92,7 +92,7 @@ IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",10)
   IF ~~ THEN REPLY @27 /* I'll let you get back to whatever you were doing. */ EXIT
 END
 
-IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",11)~ 15
+IF ~Global("ZB_NEPH_ESCAPE","GLOBAL",1)~ 15
   SAY @57 /* Excellent! An appropriate death to our enemies. Let us speak of escape if you wish it. */
   IF ~~ THEN REPLY @58 /* I wish to discuss escaping the Pits of Despair. */ DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",12)~ GOTO 16
 END
