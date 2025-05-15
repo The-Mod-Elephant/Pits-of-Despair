@@ -483,10 +483,11 @@ Weight: 3~
 STATISTICS:
 
 Combat abilities:
-– Each successful hit inflicts disease on the target if a save vs. poison is failed. The afflicted individual suffers 1 poison damage per round and is slowed for one turn.
+– Each successful hit forces the target to save vs. Death at -2 or become diseased. Afflicted targets take 1 poison damage per round for 1 turn and are slowed for 2 rounds.
 
 THAC0: +3
-Damage: 1d10+3 (piercing)
+Damage: 1d10+3, +1d4 poison damage
+Damage type: Piercing or slashing, whichever is better
 Speed Factor: 6
 Proficiency Type: Halberd
 Type: Two-handed
