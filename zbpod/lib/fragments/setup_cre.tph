@@ -317,6 +317,22 @@ COPY_EXISTING ~OHBORC04.cre~ ~override~
     ADD_MEMORIZED_SPELL ~SPWI412~ #3 ~wizard~ ( 1 ) // Greater Malison
     ADD_MEMORIZED_SPELL ~SPWI508~ #4 ~wizard~ ( 1 ) // Chaos
 
+// Set Orc Fight 1 DR to 8%
+ACTION_FOR_EACH orcdr IN
+        OHBORC01 // orc warrior
+        OHBORC02 // orc archer
+        OHBORC03 // orc priest
+        OHBORC04 // orc mage
+    BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME ~%orcdr%.cre~ BEGIN
+            COPY_EXISTING ~%orcdr%.cre~ ~override~
+                WRITE_BYTE 0x60  8  // Slashing resistance
+                WRITE_BYTE 0x61  8  // Crushing resistance
+                WRITE_BYTE 0x62  8  // Piercing resistance
+                WRITE_BYTE 0x63  8  // Missile resistance
+        END
+    END
+
 // minotaurs gore attack
 COPY ~%MOD_FOLDER%/creatures/match2mino~ ~override~
 COPY_EXISTING ~ohbmin01.cre~ ~override~
