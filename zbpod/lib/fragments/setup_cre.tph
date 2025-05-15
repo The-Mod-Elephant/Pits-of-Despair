@@ -5,6 +5,7 @@ COPY ~%MOD_FOLDER%/creatures/deathslither_dracolich~ ~override~
 COPY_EXISTING ~zbdrclch.CRE~ ~override~
     SAY 0x08 @15000
     SAY 0x0c @15000
+    WRITE_LONG 0x28 IDS_OF_SYMBOL (animate MO_DRACOLICH_NWN)
 
 COPY ~%MOD_FOLDER%/creatures/dennaton~ ~override~
 COPY_EXISTING ~ohbdenna.cre~ ~override~

@@ -113,3 +113,19 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY ZBFALLEN_PLANETAR_ANIMS_Exxx BEGIN
     OUTER_SET EVAL ~slot_%folder%~ = slot   // save animation slot number for later
     APPEND ~ANIMATE.IDS~ ~0x%hexNumber% %symbol%~
 END
+
+// Dracolich
+LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+ACTION_IF (slot <= 0) BEGIN
+  FAIL ~No free creature animation slot found.~
+END
+
+LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+APPEND ~animate.ids~ ~0x%hexNumber% MO_DRACOLICH_NWN~ UNLESS ~MO_DRACOLICH_NWN~
+CLEAR_IDS_MAP
+
+COPY ~%MOD_FOLDER%/animations/dracolich/exxx.ini~ ~override/%hexNumber%.ini~
+
+ACTION_BASH_FOR ~%MOD_FOLDER%/animations/dracolich~ ~^.+\.bam$~ BEGIN
+  COPY ~%BASH_FOR_FILESPEC%~ ~override~
+END
