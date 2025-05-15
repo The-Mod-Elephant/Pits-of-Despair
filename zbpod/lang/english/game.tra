@@ -386,7 +386,9 @@ Charge abilities:
 Weight: 4~
 
 @10130 = ~Luxurious Lizardskin Leaps~
-@10131 = ~Luxurious Lizardskin Leaps description placeholder
+@10131 = ~Many beasts of fable prowl the jungles of Chult, but these elegant boots are one of a kind, fashioned from the thick verdant hide of a great lizard said to roam the deepest reaches of the wilds. The creature was legendary for its uncanny evasiveness. Despite being a lumbering behemoth whose scales could be seen glistening from a hundred feet away, it eluded capture and study for nearly a century, its magical leap carrying it beyond the reach of countless hunters and curious students.
+
+When the noble-born sorcerer and hunter of exotic beasts Khuldros Vey of Tethyr finally brought the beast down through cunning traps and cruel magics, he commissioned these lavish boots as a testament to his triumph—or, as his naysayers would tell it, to his atrocity. Those who wear these boots find themselves gifted with a remnant of the creature’s power—though always with the uneasy knowledge that something sacred was destroyed in their creation.
 
 Equipped abilities:
 – Charisma: +2
@@ -401,7 +403,9 @@ Charge abilities:
 Weight: 4~
 
 @10140 = ~Blazing Bull~
-@10141 = ~Blazing Bull description placeholder
+@10141 = ~This helmet was once the prized possession of Ragath Flame-Caller, a barbarian chieftain whose fury burned so hot that it was said to melt the snow of the frozen tundra he inhabited. Forged from the iron-cast skull of a minotaur he felled in single combat, the Blazing Bull was both a trophy and a warning, the eyes a reflection of the pyres Ragath left smoldering in his wake. Those who faced him in combat swore they could feel the heat of the bloody helmet long before his axe ever cleaved flesh.
+
+Ragath’s conquest ended at the hands of betrayal—a trusted ally, driven by fear of the chieftain’s growing power, struck him down as he slept. The Blazing Bull was fearfully discarded into the icy rapids and lost… if only for a time. Even now, its heat is undimmed by the elements and the passage of years, though not everyone possesses the will to tame its strength.
 
 STATISTICS:
 
