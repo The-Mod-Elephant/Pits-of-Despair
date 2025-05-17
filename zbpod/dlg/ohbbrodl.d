@@ -4505,31 +4505,3 @@ IF ~~ THEN BEGIN 93
   SAY @348 /* Oh, by Tymora's dice, give it a rest already... */
   IF ~~ THEN EXTERN ~OHBTARTL~ 74
 END
-
-// Reward 2
-IF ~Global("zb_item_reward_2","global",2)~ THEN BEGIN ZBREWARD2
-  SAY @146 /* Hey, <CHARNAME>. An audience member donated this and asked that you use it in your next fight. Congratulations! */
-  IF ~~ THEN DO ~
-  SetGlobal("zb_item_reward_2","global",3)
-  SetGlobal("ohb_102_item_good","global",2)
-  GiveItemCreate("zbhlmbul",LastTalkedToBy,1,0,0)
-  GivePartyGold(3000)
-  SetGlobal("ohb_item_reward","global",0)
-  SetGlobal("ohb_plot_cutscene","global",3)
-  EscapeAreaMove("oh8100",1670,2510,SE)
-  SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",1)~ EXIT
-END
-
-// Reward 5
-IF ~Global("zb_item_reward_5","global",2)~ THEN BEGIN ZBREWARD5
-  SAY @149 /* It's unbelievable the way these people fawn over you. I could bottle your sweat and sell it as an in-stand refreshment. Here's something from an INCREDIBLY devoted fan. Congratulations! */
-  IF ~~ THEN DO ~
-  SetGlobal("zb_item_reward_5","global",3)
-  SetGlobal("ohb_105_item_good","global",2)
-  GiveItemCreate("ZBJACK01",LastTalkedToBy,1,0,0)
-  GivePartyGold(4775)
-  SetGlobal("ohb_item_reward","global",0)
-  SetGlobal("ohb_plot_cutscene","global",3)
-  EscapeAreaMove("oh8100",1670,2510,SE)
-  SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",11)~ EXIT
-END

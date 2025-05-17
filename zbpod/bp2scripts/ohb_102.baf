@@ -80,22 +80,6 @@ THEN
 END
 
 IF
-	Global("zb_item_reward_2","global",1)
-THEN
-	RESPONSE #100
-		SetGlobal("zb_item_reward_2","global",2)
-		Continue()
-END
-
-IF
-	Global("zb_item_reward_5","global",1)
-THEN
-	RESPONSE #100
-		SetGlobal("zb_item_reward_5","global",2)
-		Continue()
-END
-
-IF
 	Global("ohb_item_reward","global",1)
 	OR(2)
 		Global("ohb_102_item_good","global",0)
