@@ -146,10 +146,9 @@ END
 IF
 	Global("ohb_plot_cutscene","global",1)
 	GlobalLT("OHB_LAST_BATTLE","GLOBAL",404)
-	OR(3)
+	OR(2)
 		Global("ohb_item_reward","global",10)
 		Global("ohb_item_reward","global",11)
-		Global("zb_item_reward_2","global",2)
 THEN
 	RESPONSE #100
 		SetCursorState(TRUE)
