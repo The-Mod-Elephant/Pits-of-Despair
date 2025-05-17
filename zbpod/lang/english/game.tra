@@ -386,7 +386,9 @@ Charge abilities:
 Weight: 4~
 
 @10130 = ~Luxurious Lizardskin Leaps~
-@10131 = ~Luxurious Lizardskin Leaps description placeholder
+@10131 = ~Many beasts of fable prowl the jungles of Chult, but these elegant boots are one of a kind, fashioned from the thick verdant hide of a great lizard said to roam the deepest reaches of the wilds. The creature was legendary for its uncanny evasiveness. Despite being a lumbering behemoth whose scales could be seen glistening from a hundred feet away, it eluded capture and study for nearly a century, its magical leap carrying it beyond the reach of countless hunters and curious students.
+
+When the noble-born sorcerer and hunter of exotic beasts Khuldros Vey of Tethyr finally brought the beast down through cunning traps and cruel magics, he commissioned these lavish boots as a testament to his triumph—or, as his naysayers would tell it, to his atrocity. Those who wear these boots find themselves gifted with a remnant of the creature’s power—though always with the uneasy knowledge that something sacred was destroyed in their creation.
 
 Equipped abilities:
 – Charisma: +2
@@ -401,7 +403,9 @@ Charge abilities:
 Weight: 4~
 
 @10140 = ~Blazing Bull~
-@10141 = ~Blazing Bull description placeholder
+@10141 = ~This helmet was once the prized possession of Ragath Flame-Caller, a barbarian chieftain whose fury burned so hot that it was said to melt the snow of the frozen tundra he inhabited. Forged from the iron-cast skull of a minotaur he felled in single combat, the Blazing Bull was both a trophy and a warning, the eyes a reflection of the pyres Ragath left smoldering in his wake. Those who faced him in combat swore they could feel the heat of the bloody helmet long before his axe ever cleaved flesh.
+
+Ragath’s conquest ended at the hands of betrayal—a trusted ally, driven by fear of the chieftain’s growing power, struck him down as he slept. The Blazing Bull was fearfully discarded into the icy rapids and lost… if only for a time. Even now, its heat is undimmed by the elements and the passage of years, though not everyone possesses the will to tame its strength.
 
 STATISTICS:
 
@@ -474,15 +478,18 @@ The benefits of this item depend on the class(es) of the wearer. The cloak will 
 Weight: 3~
 
 @10200 = ~Festering Maw +3~
-@10201 = ~Created in the tombs of the Mere of Dead Men, the "Festering Maw" is a testimate to the craftsmanship of the shamans of the lizard tribes that inhabit it. Ceremonially passed upon the ascension of each king of the Slavering Maw clan they use it's terrible power to rule over it. The jagged blade is said to have been bathed in the blood of a thousand victims both slave and lizardkind, a legacy of corruption of power and the rot and ruin to those who would defy the king. During the dark moon of each cycle the weapon hungers for flesh, its eerie green glow pulsating with each life it has taken and the screams of it's victims haunting the air causing pain and suffering to any touched by it's malevolent spirit.
+@10201 = ~Forged by the lizardfolk shamans of the Mere of Dead Men, this grotesque weapon has passed from one sovereign of the Slavering Maw clan to the next, its blade anointed in the blood of those too weak to rule. The halberd’s jagged blade is coated in old bloodstains and dark patina that glows brightly under the lightless sky of the dark moon. Clan lore holds that the blade remembers every life taken, and grows sharper for each.
+
+How this weapon that even most lizardfolk dread to touch left the Mere is unknown, though its presence in the realms is rarely subtle. The Festering Maw announces itself in the bodies it leaves behind, rotting from wounds that should not fester. Healers weep in the face of this sickness that resists their prayers, while wiser tongues suggest the weapon was never meant for battle alone, but as the shadow that a savage ruler can cast.
 
 STATISTICS:
 
 Combat abilities:
-– Each successful hit inflicts disease on the target if a save vs. poison is failed. The afflicted individual suffers 1 poison damage per round and is slowed for one turn.
+– Each successful hit forces the target to save vs. Death at -2 or become diseased. Afflicted targets take 1 poison damage per round for 1 turn and are slowed for 2 rounds.
 
 THAC0: +3
-Damage: 1d10+3 (piercing)
+Damage: 1d10+3, +1d4 poison damage
+Damage type: Piercing or slashing, whichever is better
 Speed Factor: 6
 Proficiency Type: Halberd
 Type: Two-handed
