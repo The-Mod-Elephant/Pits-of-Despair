@@ -180,8 +180,8 @@ COPY ~%MOD_FOLDER%/items/mastadon~ ~override~
 COPY_EXISTING ~zbmasto0.itm~ ~override~
     SAY NAME2 "Mastadon +3"
     SAY IDENTIFIED_DESC "description placeholder"
-    LPF ALTER_EFFECT INT_VAR match_opcode = 139 header_type=3 parameter1 = RESOLVE_STR_REF("Trumpet") END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 139 header_type = 1 parameter1 = RESOLVE_STR_REF("Knocked prone") END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 header_type=3 parameter1 = RESOLVE_STR_REF(@18026) END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 header_type = 1 parameter1 = RESOLVE_STR_REF(@18002) END
 
 //////// Mirror Mask \\\\\\\\
 COPY ~%MOD_FOLDER%/items/mirrormask~ ~override~
