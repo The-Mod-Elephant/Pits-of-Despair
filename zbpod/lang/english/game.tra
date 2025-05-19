@@ -540,7 +540,7 @@ Weight: 1~
 Whoever crafted this masterwork was as careful to hide themselves as their creation, but they certainly had access to an implausible number of skeleton keys, and it is unlikely this ring was not involved in many an 'impossible' heist.
 
 Equipped abilities:
-– Finds automatically traps once per round
+– Finds traps automatically once per round
 
 Charge abilities:
 – Cast Knock three times per day
@@ -553,7 +553,14 @@ Charge abilities:
 @11003 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
 
 Weight: 1~
-@11004 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
+@11004 = ~This powerful circlet was enchanted to complement the robes customarily worn by archmages, building even further on their magical protection and benefits. Due to the nature of the enchantment, it can only be worn by Mages.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Saving Throws: +1
+– Intelligence: +1
 
 Weight: 1~
 
@@ -564,7 +571,7 @@ Weight: 1~
 STATISTICS:
 
 Weight: 2~
-@11008 = ~Identified description	Cursed Girdle of Hill Giant Strength: Big-Fisted Belt
+@11008 = ~Cursed Girdle of Hill Giant Strength: Big-Fisted Belt
 A fist-shaped brass buckle secures this belt of thick elk hide. The old bloodstains on the leather hint at unspeakable carnage, but the misspelled graffiti scratched into its surface suggests that the girdle's former owners were none too bright.
 
 STATISTICS:
