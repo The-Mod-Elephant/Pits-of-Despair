@@ -210,6 +210,27 @@ THEN
 	RESPONSE #100
 		SetGlobal("ohb_plot_cutscene","global",0)
 		SetCursorState(FALSE)
+		SetGlobal("ZB_NEPH_CHECK","GLOBAL",1)
+END
+
+IF
+	Global("ZB_NEPH_CHECK","GLOBAL",1)
+	Global("ZB_NEPH_PRE_INTERJECT_2","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ZB_NEPH_CHECK","GLOBAL",0)
+		SetGlobal("ZB_NEPH_PRE_INTERJECT_2","GLOBAL",1)
+		SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",1)
+END
+
+IF
+	Global("ZB_NEPH_CHECK","GLOBAL",1)
+	Global("ZB_NEPH_PRE_INTERJECT_5","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ZB_NEPH_CHECK","GLOBAL",0)
+		SetGlobal("ZB_NEPH_PRE_INTERJECT_5","GLOBAL",1)
+		SetGlobal("ZB_NEPH_INTERJECT_5","GLOBAL",1)
 END
 
 IF
@@ -456,8 +477,6 @@ THEN
 	SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",3)
 	ClearActions("zbneph")
 	ActionOverride("zbneph",SetDialog("ZBNEPH"))
-	SmallWait(25)
-	Continue()
 END
 
 IF

@@ -45,6 +45,7 @@ THEN
 		SmallWait(75)
 		ActionOverride("ohbdenna",Face(SW))
 		SmallWait(1)
+		SetGlobal("ZB_NEPH_PRE_INTERJECT_2","GLOBAL",1)
 		ActionOverride("ohbdenna",StartDialogueNoSet(Player1))
 END
 
