@@ -373,7 +373,9 @@ Rating: ★★★☆☆ (3/5 stars)
 A work of considerable ambition, but ultimately, one that may leave you feeling more exhausted than enlightened.~
 
 @10120 = ~Mirror Mask~
-@10121 = ~Mirror mask description placeholder
+@10121 = ~This peculiar mask was the prized possession of a Calishite illusionist named Qhari, who never allowed herself to be seen by others without it adorning her face. There were many rumors as to why she wore the mask, but the most prevalent tells the tale of Qhari creating the mask after an encounter with a medusa in the Cloud Peaks forced her to blind herself. Rather than seek healing, it is said she retreated into seclusion, only to reemerge with her sight restored and the Mirror Mask upon her face.
+
+Detractors of this story often point out that deliberately blinding oneself is a drastic course of action opposed to simply averting one’s gaze, but the truth is a tale that has been lost to time, leaving only legends in its place. Despite its rigid appearance, the mask molds perfectly to the wearer’s face, obscuring their features almost entirely while reflecting the world back in distorted fragments.
 
 Equipped abilities:
 – Immunity to all gaze attacks, such as those from vampires and basilisks
@@ -460,7 +462,13 @@ Weight: 3~
 @10181 = ~Nine Lives description placeholder~
 
 @10190 = ~Jack Of All Trades~
-@10191 = ~This rare and wonderful cloak goes by the name Jack. Originally worn by Dapper Jack, he was a peasant who grew up with nothing but an incredible will to become anything and everything. He had heard tales that Elminster, the Sage, had throughout his long life, many professions and many careers before ending up as Mystra's archmage. Dapper Jack went through life learning the finesse of a thief, the style of a fighter, the devotion of a cleric, and the determination of a mage before eventually creating this item at the end years of his own long life. It was said to strike awe into those around him, and the experience of his long years was woven into its thread and beating with a life all their own.
+@10191 = ~Both the creator and previous owners of this peculiar cloak, much like the garment itself, have been largely lost to history. Whether ‘Jack’ was once its wearer or simply a namesake is unclear, but whoever they were, the cloak has long outlasted them.
+
+The earliest surviving record of the cloak appears in a merchant ledger from Berdusk, where it was listed in its inventory before disappearing entirely. In the years since, it has surfaced in tales of a duelist in Riatavin who swore it gave him the reflexes of a cat, and a mage living in the Sunset Mountains who claimed it helped her survive the harsh environments.
+
+The cloak adjusts itself from owner to owner—the seams shift, colors blur, and the weight in the hem seems to come and go. It attunes itself to the wearer and their needs, and sits snugly as though it were designed for them alone. It offers just enough to make them feel exceptional—but never quite enough to make it feel like theirs.
+
+Most who wear it accomplish great things, though few keep it for long.
 
 Equipped abilities:
 The benefits of this item depend on the class(es) of the wearer. The cloak will adapt to the wearer's class and the overall weight of their affinity, granting them the following abilities:
@@ -517,7 +525,7 @@ Charge ability:
 Weight: 3~
 
 @10210 = ~Binky~
-@10211 = ~This is the skeleton of a racing lizard that Jan received by trading Lissa's prize turnip for.
+@10211 = ~This is the skeleton of a racing lizard that Jan received by trading for Lissa's prize turnip.
 
 STATISTICS:
 
@@ -532,7 +540,7 @@ Weight: 1~
 Whoever crafted this masterwork was as careful to hide themselves as their creation, but they certainly had access to an implausible number of skeleton keys, and it is unlikely this ring was not involved in many an 'impossible' heist.
 
 Equipped abilities:
-– Finds automatically traps once per round
+– Finds traps automatically once per round
 
 Charge abilities:
 – Cast Knock three times per day
@@ -545,7 +553,14 @@ Charge abilities:
 @11003 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
 
 Weight: 1~
-@11004 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
+@11004 = ~This powerful circlet was enchanted to complement the robes customarily worn by archmages, building even further on their magical protection and benefits. Due to the nature of the enchantment, it can only be worn by Mages.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Saving Throws: +1
+– Intelligence: +1
 
 Weight: 1~
 
@@ -556,7 +571,7 @@ Weight: 1~
 STATISTICS:
 
 Weight: 2~
-@11008 = ~Identified description	Cursed Girdle of Hill Giant Strength: Big-Fisted Belt
+@11008 = ~Cursed Girdle of Hill Giant Strength: Big-Fisted Belt
 A fist-shaped brass buckle secures this belt of thick elk hide. The old bloodstains on the leather hint at unspeakable carnage, but the misspelled graffiti scratched into its surface suggests that the girdle's former owners were none too bright.
 
 STATISTICS:
@@ -944,3 +959,4 @@ The remainder of the transcript becomes increasingly incoherent, as Lord Dominic
 @18023 = ~murmurs a prayer over their holy symbol~
 @18024 = ~grasps a talisman around their neck tightly~
 @18025 = ~twists a magical ring on their finger~ // currently buffs using vanilla, not my script. Vanilla displays in combat log that chain contingency is activated.
+@18026 = ~Trumpet~

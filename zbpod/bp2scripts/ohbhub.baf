@@ -642,6 +642,8 @@ THEN
 		SetGlobal("TIER","GLOBAL",2)
 		SetGlobal("BLACK_PITS","GLOBAL",2)
 		CreateCreature("ohbdrgd",[444.2544],SW)  // Guard
+		AddStoreItem("OHBSDWM","zbfmaw",1,1)  // Festering Maw +3 (NEW)
+		AddStoreItem("OHBSDWM","zbmasto0",1,1)  // Mastadon +3 (NEW)
 		AddStoreItem("OHBIMIM","CLCK15",1,1)  // Robe of the Good Archmagi
 		AddStoreItem("OHBIMIM","CLCK16",1,1)  // Robe of the Neutral Archmagi
 		AddStoreItem("OHBIMIM","CLCK17",1,1)  // Robe of the Evil Archmagi
@@ -652,9 +654,8 @@ THEN
 		AddStoreItem("OHBIMIM","BRAC15",1,1)  // Bracers of Defense AC 3
 		AddStoreItem("OHBIMIM","RING31",1,1)  // Ring of Regeneration
 		AddStoreItem("OHBIMIM","RODS03",5,1)  // Rod of Resurrection
-//		AddStoreItem("OHBIMIM","",1,1)  // Dark Knight Belt
+//		AddStoreItem("OHBIMIM","",1,1)  // Dark Knight Belt (NEW)
 		AddStoreItem("OHBCONCO","POTN55",0,1)  // Potion of Superior Healing
-		AddStoreItem("OHBSDWM","zbfmaw",1,1)  // Festering Maw +3 (NEW)
 		AddStoreItem("OHBSDWM","AROW06",5,1)  // Arrow of Detonation
 		AddStoreItem("OHBSDWM","AROW07",10,1)  // Arrow of Dispelling
 		AddStoreItem("OHBCONCO","POTN03",10,1)  // Potion of Hill Giant Strength
@@ -706,19 +707,6 @@ THEN
 		AddStoreItem("OHBCONCO","POTN45",10,1)  // Potion of Freedom
 		SetInterrupt(TRUE)
 END
-
-/*
-IF
-	!Global("OHB_103","GLOBAL",0)
-	Global("MO_AddFestMaw","GLOBAL",0)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("MO_AddFestMaw","GLOBAL",1)
-		AddStoreItem("OHBSDWM","zbfmaw",1,1)  // Festering Maw +3 (NEW)
-		SetInterrupt(TRUE)
-END
-*/
 
 IF
 	Global("TIER","GLOBAL",3)
