@@ -125,6 +125,10 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
                         ~%MOD_FOLDER%/dlg/ohbvoghi.d~
                         ~%MOD_FOLDER%/dlg/ohbstirv.d~
                         ~%MOD_FOLDER%/dlg/ohbtartl.d~
+                        ~%MOD_FOLDER%/dlg/gaelan.d~
+                        ~%MOD_FOLDER%/dlg/zbeshpeu.d~
+                        ~%MOD_FOLDER%/dlg/zbvci.d~
+                        ~%MOD_FOLDER%/dlg/zbvyan.d~
 
 // Nephetel
 INCLUDE ~%MOD_FOLDER%/nephetel/core.tpa~
@@ -136,8 +140,8 @@ APPEND ~ITEMDIAL.2da~
 ~zbeshpeu %label% zbeshpeu~
 UNLESS ~zbeshpeu~
 
-// SoA Interjections
-// COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/interjections/~
+// Crossmod
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/crossmod/~
 
 // // Copy vvcs
 COPY ~%MOD_FOLDER%/vvc~ ~override~
