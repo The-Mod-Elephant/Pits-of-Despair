@@ -18,6 +18,7 @@ THEN
 		DayNight(DUSK_END)
 		FadeFromColor([50.0],0)
 		SmallWait(25)
+		SetGlobal("OHB_EVENT_102_DIALOG","MYAREA",2)
 		SetGlobal("OHB_EVENT_102","MYAREA",1)
 		SetGlobal("OHB_ENEMY_OVERRIDE","GLOBAL",0)
 		SetAreaScript("",OVERRIDE)
