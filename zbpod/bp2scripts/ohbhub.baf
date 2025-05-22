@@ -463,7 +463,7 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",2)
-	ClearAllActions()
+	ClearActions("zbneph")
 	ActionOverride("zbneph",FaceObject([PC]))
 	SmallWait(25)
 	ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
@@ -474,7 +474,7 @@ IF
 	Global("ZB_NEPH_INTERJECT_2","GLOBAL",3)
 THEN
 	RESPONSE #100
-	SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",3)
+	SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",4)
 	ClearActions("zbneph")
 	ActionOverride("zbneph",SetDialog("ZBNEPH"))
 END
@@ -485,7 +485,7 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_3","GLOBAL",2)
-	ClearAllActions()
+	ClearActions("zbneph")
 	ActionOverride("zbneph",FaceObject([PC]))
 	SmallWait(25)
 	ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
@@ -498,7 +498,7 @@ THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_3","GLOBAL",4)
 	ActionOverride("zbneph",SetDialog("ZBNEPH"))
-	ClearAllActions()
+	ClearActions("zbneph")
 	SetCutSceneLite(TRUE)
 	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
 	SetGlobal("OHB_103","GLOBAL",1)
@@ -512,7 +512,7 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",2)
-	ClearAllActions()
+	ClearActions("zbneph")
 	ActionOverride("zbneph",FaceObject([PC]))
 	SmallWait(25)
 	ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
@@ -525,7 +525,7 @@ THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",4)
 	ActionOverride("zbneph",SetDialog("ZBNEPH"))
-	ClearAllActions()
+	ClearActions("zbneph")
 	SetCutSceneLite(TRUE)
 	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
 	SetGlobal("OHB_104","GLOBAL",1)
@@ -539,7 +539,7 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_5","GLOBAL",2)
-	ClearAllActions()
+	ClearActions("zbneph")
 	ActionOverride("zbneph",FaceObject([PC]))
 	SmallWait(25)
 	ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
@@ -552,7 +552,7 @@ THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_5","GLOBAL",4)
 	ActionOverride("zbneph",SetDialog("ZBNEPH"))
-	ClearAllActions()
+	ClearActions("zbneph")
 	SetCutSceneLite(TRUE)
 	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
 	SetGlobal("OHB_105","GLOBAL",1)
@@ -567,7 +567,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("ZB_NEPH_ESCAPE","GLOBAL",1)
-		ClearAllActions()
+		ClearActions("zbneph")
 		ActionOverride("zbneph",FaceObject([PC]))
 		SmallWait(25)
 		ActionOverride("zbneph",StartDialogNoSet([PC]))
