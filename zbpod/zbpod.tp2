@@ -47,6 +47,9 @@ INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_areas.tph~
 // Add zb0700 area
 COPY ~%MOD_FOLDER%/area/zb0700/common~ ~override~
 COPY ~%MOD_FOLDER%/area/zb0700/ee~ ~override~
+COPY ~%MOD_FOLDER%/area/zb0701/~ ~override~
+COPY ~%MOD_FOLDER%/area/zb0702/~ ~override~
+
 // Copy spells and movies
 COPY ~%MOD_FOLDER%/spells~ ~override~
 COPY ~%MOD_FOLDER%/spells/zbantisb.bam~ ~override/zbantisc.bam~
@@ -98,7 +101,6 @@ COPY ~%MOD_FOLDER%/animations/red_worg~ ~override~
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/cutscene~ USING ~%MOD_FOLDER%/lang/%LANGUAGE%/cutscenes.tra~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bp2scripts~
-COMPILE ~%MOD_FOLDER%/ohbvic01~ /* editing the item_roll at the bottom to be zero so we ALWAYS get loot */ /* using EVALUATE BUFFER here means it won't install where going YOLO */
 
 /* new journal entries */
 ADD_JOURNAL TITLE (@800000) @800001 USING ~%MOD_FOLDER%/lang/english/JournalEntries.tra~
@@ -125,6 +127,10 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
                         ~%MOD_FOLDER%/dlg/ohbvoghi.d~
                         ~%MOD_FOLDER%/dlg/ohbstirv.d~
                         ~%MOD_FOLDER%/dlg/ohbtartl.d~
+                        ~%MOD_FOLDER%/dlg/gaelan.d~
+                        ~%MOD_FOLDER%/dlg/zbeshpeu.d~
+                        ~%MOD_FOLDER%/dlg/zbvci.d~
+                        ~%MOD_FOLDER%/dlg/zbvyan.d~
 
 // Nephetel
 INCLUDE ~%MOD_FOLDER%/nephetel/core.tpa~
@@ -136,8 +142,8 @@ APPEND ~ITEMDIAL.2da~
 ~zbeshpeu %label% zbeshpeu~
 UNLESS ~zbeshpeu~
 
-// SoA Interjections
-// COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/interjections/~
+// Crossmod
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/crossmod/~
 
 // // Copy vvcs
 COPY ~%MOD_FOLDER%/vvc~ ~override~
