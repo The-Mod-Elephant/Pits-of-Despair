@@ -205,6 +205,108 @@ END
 // Backstab Attacks
 /////////////////////////////////////////////////////////////////////
 IF
+  !Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs(SixthNearest([EVILCUTOFF]),MAINHAND)
+  WeaponCanDamage(SixthNearest([EVILCUTOFF]),MAINHAND)
+  CheckStatLT(SixthNearest([EVILCUTOFF]),1,STONESKINS)
+  !StateCheck(SixthNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+  !StateCheck(SixthNearest([EVILCUTOFF]),STATE_PANIC)
+  !CheckStatGT(SixthNearest([EVILCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(SixthNearest([EVILCUTOFF]),BARBARIAN)
+  See(SixthNearest([EVILCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  !Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs(FifthNearest([EVILCUTOFF]),MAINHAND)
+  WeaponCanDamage(FifthNearest([EVILCUTOFF]),MAINHAND)
+  CheckStatLT(FifthNearest([EVILCUTOFF]),1,STONESKINS)
+  !StateCheck(FifthNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+  !StateCheck(FifthNearest([EVILCUTOFF]),STATE_PANIC)
+  !CheckStatGT(FifthNearest([EVILCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(FifthNearest([EVILCUTOFF]),BARBARIAN)
+  See(FifthNearest([EVILCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  !Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs(FourthNearest([EVILCUTOFF]),MAINHAND)
+  WeaponCanDamage(FourthNearest([EVILCUTOFF]),MAINHAND)
+  CheckStatLT(FourthNearest([EVILCUTOFF]),1,STONESKINS)
+  !StateCheck(FourthNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+  !StateCheck(FourthNearest([EVILCUTOFF]),STATE_PANIC)
+  !CheckStatGT(FourthNearest([EVILCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(FourthNearest([EVILCUTOFF]),BARBARIAN)
+  See(FourthNearest([EVILCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  !Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs(ThirdNearest([EVILCUTOFF]),MAINHAND)
+  WeaponCanDamage(ThirdNearest([EVILCUTOFF]),MAINHAND)
+  CheckStatLT(ThirdNearest([EVILCUTOFF]),1,STONESKINS)
+  !StateCheck(ThirdNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+  !StateCheck(ThirdNearest([EVILCUTOFF]),STATE_PANIC)
+  !CheckStatGT(ThirdNearest([EVILCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(ThirdNearest([EVILCUTOFF]),BARBARIAN)
+  See(ThirdNearest([EVILCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  !Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs(SecondNearest([EVILCUTOFF]),MAINHAND)
+  WeaponCanDamage(SecondNearest([EVILCUTOFF]),MAINHAND)
+  CheckStatLT(SecondNearest([EVILCUTOFF]),1,STONESKINS)
+  !StateCheck(SecondNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+  !StateCheck(SecondNearest([EVILCUTOFF]),STATE_PANIC)
+  !CheckStatGT(SecondNearest([EVILCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(SecondNearest([EVILCUTOFF]),BARBARIAN)
+  See(SecondNearest([EVILCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  !Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs([EVILCUTOFF],MAINHAND)
+  WeaponCanDamage([EVILCUTOFF],MAINHAND)
+  CheckStatLT([EVILCUTOFF],1,STONESKINS)
+  !StateCheck([EVILCUTOFF],STATE_MIRRORIMAGE)
+  !StateCheck([EVILCUTOFF],STATE_PANIC)
+  !CheckStatGT([EVILCUTOFF],0,IMMUNITY_TO_BACKSTAB)
+  !Kit([EVILCUTOFF],BARBARIAN)
+  See([EVILCUTOFF])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
   Allegiance(Myself,ENEMY)
   StateCheck(Myself,STATE_INVISIBLE)
   See([GOODCUTOFF])
@@ -746,6 +848,16 @@ IF
   Allegiance(Myself,ENEMY)
   StateCheck(Myself,STATE_INVISIBLE)
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  See(LastSeenBy(Myself))
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+  !Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  Allegiance(LastSeenBy(Myself),ENEMY)
   See(LastSeenBy(Myself))
 THEN
   RESPONSE #100
