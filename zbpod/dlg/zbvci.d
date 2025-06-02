@@ -45,34 +45,34 @@ END
 /* companion interjections during the welcoming feast
 edwin should also react here, since we're in thay and the red wizards are involved, but i'll have glitter manage that. :3
 NONE OF THIS IS PROOFREAD OR FULLY IC YET - heavy edits expected */
-I_C_T OHBTARTL 75 ZBSFEASTJAHEIRA
+INTERJECT_COPY_TRANS OHBTARTL 75 ZBSFEASTJAHEIRA
 == JAHEIRAJ IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~For one so small of stature, his ego seems disproportionately sized.~
 END
 
-I_C_T OHBTIMMO 70 ZBSFEASTKELDORN
+INTERJECT_COPY_TRANS OHBTIMMO 70 ZBSFEASTKELDORN
 == KELDORJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~One cannot question his valour. His chances of success however...~
 END
 
-I_C_T OHBELLRA 31 ZBSFEASTRASAAD1
+INTERJECT_COPY_TRANS OHBELLRA 31 ZBSFEASTRASAAD1
 == RASAADJ IF ~InParty("RASAAD") InMyArea("RASAAD") !StateCheck("RASAAD",CD_STATE_NOTVALID)~ THEN ~The light of Selûne will yet offer guidance.~
 END
 
-I_C_T OHBELLRA 32 ZBSFEASTRASAAD2
+INTERJECT_COPY_TRANS OHBELLRA 32 ZBSFEASTRASAAD2
 == RASAADJ IF ~InParty("RASAAD") InMyArea("RASAAD") !StateCheck("RASAAD",CD_STATE_NOTVALID)~ THEN ~I did not expect to find one as enlightened within these dark halls.~
 END
 
-I_C_T OHBMERCY 44 ZBSFEASTDORN1
+INTERJECT_COPY_TRANS OHBMERCY 44 ZBSFEASTDORN1
 == DORNJ IF ~InParty("DORN") InMyArea("DORN") !StateCheck("DORN",CD_STATE_NOTVALID)~ THEN ~I should mention, <CHARNAME>, that this woman seeks my blood. Not that she has any hope of defeating me.~
 END
 
-I_C_T OHBHORT 49 ZBSFEASTDORN2
+INTERJECT_COPY_TRANS OHBHORT 49 ZBSFEASTDORN2
 == DORNJ IF ~InParty("DORN") InMyArea("DORN") !StateCheck("DORN",CD_STATE_NOTVALID)~ THEN ~I could strike you both down in a single blow!~
 END
 
 /* mercy whitedove reacts to dorn il'khan's presence
 NOT PROOFREAD / FULLY IC YET. Heavy edits expected.
 possibly extend this so she refuses to join the pc in the arena if dorn is present in the party */
-I_C_T OHBMERCY 3 ZBSMERCYDORN1
+INTERJECT_COPY_TRANS OHBMERCY 3 ZBSMERCYDORN1
 == OHBMERCY IF ~!Global("OHB_TALKED_MERCY","LOCALS",1) InParty("DORN") InMyArea("DORN") !StateCheck("DORN",CD_STATE_NOTVALID)~ THEN ~Given your choice of companion, I doubt we have anything to discuss.~
 == DORNJ ~Does my presence infuriate you, Whitedove? You should be thankful that the arena prevents us from killing one another. You fight another day only through that mercy.~
 == OHBMERCY ~I swear, blackguard, one day you shall answer for your actions! I will personally hunt you down and drag you to face retribution.~
@@ -82,44 +82,59 @@ END
 
 /* random single interjections to dialogue */
 
-I_C_T OHBMOLZA 19 ZBJAN1
+INTERJECT_COPY_TRANS OHBMOLZA 19 ZBJAN1
 == JANJ IF ~Global("ZBPODINTRO","GLOBAL",1) InParty("JAN") InMyArea("JAN") !StateCheck("JAN",CD_STATE_NOTVALID)~ THEN ~Turnip bandits. Truly the most despicable of all villians. Why, this reminds me of a story, my cousin, Dipsy, was robbed by a most unbecoming fellow who...~
 END
 
 /* the companions interject to stannel's ongoing lies - we're going alphabetically & only adding a few batches per fight. so they don't ALL fire at once */
 
-I_C_T OHBSTANN 59 ZBSTANNELBATCH1
+INTERJECT_COPY_TRANS OHBSTANN 59 ZBSTANNELBATCH1
 == AERIEJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~Why would he say such awful things? He's twisting everything we've done, everything we’re going through, and turning it into something so ugly... so wrong.~
 == ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~This affront to our honor will not stand. Such lies, when allowed to spread, often take on a life of their own.~
 == CERNDJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN ~These tall tales are like leaves drifting upon the wind. They will scatter in time.~
 == EDWINJ IF ~InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN ~You think to besmirch my reputation with such drivel? Your envy is as transparent as it is pitiable.~
 END
 
-I_C_T OHBSTANN 63 ZBSTANNELBATCH2
+INTERJECT_COPY_TRANS OHBSTANN 63 ZBSTANNELBATCH2
 == HAERDAJ IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~What dark muse inspires him to write such a tragedy, I wonder?~
 == IMOEN2J IF ~InParty("Imoen") InMyArea("Imoen") !StateCheck("Imoen",CD_STATE_NOTVALID)~ THEN ~At least he's creative about his lies? Too bad, really, I wouldn't mind stories about Imoen the Magnificent bravely saving others. Just...not the opposite so much.~
 == JAHEIRAJ IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~Truth is stubborn and it will outlast his petty words. Pay him no heed. We have greater concerns to tend to.~
 == JANJ IF ~InParty("JAN") InMyArea("JAN") !StateCheck("JAN",CD_STATE_NOTVALID)~ THEN ~Slander, eh? You'd think he'd try to be clever about it. I once knew a fellow who claimed I stole his golden pantaloons — turns out we don't even wear the same size,  and he didn't own any to begin with.~
 END
 
-I_C_T OHBSTANN 69 ZBSTANNELBATCH3
+INTERJECT_COPY_TRANS OHBSTANN 69 ZBSTANNELBATCH3
 == KELDORJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~Such lies are a coward's weapon. Let him spin his tales, our actions will speak louder than his words.~
 == KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN ~Let him yap on. Words are cheap.~
 == MAZZYJ IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN ~While these insults do not reflect on my true character, I don't believe it honorable to strike someone simply for speaking their piece.~
 == MINSCJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN ~What? Why would you tell such lies about us? Boo and I are heroes not villains!~
 END
 
-I_C_T OHBSTANN 71 ZBSTANNELBATCH4
+INTERJECT_COPY_TRANS OHBSTANN 71 ZBSTANNELBATCH4
 == NALIAJ IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~Nobles would often partake in these games; spreading terrible rumours to cover their own shameful wrongdoings. The practice disgusts me.~
 == VALYGARJ IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~This is not the first time my name's been dragged through the mud.~
 == VICONIJ IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~Pfeh! I will not lower myself to address this male's petty lies. Nothing he says holds any worth to me.~
 == YOSHJ IF ~InParty("Yoshimo") InMyArea("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)~ THEN ~Having such a reputation is not without its perks. Fear inspires as much as love.~
 END
 
-I_C_T OHBSTANN 75 ZBSTANNELBATCH5 /* the EE NPCs */
+INTERJECT_COPY_TRANS OHBSTANN 75 ZBSTANNELBATCH5 /* the EE NPCs */
 == DORNJ IF ~InParty("Dorn") InMyArea("Dorn") !StateCheck("Dorn",CD_STATE_NOTVALID)~ THEN ~Still your tongue unless you have a death wish! I've had enough of your ceaseless prattling.~
-== HEXXATJ IF ~InParty("HEXXAT") InMyArea("HEXXAT") !StateCheck("HEXXAT",CD_STATE_NOTVALID)~ THEN ~[write suitable line here idek :/]~
+// == HEXXATJ IF ~InParty("HEXXAT") InMyArea("HEXXAT") !StateCheck("HEXXAT",CD_STATE_NOTVALID)~ THEN ~[write suitable line here idek :/]~
 == NEERAJ IF ~InParty("NEERA") InMyArea("NEERA") !StateCheck("NEERA",CD_STATE_NOTVALID)~ THEN ~Oh, come on! You *know* that's not true. ...Maybe I'll turn you into a chicken and see how much you like being the butt of the joke.~
 == RASAADJ IF ~InParty("RASAAD") InMyArea("RASAAD") !StateCheck("RASAAD",CD_STATE_NOTVALID)~ THEN ~Do not give credibility to these lies. He hopes to unsettle us. We must rise above his barbs.~
 == WILSONJ IF ~InParty("WILSON") InMyArea("WILSON") !StateCheck("WILSON",CD_STATE_NOTVALID)~ THEN ~Hrrrmph. Snort!~
+END
+
+// Before Training matches
+INTERJECT_COPY_TRANS OBSTRIV 7 ZBTRAININGPRE1
+  == MINSCJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN ~Boo? What is it, Boo? Boo demands to know why we need to kill defenseless animals for fun?~
+  == JAHEIRAJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID) InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ ~To pour out their black heart into the world, Minsc. Only scum find joy in it. This Stirv deserves no mercy when justice comes.~
+  == MINSCJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID) InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~Outrage! The butts of evil must be liberally kicked into playing nice with animals.~
+  == JAHEIRAJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID) InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ ~Yes, none shall escape nature's wrath.~
+END
+
+INTERJECT_COPY_TRANS OBSTRIV 7 ZBTRAININGPRE1
+  == CERNDJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN ~These twisted animals are an affront to Nature. Balance requires that we must purge them.~
+  == NALIAJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID) InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~Can we save any of them? They will just keep fighting until they are all dead in the end.~
+  == CERNDJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID) InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~Calmly, dear Nalia, we shall not break as the branches of an oak in a summer storm.~
+  == NALIAJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID) InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~I hope you are right.~
 END
