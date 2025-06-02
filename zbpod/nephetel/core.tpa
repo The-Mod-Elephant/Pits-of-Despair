@@ -21,7 +21,8 @@ COPY ~%MOD_FOLDER%/nephetel/cre/zbneph.cre~ ~override/zbnepha.cre~
   SAY 0x0c @15001
   WRITE_ASCII PORTRAIT_LARGE ~zbnephy~ #8
   WRITE_ASCII PORTRAIT_SMALL ~zbnephy~ #8
-  WRITE_ASCII 0x268 ~zbnepar1~ #8
+  WRITE_ASCII 0x260 ~motatk01~ #8 // General Script (theif attacks)
+  WRITE_ASCII 0x268 ~momatk01~ #8 // Add Default Script (generic melee)
   WRITE_ASCII DEATHVAR ~zbneph~ #32
   WRITE_ASCII DIALOG ~zbneph~ #8
 
