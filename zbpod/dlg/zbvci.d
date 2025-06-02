@@ -125,14 +125,14 @@ INTERJECT_COPY_TRANS OHBSTANN 75 ZBSTANNELBATCH5 /* the EE NPCs */
 END
 
 // Before Training matches
-INTERJECT_COPY_TRANS OBSTRIV 7 ZBTRAININGPRE1
+INTERJECT_COPY_TRANS OHBSTIRV 7 ZBTRAININGPRE1
   == MINSCJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN ~Boo? What is it, Boo? Boo demands to know why we need to kill defenseless animals for fun?~
   == JAHEIRAJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID) InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ ~To pour out their black heart into the world, Minsc. Only scum find joy in it. This Stirv deserves no mercy when justice comes.~
   == MINSCJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID) InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~Outrage! The butts of evil must be liberally kicked into playing nice with animals.~
   == JAHEIRAJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID) InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ ~Yes, none shall escape nature's wrath.~
 END
 
-INTERJECT_COPY_TRANS OBSTRIV 7 ZBTRAININGPRE1
+INTERJECT_COPY_TRANS OHBSTIRV 7 ZBTRAININGPRE2
   == CERNDJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN ~These twisted animals are an affront to Nature. Balance requires that we must purge them.~
   == NALIAJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID) InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~Can we save any of them? They will just keep fighting until they are all dead in the end.~
   == CERNDJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID) InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~Calmly, dear Nalia, we shall not break as the branches of an oak in a summer storm.~
