@@ -92,7 +92,7 @@ IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",10)
   IF ~~ THEN REPLY @27 /* I'll let you get back to whatever you were doing. */ EXIT
 END
 
-IF ~Global("ZB_NEPH_ESCAPE","GLOBAL",1)~ 15
+IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",11)~ 15
   SAY @57 /* Excellent! An appropriate death to our enemies. Let us speak of escape if you wish it. */
   IF ~~ THEN REPLY @58 /* I wish to discuss escaping the Pits of Despair. */ DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",12)~ GOTO 16
 END
@@ -100,17 +100,18 @@ END
 IF ~~ 16
   SAY @59 /* An opportunity has come our way, and by Tymora, it is time to take advantage. Meet me in the sleeping quarters to discuss our plan. */
   IF ~~ THEN REPLY @126  /* I'll see you there. */ DO ~
-  SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",1)
+  SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",2)
   StartCutSceneMode()
   StartCutScene("zbpodes0")~ EXIT
 END
 
-IF ~Global("ZB_NEPH_ESCAPE_0","GLOBAL",2)~ 17
+IF ~Global("ZB_NEPH_ESCAPE_0","GLOBAL",4)~ 17
   SAY @71 /* <CHARNAME>, You are here to discuss our escape from this place, yes? First, I would know why it is so important to you that you escape? */
-  IF ~~ THEN REPLY @72 /* I do not enjoy being captured and called a slave. Pretty simple, right? */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 18
-  IF ~~ THEN REPLY @73 /* My foster sister Imoen has been captured and taken by the mage Irenicus. He thought he could hold me just as Dennaton thinks now. */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 19
-  IF ~~ THEN REPLY @74 /* No one may restrain me for long and they will ALWAYS pay a price. */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 20
-  IF ~~ THEN REPLY @75 /* I am the scion of Bhaal. I shall not be questioned. */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",-1)~ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 21
+  IF ~~ THEN REPLY @72 /* I do not enjoy being captured and called a slave. Pretty simple, right? */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",5)~ GOTO 18
+  IF ~~ THEN REPLY @73 /* My foster sister Imoen has been captured and taken by the mage Irenicus. He thought he could hold me just as Dennaton thinks now. */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",5)~ GOTO 19
+  IF ~~ THEN REPLY @74 /* No one may restrain me for long and they will ALWAYS pay a price. */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",5)~ GOTO 20
+  IF ~~ THEN REPLY @75 /* I am the scion of Bhaal. I shall not be questioned. */ GOTO 21
+  IF ~~ THEN REPLY @127 /* Not now, maybe later. */ EXIT
 END
 
 IF ~~ 18
@@ -130,7 +131,8 @@ END
 
 IF ~~ 21
   SAY @79 /* You are not worth my time. */
-  IF ~~ EXIT
+  IF ~Global("ZB_NEPHY_FRIEND_WORTH","GLOBAL",0)~ THEN DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",-1) SetGlobal("ZB_NEPHY_FRIEND_WORTH","GLOBAL",1)~ EXIT
+  IF ~Global("ZB_NEPHY_FRIEND_WORTH","GLOBAL",1)~ EXIT 
 END
 
 IF ~~ 22
@@ -149,7 +151,7 @@ END
 
 IF ~~ 24
   SAY @88 /* Fine then. You want to stay here and die, you''ll be buried within a tenday and no one will care. */
-  IF ~~ EXIT
+  IF ~~ DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",13)~ EXIT
 END
 
 IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",13)~ 25
@@ -190,13 +192,13 @@ IF ~~ ZBNEPHCOPPERCORONET
     SmallWait(25)
     ActionOverride("zbneph",ReallyForceSpell(Myself,DRYAD_TELEPORT))
     SmallWait(25)
-    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",1)~ EXIT
+    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",1)
+    SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",4)~ EXIT
 END
 
 IF ~~ ZBNEPHIWOULDBEHAPPY
   SAY @99 /* I would be happy to, however I need to inform you that I have a mission to find a tome for my employer. If in our travels we come across it I must deliver it to him. */
-  IF ~~ DO ~
-  SetGlobal("ZB_NEPH_JOINS","GLOBAL",1) JoinParty()~ EXIT
+  IF ~~ DO ~SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",4) SetGlobal("ZB_NEPH_JOINS","GLOBAL",1) JoinParty()~ EXIT
 END
 
 IF ~~ ZBNEPHEXIT
@@ -208,7 +210,8 @@ IF ~~ ZBNEPHEXIT
     SmallWait(25)
     ActionOverride("zbneph",ReallyForceSpell(Myself,DRYAD_TELEPORT))
     SmallWait(25)
-    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",1)~ EXIT
+    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",1)
+    SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",4)~ EXIT
 END
 
 // Copper Cornet

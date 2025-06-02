@@ -570,9 +570,10 @@ THEN
 	RESPONSE #100
 		SetGlobal("ZB_NEPH_ESCAPE","GLOBAL",1)
 		ClearActions("zbneph")
+		ActionOverride("zbneph",SetDialog("ZBNEPH"))
 		ActionOverride("zbneph",FaceObject([PC]))
 		SmallWait(25)
-		ActionOverride("zbneph",StartDialogNoSet([PC]))
+		ActionOverride("zbneph",StartDialogInterrupt("ZBNEPH", [PC]))
 END
 
 IF
