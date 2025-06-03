@@ -1,0 +1,12 @@
+IF
+  Global("ZB_NEPH_MOVE_COPPER","GLOBAL",1)
+THEN
+  RESPONSE #100
+    CutSceneId("zbneph")
+    ClearActions(Myself)
+    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",2)
+    ApplySpell(Myself,WIZARD_INVISIBILITY)
+    SmallWait(25)
+    MoveBetweenAreas("AR0406",[1586.1800],S)
+    EndCutSceneMode()
+END

@@ -15,11 +15,14 @@ END
 
 IF
 	Global("ZB_SPAWN_NEPHY_FIGHT5","GLOBAL",1)
+	Global("OHB_START_BATTLE","GLOBAL",3)
 THEN
 	RESPONSE #100
 		SetGlobal("ZB_SPAWN_NEPHY_FIGHT5","GLOBAL",2)
 		CreateCreatureObject("ZBNEPHA",Player1,10,0,0)  // Neph Arena
-		ChangeEnemyAlly("ZBNEPHA",GOODCUTOFF)
+		ChangeEnemyAlly("ZBNEPHA",ALLY)
+		ClearActions("ZBNEPHA")
+		ActionOverride("ZBNEPHA",Attack("OHBDRO01"))
 		Continue()
 END
 

@@ -190,12 +190,11 @@ END
 IF ~~ ZBNEPHCOPPERCORONET
   SAY @98 /* Very well, I myself have a mission I must attend to. If you ever need my assistance seek me out at the Copper Coronet in Athkatla. Safe travels. */
   IF ~~ DO ~
-    ApplySpell(Myself,WIZARD_INVISIBILITY)
-    SmallWait(25)
-    ActionOverride("zbneph",ReallyForceSpell(Myself,DRYAD_TELEPORT))
-    SmallWait(25)
     SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",1)
-    SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",4)~ EXIT
+    SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",4)
+    StartCutSceneMode()
+    StartCutScene("zbnephm")
+    ~ EXIT
 END
 
 IF ~~ ZBNEPHIWOULDBEHAPPY
@@ -206,12 +205,11 @@ END
 IF ~~ ZBNEPHEXIT
   SAY @100 /* You seem intent to distance yourself. I know my way out. */
   IF ~~ DO ~
-    ApplySpell(Myself,WIZARD_INVISIBILITY)
-    SmallWait(25)
-    ActionOverride("zbneph",ReallyForceSpell(Myself,DRYAD_TELEPORT))
-    SmallWait(25)
     SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",1)
-    SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",4)~ EXIT
+    SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",4)
+    StartCutSceneMode()
+    StartCutScene("zbnephm")
+    ~ EXIT
 END
 
 // Copper Cornet
