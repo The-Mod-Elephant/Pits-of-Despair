@@ -18,8 +18,9 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("ZB_SPAWN_NEPHY_FIGHT5","GLOBAL",2)
-		CreateCreature("ZBNEPHA",[920.1150],N)  // Neph Arena
-		SmallWait(5)
+		CreateCreatureObject("ZBNEPHA",Player1,10,0,0)  // Neph Arena
+		ChangeEnemyAlly("ZBNEPHA",GOODCUTOFF)
+		Continue()
 END
 
 IF
