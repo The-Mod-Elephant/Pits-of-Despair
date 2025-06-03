@@ -1,5 +1,5 @@
 // Script taken from IWD1_EET, for cleaning the area
-COPY_EXISTING ~AR0701.ARE~ ~override/ZB0701.ARE~
+COPY_EXISTING ~AR0701.ARE~ ~override/ZB0799.ARE~
 READ_LONG   0x54 actor_off
 READ_SHORT  0x58 actor_num
 PATCH_IF (~%actor_num%~ > 0) BEGIN
@@ -67,8 +67,8 @@ PATCH_IF (~%actor_num%~ > 0) BEGIN
   DELETE_BYTES ~%actor_off%~ ~%actor_num%~ * 0x110
 END
 
-APPEND ~MASTAREA.2da~ ~ZB0701     value      ~
-UNLESS ~ZB0701~
+APPEND ~MASTAREA.2da~ ~ZB0799     value      ~
+UNLESS ~ZB0799~
 
 // Add neph to trademeet inn after escape
 EXTEND_BOTTOM ~AR2010.BCS~ ~%MOD_FOLDER%/bp2scripts/ar2010.baf~

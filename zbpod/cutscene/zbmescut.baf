@@ -21,7 +21,7 @@ THEN
 		FadeToColor([50.0],0)
 		Wait(2)
 		StorePartyLocations()
-		LeaveAreaLUA("ZB0701","",[1660.480],NW) /* carries player over */
+		LeaveAreaLUA("ZB0799","",[1660.480],NW) /* carries player over */
 		ApplySpell(Player1,WIZARD_INVISIBILITY)
 		CreateCreature("zbneph",[1560.680],NE)  /* spawns in nephetel */
 		CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */
