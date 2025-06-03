@@ -95,7 +95,7 @@ END
 IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",11)~ 15
   SAY @57 /* Excellent! An appropriate death to our enemies. Let us speak of escape if you wish it. */
   IF ~~ THEN REPLY @58 /* I wish to discuss escaping the Pits of Despair. */ DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",12)~ GOTO 16
-  IF ~~ THEN REPLY @127 /* Not now, maybe later. */ EXI
+  IF ~~ THEN REPLY @127 /* Not now, maybe later. */ EXIT
 END
 
 IF ~~ 16
@@ -191,8 +191,6 @@ IF ~~ ZBNEPHCOPPERCORONET
   SAY @98 /* Very well, I myself have a mission I must attend to. If you ever need my assistance seek me out at the Copper Coronet in Athkatla. Safe travels. */
   IF ~~ DO ~
     ApplySpell(Myself,WIZARD_INVISIBILITY)
-    Wait(1)
-    ActionOverride("zbneph",ReallyForceSpell(Myself,WIZARD_INVISIBILITY)
     SmallWait(25)
     ActionOverride("zbneph",ReallyForceSpell(Myself,DRYAD_TELEPORT))
     SmallWait(25)
@@ -209,8 +207,6 @@ IF ~~ ZBNEPHEXIT
   SAY @100 /* You seem intent to distance yourself. I know my way out. */
   IF ~~ DO ~
     ApplySpell(Myself,WIZARD_INVISIBILITY)
-    Wait(1)
-    ActionOverride("zbneph",ReallyForceSpell(Myself,WIZARD_INVISIBILITY)
     SmallWait(25)
     ActionOverride("zbneph",ReallyForceSpell(Myself,DRYAD_TELEPORT))
     SmallWait(25)
