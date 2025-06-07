@@ -5,8 +5,9 @@ THEN
     CutSceneId(Player1)
     ClearActions("zbneph")
     SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",2)
+    SetGlobal("ZB_NEPH_COPPERCORENT","GLOBAL",1)
     ApplySpell("zbneph",WIZARD_INVISIBILITY)
     SmallWait(25)
-    ActionOverride("zbneph",EscapeAreaMove("AR0406",1586,1800,S))
+    ActionOverride("zbneph",MoveBetweenAreas("AR0406",[1586.1800],S))
     EndCutSceneMode()
 END

@@ -111,7 +111,7 @@ IF ~Global("ZB_NEPH_ESCAPE_0","GLOBAL",2)~ 17
   IF ~~ THEN REPLY @72 /* I do not enjoy being captured and called a slave. Pretty simple, right? */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 18
   IF ~~ THEN REPLY @73 /* My foster sister Imoen has been captured and taken by the mage Irenicus. He thought he could hold me just as Dennaton thinks now. */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 19
   IF ~~ THEN REPLY @74 /* No one may restrain me for long and they will ALWAYS pay a price. */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 20
-  IF ~~ THEN REPLY @75 /* I am the scion of Bhaal. I shall not be questioned. */ GOTO 21
+  IF ~~ THEN REPLY @75 /* I am the scion of Bhaal. I shall not be questioned. */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 21
   IF ~~ THEN REPLY @127 /* Not now, maybe later. */ EXIT
 END
 
@@ -136,7 +136,7 @@ IF ~~ 21
   IF ~Global("ZB_NEPHY_FRIEND_WORTH","GLOBAL",1)~ EXIT 
 END
 
-IF ~~ 22
+IF ~Global("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ 22
   SAY @80 /* In any event, here is the plan. I have a magical charm that can release us and return to where your ring pulled you from, probably some tavern. Be warned, it will consume the ring itself. */
   IF ~~ THEN REPLY @81 /* If you had this all this time, why wouldn't you have given me this charm immediately? */ GOTO 23
   IF ~~ THEN REPLY @82 /* Why would you do this? Your motivations are suspect. */ GOTO 23
@@ -177,14 +177,14 @@ END
 IF ~Global("ZB_NEPH_ESCAPE_1","GLOBAL",3)~ 26
   SAY @92 /* Here we are, for better or worse, released from the pits. I guess this is where we part ways? */
   IF ~~ THEN REPLY @93 /* Yes, we must go, we have business to attend to. */ GOTO ZBNEPHCOPPERCORONET
-  IF ~Global("ZB_NEPH_WHERE_GO","GLOBAL",0)~ THEN REPLY @94 /* What about you Nephetel, where will you go? */ GOTO ZBNEPHWHEREGOEXPLAIN
+  IF ~Global("ZB_NEPH_WHERE_GO","GLOBAL",0)~ THEN REPLY @94 /* What about you Nephetel, where will you go? */ DO ~SetGlobal("ZB_NEPH_WHERE_GO","GLOBAL",1)~ GOTO ZBNEPHWHEREGOEXPLAIN
   IF ~~ THEN REPLY @95 /* You have been very helpful, perhaps you could join us on our quest? */ GOTO ZBNEPHIWOULDBEHAPPY
   IF ~~ THEN REPLY @96 /* You are at the end of your usefulness, thief. */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",-1)~ GOTO ZBNEPHEXIT
 END
 
 IF ~~ ZBNEPHWHEREGOEXPLAIN
   SAY @97 /* Before being lured into the intrigue of the pits, I was on a mission to find a particular tome of importance. I will continue to search for it. */
-  IF ~~ DO ~SetGlobal("ZB_NEPH_WHERE_GO","GLOBAL",1)~ GOTO 26
+  IF ~~ GOTO 26
 END
 
 IF ~~ ZBNEPHCOPPERCORONET
@@ -197,7 +197,7 @@ IF ~~ ZBNEPHCOPPERCORONET
     ~ EXIT
 END
 
-IF ~~ ZBNEPHIWOULDBEHAPPY
+IF ~Global("ZB_NEPH_JOINS","GLOBAL",0)~ ZBNEPHIWOULDBEHAPPY
   SAY @99 /* I would be happy to, however I need to inform you that I have a mission to find a tome for my employer. If in our travels we come across it I must deliver it to him. */
   IF ~~ DO ~SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",4) SetGlobal("ZB_NEPH_JOINS","GLOBAL",1) JoinParty()~ EXIT
 END
@@ -254,7 +254,7 @@ IF ~GlobalGT("ZB_NEPHY_FRIEND","GLOBAL",0) Global("ZB_NEPH_COPPERCORENT","GLOBAL
   IF ~~ THEN REPLY @113 /* I need to go. Goodbye. */ EXIT
 END
 
-IF ~~ZBNEPHREALLYJOIN
+IF ~Global("ZB_NEPH_JOINS","GLOBAL",0)~ ZBNEPHREALLYJOIN
   SAY @115 /*  Oh, I'll happily join your merry band. */
   IF ~~ DO ~SetGlobal("ZB_NEPH_JOINS","GLOBAL",1) JoinParty()~ EXIT
 END
