@@ -1,0 +1,699 @@
+/////////////////////////////////////////////////////////////////////
+// Battle Prep
+/////////////////////////////////////////////////////////////////////
+IF
+  Global("OH_Active","LOCALS",0)
+  OR(6)
+    See(NearestEnemyOf(Myself))
+    AttackedBy([ANYONE],DEFAULT)
+    TookDamage()
+    AreaCheck("OH8200")  // TBP2 - Arena 1
+    AreaCheck("OH8300")  // TBP2 - Arena 2
+    AreaCheck("OH8400")  // TBP2 - Arena 3
+THEN
+  RESPONSE #100
+    SetGlobal("OH_Active","LOCALS",1)
+    SetGlobalTimer("OH_Rest","LOCALS",EIGHT_HOURS)
+    Continue()
+END
+
+IF
+  OR(4)
+    Global("OH_Active","LOCALS",0)
+    !Allegiance(Myself,GOODCUTOFF)
+    StateCheck(Myself,STATE_IMMOBILE)
+    StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  !GlobalTimerNotExpired("OH_Rest","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("OH_Rest","LOCALS",EIGHT_HOURS)
+    ApplySpell(Myself,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
+    Rest()
+END
+
+IF
+  Global("OH_Active","LOCALS",1)
+  !InActiveArea(Myself)
+  !See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  StateCheck(Myself,STATE_PANIC)
+THEN
+  RESPONSE #100
+    RandomWalkContinuous()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Thief Prep
+/////////////////////////////////////////////////////////////////////
+IF
+  Detect(NearestEnemyOf(Myself))
+  Global("MO_ThiefPrep","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_ThiefPrep","LOCALS",1)
+    ApplySpell(Myself,WIZARD_INVISIBILITY)
+    EquipMostDamagingMelee()
+    Hide()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Shadowstep - When low on health, shadowstep to run away
+/////////////////////////////////////////////////////////////////////
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  !GlobalTimerNotExpired("BD_SSTEP","LOCALS")
+  Kit(Myself,SHADOWDANCER)
+  HPPercentLT(Myself,50)
+  Range(NearestEnemyOf(Myself),6)
+  Global("MO_Shadowstep","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("BD_SSTEP","LOCALS",7)
+    SetGlobal("MO_Shadowstep","LOCALS",1)
+    SetInterrupt(FALSE)
+    SpellNoDecRES("SPSD02",Myself)  // Shadowstep
+    SetInterrupt(TRUE)
+END
+
+IF
+  GlobalTimerNotExpired("BD_SSTEP","LOCALS")
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    RunAwayFrom(NearestEnemyOf(Myself),15) // One second running away before re-evaluate
+END
+
+/////////////////////////////////////////////////////////////////////
+// Thief Detect Illusion
+/////////////////////////////////////////////////////////////////////
+IF
+    Detect([PC])
+    !See(LastSeenBy(Myself))
+    Delay(3)
+THEN
+    RESPONSE #70
+        DisplayStringHead(Myself,@18007)  // Detects Illusion
+        ReallyForceSpell(LastSeenBy(Myself),THIEF_DETECT_ILLUSION)  // SPIN805.SPL (No such index)
+    RESPONSE #30
+        DisplayStringHead(Myself,@18008)  // Fails to detect illusions
+END
+
+/////////////////////////////////////////////////////////////////////
+// Select Backstab Weapon when Invisible
+/////////////////////////////////////////////////////////////////////
+IF 
+  StateCheck(Myself,STATE_INVISIBLE)
+  IsWeaponRanged(Myself)
+  !HasItem("melfmet",Myself)  // Melf's Minute Meteor
+THEN
+  RESPONSE #100
+    EquipMostDamagingMelee()
+    Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Backstab Attacks
+/////////////////////////////////////////////////////////////////////
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  See([EVILCUTOFF])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  OR(6)
+    See(Player1)
+    See(Player2)
+    See(Player3)
+    See(Player4)
+    See(Player5)
+    See(Player6)
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs(SixthNearest([EVILCUTOFF]),MAINHAND)
+  WeaponCanDamage(SixthNearest([EVILCUTOFF]),MAINHAND)
+  CheckStatLT(SixthNearest([EVILCUTOFF]),1,STONESKINS)
+  !StateCheck(SixthNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+  !StateCheck(SixthNearest([EVILCUTOFF]),STATE_PANIC)
+  !CheckStatGT(SixthNearest([EVILCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(SixthNearest([EVILCUTOFF]),BARBARIAN)
+  See(SixthNearest([EVILCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs(FifthNearest([EVILCUTOFF]),MAINHAND)
+  WeaponCanDamage(FifthNearest([EVILCUTOFF]),MAINHAND)
+  CheckStatLT(FifthNearest([EVILCUTOFF]),1,STONESKINS)
+  !StateCheck(FifthNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+  !StateCheck(FifthNearest([EVILCUTOFF]),STATE_PANIC)
+  !CheckStatGT(FifthNearest([EVILCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(FifthNearest([EVILCUTOFF]),BARBARIAN)
+  See(FifthNearest([EVILCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs(FourthNearest([EVILCUTOFF]),MAINHAND)
+  WeaponCanDamage(FourthNearest([EVILCUTOFF]),MAINHAND)
+  CheckStatLT(FourthNearest([EVILCUTOFF]),1,STONESKINS)
+  !StateCheck(FourthNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+  !StateCheck(FourthNearest([EVILCUTOFF]),STATE_PANIC)
+  !CheckStatGT(FourthNearest([EVILCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(FourthNearest([EVILCUTOFF]),BARBARIAN)
+  See(FourthNearest([EVILCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs(ThirdNearest([EVILCUTOFF]),MAINHAND)
+  WeaponCanDamage(ThirdNearest([EVILCUTOFF]),MAINHAND)
+  CheckStatLT(ThirdNearest([EVILCUTOFF]),1,STONESKINS)
+  !StateCheck(ThirdNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+  !StateCheck(ThirdNearest([EVILCUTOFF]),STATE_PANIC)
+  !CheckStatGT(ThirdNearest([EVILCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(ThirdNearest([EVILCUTOFF]),BARBARIAN)
+  See(ThirdNearest([EVILCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs(SecondNearest([EVILCUTOFF]),MAINHAND)
+  WeaponCanDamage(SecondNearest([EVILCUTOFF]),MAINHAND)
+  CheckStatLT(SecondNearest([EVILCUTOFF]),1,STONESKINS)
+  !StateCheck(SecondNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+  !StateCheck(SecondNearest([EVILCUTOFF]),STATE_PANIC)
+  !CheckStatGT(SecondNearest([EVILCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(SecondNearest([EVILCUTOFF]),BARBARIAN)
+  See(SecondNearest([EVILCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  WeaponEffectiveVs([EVILCUTOFF],MAINHAND)
+  WeaponCanDamage([EVILCUTOFF],MAINHAND)
+  CheckStatLT([EVILCUTOFF],1,STONESKINS)
+  !StateCheck([EVILCUTOFF],STATE_MIRRORIMAGE)
+  !StateCheck([EVILCUTOFF],STATE_PANIC)
+  !CheckStatGT([EVILCUTOFF],0,IMMUNITY_TO_BACKSTAB)
+  !Kit([EVILCUTOFF],BARBARIAN)
+  See([EVILCUTOFF])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([EVILCUTOFF.0.0.CLERIC_ALL]),MAINHAND)
+  WeaponCanDamage(SecondNearest([EVILCUTOFF.0.0.CLERIC_ALL]),MAINHAND)
+  CheckStatLT(SecondNearest([EVILCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
+  !StateCheck(SecondNearest([EVILCUTOFF.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
+  !StateCheck(SecondNearest([EVILCUTOFF.0.0.CLERIC_ALL]),STATE_PANIC)
+  !CheckStatGT(SecondNearest([EVILCUTOFF.0.0.CLERIC_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(SecondNearest([EVILCUTOFF.0.0.CLERIC_ALL]))
+  False()
+THEN
+    RESPONSE #100
+        Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([EVILCUTOFF.0.0.CLERIC_ALL],MAINHAND)
+  WeaponCanDamage([EVILCUTOFF.0.0.CLERIC_ALL],MAINHAND)
+  CheckStatLT([EVILCUTOFF.0.0.CLERIC_ALL],1,STONESKINS)
+  !StateCheck([EVILCUTOFF.0.0.CLERIC_ALL],STATE_MIRRORIMAGE)
+  !StateCheck([EVILCUTOFF.0.0.CLERIC_ALL],STATE_PANIC)
+  !CheckStatGT([EVILCUTOFF.0.0.CLERIC_ALL],0,IMMUNITY_TO_BACKSTAB)
+  See([EVILCUTOFF.0.0.CLERIC_ALL])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([EVILCUTOFF.0.0.BARD_ALL]),MAINHAND)
+  WeaponCanDamage(SecondNearest([EVILCUTOFF.0.0.BARD_ALL]),MAINHAND)
+  CheckStatLT(SecondNearest([EVILCUTOFF.0.0.BARD_ALL]),1,STONESKINS)
+  !StateCheck(SecondNearest([EVILCUTOFF.0.0.BARD_ALL]),STATE_MIRRORIMAGE)
+  !StateCheck(SecondNearest([EVILCUTOFF.0.0.BARD_ALL]),STATE_PANIC)
+  !CheckStatGT(SecondNearest([EVILCUTOFF.0.0.BARD_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(SecondNearest([EVILCUTOFF.0.0.BARD_ALL]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([EVILCUTOFF.0.0.BARD_ALL],MAINHAND)
+  WeaponCanDamage([EVILCUTOFF.0.0.BARD_ALL],MAINHAND)
+  CheckStatLT([EVILCUTOFF.0.0.BARD_ALL],1,STONESKINS)
+  !StateCheck([EVILCUTOFF.0.0.BARD_ALL],STATE_MIRRORIMAGE)
+  !StateCheck([EVILCUTOFF.0.0.BARD_ALL],STATE_PANIC)
+  !CheckStatGT([EVILCUTOFF.0.0.BARD_ALL],0,IMMUNITY_TO_BACKSTAB)
+  See([EVILCUTOFF.0.0.BARD_ALL])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([EVILCUTOFF.0.0.DRUID_ALL]),MAINHAND)
+  WeaponCanDamage(SecondNearest([EVILCUTOFF.0.0.DRUID_ALL]),MAINHAND)
+  CheckStatLT(SecondNearest([EVILCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
+  !StateCheck(SecondNearest([EVILCUTOFF.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
+  !StateCheck(SecondNearest([EVILCUTOFF.0.0.DRUID_ALL]),STATE_PANIC)
+  !CheckStatGT(SecondNearest([EVILCUTOFF.0.0.DRUID_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(SecondNearest([EVILCUTOFF.0.0.DRUID_ALL]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([EVILCUTOFF.0.0.DRUID_ALL],MAINHAND)
+  WeaponCanDamage([EVILCUTOFF.0.0.DRUID_ALL],MAINHAND)
+  CheckStatLT([EVILCUTOFF.0.0.DRUID_ALL],1,STONESKINS)
+  !StateCheck([EVILCUTOFF.0.0.DRUID_ALL],STATE_MIRRORIMAGE)
+  !StateCheck([EVILCUTOFF.0.0.DRUID_ALL],STATE_PANIC)
+  !CheckStatGT([EVILCUTOFF.0.0.DRUID_ALL],0,IMMUNITY_TO_BACKSTAB)
+  See([EVILCUTOFF.0.0.DRUID_ALL])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(ThirdNearest([EVILCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  WeaponCanDamage(ThirdNearest([EVILCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  CheckStatLT(ThirdNearest([EVILCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+  !StateCheck(ThirdNearest([EVILCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+  !StateCheck(ThirdNearest([EVILCUTOFF.0.0.MAGE_ALL]),STATE_PANIC)
+  !CheckStatGT(ThirdNearest([EVILCUTOFF.0.0.MAGE_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(ThirdNearest([EVILCUTOFF.0.0.MAGE_ALL]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([EVILCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  WeaponCanDamage(SecondNearest([EVILCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  CheckStatLT(SecondNearest([EVILCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+  !StateCheck(SecondNearest([EVILCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+  !StateCheck(SecondNearest([EVILCUTOFF.0.0.MAGE_ALL]),STATE_PANIC)
+  !CheckStatGT(SecondNearest([EVILCUTOFF.0.0.MAGE_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(SecondNearest([EVILCUTOFF.0.0.MAGE_ALL]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([EVILCUTOFF.0.0.MAGE_ALL],MAINHAND)
+  WeaponCanDamage([EVILCUTOFF.0.0.MAGE_ALL],MAINHAND)
+  CheckStatLT([EVILCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+  !StateCheck([EVILCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
+  !StateCheck([EVILCUTOFF.0.0.MAGE_ALL],STATE_PANIC)
+  !CheckStatGT([EVILCUTOFF.0.0.MAGE_ALL],0,IMMUNITY_TO_BACKSTAB)
+  See([EVILCUTOFF.0.0.MAGE_ALL])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(Player6,MAINHAND)
+  WeaponCanDamage(Player6,MAINHAND)
+  StateCheck(Player6,STATE_IMMOBILE)
+  See(Player6)
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(Player5,MAINHAND)
+  WeaponCanDamage(Player5,MAINHAND)
+  StateCheck(Player5,STATE_IMMOBILE)
+  See(Player5)
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(Player4,MAINHAND)
+  WeaponCanDamage(Player4,MAINHAND)
+  StateCheck(Player4,STATE_IMMOBILE)
+  See(Player4)
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(Player3,MAINHAND)
+  WeaponCanDamage(Player3,MAINHAND)
+  StateCheck(Player3,STATE_IMMOBILE)
+  See(Player3)
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(Player2,MAINHAND)
+  WeaponCanDamage(Player2,MAINHAND)
+  StateCheck(Player2,STATE_IMMOBILE)
+  See(Player2)
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(Player1,MAINHAND)
+  WeaponCanDamage(Player1,MAINHAND)
+  StateCheck(Player1,STATE_IMMOBILE)
+  See(Player1)
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(ThirdNearest([EVILCUTOFF]),MAINHAND)
+  WeaponCanDamage(ThirdNearest([EVILCUTOFF]),MAINHAND)
+  CheckStatLT(ThirdNearest([EVILCUTOFF]),1,STONESKINS)
+  !StateCheck(ThirdNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+  StateCheck(ThirdNearest([EVILCUTOFF]),STATE_IMMOBILE)
+  !CheckStatGT(ThirdNearest([EVILCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(ThirdNearest([EVILCUTOFF]),BARBARIAN)
+  See(ThirdNearest([EVILCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([EVILCUTOFF]),MAINHAND)
+  WeaponCanDamage(SecondNearest([EVILCUTOFF]),MAINHAND)
+  CheckStatLT(SecondNearest([EVILCUTOFF]),1,STONESKINS)
+  !StateCheck(SecondNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+  StateCheck(SecondNearest([EVILCUTOFF]),STATE_IMMOBILE)
+  !CheckStatGT(SecondNearest([EVILCUTOFF]),0,IMMUNITY_TO_BACKSTAB)
+  !Kit(SecondNearest([EVILCUTOFF]),BARBARIAN)
+  See(SecondNearest([EVILCUTOFF]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([EVILCUTOFF],MAINHAND)
+  WeaponCanDamage([EVILCUTOFF],MAINHAND)
+  CheckStatLT([EVILCUTOFF],1,STONESKINS)
+  !StateCheck([EVILCUTOFF],STATE_MIRRORIMAGE)
+  StateCheck([EVILCUTOFF],STATE_IMMOBILE)
+  !CheckStatGT([EVILCUTOFF],0,IMMUNITY_TO_BACKSTAB)
+  !Kit([EVILCUTOFF],BARBARIAN)
+  See([EVILCUTOFF])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([EVILCUTOFF.0.0.CLERIC_ALL]),MAINHAND)
+  WeaponCanDamage(SecondNearest([EVILCUTOFF.0.0.CLERIC_ALL]),MAINHAND)
+  CheckStatLT(SecondNearest([EVILCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
+  !StateCheck(SecondNearest([EVILCUTOFF.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
+  StateCheck(SecondNearest([EVILCUTOFF.0.0.CLERIC_ALL]),STATE_IMMOBILE)
+  !CheckStatGT(SecondNearest([EVILCUTOFF.0.0.CLERIC_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(SecondNearest([EVILCUTOFF.0.0.CLERIC_ALL]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([EVILCUTOFF.0.0.CLERIC_ALL],MAINHAND)
+  WeaponCanDamage([EVILCUTOFF.0.0.CLERIC_ALL],MAINHAND)
+  CheckStatLT([EVILCUTOFF.0.0.CLERIC_ALL],1,STONESKINS)
+  !StateCheck([EVILCUTOFF.0.0.CLERIC_ALL],STATE_MIRRORIMAGE)
+  StateCheck([EVILCUTOFF.0.0.CLERIC_ALL],STATE_IMMOBILE)
+  !CheckStatGT([EVILCUTOFF.0.0.CLERIC_ALL],0,IMMUNITY_TO_BACKSTAB)
+  See([EVILCUTOFF.0.0.CLERIC_ALL])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([EVILCUTOFF.0.0.DRUID_ALL]),MAINHAND)
+  WeaponCanDamage(SecondNearest([EVILCUTOFF.0.0.DRUID_ALL]),MAINHAND)
+  CheckStatLT(SecondNearest([EVILCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
+  !StateCheck(SecondNearest([EVILCUTOFF.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
+  StateCheck(SecondNearest([EVILCUTOFF.0.0.DRUID_ALL]),STATE_IMMOBILE)
+  !CheckStatGT(SecondNearest([EVILCUTOFF.0.0.DRUID_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(SecondNearest([EVILCUTOFF.0.0.DRUID_ALL]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([EVILCUTOFF.0.0.DRUID_ALL],MAINHAND)
+  WeaponCanDamage([EVILCUTOFF.0.0.DRUID_ALL],MAINHAND)
+  CheckStatLT([EVILCUTOFF.0.0.DRUID_ALL],1,STONESKINS)
+  !StateCheck([EVILCUTOFF.0.0.DRUID_ALL],STATE_MIRRORIMAGE)
+  StateCheck([EVILCUTOFF.0.0.DRUID_ALL],STATE_IMMOBILE)
+  !CheckStatGT([EVILCUTOFF.0.0.DRUID_ALL],0,IMMUNITY_TO_BACKSTAB)
+  See([EVILCUTOFF.0.0.DRUID_ALL])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(ThirdNearest([EVILCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  WeaponCanDamage(ThirdNearest([EVILCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  CheckStatLT(ThirdNearest([EVILCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+  !StateCheck(ThirdNearest([EVILCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+  StateCheck(ThirdNearest([EVILCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
+  !CheckStatGT(ThirdNearest([EVILCUTOFF.0.0.MAGE_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(ThirdNearest([EVILCUTOFF.0.0.MAGE_ALL]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs(SecondNearest([EVILCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  WeaponCanDamage(SecondNearest([EVILCUTOFF.0.0.MAGE_ALL]),MAINHAND)
+  CheckStatLT(SecondNearest([EVILCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+  !StateCheck(SecondNearest([EVILCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+  StateCheck(SecondNearest([EVILCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
+  !CheckStatGT(SecondNearest([EVILCUTOFF.0.0.MAGE_ALL]),0,IMMUNITY_TO_BACKSTAB)
+  See(SecondNearest([EVILCUTOFF.0.0.MAGE_ALL]))
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  StateCheck(Myself,STATE_INVISIBLE)
+  DifficultyGT(EASY)
+  WeaponEffectiveVs([EVILCUTOFF.0.0.MAGE_ALL],MAINHAND)
+  WeaponCanDamage([EVILCUTOFF.0.0.MAGE_ALL],MAINHAND)
+  CheckStatLT([EVILCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+  !StateCheck([EVILCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
+  StateCheck([EVILCUTOFF.0.0.MAGE_ALL],STATE_IMMOBILE)
+  !CheckStatGT([EVILCUTOFF.0.0.MAGE_ALL],0,IMMUNITY_TO_BACKSTAB)
+  See([EVILCUTOFF.0.0.MAGE_ALL])
+  False()
+THEN
+  RESPONSE #100
+    Continue()
+END
+
+IF
+  !StateCheck(Myself,STATE_INVISIBLE)
+  Allegiance(LastSeenBy(Myself),ENEMY)
+  See(LastSeenBy(Myself))
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Run and hide in plain sight!
+/////////////////////////////////////////////////////////////////////
+IF
+  !StateCheck(Myself,STATE_INVISIBLE)
+  !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  Kit(Myself,SHADOWDANCER)
+  //!HasItemSlot(Myself,SLOT_MISC)
+  !ButtonDisabled(BUTTON_STEALTH)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    RunAwayFrom(NearestEnemyOf(Myself),3)
+    DisplayStringHead(Myself,101647)  // *attempts to hide in shadows*
+    Hide()
+    SetInterrupt(TRUE)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Run Away!
+/////////////////////////////////////////////////////////////////////
+IF
+  GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  !StateCheck(Myself,STATE_INVISIBLE)
+  !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  HasItem("potn10",Myself)
+THEN
+  RESPONSE #100
+    RunAwayFrom(NearestEnemyOf(Myself),3)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Drink!
+/////////////////////////////////////////////////////////////////////
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  !StateCheck(Myself,STATE_INVISIBLE)
+  !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  HasItem("potn10",Myself)
+THEN
+  RESPONSE #100
+    RunAwayFrom(NearestEnemyOf(Myself),3)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    UseItem("potn10",Myself)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_AttackingTimer","LOCALS")
+  !StateCheck(Myself,STATE_INVISIBLE)
+  !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+  !HasItem("potn10",Myself)
+THEN
+  RESPONSE #100
+    Continue()
+END
