@@ -9,11 +9,13 @@
 *ini text eol=lf
 *are binary
 *bam binary
+*bcs binary
 *cre binary
 *itm binary
 *png binary
 *pro binary
 *spl binary
+*sto binary
 *vvc binary
 *wav binary
 *wbm binary
