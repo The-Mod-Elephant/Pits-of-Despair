@@ -49,7 +49,6 @@ THEN
 		CreateCreature("OHBDRO03",[1725.890],SW)  // Drow Wizard
 		CreateCreature("OHBDRO04",[1780.860],SW)  // Drow Priestess
 		CreateCreature("OHBDRO01",[1765.950],SW)  // Drow Warrior
-		CreateCreature("OHBDRO02",[1830.910],SW)  // Drow Scout
 		SmallWait(25)
 		SetGlobal("OHB_ENEMY_OVERRIDE","GLOBAL",1)
 		MoveViewPoint([1770.792],BD_NORMAL)
