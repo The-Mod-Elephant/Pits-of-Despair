@@ -92,9 +92,10 @@ IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",10)
   IF ~~ THEN REPLY @27 /* I'll let you get back to whatever you were doing. */ EXIT
 END
 
-IF ~Global("ZB_NEPH_ESCAPE","GLOBAL",1)~ 15
+IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",11)~ 15
   SAY @57 /* Excellent! An appropriate death to our enemies. Let us speak of escape if you wish it. */
   IF ~~ THEN REPLY @58 /* I wish to discuss escaping the Pits of Despair. */ DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",12)~ GOTO 16
+  IF ~~ THEN REPLY @127 /* Not now, maybe later. */ EXIT
 END
 
 IF ~~ 16
@@ -110,7 +111,8 @@ IF ~Global("ZB_NEPH_ESCAPE_0","GLOBAL",2)~ 17
   IF ~~ THEN REPLY @72 /* I do not enjoy being captured and called a slave. Pretty simple, right? */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 18
   IF ~~ THEN REPLY @73 /* My foster sister Imoen has been captured and taken by the mage Irenicus. He thought he could hold me just as Dennaton thinks now. */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 19
   IF ~~ THEN REPLY @74 /* No one may restrain me for long and they will ALWAYS pay a price. */ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 20
-  IF ~~ THEN REPLY @75 /* I am the scion of Bhaal. I shall not be questioned. */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",-1)~ DO ~SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",3)~ GOTO 21
+  IF ~~ THEN REPLY @75 /* I am the scion of Bhaal. I shall not be questioned. */ GOTO 21
+  IF ~~ THEN REPLY @127 /* Not now, maybe later. */ EXIT
 END
 
 IF ~~ 18
@@ -130,7 +132,8 @@ END
 
 IF ~~ 21
   SAY @79 /* You are not worth my time. */
-  IF ~~ EXIT
+  IF ~Global("ZB_NEPHY_FRIEND_WORTH","GLOBAL",0)~ THEN DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",-1) SetGlobal("ZB_NEPHY_FRIEND_WORTH","GLOBAL",1)~ EXIT
+  IF ~Global("ZB_NEPHY_FRIEND_WORTH","GLOBAL",1)~ EXIT 
 END
 
 IF ~~ 22
@@ -143,13 +146,16 @@ END
 
 IF ~~ 23
   SAY @85 /* Let us just say that I didn't know if I could trust someone with the taint of Bhaal to walk away from butchery. Will you try? */
-  IF ~~ THEN REPLY @86 /* Yes, of course. */ DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",13)~ EXIT
+  IF ~~ THEN REPLY @86 /* Yes, of course. */ DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",14)
+    SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",1)
+    StartCutSceneMode()
+    StartCutScene("zbpodes1")~ EXIT
   IF ~~ THEN REPLY @87 /* No, I'll stay here for the moment. */ DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",13)~ EXIT
 END
 
 IF ~~ 24
   SAY @88 /* Fine then. You want to stay here and die, you''ll be buried within a tenday and no one will care. */
-  IF ~~ EXIT
+  IF ~~ DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",13)~ EXIT
 END
 
 IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",13)~ 25
@@ -167,7 +173,7 @@ END
 // SoA Dialogue
 // ----------------------------------------------------
 
-// Trademeet Inn
+// Copper Coronet
 IF ~Global("ZB_NEPH_ESCAPE_1","GLOBAL",3)~ 26
   SAY @92 /* Here we are, for better or worse, released from the pits. I guess this is where we part ways? */
   IF ~~ THEN REPLY @93 /* Yes, we must go, we have business to attend to. */ GOTO ZBNEPHCOPPERCORONET
@@ -176,7 +182,7 @@ IF ~Global("ZB_NEPH_ESCAPE_1","GLOBAL",3)~ 26
   IF ~~ THEN REPLY @96 /* You are at the end of your usefulness, thief. */ DO ~IncrementGlobal("ZB_NEPHY_FRIEND","GLOBAL",-1)~ GOTO ZBNEPHEXIT
 END
 
-IF ~Global("ZB_NEPH_WHERE_GO","GLOBAL",0)~ ZBNEPHWHEREGOEXPLAIN
+IF ~~ ZBNEPHWHEREGOEXPLAIN
   SAY @97 /* Before being lured into the intrigue of the pits, I was on a mission to find a particular tome of importance. I will continue to search for it. */
   IF ~~ DO ~SetGlobal("ZB_NEPH_WHERE_GO","GLOBAL",1)~ GOTO 26
 END
@@ -184,31 +190,26 @@ END
 IF ~~ ZBNEPHCOPPERCORONET
   SAY @98 /* Very well, I myself have a mission I must attend to. If you ever need my assistance seek me out at the Copper Coronet in Athkatla. Safe travels. */
   IF ~~ DO ~
-    ApplySpell(Myself,WIZARD_INVISIBILITY)
-    Wait(1)
-    ActionOverride("zbneph",ReallyForceSpell(Myself,WIZARD_INVISIBILITY)
-    SmallWait(25)
-    ActionOverride("zbneph",ReallyForceSpell(Myself,DRYAD_TELEPORT))
-    SmallWait(25)
-    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",1)~ EXIT
+    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",1)
+    SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",4)
+    StartCutSceneMode()
+    StartCutScene("zbnephm")
+    ~ EXIT
 END
 
 IF ~~ ZBNEPHIWOULDBEHAPPY
   SAY @99 /* I would be happy to, however I need to inform you that I have a mission to find a tome for my employer. If in our travels we come across it I must deliver it to him. */
-  IF ~~ DO ~
-  SetGlobal("ZB_NEPH_JOINS","GLOBAL",1) JoinParty()~ EXIT
+  IF ~~ DO ~SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",4) SetGlobal("ZB_NEPH_JOINS","GLOBAL",1) JoinParty()~ EXIT
 END
 
 IF ~~ ZBNEPHEXIT
   SAY @100 /* You seem intent to distance yourself. I know my way out. */
   IF ~~ DO ~
-    ApplySpell(Myself,WIZARD_INVISIBILITY)
-    Wait(1)
-    ActionOverride("zbneph",ReallyForceSpell(Myself,WIZARD_INVISIBILITY)
-    SmallWait(25)
-    ActionOverride("zbneph",ReallyForceSpell(Myself,DRYAD_TELEPORT))
-    SmallWait(25)
-    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",1)~ EXIT
+    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",1)
+    SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",4)
+    StartCutSceneMode()
+    StartCutScene("zbnephm")
+    ~ EXIT
 END
 
 // Copper Cornet

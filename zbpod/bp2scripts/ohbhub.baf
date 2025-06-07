@@ -213,27 +213,66 @@ THEN
 		SetGlobal("ZB_NEPH_CHECK","GLOBAL",1)
 END
 
+/// Post Interjections ///
+/// After match 1
 IF
 	Global("ZB_NEPH_CHECK","GLOBAL",1)
-	Global("ZB_NEPH_PRE_INTERJECT_2","GLOBAL",1)
-	Global("ZB_NEPH_INTERJECT_2","GLOBAL",0)
+	Global("ZB_NEPH_POST_INTERJECT_1","GLOBAL",1)
 THEN
 	RESPONSE #100
-		SetGlobal("ZB_NEPH_PRE_INTERJECT_2","GLOBAL",2)
-		SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",1)
+		SetGlobal("ZB_NEPH_POST_INTERJECT_1","GLOBAL",2)
 		SetGlobal("ZB_NEPH_CHECK","GLOBAL",0)
 END
-
+/// After match 2
 IF
 	Global("ZB_NEPH_CHECK","GLOBAL",1)
-	Global("ZB_NEPH_PRE_INTERJECT_5","GLOBAL",1)
-	Global("ZB_NEPH_INTERJECT_5","GLOBAL",0)
+	Global("ZB_NEPH_POST_INTERJECT_2","GLOBAL",1)
 THEN
 	RESPONSE #100
-		SetGlobal("ZB_NEPH_PRE_INTERJECT_5","GLOBAL",2)
-		SetGlobal("ZB_NEPH_INTERJECT_5","GLOBAL",1)
+		SetGlobal("ZB_NEPH_POST_INTERJECT_2","GLOBAL",2)
 		SetGlobal("ZB_NEPH_CHECK","GLOBAL",0)
 END
+/// After match 3
+IF
+	Global("ZB_NEPH_CHECK","GLOBAL",1)
+	Global("ZB_NEPH_POST_INTERJECT_3","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ZB_NEPH_POST_INTERJECT_3","GLOBAL",2)
+		SetGlobal("ZB_NEPH_CHECK","GLOBAL",0)
+END
+/// After match 4
+IF
+	Global("ZB_NEPH_CHECK","GLOBAL",1)
+	Global("ZB_NEPH_POST_INTERJECT_4","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ZB_NEPH_POST_INTERJECT_4","GLOBAL",2)
+		SetGlobal("ZB_NEPH_CHECK","GLOBAL",0)
+END
+/// After match 5
+IF
+	Global("ZB_NEPH_CHECK","GLOBAL",1)
+	Global("ZB_NEPH_POST_INTERJECT_5","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ZB_NEPH_POST_INTERJECT_5","GLOBAL",2)
+		SetGlobal("ZB_NEPH_CHECK","GLOBAL",0)
+END
+/// --reset otherwise
+IF
+	Global("ZB_NEPH_CHECK","GLOBAL",1)
+	OR(5)
+		GlobalGT("ZB_NEPH_POST_INTERJECT_1","GLOBAL",1)
+		GlobalGT("ZB_NEPH_POST_INTERJECT_2","GLOBAL",1)
+		GlobalGT("ZB_NEPH_POST_INTERJECT_3","GLOBAL",1)
+		GlobalGT("ZB_NEPH_POST_INTERJECT_4","GLOBAL",1)
+		GlobalGT("ZB_NEPH_POST_INTERJECT_5","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ZB_NEPH_CHECK","GLOBAL",0)
+END
+///
 
 IF
 	Global("ohb_battle_xp_award","global",1)
@@ -434,6 +473,8 @@ THEN
 		ActionOverride("zbneph",StartDialogueNoSet([PC]))
 END
 
+/// Match 1 ///
+/// Before match 1
 IF
 	!StateCheck(Player1,CD_STATE_NOTVALID) 
 	Global("ZB_NEPH_INTERJECT_1","GLOBAL",1)
@@ -451,6 +492,7 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_1","GLOBAL",4)
+	ClearActions("zbneph")
 	ActionOverride("zbneph",SetDialog("ZBNEPH"))
 	SetCutSceneLite(TRUE)
 	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
@@ -458,13 +500,26 @@ THEN
 	SetGlobal("OHB_ARENA","GLOBAL",1)
 	SetGlobal("OHB_INTERVIEW","GLOBAL",1)
 END
-
+/// After match 1
 IF
-	!StateCheck(Player1,CD_STATE_NOTVALID)
-	Global("ZB_NEPH_INTERJECT_2","GLOBAL",1)
+	Global("ZB_NEPH_POST_INTERJECT_1","GLOBAL",2)
 THEN
 	RESPONSE #100
-	SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",2)
+	SetGlobal("ZB_NEPH_POST_INTERJECT_1","GLOBAL",3)
+	ClearActions("zbneph")
+	ActionOverride("zbneph",SetDialog("ZBNEPH"))
+END
+///
+
+/// Match 2 ///
+/// Before match 2
+/// After match 2
+IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("ZB_NEPH_POST_INTERJECT_2","GLOBAL",2)
+THEN
+	RESPONSE #100
+	SetGlobal("ZB_NEPH_POST_INTERJECT_2","GLOBAL",3)
 	ClearActions("zbneph")
 	ActionOverride("zbneph",FaceObject([PC]))
 	SmallWait(25)
@@ -472,15 +527,17 @@ THEN
 END
 
 IF
-	!StateCheck(Player1,CD_STATE_NOTVALID)
-	Global("ZB_NEPH_INTERJECT_2","GLOBAL",3)
+	Global("ZB_NEPH_POST_INTERJECT_2","GLOBAL",4)
 THEN
 	RESPONSE #100
-	SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",4)
+	SetGlobal("ZB_NEPH_POST_INTERJECT_2","GLOBAL",5)
 	ClearActions("zbneph")
 	ActionOverride("zbneph",SetDialog("ZBNEPH"))
 END
+///
 
+/// Match 3 ///
+/// Before match 3
 IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	Global("ZB_NEPH_INTERJECT_3","GLOBAL",1)
@@ -499,15 +556,27 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_3","GLOBAL",4)
-	ActionOverride("zbneph",SetDialog("ZBNEPH"))
 	ClearActions("zbneph")
+	ActionOverride("zbneph",SetDialog("ZBNEPH"))
 	SetCutSceneLite(TRUE)
 	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
 	SetGlobal("OHB_103","GLOBAL",1)
 	SetGlobal("OHB_ARENA","GLOBAL",3)
 	SetGlobal("OHB_INTERVIEW","GLOBAL",1)
 END
+/// After match 3
+IF
+	Global("ZB_NEPH_POST_INTERJECT_3","GLOBAL",2)
+THEN
+	RESPONSE #100
+	SetGlobal("ZB_NEPH_POST_INTERJECT_3","GLOBAL",3)
+	ClearActions("zbneph")
+	ActionOverride("zbneph",SetDialog("ZBNEPH"))
+END
+///
 
+/// Match 4 ///
+/// Before match 4
 IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	Global("ZB_NEPH_INTERJECT_4","GLOBAL",1)
@@ -526,8 +595,8 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",4)
-	ActionOverride("zbneph",SetDialog("ZBNEPH"))
 	ClearActions("zbneph")
+	ActionOverride("zbneph",SetDialog("ZBNEPH"))
 	SetCutSceneLite(TRUE)
 	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
 	SetGlobal("OHB_104","GLOBAL",1)
@@ -535,6 +604,19 @@ THEN
 	SetGlobal("OHB_INTERVIEW","GLOBAL",1)
 END
 
+/// After match 4
+IF
+	Global("ZB_NEPH_POST_INTERJECT_4","GLOBAL",2)
+THEN
+	RESPONSE #100
+	SetGlobal("ZB_NEPH_POST_INTERJECT_4","GLOBAL",3)
+	ClearActions("zbneph")
+	ActionOverride("zbneph",SetDialog("ZBNEPH"))
+END
+///
+
+/// Match 5 ///
+/// Before match 5
 IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	Global("ZB_NEPH_INTERJECT_5","GLOBAL",1)
@@ -553,8 +635,8 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_INTERJECT_5","GLOBAL",4)
-	ActionOverride("zbneph",SetDialog("ZBNEPH"))
 	ClearActions("zbneph")
+	ActionOverride("zbneph",SetDialog("ZBNEPH"))
 	SetCutSceneLite(TRUE)
 	SetGlobal("OHB_START_BATTLE","GLOBAL",1)
 	SetGlobal("OHB_105","GLOBAL",1)
@@ -562,18 +644,22 @@ THEN
 	SetGlobal("OHB_INTERVIEW","GLOBAL",1)
 END
 
+/// After match 5
 IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("ZB_NEPH_POST_INTERJECT_5","GLOBAL",2)
 	Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",11)
 	Global("ZB_NEPH_ESCAPE","GLOBAL",0)
 THEN
 	RESPONSE #100
 		SetGlobal("ZB_NEPH_ESCAPE","GLOBAL",1)
 		ClearActions("zbneph")
+		ActionOverride("zbneph",SetDialog("ZBNEPH"))
 		ActionOverride("zbneph",FaceObject([PC]))
 		SmallWait(25)
-		ActionOverride("zbneph",StartDialogNoSet([PC]))
+		ActionOverride("zbneph",StartDialogInterrupt("ZBNEPH", [PC]))
 END
+///
 
 IF
 	Global("OHB_START_BATTLE","GLOBAL",1)

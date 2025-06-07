@@ -1,0 +1,12 @@
+IF
+  Global("ZB_NEPH_MOVE_COPPER","GLOBAL",1)
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    ClearActions("zbneph")
+    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",2)
+    ApplySpell("zbneph",WIZARD_INVISIBILITY)
+    SmallWait(25)
+    ActionOverride("zbneph",EscapeAreaMove("AR0406",1586,1800,S))
+    EndCutSceneMode()
+END

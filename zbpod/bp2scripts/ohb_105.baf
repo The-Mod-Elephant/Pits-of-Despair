@@ -15,11 +15,15 @@ END
 
 IF
 	Global("ZB_SPAWN_NEPHY_FIGHT5","GLOBAL",1)
+	Global("OHB_START_BATTLE","GLOBAL",3)
 THEN
 	RESPONSE #100
 		SetGlobal("ZB_SPAWN_NEPHY_FIGHT5","GLOBAL",2)
 		CreateCreature("ZBNEPHA",[920.1150],N)  // Neph Arena
 		SmallWait(5)
+		ChangeEnemyAlly("ZBNEPHA",ALLY)
+		ClearActions("ZBNEPHA")
+		Continue()
 END
 
 IF
@@ -45,12 +49,12 @@ THEN
 		CreateCreature("OHBDRO03",[1725.890],SW)  // Drow Wizard
 		CreateCreature("OHBDRO04",[1780.860],SW)  // Drow Priestess
 		CreateCreature("OHBDRO01",[1765.950],SW)  // Drow Warrior
-		CreateCreature("OHBDRO02",[1830.910],SW)  // Drow Scout
 		SmallWait(25)
 		SetGlobal("OHB_ENEMY_OVERRIDE","GLOBAL",1)
 		MoveViewPoint([1770.792],BD_NORMAL)
 		SmallWait(100)
-		SetGlobal("ZB_NEPH_PRE_INTERJECT_5","GLOBAL",1)
+		SetGlobal("ZB_NEPH_POST_INTERJECT_5","GLOBAL",1)
+		SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",11)
 		ActionOverride("ohbdenna",StartDialogueNoSet(Player1))
 END
 
