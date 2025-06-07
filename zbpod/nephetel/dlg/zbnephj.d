@@ -13,9 +13,9 @@ END
 ///
 
 /// After Match 2 - After Dennaton kills part of a gladiatorial party
-IF ~Global("ZB_NEPH_INTERJECT_2","GLOBAL",2)~ THEN BEGIN 2
+IF ~Global("ZB_NEPH_POST_INTERJECT_2","GLOBAL",3)~ THEN BEGIN 2
   SAY @41 /* As you see, anyone can be replaced here. Even the most loyal are enslaved in some way. Whether it is money, magic, or by force. It's detestable but that is the way it works here. */
-  IF ~~ THEN DO ~SetGlobal("ZB_NEPH_INTERJECT_2","GLOBAL",3)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("ZB_NEPH_POST_INTERJECT_2","GLOBAL",4)~ EXIT
 END
 ///
 
@@ -29,18 +29,18 @@ END
 /// Before Match 4 - Elder Umber Hulks
 IF ~Global("ZB_NEPH_INTERJECT_4","GLOBAL",2)~ THEN BEGIN 4
   SAY @45 /* Elder Umber Hulks are extremely dangerous and fast to boot. They can easily overpower those that gaze into their eyes. There are potions that protect from these types of effects and I happen to have one right here. */
-  IF ~~ THEN GOTO 5
+  IF ~~ THEN DO ~SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",3)~ GOTO 5
 END
 
-IF ~Global("ZB_NEPH_INTERJECT_4","GLOBAL",2)~ THEN BEGIN 5
+IF ~Global("ZB_NEPH_INTERJECT_4","GLOBAL",3)~ THEN BEGIN 5
   SAY @124 /* Yours, for a price of course. */
-  IF ~~ THEN REPLY @46 /* I'll take it! */ DO ~SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",3) TakePartyGold(700) GiveItemCreate("POTN21",Player1,1,0,0)~ EXIT
+  IF ~~ THEN REPLY @46 /* I'll take it! */ DO ~TakePartyGold(700) GiveItemCreate("POTN21",Player1,1,0,0)~ EXIT
   IF ~~ THEN REPLY @47 /* Keep your potion, my eyes are on the prize. */ GOTO 6
 END
 
-IF ~Global("ZB_NEPH_INTERJECT_4","GLOBAL",2)~ THEN BEGIN 6
+IF ~Global("ZB_NEPH_INTERJECT_4","GLOBAL",3)~ THEN BEGIN 6
   SAY @48 /* As long as you don't meet the gaze of those Umber Hulks, eh? */
-  IF ~~ DO ~SetGlobal("ZB_NEPH_INTERJECT_4","GLOBAL",3)~ EXIT
+  IF ~~ THEN EXIT
 END
 ///
 
@@ -90,6 +90,8 @@ INTERJECT_COPY_TRANS ZBNEPHJ 1 ZB_NEPH_INTERJECT_1.2
   == AERIEJ IF ~InParty("aerie") InMyArea("aerie") !StateCheck("aerie",CD_STATE_NOTVALID)~ THEN @44 /* That is horrible, h-he is truly a despicable man */
 END
 ///
+
+/// After Match 1 - Orcs
 
 /// Before Match 3 - After Dennaton kills part of a gladiatorial party
 INTERJECT_COPY_TRANS ZBNEPHJ 3 ZB_NEPH_INTERJECT_3.1
