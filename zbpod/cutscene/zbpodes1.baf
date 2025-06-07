@@ -7,8 +7,6 @@ THEN
     SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",2)
     DisplayStringHead("zbneph",@101) /* Now just let me fit your ring in this … well maybe this way? Ah, that's it. Ala-khazoom. Hold on everyone! */
     Wait(4)
-    ActionOverride("zbneph",ReallyForceSpell(Myself,WIZARD_INVISIBILITY)
-    SmallWait(25)
     ActionOverride("zbneph",ReallyForceSpell(Myself,DRYAD_TELEPORT))
     SmallWait(25)
     LeaveAreaLUAPanic("AR2010","",[410.640],W)
@@ -21,4 +19,5 @@ THEN
     MultiPlayerSync()
     SmallWait(25)
     EndCutSceneMode()
+    SaveGame(0)
 END

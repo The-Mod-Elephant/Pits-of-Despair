@@ -40,6 +40,7 @@ THEN
 		SmallWait(25)
 		MoveViewPoint([1770.792],BD_NORMAL)
 		SmallWait(100)
+		SetGlobal("ZB_NEPH_POST_INTERJECT_3","GLOBAL",1)
 		ActionOverride("ohbdenna",StartDialogueNoSet(Player1))
 END
 

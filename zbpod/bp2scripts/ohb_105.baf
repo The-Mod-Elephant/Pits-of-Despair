@@ -54,6 +54,7 @@ THEN
 		SetGlobal("OHB_ENEMY_OVERRIDE","GLOBAL",1)
 		MoveViewPoint([1770.792],BD_NORMAL)
 		SmallWait(100)
+		SetGlobal("ZB_NEPH_POST_INTERJECT_5","GLOBAL",1)
 		SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",11)
 		ActionOverride("ohbdenna",StartDialogueNoSet(Player1))
 END
