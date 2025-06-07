@@ -1,10 +1,3 @@
-/*
-  bucketfulofsunshine, 20241108: comments are about the line BELOW them
-  several lines from Dennaton's dialog file - OHBDENNA - remain untouched as aren't present within this tra
-  heavy edits, outside of single line rewrites are needed for OHBBELLO, OHBNAJIM & OHBSTANN - which are part of this tra file
-  complete rewrites will be needed for large parts of the dialogue if the player isn't trapped and can leave freely - version 2.0?
-                                                                                                                                  */
-
 @0    = ~I tire of this prattle. Take them!~ [OH90460]
 @1    = ~Such a creature is beyond even our power. Send us on a suicide mission like that again and our relationship—to say nothing of your life—will be at an end.~ [OH100573]
 @2    = ~You fought a tarrasque and lived? Impressive!~
@@ -3736,3 +3729,75 @@ Vyatri~
 @3685 = ~Undead, bhaalspawn? Right, hmmm.~
 @3686 = ~I am ready!~
 @3687 = ~Indeed.~
+@3688 = ~Once more you find yourself in chains, a prisoner of fate's cruel design. Yet you escaped Irenicus' prison and emerged stronger for it.~
+@3689 = ~Who is this Dennaton? Where are we?~
+@3690 = ~Who is this Dennaton? Where am I?~
+@3691 = ~Your companions stand beside you, their expressions betraying the same confusion and unease.~
+@3692 = ~Where are we? I feel...strange. And I can't access my magic. Be careful, <CHARNAME>.~
+@3693 = ~An ill omen. Best we explore and gain our bearings.~
+@3694 = ~Nature cringes from this prison of steel and stone. Let us find our way out, or better yet, sunder this choking place.~
+@3695 = ~My spells! Something...restricts it. (Of all the blasted places it had to be an anti-magic zone.) No matter. Nothing can contain Edwin Odesseiron for long.~
+@3696 = ~Where do we find ourselves now, I wonder? Being thrown into the unknown on a whim - it almost reminds me of my beloved Sigil. Keys, portals, danger around every corner.~
+@3697 = ~Heh. Seems we're trapped once again. This is starting to feel a little personal now. Let's break out of here fast, alright?~
+@3698 = ~We know nothing of this place. Or of this Dennaton. Be wary, <CHARNAME>, but press forward. We gain nothing by standing still.~
+@3699 = ~An intrepid gnome always makes the best of any situation. And this is a situation, to be sure! Potential customers around every corner. I'll start perfecting my sales pitch while we look around. There has to be someone in charge around here.~
+@3700 = ~I sense evil within this place, though also those that do not mean us harm. Let us speak to the inhabitants and discern friend from foe.~
+@3701 = ~What are we standing about for? Let's get to the killing!~
+@3702 = ~Captured once again - as though the echoes of the Shadow Lord's capture do not still linger. Let us see about earning our freedom, <CHARNAME>. I have no wish to remain here for long.~
+@3703 = ~The people here are not free, <CHARNAME>. As heroes, we must break their chains. Boo will help.~
+@3704 = ~My magic doesn't respond, not like it normally would, I think we're in an anti-magic field.~
+@3705 = ~I know not where we are, <CHARNAME>, but I suggest we watch our steps.~
+@3706 = ~Oloth plynn dos! I do not care to be snatched up, and teleported elsewhere, <CHARNAME>. You best get us out of here fast.~
+@3707 = ~Tricked and then caged. Remind me to thank our captor with something sharp and precise. Ideally between their ribs.~
+@3708 = ~Much danger may lurk in the darkness here. Unfortunately for our enemies I have darkvision and my strikes *never* miss.~
+@3709 = ~Locked away like common cattle... How quaint. Let them savor their little victory. At least until we carve our way out.~
+@3710 = ~Well...uh, my magic's not working. I mean, not all that strange, wild mage and all that, you know, really it does what it wants to. But I'm getting *nothing*. An anti-magic zone, maybe?~
+@3711 = ~The light of Selune will guide us even through this darkness.~
+@3712 = ~Shuffle, growl.~
+@3713 = ~We can help no one by standing here.~
+@3714 = ~Nothing else for it but to explore.~
+@3715 = ~They will regret caging me!~
+@3716 = ~For one so small of stature, his ego seems disproportionately sized.~
+@3717 = ~One cannot question his valour. His chances of success however...~
+@3718 = ~The light of Selûne will yet offer guidance.~
+@3719 = ~I did not expect to find one as enlightened within these dark halls.~
+@3720 = ~I should mention, <CHARNAME>, that this woman seeks my blood. Not that she has any hope of defeating me.~
+@3721 = ~I could strike you both down in a single blow!~
+@3722 = ~Given your choice of companion, I doubt we have anything to discuss.~
+@3723 = ~Does my presence infuriate you, Whitedove? You should be thankful that the arena prevents us from killing one another. You fight another day only through that mercy.~
+@3724 = ~I swear, blackguard, one day you shall answer for your actions! I will personally hunt you down and drag you to face retribution.~
+@3725 = ~Big words. Especially when you can't back them up.~
+@3726 = ~Is there aught else your companion wants? I've little time for idle chatter.~
+@3727 = ~Turnip bandits. Truly the most despicable of all villians. Why, this reminds me of a story, my cousin, Dipsy, was robbed by a most unbecoming fellow who...~
+@3728 = ~Why would he say such awful things? He's twisting everything we've done, everything we’re going through, and turning it into something so ugly... so wrong.~
+@3729 = ~This affront to our honor will not stand. Such lies, when allowed to spread, often take on a life of their own.~
+@3730 = ~These tall tales are like leaves drifting upon the wind. They will scatter in time.~
+@3731 = ~You think to besmirch my reputation with such drivel? Your envy is as transparent as it is pitiable.~
+@3732 = ~What dark muse inspires him to write such a tragedy, I wonder?~
+@3733 = ~At least he's creative about his lies? Too bad, really, I wouldn't mind stories about Imoen the Magnificent bravely saving others. Just...not the opposite so much.~
+@3734 = ~Truth is stubborn and it will outlast his petty words. Pay him no heed. We have greater concerns to tend to.~
+@3735 = ~Slander, eh? You'd think he'd try to be clever about it. I once knew a fellow who claimed I stole his golden pantaloons — turns out we don't even wear the same size,  and he didn't own any to begin with.~
+@3736 = ~Such lies are a coward's weapon. Let him spin his tales, our actions will speak louder than his words.~
+@3737 = ~Let him yap on. Words are cheap.~
+@3738 = ~While these insults do not reflect on my true character, I don't believe it honorable to strike someone simply for speaking their piece.~
+@3739 = ~What? Why would you tell such lies about us? Boo and I are heroes not villains!~
+@3740 = ~Nobles would often partake in these games; spreading terrible rumours to cover their own shameful wrongdoings. The practice disgusts me.~
+@3741 = ~This is not the first time my name's been dragged through the mud.~
+@3742 = ~Pfeh! I will not lower myself to address this male's petty lies. Nothing he says holds any worth to me.~
+@3743 = ~Having such a reputation is not without its perks. Fear inspires as much as love.~
+@3744 = ~Still your tongue unless you have a death wish! I've had enough of your ceaseless prattling.~
+@3745 = ~Oh, come on! You *know* that's not true. ...Maybe I'll turn you into a chicken and see how much you like being the butt of the joke.~
+@3746 = ~Do not give credibility to these lies. He hopes to unsettle us. We must rise above his barbs.~
+@3747 = ~Hrrrmph. Snort!~
+@3748 = ~Boo? What is it, Boo? Boo demands to know why we need to kill defenseless animals for fun?~
+@3749 = ~To pour out their black heart into the world, Minsc. Only scum find joy in it. This Stirv deserves no mercy when justice comes.~
+@3750 = ~Outrage! The butts of evil must be liberally kicked into playing nice with animals.~
+@3751 = ~Yes, none shall escape nature's wrath.~
+@3752 = ~These twisted animals are an affront to Nature. Balance requires that we must purge them.~
+@3753 = ~Can we save any of them? They will just keep fighting until they are all dead in the end.~
+@3754 = ~Calmly, dear Nalia, we shall not break as the branches of an oak in a summer storm.~
+@3755 = ~I hope you are right.~
+@3756 = ~I received your note. Has the djinni arrived yet?~
+@3757 = ~I've seen no sign of him. Take a seat, why don't you? I'll bring you something to drink.~
+@3758 = ~We even have a bard performing soon, it should make your wait that much easier.~
+@3759 = ~As a showin' a good intent, they even offer ye this bit 'a information. 'Tis a currency around here.~
