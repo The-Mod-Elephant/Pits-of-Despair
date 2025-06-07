@@ -4,13 +4,11 @@ BEGIN ZBNEPHP
 IF ~~ ZBNEPHKICKOUT
   SAY @116 /* You wish to part ways? */
   IF ~~ THEN REPLY @117 /* Yes, Nephetel. We cannot continue together right now. Please meet us back at the Copper Coronet if you wish to join forces once again. */ DO ~
-    SetGlobal("ZB_NEPH_LEFT","GLOBAL",1)
-    LeaveParty()
-    ApplySpell(Myself,WIZARD_INVISIBILITY)
-    Wait(1)
-    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",2)
-    MoveGlobal("AR0406","ZBNEPH",[1586.1800])~ EXIT
-  IF ~~ THEN REPLY @118 /* I don't know what I was thinking, of course I want you to stay. */ DO ~JoinParty()~ EXIT
+    SetGlobal("ZB_NEPH_MOVE_COPPER","GLOBAL",1)
+    SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",4)
+    StartCutSceneMode()
+    StartCutScene("zbnephm")~ EXIT
+  IF ~~ THEN REPLY @118 /* I don't know what I was thinking, of course I want you to stay. */ EXIT
 END
 
 // Rejoin
@@ -23,5 +21,5 @@ END
 // Join
 IF ~Global("ZB_NEPH_JOINS","GLOBAL",0)~ ZBNEPHJOIND
   SAY @122 /* I'm glad you regained your senses, lead the way. */
-  IF ~~ DO ~SetGlobal("ZB_NEPH_JOINS","GLOBAL",1)~ EXIT
+  IF ~~ DO ~SetGlobal("ZB_NEPH_JOINS","GLOBAL",1) JoinParty()~ EXIT
 END
