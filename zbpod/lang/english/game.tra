@@ -1,4 +1,5 @@
-// items
+// Items
+//
 @10000 = ~Angelfist +5~
 @10001 = ~Created in the celestial forges of Elysium, Angelfist is a warhammer imbued with divine purpose. Its head is radiant silver, glowing with a soft, ethereal light that illuminates the darkest corners of the material plane. Angelic decorations and symbols adorn it, blessed by the heavens themselves. It feels warm and comforting to the touch.
 
@@ -230,7 +231,7 @@ Requires:
 
 Weight: 1~
 
-@10060 = ~Astral Crowssbow of Speed +4~
+@10060 = ~Astral Crossbow of Speed +4~
 @10061 = ~This crossbow is a sleek, silvered weapon adorned with faintly glowing etchings of celestial constellations. When bolts are loaded into it, they seem to shimmer and vanish, only to reappear in the bowstring, ready to be fired. The weapon is light and easy to handle, and the wielder feels a sense of calm and focus when using it.
 
 Even without bolts, the crossbow can fire ethereal bolts of pure magical energy, dealing damage to the target as if they were physical. Either way, the bolts fired are infused with the power of the Astral Plane, and can cause massive damage to outsiders and the undead.
@@ -637,6 +638,10 @@ Equipped abilities:
 
 Weight: 0~
 
+
+// PoD Item Descriptions
+
+
 @11030 = ~Viridian Mask~
 @11031 = ~Viridian Mask description placeholder
 
@@ -738,6 +743,74 @@ Requires:
 Weight: 4~
 
 @11064 = ~Limb Shattered~
+
+
+// Creatures
+
+@15000 = ~Deathslither~ // placeholder
+@15001 = ~Nephetel~
+@15002 = ~Dennaton~
+@15003 = ~Couatl~
+@15004 = ~Stirv, the Creature Wrangler~
+@15005 = ~Vampiric Worg~
+@15006 = ~Danger Moose~
+@15007 = ~Dire Bear~
+@15008 = ~Displacer Beast~
+@15009 = ~Elder Boalisk~
+@15010 = ~Carrion Lord~
+@15011 = ~Midnight Vortex Spider~
+@15012 = ~Rare Wyvern~
+@15013 = ~Brodle~
+@15014 = ~Voghiln the Vast~
+@15015 = ~Bellowgulp~
+@15016 = ~Tartle~
+@15017 = ~Szass Tam~
+@15018 = ~Minotaur Lord~
+@15019 = ~The Winged~
+
+@18000 = ~Anti-Simulacrum~
+@18001 = ~Stomp~
+@18002 = ~Knocked Prone~
+@18003 = ~Pounce~
+@18004 = ~Gore~
+
+@18005 = ~Shadow Thief Report~
+@18006 = ~A handwritten transcript, detailing a meeting between one Lady Katarina, and Lord Dominick. Some member of the Shadow Thieves has crafted this extensive document, meticulously capturing even  Lord Dominick's more banal ramblings. A few passages catch your eye:
+
+Lady Katarina: I salute your taste,  my Lord Dominic,  exactly the delightful earthy tones you described- my, is that the bottle gone? One might suspect a less honorable and handsome man of plying me with drink... oh, but wait, we still need another bottle! I meant to toast the Hero of Baldur's Gate, and hear the story of how you knew them!
+Dominick: I… I apoloshize, my lady, when I said I knew the Hero, I meant more from... um, afar. I was there, though, Baldur's Gate, when they saved the city! Me and my father, we were vishiting... right, right in the thick of it on a visit, heard of the near war, everything!
+Lady Katarina: Oh. What a sly rascal, to have deceived so... You wouldn't lie to me now that we are such good friends, would you, my dear?
+Dominick: Never, Mish Katarina. You can trust me. They were so brave and incredible. The evil war… warrior Sarevok was killing everyone and it was he who nearly started the war! The hero came from Candlekeep and they were related! Related, I say!
+Lady Katarina: Do continue! I cannot deny an appetite for such gossip... have you heard anything of the Hero being here Amn? Have you any notion of why they might be?
+Dominick: OH, yesh! First there wasesh this mad mage Irenikish and he caught the hero becaush he was a CH… ILD OF BHAAAL and...
+
+The remainder of the transcript becomes increasingly incoherent, as Lord Dominic's inebriation overcomes first intelligibility and then, eventually, consciousness.~
+
+// Combat Scripting
+
+@18007 = ~Detects Illusion~
+@18008 = ~Fails to detect illusions~
+
+@18009 = ~applies an oil of speed~
+@18010 = ~quaffs a potion of invulnerability~
+@18011 = ~quaffs a potion of fire resistance~
+@18012 = ~quaffs a potion of heroism~
+@18013 = ~quaffs a potion of hill giant strength~
+@18014 = ~quaffs a potion of magic protection~
+@18015 = ~quaffs a potion of stone giant strength~
+@18016 = ~quaffs a potion of frost giant strength~
+@18017 = ~quaffs a potion of regeneration~
+@18018 = ~quaffs a potion of fire giant strength~
+@18019 = ~quaffs a potion of magic shielding~
+@18020 = ~quaffs a potion of cloud giant strength~
+@18021 = ~quaffs a potion of magic blocking~
+@18022 = ~quaffs a potion of storm giant strength~
+
+// Buff
+@18023 = ~murmurs a prayer over their holy symbol~
+@18024 = ~grasps a talisman around their neck tightly~
+@18025 = ~twists a magical ring on their finger~ // currently buffs using vanilla, not my script. Vanilla displays in combat log that chain contingency is activated.
+@18026 = ~Trumpet~
 
 // igneous oil
 @40000 = ~Igneous Oil~
@@ -896,67 +969,3 @@ Self-damage: User suffers the same effect if their Dexterity is below 16
 Duration: 1 turn
 
 Weight: 1~
-
-
-@15000 = ~Deathslither~ // placeholder
-@15001 = ~Nephetel~
-@15002 = ~Dennaton~
-@15003 = ~Couatl~
-@15004 = ~Stirv, the Creature Wrangler~
-@15005 = ~Vampiric Worg~
-@15006 = ~Danger Moose~
-@15007 = ~Dire Bear~
-@15008 = ~Displacer Beast~
-@15009 = ~Elder Boalisk~
-@15010 = ~Carrion Lord~
-@15011 = ~Midnight Vortex Spider~
-@15012 = ~Rare Wyvern~
-@15013 = ~Brodle~
-@15014 = ~Voghiln the Vast~
-@15015 = ~Bellowgulp~
-@15016 = ~Tartle~
-@15017 = ~Szass Tam~
-@15018 = ~Minotaur Lord~
-@15019 = ~The Winged~
-
-@18000 = ~Anti-Simulacrum~
-@18001 = ~Stomp~
-@18002 = ~Knocked Prone~
-@18003 = ~Pounce~
-@18004 = ~Gore~
-
-@18005 = ~Shadow Thief Report~
-@18006 = ~A handwritten transcript, detailing a meeting between one Lady Katarina, and Lord Dominick. Some member of the Shadow Thieves has crafted this extensive document, meticulously capturing even  Lord Dominick's more banal ramblings. A few passages catch your eye:
-
-Lady Katarina: I salute your taste,  my Lord Dominic,  exactly the delightful earthy tones you described- my, is that the bottle gone? One might suspect a less honorable and handsome man of plying me with drink... oh, but wait, we still need another bottle! I meant to toast the Hero of Baldur's Gate, and hear the story of how you knew them!
-Dominick: I… I apoloshize, my lady, when I said I knew the Hero, I meant more from... um, afar. I was there, though, Baldur's Gate, when they saved the city! Me and my father, we were vishiting... right, right in the thick of it on a visit, heard of the near war, everything!
-Lady Katarina: Oh. What a sly rascal, to have deceived so... You wouldn't lie to me now that we are such good friends, would you, my dear?
-Dominick: Never, Mish Katarina. You can trust me. They were so brave and incredible. The evil war… warrior Sarevok was killing everyone and it was he who nearly started the war! The hero came from Candlekeep and they were related! Related, I say!
-Lady Katarina: Do continue! I cannot deny an appetite for such gossip... have you heard anything of the Hero being here Amn? Have you any notion of why they might be?
-Dominick: OH, yesh! First there wasesh this mad mage Irenikish and he caught the hero becaush he was a CH… ILD OF BHAAAL and...
-
-The remainder of the transcript becomes increasingly incoherent, as Lord Dominic's inebriation overcomes first intelligibility and then, eventually, consciousness.~
-
-@18007 = ~Detects Illusion~
-@18008 = ~Fails to detect illusions~
-
-@18009 = ~applies an oil of speed~
-@18010 = ~quaffs a potion of invulnerability~
-@18011 = ~quaffs a potion of fire resistance~
-@18012 = ~quaffs a potion of heroism~
-@18013 = ~quaffs a potion of hill giant strength~
-@18014 = ~quaffs a potion of magic protection~
-@18015 = ~quaffs a potion of stone giant strength~
-@18016 = ~quaffs a potion of frost giant strength~
-@18017 = ~quaffs a potion of regeneration~
-@18018 = ~quaffs a potion of fire giant strength~
-@18019 = ~quaffs a potion of magic shielding~
-@18020 = ~quaffs a potion of cloud giant strength~
-@18021 = ~quaffs a potion of magic blocking~
-@18022 = ~quaffs a potion of storm giant strength~
-
-// Buff
-@18023 = ~murmurs a prayer over their holy symbol~
-@18024 = ~grasps a talisman around their neck tightly~
-@18025 = ~twists a magical ring on their finger~ // currently buffs using vanilla, not my script. Vanilla displays in combat log that chain contingency is activated.
-@18026 = ~Trumpet~
