@@ -1,0 +1,30 @@
+IF
+	Global("OHB_502","GLOBAL",1)
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	Global("ohb_spawn_gladiators","myarea",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetGlobal("ohb_spawn_gladiators","myarea",1)
+		FadeFromColor([20.0],0)
+		CreateCreature("OHB2SARV",[1618.850],SSW)  // Sarevok
+		CreateCreature("OHB2DORN",[1591.811],SSW)  // Dorn
+		CreateCreature("OHB2PHAR",[1655.826],SSW)  // Phaere
+		CreateCreature("OHB2KORG",[1635.892],SSW)  // Korgan
+		CreateCreature("OHB2SMON",[1676.844],SSW)  // Saemon Havarian
+		CreateCreature("OHB2BLTH",[1699.807],SSW)  // Baeloth
+		SmallWait(25)
+		ActionOverride("ohbelgia",StartDialogueNoSet(Player1))
+END
+
+IF
+	Global("OHB_START_BATTLE","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_502","GLOBAL",2)
+		SetGlobal("OHB_START_BATTLE","GLOBAL",4)
+		UnhideGUI()
+		SetGlobal("ohb_spawn_gladiators","myarea",0)
+		SetCursorState(FALSE)
+END
+

@@ -1,0 +1,26 @@
+IF
+	Global("OHB_504","GLOBAL",1)
+	Global("OHB_START_BATTLE","GLOBAL",2)
+	Global("ohb_spawn_gladiators","myarea",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetGlobal("ohb_spawn_gladiators","myarea",1)
+		FadeFromColor([20.0],0)
+		CreateCreature("OHB4MLSN",[1285.917],SSW)  // Melissan
+		ChangeEnemyAlly("OHB4MLSN",NEUTRAL)  // Melissan
+		SmallWait(25)
+		ActionOverride("ohbelgia",StartDialogueNoSet(Player1))
+END
+
+IF
+	Global("OHB_START_BATTLE","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("OHB_504","GLOBAL",2)
+		SetGlobal("OHB_START_BATTLE","GLOBAL",4)
+		UnhideGUI()
+		SetGlobal("ohb_spawn_gladiators","myarea",0)
+		SetCursorState(FALSE)
+END
+
