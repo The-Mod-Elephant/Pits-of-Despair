@@ -13,19 +13,14 @@ A messenger delivered a note from Vyatri, an innkeeper in Tradesmeet, who reques
 
 /* 1st Cutscene Infamy */
 @10 = ~And? What of the book?~
-@11 = ~Nothing. The Hero of Baldur's Gate, that's the only gossip on anyone's lips.~
-@12 = ~Defeated this, saved that, wore the most splendid things.~
-@13 = ~One talkative lord was very keen to inform me of the Hero's preferences in breakfast jam.~
-@14 = ~Tell me of these tales.~
-@15 = ~Of the.. jam? Oh! the Hero! They say they are a Bhaalspawn. One of the children of the Lord of Murder.~
-@16 = ~Who are they? What do you know about them?~
-@17 = ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~
-@18 = ~Is <PRO_HESHE> anything like the weapon in the Pits?~
-@19 = ~No, not like Enegar. This child of Bhaal appears free from control of the Cult...~
-@20 = ~No one has spoken as to why, but I will investigate.~
-@21 = ~Good. Good. I know you will find the Book.~
-@22 = ~Our Master will be very… very pleased, he has assured me.~
-@23 = ~I expect a full report on this “Hero” next we meet.~
+@11 = ~Nothing. The hero-apparent from Baldur's Gate is the only gossip on anyone's lips. The nobles can't seem to make up their mind on whether this hero is a savior or a terror. Unusual… for a Bhaalspawn.~
+@12 = ~~
+@13 = ~~
+@14 = ~Don't play games with me, Nephetel. Speak plainly.~
+@15 = ~Apologies, Spymaster. It is said that they are a child of the Lord of Murder, though I know not the truth to these tales.~
+@16 = ~This… Child of Bhaal, if that is indeed what they are… how might they compare to our pet in the arena?~
+@17 = ~This Bhaalspawn is different from… from him. They seem entirely detached from the cult's influence..~
+@18 = ~Your main concern is the book. Find it, and our master will most assuredly be pleased. I'll expect a full report on this… godchild when next we meet.~
 @24 = ~Of course, Spymaster.~
 /* End of 1st Cutscene Infamy */
 @25 = ~Your head spins suddenly...~
