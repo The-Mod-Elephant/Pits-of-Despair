@@ -143,6 +143,28 @@ THEN
 		ActionOverride("ohbbrodl",StartDialogueNoSet([PC]))
 END
 
+// STRIV after match 1
+IF
+	Global("ZB_STRIV_TRAINING_CHECK","GLOBAL",1)
+	Global("ZB_STRIV_TRAINING_POST_CHECK_1","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ZB_STRIV_TRAINING_POST_CHECK_1","GLOBAL",1)
+		ActionOverride("ohstriv",FaceObject([PC]))
+		ActionOverride("ohstriv",StartDialogueNoSet([PC]))
+END
+
+// STRIV after match 3
+IF
+	Global("ZB_STRIV_TRAINING_CHECK","GLOBAL",3)
+	Global("ZB_STRIV_TRAINING_POST_CHECK_3","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ZB_STRIV_TRAINING_POST_CHECK_3","GLOBAL",1)
+		ActionOverride("ohstriv",FaceObject([PC]))
+		ActionOverride("ohstriv",StartDialogueNoSet([PC]))
+END
+
 IF
 	Global("ohb_plot_cutscene","global",1)
 	GlobalLT("OHB_LAST_BATTLE","GLOBAL",404)
