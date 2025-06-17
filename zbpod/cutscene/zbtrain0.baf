@@ -7,15 +7,18 @@ THEN
     CopyGroundPilesTo("OH8100",[2499.1390])  // TBP2 - Staging Area Map
     SmallWait(5)
     DestroyGroundPiles()
-    LeaveAreaLUAPanic("OH8100","",[2499.1409],S)  // TBP2 - Staging Area Map
-    LeaveAreaLUA("OH8100","",[2499.1409],S)  // TBP2 - Staging Area Map
-    ActionOverride(Player2,LeaveAreaLUA("OH8100","",[2450.1375],S))  // TBP2 - Staging Area Map
-    ActionOverride(Player3,LeaveAreaLUA("OH8100","",[2543.1376],S))  // TBP2 - Staging Area Map
-    ActionOverride(Player4,LeaveAreaLUA("OH8100","",[2496.1345],S))  // TBP2 - Staging Area Map
-    ActionOverride(Player5,LeaveAreaLUA("OH8100","",[2585.1342],S))  // TBP2 - Staging Area Map
-    ActionOverride(Player6,LeaveAreaLUA("OH8100","",[2540.1308],S))  // TBP2 - Staging Area Map
+    LeaveAreaLUAPanic("OH8100","",[2500.2870],W)  // TBP2 - Staging Area Map
+    LeaveAreaLUA("OH8100","",[2500.2870],W)  // TBP2 - Staging Area Map
+    // "ohbstirv",[2440.2900] // Stirv the Creature Wrangler - Stirv
+    ActionOverride(Player2,LeaveAreaLUA("OH8100","",[2515.2860],W))  // TBP2 - Staging Area Map
+    ActionOverride(Player3,LeaveAreaLUA("OH8100","",[2535.2850],W))  // TBP2 - Staging Area Map
+    ActionOverride(Player4,LeaveAreaLUA("OH8100","",[2515.2885],W))  // TBP2 - Staging Area Map
+    ActionOverride(Player5,LeaveAreaLUA("OH8100","",[2535.2875],W))  // TBP2 - Staging Area Map
+    ActionOverride(Player6,LeaveAreaLUA("OH8100","",[2550.2865],W))  // TBP2 - Staging Area Map
     MultiPlayerSync()
     SmallWait(25)
     EndCutSceneMode()
     SaveGame(0)
+    SmallWait(25)
+    IncrementGlobal("ZB_STRIV_TRAINING_CHECK","GLOBAL",1)
 END
