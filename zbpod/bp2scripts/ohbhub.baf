@@ -529,6 +529,17 @@ THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_POST_INTERJECT_1","GLOBAL",3)
 	ClearActions("zbneph")
+	ActionOverride("zbneph",FaceObject([PC]))
+	SmallWait(25)
+	ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
+END
+
+IF
+	Global("ZB_NEPH_POST_INTERJECT_1","GLOBAL",4)
+THEN
+	RESPONSE #100
+	SetGlobal("ZB_NEPH_POST_INTERJECT_1","GLOBAL",5)
+	ClearActions("zbneph")
 	ActionOverride("zbneph",SetDialog("ZBNEPH"))
 END
 ///
@@ -593,6 +604,17 @@ THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_POST_INTERJECT_3","GLOBAL",3)
 	ClearActions("zbneph")
+	ActionOverride("zbneph",FaceObject([PC]))
+	SmallWait(25)
+	ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
+END
+
+IF
+	Global("ZB_NEPH_POST_INTERJECT_3","GLOBAL",4)
+THEN
+	RESPONSE #100
+	SetGlobal("ZB_NEPH_POST_INTERJECT_3","GLOBAL",5)
+	ClearActions("zbneph")
 	ActionOverride("zbneph",SetDialog("ZBNEPH"))
 END
 ///
@@ -632,6 +654,17 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("ZB_NEPH_POST_INTERJECT_4","GLOBAL",3)
+	ClearActions("zbneph")
+	ActionOverride("zbneph",FaceObject([PC]))
+	SmallWait(25)
+	ActionOverride("zbneph",StartDialogInterrupt("ZBNEPHJ",[PC]))
+END
+
+IF
+	Global("ZB_NEPH_POST_INTERJECT_4","GLOBAL",4)
+THEN
+	RESPONSE #100
+	SetGlobal("ZB_NEPH_POST_INTERJECT_4","GLOBAL",5)
 	ClearActions("zbneph")
 	ActionOverride("zbneph",SetDialog("ZBNEPH"))
 END

@@ -63,12 +63,12 @@ IF ~~ THEN BEGIN 15
 END
 
 IF ~Global("ZB_STRIV_TRAINING_CHECK","GLOBAL",1) Global("ZB_STRIV_REWARD_1","GLOBAL",0)~ THEN BEGIN 16
-  SAY @3817 /* Hmph, so you lived. Well, how about another match? Some of my bigger puppies are hungry and you look like you got some meat on your bones! */
-  IF ~~ THEN REPLY @3819 /* Another match, Stirv. Playtime for the puppies! */ DO ~SetGlobal("ZB_STRIV_REWARD_1","GLOBAL",1)~ GOTO 8
+  SAY @3860 /* Hmph, so you lived. Well, how about another match? Some of my bigger puppies are hungry and you look like you got some meat on your bones! */
+  IF ~~ THEN REPLY @3862 /* Another match, Stirv. Playtime for the puppies! */ DO ~SetGlobal("ZB_STRIV_REWARD_1","GLOBAL",1)~ GOTO 8
   IF ~~ THEN REPLY @973 /* Not right now. */ DO ~SetGlobal("ZB_STRIV_REWARD_1","GLOBAL",1)~ EXIT
 END
 
 IF ~Global("ZB_STRIV_TRAINING_CHECK", "GLOBAL", 3)  Global("ZB_STRIV_REWARD_3","GLOBAL",0)~ THEN BEGIN 17
-  SAY @3818 /* Damn slaves! Dennaton is making me give you a prize for winning against all of my puppies. So here, take it. */
+  SAY @3861 /* Damn slaves! Dennaton is making me give you a prize for winning against all of my puppies. So here, take it. */
   IF ~~ THEN DO ~SetGlobal("ZB_STRIV_REWARD_3","GLOBAL",1) GiveItemCreate("ZBSTWR",Player1,1,0,0)~ EXIT
 END
