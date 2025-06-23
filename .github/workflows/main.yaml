@@ -1,0 +1,27 @@
+name: 'release'
+on:
+  release:
+    types: [published]
+jobs:
+  call_workflow:
+    permissions:
+      contents: write
+    strategy:
+      matrix:
+        type: [iemod, windows, linux, macos]
+    uses: InfinityTools/WeiduModPackagerLibrary/.github/workflows/WeiduModPackagerLibrary.yml@master
+    with:
+      type: ${{ matrix.type }}
+      architecture: amd64
+      suffix: ${{ github.event.release.tag_name }}
+      naming: tp2
+      weidu_version: latest
+      prefix_windows: win
+      prefix_linux: lin
+      prefix_macos: mac
+      multi_platforms: 'linux:macos:windows'
+      multi_autoupdate: true
+      case_sensitive: false
+      beautify: true
+      lower_case: false
+      include_submodules: 'false'

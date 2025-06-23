@@ -6,7 +6,6 @@
   fires AFTER nephetel / mysterious messenger gives charname the note */
 
 IF
-	True()
 	Global("zbnephcutscene","GLOBAL",0) /* we haven't seen the cutscene */
 THEN
 	RESPONSE #100
@@ -37,47 +36,30 @@ THEN
 		ActionOverride("zbneph",FaceObject("zbvamp"))
 		ActionOverride("zbvamp",FaceObject("zbneph"))
 		Wait(3)
-		DisplayStringHead("zbvamp",@10)  /* ~And? What of the book?~ */
+		DisplayStringHead("zbvamp",@10)  /* And? What of the book? */
 		Wait(5)
-		DisplayStringHead("zbneph",@11)  /* ~Nothing. The Hero of Baldur's Gate, that's the only gossip on anyone's lips.~ */
-		Wait(5)
-		DisplayStringHead("zbneph",@12)  /* ~Defeated this, saved that, wore the most splendid things.~ */
-		Wait(5)
-		DisplayStringHead("zbneph",@13) /* ~One talkative lord was very keen to inform me of the Hero's preferences in breakfast jam.~ */
-		Wait(9)
-		DisplayStringHead("zbvamp",@14) /* ~Tell me of these tales.~ */
+		DisplayStringHead("zbneph",@11)  /* Nothing. The hero-apparent from Baldur's Gate is the only gossip on anyone's lips. The nobles can't seem to make up their mind on whether this hero is a savior or a terror. Unusual… for a Bhaalspawn. */
+		Wait(7)
+		DisplayStringHead("zbvamp",@14) /* Don’t play games with me, Nephetel. Speak plainly. */
 		Wait(4)
-		DisplayStringHead("zbneph",@15) /* ~Of the.. jam? Oh! the Hero! They say they are a Bhaalspawn. One of the children of the Lord of Murder.~ */
+		DisplayStringHead("zbneph",@15) /* Apologies, Spymaster. It is said that they are a child of the Lord of Murder, though I know not the truth to these tales. */
 		Wait(5)
 		ActionOverride("zbvamp",MoveToPoint([1670.600])) /* pacing north */
 		Wait(3)
 		ActionOverride("zbvamp",MoveToPoint([1670.752])) /* pacing south */
 		Wait(3)
-		DisplayStringHead("zbvamp",@16) /* ~Who are they? What do you know about them?~ */
-		Wait(5)
-		DisplayStringHead("zbneph",@17) /* ~They say they are a Bhaalspawn. One of the children of the Lord of Murder.~ */
-		Wait(5)
 		ActionOverride("zbvamp",MoveToPoint([1670.680])) /* pacing back to usual spot */
 		ActionOverride("zbvamp",FaceObject("zbneph"))
-		DisplayStringHead("zbvamp",@18) /* ~Is <PRO_HESHE> anything like the weapon in the Pits?~ */
+		DisplayStringHead("zbvamp",@16) /* This… Child of Bhaal, if that is indeed what they are… how might they compare to our pet in the arena? */
 		Wait(5)
 		ActionOverride("zbneph",Face(W)) /* nephetel faces away */
-		Wait(2)
-		DisplayStringHead("zbneph",@19) /* ~No, not like Enegar. This child of Bhaal appears free from control of the Cult...~ */
+		Wait(1)
+		DisplayStringHead("zbneph",@17) /* This Bhaalspawn is different from… from him. They seem entirely detached from the cult's influence.. */
 		Wait(5)
-		ActionOverride("zbneph",FaceObject("zbvamp")) /* she turns back */
-		Wait(2)
-		DisplayStringHead("zbneph",@20) /* ~No one has spoken as to why, but I will investigate.~ */
+		DisplayStringHead("zbvamp",@18) /* ~Your main concern is the book. Find it, and our master will most assuredly be pleased. I’ll expect a full report on this… godchild when next we meet. */
 		Wait(5)
-		ActionOverride("zbvamp",SwingOnce()) /* quick attack animation */
-		Wait(2)
-		DisplayStringHead("zbvamp",@21) /* ~Good. Good. I know you will find the Book.~ */
-		Wait(5)
-		DisplayStringHead("zbvamp",@22) /* ~Our Master will be very… very pleased, he has assured me.~ */
-		Wait(5)
-		DisplayStringHead("zbvamp",@23) /* ~I expect a full report on this “Hero” next we meet.~ */
 		PlaySound("VAMPFX07") /* plays the vampire sound */
-		Wait(5)
+		Wait(3)
 		ActionOverride("zbneph",MoveToPoint([1444.912])) /* neph moving south */
 		Wait(2)
 		ActionOverride("zbvamp",FaceObject("zbneph"))

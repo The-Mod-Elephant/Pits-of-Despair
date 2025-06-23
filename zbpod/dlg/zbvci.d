@@ -89,7 +89,7 @@ END
 /* the companions interject to stannel's ongoing lies - we're going alphabetically & only adding a few batches per fight. so they don't ALL fire at once */
 
 INTERJECT_COPY_TRANS OHBSTANN 59 ZBSTANNELBATCH1
-== AERIEJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN @3728 /* Why would he say such awful things? He's twisting everything we've done, everything we’re going through, and turning it into something so ugly... so wrong. */
+== AERIEJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN @3728 /* Why would he say such awful things? He's twisting everything we've done, everything we're going through, and turning it into something so ugly... so wrong. */
 == ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN @3729 /* This affront to our honor will not stand. Such lies, when allowed to spread, often take on a life of their own. */
 == CERNDJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN @3730 /* These tall tales are like leaves drifting upon the wind. They will scatter in time. */
 == EDWINJ IF ~InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN @3731 /* You think to besmirch my reputation with such drivel? Your envy is as transparent as it is pitiable. */
