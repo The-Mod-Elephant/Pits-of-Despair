@@ -66,6 +66,7 @@ END
 INCLUDE ~%MOD_FOLDER%/lib/fragments/mo_initialize.tpa~
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_items.tph~
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_cre.tph~
+INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_stores.tph~
 
 // Copy stores
 COPY ~%MOD_FOLDER%/stores~ ~override~
