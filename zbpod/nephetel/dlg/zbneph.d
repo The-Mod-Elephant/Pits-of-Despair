@@ -147,6 +147,7 @@ END
 IF ~~ 23
   SAY @85 /* Let us just say that I didn't know if I could trust someone with the taint of Bhaal to walk away from butchery. Will you try? */
   IF ~~ THEN REPLY @86 /* Yes, of course. */ DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",14)
+    SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",4)
     SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",1)
     StartCutSceneMode()
     StartCutScene("zbpodes1")~ EXIT
@@ -162,6 +163,7 @@ IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",13)~ 25
   SAY @89 /* Do you wish to leave this place or remain to continue fighting? */
   IF ~~ THEN REPLY @90 /* I am ready to try your charm. You had best be telling the truth. */ DO ~
     SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",14)
+    SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",4)
     SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",1)
     StartCutSceneMode()
     StartCutScene("zbpodes1")

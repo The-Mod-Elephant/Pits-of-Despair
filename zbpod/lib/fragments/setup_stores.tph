@@ -1,5 +1,26 @@
+// Copy stores
+COPY ~%MOD_FOLDER%/stores~ ~override~
+COPY ~%MOD_FOLDER%/creatures/stores~ ~override~
 
-COPY_EXISTING ~ohbconco.STO~  ~override~ //bellowgup
-    PATCH_FOR_EACH resource IN ~ZSWOPS01~ ~ZSWOAC01~ ~ZSWOCD01~ ~ZSWOEL01~ ~ZSWOMD01~ ~ZSWOFR01~ ~ZSWOPS02~ ~ZSWOHL01~ ~ZSWOUL01~ ~ZSWOPS05~ ~ZSWOPS03~ ~ZSWOPS04 ZSWOPSO4~ BEGIN
-        LPF ADD_STORE_ITEM_EX INT_VAR stack = 1 STR_VAR item_name = EVAL ~%resource%~ END
+COPY_EXISTING ~zbbsdwm.sto~ ~override/ohbsdwm.sto~
+  SAY 0xC @60000
+COPY_EXISTING ~zbbsdwm.cre~ ~override/ohbsdwm.cre~
+  SAY NAME1 @60000
+  SAY NAME2 @60000
+COPY_EXISTING ~zbbmhsm.sto~ ~override/ohbmhsm.sto~
+  SAY 0xC @60001
+COPY_EXISTING ~zbbmhsm.cre~ ~override/ohbmhsm.cre~
+  SAY NAME1 @60001
+  SAY NAME2 @60001
+COPY_EXISTING ~zbbimim.sto~ ~override/ohbimim.sto~
+  SAY 0xC @60002
+COPY_EXISTING ~zbbimim.cre~ ~override/ohbimim.cre~
+  SAY NAME1 @60002
+  SAY NAME2 @60002
+
+// Patch existing stores
+COPY_EXISTING ~ohbconco.sto~  ~override~ //bellowgup
+    PATCH_FOR_EACH resource IN ~ZSWOPS01~ ~ZSWOAC01~ ~ZSWOCD01~ ~ZSWOEL01~ ~ZSWOMD01~ ~ZSWOFR01~ ~ZSWOPS02~ ~ZSWOHL01~ ~ZSWOUL01~ ~ZSWOPS05~ ~ZSWOPS03~ ~ZSWOPS04~
+    BEGIN
+        ADD_STORE_ITEM ~%resource%~ #10 #0 #0 ~IDENTIFIED~ #20
     END
