@@ -7,18 +7,35 @@ THEN
     CopyGroundPilesTo("OH8100",[2499.1390])  // TBP2 - Staging Area Map
     SmallWait(5)
     DestroyGroundPiles()
-    LeaveAreaLUAPanic("OH8100","",[2500.2870],W)  // TBP2 - Staging Area Map
-    LeaveAreaLUA("OH8100","",[2500.2870],W)  // TBP2 - Staging Area Map
+    LeaveAreaLUAPanic("OH8100","",[1890.2700],W)  // TBP2 - Staging Area Map
+    LeaveAreaLUA("OH8100","",[1890.2700],W)  // TBP2 - Staging Area Map
     // "ohbstirv",[2440.2900] // Stirv the Creature Wrangler - Stirv
-    ActionOverride(Player2,LeaveAreaLUA("OH8100","",[2515.2860],W))  // TBP2 - Staging Area Map
-    ActionOverride(Player3,LeaveAreaLUA("OH8100","",[2535.2850],W))  // TBP2 - Staging Area Map
-    ActionOverride(Player4,LeaveAreaLUA("OH8100","",[2515.2885],W))  // TBP2 - Staging Area Map
-    ActionOverride(Player5,LeaveAreaLUA("OH8100","",[2535.2875],W))  // TBP2 - Staging Area Map
-    ActionOverride(Player6,LeaveAreaLUA("OH8100","",[2550.2865],W))  // TBP2 - Staging Area Map
+    ActionOverride(Player2,LeaveAreaLUA("OH8100","",[1900.2700],W))  // TBP2 - Staging Area Map
+    ActionOverride(Player3,LeaveAreaLUA("OH8100","",[1910.2700],W))  // TBP2 - Staging Area Map
+    ActionOverride(Player4,LeaveAreaLUA("OH8100","",[1890.2710],W))  // TBP2 - Staging Area Map
+    ActionOverride(Player5,LeaveAreaLUA("OH8100","",[1900.2710],W))  // TBP2 - Staging Area Map
+    ActionOverride(Player6,LeaveAreaLUA("OH8100","",[1910.2710],W))  // TBP2 - Staging Area Map
+    SmallWait(25)
+    Unlock("Door0002")
+    OpenDoor("Door0002")
+    SmallWait(25)
+    MoveToPoint([2440.2900])
+    ActionOverride(Player2,MoveToPoint([2440.2900]))
+    ActionOverride(Player3,MoveToPoint([2440.2900]))
+    ActionOverride(Player4,MoveToPoint([2440.2900]))
+    ActionOverride(Player5,MoveToPoint([2440.2900]))
+    ActionOverride(Player6,MoveToPoint([2440.2900]))
+    SmallWait(50)
+    FaceObject("ohbstirv")  // Ohbstriv
+    ActionOverride(Player2,FaceObject("ohbstirv"))  // Ohbstriv
+    ActionOverride(Player3,FaceObject("ohbstirv"))  // Ohbstriv
+    ActionOverride(Player4,FaceObject("ohbstirv"))  // Ohbstriv
+    ActionOverride(Player5,FaceObject("ohbstirv"))  // Ohbstriv
+    ActionOverride(Player6,FaceObject("ohbstirv"))  // Ohbstriv
+    SmallWait(25)
+    IncrementGlobal("ZB_STRIV_TRAINING_CHECK","GLOBAL",1)
     MultiPlayerSync()
     SmallWait(25)
     EndCutSceneMode()
     SaveGame(0)
-    SmallWait(25)
-    IncrementGlobal("ZB_STRIV_TRAINING_CHECK","GLOBAL",1)
 END
