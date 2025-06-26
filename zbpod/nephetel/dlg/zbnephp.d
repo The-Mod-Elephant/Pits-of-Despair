@@ -19,7 +19,7 @@ IF ~Global("ZB_NEPH_LEFT","GLOBAL",1)~ ZBNEPHREJOIN
 END
 
 // Join
-IF ~Global("ZB_NEPH_JOINS","GLOBAL",0)~ ZBNEPHJOIND
+IF ~Global("ZB_NEPH_LEFT","GLOBAL",1)~ ZBNEPHJOIND
   SAY @122 /* I'm glad you regained your senses, lead the way. */
-  IF ~~ DO ~SetGlobal("ZB_NEPH_JOINS","GLOBAL",1) JoinParty()~ EXIT
+  IF ~~ DO ~SetGlobal("ZB_NEPH_LEFT","GLOBAL",0) JoinParty()~ EXIT
 END
