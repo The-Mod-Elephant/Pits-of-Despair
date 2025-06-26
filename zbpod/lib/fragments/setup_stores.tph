@@ -22,5 +22,5 @@ COPY_EXISTING ~zbbimim.cre~ ~override/ohbimim.cre~
 COPY_EXISTING ~ohbconco.sto~  ~override~ //bellowgup
     PATCH_FOR_EACH resource IN ~ZSWOPS01~ ~ZSWOAC01~ ~ZSWOCD01~ ~ZSWOEL01~ ~ZSWOMD01~ ~ZSWOFR01~ ~ZSWOPS02~ ~ZSWOHL01~ ~ZSWOUL01~ ~ZSWOPS05~ ~ZSWOPS03~ ~ZSWOPS04~
     BEGIN
-        ADD_STORE_ITEM ~%resource%~ #10 #0 #0 ~IDENTIFIED~ #20
+        ADD_STORE_ITEM ~%resource%~ #1 #0 #0 ~IDENTIFIED~ #20
     END
