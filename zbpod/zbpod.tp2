@@ -44,9 +44,10 @@ REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
 // Add new areas
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_areas.tph~
 
-// Add zb0700 area
-COPY ~%MOD_FOLDER%/area/zb0700/common~ ~override~
-COPY ~%MOD_FOLDER%/area/zb0700/ee~ ~override~
+// Add areas and supporting files
+COPY ~%MOD_FOLDER%/area/zb0700/common/~ ~override~
+COPY ~%MOD_FOLDER%/area/zb0700/ee/~ ~override~
+COPY ~%MOD_FOLDER%/area/zb0700/areabam/~ ~override~
 COPY ~%MOD_FOLDER%/area/zb0701/~ ~override~
 COPY ~%MOD_FOLDER%/area/zb0702/~ ~override~
 
