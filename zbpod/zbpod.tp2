@@ -51,9 +51,13 @@ COPY ~%MOD_FOLDER%/area/zb0700/areabam/~ ~override~
 COPY ~%MOD_FOLDER%/area/zb0701/~ ~override~
 COPY ~%MOD_FOLDER%/area/zb0702/~ ~override~
 
-// Copy spells and movies
+// Copy spells
 COPY ~%MOD_FOLDER%/spells~ ~override~
 COPY ~%MOD_FOLDER%/spells/zbantisb.bam~ ~override/zbantisc.bam~
+
+// Add Music
+COPY ~%MOD_FOLDER%/music/~ ~music~
+
 // Patch in portrait icon
 OUTER_SET description = RESOLVE_STR_REF(@18000)
 LAUNCH_ACTION_FUNCTION cd_new_portrait_icon INT_VAR description = description STR_VAR bam_file="zbantisb" END
