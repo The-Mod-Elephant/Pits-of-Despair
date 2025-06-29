@@ -41,14 +41,15 @@ BEGIN @20001 DESIGNATED 2 LABEL ~zb_pod_ee~ // INSTALL PIT OF DESPAIR FOR ENHANC
 REQUIRE_PREDICATE GAME_IS "bg2ee eet" @20050
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Add music
+INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_music.tph~
+
 // Add new areas
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_areas.tph~
 
 // Copy spells
 COPY ~%MOD_FOLDER%/spells~ ~override~
 COPY ~%MOD_FOLDER%/spells/zbantisb.bam~ ~override/zbantisc.bam~
-
-INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_music.tph~
 
 // Patch in portrait icon
 OUTER_SET description = RESOLVE_STR_REF(@18000)
