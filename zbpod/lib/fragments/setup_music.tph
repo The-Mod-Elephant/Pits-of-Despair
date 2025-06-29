@@ -1,0 +1,34 @@
+DEFINE_PATCH_FUNCTION ~GET_2DA_ROW~
+	INT_VAR
+		starting_row=0
+		num_columns=0
+		match_column=0
+		found_it=0
+	STR_VAR
+		match=~DEFA~
+	RET
+		num_cols
+		matched
+BEGIN
+		COUNT_2DA_ROWS num_columns num_rows
+		FOR (i = starting_row; i < num_rows && found_it != 1; ++i) BEGIN
+			READ_2DA_ENTRY i match_column num_columns string_to_match
+			PATCH_IF (~%string_to_match%~ STRING_EQUAL_CASE ~%match%~) BEGIN
+				matched = i
+				found_it = 1
+			END
+		END
+		num_cols = num_columns
+		PATCH_IF (found_it = 0) BEGIN
+			PATCH_FAIL ~Couldn't add music - no free slot.~
+		END
+END
+
+ADD_MUSIC ~ZBMARSH~ ~%MOD_FOLDER%/music/ZBMARSH.mus~
+COPY ~%MOD_FOLDER%/music/zbmarsh.ogg~ ~MUSIC/ZBMARSH/ZBMARSHA.acm~
+
+COPY_EXISTING ~SONGLIST.2da~ ~override~
+	LPF GET_2DA_ROW INT_VAR num_columns=3 match_column=2 STR_VAR match=~ZBMARSH.mus~ RET therow=matched END
+	READ_2DA_ENTRY therow 0 3 ~song~
+
+	OUTER_SET ZBMARSH = song
