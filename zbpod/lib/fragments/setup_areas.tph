@@ -150,3 +150,10 @@ UNLESS ~ZB8100~
 // Watcher's Keep -- Crypt -- Demi-Lich
 COPY_EXISTING ~ar3027.are~ ~override~
   LPF ALTER_AREA_ACTOR STR_VAR actor_name = ~Demi-Lich~ cre_file = ~zbademi1~ END // Replace demilich with new version in wk
+
+// Add areas and supporting files
+COPY ~%MOD_FOLDER%/area/zb0700/common/~ ~override~
+COPY ~%MOD_FOLDER%/area/zb0700/ee/~ ~override~
+COPY ~%MOD_FOLDER%/area/zb0700/areabam/~ ~override~
+COPY ~%MOD_FOLDER%/area/zb0701/~ ~override~
+COPY ~%MOD_FOLDER%/area/zb0702/~ ~override~
