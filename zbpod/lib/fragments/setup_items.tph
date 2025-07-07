@@ -402,3 +402,4 @@ COPY_EXISTING ~zbneck0.itm~ ~override~
 COPY ~%MOD_FOLDER%/items/grimsaw~ ~override~
 COPY ~%MOD_FOLDER%/items/redrobeofthay~ ~override~
 COPY ~%MOD_FOLDER%/items/dragonfly~ ~override~
+COPY ~%MOD_FOLDER%/items/stirvwrangler~ ~override~
