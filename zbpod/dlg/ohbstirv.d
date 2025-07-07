@@ -11,7 +11,12 @@ IF ~Global("ZB_STRIV_TRAINING_CHECK", "GLOBAL", 3)  Global("ZB_STRIV_REWARD_3","
   IF ~~ THEN DO ~SetGlobal("ZB_STRIV_REWARD_3","GLOBAL",1) GiveItemCreate("ZBSTWR",Player1,1,0,0)~ EXIT
 END
 
-IF ~Global("OHB_FINALE","GLOBAL",0)~
+IF ~Global("ZB_STRIV_REWARD_3","GLOBAL",1)~ THEN BEGIN 16
+  SAY @3051 /* Off with you, then. I got work to do. Daddy's coming, darlings! */
+  IF ~~ THEN EXIT
+END
+
+IF ~Global("OHB_FINALE","GLOBAL",0) Global("ZB_STRIV_REWARD_3","GLOBAL",0)~
 THEN BEGIN 0
   SAY @3038 /* Look at my puppies. Pretty, aren't they? You wanna pet 'em? Take one for a walk? */
   IF ~~ THEN GOTO 4
