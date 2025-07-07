@@ -157,3 +157,15 @@ COPY ~%MOD_FOLDER%/area/zb0700/ee/~ ~override~
 COPY ~%MOD_FOLDER%/area/zb0700/areabam/~ ~override~
 COPY ~%MOD_FOLDER%/area/zb0701/~ ~override~
 COPY ~%MOD_FOLDER%/area/zb0702/~ ~override~
+
+// Convert Areas to Our Prefix
+COPY_EXISTING ~OH8000.ARE~ ~override/ZB8500.ARE~
+  SAY ARE_script ~ZB8500~
+COPY_EXISTING ~OH8100.ARE~ ~override/ZB8501.ARE~
+  SAY ARE_script ~ZB8501~
+COPY_EXISTING ~OH8200.ARE~ ~override/ZB8502.ARE~
+  SAY ARE_script ~ZB8502~
+COPY_EXISTING ~OH8300.ARE~ ~override/ZB8503.ARE~
+  SAY ARE_script ~ZB8503~
+COPY_EXISTING ~OH8400.ARE~ ~override/ZB8504.ARE~
+  SAY ARE_script ~ZB8504~
