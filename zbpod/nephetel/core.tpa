@@ -50,6 +50,8 @@ COPY ~%MOD_FOLDER%/nephetel/cre/zbneph.cre~ ~override~
   SAY HIDDEN_IN_SHADOWS ~~
   SAY SPELL_DISRUPTED ~~
   SAY SET_A_TRAP ~~
+  ADD_CRE_ITEM ~ZBPDBRCA~ #0 #0 #0 ~identified~ ~gloves~ EQUIP
+  ADD_CRE_ITEM ~ZBPDRNGA~ #0 #0 #0 ~identified~ ~rring~ EQUIP
   WRITE_ASCII PORTRAIT_LARGE ~zbnephy~ #8
   WRITE_ASCII PORTRAIT_SMALL ~zbnephy~ #8
   WRITE_ASCII SCRIPT_OVERRIDE ~zbnephs~ #8
@@ -64,6 +66,8 @@ COPY ~%MOD_FOLDER%/nephetel/cre/zbneph.cre~ ~override/zbnepha.cre~
   ADD_CRE_ITEM ~POTN10~ #10 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~QITEM1~ EQUIP
   ADD_CRE_ITEM ~POTN41~ #2 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~QITEM2~ EQUIP
   ADD_CRE_ITEM ~POTN52~ #10 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~QITEM3~ EQUIP
+  ADD_CRE_ITEM ~ZBPDBRCA~ #0 #0 #0 ~identified~ ~gloves~ EQUIP
+  ADD_CRE_ITEM ~ZBPDRNGA~ #0 #0 #0 ~identified~ ~rring~ EQUIP
   WRITE_ASCII PORTRAIT_LARGE ~zbnephy~ #8
   WRITE_ASCII PORTRAIT_SMALL ~zbnephy~ #8
   WRITE_ASCII 0x260 ~motatk01~ #8 // General Script (theif attacks)
