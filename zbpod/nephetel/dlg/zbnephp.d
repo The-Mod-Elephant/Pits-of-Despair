@@ -13,14 +13,14 @@ IF ~Global("ZB_NEPH_JOINS","GLOBAL",1) Global("ZB_NEPH_LEFT","GLOBAL",0)~ ZBNEPH
 END
 
 // Rejoin
-IF ~Global("ZB_NEPH_LEFT","GLOBAL",1)~ ZBNEPHREJOIN
+IF ~Global("ZB_NEPH_JOINS","GLOBAL",1) Global("ZB_NEPH_LEFT","GLOBAL",1)~ ZBNEPHREJOIN
   SAY @119 /*  So the prodigal bhaalspawn returns. I assume you have changed your mind and wish to continue our journey together? */
   IF ~~ THEN REPLY @120 /* Yes, please join us. */ DO ~SetGlobal("ZB_NEPH_LEFT","GLOBAL",0)~ GOTO ZBNEPHJOIND
   IF ~~ THEN REPLY @121 /* Not right now. We will contact you if we have a need for you. */ EXIT
 END
 
 // Join
-IF ~Global("ZB_NEPH_LEFT","GLOBAL",1)~ ZBNEPHJOIND
+IF ~~ ZBNEPHJOIND
   SAY @122 /* I'm glad you regained your senses, lead the way. */
   IF ~~ DO ~SetGlobal("ZB_NEPH_LEFT","GLOBAL",0) JoinParty()~ EXIT
 END

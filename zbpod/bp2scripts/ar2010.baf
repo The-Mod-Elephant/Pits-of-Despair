@@ -1,4 +1,39 @@
 IF
+  Global("ZB_PITS_SKIP_1", "GLOBAL", 1)
+THEN
+  RESPONSE #100
+    SetGlobal("ZBPodSummonsReceived","GLOBAL",4)
+    SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",11)
+    SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",2)
+    SetGlobal("ZB_SPAWN_NEPHY_FIGHT5","GLOBAL",2)
+    SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",11)
+    SetGlobal("ZB_NEPH_POST_INTERJECT_1","GLOBAL",1)
+    SetGlobal("ZB_NEPH_POST_INTERJECT_2","GLOBAL",1)
+    SetGlobal("ZB_NEPH_POST_INTERJECT_3","GLOBAL",1)
+    SetGlobal("ZB_NEPH_POST_INTERJECT_4","GLOBAL",1)
+    SetGlobal("ZB_NEPH_POST_INTERJECT_5","GLOBAL",1)
+    SetGlobal("ohb_101_item_great","global",1)
+    SetGlobal("ohb_102_item_great","global",1)
+    SetGlobal("ohb_103_item_great","global",1)
+    SetGlobal("ohb_104_item_great","global",1)
+    SetGlobal("ohb_105_item_great","global",1)
+    SetGlobal("OHB_101","GLOBAL",2)
+    SetGlobal("OHB_102","GLOBAL",2)
+    SetGlobal("OHB_103","GLOBAL",2)
+    SetGlobal("OHB_104","GLOBAL",2)
+    SetGlobal("OHB_105","GLOBAL",2)
+    SetGlobal("OHB_BP2_CAPTURE","GLOBAL",1)
+    SetGlobal("OHB_ENEMY_OVERRIDE","GLOBAL",0)
+    SetGlobal("OHB_TALKED_BELLOWGULP","GLOBAL",1)
+    SetGlobal("ZBBP2inBG2","GLOBAL",1)
+    SetGlobal("ZBCUTSCENE_2","GLOBAL",1)
+    SetGlobal("ZB_MOVED_NEPH","GLOBAL",1)
+    SetGlobal("zbnephcutscene","GLOBAL",1)
+    SetGlobal("ZBPODSTART","GLOBAL",2)
+    Continue()
+END
+
+IF
   Global("ZB_NEPH_ESCAPE_1","GLOBAL",2)
 THEN
   RESPONSE #100
