@@ -136,21 +136,6 @@ COPY_EXISTING "zblion1.spl" "override" // we tackle the knocking over effect
 // end of dire lion related code
 
 //-------------------------------------------------------------------------
-// Displacer Beast - Animations provided by Acifer, THANK YOU!
-LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7F3D slotMax = slotMin + 0xff RET slot END
-ACTION_IF (slot <= 0) BEGIN
-  FAIL ~No free creature animation slot found.~
-END
-
-LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
-APPEND ~animate.ids~ ~0x%hexNumber% AC#DISPLACER_BEAST~ UNLESS ~AC#DISPLACER_BEAST~
-CLEAR_IDS_MAP
-
-COPY ~%MOD_FOLDER%/animations/displacer_beast/exxx.ini~ ~override/%hexNumber%.ini~
-
-ACTION_BASH_FOR ~%MOD_FOLDER%/animations/displacer_beast~ ~^.+.bam$~ BEGIN
-  COPY ~%BASH_FOR_FILESPEC%~ ~override~
-END
 
 // Create 5 unique instances of displacer beasts
 ACTION_FOR_EACH displacer IN
@@ -209,22 +194,6 @@ ACTION_FOR_EACH crawl IN
             WRITE_ASCII 0x280 ~mocrwl0%crawl%~ #8 // Script Name
 END
 
-//-------------------------------------------------------------------------
-// Vortex Spider Animations
-LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
-ACTION_IF (slot <= 0) BEGIN
-  FAIL ~No free creature animation slot found.~
-END
-
-LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
-APPEND ~animate.ids~ ~0x%hexNumber% zbbweave~ UNLESS ~zbbweave~
-CLEAR_IDS_MAP
-
-COPY ~%MOD_FOLDER%/animations/black_weaver/exxx.ini~ ~override/%hexNumber%.ini~
-
-ACTION_BASH_FOR ~%MOD_FOLDER%/animations/black_weaver~ ~^.+.bam$~ BEGIN
-  COPY ~%BASH_FOR_FILESPEC%~ ~override~
-END
 
 COPY ~%MOD_FOLDER%/creatures/mutvortex~ ~override~
 // Create 2 unique instances of vortex spiders
@@ -235,7 +204,7 @@ ACTION_FOR_EACH spdr IN
         COPY_EXISTING ~ohbmena7.cre~ ~override/mospdr0%spdr%.cre~
             SAY 0x08 @15011
             SAY 0x0c @15011
-            WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~zbbweave~))
+            WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~P_BLACK_WEAVER~))
             WRITE_BYTE 0x53   2  // 2 APR Base
             REMOVE_CRE_ITEM minhp1
             WRITE_ASCII SCRIPT_OVERRIDE ~ohbmeng~
@@ -548,24 +517,8 @@ COPY_EXISTING ~ohbsah01.cre~ ~override~
 
 //-------------------------------------------------------------------------
 // Planetar Animations
-//LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
-LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7000 slotMax = 0x7fff RET slot END
-ACTION_IF (slot <= 0) BEGIN
-  FAIL ~No free creature animation slot found.~
-END
-
-LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
-APPEND ~animate.ids~ ~0x%hexNumber% zbfplane~ UNLESS ~zbfplane~
-CLEAR_IDS_MAP
-
-COPY ~%MOD_FOLDER%/animations/fallen_planetar/exxx.ini~ ~override/%hexNumber%.ini~
-
-ACTION_BASH_FOR ~%MOD_FOLDER%/animations/fallen_planetar~ ~^.+.bam$~ BEGIN
-  COPY ~%BASH_FOR_FILESPEC%~ ~override~
-END
-
 COPY_EXISTING ~ohbwing.cre~ ~override~
-  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~zbfallen_planetar~))
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~ZBFALLEN_PLANETAR~))
 
 ///////////////////////////////////////////////////////////////////////////
 // Copy .BCS file to override folder                                     //

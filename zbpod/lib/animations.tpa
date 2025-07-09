@@ -112,6 +112,23 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY ZBFALLEN_PLANETAR_ANIMS_Exxx BEGIN
     COPY ~%MOD_FOLDER%/Animations/%folder%/Exxx.ini~ ~override/%hexNumber%.ini~
     OUTER_SET EVAL ~slot_%folder%~ = slot   // save animation slot number for later
     APPEND ~ANIMATE.IDS~ ~0x%hexNumber% %symbol%~
+    BUT_ONLY_IF_IT_CHANGES
+END
+
+// Displacer Beast - Animations provided by Acifer, THANK YOU!
+LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = slotMin + 0xff RET slot END
+ACTION_IF (slot <= 0) BEGIN
+  FAIL ~No free creature animation slot found.~
+END
+
+LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+APPEND ~animate.ids~ ~0x%hexNumber% AC#DISPLACER_BEAST~ UNLESS ~AC#DISPLACER_BEAST~
+CLEAR_IDS_MAP
+
+COPY ~%MOD_FOLDER%/animations/displacer_beast/exxx.ini~ ~override/%hexNumber%.ini~
+
+ACTION_BASH_FOR ~%MOD_FOLDER%/animations/displacer_beast~ ~^.+.bam$~ BEGIN
+  COPY ~%BASH_FOR_FILESPEC%~ ~override~
 END
 
 // Dracolich
