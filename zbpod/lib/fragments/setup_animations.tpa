@@ -27,6 +27,7 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY P_RED_WORG_ANIMS_Exxx BEGIN
     OUTER_SET EVAL ~slot%folder%~ = slot   // save animation slot number for later
     APPEND ~ANIMATE.IDS~ ~0x%hexNumber% %symbol%~
 END
+
 // Green Rakshasa
 ACTION_DEFINE_ASSOCIATIVE_ARRAY P_GREEN_RAK_ANIMS_Exxx BEGIN
     ~green_rakshasa~ => ~P_GREEN_RAK~
@@ -112,7 +113,6 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY ZBFALLEN_PLANETAR_ANIMS_Exxx BEGIN
     COPY ~%MOD_FOLDER%/Animations/%folder%/Exxx.ini~ ~override/%hexNumber%.ini~
     OUTER_SET EVAL ~slot_%folder%~ = slot   // save animation slot number for later
     APPEND ~ANIMATE.IDS~ ~0x%hexNumber% %symbol%~
-    BUT_ONLY_IF_IT_CHANGES
 END
 
 // Displacer Beast - Animations provided by Acifer, THANK YOU!
@@ -144,5 +144,14 @@ CLEAR_IDS_MAP
 COPY ~%MOD_FOLDER%/animations/dracolich/exxx.ini~ ~override/%hexNumber%.ini~
 
 ACTION_BASH_FOR ~%MOD_FOLDER%/animations/dracolich~ ~^.+\.bam$~ BEGIN
+  COPY ~%BASH_FOR_FILESPEC%~ ~override~
+END
+
+// Riptide
+COPY ~%MOD_FOLDER%/animations/riptide~ ~override~
+APPEND ~ANIMATE.IDS~ ~0x0104 SMASHING_WAVE~
+
+// Driders
+ACTION_BASH_FOR ~%MOD_FOLDER%/animations/driders~ ~^.+\.bam$~ BEGIN
   COPY ~%BASH_FOR_FILESPEC%~ ~override~
 END

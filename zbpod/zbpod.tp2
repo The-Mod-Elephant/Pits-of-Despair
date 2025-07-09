@@ -56,26 +56,12 @@ OUTER_SET description = RESOLVE_STR_REF(@18000)
 LAUNCH_ACTION_FUNCTION cd_new_portrait_icon INT_VAR description = description STR_VAR bam_file="zbantisb" END
 COPY ~%MOD_FOLDER%/movie/pod.wbm~ ~movies~ /* adding directly to movies, not override, because otherwise it doesn't work. this isn't ideal. */
 
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~p_cta1.bam~ THEN BEGIN
-INCLUDE ~%MOD_FOLDER%/lib/animations.tpa~
-END
-
 // sets up various script variables and detectable spells
 INCLUDE ~%MOD_FOLDER%/lib/fragments/mo_initialize.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_animations.tpa~
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_items.tph~
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_cre.tph~
 INCLUDE ~%MOD_FOLDER%/lib/fragments/setup_stores.tph~
-
-// Copy animations
-COPY ~%MOD_FOLDER%/animations/astral_demilich~ ~override~
-COPY ~%MOD_FOLDER%/animations/black_weaver~ ~override~
-COPY ~%MOD_FOLDER%/animations/couatl~ ~override~
-COPY ~%MOD_FOLDER%/animations/displacer_beast~ ~override~
-COPY ~%MOD_FOLDER%/animations/driders~ ~override~
-COPY ~%MOD_FOLDER%/animations/green_rakshasa~ ~override~
-COPY ~%MOD_FOLDER%/animations/hamatula~ ~override~
-COPY ~%MOD_FOLDER%/animations/pit_fiend~ ~override~
-COPY ~%MOD_FOLDER%/animations/red_worg~ ~override~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/cutscene~ USING ~%MOD_FOLDER%/lang/%LANGUAGE%/cutscenes.tra~
