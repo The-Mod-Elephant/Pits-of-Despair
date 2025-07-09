@@ -1,0 +1,56 @@
+// STRIV after match 1 or 3
+IF
+  Global("ZB_STRIV_MOVE_1","GLOBAL",1)
+  OR(2)
+    Global("ZB_STRIV_TRAINING_CHECK","GLOBAL",1)
+    Global("ZB_STRIV_TRAINING_CHECK","GLOBAL",3)
+THEN
+  RESPONSE #100
+  CutSceneId("ohbstirv")
+  SetGlobal("ZB_STRIV_MOVE_1","GLOBAL",2)
+  Unlock("Door0002")
+  OpenDoor("Door0002")
+  SmallWait(25)
+  ActionOverride(Player1,MoveToObject("ohbstirv"))
+  ActionOverride(Player2,MoveToObject("ohbstirv"))
+  ActionOverride(Player3,MoveToObject("ohbstirv"))
+  ActionOverride(Player4,MoveToObject("ohbstirv"))
+  ActionOverride(Player5,MoveToObject("ohbstirv"))
+  ActionOverride(Player6,MoveToObject("ohbstirv"))
+  SmallWait(50)
+  ActionOverride(Player1,FaceObject("ohbstirv"))
+  ActionOverride(Player2,FaceObject("ohbstirv"))
+  ActionOverride(Player3,FaceObject("ohbstirv"))
+  ActionOverride(Player4,FaceObject("ohbstirv"))
+  ActionOverride(Player5,FaceObject("ohbstirv"))
+  ActionOverride(Player6,FaceObject("ohbstirv"))
+  FaceObject([PC])
+  StartDialogueNoSet(Player1)
+END
+
+// STRIV after match 2
+IF
+  Global("ZB_STRIV_MOVE_1","GLOBAL",1)
+  Global("ZB_STRIV_TRAINING_CHECK","GLOBAL",2)
+THEN
+  RESPONSE #100
+  CutSceneId("ohbstirv")
+  SetGlobal("ZB_STRIV_MOVE_1","GLOBAL",2)
+  Unlock("Door0002")
+  OpenDoor("Door0002")
+  SmallWait(25)
+  ActionOverride(Player1,MoveToObject("ohbstirv"))
+  ActionOverride(Player2,MoveToObject("ohbstirv"))
+  ActionOverride(Player3,MoveToObject("ohbstirv"))
+  ActionOverride(Player4,MoveToObject("ohbstirv"))
+  ActionOverride(Player5,MoveToObject("ohbstirv"))
+  ActionOverride(Player6,MoveToObject("ohbstirv"))
+  SmallWait(50)
+  ActionOverride(Player1,FaceObject("ohbstirv"))
+  ActionOverride(Player2,FaceObject("ohbstirv"))
+  ActionOverride(Player3,FaceObject("ohbstirv"))
+  ActionOverride(Player4,FaceObject("ohbstirv"))
+  ActionOverride(Player5,FaceObject("ohbstirv"))
+  ActionOverride(Player6,FaceObject("ohbstirv"))
+  EndCutSceneMode()
+END

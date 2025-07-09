@@ -147,7 +147,7 @@ INTERJECT_COPY_TRANS OHBSTIRV 7 ZBTRAININGPRE3
 END
 
 // After Training match 1
-INTERJECT_COPY_TRANS OHBSTIRV 16 ZBTRAININGPOST1
+INTERJECT_COPY_TRANS OHBSTIRV 1 ZBTRAININGPOST1
   == KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN @3867 /* Ach. It be a marvelous wonder to cut through wee beasties an' get paid fer the pleasure. Count out yer coin, we'll slaughter yon bloody puppies an' empty yer pockets! */
   == EDWINJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID) InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN @3868 /* Yes, the money. (This moron of a dwarf is so blinded by coin he rarely sees past his own nose). */
   == KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID) InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN @3869 /* Wizard, yer robes are open and I see how dainty yon smallclothes be. Don't trifle with th' coin! */
