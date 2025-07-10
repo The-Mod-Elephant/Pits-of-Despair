@@ -116,7 +116,7 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY ZBFALLEN_PLANETAR_ANIMS_Exxx BEGIN
 END
 
 // Displacer Beast - Animations provided by Acifer, THANK YOU!
-LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = slotMin + 0xff RET slot END
+LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7F3D slotMax = slotMin + 0xff RET slot END
 ACTION_IF (slot <= 0) BEGIN
   FAIL ~No free creature animation slot found.~
 END

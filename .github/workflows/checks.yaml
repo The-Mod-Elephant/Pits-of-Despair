@@ -1,0 +1,23 @@
+name: 'checks'
+on:
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          set-safe-directory: true
+          fetch-depth: 0
+      - name: Check for creature files bigger than 8
+        id: creature_checks
+        run: ./.github/scripts/check.sh "*cre"
+      - name: Check for item files bigger than 8
+        id: item_checks
+        run: ./.github/scripts/check.sh "*itm"
+      - name: Check for spell files bigger than 8
+        id: spell_checks
+        run: ./.github/scripts/check.sh "*spl"
+      - name: Check for bam files bigger than 8
+        id: bam_checks
+        run: ./.github/scripts/check.sh "*bam"
