@@ -21,3 +21,12 @@ jobs:
       - name: Check for bam files bigger than 8
         id: bam_checks
         run: ./.github/scripts/check.sh "*bam"
+      - name: Check for baf files bigger than 8
+        id: baf_checks
+        run: ./.github/scripts/check.sh "*baf"
+      - name: Check for wav files bigger than 8
+        id: wav_checks
+        run: ./.github/scripts/check.sh "*wav"
+      - name: Check for vvc files bigger than 8
+        id: vvc_checks
+        run: ./.github/scripts/check.sh "*vvc"
