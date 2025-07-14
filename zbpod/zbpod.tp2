@@ -117,7 +117,7 @@ COPY ~%MOD_FOLDER%/vvc~ ~override~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20002 DESIGNATED 1 LABEL ~zb_argent_sound~ // ADD ALT PORTRAITS
-REQUIRE_COMPONENT "zbpod.tp2" "2" @30000 // traify later
+REQUIRE_COMPONENT "zbpod.tp2" "0" @30000 // traify later
 /* copy edited sound files over */
 COPY ~%MOD_FOLDER%/wav/oh10~ ~override~
 COPY ~%MOD_FOLDER%/wav/oh88~ ~override~
@@ -132,7 +132,7 @@ COPY ~%MOD_FOLDER%/wav/zb~ ~override~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20004 DESIGNATED 9 LABEL ~zb_keldorn_simp_nephetel_portrait~ // ADD ALT PORTRAITS
-REQUIRE_COMPONENT "zbpod.tp2" "2" @30000 // traify later
+REQUIRE_COMPONENT "zbpod.tp2" "0" @30000 // traify later
 SUBCOMPONENT @20003
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -142,7 +142,7 @@ COPY ~%MOD_FOLDER%/altportrait/keldornsimp_zbnephy.bmp~ ~override/zbnephy.bmp~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20005 DESIGNATED 10 LABEL ~zb_llewren_nephetel_portrait~ // ADD ALT PORTRAITS
-REQUIRE_COMPONENT "zbpod.tp2" "2" @30000 // traify later
+REQUIRE_COMPONENT "zbpod.tp2" "0" @30000 // traify later
 SUBCOMPONENT @20003
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
