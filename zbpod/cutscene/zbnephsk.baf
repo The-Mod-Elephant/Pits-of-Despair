@@ -5,7 +5,7 @@ IF
 THEN
 	RESPONSE #100
 		SetCutSceneBreakable(FALSE)
-		ApplySpellRES("BPDISPEL",Player1)  // No such index
+		ActionOverride("cutspy",DestroySelf())
 		FadeToColor([50.0],0)
 		ActionOverride("zbneph",DestroySelf())
 		Wait(1)
