@@ -1,17 +1,9 @@
-/*
-  cutscene where nephetel and the vampire meet in the sewers
-  we'll need to add 'playsound' for each line once we have the VO lines
-  right now we only have the one vampire sound
-  ideally played AFTER the player has explored the sewers but yolo
-  fires AFTER nephetel / mysterious messenger gives charname the note */
-
 IF
-	Global("zbnephcutscene","GLOBAL",0) /* we haven't seen the cutscene */
+	Global("zbnephcutscene","GLOBAL",0)
 THEN
 	RESPONSE #100
-		CutSceneID(Player1) /* who performs the action */
-		/* actions start here */
-		SetGlobal("zbnephcutscene","GLOBAL",1) /* we don't want the cutscene to repeat */
+		CutSceneID(Player1)
+		SetGlobal("zbnephcutscene","GLOBAL",1)
 		Wait(2)
 		DisplayStringHead(Player1,@25)
 		Wait(2)
@@ -20,10 +12,13 @@ THEN
 		FadeToColor([50.0],0)
 		Wait(2)
 		StorePartyLocations()
-		LeaveAreaLUA("ZB0799","",[1660.480],NW) /* carries player over */
-		ApplySpell(Player1,WIZARD_INVISIBILITY)
-		CreateCreature("zbneph",[1560.680],NE)  /* spawns in nephetel */
-		CreateCreature("zbvamp",[1670.680],NE)  /* spawns in vampire */
+		LeaveAreaLUAPanic("ZB0799","",[910.330],NW)
+		LeaveAreaLUA("ZB0799","",[910.330],NW)
+		MultiPlayerSync()
+		MoveViewPoint([1660.480],INSTANT)
+		CreateCreature("CUTSPY",[1560.680],NE)
+		CreateCreature("zbneph",[1560.680],NE)  // nephetel
+		CreateCreature("zbvamp",[1670.680],NE)  // vampire
 		Explore()
 		MoveViewObject("zbneph",INSTANT)
 		SetAreaScript("zbnephsk",OVERRIDE)
@@ -76,6 +71,8 @@ THEN
 		Wait(1)
 		ActionOverride("zbvamp",DestroySelf())
 		Wait(1)
+		ActionOverride("cutspy",DestroySelf())
+		SmallWait(25)
 		RestorePartyLocations()
 		ApplySpellRES("BPDISPEL",Player1)  // No such index
 		// Actions end here
