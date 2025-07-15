@@ -774,17 +774,17 @@ Weight: 4~
 @18003 = ~Pounce~
 @18004 = ~Gore~
 
-@18005 = ~Shadow Thief Report~
-@18006 = ~A handwritten transcript, detailing a meeting between one Lady Katarina, and Lord Dominick. Some member of the Shadow Thieves has crafted this extensive document, meticulously capturing even  Lord Dominick's more banal ramblings. A few passages catch your eye:
+@18005 = ~Shady Document~
+@18006 = ~A handwritten transcript, detailing a meeting between one Lady Katarina and Lord Dominick. An uncredited spy has crafted this extensive document, meticulously capturing even Lord Dominick's most banal ramblings. A few passages catch your eye:
 
-Lady Katarina: I salute your taste,  my Lord Dominic,  exactly the delightful earthy tones you described- my, is that the bottle gone? One might suspect a less honorable and handsome man of plying me with drink... oh, but wait, we still need another bottle! I meant to toast the Hero of Baldur's Gate, and hear the story of how you knew them!
-Dominick: I… I apoloshize, my lady, when I said I knew the Hero, I meant more from... um, afar. I was there, though, Baldur's Gate, when they saved the city! Me and my father, we were vishiting... right, right in the thick of it on a visit, heard of the near war, everything!
-Lady Katarina: Oh. What a sly rascal, to have deceived so... You wouldn't lie to me now that we are such good friends, would you, my dear?
-Dominick: Never, Mish Katarina. You can trust me. They were so brave and incredible. The evil war… warrior Sarevok was killing everyone and it was he who nearly started the war! The hero came from Candlekeep and they were related! Related, I say!
-Lady Katarina: Do continue! I cannot deny an appetite for such gossip... have you heard anything of the Hero being here Amn? Have you any notion of why they might be?
-Dominick: OH, yesh! First there wasesh this mad mage Irenikish and he caught the hero becaush he was a CH… ILD OF BHAAAL and...
+Lady Katarina: I salute your taste, my Lord Dominick, exactly the delightful earthy tones you described—my, is that the bottle gone? One might suspect a less honorable and handsome man of plying me with drink. I jest, of course, my lord. Come, let us open another bottle to toast the hero of Baldur’s Gate! Tell me of how you met, again.
+Dominick: I apologize, my lady. When I said I knew the hero, I meant more from... um, afar. I was in Baldur's Gate, when <PRO_HESHE> saved the city. My father ‘n I were visiting at the time.
+Lady Katarina: Oh, what a sly rascal, to have deceived me so... You wouldn't lie to me now that we are such good friends, would you, my dear?
+Dominick: Never, Miss Katarina. I can tell you what I know… <PRO_HESHE> was heralded a hero for thwarting the evil of Sarevok, but there were rumors that they both shared blood!
+Lady Katarina: Do continue! I cannot deny an appetite for such gossip.
+Dominick: Oh indeed… when they left the city—the lot of them—it was all but confirmed: both Sarevok and his slayer were… children of Bhaal…
 
-The remainder of the transcript becomes increasingly incoherent, as Lord Dominic's inebriation overcomes first intelligibility and then, eventually, consciousness.~
+The remainder of the transcript becomes increasingly incoherent, as Lord Dominick's inebriation overcomes intelligibility and then, eventually, consciousness.~
 
 // Combat Scripting
 
