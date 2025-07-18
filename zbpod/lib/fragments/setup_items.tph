@@ -14,6 +14,14 @@ COPY_EXISTING ~zbafistd.itm~ ~override~
     SAY IDENTIFIED_DESC @10001
 
 
+//////// Dark Knight Belt \\\\\\\\
+
+// String placements
+COPY ~%MOD_FOLDER%/items/darkknightbelt~ ~override~
+COPY_EXISTING ~zbdarkk0.itm~ ~override~
+    SAY NAME2 @10070
+    SAY IDENTIFIED_DESC @10071
+
 //////// Riptide +5 \\\\\\\\
 
 // projectiles for Smashing Wave / Tidal Wave
