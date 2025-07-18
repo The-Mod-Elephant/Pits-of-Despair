@@ -744,6 +744,20 @@ Weight: 4~
 
 @11064 = ~Limb Shattered~
 
+@10070 = ~Dark Knight's Belt~
+@10071 = ~Dark Knight's Belt description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to poison
+– Armor Class: +1 (+2 for Bards and Thieves)
+– Saving Throws: +1 (+2 for Bards and Thieves)
+– Each round during combat, there's a 25% chance that the wearer will release a Glitterdust spell on themselves. This can only happen once per three rounds.
+– Each time the wearer is hit, there's a 25% chance that the wearer will release a Glitterdust spell on themselves. This can only happen once per three rounds.
+
+Weight: 2~
+
 
 // Creatures
 
