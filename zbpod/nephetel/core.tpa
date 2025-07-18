@@ -9,47 +9,55 @@ COPY ~%MOD_FOLDER%/nephetel/portrait~ ~override~
 COPY ~%MOD_FOLDER%/nephetel/cre/zbneph.cre~ ~override~
   SAY NAME1 @15001
   SAY NAME2 @15001
-  SAY BIO ~Who am I none of your business!~
-  SAY BATTLE_CRY1 ~"I strike a blow for the doomguard"~
-  SAY BATTLE_CRY2 ~~
-  SAY BATTLE_CRY3 ~~
-  SAY BATTLE_CRY4 ~~
-  SAY BATTLE_CRY5 ~~
-  SAY LEADER ~~
-  SAY TIRED ~~
-  SAY BORED ~~
-  SAY HURT ~~
-  SAY DAMAGE ~~
-  SAY DYING ~~
-  SAY MORALE ~~
-  SAY HAPPY ~~
-  SAY UNHAPPY_ANNOYED ~~
-  SAY UNHAPPY_SERIOUS ~~
-  SAY UNHAPPY_BREAKING ~~
-  SAY SELECT_COMMON1 ~~
-  SAY SELECT_COMMON2 ~~
-  SAY SELECT_COMMON3 ~~
-  SAY SELECT_COMMON4 ~~
-  SAY SELECT_COMMON5 ~~
-  SAY SELECT_COMMON6 ~~
-  SAY SELECT_ACTION1 ~~
-  SAY SELECT_ACTION2 ~~
-  SAY SELECT_ACTION3 ~~
-  SAY SELECT_ACTION4 ~~
-  SAY SELECT_ACTION5 ~~
-  SAY SELECT_ACTION6 ~~
-  SAY REACT_TO_DIE_GENERAL ~~
-  SAY REACT_TO_DIE_SPECIFIC ~~
-  SAY SELECT_RARE1 ~~
-  SAY SELECT_RARE2 ~~
-  SAY CRITICAL_HIT ~~
-  SAY CRITICAL_MISS ~~
-  SAY TARGET_IMMUNE ~~
-  SAY INVENTORY_FULL ~~
-  SAY PICKED_POCKET ~~
-  SAY HIDDEN_IN_SHADOWS ~~
-  SAY SPELL_DISRUPTED ~~
-  SAY SET_A_TRAP ~~
+  SAY MORALE @195 /* I'm not dying for a lost cause. */ 
+  SAY HAPPY @196 /* I like this. I feel like dancing. */
+  SAY UNHAPPY_ANNOYED @197 /* Another shining example of why I keep my expectations low. */ 
+  SAY UNHAPPY_SERIOUS @198 /* If you didn't quite get the hint: pull it together, or I'm gone. */
+  SAY UNHAPPY_BREAKING @199 /* That's it. I'm done with you. I'll see you… from the shadows. */
+  SAY LEADER @200 /* Congratulations. This is the best decision you've made. By far! */
+  SAY TIRED @201 /* As much as it irks me, we need to rest. */
+  SAY BORED @202 /* A good thief is used to waiting, but this? This is ridiculous. */
+  SAY BATTLE_CRY1 @203 /* Time to die, you warthog-faced buffoon… */
+  SAY BATTLE_CRY2 @204 /* Try to make this interesting. */ 
+  SAY BATTLE_CRY3 @205 /* I strike from the shadows. */ 
+  SAY BATTLE_CRY4 @206 /* There's only darkness where you're going. */
+  SAY BATTLE_CRY5 @207 /* I move for the kill. */
+  SAY DYING @208 /* Not yet! */
+  SAY HURT @209 /* I need healing. */
+  SAY AREA_FOREST @210 /* Don't be fooled by the appearance of harmony. There's danger everywhere out here. */
+  SAY AREA_CITY @211 /* Here we will find both the best and the worst from so-called civilized people. */
+  SAY AREA_DUNGEON @212 /* There's always something hiding in the dark… Let's loot the place. */
+  SAY AREA_DAY @213 /* It's a beautiful day, isn't it? */
+  SAY AREA_NIGHT @214 /* At night, I feel my calmest. */
+  SAY SELECT_COMMON1 @215 /* Aye? */
+  SAY SELECT_COMMON2 @216 /* You need my skills? */
+  SAY SELECT_COMMON3 @217 /* What's your worry? */
+  SAY SELECT_COMMON4 @218 /* You called? */
+  SAY SELECT_COMMON5 @219 /* Yes? */
+  SAY SELECT_COMMON6 @220 /* Mm. */
+  SAY SELECT_ACTION1 @221 /* Moving out. */
+  SAY SELECT_ACTION2 @222 /* I hope you know what you're doing. */
+  SAY SELECT_ACTION3 @223 /* Yup. */
+  SAY SELECT_ACTION4 @224 /* You have my attention. */
+  SAY SELECT_ACTION5 @225 /* I'll shadowstep there… oh, fine, I'll walk. */
+  SAY SELECT_ACTION6 @226 /* Done. */
+  SAY SELECT_ACTION7 @227 /* On it. */
+  SAY SELECT_RARE1 @228 /* You're paying me for this, right? */
+  SAY SELECT_RARE2 @229 /* Consider it a professional courtesy. */
+  SAY CRITICAL_HIT @230 /* Sorry, did that hurt? */
+  SAY CRITICAL_MISS @231 /* Ugh! Missed. */
+  SAY TARGET_IMMUNE @232 /* Useless! */
+  SAY INVENTORY_FULL @233 /* I'm out of space—unless you want it hanging off my horns. */
+  SAY PICKED_POCKET @234 /* I'm sure it won't be missed. */
+  SAY HIDDEN_IN_SHADOWS @235 /* I vanish. */
+  SAY SPELL_DISRUPTED @236 /* Gah! I lost my focus. */
+  SAY BG2EE_SELECT_RARE1 @237 /* Stop it. I'm ticklish. */
+  SAY BG2EE_SELECT_RARE2 @238 /* Inconceivable! */
+  SAY BG2EE_SELECT_RARE3 @239 /* You've come to kidnap what I've rightfully stolen! */
+  SAY BG2EE_SELECT_RARE4 @240 /* I do have a tail! You just can't see it. */
+  SAY BIO @241 /* When asked about her past, NEPHETEL becomes evasive, reminding you that she has an appearance of mystery to uphold. After a moment, she relents and offers up a few rehearsed platitudes: she was born and raised in Thay—lovingly, despite her family's fiendish blood making itself known. Love, however, was apparently not enough, for Nephetel falls uncharacteristically silent when pressed further on her family. Instead, she steers the conversation towards her exploits as a rogue and her natural affinity for staying unseen, offhandedly telling stories of various escapades involving flawless infiltration and escape.
+
+  Nephetel is quick to remind you that she has a mission of her own—an anonymous employer has bid her to find a powerful tome, and despite the lack of details she is willing to share, Nephetel seems wholly devoted to this task, as she claims she has been for many years. The source of that devotion, however, remains a mystery for now. */
   ADD_CRE_ITEM ~ZBPDBRCA~ #0 #0 #0 ~identified~ ~gloves~ EQUIP
   ADD_CRE_ITEM ~ZBPDRNGA~ #0 #0 #0 ~identified~ ~rring~ EQUIP
   WRITE_ASCII PORTRAIT_LARGE ~zbnephy~ #8
@@ -86,8 +94,8 @@ COPY_EXISTING ~zbneph.cre~ ~override/zbnep25.cre~
 
 /* add messenger creature */
 COPY ~%MOD_FOLDER%/nephetel/cre/zbmes.cre~ ~override~
-  SAY NAME1 ~Mysterious Messenger~
-  SAY NAME2 ~Mysterious Messenger~
+  SAY NAME1 @242 /* Mysterious Messenger */
+  SAY NAME2 @242 /* Mysterious Messenger */
   WRITE_ASCII SCRIPT_OVERRIDE ~zbme2~ #8
   WRITE_ASCII DIALOG ~zbmes~ #8
 
@@ -121,4 +129,4 @@ UNLESS ~zbneph~
 
 // Epilogue
 COPY ~%MOD_FOLDER%/nephetel/epilogue/zbneph.2da~ ~override~
-  REPLACE ~99999~ ~And then she lived happily ever after.~
+  REPLACE ~99999~ @243 /* And then she lived happily ever after. */
