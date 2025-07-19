@@ -476,7 +476,7 @@ END
 /// Match 1 ///
 /// Before match 1
 IF
-	!StateCheck(Player1,CD_STATE_NOTVALID) 
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 	Global("ZB_NEPH_INTERJECT_1","GLOBAL",1)
 THEN
 	RESPONSE #100
@@ -794,7 +794,7 @@ THEN
 		AddStoreItem("OHBIMIM","BRAC15",1,1)  // Bracers of Defense AC 3
 		AddStoreItem("OHBIMIM","RING31",1,1)  // Ring of Regeneration
 		AddStoreItem("OHBIMIM","RODS03",5,1)  // Rod of Resurrection
-//		AddStoreItem("OHBIMIM","",1,1)  // Dark Knight Belt (NEW)
+		AddStoreItem("OHBIMIM","zbdarkk0",1,1)  // Dark Knight Belt (NEW)
 		AddStoreItem("OHBCONCO","POTN55",0,1)  // Potion of Superior Healing
 		AddStoreItem("OHBSDWM","AROW06",5,1)  // Arrow of Detonation
 		AddStoreItem("OHBSDWM","AROW07",10,1)  // Arrow of Dispelling
