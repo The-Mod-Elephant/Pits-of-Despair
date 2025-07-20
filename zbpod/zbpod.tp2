@@ -21,19 +21,17 @@ END
 AUTO_TRA ~%MOD_FOLDER%/lang/%s~
 LANGUAGE  ~English~
           ~english~
-          ~zbpod/lang/english/game.tra~
           ~zbpod/lang/english/weidu.tra~
-          ~zbpod/lang/english/dialogs.tra~
           ~zbpod/lang/english/JournalEntries.tra~
           ~zbpod/lang/english/cutscenes.tra~
+          ~zbpod/lang/english/neph.tra~
 
 LANGUAGE  ~Simplified Chinese By Lzw104522773~
           ~schinese~
-          ~zbpod/lang/schinese/game.tra~
           ~zbpod/lang/schinese/weidu.tra~
-          ~zbpod/lang/schinese/dialogs.tra~
           ~zbpod/lang/schinese/JournalEntries.tra~
           ~zbpod/lang/schinese/cutscenes.tra~
+          ~zbpod/lang/schinese/neph.tra~
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -99,7 +97,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
   USING ~%MOD_FOLDER%/lang/%LANGUAGE%/dialogs.tra~
 
 // Nephetel
-INCLUDE ~%MOD_FOLDER%/nephetel/core.tpa~
+INCLUDE ~%MOD_FOLDER%/nephetel/neph.tpa~
 
 /* make eshpel conversable */
 OUTER_SET label = RESOLVE_STR_REF(~Converse~)

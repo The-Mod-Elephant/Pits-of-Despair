@@ -1,3 +1,995 @@
+
+// Items
+//
+@10000 = ~Angelfist +5~
+@10001 = ~Created in the celestial forges of Elysium, Angelfist is a warhammer imbued with divine purpose. Its head is radiant silver, glowing with a soft, ethereal light that illuminates the darkest corners of the material plane. Angelic decorations and symbols adorn it, blessed by the heavens themselves. It feels warm and comforting to the touch.
+
+When wielded, Angelfist feels alive, throbbing with the fire of righteousness and justice. Each swing resonates with a heavenly chorus that intensifies when using its Heavenly Hammer ability. Upon striking a foe, it delivers not only physical might but also a searing burst of radiant energy. Enemies struck by Angelfist find themselves momentarily blinded, as if caught in the gaze of the divine.
+
+How this weapon fell into the hands of the Winged, none know or have the courage to ask, as even gazing upon it may draw her ire. However, it is rumored to be her only comfort, the reason she can endure the presence of mortals.
+
+STATISTICS:
+
+Combat abilities:
+– Flame Wings: 50% chance of reducing target's fire resistance by 10% for 4 rounds. This effect may not stack more than 4 times or happen more than once per second.
+– Every hit has a 10% chance of triggering a powerful flame strike that deals 10d8 fire damage to the target and all adjacent enemies.
+
+Charge abilities:
+– Heavenly Hammer once per day
+  Special: Rain down fire from the skies, dealing 2d8+20 fire damage each round for 4 rounds
+  Area of Effect: 15 ft. radius around the target
+
+THAC0: +5
+Damage: 2d4+5, +4 fire damage
+Damage type: Crushing
+Speed Factor: 0
+Proficiency Type: War Hammer
+Type: One-handed
+Requires:
+ 9 Strength
+
+Weight: 6~
+
+
+@10010 = ~Riptide~
+@10011 = ~Riptide +5 description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– 50% cold resistance
+
+Combat abilities:
+– High Tide: Thieves and Bards have a 90% chance of causing a stack of Tidal Wave to the target when hit
+– Low Tide: Non-thieves have a 60% chance of causing a stack of Tidal Wave to the target when hit
+– Tidal Wave: Targets affected by this empower the blade against them. When this effect stacks 3 times, an Overwhelming Wave is unleashed towards them
+– Overwhelming Wave: 6d10 crushing damage, save vs. breath at -2 for half damage, with a 40% chance of stunning for 1 round and a 10% chance of knocking them unconscious. A save vs. breath at -2 negates the stun and unconsciousness effects
+– Drowning strike: Every hit has a 15% chance of forcing breathing targets to save vs. death at -4 or have their lungs filled with water, killing them instantly
+
+THAC0: +5
+Damage: 1d10+5, +4 cold damage
+Damage type: Slashing
+Speed Factor: 0
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 5~
+
+@10012 = ~Tidal Wave: 1 stack~
+@10013 = ~Tidal Wave: 2 stacks~
+@10014 = ~Unleashed Overwhelming Wave~
+
+@10019 = ~We probably need a unidentified description for double swords (from NWN maybe?)~ // TODO \\
+@10020 = ~Double sword~
+@10021 = ~Golden Gale +4~
+@10022 = ~Double sword general description placeholder
+
+STATISTICS:
+
+Damage: 1d10 (slashing)
+Speed Factor: 8
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 12 Strength
+ 15 Dexterity~
+
+
+@10023 = ~Golden Gale +4 description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Once per round, a physical attack is parried, deflecting all damage and dealing 2d10+4 slashing or piercing damage to the attacker, save vs. breath at -2 for half damage
+
+THAC0: +4
+Damage: 1d10+4 (slashing)
+Speed Factor: 4
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 12 Strength
+ 15 Dexterity
+
+Weight: 10~
+
+@10024 = ~Golden Parry: 2d10+4 piercing~
+@10025 = ~Golden Parry: 2d10+4 slashing~
+
+@10030 = ~Seraphic Gale +6~
+@10031 = ~Seraphic Gale +6 description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Once per round, a physical attack is parried, deflecting all damage and dealing 2d10+6 slashing or piercing damage to the attacker, save vs. breath at -4 for half damage
+
+THAC0: +6
+Damage: 1d10+6 (slashing)
+Speed Factor: 2
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 12 Strength
+ 15 Dexterity
+
+Weight: 10~
+
+@10032 = ~Seraphic Parry: 2d10+6 piercing~
+@10033 = ~Seraphic Parry: 2d10+6 slashing~
+
+@10040 = ~Profane +4~
+@10041 = ~Profane +4 placeholder
+
+
+STATISTICS:
+
+Equipped abilities:
+– 50% Acid Resistance
+
+Combat abilities:
+– Every hit has a 15% has a chance of releasing more acid, causing 2d8 extra acid damage or half on a successful save vs. breath
+– Acidic poison: Critical hits inject poison into the bloodstream of the victim, causing 1 poison damage per second for 24 seconds if a Save vs. Death is failed, causing 6 more poison damage instantly with no save allowed
+
+THAC0: +4
+Damage: 2d4+4, +2 (acid), +2 (poison)
+Damage type: Slashing
+Speed Factor: 3
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ Strength 12
+
+Weight: 10~
+
+@10042 = ~Profane +6~
+@10043 = ~Profane +6 placeholder
+
+
+STATISTICS:
+
+Equipped abilities:
+– 50% Acid Resistance
+
+Combat abilities:
+– Every hit has a 15% has a chance of releasing more acid, causing 2d8 extra acid damage or half on a successful save vs. breath
+– Acidic poison: Critical hits inject poison into the bloodstream of the victim, causing 1 poison damage per second for 24 seconds if a Save vs. Death is failed, causing 6 more poison damage instantly with no save allowed
+
+THAC0: +6
+Damage: 2d4+6, +2 (acid), +2 (poison)
+Damage type: Slashing
+Speed Factor: 1
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ Strength 12
+
+Weight: 10~
+
+@10050 = ~Penumbral Fang +3~
+@10051 = ~This pale dagger is Nephetel's main weapon of choice. Made from the fang of a dracolich (according to her, at least), this dagger's blade radiates a powerful aura, and it gleams with an eerie ghostly sheen, etched with runes that hint at the powerful magic contained within. The essence of the dracolich lingers, and provides the user with a limited amount of the protections that liches would have.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to instant-death effects, paralysis, hold, and level drain
+– +60% resistance to cold
+
+Combat abilities:
+– 10% chance per hit of inflicting Grave Chill on the target, causing 1d4 cold damage instantly, and again once per round in the next 3 rounds. If a save vs. Death is failed, the target is Held for 1 round, otherwise, they are only Slowed
+– Critical hits unleash a ray of necromantic magic into the body of the victim, forcing them to save vs. Death or die. If the target has 60 hit points or less, the save vs. Death is made at -4. Even if a save is made, they still suffer 2d6 magic damage from the shock
+– +5% chance to critically hit (this weapon only)
+
+Charge abilities:
+– Lich's Essence once per day
+  Special: Protect against the effects of spell levels 1-5 for 1 turn
+  Area of Effect: Self
+
+THAC0: +3
+Damage: 1d4+3, +1d2 cold and magic damage
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@10052 = ~Grave Chill~
+
+@10053 = ~Umbral Fang +6~
+@10054 = ~This pale dagger is Nephetel's main weapon of choice. Made from the fang of a dracolich (according to her, at least), this dagger's blade radiates a powerful aura, and it gleams with an eerie ghostly sheen, etched with runes that hint at the powerful magic contained within. The essence of the dracolich lingers, and provides the user with a limited amount of the protections that liches would have.
+
+Now empowered with a second fang of a dracolich, this dagger's dark power is truly an instrument of death.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to instant-death effects, paralysis, hold, and level drain
+– Immunity to cold damage
+
+Combat abilities:
+– 15% chance per hit of inflicting Grave Chill on the target, causing 2d4 cold damage instantly, and again once per round in the next 3 rounds. If a save vs. Death at -2 is failed, the target is Held for 1 round, otherwise, they are only Slowed
+– Critical hits unleash a ray of necromantic magic into the body of the victim, forcing them to save vs. Death at -2 or die. If the target has 60 hit points or less, the save vs. Death is made at -5. Even if a save is made, they still suffer 3d6 magic damage from the shock
+– +5% chance to critically hit (this weapon only)
+
+Charge abilities:
+– Lich's Essence once per day
+  Special: Protect against the effects of spell levels 1-5 for 1 turn
+  Area of Effect: Self
+
+THAC0: +6
+Damage: 1d4+6, +1d3 cold and magic damage
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@10060 = ~Astral Crossbow of Speed +4~
+@10061 = ~This crossbow is a sleek, silvered weapon adorned with faintly glowing etchings of celestial constellations. When bolts are loaded into it, they seem to shimmer and vanish, only to reappear in the bowstring, ready to be fired. The weapon is light and easy to handle, and the wielder feels a sense of calm and focus when using it.
+
+Even without bolts, the crossbow can fire ethereal bolts of pure magical energy, dealing damage to the target as if they were physical. Either way, the bolts fired are infused with the power of the Astral Plane, and can cause massive damage to outsiders and the undead.
+
+STATISTICS:
+
+Combat abilities:
+– 1 extra attack per round
+– +4 irresistible damage is inflicted against outsiders
+– Astral Drain: On hitting an outsider there is a 10% chance to etherealize part of their body, sending just that portion to the Astral Plane, separating them and causing massive damage to their being (-10% to their maximum health)
+– When no bolts are equipped, the crossbow fires phantasmal bolts that deal 1d8+4 missile damage plus 1d2 magic damage that act as +5 projectiles
+
+Charge ability:
+– Bolt of Glory once per day
+  Special: Fire a bolt of pure energy that deals different amounts of damage depending on the plane of origin of the target
+  Area of Effect: Single target
+
+THAC0: +4, +6 against outsiders
+Damage: +4, +1d2 magic damage
+Damage type: Missile
+Speed Factor: 0
+Proficiency Type: Crossbow
+Type: Two-handed
+Requires:
+ 8 Strength
+
+Weight: 5~
+
+@10062 = ~Astral Drain: -10% health siphoned~
+
+@10063 = ~Astral Crossbow of Speed +2~
+@10064 = ~This crossbow is a sleek, silvered weapon adorned with faintly glowing etchings of celestial constellations. When bolts are loaded into it, they seem to shimmer and vanish, only to reappear in the bowstring, ready to be fired. The weapon is light and easy to handle, and the wielder feels a sense of calm and focus when using it.
+
+STATISTICS:
+
+Combat abilities:
+– 1 extra attack per round
+– +4 irresistible damage is inflicted against outsiders
+
+THAC0: +2, +4 against outsiders
+Damage: +2, +1 magic damage
+Damage type: Missile
+Speed Factor: 0
+Proficiency Type: Crossbow
+Type: Two-handed
+Requires:
+ 8 Strength
+
+Weight: 5~
+
+@10070 = ~The Night Sky~
+@10071 = ~The Night Sky description placeholder
+
+Equipped abilities:
+– Enemies around the wearer suffer a -2 penalty to their saving throws against Necromancy spells
+
+Weight: 3~
+
+@10080 = ~Staff of Disruption +1~
+@10081 = ~A cousin of the more well-known mace of disruption, this ornate staff is the invention of Thulsmine Achenfell, an aspirant necromancer from the Great Dale that sought to raise an undead army from within the Rawlinswood. His ambition proved his folly, however, as his would-be servants proved too unwieldy for him to control. The hoard turned against its master, spreading through the forest and forcing Thulsmine into a shameful retreat.
+
+Embittered by the experience, Thulsmine found his true calling when he began crafting a weapon that could fix his mistake—not out of a desire to right any wrongs, but to simply remove any evidence of his incompetence. With this, the first staff of disruption was born. So effective it was at the eradication of his undead creations that Thulsmine lost himself in the experience—quite literally. His spellbook in tatters and his undead army naught but dust, the wizard wandered the Rawlinswood until his untimely demise, perishing alone in the very woods he had once sought to conquer.
+
+It is unlikely that this staff is the same one that Thulsmine wielded, but it carries his legacy nonetheless. Infused with the same disruptive power, it still hums with the magic he used to undo his creations.
+
+
+STATISTICS:
+
+Combat abilities:
+– Undead must save vs. Death at -4 or be utterly destroyed
+
+THAC0: +1 (strikes as a +3 weapon)
+Damage: 1d6+1, 2d6+3 vs. undead
+Damage type: Crushing
+Speed Factor: 3
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 8~
+
+@10090 = ~Nephetel's Supple Gloves~
+@10091 = ~These gloves were given to Nephetel when she was first inducted into the Thieves Guild. While they were supposedly not magical, it seems that her deeds have over time imbued them with a certain power, which reflect the owner's skills. These gloves fit snugly around her hands, and are made of a soft, supple leather that is surprisingly durable. They are unadorned, save for a small, stylized 'N' on the back of each hand. They are well-worn, but have been meticulously cared for, and show no signs of wear. Because of this adaptation to her, only she may wear them.
+
+STATISTICS:
+
+Equipped abilities:
+– Pick Pockets and Open Locks: +20%
+– Find Traps: +10%
+– Fist damage: +3
+– Fist to-hit: +2
+– Backstabs are particularly forceful and may render the target unconscious for 1 turn if a save vs. Death is failed. Further damage will wake them up
+
+Weight: 2~
+
+@10092 = ~Eshpel~
+@10093 = ~Eshpel base item placeholder desc~
+@10094 = ~Eshpel upgraded item placeholder desc~
+
+
+@10100 = ~Strange Silver Ring~
+@10101 = ~placeholder
+
+Equipped abilities:
+– Luck: +1
+– Saving throws: +1
+– AC: +1
+– Thieving skills: +5%
+
+Weight: 0~
+
+@10102 = ~Rogue's Luck +2~
+@10103 = ~This ring is a small, seemingly unremarkable charm fashioned from dark steel. According to hearsay, a rogue the favor of Tymora, goddess of luck, after she defended one of her temples from a band of fiends. As a gift, the goddess granted her a glimmer of divine fortune, which she sealed into this ring. The story goes that the charm saved her countless times, from dodging fire traps to avoiding fatal ambushes, making her one of the most successful rogues of her era. Only bards and thieves may wear this ring.
+
+Now that it's upgraded with blah blah blah, it's even better!
+
+Equipped abilities:
+– Luck: +2
+– Saving throws: +2
+– AC: +2
+– Thieving skills: +5%
+– Critical misses are no longer possible
+
+Weight: 0~
+
+@10110 = ~Searing Smite~
+
+@10112 = ~Vyatri's Note~ //quest
+@10113 = ~The Pits of Despair: Desperate and True by Baeloth Barrityl Dictated but not read~
+@10114 = ~Reviewed by Altharion Veldrith, Scholar of the Arcane and Occasional Tavern Critic
+
+Baeloth Barrityl, the notorious drow socerer and self-proclaimed "Entertainer" has once again unleashed his literary prowess upon the unsuspecting masses. His latest work, The Pits of Despair: Desperate and True, is a rousing mix of drama, despair, and – as one might expect – a rather excessive amount of self-aggrandizement.
+
+However, there are moments in which Barrityl's over-the-top style gets the best of him. The prose often veers into the theatrical—though, given that this is a work by a drow socerer, this is perhaps to be expected. The narrative is occasionally interrupted by lengthy monologues that read as though they were lifted directly from one of Barrityl's own performances, making it unclear whether the book is a story or simply a vehicle for Barrityl's self-promotion. One could imagine him standing on a stage, flourishing dramatically as he dictates each word with an exaggerated flourish. If you enjoy the sound of your own voice (or, in this case, the written word) more than the development of characters and plot, this might suit your taste.
+
+In conclusion, The Pits of Despair: Desperate and True is a book that will divide its audience. Some will find it a masterpiece of bleak, brooding storytelling—an ode to the complexities of the soul and the burdens of heroism. Others will be turned off by its heavy-handed melodrama and self-indulgent prose. Still, as a work dictated by Baeloth Barrityl himself, it is undeniably fascinating and worthy of attention, if only for its sheer audacity and bravado. Whether or not you emerge from the pits of despair with any sense of hope is a matter for each reader to decide.
+
+Rating: ★★★☆☆ (3/5 stars)
+A work of considerable ambition, but ultimately, one that may leave you feeling more exhausted than enlightened.~
+
+@10120 = ~Mirror Mask~
+@10121 = ~This peculiar mask was the prized possession of a Calishite illusionist named Qhari, who never allowed herself to be seen by others without it adorning her face. There were many rumors as to why she wore the mask, but the most prevalent tells the tale of Qhari creating the mask after an encounter with a medusa in the Cloud Peaks forced her to blind herself. Rather than seek healing, it is said she retreated into seclusion, only to reemerge with her sight restored and the Mirror Mask upon her face.
+
+Detractors of this story often point out that deliberately blinding oneself is a drastic course of action opposed to simply averting one’s gaze, but the truth is a tale that has been lost to time, leaving only legends in its place. Despite its rigid appearance, the mask molds perfectly to the wearer’s face, obscuring their features almost entirely while reflecting the world back in distorted fragments.
+
+Equipped abilities:
+– Immunity to all gaze attacks, such as those from vampires and basilisks
+
+Charge abilities:
+– Mirror Image twice per day
+  Special: Caster causes 5 exact duplicates of themselves to appear around them, as per the Mirror Image spell
+  Duration: 13 rounds
+
+Weight: 4~
+
+@10130 = ~Luxurious Lizardskin Leaps~
+@10131 = ~Many beasts of fable prowl the jungles of Chult, but these elegant boots are one of a kind, fashioned from the thick verdant hide of a great lizard said to roam the deepest reaches of the wilds. The creature was legendary for its uncanny evasiveness. Despite being a lumbering behemoth whose scales could be seen glistening from a hundred feet away, it eluded capture and study for nearly a century, its magical leap carrying it beyond the reach of countless hunters and curious students.
+
+When the noble-born sorcerer and hunter of exotic beasts Khuldros Vey of Tethyr finally brought the beast down through cunning traps and cruel magics, he commissioned these lavish boots as a testament to his triumph—or, as his naysayers would tell it, to his atrocity. Those who wear these boots find themselves gifted with a remnant of the creature’s power—though always with the uneasy knowledge that something sacred was destroyed in their creation.
+
+Equipped abilities:
+– Charisma: +2
+– Fire resistance: +30%
+– Saves vs. Breath: +1
+
+Charge abilities:
+– Misty Step twice per day
+  Special: Teleport to a nearby location instantly
+  Range: 30 ft.
+
+Weight: 4~
+
+@10140 = ~Blazing Bull~
+@10141 = ~This helmet was once the prized possession of Ragath Flame-Caller, a barbarian chieftain whose fury burned so hot that it was said to melt the snow of the frozen tundra he inhabited. Forged from the iron-cast skull of a minotaur he felled in single combat, the Blazing Bull was both a trophy and a warning, the eyes a reflection of the pyres Ragath left smoldering in his wake. Those who faced him in combat swore they could feel the heat of the bloody helmet long before his axe ever cleaved flesh.
+
+Ragath’s conquest ended at the hands of betrayal—a trusted ally, driven by fear of the chieftain’s growing power, struck him down as he slept. The Blazing Bull was fearfully discarded into the icy rapids and lost… if only for a time. Even now, its heat is undimmed by the elements and the passage of years, though not everyone possesses the will to tame its strength.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Physical damage resistance: +5%
+– Protects against critical hits
+– Gore attack: Once per round, the wearer may gore an enemy for 1d6 piercing plus 2 fire damage. Barbarians inflict double damage with this attack
+
+Weight: 2~
+
+@10150 = ~Gruumsh's Totem~
+@10151 = ~Among the Ashmaw clan—a powerful but relatively secretive clan of orcs that once lived amongst the Sunset Mountains—the most devout servants of Gruumsh were not allowed to fall into obscurity. Death was seen as merely a threshold, and the greatest of their warriors, shamans, and chieftains were not left to decay in the frozen reaches of their homeland. Instead, their heads were severed in grizzly rituals, dried in the smoke of pinewood fires, and then serenaded in the name of Grummsh.
+
+Fashioned into easily carryable totems by shamanic magic, they were oft brought into battle by the fiercest of the Ashmaw, who sought both the wisdom and fury of their ancestors. Clutching the totem was said to awaken the rage of the dead, flooding the wielder with visions of fury and bloodshed, goading them into a battle frenzy.
+
+The shrunken head that dangles from this beaded leather cord bears the markings of a battle-scarred warrior, a singular preserved eye appearing to watch those that hold it, and his mouth caught in a voracious battle-cry.
+
+STATISTICS:
+
+Charge abilities:
+– Berserker Rage once per day
+  Special: The wielder is enraged as per the Berserker Rage skill. Half-orcs gain an additional +1 bonus to attack damage
+  Area of Effect: Self
+  Duration: 8 rounds
+
+Weight: 2~
+
+@10160 = ~Resplendent Ring~
+@10161 = ~Also known as “The Hopeful” these rings are gifts from powerful mages in Thay to their agents in far off lands. As they struggle to accomplish devious and nefarious missions for the Zulkir they serve they would at times become sullen and morose for many reasons. The Zulkir ordered their use when this arose and the agent, whether deep in Zhentarim plots or fighting for their lives in Algarond against berserk Rashamar it would give them hope and courage to press on, often to their own deaths. It is a bad omen to receive these rings which are as often gained bloodily as is the intent of those who wear them.
+
+Equipped abilities:
+– Armor Class: +1
+– Saving Throws: +1
+
+Weight: 0~
+
+@10170 = ~Angelic Horseshoe~
+@10171 = ~Only four of these magnificent golden horseshoe amulets are known to exist.  According to legend, they once belonged to an astral deva who liked to polymorph herself into an equine form such as a pegasus or unicorn when on a mission in the prime material plane, often serving as the mount of a worthy hero.  During one perilous mission the deva's avatar was slain and the grieving heroes kept her horseshoes as a memento and lucky charm.
+
+STATISTICS:
+
+Equipped abilities:
+– Charisma: +1
+– Constitution: +1
+– Luck: +1
+
+Weight: 3~
+@10172 = ~Horseshoe Amulet~
+
+@10180 = ~Nine Lives~
+@10181 = ~Nine Lives description placeholder~
+
+@10190 = ~Jack Of All Trades~
+@10191 = ~Both the creator and previous owners of this peculiar cloak, much like the garment itself, have been largely lost to history. Whether ‘Jack’ was once its wearer or simply a namesake is unclear, but whoever they were, the cloak has long outlasted them.
+
+The earliest surviving record of the cloak appears in a merchant ledger from Berdusk, where it was listed in its inventory before disappearing entirely. In the years since, it has surfaced in tales of a duelist in Riatavin who swore it gave him the reflexes of a cat, and a mage living in the Sunset Mountains who claimed it helped her survive the harsh environments.
+
+The cloak adjusts itself from owner to owner—the seams shift, colors blur, and the weight in the hem seems to come and go. It attunes itself to the wearer and their needs, and sits snugly as though it were designed for them alone. It offers just enough to make them feel exceptional—but never quite enough to make it feel like theirs.
+
+Most who wear it accomplish great things, though few keep it for long.
+
+Equipped abilities:
+The benefits of this item depend on the class(es) of the wearer. The cloak will adapt to the wearer's class and the overall weight of their affinity, granting them the following abilities:
+– Martial proficiencies: +1 to Constitution, +5% physical and magic damage resistance. Applies to all single and multi-classed fighters, paladins, monks, rangers, and bards
+– Full priestly proficiencies: +2 to casting speed, +2 saves vs. Death. Applies to all single and multi-classed clerics
+– Partial priestly proficiencies: This only applies to Paladins and Blackguards. Bonuses are halved
+– Full rogue proficiencies: +1 to THAC0, +1 to Dexterity, +5% to thieving skills. Applies to all single and multi-classed thieves, and bards
+– Partial rogue proficiencies: This applies to Rangers and Monks. The THAC0 bonus is not granted.
+– Full druidic proficiencies: 1/HP per round regeneration, +10% resistance to elements. Applies to all single and multi-classed druids, and shamans
+– Partial druidic proficiencies: This only applies to Rangers. The regeneration bonus is three times slower and the elemental resistances are halved
+– Prepared arcane proficiency: +10% elemental and magic resistance, +2 Saves vs. Spell. Applies to all single and multi-classed mages, as well as bards
+– Spontaneous casting proficiency: One additional 4th and 5th level spell slot. Applies to all sorcerers and shamans
+
+
+Weight: 3~
+
+@10200 = ~Festering Maw +3~
+@10201 = ~Forged by the lizardfolk shamans of the Mere of Dead Men, this grotesque weapon has passed from one sovereign of the Slavering Maw clan to the next, its blade anointed in the blood of those too weak to rule. The halberd’s jagged blade is coated in old bloodstains and dark patina that glows brightly under the lightless sky of the dark moon. Clan lore holds that the blade remembers every life taken, and grows sharper for each.
+
+How this weapon that even most lizardfolk dread to touch left the Mere is unknown, though its presence in the realms is rarely subtle. The Festering Maw announces itself in the bodies it leaves behind, rotting from wounds that should not fester. Healers weep in the face of this sickness that resists their prayers, while wiser tongues suggest the weapon was never meant for battle alone, but as the shadow that a savage ruler can cast.
+
+STATISTICS:
+
+Combat abilities:
+– Each successful hit forces the target to save vs. Death at -2 or become diseased. Afflicted targets take 1 poison damage per round for 1 turn and are slowed for 2 rounds.
+
+THAC0: +3
+Damage: 1d10+3, +1d4 poison damage
+Damage type: Piercing or slashing, whichever is better
+Speed Factor: 6
+Proficiency Type: Halberd
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 11~
+
+
+@10220 = ~Unbroken~
+@10221 = ~Unbroken description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Constitution: +1
+– Magic resistance: +10%
+– Immunity to Maze and Imprisonment
+
+Charge ability:
+– Once per day, cast Freedom
+  Special: Anyone under the effect of imprisonment or maze are freed immediately upon casting
+  Area of Effect: Everyone in the area
+
+Weight: 3~
+
+@10210 = ~Binky~
+@10211 = ~This is the skeleton of a racing lizard that Jan received by trading for Lissa's prize turnip.
+
+STATISTICS:
+
+Equipped abilities:
+– Luck: +1
+
+Weight: 1~
+
+@10220 = ~Keyring~
+@10221 = ~This plain brass ring is unassuming without engraving or apparent magical properties. When slipped from your finger, it transforms into a keyring adorned with an assortment of golden keys that hum with latent power.
+
+Whoever crafted this masterwork was as careful to hide themselves as their creation, but they certainly had access to an implausible number of skeleton keys, and it is unlikely this ring was not involved in many an 'impossible' heist.
+
+Equipped abilities:
+– Finds traps automatically once per round
+
+Charge abilities:
+– Cast Knock three times per day
+  Special: Opens most non-magical locks~
+
+// Imported BG1 Items
+@11000 = ~BG Imported Items~
+@11001 = ~Circlet~
+@11002 = ~Circlet of the Archmagi~
+@11003 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
+
+Weight: 1~
+@11004 = ~This powerful circlet was enchanted to complement the robes customarily worn by archmages, building even further on their magical protection and benefits. Due to the nature of the enchantment, it can only be worn by Mages.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Saving Throws: +1
+– Intelligence: +1
+
+Weight: 1~
+
+@11005 = ~Girdle~
+@11006 = ~Big-Fisted Belt~
+@11007 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like.
+
+STATISTICS:
+
+Weight: 2~
+@11008 = ~Cursed Girdle of Hill Giant Strength: Big-Fisted Belt
+A fist-shaped brass buckle secures this belt of thick elk hide. The old bloodstains on the leather hint at unspeakable carnage, but the misspelled graffiti scratched into its surface suggests that the girdle's former owners were none too bright.
+
+STATISTICS:
+
+Equipped abilities:
+– Strength: 19
+– Intelligence: 6
+– May only be removed by a Remove Curse spell
+
+Weight: 2~
+
+@11009 = ~Cloak~
+@11010 = ~Relair's Mistake~
+@11011 = ~The cloak can be made in every possible shape with just about every type of fabric. The most common forms are a circular piece of fabric with a hole in the center for the head, and fabric draped from neck, connected by a chain, brooch, cord, or pins.
+
+STATISTICS:
+
+Weight: 3~
+@11012 = ~Cloak of the Wolf: Relair's Mistake
+A great amount of irony surrounds the creation of this magical cloak. Relair was a mage who overestimated the amount of control he had over magic, and in the course of creating this garment, he apparently inflicted lycanthropy upon himself. The wearer can change form whenever <PRO_HESHE> wishes. Relair was not so lucky.
+
+STATISTICS:
+
+Equipped abilities:
+– Polymorph into a wolf at will
+  Duration: 2 turns
+
+Weight: 3~
+
+@11013 = ~Blood-filled Goblet~
+@11014 = ~Durlag's Goblet~
+@11015 = ~Dark and rancid blood lurks within this pewter goblet. The lip is black and caked where it appears others have tasted from it. Scratched deep into the pewter are the words "Taste My Fear."
+
+STATISTICS:
+
+Weight: 2~
+@11016 = ~Scratched deep into the side of this cursed goblet are the words "Taste My Fear." It is said that one can regain lost health from the dark blood that lurks within its pewter depths. This comes with a price, however, as all who drink of the blood become cursed with the fear it brings. This effect will last up to 12 hours or until dispelled.
+
+STATISTICS:
+
+Special:
+– Fully heals the imbiber
+– Causes imbiber to run at the first sign of trouble
+
+Duration: 12 hours
+
+Weight: 2~
+
+@11017 = ~Ring~
+@11018 = ~Evermemory~
+@11019 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+
+STATISTICS:
+
+Weight: 0~
+@11020 = ~Ring of Wizardry: Evermemory
+Long ago, a grand wizard from Amn was rumored to have defied Mystra's limitations on the magical arts. Legends spoke of this wizard being able to cast spells without the limitation of memorization. In the end it was found that his powers stemmed from the several magical rings that he had made for himself. His proclaimed "everlasting memory" was a hoax, though his rings continue to be one of the most sought after items in the realms.
+
+STATISTICS:
+
+Equipped abilities:
+– Can memorize double the amount of 1st-level wizard spells
+
+Weight: 0~
+
+
+// PoD Item Descriptions
+
+
+@11030 = ~Viridian Mask~
+@11031 = ~Viridian Mask description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Immunity to charm and stun
+
+Weight: 1~
+
+@11032 = ~The Viridian Lord~
+@11033 = ~The Viridian Lord description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1, +3 vs. crushing
+– Charisma: +2
+– Immunity to charm and stun
+– Protects against critical hits
+
+Weight: 1~
+
+@11040 = ~Bearfoot~
+@11041 = ~Bearfoot description placeholder
+
+TATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Electric resistance: +50%
+– Cold resistance: +50%
+
+Weight: 4~
+
+@11050 = ~Standing Ovation~
+@11051 = ~Standing Ovation description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Saves vs. Breath: +2
+– Physical damage resistance: +10%
+– Bard Song duration is doubled
+– Adulation: When the bard kills an enemy, it receives a bardic inspiration that grants a +3 bonus to damage, saving throws, and THAC0 for 3 rounds
+
+Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
+Requires:
+ 6 Strength
+
+Weight: 8~
+
+@11052 = ~Adulation~
+
+@11060 = ~Blood of Orcus +3~
+@11061 = ~Blood of Orcus description placeholder
+
+Combat abilities:
+– Limb Shatter: 4% chance per hit of reducing the HP of the target by 20%. Targets protected by Stoneskin or Iron Skins, as well as those that are incorporeal, or lacking limbs in any discernable sense (such as slimes) are immune to this effect
+– 20% chance per hit that target must save vs. Death at -2 or die from decapitation. If the target fails the save but is immune to vorpal hits, they will still suffer the effects of Limb Shatter
+
+
+STATISTICS:
+
+THAC0: +3
+Damage: 1d8+3, +1 fire damage
+Speed Factor: 4
+Proficiency Type: Axe
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 4~
+
+@11062 = ~Blood of Orcus +5~
+@11063 = ~Blood of Orcus description placeholder
+
+Combat abilities:
+– Limb Shatter: 5% chance per hit of reducing the HP of the target by 20%. Targets protected by Stoneskin or Iron Skins, as well as those that are incorporeal, or lacking limbs in any discernable sense (such as slimes) are immune to this effect
+– 20% chance per hit that target must save vs. Death at -3 or die from decapitation. If the target fails the save but is immune to vorpal hits, they will still suffer the effects of Limb Shatter
+
+Charge abilities:
+– Circle of Bones
+  Special: ????
+  Area of Effect: Self
+
+STATISTICS:
+
+THAC0: +5
+Damage: 1d8+5, +2 fire damage, +4 necrotic damage (only affects living creatures of the Prime)
+Damage type: Slashing
+Speed Factor: 2
+Proficiency Type: Axe
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 4~
+
+@11064 = ~Limb Shattered~
+
+@10070 = ~Dark Knight's Belt~
+@10071 = ~Dark Knight's Belt description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to poison
+– Armor Class: +1 (+2 for Bards and Thieves)
+– Saving Throws: +1 (+2 for Bards and Thieves)
+– Each round during combat, there's a 25% chance that the wearer will release a Glitterdust spell on themselves. This can only happen once per three rounds.
+– Each time the wearer is hit, there's a 25% chance that the wearer will release a Glitterdust spell on themselves. This can only happen once per three rounds.
+
+Weight: 2~
+
+
+// Creatures
+
+@15000 = ~Deathslither~ // placeholder
+@15001 = ~Nephetel~
+@15002 = ~Dennaton~
+@15003 = ~Couatl~
+@15004 = ~Stirv, the Creature Wrangler~
+@15005 = ~Vampiric Worg~
+@15006 = ~Danger Moose~
+@15007 = ~Dire Bear~
+@15008 = ~Displacer Beast~
+@15009 = ~Elder Boalisk~
+@15010 = ~Carrion Lord~
+@15011 = ~Midnight Vortex Spider~
+@15012 = ~Rare Wyvern~
+@15013 = ~Brodle~
+@15014 = ~Voghiln the Vast~
+@15015 = ~Bellowgulp~
+@15016 = ~Tartle~
+@15017 = ~Szass Tam~
+@15018 = ~Minotaur Lord~
+@15019 = ~The Winged~
+
+@18000 = ~Anti-Simulacrum~
+@18001 = ~Stomp~
+@18002 = ~Knocked Prone~
+@18003 = ~Pounce~
+@18004 = ~Gore~
+
+@18005 = ~Shady Document~
+@18006 = ~A handwritten transcript, detailing a meeting between one Lady Katarina and Lord Dominick. An uncredited spy has crafted this extensive document, meticulously capturing even Lord Dominick's most banal ramblings. A few passages catch your eye:
+
+Lady Katarina: I salute your taste, my Lord Dominick, exactly the delightful earthy tones you described—my, is that the bottle gone? One might suspect a less honorable and handsome man of plying me with drink. I jest, of course, my lord. Come, let us open another bottle to toast the hero of Baldur’s Gate! Tell me of how you met, again.
+Dominick: I apologize, my lady. When I said I knew the hero, I meant more from... um, afar. I was in Baldur's Gate, when <PRO_HESHE> saved the city. My father ‘n I were visiting at the time.
+Lady Katarina: Oh, what a sly rascal, to have deceived me so... You wouldn't lie to me now that we are such good friends, would you, my dear?
+Dominick: Never, Miss Katarina. I can tell you what I know… <PRO_HESHE> was heralded a hero for thwarting the evil of Sarevok, but there were rumors that they both shared blood!
+Lady Katarina: Do continue! I cannot deny an appetite for such gossip.
+Dominick: Oh indeed… when they left the city—the lot of them—it was all but confirmed: both Sarevok and his slayer were… children of Bhaal…
+
+The remainder of the transcript becomes increasingly incoherent, as Lord Dominick's inebriation overcomes intelligibility and then, eventually, consciousness.~
+
+// Combat Scripting
+
+@18007 = ~Detects Illusion~
+@18008 = ~Fails to detect illusions~
+
+@18009 = ~applies an oil of speed~
+@18010 = ~quaffs a potion of invulnerability~
+@18011 = ~quaffs a potion of fire resistance~
+@18012 = ~quaffs a potion of heroism~
+@18013 = ~quaffs a potion of hill giant strength~
+@18014 = ~quaffs a potion of magic protection~
+@18015 = ~quaffs a potion of stone giant strength~
+@18016 = ~quaffs a potion of frost giant strength~
+@18017 = ~quaffs a potion of regeneration~
+@18018 = ~quaffs a potion of fire giant strength~
+@18019 = ~quaffs a potion of magic shielding~
+@18020 = ~quaffs a potion of cloud giant strength~
+@18021 = ~quaffs a potion of magic blocking~
+@18022 = ~quaffs a potion of storm giant strength~
+
+// Buff
+@18023 = ~murmurs a prayer over their holy symbol~
+@18024 = ~grasps a talisman around their neck tightly~
+@18025 = ~twists a magical ring on their finger~ // currently buffs using vanilla, not my script. Vanilla displays in combat log that chain contingency is activated.
+@18026 = ~Trumpet~
+
+// igneous oil
+@40000 = ~Igneous Oil~
+@40001 = ~This oil will make your weapons inflict fire damage when coated with it. Since it is a natural substance, it won't be stopped by Magic Resistance.
+
+STATISTICS:
+
+Damage: 1d2+1 fire damage (Save vs. Breath for half)
+Duration: 1 turn
+
+Weight: 1~
+
+// caustic oil
+@40002 = ~Caustic Oil~
+@40003 = ~This acidic oil will make your weapons inflict acid damage when coated with it. Since it is a natural substance, it won't be stopped by Magic Resistance.
+
+STATISTICS:
+
+Damage: 1d2+1 acid damage (Save vs. Breath for half)
+Duration: 1 turn
+
+Weight: 1~
+
+// gelid oil
+@40004 = ~Gelid Oil~
+@40005 = ~This super-cooled oil will make your weapons inflict cold damage when coated with it. Since it is a natural substance, it won't be stopped by Magic Resistance.
+
+STATISTICS:
+
+Damage: 1d2+1 cold damage (Save vs. Breath for half)
+Duration: 1 turn
+
+Weight: 1~
+
+// scintillating oil
+@40006 = ~Scintillating Oil~
+@40007 = ~This electrically charged oil will make your weapons inflict electric damage when coated with it. Since it is a natural substance, it won't be stopped by Magic Resistance.
+
+STATISTICS:
+
+Damage: 1d2+1 electric damage (Save vs. Breath for half)
+Duration: 1 turn
+
+Weight: 1~
+
+// arcane oil
+@40008 = ~Arcane Oil~
+@40009 = ~This oil is charged with magical energy and will make your weapons inflict magic damage when coated with it. Since it is a magical substance, it may be stopped by Magic Resistance.
+
+STATISTICS:
+
+Damage: 1d4+2 magic damage
+Duration: 1 turn
+
+Weight: 1~
+
+// poisonous oil
+@40010 = ~Noxious Oil~
+@40011 = ~This noxious oil will make your weapons inflict poison damage when coated with it, and may indeed poison the target if they can't resist it. Dealing with poisons is a delicate task, and as such, only those of remarkable dexterity can use it without risking poisoning themselves.
+
+Since it is a natural substance, it won't be stopped by Magic Resistance.
+
+STATISTICS:
+
+Damage: 1d2+1 poison damage
+Poisoning: Save vs. Death at +2 or suffer 6 points of poison damage over 2 rounds
+Self-damage: User suffers the same effect if their Dexterity is below 16
+Duration: 1 turn
+
+Weight: 1~
+
+// drow poisonous oil
+@40012 = ~Drow Soporific Oil~
+@40013 = ~This oily soporific poison was created originally by the drow. When coated with it, affected creatures may fall in a deep slumber for 1 turn. Dealing with poisons is a delicate task, and as such, only those of remarkable dexterity can use it without risking poisoning themselves.
+
+Since it is a natural substance, it won't be stopped by Magic Resistance.
+
+STATISTICS:
+
+Damage: None
+Poisoning: Save vs. Death or fall into a deep slumber for 1 turn. Receiving further damage will awaken the target.
+Self-damage: User suffers the same effect if their Dexterity is below 16
+Duration: 1 turn
+
+Weight: 1~
+
+// blessed oil
+@40014 = ~Sanctified Oil~
+@40015 = ~This oil was blessed by a priest with anti-undead properties, which will make your weapons inflict extra damage to undead, with a chance of weakening them. While it is technically a magically-infused substance, it pierces through the defenses of undead as if they had no such resistances, including Magic Resistance.
+
+STATISTICS:
+
+Damage: +4 irresistible damage against the undead (no effect against others)
+Special: Undead targets must Save vs. Death at +2 or become Slowed and Weakened (-3 Strength, -2 AC) for 10 seconds. This effect doesn't stack with itself.
+Duration: 1 turn
+
+Weight: 1~
+
+// unholy oil
+@40016 = ~Profane Oil~
+@40017 = ~This oil was infused by a priest with Negative Plane energies, which will make your weapons inflict extra damage to living creatures, with a chance of weakening them. While it is technically a magically-infused substance, it pierces through the defenses of the living as if they had no such resistances, including Magic Resistance.
+
+STATISTICS:
+
+Damage: +4 irresistible damage against the living (no effect against others)
+Special: Living targets must Save vs. Death at +2 or become Slowed and Weakened (-3 Strength, -2 AC) for 10 seconds. This effect doesn't stack with itself.
+Duration: 1 turn
+
+Weight: 1~
+
+// kuotoan oil
+@40018 = ~Kuo-Toan Oil of Stunning~
+@40019 = ~The recipe of this oily poison was originally created by Kuo-Toan alchemists. When coated with it, hit creatures may become stunned for 2 rounds, unable to defend themselves. Dealing with poisons is a delicate task, and as such, only those of remarkable dexterity can use it without risking poisoning themselves.
+
+Since it is a natural substance, it won't be stopped by Magic Resistance.
+
+STATISTICS:
+
+Damage: None
+Poisoning: Save vs. Spell at +2 or become stunned for 2 rounds.
+Self-damage: User suffers the same effect if their Dexterity is below 16
+Duration: 1 turn
+
+Weight: 1~
+
+// dragon bile
+@40020 = ~Dragon Bile Extract~
+@40021 = ~This very rare, and very expensive poison was created by harvesting pure bile from dead dragons. When coated with it, hit creatures will have their Strength sapped. Dealing with poisons is a delicate task, and as such, only those of remarkable dexterity can use it without risking poisoning themselves.
+
+Since it is a natural substance, it won't be stopped by Magic Resistance.
+
+STATISTICS:
+
+Damage: +1 poison damage (non-dragons)
+Poisoning: Save vs. Death or have Strength and movement speed reduced by half for 5 rounds. Only true dragons are unaffected by this effect, and as such, close relatives like faerie dragons, dragonborn, half-dragons and wyvern will be affected.
+Self-damage: User suffers the same effect if their Dexterity is below 16
+Duration: 1 turn
+
+Weight: 1~
+
+// dragonsbane oil
+@40022 = ~Dragonsbane Oil~
+@40023 = ~This oily poison was specifically formulated for one purpose: to cause pain and death to dragons and other draconic creatures. When hit by it, dragons, half-dragons, and wyverns suffer damage and have their breath drained out of their lungs, while other living targets are less affected. Dealing with poisons is a delicate task, and as such, only those of remarkable dexterity can use it without risking poisoning themselves.
+
+Since it is a natural substance, it won't be stopped by Magic Resistance.
+
+STATISTICS:
+
+Damage: 1d3+1 poison damage (non-draconic only), or 1d6+2 poison damage (draconic only)
+Special: Dragons, half-dragons and wyverns suffer the following effects if Save vs. Spell is failed:
+  – Attacks per round reduced to 1/2 for 1 round
+  – Strength is reduced by 40% for 2 rounds
+  – Casting speed, THAC0, and Armor Class are damaged by 5 for 3 rounds
+  – The pain it causes may affect concentration: 50% chance of disrupting Stoneskin or Improved Invisibility.
+Self-damage: User suffers the same effect if their Dexterity is below 16
+Duration: 1 turn
+
+Weight: 1~
+@3670 = ~Dear <CHARNAME>, I have been contacted by an illustrious djinn, one with a true appreciation of your considerable talents, and a wish to offer you a most lucrative opportunity. Your presence is humbly requested for more formal introductions at my establishment in Tradesmeet.
+
+As a token of our friend's generosity, a ring is enclosed accompanying this message. I can speak to the ring's fine quality, having received one myself for my role as intermediary, and he has promised us each additional gifts upon your arrival.
+
+Yours faithfully,
+Vyatri~
 // components
 @20000 = "Install required Black Pits files for Original Games" // changed numbers to avoid conflicts with game.tra
 @20001 = "Pits of Despair for Enhanced Edition
