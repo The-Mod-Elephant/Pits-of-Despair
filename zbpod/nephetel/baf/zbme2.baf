@@ -25,4 +25,5 @@ IF
 THEN
   RESPONSE #100
     EscapeArea()
+    SetGlobal("ZBPodSummonsReceived","GLOBAL",5)
 END

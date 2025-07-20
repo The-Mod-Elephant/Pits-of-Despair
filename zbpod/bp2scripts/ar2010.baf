@@ -3,7 +3,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("ZB_PITS_SKIP_1","GLOBAL",2)
-    SetGlobal("ZBPodSummonsReceived","GLOBAL",4)
+    SetGlobal("ZBPodSummonsReceived","GLOBAL",5)
     SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",14)
     SetGlobal("ZB_NEPH_ESCAPE_0","GLOBAL",4)
     SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",2)
