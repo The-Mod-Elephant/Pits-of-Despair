@@ -1,38 +1,38 @@
-/* extending main BALDUR script, yikes, because i don't know an easier way to manage this
-if someone else has a better solution PLEASE change this */
-
-/* set conditions for messenger to appear */
-
 IF
-  Global("ZBPodSummonsReceived","GLOBAL",0) /* we haven't received the summons */
-  GlobalGT("Chapter","GLOBAL",1) /* it can't happen before chapter 3 */
+  Global("ZBPodSummonsReceived","GLOBAL",0)
+  GlobalGT("Chapter","GLOBAL",1)
   !Global("Chapter","GLOBAL",4)
-  !Global("Chapter","GLOBAL",5) /* messenger shouldn't spawn during brynnlaw or underdark chapters */
-  XPGT(Player1,725000) /* player needs to have a certain level of experience */
+  !Global("Chapter","GLOBAL",5)
+  XPGT(Player1,725000)
 THEN
   RESPONSE #100
     SetGlobal("ZBPodSummonsReceived","GLOBAL",1)
-    SetGlobalTimer("ZBPodMessengerArrives","GLOBAL",EIGHT_HOURS) /* set the timer for eight hours */
+    SetGlobalTimer("ZBPodMessengerArrives","GLOBAL",EIGHT_HOURS)
     Continue()
 END
 
-/* the messenger shows up */
 IF
   Global("ZBPodSummonsReceived","GLOBAL",1)
-  GlobalTimerExpired("ZBPodMessengerArrives","GLOBAL") /* the timer has expired */
-  AreaType(CITY) /* messenger can only approach in the city */
-  CombatCounter(0) /* we're not in combat */
+  GlobalTimerExpired("ZBPodMessengerArrives","GLOBAL")
+  AreaType(CITY)
+  CombatCounter(0)
   Global("ZBPodMessengerSpawned","GLOBAL",0)
 THEN
   RESPONSE #100
     SetGlobal("ZBPodMessengerSpawned","GLOBAL",1)
     CreateCreatureObject("zbmes",Player1,0,0,0)
-    SetGlobal("ZBPodSummonsReceived","GLOBAL",2) /* we don't want the messenger to keep showing up */
+    SetGlobal("ZBPodSummonsReceived","GLOBAL",2)
+    SetGlobal("ZBPodTriggerOnTransition","MYAREA",1)
     Continue()
 END
 
 IF
   Global("ZBPodSummonsReceived","GLOBAL",4)
+  OR(2)
+    AreaType(CITY)
+    AreaCheck("AR1100") // Umar Hills
+  CombatCounter(0)
+  Global("ZBPodTriggerOnTransition","MYAREA",0)
   Global("zbnephcutscene","GLOBAL",0)
 THEN
   RESPONSE #100

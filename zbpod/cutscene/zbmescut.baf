@@ -4,11 +4,6 @@ THEN
 	RESPONSE #100
 		CutSceneID(Player1)
 		SetGlobal("zbnephcutscene","GLOBAL",1)
-		Wait(2)
-		DisplayStringHead(Player1,@25)
-		Wait(2)
-		PlaySound("MISC_03A")
-		PlayDead(45)
 		FadeToColor([50.0],0)
 		Wait(2)
 		StorePartyLocations()
