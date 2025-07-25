@@ -6,8 +6,8 @@ IF
   XPGT(Player1,725000)
 THEN
   RESPONSE #100
-    SetGlobal("ZBPodSummonsReceived","GLOBAL",1)
     SetGlobalTimer("ZBPodMessengerArrives","GLOBAL",EIGHT_HOURS)
+    SetGlobal("ZBPodSummonsReceived","GLOBAL",1)
 END
 
 IF
@@ -17,11 +17,8 @@ IF
     AreaType(CITY)
     AreaCheck("AR1100") // Umar Hills
   CombatCounter(0)
-  Global("ZBPodMessengerSpawned","GLOBAL",0)
-  Global("ZBPodTriggerOnTransition","MYAREA",0)
 THEN
   RESPONSE #100
-    SetGlobal("ZBPodMessengerSpawned","GLOBAL",1)
     CreateCreatureObject("zbmes",Player1,0,0,0)
     SetGlobal("ZBPodSummonsReceived","GLOBAL",2)
     SetGlobal("ZBPodTriggerOnTransition","MYAREA",1)
@@ -34,12 +31,12 @@ IF
     AreaCheck("AR1100") // Umar Hills
   CombatCounter(0)
   Global("ZBPodTriggerOnTransition","MYAREA",0)
-  Global("zbnephcutscene","GLOBAL",0)
 THEN
   RESPONSE #100
-    SetGlobal("ZBPodTriggerOnTransition","MYAREA",1)
+    SetInterrupt(FALSE)
     SetGlobal("ZBPodSummonsReceived","GLOBAL",6)
     ClearAllActions()
     StartCutSceneMode()
     StartCutScene("zbmescut")
+    SetInterrupt(TRUE)
 END
