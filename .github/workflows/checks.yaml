@@ -9,21 +9,27 @@ jobs:
         with:
           set-safe-directory: true
           fetch-depth: 0
-      - name: Check for creature files bigger than 8
-        id: creature_checks
-        run: ./.github/scripts/check.sh "*cre"
-      - name: Check for item files bigger than 8
-        id: item_checks
-        run: ./.github/scripts/check.sh "*itm"
-      - name: Check for spell files bigger than 8
-        id: spell_checks
-        run: ./.github/scripts/check.sh "*spl"
       - name: Check for bam files bigger than 8
         id: bam_checks
         run: ./.github/scripts/check.sh "*bam"
       - name: Check for baf files bigger than 8
         id: baf_checks
         run: ./.github/scripts/check.sh "*baf"
+      - name: Check for creature files bigger than 8
+        id: creature_checks
+        run: ./.github/scripts/check.sh "*cre"
+      - name: Check for dialogue files bigger than 8
+        id: dialogue_checks
+        run: ./.github/scripts/check.sh "*d"
+      - name: Check for item files bigger than 8
+        id: item_checks
+        run: ./.github/scripts/check.sh "*itm"
+      - name: Check for spell files bigger than 8
+        id: spell_checks
+        run: ./.github/scripts/check.sh "*spl"
+      - name: Check for sto files bigger than 8
+        id: sto_checks
+        run: ./.github/scripts/check.sh "*sto"
       - name: Check for wav files bigger than 8
         id: wav_checks
         run: ./.github/scripts/check.sh "*wav"

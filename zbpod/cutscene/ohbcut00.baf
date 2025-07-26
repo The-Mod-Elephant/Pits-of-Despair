@@ -53,18 +53,8 @@ THEN
 		SetGlobal("OHB_TALKED_BELLOWGULP","GLOBAL",1) /* take a sledgehammer to Bello's intro dialogue, skipping straight to his main merchant dialogue */
 		SmallWait(1)
 		SetCutSceneBreakable(TRUE)
-		Wait(2)
-		DisplayStringPoint([672.468],@2)  // It has been several months since your escape from Baeloth's Black Pits. Tales of your deeds have spread far and wide, and bards sing of them wherever you travel...
 		FadeFromColor([60.0],0)
-		Wait(5) /* changed from smallwait(12) */
-		DisplayStringHead("ohbjoker",@3)  // ...And so it came that Baeloth's game was quickly turned to naught.
-		Wait(3)
-		DisplayStringHead("ohbjoker",@4)  // The swords were sheathed, the spells unweaved, the final battle fought.
-		Wait(3)
-		DisplayStringHead("ohbjoker",@5)  // Our heroes' wits had solved the pits; their freedom did they win.
-		Wait(3)
-		DisplayStringHead("ohbjoker",@6)  // So fled the cage 'midst Baeloth's rage upon a mighty djinni.
-		Wait(3)
+		DisplayStringPoint("ohbjoker",@2)  // Along the Sword Coast they traveled, battling all kinds of horrible creatures. Investigating matters of tainted iron and politics, only to discover their own Bhaalspawn blood behind it. Baldur’s Gate held its breath as a battle of godly heritage unraveled beneath the ground. But they rose to the challenge, ending the crisis, and became heroes to the city.
 		SmallWait(7)
 		DisplayStringHead("OHBTHASS",@7)  // A decent yarn, though a bit TOO fantastic if you ask me.
 		Wait(5)
