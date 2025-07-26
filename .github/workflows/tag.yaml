@@ -1,9 +1,23 @@
-name: 'release'
+name: tag
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - "*"
 jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Create Release
+        id: create_release
+        uses: ncipollo/release-action@v1.18.0
+        with:
+          generateReleaseNotes: true
   call_workflow:
+    needs: [release]
     permissions:
       contents: write
     strategy:
@@ -13,7 +27,7 @@ jobs:
     with:
       type: ${{ matrix.type }}
       architecture: amd64
-      suffix: ${{ github.event.release.tag_name }}
+      suffix: ${{ github.ref_name }}
       naming: tp2
       weidu_version: latest
       prefix_windows: win
