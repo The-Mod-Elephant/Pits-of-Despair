@@ -1673,8 +1673,7 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @1645 = ~Sounds good to me. Let's see what you've got.~
 @1646 = ~Maybe later. I need to go now.~
 @1647 = ~A mushroom? Really? Is this supposed to be funny?~
-/* removing references to Baeloth's Pit */
-@1648 = ~It sounds fantastic, I know, but it IS true. I can prove it—unless I'm much mistaken, the Hero of Baldur's Gate is among us this very minute. Everyone, say hello to <CHARNAME>—our tale's protagonist in the flesh!~
+@1648 = ~ It sounds fantastic, I know, but it IS true. I can prove it—unless I'm much mistaken, the hero of Baldur's Gate is among us this very minute. Everyone, say hello to <CHARNAME> our tale's protagonist in the flesh!~
 @1649 = ~It is true. How did you know it was me?~
 @1650 = ~What? Where?~
 @1651 = ~I'm not suggesting you should bow before me, but it wouldn't be inappropriate.~
@@ -1684,7 +1683,6 @@ If I read HERO OF BALDUR'S GATE one more time, and I will, I'll lose my mind tha
 @1655 = ~Ooh, plucky, isn't <PRO_HESHE>? I like it!~
 @1656 = ~Gee, leave it to the mark to figure out the plot first! I'd practically fall asleep waiting for some of you to quit wagging your jaws!~
 @1657 = ~Come now! I know it's you. I know everything worth knowing, and your fame has spread far and wide.~
-/* removing references to Baeloth's Pit */
 @1658 = ~Hah! The Bhaalspawn does not lack for ego.~
 @1659 = ~Bet it does.~
 @1660 = ~I've heard tell of a performer with a drink I've yet to taste. Well, let's see it, then. Amaze me.~

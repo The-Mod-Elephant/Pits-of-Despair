@@ -17,7 +17,7 @@ END
 
 IF ~  Global("OHB_BP2_CAPTURE","GLOBAL",1)
 ~ THEN BEGIN 1
-  SAY @1648 /* It sounds fantastic, I know, but it IS true. I can prove it—unless I'm much mistaken, the Champion of Baeloth's Pits is among us this very minute. Everyone, say hello to <CHARNAME>—our tale's protagonist in the flesh! */
+  SAY @1648 /* It sounds fantastic, I know, but it IS true. I can prove it unless I’m much mistaken, the hero of Baldur’s Gate is among us this very minute. Everyone, say hello to <CHARNAME> our tale’s protagonist in the flesh! */
   IF ~~ THEN REPLY @1649 /* It is true. How did you know it was me? */ DO ~SetGlobal("OHB_BP2_CAPTURE","GLOBAL",2)
 StartCutSceneMode()
 SmallWait(5)
