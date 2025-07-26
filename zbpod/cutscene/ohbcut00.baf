@@ -54,7 +54,7 @@ THEN
 		SmallWait(1)
 		SetCutSceneBreakable(TRUE)
 		FadeFromColor([60.0],0)
-		DisplayStringPoint("ohbjoker",@2)  // Along the Sword Coast they traveled, battling all kinds of horrible creatures. Investigating matters of tainted iron and politics, only to discover their own Bhaalspawn blood behind it. Baldur’s Gate held its breath as a battle of godly heritage unraveled beneath the ground. But they rose to the challenge, ending the crisis, and became heroes to the city.
+		DisplayStringHead("ohbjoker",@2)  // Along the Sword Coast they traveled, battling all kinds of horrible creatures. Investigating matters of tainted iron and politics, only to discover their own Bhaalspawn blood behind it. Baldur’s Gate held its breath as a battle of godly heritage unraveled beneath the ground. But they rose to the challenge, ending the crisis, and became heroes to the city.
 		SmallWait(7)
 		DisplayStringHead("OHBTHASS",@7)  // A decent yarn, though a bit TOO fantastic if you ask me.
 		Wait(5)
