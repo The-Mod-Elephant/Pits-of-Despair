@@ -108,10 +108,8 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/baf~
                         USING ~%MOD_FOLDER%/lang/%LANGUAGE%/neph.tra~
 
 /* add messenger timer */
-COPY_EXISTING ~BALDUR.bcs~ ~%workspace%/~
-ACTION_IF NOT FILE_CONTAINS ~%workspace%/BALDUR.bcs~ ~ZBPodMessengerSpawned~
-THEN BEGIN
-  EXTEND_BOTTOM ~BALDUR.bcs~ ~%MOD_FOLDER%/nephetel/timers/zbmes.baf~
+ACTION_FOR_EACH var IN ~AR0020~ ~AR0300~ ~AR0400~ ~AR0500~ ~AR0700~ ~AR0800~ ~AR0900~ ~AR1000~ ~AR1100~ ~AR2000~ BEGIN
+  EXTEND_BOTTOM "%var%.bcs" ~%MOD_FOLDER%/nephetel/timers/zbmes.baf~
 END
 
 // Appending dialog files

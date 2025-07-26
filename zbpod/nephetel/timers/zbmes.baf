@@ -13,9 +13,6 @@ END
 IF
   Global("ZBPodSummonsReceived","GLOBAL",1)
   GlobalTimerExpired("ZBPodMessengerArrives","GLOBAL")
-  OR(2)
-    AreaType(CITY)
-    AreaCheck("AR1100") // Umar Hills
   CombatCounter(0)
 THEN
   RESPONSE #100
@@ -26,9 +23,6 @@ END
 
 IF
   Global("ZBPodSummonsReceived","GLOBAL",5)
-  OR(2)
-    AreaType(CITY)
-    AreaCheck("AR1100") // Umar Hills
   CombatCounter(0)
   Global("ZBPodTriggerOnTransition","MYAREA",0)
 THEN
