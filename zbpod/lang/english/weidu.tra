@@ -759,6 +759,30 @@ Equipped abilities:
 
 Weight: 2~
 
+@10080 = ~Golden Needle +4~
+@10081 = ~Golden Needle description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class vs. slashing: +1
+– Armor Class vs. piercing: +1
+– Armor Class vs. crushing: +1
+
+Combat abilities:
+– Pierce Defense: 25% chance of reducing the target's Armor Class by 6 and reducing their physical damage resistance by 10% for 2 rounds. This effect cannot stack.
+
+THAC0: +4
+Damage: 1d6+4 (piercing)
+Speed Factor: 0
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 2~
+@10082 = ~Defenses Pierced~
+
 
 // Creatures
 

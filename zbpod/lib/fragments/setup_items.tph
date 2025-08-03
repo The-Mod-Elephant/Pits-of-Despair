@@ -22,6 +22,16 @@ COPY_EXISTING ~zbdarkk0.itm~ ~override~
     SAY NAME2 @10070
     SAY IDENTIFIED_DESC @10071
 
+
+//////// Golden Needle +4 \\\\\\\\
+
+// String placements
+COPY ~%MOD_FOLDER%/items/goldenneedle~ ~override~
+COPY_EXISTING ~zbgneed0.itm~ ~override~
+    SAY NAME2 @10080
+    SAY IDENTIFIED_DESC @10081
+    LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@10082) END
+
 //////// Riptide +5 \\\\\\\\
 
 // projectiles for Smashing Wave / Tidal Wave
