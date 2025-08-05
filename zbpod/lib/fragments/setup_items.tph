@@ -293,60 +293,6 @@ COPY_EXISTING ~zbviridb.itm~ ~override~
     SAY NAME2 @11032
     SAY IDENTIFIED_DESC @11033
 
-// Oils from ZS_WeaponOils from RoyalProtector
-COPY ~%MOD_FOLDER%/items/zs_weaponoils/~ ~override~
-COPY_EXISTING ~zswofr01.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@40000) id_ref_desc=RESOLVE_STR_REF(@40001) END
-
-COPY_EXISTING ~zswoac01.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@40002) id_ref_desc=RESOLVE_STR_REF(@40003) END
-
-COPY_EXISTING ~zswocd01.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@40004) id_ref_desc=RESOLVE_STR_REF(@40005) END
-
-COPY_EXISTING ~zswoel01.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@40006) id_ref_desc=RESOLVE_STR_REF(@40007) END
-
-COPY_EXISTING ~zswomd01.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@40008) id_ref_desc=RESOLVE_STR_REF(@40009) END
-
-COPY_EXISTING ~zswops01.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@40010) id_ref_desc=RESOLVE_STR_REF(@40011) END
-COPY_EXISTING ~zswoposb.spl~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@40010) END
-
-COPY_EXISTING ~zswops02.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@40012) id_ref_desc=RESOLVE_STR_REF(@40013) END
-COPY_EXISTING ~zswoposd.spl~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@40012) END
-
-COPY_EXISTING ~zswohl01.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@40014) id_ref_desc=RESOLVE_STR_REF(@40015) END
-COPY_EXISTING ~zswophlb.spl~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@40014) END
-
-COPY_EXISTING ~zswoul01.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@40016) id_ref_desc=RESOLVE_STR_REF(@40017) END
-COPY_EXISTING ~zswonhlb.spl~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@40016) END
-
-COPY_EXISTING ~zswops05.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@40018) id_ref_desc=RESOLVE_STR_REF(@40019) END
-COPY_EXISTING ~zswoposk.spl~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@40018) END
-
-COPY_EXISTING ~zswops03.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@40020) id_ref_desc=RESOLVE_STR_REF(@40021) END
-COPY_EXISTING ~zswoposf.spl~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@40020) END
-
-COPY_EXISTING ~zswops04.itm~ ~override~
-    LPF ALTER_ITEM INT_VAR id_ref_name=RESOLVE_STR_REF(@40022) id_ref_desc=RESOLVE_STR_REF(@40023) END
-COPY_EXISTING ~zswoposh.spl~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@40022) END
-COPY_EXISTING ~zswoposi.spl~ ~override~
-    LPF ALTER_SPELL INT_VAR ref_name = RESOLVE_STR_REF(@40022) END
-
 /////////                \\\\\\\\
 //////// Import BG1 ITEMS \\\\\\\\
 ///////                    \\\\\\\\
