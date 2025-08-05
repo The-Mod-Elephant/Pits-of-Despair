@@ -129,6 +129,14 @@ COPY ~%MOD_FOLDER%/wav/oh96~ ~override~
 COPY ~%MOD_FOLDER%/wav/zb~ ~override~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN @20006 DESIGNATED 2 LABEL ~zs_weapon_oils~ // Add Weapon Oils
+REQUIRE_COMPONENT "zbpod.tp2" "0" @30000 // traify later
+REQUIRE_COMPONENT "zs_weaponoils.tp2" "100" @30001 // traify later
+ACTION_IF FILE_EXISTS ~zs_weaponoils/libs/fragments/zs_patch_pod.tph~ BEGIN 
+  INCLUDE ~zs_weaponoils/libs/fragments/zs_patch_pod.tph~ // same file from oils
+END
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20004 DESIGNATED 9 LABEL ~zb_concept_nephetel_portrait~ // ADD ALT PORTRAITS
 REQUIRE_COMPONENT "zbpod.tp2" "0" @30000 // traify later
 SUBCOMPONENT @20003
