@@ -1015,24 +1015,21 @@ As a token of our friend's generosity, a ring is enclosed accompanying this mess
 Yours faithfully,
 Vyatri~
 // components
-@20000 = "Install required Black Pits files for Original Games" // changed numbers to avoid conflicts with game.tra
+@20000 = "Install required Black Pits files for Original Games"
 @20001 = "Pits of Despair for Enhanced Edition
 
 WARNING! Will break the default the Black Pits 2 standalone campaign. We are not responsible for any bugs you find or if your mod installation is compromised if you attempt to play that campaign with this mod installed."
-
 @20002 = ~Improved Sounds~
-
 @20003 = ~Nephetel Alternate Portraits~
-
 @20004 = ~Original Concept Art~
-
 @20005 = ~by Llewren~
-
+@20006 = ~Crossmod: Weapon Oils~
 // warnings
 @20050 = "Not available for your game version"
 
 //added subcomponents
 @30000 = "This component requires the installation of Pits of Despair"
+@30001 = "This component requires the installation of Royal Protector's weapon oils"
 
 @60000 = ~Sir Basil~
 @60001 = ~Eratos~
