@@ -22,16 +22,18 @@ AUTO_TRA ~%MOD_FOLDER%/lang/%s~
 LANGUAGE  ~English~
           ~english~
           ~zbpod/lang/english/weidu.tra~
-          ~zbpod/lang/english/JournalEntries.tra~
+          ~zbpod/lang/english/journalentries.tra~
           ~zbpod/lang/english/cutscenes.tra~
           ~zbpod/lang/english/neph.tra~
+          ~zbpod/lang/english/items.tra~
 
 LANGUAGE  ~Simplified Chinese By Lzw104522773~
           ~schinese~
           ~zbpod/lang/schinese/weidu.tra~
-          ~zbpod/lang/schinese/JournalEntries.tra~
+          ~zbpod/lang/schinese/journalentries.tra~
           ~zbpod/lang/schinese/cutscenes.tra~
           ~zbpod/lang/schinese/neph.tra~
+          ~zbpod/lang/english/items.tra~
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////

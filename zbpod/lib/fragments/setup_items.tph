@@ -1,9 +1,7 @@
-/**
- * This code fragment will contain all of the code necessary to set up the items in the mod, including where to place them.
- */
-
 INCLUDE ~zbpod/lib/royalprotector/zs_cdfunctions.tpa~ // CamDawg's functions that I will use for the items
 INCLUDE ~zbpod/lib/royalprotector/zs_royalfunctions.tpa~
+
+
 
 //////// Angelfist +5 \\\\\\\\
 
@@ -388,3 +386,9 @@ COPY ~%MOD_FOLDER%/items/stirvwrangler~ ~override~
 COPY ~%MOD_FOLDER%/items/nephy_memory_shard~ ~override~
 COPY_EXISTING ~zbmemsh0.itm~ ~override~
     // insert whatever code needed for memory shard
+
+//////// Gloves of the shifter \\\\\\\\
+COPY ~%MOD_FOLDER%/items/glovesshifter~ ~override~
+COPY_EXISTING ~zbshiftg.itm~ ~override~
+    SAY NAME2 @10083
+    SAY IDENTIFIED_DESC @10084
