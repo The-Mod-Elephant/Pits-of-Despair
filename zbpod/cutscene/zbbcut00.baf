@@ -5,11 +5,6 @@ THEN
 		CutSceneId(Player1)
 		SetGlobal("OHB_BP2_CAPTURE","GLOBAL",1)
 		ChangeAIScript("OHBPLOT",OVERRIDE)
-		ActionOverride(Player2,ChangeAIScript("OHBPLOT",OVERRIDE))
-		ActionOverride(Player3,ChangeAIScript("OHBPLOT",OVERRIDE))
-		ActionOverride(Player4,ChangeAIScript("OHBPLOT",OVERRIDE))
-		ActionOverride(Player5,ChangeAIScript("OHBPLOT",OVERRIDE))
-		ActionOverride(Player6,ChangeAIScript("OHBPLOT",OVERRIDE))
 		ApplySpellRES("SPBP001",Player1)  // No such index
 		ApplySpellRES("SPBP001",Player2)  // No such index
 		ApplySpellRES("SPBP001",Player3)  // No such index

@@ -148,6 +148,7 @@ COPY ~%MOD_FOLDER%/creatures/zbtavern~ ~override~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bp2scripts/zb2010.baf~
 
 COPY ~%MOD_FOLDER%/area/zb2010/zb2010.are~ ~override~
+  WRITE_ASCII AREA_SCRIPT ~zb2010~
 
 APPEND ~MASTAREA.2da~ ~ZB2010     value      ~
 UNLESS ~ZB2010~

@@ -193,7 +193,7 @@ THEN
 		SmallWait(1)
 		ActionOverride("ohbwing",ReallyForceSpell(Myself,CLERIC_MASS_RAISE_DEAD))  // SPPR729.SPL (Mass Raise Dead)
 		Wait(1)
-		StartCutScene("ohbcut03")
+		StartCutScene("zbcut03")
 END
 
 IF
@@ -213,7 +213,7 @@ THEN
 		Wait(1)
 		ReallyForceSpellPointRES("ohbsuza2",[1.1])
 		Wait(1)
-		StartCutScene("ohbcut03")
+		StartCutScene("zbcut03")
 END
 
 IF
