@@ -4,7 +4,6 @@ IF
     OR(2)
       AreaCheck("AR1400")
       AreaCheck("AR1404")
-    GlobalTimerExpired("ZBEPHQUESTTIMER1", "GLOBAL")
     CombatCounter(0)
     !StateCheck(Player1, CD_STATE_NOTVALID)
     InParty("ZBNEPH")

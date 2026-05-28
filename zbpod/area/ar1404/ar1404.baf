@@ -2,31 +2,29 @@ IF
     Global("ZBNEPHQUEST1","GLOBAL",8)
     AreaCheck("AR1404")
     CombatCounter(0)
-    !StateCheck(Player1, CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
     InParty("ZBNEPH")
-    InMyArea("ZBNEPH")
-    !StateCheck("ZBNEPH", CD_STATE_NOTVALID)
+    !StateCheck("ZBNEPH",CD_STATE_NOTVALID)
 THEN
     RESPONSE #100
         SetGlobal("ZBNEPHQUEST1","GLOBAL",9)
-        SetGlobalTimer("ZBEPHQUESTTIMER1", "AR1404", FOUR_ROUNDS)
+        SetGlobalTimer("ZBNEPHQUESTTIMER1","MYAREA",FOUR_ROUNDS)
 END
 
 IF
     Global("ZBNEPHQUEST1","GLOBAL",9)
     AreaCheck("AR1404")
-    GlobalTimerExpired("ZBEPHQUESTTIMER1", "GLOBAL")
+    GlobalTimerExpired("ZBNEPHQUESTTIMER1","MYAREA")
     CombatCounter(0)
-    !StateCheck(Player1, CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
     InParty("ZBNEPH")
-    InMyArea("ZBNEPH")
-    !StateCheck("ZBNEPH", CD_STATE_NOTVALID)
+    !StateCheck("ZBNEPH",CD_STATE_NOTVALID)
 THEN
     RESPONSE #100
         SetGlobal("ZBNEPHQUEST1","GLOBAL",10)
         ClearAllActions()
-        CreateCreature("ZBNILTAS", [1160.2115], E)
-        ActionOverride("ZBNEPH", FaceObject([PC]))
+        CreateCreature("ZBNILTAS",[1160.2115], E)
+        ActionOverride("ZBNEPH",FaceObject([PC]))
         SmallWait(5)
-        ActionOverride("ZBNEPH", StartDialogInterrupt("ZBNEPHJ", [PC]))
+        ActionOverride("ZBNEPH",StartDialogInterrupt("ZBNEPHJ", [PC]))
 END
