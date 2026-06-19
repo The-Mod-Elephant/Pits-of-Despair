@@ -40,5 +40,5 @@ END
 
 IF ~~ THEN BEGIN 5
   SAY @2024 /* I'll not say it again. On your way! */
-  IF ~~ THEN EXTERN ~OHBVOGHI~ 65
+  IF ~~ THEN EXTERN ~OHBVOGHI~ voghi.feast
 END

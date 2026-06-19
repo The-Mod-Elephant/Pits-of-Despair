@@ -2904,7 +2904,7 @@ END
 
 IF ~~ THEN BEGIN 262
   SAY @909 /* First, hailing from the Ten Towns, we have the mighty warrior Voghiln "the Vast"! */
-  IF ~~ THEN EXTERN ~OHBVOGHI~ 66
+  IF ~~ THEN EXTERN ~OHBVOGHI~ voghi.thevast
 END
 
 IF ~~ THEN BEGIN 263

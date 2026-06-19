@@ -4399,7 +4399,7 @@ IF ~  Global("ohb_finale","global",10)
   IF ~  InMyArea("ohbvoghi")
 !Dead("ohbvoghi")
 ~ THEN DO ~Face(NE)
-~ EXTERN ~OHBVOGHI~ 64
+~ EXTERN ~OHBVOGHI~ voghi.victory
 END
 
 IF ~~ THEN BEGIN 89
