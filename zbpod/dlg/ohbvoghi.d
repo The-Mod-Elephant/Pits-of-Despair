@@ -5,15 +5,15 @@ Global("ohb_finale","global",0)
 ~ THEN OHBVOGHI voghi.firstmeet
 #90467 /* ~Augh, mine head! By the Oak Father's leafy arse, I've never met a woman who could drink like that! One minute I'm singing with an ale in one hand and a wench in the other, and then I wake up here... Where in the Nine Hells am I?~ */
 END
-IF ~~ DO ~AddJournalEntry(@800004, QUEST_DONE) AddJournalEntry(@800006, QUEST)~ THEN EXTERN OHBVOGHI ZBVOGINTRO
+IF ~~ THEN EXTERN OHBVOGHI ZBVOGINTRO
 
 CHAIN OHBVOGHI ZBVOGINTRO
 @3887 /* Wait just a moment, I must still be drunk, or sleeping. Or both! You look… so familiar… */
 END
-++ @3888 /* Voghiln? What are you doing here? Where IS here? */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI voghi.friend
-++ @3889 /* Oh, great. It’s you. */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI ZBVOGRELIEVED
-++ @3890 /* Who the hells are you? */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI ZBVOGMISTAKEN
-++ @3891 /* Get out of my way, I don’t have time for imbeciles. */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI ZBVOGBADEXIT
+++ @3888 /* Voghiln? What are you doing here? Where IS here? */ DO ~AddJournalEntry(@800004, QUEST_DONE) AddJournalEntry(@800006, QUEST) SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI voghi.friend
+++ @3889 /* Oh, great. It’s you. */ DO ~AddJournalEntry(@800004, QUEST_DONE) AddJournalEntry(@800006, QUEST) SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI ZBVOGRELIEVED
+++ @3890 /* Who the hells are you? */ DO ~AddJournalEntry(@800004, QUEST_DONE) AddJournalEntry(@800006, QUEST) SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI ZBVOGMISTAKEN
+++ @3891 /* Get out of my way, I don’t have time for imbeciles. */ DO ~AddJournalEntry(@800004, QUEST_DONE) AddJournalEntry(@800006, QUEST) SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI ZBVOGBADEXIT
 
 
 CHAIN OHBVOGHI ZBVOGRELIEVED
