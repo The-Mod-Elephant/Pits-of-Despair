@@ -1,5 +1,30 @@
 BEGIN ~OHBVOGHI~
 
+IF ~~ THEN BEGIN 65 // from:
+  SAY #90509 /* ~Might as well. Food is food, and I believe a feast was mentioned.~ [OH90509] */
+  IF ~~ THEN EXTERN ~OHBMESSE~ 1
+END
+
+IF ~~ THEN BEGIN 66 // from:
+  SAY #90547 /* ~The Vast? What is this? I have never used such a nickname!~ [OH90547] */
+  IF ~~ THEN GOTO 67
+END
+
+IF ~~ THEN BEGIN 67 // from: 66.0
+  SAY #90549 /* ~Eh... Fine, it fits.~ [OH90549] */
+  IF ~~ THEN EXTERN ~OHBDENNA~ 263
+END
+
+IF ~~ THEN BEGIN 68 // from:
+  SAY #90575 /* ~You? The greatest warrior? Greatest halfling warrior, maybe, but that still only makes you half the warrior I am!~ [OH90575] */
+  IF ~~ THEN EXTERN ~OHBFELDR~ 42
+END
+
+IF ~~ THEN BEGIN 69 // from:
+  SAY #90577 /* ~I conquered the Nightmares! An entire clan of orcs wiped out in an afternoon!~ [OH90577] */
+  IF ~~ THEN EXTERN ~OHBHORT~ 49
+END
+
 CHAIN IF ~  Global("OHB_TALKED_VOGHI","LOCALS",0)
 Global("ohb_finale","global",0)
 ~ THEN OHBVOGHI voghi.firstmeet
@@ -518,23 +543,3 @@ IF ~InMyArea("ohbhort") !Dead("ohbhort")~ EXTERN ~OHBHORT~ 45
 IF ~InMyArea("ohbsymm") !Dead("ohbsymm")~ EXTERN ~OHBSYMM~ 38
 IF ~InMyArea("ohbgezzt") !Dead("ohbgezzt")~ EXTERN ~OHBGEZZT~ 44
 
-CHAIN OHBVOGHI voghi.feast
-#90509 /* ~Might as well. Food is food, and I believe a feast was mentioned.~ */
-END
-IF ~~ EXTERN ~OHBMESSE~ 1
-
-CHAIN OHBVOGHI voghi.thevast
-#90547 /* ~The Vast? What is this? I have never used such a nickname!~ */
-== OHBVOGHI #90549 /* ~Eh... Fine, it fits.~ */
-END
-IF ~~ EXTERN ~OHBDENNA~ 263
-
-CHAIN OHBVOGHI voghi.greatestwarrior
-#90575 /* ~You? The greatest warrior? Greatest halfling warrior, maybe, but that still only makes you half the warrior I am!~ */
-END
-IF ~~ EXTERN ~OHBFELDR~ 42
-
-CHAIN OHBVOGHI voghi.nightmares
-#90577 /* ~I conquered the Nightmares! An entire clan of orcs wiped out in an afternoon!~ */
-END
-IF ~~ EXTERN ~OHBHORT~ 49
