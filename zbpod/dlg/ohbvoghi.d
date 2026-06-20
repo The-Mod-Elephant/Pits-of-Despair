@@ -10,10 +10,10 @@ IF ~~ THEN EXTERN OHBVOGHI ZBVOGINTRO
 CHAIN OHBVOGHI ZBVOGINTRO
 @3887 /* Wait just a moment, I must still be drunk, or sleeping. Or both! You look… so familiar… */
 END
-++ @3888 /* Voghiln? What are you doing here? Where IS here? */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI voghi.friend
-++ @3889 /* Oh, great. It’s you. */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI ZBVOGRELIEVED
-++ @3890 /* Who the hells are you? */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI ZBVOGMISTAKEN
-++ @3891 /* Get out of my way, I don’t have time for imbeciles. */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI ZBVOGBADEXIT
+++ @3888 /* Voghiln? What are you doing here? Where IS here? */ DO ~AddJournalEntry(@800004, QUEST_DONE) AddJournalEntry(@800006, QUEST) SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI voghi.friend
+++ @3889 /* Oh, great. It’s you. */ DO ~AddJournalEntry(@800004, QUEST_DONE) AddJournalEntry(@800006, QUEST) SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI ZBVOGRELIEVED
+++ @3890 /* Who the hells are you? */ DO ~AddJournalEntry(@800004, QUEST_DONE) AddJournalEntry(@800006, QUEST) SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI ZBVOGMISTAKEN
+++ @3891 /* Get out of my way, I don’t have time for imbeciles. */ DO ~AddJournalEntry(@800004, QUEST_DONE) AddJournalEntry(@800006, QUEST) SetGlobal("OHB_TALKED_VOGHI","LOCALS",1)~ EXTERN OHBVOGHI ZBVOGBADEXIT
 
 
 CHAIN OHBVOGHI ZBVOGRELIEVED
@@ -127,10 +127,10 @@ Global("ohb_finale","global",0)
 ~ THEN OHBVOGHI voghi.secondmeet
 #91286 /* ~Ho ho, what have we here? Come raise a flagon with me! We'll drink till we die in the arena... or the bar. The bar is more likely for me.~ */
 END
-++ #91287 /* ~Drinking already? Isn't it a bit early for that?~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2)~ EXTERN OHBVOGHI voghi.paladin
-+ ~Gender(LastTalkedToBy,FEMALE)~ + #91288 /* ~Pour me a flagon, and let's get started!~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2)~ EXTERN OHBVOGHI voghi.wildone
-+ ~Gender(LastTalkedToBy,MALE)~ + #91288 /* ~Pour me a flagon, and let's get started!~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2)~ EXTERN OHBVOGHI voghi.goodman
-++ #91289 /* ~All right, who taught the ape to talk and hold a flagon?~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2)~ EXTERN OHBVOGHI voghi.funnyone
+++ #91287 /* ~Drinking already? Isn't it a bit early for that?~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2) AddJournalEntry(@800013,QUEST)~ EXTERN OHBVOGHI voghi.paladin
++ ~Gender(LastTalkedToBy,FEMALE)~ + #91288 /* ~Pour me a flagon, and let's get started!~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2) AddJournalEntry(@800013,QUEST)~ EXTERN OHBVOGHI voghi.wildone
++ ~Gender(LastTalkedToBy,MALE)~ + #91288 /* ~Pour me a flagon, and let's get started!~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2) AddJournalEntry(@800013,QUEST)~ EXTERN OHBVOGHI voghi.goodman
+++ #91289 /* ~All right, who taught the ape to talk and hold a flagon?~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2) AddJournalEntry(@800013,QUEST)~ EXTERN OHBVOGHI voghi.funnyone
 
 CHAIN OHBVOGHI voghi.paladin
 #91290 /* ~I thought I was getting a late start! What are you, some sort of paladin?~ */
