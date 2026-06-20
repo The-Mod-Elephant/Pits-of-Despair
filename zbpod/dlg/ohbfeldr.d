@@ -342,12 +342,12 @@ END
 
 IF ~~ THEN BEGIN 41
   SAY @1253 /* You're joking. I'm the greatest warrior here—the glory should be mine. */
-  IF ~~ THEN EXTERN ~OHBVOGHI~ voghi.greatestwarrior
+  IF ~~ THEN EXTERN ~OHBVOGHI~ 68
 END
 
 IF ~~ THEN BEGIN 42
   SAY @1254 /* Half the warrior you are? What, you ate a fighter who wasn't a drunken fatass? */
-  IF ~~ THEN EXTERN ~OHBVOGHI~ voghi.nightmares
+  IF ~~ THEN EXTERN ~OHBVOGHI~ 69
 END
 
 IF WEIGHT #2 ~  Global("ohb_finale","global",0)
