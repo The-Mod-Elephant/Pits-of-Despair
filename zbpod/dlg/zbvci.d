@@ -1,16 +1,9 @@
+/* some interjections are added via EXTERN + CHAIN to existing dialogues but, if wanted, the externs / dialogues might be moved over here instead later
+for now those files are: OHBVOGHI & OHBJOKER */ 
+
 // Minsc Najim
 INTERJECT_COPY_TRANS OHBNAJIM 0 ZBNAJIM_MINSC
   == MINSCJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN @3872 /* There is no danger with Minsc and Boo at your side! Take heed, floaty-man, the hamster will protect you! */
-END
-
-// Dormamus
-INTERJECT_COPY_TRANS OHBJOKER 26 ZBDORMAMUS_REMARK
-  == EDWINJ IF ~InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN @3875 /* What is this pitiful charade? Must we be caught up in every fool's drama? */
-  == AERIEJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN @3876 /* They look quite p-powerful, <CHARNAME>. Do we really have a chance against them? */
-  == ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN @3877 /* Lay a hand on me, and you'll wish you never left whatever hole you crept out from, villains! */
-  == HAERDAJ IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN @3878 /* The events of the day continue to become livelier and livelier, don't they? */
-  == KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN @3879 /* What're we standing around yapping for? Let's get to cracking some skulls! */
-  == NEERAJ IF ~InParty("NEERA") InMyArea("NEERA") !StateCheck("NEERA",CD_STATE_NOTVALID)~ THEN @3880 /* Nuh-uh. No way. I've had enough mysterious forces trying to capture me for one lifetime, thank you very much. */
 END
 
 INTERJECT_COPY_TRANS OHBTARTL 75 ZBSFEASTJAHEIRA

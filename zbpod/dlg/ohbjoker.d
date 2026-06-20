@@ -422,7 +422,8 @@ END
 
 IF ~~ THEN BEGIN 26
   SAY @1695 /* I AM a bard. The name's Joker. And the joke? I'm afraid it's on you. */
-  IF ~~ THEN EXTERN ~OHBDORMA~ 2
+  IF ~NumInPartyGT(1)~ THEN EXTERN ~OHBJOKER~ ZBJOKERINTERJECTS
+  IF ~!NumInPartyGT(1)~ THEN EXTERN ~OHBDORMA~ 2
 END
 
 IF ~~ THEN BEGIN 27
@@ -448,3 +449,15 @@ IF ~~ THEN BEGIN 29
   SAY @3874 /* Enough bickering! Lay down your arms and accept capture, and you may come out the other side unharmed. Our employer has a vested interest in your abilities, and so you shall be coming with us. */
   IF ~~ THEN EXTERN ~OHBNAJIM~ 21
 END
+
+CHAIN OHBJOKER ZBJOKERINTERJECTS
+@3918
+  == EDWINJ IF ~InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN @3875 /* What is this pitiful charade? Must we be caught up in every fool's drama? */
+  == AERIEJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN @3876 /* They look quite p-powerful, <CHARNAME>. Do we really have a chance against them? */
+  == ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN @3877 /* Lay a hand on me, and you'll wish you never left whatever hole you crept out from, villains! */
+  == HAERDAJ IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN @3878 /* The events of the day continue to become livelier and livelier, don't they? */
+  == KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN @3879 /* What're we standing around yapping for? Let's get to cracking some skulls! */
+  == NEERAJ IF ~InParty("NEERA") InMyArea("NEERA") !StateCheck("NEERA",CD_STATE_NOTVALID)~ THEN @3880 /* Nuh-uh. No way. I've had enough mysterious forces trying to capture me for one lifetime, thank you very much. */
+  == VALYGARJ IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN @3917 /* Without your disguises there is nothing to stop us from cutting you down, deceiver. Choose your next words carefully. */
+END
+IF ~~ EXTERN ~OHBDORMA~ 2
