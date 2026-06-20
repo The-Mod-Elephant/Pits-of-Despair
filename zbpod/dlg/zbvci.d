@@ -3,11 +3,6 @@ INTERJECT_COPY_TRANS OHBNAJIM 0 ZBNAJIM_MINSC
   == MINSCJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN @3872 /* There is no danger with Minsc and Boo at your side! Take heed, floaty-man, the hamster will protect you! */
 END
 
-// Valygar Joker
-INTERJECT_COPY_TRANS OHBJOKER 26 ZBJOKER_VALYGAR
- == VALYGARJ IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN @3872 /* There is no danger with Minsc and Boo at your side! Take heed, floaty-man, the hamster will protect you! */
-END
-
 // Dormamus
 INTERJECT_COPY_TRANS OHBJOKER 26 ZBDORMAMUS_REMARK
   == EDWINJ IF ~InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN @3875 /* What is this pitiful charade? Must we be caught up in every fool's drama? */
