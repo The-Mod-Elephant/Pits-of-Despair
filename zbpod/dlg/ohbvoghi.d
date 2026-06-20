@@ -5,7 +5,7 @@ Global("ohb_finale","global",0)
 ~ THEN OHBVOGHI voghi.firstmeet
 #90467 /* ~Augh, mine head! By the Oak Father's leafy arse, I've never met a woman who could drink like that! One minute I'm singing with an ale in one hand and a wench in the other, and then I wake up here... Where in the Nine Hells am I?~ */
 END
-IF ~~ THEN EXTERN OHBVOGHI ZBVOGINTRO
+IF ~~ DO ~AddJournalEntry(@800004, QUEST_DONE) AddJournalEntry(@800006, QUEST)~ THEN EXTERN OHBVOGHI ZBVOGINTRO
 
 CHAIN OHBVOGHI ZBVOGINTRO
 @3887 /* Wait just a moment, I must still be drunk, or sleeping. Or both! You look… so familiar… */
@@ -127,10 +127,10 @@ Global("ohb_finale","global",0)
 ~ THEN OHBVOGHI voghi.secondmeet
 #91286 /* ~Ho ho, what have we here? Come raise a flagon with me! We'll drink till we die in the arena... or the bar. The bar is more likely for me.~ */
 END
-++ #91287 /* ~Drinking already? Isn't it a bit early for that?~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2)~ EXTERN OHBVOGHI voghi.paladin
-+ ~Gender(LastTalkedToBy,FEMALE)~ + #91288 /* ~Pour me a flagon, and let's get started!~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2)~ EXTERN OHBVOGHI voghi.wildone
-+ ~Gender(LastTalkedToBy,MALE)~ + #91288 /* ~Pour me a flagon, and let's get started!~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2)~ EXTERN OHBVOGHI voghi.goodman
-++ #91289 /* ~All right, who taught the ape to talk and hold a flagon?~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2)~ EXTERN OHBVOGHI voghi.funnyone
+++ #91287 /* ~Drinking already? Isn't it a bit early for that?~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2) AddJournalEntry(@800013,QUEST)~ EXTERN OHBVOGHI voghi.paladin
++ ~Gender(LastTalkedToBy,FEMALE)~ + #91288 /* ~Pour me a flagon, and let's get started!~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2) AddJournalEntry(@800013,QUEST)~ EXTERN OHBVOGHI voghi.wildone
++ ~Gender(LastTalkedToBy,MALE)~ + #91288 /* ~Pour me a flagon, and let's get started!~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2) AddJournalEntry(@800013,QUEST)~ EXTERN OHBVOGHI voghi.goodman
+++ #91289 /* ~All right, who taught the ape to talk and hold a flagon?~ */ DO ~SetGlobal("OHB_TALKED_VOGHI","LOCALS",2) AddJournalEntry(@800013,QUEST)~ EXTERN OHBVOGHI voghi.funnyone
 
 CHAIN OHBVOGHI voghi.paladin
 #91290 /* ~I thought I was getting a late start! What are you, some sort of paladin?~ */
