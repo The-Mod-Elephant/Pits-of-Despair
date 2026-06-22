@@ -593,7 +593,7 @@ COPY_EXISTING ~zbsham0.itm~ ~override~
     SAY NAME2 @11130
     SAY IDENTIFIED_DESC @11131
 
-EXTEND_BOTTOM "bdshusu.bcs" "%MOD_FOLDER%/items/dancershoes/zbsham0.baf"
+EXTEND_BOTTOM ~bdshunsu.bcs~ ~%MOD_FOLDER%/items/dancershoes/zbsham0.baf~
 
 // Post production, keep at end of file, do not add new items after this. \\
 
