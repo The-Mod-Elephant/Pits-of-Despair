@@ -669,7 +669,7 @@ IF ~~ THEN BEGIN ZBVOGGOODEXIT
 END
 
 CHAIN OHBVOGHI ZBVOGHIINTERJECTS
-  ~At least once the floor stops spinning...~
+  @3919
   == HAERDAJ IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN @3905 /* Where do we find ourselves now, I wonder? Being thrown into the unknown on a whim—it almost reminds me of my beloved Sigil. */
   == MAZZYJ IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN @3906 /* I do not see any bars trapping us, so I will count our blessings where we can get them. May Arvoreen watch over us. */
   == JAHEIRAJ IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN @3907 /* I am concerned as to our captor’s true identity. It is not many that can command a planetar into doing their bidding. Why they’d want a man like Voghiln is beyond me. */
