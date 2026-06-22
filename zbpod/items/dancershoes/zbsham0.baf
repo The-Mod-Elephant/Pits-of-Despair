@@ -1,0 +1,8 @@
+IF
+Global("zbsham0","LOCALS",0)
+  HasItemEquiped("zbsham0",LastSummonerOf(Myself))
+THEN
+  RESPONSE #100
+    SetGlobal("zbsham0","LOCALS",1)
+    ApplySpellRES("zbsham0",Myself)  //
+END

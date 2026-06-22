@@ -1162,6 +1162,17 @@ Weight: 14~
 
 Weight: 1~
 @11129 = ~Interact~
+@11130 = ~Dancer's Shoes~
+@11131 = ~Dancer's Shoes placeholder description
+
+STATISTICS:
+
+Equipped abilities: 
+– Armor Class: +2
+– Summoned spirits gain +1 attacks per round, +10% physical resistance
+
+Weight: 0~
+
 
 
 // Creatures
