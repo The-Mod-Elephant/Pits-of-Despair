@@ -1168,10 +1168,13 @@ Weight: 1~
 STATISTICS:
 
 Equipped abilities: 
-– Armor Class: +2
-– Summoned spirits gain +2 attacks per round, +2 THAC0, +2 magic damage per hit
+– Armor Class: +1
+– Doubles movement rate
+– Frenzied Dance
+  Special: Summoned spirits gain +1 attack per round, +2 Strength, and +5 movement rate
 
-Weight: 0~
+Weight: 4~
+@11132 = ~Frenzied Dance~
 
 
 
