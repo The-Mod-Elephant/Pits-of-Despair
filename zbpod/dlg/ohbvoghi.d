@@ -665,21 +665,26 @@ END
 IF ~~ THEN BEGIN ZBVOGGOODEXIT
   SAY @3903 /* If it comes to a fight, though, you can rely on Voghiln! Now, I am going to go on a grand quest… to find a kitchen. */
   IF ~NumInPartyGT(1)~ THEN EXTERN ~OHBVOGHI~ ZBVOGHIINTERJECTS
-  IF ~!NumInPartyGT(1)~ THEN EXIT
+  IF ~!NumInPartyGT(1)~ THEN GOTO ZBVOGGSPIN
+END
+
+IF ~~ THEN BEGIN ZBVOGGSPIN
+  SAY @3919 /* At least once the floor stops spinning... */
+  IF ~~ THEN EXIT
 END
 
 CHAIN OHBVOGHI ZBVOGHIINTERJECTS
-  @3919
+  @3919 /* At least once the floor stops spinning... */
   == HAERDAJ IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN @3905 /* Where do we find ourselves now, I wonder? Being thrown into the unknown on a whim—it almost reminds me of my beloved Sigil. */
   == MAZZYJ IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN @3906 /* I do not see any bars trapping us, so I will count our blessings where we can get them. May Arvoreen watch over us. */
   == JAHEIRAJ IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN @3907 /* I am concerned as to our captor’s true identity. It is not many that can command a planetar into doing their bidding. Why they’d want a man like Voghiln is beyond me. */
-  == NEERAJ IF ~InParty("NEERA") InMyArea("NEERA") !StateCheck("NEERA",CD_STATE_NOTVALID)~ THEN @3908 /* Alright, it’s not just me, right? My magic is all gone. I’d *really* like to get out of here. */
   == AERIEJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN @3909 /* This isn’t good, <CHARNAME>. I… I can’t access my magic. Let’s be careful, alright? */
-  == EDWINJ IF ~InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN @3910 /* My spells! They are being… restricted. Bah, no matter! Nothing can contain Edwin Odesseiron for long. (I cannot say the same for the rest of these monkeys, however…) */
   == MINSCJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN @3911 /* To have been captured so easily… it puts a berserker’s heart to shame! Eh? What is that, Boo? …Ah, as wise as ever my miniature furry friend—it is THEIR mistake for inviting Minsc and friends into their lair! */
   == KELDORJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN @3912 /* Be careful not to work yourself into a battlerage just yet, Minsc. We must be cautious in this place—we have no idea how powerful our enemy is, nor their true intent. */
   == ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN @3913 /* Well, if that man has survived as long as he has in this snake’s den, I suspect we’ll fare better. Let us find the villains that did this and put an end to them. */
   == CERNDJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN @3914 /* Nature cringes from this prison of steel and stone. Let us find our way out, or better yet, sunder this abhorrent place. */
   == YOSHJ IF ~InParty("Yoshimo") InMyArea("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)~ THEN @3915 /* It’s from one drama to another with you, isn’t it? Ah, well. They say variety is the spice of life, after all. */
   == IMOEN2J IF ~InParty("Imoen2") InMyArea("Imoen2") !StateCheck("Imoen2",CD_STATE_NOTVALID)~ THEN @3916 /* Heh. Seems we're trapped all over again. This is starting to feel a little personal now. Let's break out of here fast, alright? */
+  == NEERAJ IF ~InParty("NEERA") InMyArea("NEERA") !StateCheck("NEERA",CD_STATE_NOTVALID)~ THEN @3908 /* Alright, it’s not just me, right? My magic is all gone. I’d *really* like to get out of here. */
+  == EDWINJ IF ~InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN @3910 /* My spells! They are being… restricted. Bah, no matter! Nothing can contain Edwin Odesseiron for long. (I cannot say the same for the rest of these monkeys, however…) */
 EXIT

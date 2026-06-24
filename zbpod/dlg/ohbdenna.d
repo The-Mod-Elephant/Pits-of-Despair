@@ -13,7 +13,7 @@ IF ~~ THEN BEGIN 1
 END
 
 IF ~~ THEN BEGIN 2
-  SAY @537 /* Don't let that act fool you! Very cagey is the Ancient Threat. Next, we have a <PRO_MANWOMAN> whose deeds are so well known, they hardly need mentioning. A <PRO_MANWOMAN> legendary for prowess in gladiatorial combat. I give you the Champion of Baeloth's Pit, <CHARNAME>! */
+  SAY @537 /* Don't let that act fool you! Very cagey is the Ancient Threat. Next, we have a <PRO_MANWOMAN> whose deeds are so well known, they hardly need mentioning. A <PRO_MANWOMAN> legendary for for their combat prowess. I give you, <CHARNAME>! */
   IF ~~ THEN REPLY @538 /* I'll not play your pathetic game, Dennaton! I decide my own fate! */ GOTO 3
   IF ~~ THEN REPLY @539 /* What, no nickname for me? */ GOTO 5
   IF ~~ THEN REPLY @540 /* Let me be clear, Dennaton. I'll fight and I'll kill. It's what I do, but if the coin's not good enough, I'll butcher and stew you in a pot of your own gravy! */ GOTO 6
@@ -32,7 +32,7 @@ IF ~~ THEN BEGIN 4
 END
 
 IF ~~ THEN BEGIN 5
-  SAY @546 /* Of course you shall have one! How about "The Ravager"? No, no, no, no... "Infinite Desolation"? No, I don't like that... Of course! You are "The Scourge of Baeloth"! */
+  SAY @546 /* Of course you shall have one! How about "The Ravager"? No, no, no, no... "Infinite Desolation"? No, I don't like that... Of course! You are "The Hero of Baldur's Gate"! */
   IF ~~ THEN GOTO 270
 END
 
@@ -44,7 +44,7 @@ END
 IF ~  Global("OHB_START_BATTLE","GLOBAL",2)
 Global("OHB_101","GLOBAL",1)
 ~ THEN BEGIN 7
-  SAY @548 /* Lords and ladies, dignitaries and honored guests, today I give you something truly extraordinary—a champion of a rival arena making their debut here in our own! I give you the Scourge of Baeloth's Pits... <CHARNAME>! */
+  SAY @548 /* Lords and ladies, dignitaries and honored guests, today I give you something truly extraordinary—a Bhaalspawn making their debut here in our arena! I give you the Hero of Baldur's Gate... <CHARNAME>! */
   IF ~~ THEN DO ~SetGlobal("OHB_START_BATTLE","GLOBAL",3)
 ~ GOTO 8
 END
@@ -59,7 +59,7 @@ IF ~~ THEN BEGIN 9
   IF ~~ THEN REPLY @551 /* These foul beasts once committed unspeakable acts of cruelty upon the civilized people of Faerûn. Today, I enact justice in the name of all their innocent victims! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
       SetGlobal("ohb_item_reward","global",1)
       PlaySound("BP2POS_1")~ GOTO 10
-  // IF ~~ THEN REPLY @552 /* This arena is as much a joke as the last. Let's get this over with, Dennaton! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
+  // IF ~~ THEN REPLY @552 /* This arena is a joke. Let's get this over with, Dennaton! */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
 // ~ GOTO 11
   // IF ~  OR(2)
 // Global("ohb_101_item_good","global",0)
@@ -145,7 +145,7 @@ END
 IF ~  Global("OHB_START_BATTLE","GLOBAL",2)
 Global("OHB_102","GLOBAL",1)
 ~ THEN BEGIN 15
-  SAY @561 /* Ladies and gentlemen, I welcome you again to our main event. You've already met our next combatant! Once again, I give you our newest attraction, the Scourge of Baeloth's Pits, <CHARNAME>! */
+  SAY @561 /* Ladies and gentlemen, I welcome you again to our main event. You've already met our next combatant! Once again, I give you our newest attraction, the Hero of Baldur's Gate, <CHARNAME>! */
   IF ~~ THEN GOTO 16
 END
 
@@ -203,7 +203,7 @@ END
 
 IF ~~ THEN BEGIN 21
   SAY @567 /* Before we start, <CHARNAME>, would you like to address your adoring fans? */
-  IF ~~ THEN REPLY @568 /* I am a humble <PRO_MANWOMAN>. I scraped by as best I could in Baeloth's Pits. Faced with trained gladiators, I only hope I last long enough to provide the entertainment you deserve. */ DO ~SetGlobal("ohb_raise_hero_score","global",1) SetGlobal("ohb_item_reward","global",1) PlaySound("BP2POS_1")~ GOTO 22
+  IF ~~ THEN REPLY @568 /* I am a humble <PRO_MANWOMAN>. I scraped by as best I could in Baldur's Gate. Faced with trained gladiators, I only hope I last long enough to provide the entertainment you deserve. */ DO ~SetGlobal("ohb_raise_hero_score","global",1) SetGlobal("ohb_item_reward","global",1) PlaySound("BP2POS_1")~ GOTO 22
   // IF ~~ THEN REPLY @569 /* Really, Dennaton? You claim to provide entertainment available nowhere else. This fight will be over in seconds, and you know it. */ DO ~IncrementGlobal("OHB_ANTI_DENNATON","GLOBAL",1)
 // ~ GOTO 23
   // IF ~  OR(2)
@@ -216,7 +216,7 @@ IF ~~ THEN BEGIN 21
 END
 
 IF ~~ THEN BEGIN 22
-  SAY @573 /* Amazing! The Champion of Baeloth's Pits just convinced the crowd THEY'RE the underdog! Even more amazingly, they've convinced a crowd of Thayans to ROOT for the underdog! Good show! Combatants, to arms! */
+  SAY @573 /* Amazing! The Hero of Baldur's Gate just convinced the crowd THEY'RE the underdog! Even more amazingly, they've convinced a crowd of Thayans to ROOT for the underdog! Good show! Combatants, to arms! */
   IF ~~ THEN DO ~StartCutSceneMode()
 SetGlobal("OHB_START_BATTLE","GLOBAL",4)
 Wait(2)
@@ -278,7 +278,7 @@ END
 IF ~  Global("OHB_START_BATTLE","GLOBAL",2)
 Global("OHB_103","GLOBAL",1)
 ~ THEN BEGIN 27
-  SAY @578 /* Welcome once more to the unequaled drama of the center arena! Again, I give you a <PRO_MANWOMAN> of unmatched reputation and skill, steadily clawing <PRO_HISHER> way to the top of our ladder. Please give a warm Thayan welcome to the Scourge of Baeloth's Pits—<CHARNAME>! */
+  SAY @578 /* Welcome once more to the unequaled drama of the center arena! Again, I give you a <PRO_MANWOMAN> of unmatched reputation and skill, steadily clawing <PRO_HISHER> way to the top of our ladder. Please give a warm Thayan welcome to the Hero of Baldur's Gate—<CHARNAME>! */
   IF ~~ THEN DO ~SetGlobal("OHB_START_BATTLE","GLOBAL",3)
 ~ GOTO 28
 END
@@ -380,7 +380,7 @@ END
 IF ~  Global("OHB_START_BATTLE","GLOBAL",2)
 Global("OHB_104","GLOBAL",1)
 ~ THEN BEGIN 35
-  SAY @591 /* Attention, honored guests! Prepare to be amazed. Prepare to be HORRIFIED! Once again, I give you a warrior whose victories are the talk of the arena. Everyone, let's give a round of applause to the Scourge of Baeloth's Pits, <CHARNAME>! */
+  SAY @591 /* Attention, honored guests! Prepare to be amazed. Prepare to be HORRIFIED! Once again, I give you a warrior whose victories are the talk of the arena. Everyone, let's give a round of applause to the Hero of Baldur's Gate, <CHARNAME>! */
   IF ~~ THEN DO ~SetGlobal("OHB_START_BATTLE","GLOBAL",3)
 ~ GOTO 36
 END
@@ -435,7 +435,7 @@ EndCutSceneMode()
 END
 
 IF ~~ THEN BEGIN 40
-  SAY @601 /* The Scourge of Baeloth's Pits wants to give us a show. What a generous and giving spirit! Won't you be as generous for your favorite performer? While you decide, let the killing commence! Combatants, to arms! */
+  SAY @601 /* The Bhaalspawn wants to give us a show. What a generous and giving spirit! Won't you be as generous for your favorite performer? While you decide, let the killing commence! Combatants, to arms! */
   IF ~~ THEN DO ~StartCutSceneMode()
 SetGlobal("OHB_START_BATTLE","GLOBAL",4)
 Wait(2)
@@ -474,7 +474,7 @@ IF ~  Global("OHB_START_BATTLE","GLOBAL",2)
 Global("OHB_105","GLOBAL",1)
 GlobalGT("OHB_HERO","GLOBAL",18)
 ~ THEN BEGIN 43
-  SAY @604 /* Come one, come all, to the greatest show this side of the Astral Plane! Once more, I bring you a performer that's slowly but surely winning hearts... and minds! In a world bereft of heroes, they fill the void, a beacon of light to all! I give you the Scourge of Baeloth's Pits, <CHARNAME>! */
+  SAY @604 /* Come one, come all, to the greatest show this side of the Astral Plane! Once more, I bring you a performer that's slowly but surely winning hearts... and minds! In a world bereft of heroes, they fill the void, a beacon of light to all! I give you the Hero of Baldur's Gate, <CHARNAME>! */
   IF ~~ THEN DO ~SetGlobal("OHB_START_BATTLE","GLOBAL",3)
 ~ GOTO 46
 END
@@ -483,7 +483,7 @@ IF ~  Global("OHB_START_BATTLE","GLOBAL",2)
 Global("OHB_105","GLOBAL",1)
 GlobalLT("OHB_HERO","GLOBAL",2)
 ~ THEN BEGIN 44
-  SAY @605 /* Ladies and gentlemen, let me present a performer who continues to explore new and greater depths of infamy! Come on, everyone—let's REALLY hear the boos for the Scourge of Baeloth's Pits, <CHARNAME>! */
+  SAY @605 /* Ladies and gentlemen, let me present a performer who continues to explore new and greater depths of infamy! Come on, everyone—let's REALLY hear the boos for the Hero of Baldur's Gate, <CHARNAME>! */
   IF ~~ THEN DO ~SetGlobal("OHB_START_BATTLE","GLOBAL",3)
 ~ GOTO 46
 END
@@ -493,7 +493,7 @@ Global("OHB_105","GLOBAL",1)
 !GlobalGT("OHB_HERO","GLOBAL",18)
 !GlobalLT("OHB_HERO","GLOBAL",2)
 ~ THEN BEGIN 45
-  SAY @606 /* Come one, come all, to the greatest show this side of the Astral Plane! Once again, I bring you a performer whose skill is matched only by their lofty reputation. I give you the Scourge of Baeloth's Pits, <CHARNAME>! */
+  SAY @606 /* Come one, come all, to the greatest show this side of the Astral Plane! Once again, I bring you a performer whose skill is matched only by their lofty reputation. I give you the Hero of Baldur's Gate, <CHARNAME>! */
   IF ~~ THEN DO ~SetGlobal("OHB_START_BATTLE","GLOBAL",3)
 ~ GOTO 46
 END
@@ -546,7 +546,7 @@ IF ~~ THEN BEGIN 49
 END
 
 IF ~~ THEN BEGIN 50
-  SAY @616 /* Do you hear that? The Scourge of Baeloth's Pits asks us to help create a masterpiece of death! Clearly, <PRO_HESHE> has the talent—will someone give <PRO_HIMHER> the tools? Questions to ponder, but for now, combatants— */
+  SAY @616 /* Do you hear that? The Bhaalspawn asks us to help create a masterpiece of death! Clearly, <PRO_HESHE> has the talent—will someone give <PRO_HIMHER> the tools? Questions to ponder, but for now, combatants— */
   IF ~  !Global("OHB_EVENT_105","MYAREA",0)
 ~ THEN GOTO 55
   IF ~  Global("OHB_EVENT_105","MYAREA",0)
@@ -573,7 +573,7 @@ IF ~~ THEN BEGIN 52
 END
 
 IF ~~ THEN BEGIN 53
-  SAY @619 /* Amazing! This day, I have witnessed something I never imagined I'd see: The drow are the champions of the Thayan people! Come, dark heroes! Slay the Scourge of Baeloth's Pits... if you can! Combatants, to arms! */
+  SAY @619 /* Amazing! This day, I have witnessed something I never imagined I'd see: The drow are the champions of the Thayan people! Come, dark heroes! Slay the Bhaalspawn... if you can! Combatants, to arms! */
   IF ~  !Global("OHB_EVENT_105","MYAREA",0)
 ~ THEN GOTO 55
   IF ~  Global("OHB_EVENT_105","MYAREA",0)
@@ -873,7 +873,7 @@ Global("OHB_203","GLOBAL",1)
 !GlobalGT("OHB_HERO","GLOBAL",18)
 !GlobalLT("OHB_HERO","GLOBAL",2)
 ~ THEN BEGIN 79
-  SAY @655 /* You have seen the Scourge of Baeloth's Pits fight denizens of the surface realm and the Underdark and prevail every time! Now, they will face a new foe for your entertainment! */
+  SAY @655 /* You have seen the Hero of Baldur's Gate fight denizens of the surface realm and the Underdark and prevail every time! Now, they will face a new foe for your entertainment! */
   IF ~~ THEN DO ~SetGlobal("OHB_START_BATTLE","GLOBAL",3)
 ~ GOTO 81
 END
@@ -2287,13 +2287,13 @@ IF ~~ THEN BEGIN 202
 END
 
 IF ~~ THEN BEGIN 203
-  SAY @834 /* YES! People of Thay, I give you the offspring of Bhaal himself, with their faithful cultists, here to battle to the bitter death! */
+  SAY @834 /* YES! People of Thay, I give you the offspring of Bhaal himself, with their faithful cultists, here to battle to the bitter death! Sibling versus sibling. A fight not seen since <CHARNAME>'s battle against Sarevok. */
   IF ~~ THEN GOTO 204
 END
 
 IF ~~ THEN BEGIN 204
   SAY @835 /* You've had the opportunity to address the audience many times, performer. This may be your last. Have you anything to say? */
-  IF ~~ THEN REPLY @836 /* The Thayan peoples' devotion and love gives me the strength to overcome even those whose veins course with the blood of gods! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
+  IF ~~ THEN REPLY @836 /* The Thayan peoples' devotion and love gives me the strength to overcome even those through who share Bhaal's blood! */ DO ~SetGlobal("ohb_raise_hero_score","global",1)
   SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2POS_5")
 ~ GOTO 205
@@ -2305,7 +2305,7 @@ PlaySound("BP2POS_5")
 //~ THEN REPLY @838 /* Am I to face the power of the gods themselves unaided? Have I not won favor enough to be granted some token of appreciation to bolster me in my darkest hour? */ DO ~SetGlobal("ohb_item_reward","global",1)
 //~ GOTO 207
 //  IF ~~ THEN REPLY @839 /* I have no words left for the crowd. */ GOTO 208
-  IF ~~ THEN REPLY @840 /* The Bhaalspawn and their cultists will fall! And the people of Thay will join them soon after! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
+  IF ~~ THEN REPLY @840 /* These Bhaalspawn and their cultists will fall! And the people of Thay will join them soon after! */ DO ~SetGlobal("ohb_raise_villain_score","global",1)
   SetGlobal("ohb_item_reward","global",1)
 PlaySound("BP2NEG_3")
 ~ GOTO 209
@@ -2396,7 +2396,7 @@ END
 IF ~  Global("OHB_BATTLE_COMPLETE","GLOBAL",2)
 Global("OHB_102","GLOBAL",2)
 ~ THEN BEGIN 211
-  SAY @847 /* The champions of Baeloth's Pits have won! */
+  SAY @847 /* The heroes of Baldur's Gate have won! */
   IF ~~ THEN DO ~SetGlobal("OHB_102","GLOBAL",-1)
 GiveGoldForce(1500)
 SetGlobal("OHB_LAST_BATTLE","GLOBAL",102)
@@ -2418,7 +2418,7 @@ END
 IF ~  Global("OHB_BATTLE_COMPLETE","GLOBAL",2)
 Global("OHB_104","GLOBAL",2)
 ~ THEN BEGIN 213
-  SAY @847 /* The champions of Baeloth's Pits have won! */
+  SAY @847 /* The heroes of Baldur's Gate have won! */
   IF ~~ THEN DO ~SetGlobal("OHB_104","GLOBAL",-1)
 GiveGoldForce(2500)
 SetGlobal("OHB_LAST_BATTLE","GLOBAL",104)
@@ -2446,7 +2446,7 @@ END
 IF ~  Global("OHB_BATTLE_COMPLETE","GLOBAL",2)
 Global("OHB_201","GLOBAL",2)
 ~ THEN BEGIN 215
-  SAY @847 /* The champions of Baeloth's Pits have won! */
+  SAY @847 /* The heroes of Baldur's Gate have won! */
   IF ~~ THEN DO ~SetGlobal("OHB_201","GLOBAL",-1)
 SetGlobal("ohb_battle_xp_award","global",5000)
 GiveGoldForce(2000)
@@ -2482,7 +2482,7 @@ END
 IF ~  Global("OHB_BATTLE_COMPLETE","GLOBAL",2)
 Global("OHB_203","GLOBAL",2)
 ~ THEN BEGIN 217
-  SAY @847 /* The champions of Baeloth's Pits have won! */
+  SAY @847 /* The heroes of Baldur's Gate have won! */
   IF ~~ THEN DO ~SetGlobal("OHB_203","GLOBAL",-1)
 SetGlobal("ohb_battle_xp_award","global",5000)
 GiveGoldForce(3000)
@@ -2554,7 +2554,7 @@ END
 IF ~  Global("OHB_BATTLE_COMPLETE","GLOBAL",2)
 Global("OHB_302","GLOBAL",2)
 ~ THEN BEGIN 221
-  SAY @847 /* The champions of Baeloth's Pits have won! */
+  SAY @847 /* The heroes of Baldur's Gate have won! */
   IF ~~ THEN DO ~SetGlobal("OHB_302","GLOBAL",-1)
 SetGlobal("ohb_battle_xp_award","global",5000)
 GiveGoldForce(5000)
@@ -2590,7 +2590,7 @@ END
 IF ~  Global("OHB_BATTLE_COMPLETE","GLOBAL",2)
 Global("OHB_304","GLOBAL",2)
 ~ THEN BEGIN 223
-  SAY @847 /* The champions of Baeloth's Pits have won! */
+  SAY @847 /* The heroes of Baldur's Gate have won! */
   IF ~~ THEN DO ~SetGlobal("OHB_304","GLOBAL",-1)
 SetGlobal("ohb_battle_xp_award","global",5000)
 GiveGoldForce(6000)
@@ -2644,7 +2644,7 @@ END
 IF ~  Global("OHB_BATTLE_COMPLETE","GLOBAL",2)
 Global("OHB_402","GLOBAL",2)
 ~ THEN BEGIN 226
-  SAY @847 /* The champions of Baeloth's Pits have won! */
+  SAY @847 /* The heroes of Baldur's Gate have won! */
   IF ~~ THEN DO ~SetGlobal("OHB_402","GLOBAL",-1)
 SetGlobal("ohb_battle_xp_award","global",5000)
 GiveGoldForce(9000)
@@ -2944,11 +2944,13 @@ END
 
 IF ~~ THEN BEGIN 270
   SAY @917 /* Right, with that cleared up, we can turn to the show itself. As a great bard once said, "All the world's a stage, and all of us merely players! Each of us in our time will play many parts!" */
-  IF ~~ THEN GOTO 271
+  IF ~InParty("Edwin")~ THEN EXTERN OHBDENNA ZBEDWININTHAY
+  IF ~InParty("NEERA") !InParty("Edwin")~ THEN EXTERN OHBDENNA ZBNEERAINTHAY
+  IF ~!InParty("Edwin") !InMyArea("Edwin")~ THEN GOTO 271
 END
 
 IF ~~ THEN BEGIN 271
-  SAY @918 /* So now we decide which part each of you shall play. Our main star will be <CHARNAME>, who is already well known as a champion of the arena. */
+  SAY @918 /* So now we decide which part each of you shall play. Our main star will be <CHARNAME>, who is already renowned for defeating Sarevok at Baldur's Gate. */
   IF ~~ THEN EXTERN ~OHBFELDR~ 41
 END
 
@@ -2982,3 +2984,82 @@ UnhideGUI()
 EndCutSceneMode()
 ~ EXIT
 END
+
+
+// THAY! Interjections comments
+CHAIN OHBDENNA ZBEDWININTHAY
+  @918 /* So now we decide which part each of you shall play. Our main star will be <CHARNAME>, who is already renowned for defeating Sarevok at Baldur's Gate. */
+  == EDWINJ @3920 /* So, it would seem we have found ourselves ensnared within the very bowels of my homeland, <CHARNAME>. I have not heard of this ‘Dennaton’ but it is not out of character for them to seize us thusly. (Though, it’s evident of a lack of diligence if they sought you out and not me.) */
+  == EDWINJ @3921 /* Participate in the barbarity if you wish—I assume it is in your breeding to do so. I will not debase myself so readily for the entertainment of the masses. */
+END
+  ++ @3922 /* This is your home, Edwin. You help us get out of here. */ EXTERN EDWINJ ZBEDWININTHAY1
+  ++ @3923 /* Why, Edwin, you’re usually so keen to be in the spotlight. Is something making you nervous? */ EXTERN EDWINJ ZBEDWININTHAY2
+  ++ @3924 /* You heard what Dennaton said. If you don’t fight, I’m sure he’d love your head on a platter. */ EXTERN EDWINJ ZBEDWININTHAY3
+  ++ @3925 /* Perhaps when they realize who you are, they’ll just kill you. */ EXTERN EDWINJ ZBEDWININTHAY4
+
+CHAIN EDWINJ ZBEDWININTHAY1
+  @3926 /* Unsurprisingly, you underestimate both the pettiness of my associates and the bloodthirst of my torpescent countrymen. (And their ability to silence my magic…) */
+END
+  ++ ~~ EXTERN EDWINJ ZBEDWININTHAYEND
+
+CHAIN EDWINJ ZBEDWININTHAY2
+  @3928 /* Do you think me some weak-willed monkey like so many others you surround yourself with? Direct your shrill projections of incompetency elsewhere. */
+END
+  ++ ~~ EXTERN EDWINJ ZBEDWININTHAYEND
+
+CHAIN EDWINJ ZBEDWININTHAY3
+  @3929 /* I will lend my magic to you as needed, but do not expect me to rally a crowd as some common gladiator. (They will most assuredly perish out there with my help.) */
+END
+  ++ ~~ EXTERN EDWINJ ZBEDWININTHAYEND
+
+CHAIN EDWINJ ZBEDWININTHAY4
+  @3930 /* And leave their ‘hero of Baldur’s Gate’ without <PRO_HISHER> most valued asset? Save your flagellant delusions for the bedchamber. */
+END
+  ++ ~~ EXTERN EDWINJ ZBEDWININTHAYEND
+
+CHAIN EDWINJ ZBEDWININTHAYEND
+  @3931 /* Do what you will. I shall be keeping my wits about me and maintaining a low profile. */
+  == NEERAJ IF ~InParty("NEERA") InMyArea("NEERA") !StateCheck("NEERA",CD_STATE_NOTVALID)~ THEN @3932 /* Did you hear what he said, <CHARNAME>? We’re in Thay. THAY. Oh my gods, we—we have to get out of here. We have to get back. */
+END
+  + ~InParty("NEERA") InMyArea("NEERA") !StateCheck("NEERA",CD_STATE_NOTVALID)~ + @3933 /* I know, Neera. We’ll do our best to search for a way back, but we may have to play along for now. */ EXTERN NEERAJ ZBNEERAINTHAY1
+  + ~InParty("NEERA") InMyArea("NEERA") !StateCheck("NEERA",CD_STATE_NOTVALID) Global("NeeraRomanceActive","GLOBAL",2)~ + @3934 /* Easy, Neera. Breathe. We’re together, and we’ll get out of this. */ EXTERN NEERAJ ZBNEERAINTHAY2
+  + ~InParty("NEERA") InMyArea("NEERA") !StateCheck("NEERA",CD_STATE_NOTVALID)~ + @3935 /* We’ll do our best, but I can’t promise anything yet. Just keep your head down. */ EXTERN NEERAJ ZBNEERAINTHAY3
+  + ~InParty("NEERA") InMyArea("NEERA") !StateCheck("NEERA",CD_STATE_NOTVALID)~ + @3936 /* It’s not like every Thayan is out to get you, Neera. Settle down. */ EXTERN NEERAJ ZBNEERAINTHAY4
+  + ~!InParty("NEERA") !InMyArea("NEERA") StateCheck("NEERA",CD_STATE_NOTVALID)~ + ~~ EXTERN ~OHBFELDR~ 41
+
+CHAIN OHBDENNA ZBNEERAINTHAY
+  @918 /* So now we decide which part each of you shall play. Our main star will be <CHARNAME>, who is already renowned for defeating Sarevok at Baldur's Gate. */
+  == NEERAJ @3932 /* Did you hear what he said, <CHARNAME>? We’re in Thay. THAY. Oh my gods, we—we have to get out of here. We have to get back. */
+END
+  ++ @3933 /* I know, Neera. We’ll do our best to search for a way back, but we may have to play along for now. */ EXTERN NEERAJ ZBNEERAINTHAY1
+  + ~Global("NeeraRomanceActive","GLOBAL",2)~ + @3934 /* Easy, Neera. Breathe. We’re together, and we’ll get out of this. */ EXTERN NEERAJ ZBNEERAINTHAY2
+  ++ @3935 /* We’ll do our best, but I can’t promise anything yet. Just keep your head down. */ EXTERN NEERAJ ZBNEERAINTHAY3
+  ++ @3936 /* It’s not like every Thayan is out to get you, Neera. Settle down. */ EXTERN NEERAJ ZBNEERAINTHAY4
+
+CHAIN NEERAJ ZBNEERAINTHAY1
+  @3942 /* Playing along sounds like exactly the last thing I want to do right now, but I can’t exactly fireball my way out right now, so… okay. */
+  =
+  @3943 /* I’m just going to keep my hood up and really, *really* hope that I don’t have any surges. Unless it’s one that takes us home. */
+END
+  ++ ~~ EXTERN ~OHBFELDR~ 41
+
+CHAIN NEERAJ ZBNEERAINTHAY2
+  @3944 /* Right. Breathing. Right, okay. I trust you, <CHARNAME>. */
+  =
+  @3943 /* I’m just going to keep my hood up and really, *really* hope that I don’t have any surges. Unless it’s one that takes us home. */
+END
+  ++ ~~ EXTERN ~OHBFELDR~ 41
+
+CHAIN NEERAJ ZBNEERAINTHAY3
+  @3945 /* I’d take an empty promise over nothing, but fine. Whatever you say. */
+  =
+  @3943 /* I’m just going to keep my hood up and really, *really* hope that I don’t have any surges. Unless it’s one that takes us home. */
+END
+  ++ ~~ EXTERN ~OHBFELDR~ 41
+
+CHAIN NEERAJ ZBNEERAINTHAY4
+  @3946 /* Well, I’m *sorry* if worrying about being found by the people who want to kill and dissect me makes me ERRATIC. */
+  =
+  @3943 /* I’m just going to keep my hood up and really, *really* hope that I don’t have any surges. Unless it’s one that takes us home. */
+END
+  ++ ~~ EXTERN ~OHBFELDR~ 41
