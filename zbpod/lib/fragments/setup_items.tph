@@ -597,6 +597,12 @@ EXTEND_BOTTOM ~bdshunsu.bcs~ ~%MOD_FOLDER%/items/dancershoes/zbsham0.baf~
 COPY_EXISTING ~zbsham0.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF(@11132) END
 
+    //////// Skyhammer Gauntlets \\\\\\\\
+COPY ~%MOD_FOLDER%/items/skyhammergauntlets~ ~override~
+COPY_EXISTING ~zbskyh0.itm~ ~override~
+    SAY NAME2 @11133
+    SAY IDENTIFIED_DESC @11134
+    
 // Post production, keep at end of file, do not add new items after this. \\
 
 COPY_EXISTING_REGEXP "^.*\.itm$" "override"
