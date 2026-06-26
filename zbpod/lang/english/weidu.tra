@@ -1177,7 +1177,16 @@ Weight: 4~
 @11132 = ~Frenzied Dance~
 
 @11133 = ~Skyhammer Gauntlets~
-@11134 = ~Skyhammer Gauntlets description placeholder~
+@11134 = ~Skyhammer Gauntlets description placeholder
+
+STATISTICS:
+
+Combat abilities:
+– Inflicts +2 electrical damage on each successful hit
+– +5% chance of scoring a critical hit
+– Critical hits inflict an additional 3d6 electrical damage
+
+Weight: 4~
 
 // Creatures
 
