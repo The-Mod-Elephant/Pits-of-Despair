@@ -7,6 +7,13 @@ THEN
     SetGlobal("ZB_NEPH_ESCAPE_1","GLOBAL",2)
     DisplayStringHead("zbneph",@101) /* Now just let me fit this ring on your finger gah… well maybe this way? Ah, that's it. Hold on to your belongings… off to Amn we go! Ala-khazoom! */
     Wait(4)
+    ApplySpellRES("OHBAMREM",Player1)  // No such index
+    ApplySpellRES("OHBAMREM",Player2)  // No such index
+    ApplySpellRES("OHBAMREM",Player3)  // No such index
+    ApplySpellRES("OHBAMREM",Player4)  // No such index
+    ApplySpellRES("OHBAMREM",Player5)  // No such index
+    ApplySpellRES("OHBAMREM",Player6)  // No such index
+    SetGlobal("OHB_ANTIMAGIC","GLOBAL",0)
     ActionOverride("zbneph",ReallyForceSpell(Myself,DRYAD_TELEPORT))
     SmallWait(25)
     LeaveAreaLUAPanic("AR2010","",[410.640],W)
