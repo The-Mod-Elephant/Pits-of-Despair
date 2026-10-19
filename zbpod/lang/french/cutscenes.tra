@@ -1,0 +1,35 @@
+@1= ~Les Fosses du désespoir
+
+Un messager nous a remis une lettre de Vyatri, un aubergiste de Franc-Marché, qui nous invite dans son établissement. Un anneau accompagnait la lettre, ainsi que la promesse d'autres récompenses si nous acceptons d'y rencontrer un djinn.~
+@2 = ~Ils parcoururent la Côte des Épées, affrontant toutes sortes de créatures monstrueuses. Enquêtant sur le fer corrompu et les intrigues politiques, ils découvrirent que le sang de Bhaal coulant dans leurs veines était au cœur de l'affaire.~
+@3 = ~Cela paraît invraisemblable, je sais, mais c'est la VÉRITÉ. Je peux même le prouver : sauf erreur de ma part, la personne qui a sauvé la Porte de Baldur se trouve parmi nous en cet instant. Saluez donc <CHARNAME>, le personnage de notre récit en chair et en os !~
+@4 = ~Ils enquêtèrent sur le fer et les brigands qui semaient le trouble, puis découvrirent leur ascendance divine.~
+@5 = ~Le combat final : une cité retenant son souffle, au bord d'un funeste destin.~
+@6 = ~Mais ils relevèrent le défi, mirent fin à la crise et devinrent les héros de la Porte de Baldur.~
+/* above line changes end here */
+@7 = ~Une bonne histoire, quoique TROP invraisemblable à mon goût.~
+@8 = ~Merci. Ce récit est extraordinaire, d'autant plus que tout s'est réellement passé.~
+@9 = ~Vous avez du talent, madame, mais ne vous moquez pas de moi. Votre récit n'est qu'une histoire. Rien de tout cela n'est arrivé.~
+
+/* 1st Cutscene Infamy */
+@10 = ~Et alors ? Qu'en est-il du livre ?~
+@11 = ~Rien. Tout le monde ne parle que de la personne qui aurait sauvé la Porte de Baldur. Les nobles ne savent qu'en penser : salut ou terreur ? Voilà qui est inhabituel... pour un enfant de Bhaal.~
+@12 = ~~
+@13 = ~~
+@14 = ~Ne jouez pas avec moi, Nephetel. Parlez clairement.~
+@15 = ~Pardonnez-moi, maître espion. On dit que le sang du Seigneur du Meurtre coule dans ses veines, mais j'ignore si ces histoires sont vraies.~
+@16 = ~Cet... enfant de Bhaal, si c'est bien ce dont il s'agit... que vaut-il face à notre jouet de l'arène ?~
+@17 = ~Cet enfant de Bhaal est différent de... de lui. Le culte ne semble avoir aucune emprise sur sa personne.~
+@18 = ~Votre priorité reste le livre. Trouvez-le, et notre maître sera assurément satisfait. J'attends un rapport complet sur cet... enfant divin lors de notre prochaine rencontre.~
+@24 = ~Bien sûr, maître espion.~
+/* End of 1st Cutscene Infamy */
+@25 = ~Soudain, la tête vous tourne...~
+// zbbcut00
+@35 = ~La Porte de Baldur retenait son souffle tandis que, dans ses profondeurs, se jouait un combat entre les héritiers d'un dieu. Mais ils relevèrent le défi, mirent fin à la crise et devinrent les héros de la cité.~
+
+// zbcut02
+@50 = ~Par tous les enfers ! Qu'est-ce que... ?!~
+@51 = ~Sauve qui peut !~
+
+@100 = ~Ces idiots n'ont donc rien de plus utile à faire...~
+@101 = ~Laissez-moi simplement vous passer cet anneau au doigt... Argh... Et comme ceci ? Ah, voilà. Accrochez-vous à vos affaires... En route pour l'Amn ! Alakazoum !~

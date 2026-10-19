@@ -1,0 +1,1291 @@
+
+// Items
+//
+@10000 = ~Poing angélique~
+@10001 = ~Forgé dans les ateliers célestes des Élysées, Poing angélique est un marteau de guerre investi d'une mission divine. Sa tête d'argent rayonnant diffuse une douce lumière éthérée qui éclaire les recoins les plus obscurs du plan matériel. Des motifs et des symboles angéliques, bénis par les cieux eux-mêmes, l'ornent. Son contact est chaud et réconfortant.
+
+Dans la main de celui qui le manie, Poing angélique semble vivant, vibrant du feu de la droiture et de la justice. Chaque coup résonne d'un chœur céleste qui s'amplifie lorsque son pouvoir de Marteau céleste est invoqué. Lorsqu'il frappe un adversaire, sa force ne se limite pas à celle du métal : une gerbe d'énergie lumineuse brûlante s'abat aussi sur sa victime. Les ennemis touchés en sont brièvement aveuglés, comme s'ils avaient croisé le regard du divin.
+
+Nul ne sait comment cette arme est tombée entre les mains de l'Ailée, ni n'ose le lui demander : un simple regard posé sur elle peut suffire à provoquer son courroux. On murmure toutefois qu'elle est son seul réconfort, ce qui lui permet de supporter la présence des mortels.
+
+PARAMÈTRES :
+
+Capacités de combat :
+– Ailes de flammes : 50 % de chances de réduire la résistance au feu de la cible de 10 % pendant 4 rounds. Cet effet peut se cumuler jusqu'à 4 fois et ne se déclenche pas plus d'une fois par seconde.
+– Chaque coup porté a 10 % de chances de déclencher une puissante colonne de feu infligeant 10d8 points de dégâts de feu à la cible et à tous les ennemis adjacents.
+
+Capacités à charges :
+– Marteau céleste une fois par jour
+  Spécial : fait pleuvoir du feu depuis les cieux, infligeant 2d8+20 points de dégâts de feu par round pendant 4 rounds
+  Zone d'effet : rayon de 4,5 m autour de la cible
+
+TAC0 : +5
+Dégâts : 2d4+5, +4 points de dégâts de feu
+Type de dégâts : contondants
+Facteur de vitesse : 0
+Type de compétence : marteau de guerre
+Type : arme à une main
+Nécessite :
+ 9 en Force
+
+Poids : 6~
+
+
+@10010 = ~Ressac~
+@10011 = ~Description provisoire de Ressac +5
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Résistance au froid : 50 %
+
+Capacités de combat :
+– Marée haute : les voleurs et les bardes ont 90 % de chances d'appliquer une charge de Lame de fond à la cible lorsqu'ils la touchent.
+– Marée basse : les personnages qui ne sont pas voleurs ont 60 % de chances d'appliquer une charge de Lame de fond à la cible lorsqu'ils la touchent.
+– Lame de fond : la lame gagne en puissance contre les cibles affectées. Lorsque cet effet se cumule 3 fois, une Déferlante s'abat sur la cible.
+– Déferlante : inflige 6d10 points de dégâts contondants, réduits de moitié en cas de jet de sauvegarde contre les souffles réussi avec un malus de -2. A 40 % de chances d'étourdir la cible pendant 1 round et 10 % de chances de lui faire perdre connaissance. Un jet de sauvegarde contre les souffles réussi avec un malus de -2 annule l'étourdissement et la perte de connaissance.
+– Frappe de noyade : chaque coup porté a 15 % de chances de contraindre une cible qui respire à réussir un jet de sauvegarde contre la mort avec un malus de -4, sous peine de voir ses poumons se remplir d'eau et de mourir instantanément.
+
+TAC0 : +5
+Dégâts : 1d10+5, +4 points de dégâts de froid
+Type de dégâts : tranchants
+Facteur de vitesse : 0
+Type de compétence : katana
+Type : arme à une main
+Nécessite :
+ 6 en Force
+
+Poids : 5~
+
+@10012 = ~Lame de fond : 1 charge~
+@10013 = ~Lame de fond : 2 charges~
+@10014 = ~Déferlante déclenchée~
+
+@10019 = ~Il nous faut sans doute une description non identifiée pour les épées doubles (celle de NWN, peut-être ?)~ // TODO \\
+@10020 = ~Épée double~
+@10021 = ~Bourrasque dorée +4~
+@10022 = ~Description générale provisoire de l'épée double
+
+PARAMÈTRES :
+
+Dégâts : 1d10 (tranchants)
+Facteur de vitesse : 8
+Type de compétence : épée à deux mains
+Type : arme à deux mains
+Nécessite :
+ 12 en Force
+ 15 en Dextérité~
+
+
+@10023 = ~Description provisoire de Bourrasque dorée +4
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Une fois par round, une attaque physique est parée : tous ses dégâts sont annulés et l'attaquant subit 2d10+4 points de dégâts tranchants ou perforants. Un jet de sauvegarde contre les souffles réussi avec un malus de -2 réduit ces dégâts de moitié.
+
+TAC0 : +4
+Dégâts : 1d10+4 (tranchants)
+Facteur de vitesse : 4
+Type de compétence : épée à deux mains
+Type : arme à deux mains
+Nécessite :
+ 12 en Force
+ 15 en Dextérité
+
+Poids : 10~
+
+@10024 = ~Parade dorée : 2d10+4 dégâts perforants~
+@10025 = ~Parade dorée : 2d10+4 dégâts tranchants~
+
+@10030 = ~Bourrasque séraphique +6~
+@10031 = ~Description provisoire de Bourrasque séraphique +6
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Une fois par round, une attaque physique est parée : tous ses dégâts sont annulés et l'attaquant subit 2d10+6 points de dégâts tranchants ou perforants. Un jet de sauvegarde contre les souffles réussi avec un malus de -4 réduit ces dégâts de moitié.
+
+TAC0 : +6
+Dégâts : 1d10+6 (tranchants)
+Facteur de vitesse : 2
+Type de compétence : épée à deux mains
+Type : arme à deux mains
+Nécessite :
+ 12 en Force
+ 15 en Dextérité
+
+Poids : 10~
+
+@10032 = ~Parade séraphique : 2d10+6 dégâts perforants~
+@10033 = ~Parade séraphique : 2d10+6 dégâts tranchants~
+
+@10040 = ~Profanatrice +3~
+@10041 = ~Description provisoire de Profanatrice +3
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Résistance à l'acide : 50 %
+
+Capacités de combat :
+– Chaque coup porté a 15 % de chances de libérer davantage d'acide, infligeant 2d8 points de dégâts d'acide supplémentaires, réduits de moitié en cas de jet de sauvegarde contre les souffles réussi.
+– Poison acide : les coups critiques injectent du poison dans le sang de la victime. Si elle rate un jet de sauvegarde contre la mort, elle subit 1 point de dégâts de poison par seconde pendant 24 secondes. Elle subit également 6 points de dégâts de poison immédiats, sans jet de sauvegarde.
+
+TAC0 : +3
+Dégâts : 2d4+3, +2 points de dégâts d'acide, +2 points de dégâts de poison
+Type de dégâts : tranchants
+Facteur de vitesse : 3
+Type de compétence : épée bâtarde
+Type : arme à une main
+Nécessite :
+ 12 en Force
+
+Poids : 10~
+
+@10042 = ~Profanatrice +5~
+@10043 = ~Description provisoire de Profanatrice +5
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Résistance à l'acide : 75 %
+
+Capacités de combat :
+– Chaque coup porté a 15 % de chances de libérer davantage d'acide, infligeant 2d8 points de dégâts d'acide supplémentaires, réduits de moitié en cas de jet de sauvegarde contre les souffles réussi.
+– Poison acide : les coups critiques injectent du poison dans le sang de la victime. Si elle rate un jet de sauvegarde contre la mort, elle subit 1 point de dégâts de poison par seconde pendant 24 secondes. Elle subit également 6 points de dégâts de poison immédiats, sans jet de sauvegarde.
+
+TAC0 : +5
+Dégâts : 2d4+5, +2 points de dégâts d'acide, +2 points de dégâts de poison
+Type de dégâts : tranchants
+Facteur de vitesse : 1
+Type de compétence : épée bâtarde
+Type : arme à une main
+Nécessite :
+ 12 en Force
+
+Poids : 10~
+
+@10050 = ~Croc de pénombre +3~
+@10051 = ~Cette dague pâle est l'arme de prédilection de Nephetel. Façonnée dans un croc de dracoliche, du moins à l'en croire, sa lame dégage une puissante aura. Elle luit d'un éclat spectral inquiétant, et les runes gravées sur sa surface laissent deviner la puissance de la magie qu'elle renferme. L'essence de la dracoliche y subsiste et confère à son utilisateur une partie des protections dont jouissent les liches.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Immunité à l'absorption de niveaux
+– Résistance au froid : +25 %
+
+Capacités de combat :
+– Chaque coup porté a 10 % de chances d'infliger Froid sépulcral à la cible : elle subit 1d4 points de dégâts de froid immédiatement, puis une fois par round pendant les 3 rounds suivants. Si elle rate un jet de sauvegarde contre la mort, elle est immobilisée pendant 1 round ; sinon, elle est seulement ralentie.
+– Chances de coup critique : +5 % (avec cette arme uniquement)
+
+Capacités à charges :
+– Essence de liche une fois par jour
+  Spécial : protège des effets des sorts de niveaux 1 à 5 pendant 1 tour
+  Zone d'effet : le porteur
+
+TAC0 : +3
+Dégâts : 1d4+3, +1d2 points de dégâts de froid et de magie
+Type de dégâts : perforants
+Facteur de vitesse : 0
+Type de compétence : dague
+Type : arme à une main
+Nécessite :
+ 3 en Force
+
+Poids : 1~
+
+@10052 = ~Froid sépulcral~
+
+@10053 = ~Croc d'ombre +6~
+@10054 = ~Cette dague pâle est l'arme de prédilection de Nephetel. Façonnée dans un croc de dracoliche, du moins à l'en croire, sa lame dégage une puissante aura. Elle luit d'un éclat spectral inquiétant, et les runes gravées sur sa surface laissent deviner la puissance de la magie qu'elle renferme. L'essence de la dracoliche y subsiste et confère à son utilisateur une partie des protections dont jouissent les liches.
+
+Renforcée par un second croc de dracoliche, cette dague est désormais un véritable instrument de mort, investi d'une sombre puissance.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Immunité aux effets de mort instantanée et à l'absorption de niveaux
+– Résistance au froid : +50 %
+
+Capacités de combat :
+– Chaque coup porté a 15 % de chances d'infliger Froid sépulcral à la cible : elle subit 2d4 points de dégâts de froid immédiatement, puis une fois par round pendant les 3 rounds suivants. Si elle rate un jet de sauvegarde contre la mort avec un malus de -2, elle est immobilisée pendant 1 round ; sinon, elle est seulement ralentie.
+– Les coups critiques projettent un rayon de magie nécromantique dans le corps de la victime, qui doit réussir un jet de sauvegarde contre la mort avec un malus de -2 sous peine de mourir. Si la cible possède 60 points de vie ou moins, le malus est de -5. Même en cas de sauvegarde réussie, le choc lui inflige 3d6 points de dégâts magiques.
+– Chances de coup critique : +5 % (avec cette arme uniquement)
+
+Capacités à charges :
+– Essence de liche une fois par jour
+  Spécial : protège des effets des sorts de niveaux 1 à 5 pendant 1 tour
+  Zone d'effet : le porteur
+
+TAC0 : +5
+Dégâts : 1d4+5, +1d3 points de dégâts de froid et de magie
+Type de dégâts : perforants
+Facteur de vitesse : 0
+Type de compétence : dague
+Type : arme à une main
+Nécessite :
+ 3 en Force
+
+Poids : 1~
+
+@10060 = ~Arbalète astrale de vitesse +4~
+@10061 = ~Cette arbalète aux lignes élégantes est argentée et ornée de constellations gravées qui émettent une faible lueur. Les carreaux qu'on y charge semblent scintiller et disparaître, pour reparaître sur la corde, prêts à être tirés. Légère et maniable, elle inspire calme et concentration à qui la manie.
+
+Même sans munitions, cette arbalète peut tirer des carreaux éthérés d'énergie magique pure, qui blessent leur cible comme de véritables projectiles. Dans tous les cas, les carreaux tirés sont imprégnés de la puissance du plan Astral et peuvent infliger de terribles blessures aux créatures extraplanaires et aux morts-vivants.
+
+PARAMÈTRES :
+
+Capacités de combat :
+– 1 attaque supplémentaire par round
+– Inflige 4 points de dégâts supplémentaires irrésistibles aux créatures extraplanaires
+– Drain astral : lorsqu'un carreau touche une créature extraplanaire, il a 10 % de chances d'éthéréaliser une partie de son corps et de l'envoyer seule dans le plan Astral. Cette séparation inflige de graves blessures à la créature et réduit ses points de vie maximums de 10 %.
+– Sans carreaux équipés, l'arbalète tire des carreaux fantomatiques infligeant 1d8+4 points de dégâts de projectiles, plus 1d2 points de dégâts magiques. Ils sont considérés comme des projectiles +5.
+
+Capacité à charges :
+– Projectile de gloire une fois par jour
+  Spécial : tire un projectile d'énergie pure dont les dégâts dépendent du plan d'origine de la cible
+  Zone d'effet : une cible
+
+TAC0 : +4, +6 contre les créatures extraplanaires
+Dégâts : +4, +1d2 points de dégâts magiques
+Type de dégâts : projectiles
+Facteur de vitesse : 0
+Type de compétence : arbalète
+Type : arme à deux mains
+Nécessite :
+ 8 en Force
+
+Poids : 5~
+
+@10062 = ~Drain astral : 10 % des points de vie siphonnés~
+
+@10063 = ~Arbalète astrale de vitesse +2~
+@10064 = ~Cette arbalète aux lignes élégantes est argentée et ornée de constellations gravées qui émettent une faible lueur. Les carreaux qu'on y charge semblent scintiller et disparaître, pour reparaître sur la corde, prêts à être tirés. Légère et maniable, elle inspire calme et concentration à qui la manie.
+
+PARAMÈTRES :
+
+Capacités de combat :
+– 1 attaque supplémentaire par round
+– Inflige 4 points de dégâts supplémentaires irrésistibles aux créatures extraplanaires
+
+TAC0 : +2, +4 contre les créatures extraplanaires
+Dégâts : +2, +1 point de dégâts magiques
+Type de dégâts : projectiles
+Facteur de vitesse : 0
+Type de compétence : arbalète
+Type : arme à deux mains
+Nécessite :
+ 8 en Force
+
+Poids : 5~
+
+@10070 = ~Le Ciel nocturne~
+@10071 = ~Description provisoire du Ciel nocturne
+
+Capacités d'équipement :
+– Les ennemis à proximité du porteur subissent un malus de -2 à leurs jets de sauvegarde contre les sorts de nécromancie.
+
+Poids : 3~
+
+@10080 = ~Bâton de disruption +1~
+@10081 = ~Apparenté à la masse de disruption, mieux connue, ce bâton ouvragé est l'invention de Thulsmine Achenfell, un apprenti nécromancien du Grand Val qui souhaitait lever une armée de morts-vivants dans le bois de Rawlins. Son ambition causa sa perte : les serviteurs qu'il comptait asservir se révélèrent bien trop difficiles à maîtriser. La horde se retourna contre son maître, se répandit dans la forêt et contraignit Thulsmine à une fuite honteuse.
+
+Aigri par cette expérience, Thulsmine découvrit sa véritable vocation en entreprenant de fabriquer une arme capable de réparer son erreur. Il ne cherchait nullement à racheter ses torts, mais simplement à effacer toute preuve de son incompétence. Ainsi naquit le premier bâton de disruption. L'arme se révéla si efficace pour anéantir ses créations mortes-vivantes que Thulsmine s'abandonna tout entier à sa tâche, jusqu'à s'y perdre au sens propre. Son grimoire en lambeaux et son armée réduite en poussière, le magicien erra dans le bois de Rawlins jusqu'à sa mort prématurée. Il périt seul dans la forêt même qu'il avait voulu conquérir.
+
+Il est peu probable que ce bâton soit celui que maniait Thulsmine, mais il perpétue néanmoins son héritage. Investi du même pouvoir de disruption, il vibre encore de la magie qui permit à son créateur de défaire ses propres œuvres.
+
+PARAMÈTRES :
+
+Capacités de combat :
+– Les morts-vivants doivent réussir un jet de sauvegarde contre la mort avec un malus de -4 sous peine d'être entièrement détruits.
+
+TAC0 : +1 (frappe comme une arme +3)
+Dégâts : 1d6+1, 2d6+3 contre les morts-vivants
+Type de dégâts : contondants
+Facteur de vitesse : 3
+Type de compétence : bâton
+Type : arme à deux mains
+Nécessite :
+ 5 en Force
+
+Poids : 8~
+
+@10090 = ~Gants souples de Nephetel~
+@10091 = ~Nephetel reçut ces gants lors de son admission dans la guilde des voleurs. Bien qu'ils aient été dépourvus de magie à l'origine, semble-t-il, ses exploits leur ont peu à peu conféré une puissance qui reflète les talents de leur propriétaire. Ils épousent parfaitement ses mains et sont faits d'un cuir doux et souple, étonnamment résistant. Leur seul ornement est un petit " N " stylisé sur le dos de chaque main. Ils ont beaucoup servi, mais ont été entretenus avec un tel soin qu'ils ne présentent aucun signe d'usure. Si bien adaptés à Nephetel, ils ne peuvent être portés que par elle.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Vol à la tire : +15 %
+– Crochetage : +15 %
+– Détection des pièges : +5 %
+– Dégâts : +1 (+2 à mains nues)
+– TAC0 : +1
+– Les attaques sournoises sont particulièrement violentes et peuvent faire perdre connaissance à la cible pendant 1 tour si elle rate un jet de sauvegarde contre la mort. De nouveaux dégâts la réveillent.
+
+Poids : 2~
+
+@10092 = ~Eshpel~
+@10093 = ~Description provisoire d'Eshpel, version de base~
+@10094 = ~Description provisoire d'Eshpel, version améliorée~
+
+
+@10100 = ~Étrange anneau d'argent~
+@10101 = ~Description provisoire
+
+Capacités d'équipement :
+– Chance : +1
+– Jets de sauvegarde : +1
+– CA : +1
+– Talents de voleur : +5 %
+
+Poids : 0~
+
+@10102 = ~Étrange anneau d'argent~
+@10103 = ~Description provisoire de l'Étrange anneau d'argent amélioré
+
+Depuis qu'il a été amélioré à l'aide du marteau de forge githyanki, l'anneau vibre lentement de puissance.
+
+Capacités d'équipement :
+– Chance : +2
+– Jets de sauvegarde : +2
+– CA : +2
+– Talents de voleur : +5 %
+– Les échecs critiques sont impossibles
+
+Poids : 0~
+
+@10110 = ~Châtiment brûlant~
+
+@10112 = ~Billet de Vyatri~ //quest
+@10113 = ~Les Fosses du désespoir : désespérés et sincères, par Baeloth Barrityl. Dicté, mais non relu.~
+@10114 = ~Critique d'Altharion Veldrith, érudit des arcanes et critique de tavernes à ses heures
+
+Baeloth Barrityl, le tristement célèbre ensorceleur drow qui s'est lui-même proclamé " l'Amuseur ", a une fois encore déchaîné son talent littéraire sur un public qui ne se doutait de rien. Sa dernière œuvre, Les Fosses du désespoir : désespérés et sincères, mêle avec fougue le drame, le désespoir et, comme on pouvait s'y attendre, une dose franchement excessive d'autoglorification.
+
+Il arrive cependant que Barrityl se laisse emporter par son goût de l'outrance. La prose vire souvent au théâtre, ce qui n'a peut-être rien de surprenant chez un ensorceleur drow. De longs monologues interrompent parfois le récit et paraissent tout droit sortis de ses propres spectacles, au point qu'on ne sait plus si ce livre raconte une histoire ou sert simplement à faire la promotion de son auteur. On l'imagine aisément sur scène, multipliant les grands gestes en dictant chaque mot avec emphase. Si vous aimez davantage vous écouter parler, ou vous lire, en l'occurrence, que voir évoluer des personnages et une intrigue, vous y trouverez peut-être votre compte.
+
+En définitive, Les Fosses du désespoir : désespérés et sincères est un ouvrage qui divisera son public. Certains y verront un chef-d'œuvre sombre et tourmenté, une ode aux méandres de l'âme et au poids de l'héroïsme. D'autres seront rebutés par son mélodrame pesant et sa prose complaisante. Dictée par Baeloth Barrityl en personne, cette œuvre n'en demeure pas moins fascinante et digne d'attention, ne serait-ce que par son audace et son aplomb. À chaque lecteur de décider s'il ressort des fosses du désespoir avec le moindre espoir.
+
+Note : ★★★☆☆ (3/5 étoiles)
+Une œuvre d'une ambition certaine, mais qui risque, au bout du compte, de vous laisser plus épuisé qu'éclairé.~
+
+@10120 = ~Masque miroir~
+@10121 = ~Ce masque singulier était le bien le plus précieux d'une illusionniste calishite nommée Qhari, qui ne se montrait jamais sans lui. Les raisons de cette habitude ont nourri bien des rumeurs. Selon la plus répandue, Qhari aurait fabriqué le masque après qu'une rencontre avec une méduse, dans les monts des Nuages, l'eut contrainte à s'aveugler. Au lieu de chercher à se faire soigner, elle se serait retirée du monde, pour ne reparaître qu'après avoir retrouvé la vue, le Masque miroir sur le visage.
+
+Les sceptiques font souvent remarquer que se crever les yeux est une mesure radicale quand on pourrait simplement détourner le regard. La vérité, toutefois, s'est perdue au fil du temps et seules les légendes subsistent. Malgré sa rigidité apparente, le masque épouse parfaitement le visage de son porteur, dont il dissimule presque tous les traits en reflétant le monde en fragments déformés.
+
+Capacités d'équipement :
+– Immunité à toutes les attaques de regard, notamment celles des vampires et des basilics
+
+Capacités à charges :
+– Image miroir deux fois par jour
+  Spécial : fait apparaître autour du lanceur 5 doubles parfaits de lui-même, comme le sort Image miroir
+  Durée : 13 rounds
+
+Poids : 4~
+
+@10130 = ~Bottes de luxe en peau de lézard sauteur~
+@10131 = ~Bien des bêtes fabuleuses rôdent dans les jungles de Chult, mais ces élégantes bottes sont uniques. Elles ont été confectionnées dans l'épaisse peau verdoyante d'un grand lézard qui aurait vécu au plus profond des terres sauvages. Cette créature devait sa légende à sa faculté surnaturelle de se dérober à ses poursuivants. Malgré sa masse imposante et ses écailles que l'on voyait scintiller à trente mètres, elle échappa pendant près d'un siècle aux chasseurs comme aux savants curieux : ses bonds magiques la mettaient hors de leur portée.
+
+Lorsque Khuldros Vey, ensorceleur de noble naissance et chasseur de bêtes exotiques du Téthyr, finit par l'abattre à force de pièges retors et de sortilèges cruels, il commanda ces somptueuses bottes pour immortaliser son triomphe, ou son atrocité, à en croire ses détracteurs. Ceux qui les portent héritent d'une parcelle de la puissance de la créature, sans jamais pouvoir oublier tout à fait qu'il fallut détruire quelque chose de sacré pour les fabriquer.
+
+Capacités d'équipement :
+– Charisme : +2
+– Résistance au feu : +30 %
+– Jets de sauvegarde contre les souffles : +1
+
+Capacités à charges :
+– Pas brumeux deux fois par jour
+  Spécial : téléporte instantanément vers un point proche
+  Portée : 9 m
+
+Poids : 4~
+
+@10140 = ~Taureau ardent~
+@10141 = ~Ce casque était autrefois le bien le plus précieux de Ragath l'Appelle-flammes, un chef barbare dont la fureur était si ardente qu'on la disait capable de faire fondre la neige de sa toundra natale. Forgé à partir du crâne, revêtu de fer, d'un minotaure qu'il avait terrassé en combat singulier, le Taureau ardent était à la fois un trophée et un avertissement. Ses yeux reflétaient les bûchers que Ragath laissait rougeoyer dans son sillage. Ceux qui l'affrontèrent juraient sentir la chaleur de ce casque sanglant bien avant que sa hache ne leur entame la chair.
+
+La trahison mit fin aux conquêtes de Ragath : un allié de confiance, effrayé par sa puissance grandissante, l'abattit dans son sommeil. Le Taureau ardent fut jeté avec crainte dans des rapides glacés et disparut... pour un temps seulement. Aujourd'hui encore, ni les éléments ni les années n'ont atténué sa chaleur, mais tous ne possèdent pas la volonté nécessaire pour dompter sa puissance.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Classe d'armure : +1
+– Résistance aux dégâts physiques : +5 %
+– Protection contre les coups critiques
+– Coup de corne : une fois par round, le porteur peut donner un coup de corne à un ennemi, lui infligeant 1d6 points de dégâts perforants et 2 points de dégâts de feu. Les barbares infligent le double de ces dégâts.
+
+Poids : 2~
+
+@10150 = ~Totem de Gruumsh~
+@10151 = ~Dans le clan Gueule-de-Cendre, un puissant clan orque autrefois établi dans les montagnes du Couchant et assez peu enclin à se dévoiler, les plus fervents serviteurs de Gruumsh n'étaient pas voués à l'oubli. La mort n'était considérée que comme un passage : on n'abandonnait pas les plus grands guerriers, chamans et chefs à la décomposition dans les étendues gelées de leur patrie. On leur tranchait la tête au cours de rituels macabres, puis on la faisait sécher dans la fumée de feux de pin avant de lui adresser des chants au nom de Gruumsh.
+
+Transformées en totems faciles à transporter par la magie chamanique, ces têtes accompagnaient souvent les plus féroces membres du clan au combat. Ils y cherchaient la sagesse et la fureur de leurs ancêtres. On disait que serrer le totem éveillait la rage des morts, submergeant son porteur de visions de colère et de carnage qui le poussaient à la frénésie guerrière.
+
+La tête réduite suspendue à ce cordon de cuir orné de perles porte les marques d'un guerrier balafré. Son unique œil préservé semble observer quiconque la tient, et sa bouche est figée dans un cri de guerre avide de sang.
+
+PARAMÈTRES :
+
+Capacités à charges :
+– Rage de berserker une fois par jour
+  Spécial : plonge le porteur dans la rage, comme la capacité Rage de berserker. Les demi-orques bénéficient d'un bonus supplémentaire de +1 aux dégâts de leurs attaques.
+  Zone d'effet : le porteur
+  Durée : 8 rounds
+
+Poids : 2~
+
+@10160 = ~Anneau resplendissant~
+@10161 = ~Également surnommés " Porteurs d'espoir ", ces anneaux sont offerts par de puissants magiciens de Thay à leurs agents envoyés dans des contrées lointaines. Les missions tortueuses et malfaisantes qu'ils accomplissent pour leur zulkir ont de quoi les abattre. Les zulkirs ont donc ordonné qu'ils portent ces anneaux lorsque le découragement les gagne. Qu'ils soient empêtrés dans les complots du Zhentarim ou qu'ils luttent pour leur vie en Aglarond contre les Rashemi en furie, ils y trouvent l'espoir et le courage de poursuivre, souvent jusqu'à la mort. Recevoir l'un de ces anneaux est de mauvais augure. On les acquiert fréquemment dans le sang, et les intentions de ceux qui les portent ne valent guère mieux.
+
+Capacités d'équipement :
+– Classe d'armure : +1
+– Jets de sauvegarde : +1
+
+Poids : 0~
+
+@10170 = ~Fer à cheval angélique~
+@10171 = ~On ne connaît que quatre exemplaires de ces magnifiques amulettes d'or en forme de fer à cheval. Selon la légende, elles auraient appartenu à une déva astrale qui aimait se métamorphoser en équidé, pégase ou licorne, lors de ses missions dans le plan primaire, servant souvent de monture à un héros méritant. Au cours d'une mission périlleuse, l'avatar de la déva fut tué. Les héros endeuillés conservèrent ses fers en souvenir et comme porte-bonheur.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Charisme : +1
+– Constitution : +1
+– Chance : +1
+
+Poids : 3~
+@10172 = ~Amulette en fer à cheval~
+
+@10180 = ~Neuf vies~
+@10181 = ~Ce genre d'armure était autrefois répandu parmi les fidèles les plus belliqueux de Sharess, une déesse dont les adorateurs préfèrent honorer leur maîtresse féline dans les plaisirs des maisons de fête plutôt qu'à genoux dans un temple. En 1311 CV, une secte appelée la Griffe de velours adopta ce cuir clouté d'un blanc éclatant. Sa couleur symbolisait la pureté de la joie et l'assurance d'un prédateur qui n'a nul besoin de camouflage. Ses membres protégeaient leurs maisons de fête et escortaient de riches clients entre les cités-États. Ils se firent connaître pour leur grâce et leur étrange faculté à toujours retomber sur leurs pieds, quelle que soit la chute.
+
+Avec le temps, ces armures cessèrent d'être portées et celles qui restaient se retrouvèrent rapidement chez les prêteurs sur gages, sans doute pour régler les dettes considérables que les fidèles de Sharess sont enclins à contracter. Ceux qui les possèdent aujourd'hui ne s'en séparent guère, tant leurs enchantements peuvent sauver la vie. Aussi sont-elles très recherchées dans tous les Royaumes.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Si le porteur se trouve sans défense, par exemple sous l'effet d'un sort d'Immobilisation des personnes, <PRO_HESHE> devient invisible pendant 1 tour.
+– L'armure offre trois chances d'échapper à la mort : si les points de vie du porteur tombent à 10 % de leur maximum ou moins, aucune source de dégâts ne peut le tuer et il est entièrement soigné, comme par le sort Guérison. Cet effet consomme 1 charge. Une fois toutes les charges épuisées, ce pouvoir et l'immunité aux effets de mort conférée par l'armure disparaissent.
+
+Classe d'armure : 4 (1 contre les dégâts perforants et les projectiles, 2 contre les dégâts tranchants)
+Nécessite :
+ 6 en Force
+
+Poids : 6~
+
+@10182 = ~Ce genre d'armure était autrefois répandu parmi les fidèles les plus belliqueux de Sharess, une déesse dont les adorateurs préfèrent honorer leur maîtresse féline dans les plaisirs des maisons de fête plutôt qu'à genoux dans un temple. En 1311 CV, une secte appelée la Griffe de velours adopta ce cuir clouté d'un blanc éclatant. Sa couleur symbolisait la pureté de la joie et l'assurance d'un prédateur qui n'a nul besoin de camouflage. Ses membres protégeaient leurs maisons de fête et escortaient de riches clients entre les cités-États. Ils se firent connaître pour leur grâce et leur étrange faculté à toujours retomber sur leurs pieds, quelle que soit la chute.
+
+Avec le temps, ces armures cessèrent d'être portées et celles qui restaient se retrouvèrent rapidement chez les prêteurs sur gages, sans doute pour régler les dettes considérables que les fidèles de Sharess sont enclins à contracter. Ceux qui les possèdent aujourd'hui ne s'en séparent guère, tant leurs enchantements peuvent sauver la vie. Aussi sont-elles très recherchées dans tous les Royaumes.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Si le porteur se trouve sans défense, par exemple sous l'effet d'un sort d'Immobilisation des personnes, <PRO_HESHE> devient invisible pendant 1 tour.
+– L'armure offre deux chances d'échapper à la mort : si les points de vie du porteur tombent à 10 % de leur maximum ou moins, aucune source de dégâts ne peut le tuer et il est entièrement soigné, comme par le sort Guérison. Cet effet consomme 1 charge. Une fois toutes les charges épuisées, ce pouvoir et l'immunité aux effets de mort conférée par l'armure disparaissent.
+
+Classe d'armure : 4 (1 contre les dégâts perforants et les projectiles, 2 contre les dégâts tranchants)
+Nécessite :
+ 6 en Force
+
+Poids : 6~
+
+@10183 = ~Ce genre d'armure était autrefois répandu parmi les fidèles les plus belliqueux de Sharess, une déesse dont les adorateurs préfèrent honorer leur maîtresse féline dans les plaisirs des maisons de fête plutôt qu'à genoux dans un temple. En 1311 CV, une secte appelée la Griffe de velours adopta ce cuir clouté d'un blanc éclatant. Sa couleur symbolisait la pureté de la joie et l'assurance d'un prédateur qui n'a nul besoin de camouflage. Ses membres protégeaient leurs maisons de fête et escortaient de riches clients entre les cités-États. Ils se firent connaître pour leur grâce et leur étrange faculté à toujours retomber sur leurs pieds, quelle que soit la chute.
+
+Avec le temps, ces armures cessèrent d'être portées et celles qui restaient se retrouvèrent rapidement chez les prêteurs sur gages, sans doute pour régler les dettes considérables que les fidèles de Sharess sont enclins à contracter. Ceux qui les possèdent aujourd'hui ne s'en séparent guère, tant leurs enchantements peuvent sauver la vie. Aussi sont-elles très recherchées dans tous les Royaumes.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Si le porteur se trouve sans défense, par exemple sous l'effet d'un sort d'Immobilisation des personnes, <PRO_HESHE> devient invisible pendant 1 tour.
+– L'armure offre une chance d'échapper à la mort : si les points de vie du porteur tombent à 10 % de leur maximum ou moins, aucune source de dégâts ne peut le tuer et il est entièrement soigné, comme par le sort Guérison. Une fois ce pouvoir déclenché, il disparaît, de même que l'immunité aux effets de mort conférée par l'armure.
+
+Classe d'armure : 4 (1 contre les dégâts perforants et les projectiles, 2 contre les dégâts tranchants)
+Nécessite :
+ 6 en Force
+
+Poids : 6~
+
+@10184 = ~Ce genre d'armure était autrefois répandu parmi les fidèles les plus belliqueux de Sharess, une déesse dont les adorateurs préfèrent honorer leur maîtresse féline dans les plaisirs des maisons de fête plutôt qu'à genoux dans un temple. En 1311 CV, une secte appelée la Griffe de velours adopta ce cuir clouté d'un blanc éclatant. Sa couleur symbolisait la pureté de la joie et l'assurance d'un prédateur qui n'a nul besoin de camouflage. Ses membres protégeaient leurs maisons de fête et escortaient de riches clients entre les cités-États. Ils se firent connaître pour leur grâce et leur étrange faculté à toujours retomber sur leurs pieds, quelle que soit la chute.
+
+Avec le temps, ces armures cessèrent d'être portées et celles qui restaient se retrouvèrent rapidement chez les prêteurs sur gages, sans doute pour régler les dettes considérables que les fidèles de Sharess sont enclins à contracter. Ceux qui les possèdent aujourd'hui ne s'en séparent guère, tant leurs enchantements peuvent sauver la vie. Aussi sont-elles très recherchées dans tous les Royaumes.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Si le porteur se trouve sans défense, par exemple sous l'effet d'un sort d'Immobilisation des personnes, <PRO_HESHE> devient invisible pendant 1 tour.
+– Jets de sauvegarde : +1
+
+Classe d'armure : 3 (0 contre les dégâts perforants et les projectiles, 1 contre les dégâts tranchants)
+Nécessite :
+ 6 en Force
+
+Poids : 6~
+
+@10185 = ~Une charge de Neuf vies a été utilisée~
+@10186 = ~Les charges de Neuf vies sont épuisées~
+
+@10190 = ~Touche-à-tout~
+@10191 = ~Le créateur et les anciens propriétaires de cette cape singulière sont presque entièrement tombés dans l'oubli, tout comme le vêtement lui-même. On ignore si le " touche-à-tout " fut l'un de ses porteurs ou s'il lui donna seulement son nom. Qui qu'il ait été, la cape lui a survécu de bien des années.
+
+La plus ancienne mention qui nous en soit parvenue figure dans le registre d'un marchand de Berdusk : la cape apparaît dans son inventaire, puis sa trace se perd. Par la suite, elle refit surface dans les récits d'un duelliste de Riatavin qui jurait qu'elle lui donnait les réflexes d'un chat, et d'une magicienne des montagnes du Couchant qui affirmait lui devoir sa survie dans les milieux les plus hostiles.
+
+La cape se transforme à chaque nouveau propriétaire. Les coutures se déplacent, les couleurs se brouillent et le poids de l'ourlet semble varier. Elle s'accorde aux besoins de son porteur et l'habille aussi bien que si elle avait été faite pour lui seul. Elle lui en offre juste assez pour qu'il se sente exceptionnel, sans jamais lui donner tout à fait le sentiment de lui appartenir.
+
+La plupart de ceux qui la portent accomplissent de grandes choses, mais peu la gardent longtemps.
+
+Capacités d'équipement :
+Les bienfaits de cet objet dépendent de la ou des classes du porteur. La cape s'adapte à sa classe et à la part respective de ses affinités pour lui accorder les capacités suivantes :
+– Aptitudes martiales : +1 en Constitution, +5 % de résistance aux dégâts physiques et magiques. S'applique aux guerriers, paladins, moines, rôdeurs et bardes, y compris multiclassés.
+– Aptitudes sacerdotales complètes : amélioration de la vitesse d'incantation de 2, +2 aux jets de sauvegarde contre la mort. S'applique aux clercs, y compris multiclassés.
+– Aptitudes sacerdotales partielles : concerne uniquement les paladins et les chevaliers noirs. Les bonus sont réduits de moitié.
+– Aptitudes de roublard complètes : +1 au TAC0, +1 en Dextérité, +5 % aux talents de voleur. S'applique aux voleurs, y compris multiclassés, et aux bardes.
+– Aptitudes de roublard partielles : concerne les rôdeurs et les moines. Le bonus au TAC0 n'est pas accordé.
+– Aptitudes druidiques complètes : régénération de 1 point de vie par round, +10 % de résistance aux éléments. S'applique aux druides, y compris multiclassés, et aux chamans.
+– Aptitudes druidiques partielles : concerne uniquement les rôdeurs. La régénération est trois fois plus lente et les résistances élémentaires sont réduites de moitié.
+– Aptitudes à la magie profane préparée : +10 % de résistance aux éléments et à la magie, +2 aux jets de sauvegarde contre les sorts. S'applique aux magiciens, y compris multiclassés, et aux bardes.
+– Aptitudes à l'incantation spontanée : un emplacement de sort supplémentaire de niveau 4 et un de niveau 5. S'applique aux ensorceleurs et aux chamans.
+
+Poids : 3~
+
+@10200 = ~Gueule purulente +3~
+@10201 = ~Forgée par les chamans hommes-lézards du Marais des Morts, cette arme grotesque est passée d'un souverain du clan de la Gueule baveuse à son successeur, sa lame ointe du sang de ceux qui étaient trop faibles pour régner. La lame dentelée de la hallebarde est couverte de vieilles taches de sang et d'une patine sombre qui luit vivement sous le ciel sans lumière de la lune noire. Selon les traditions du clan, elle se souvient de chaque vie qu'elle prend et s'aiguise à chaque mort.
+
+On ignore comment cette arme, que la plupart des hommes-lézards eux-mêmes redoutent de toucher, a quitté le marais. Sa présence dans les Royaumes passe toutefois rarement inaperçue. Gueule purulente se reconnaît aux cadavres qu'elle laisse derrière elle, dont les plaies pourrissent alors qu'elles ne le devraient pas. Les guérisseurs pleurent devant cette maladie qui résiste à leurs prières. Les plus avisés murmurent que l'arme n'a jamais été destinée au seul combat, mais à étendre l'ombre d'un souverain cruel.
+
+PARAMÈTRES :
+
+Capacités de combat :
+– Chaque coup porté oblige la cible à réussir un jet de sauvegarde contre la mort avec un malus de -2 sous peine de tomber malade. Les cibles affectées subissent 1 point de dégâts de poison par round pendant 1 tour et sont ralenties pendant 2 rounds.
+
+TAC0 : +3
+Dégâts : 1d10+3, +1d4 points de dégâts de poison
+Type de dégâts : perforants ou tranchants, selon le plus avantageux
+Facteur de vitesse : 6
+Type de compétence : hallebarde
+Type : arme à deux mains
+Nécessite :
+ 13 en Force
+
+Poids : 11~
+
+
+@10210 = ~Binky~
+@10211 = ~Voici le squelette d'un lézard de course très aimé que Jan obtint autrefois en échange du navet primé de Lissa.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Chance : +1
+– Talents de voleur : +5 %
+
+Poids : 1~
+
+@10220 = ~Anneau porte-clefs~
+@10221 = ~Cet anneau de laiton tout simple ne présente ni gravure ni propriété magique apparente. Lorsqu'on le retire du doigt, il se transforme en trousseau chargé de clefs d'or qui vibrent d'une puissance latente.
+
+L'artisan de ce chef-d'œuvre a dissimulé son identité avec autant de soin que sa création. Il disposait assurément d'un nombre invraisemblable de passe-partout, et il est fort probable que cet anneau ait servi à plus d'un cambriolage " impossible ".
+
+Capacités d'équipement :
+– Détecte automatiquement les pièges une fois par round
+
+Capacités à charges :
+– Déblocage (3 fois par jour)
+  Spécial : ouvre la plupart des serrures non magiques~
+
+@10230 = ~Inébranlable~
+@10231 = ~Description provisoire d'Inébranlable
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Constitution : +1
+– Résistance à la magie : +10 %
+– Immunité à Labyrinthe et à Emprisonnement
+
+Capacité à charges :
+– Liberté (1 fois par jour)
+  Spécial : libère immédiatement toute personne sous l'effet d'Emprisonnement ou de Labyrinthe
+  Zone d'effet : toutes les personnes de la zone
+
+Poids : 3~
+
+@10290 = ~Robe du transcendant~
+@10291 = ~Description provisoire de la Robe du transcendant
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Classe d'armure : +1 contre les attaques contondantes, tranchantes et perforantes
+– Résistance aux dégâts physiques : +10 %
+
+Capacités à charges :
+– Poing du dragon (2 fois par jour)
+  Spécial : les attaques physiques étourdissent les ennemis en plus de leurs effets habituels
+  Durée : 2 rounds
+
+Poids : 4~
+
+@10300 = ~Ceinture de rage dévastatrice~
+@10301 = ~Description provisoire
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Classe d'armure : +3 contre les attaques perforantes et les projectiles
+– Rage dévastatrice : sous l'effet de la Rage de barbare, les attaques du barbare infligent 1d8+3 points de dégâts tranchants supplémentaires à la cible principale et aux ennemis proches. Cet effet ne peut se déclencher qu'une fois par seconde sur une même cible. Pendant ce temps, le barbare subit également 1d4 points de dégâts tranchants au début de chaque round.
+
+Poids : 2~
+
+@10310 = ~Tabi de ninja écarlate~
+@10311 = ~Description provisoire
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– 1 attaque supplémentaire par round
+– Vitesse de déplacement doublée
+
+Poids : 4~
+
+@10320 = ~Céleste~
+@10321 = ~Description provisoire de Céleste
+
+PARAMÈTRES :
+
+Capacités à charges :
+– Lucubration de Mordenkainen (1 fois par jour)
+  Restaure jusqu'à trois sorts déjà lancés : un de niveau 5, un de niveau 4 et un de niveau 3.
+– Rayon rubis d'inversion (1 fois par jour)
+  Dissipe une protection contre les sorts de n'importe quel niveau sur la cible.
+
+TAC0 : +4
+Dégâts : 1d4+4 (projectiles)
+Facteur de vitesse : 0
+Type de compétence : dague
+Type : arme à une main
+Nécessite : 3 en Force
+
+Poids : 1~
+
+@10330 = ~Ailes d'ange~
+@10331 = ~Permet d'améliorer Bourrasque dorée~
+
+@10340 = ~Ruban magique~
+@10341 = ~Permet d'améliorer le Fuseau de jade~
+
+@10350 = ~Branche de l'Arbre de vie~
+@10351 = ~Permet d'améliorer l'Arbalète astrale de vitesse~
+
+@10360 = ~Croc de dracoliche~
+@10361 = ~Permet d'améliorer Croc d'ombre~
+
+@10370 = ~Crâne singulier~
+@10371 = ~Permet d'améliorer Sang d'Orcus.~
+
+
+// Imported BG1 Items
+
+@11000 = ~Objets importés de BG~
+@11001 = ~Diadème~
+@11002 = ~Diadème des archimages~
+@11003 = ~Un diadème est un cercle, généralement en métal précieux, porté sur la tête comme ornement ou comme marque de rang. Les magiciens de Féérune portent souvent des diadèmes dotés d'enchantements mineurs.
+
+Poids : 1~
+@11004 = ~Ce puissant diadème a été enchanté pour compléter les robes que portent habituellement les archimages et en renforcer les protections et les bienfaits magiques. La nature de cet enchantement en réserve l'usage aux magiciens.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Classe d'armure : +1
+– Jets de sauvegarde : +1
+– Intelligence : +1
+
+Poids : 1~
+
+@11005 = ~Ceinturon~
+@11006 = ~Ceinture aux gros poings~
+@11007 = ~Les ceinturons ressemblent généralement à des ceintures. Ils ne servent toutefois pas à retenir un pantalon ou une salopette, mais à porter des bourses, des fourreaux et autres accessoires.
+
+PARAMÈTRES :
+
+Poids : 2~
+@11008 = ~Ceinturon maudit de force de géant des collines : Ceinture aux gros poings
+Une boucle de laiton en forme de poing ferme cette ceinture en épaisse peau d'élan. Les vieilles taches de sang sur le cuir évoquent d'indicibles carnages, mais les graffitis truffés de fautes qui y ont été gravés suggèrent que ses anciens propriétaires n'étaient pas des lumières.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Force : 19
+– Intelligence : 6
+– Ne peut être retiré qu'à l'aide d'un sort de Délivrance de la malédiction
+
+Poids : 2~
+
+@11009 = ~Cape~
+@11010 = ~L'Erreur de Relair~
+@11011 = ~Les capes peuvent prendre toutes les formes et être faites de presque n'importe quel tissu. Les modèles les plus courants sont une pièce d'étoffe circulaire percée d'un trou pour la tête, ou un tissu drapé depuis le cou et retenu par une chaîne, une broche, un cordon ou des épingles.
+
+PARAMÈTRES :
+
+Poids : 3~
+@11012 = ~Cape du loup : L'Erreur de Relair
+La création de cette cape magique ne manque pas d'ironie. Relair était un magicien qui surestimait sa maîtrise de la magie. En confectionnant ce vêtement, il se serait lui-même infligé la lycanthropie. Le porteur peut changer de forme quand <PRO_HESHE> le souhaite. Relair n'eut pas cette chance.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Métamorphose en loup à volonté
+  Durée : 2 tours
+
+Poids : 3~
+
+@11013 = ~Calice rempli de sang~
+@11014 = ~Calice de Durlag~
+@11015 = ~Du sang sombre et rance repose au fond de ce calice d'étain. Le bord est noirci de croûtes, là où d'autres semblent y avoir goûté. Ces mots sont profondément gravés dans l'étain : " Goûte à ma peur. "
+
+PARAMÈTRES :
+
+Poids : 2~
+@11016 = ~Ces mots sont profondément gravés dans la paroi de ce calice maudit : " Goûte à ma peur. " On dit que le sang sombre qui repose dans ses profondeurs d'étain peut rendre la santé. Ce bienfait a toutefois un prix : quiconque le boit est maudit par la peur qu'il porte en lui. Cet effet dure jusqu'à 12 heures, ou jusqu'à sa dissipation.
+
+PARAMÈTRES :
+
+Spécial :
+– Soigne entièrement la personne qui boit
+– La fait fuir au premier signe de danger
+
+Durée : 12 heures
+
+Poids : 2~
+
+@11017 = ~Anneau~
+@11018 = ~Mémoire éternelle~
+@11019 = ~Un anneau est un petit cercle de métal précieux porté comme bijou. Certains anneaux rares sont enchantés et confèrent divers pouvoirs magiques. Ils sont très recherchés, notamment par les aventuriers.
+
+PARAMÈTRES :
+
+Poids : 0~
+@11020 = ~Anneau de sorcellerie : Mémoire éternelle
+Il y a longtemps, un grand magicien d'Amn aurait défié les limites imposées par Mystra à la pratique de la magie. Selon la légende, il pouvait lancer des sorts sans avoir à les mémoriser. On finit par découvrir que ses pouvoirs provenaient de plusieurs anneaux magiques qu'il avait fabriqués pour lui-même. Sa prétendue " mémoire éternelle " était une supercherie, mais ses anneaux demeurent parmi les objets les plus recherchés des Royaumes.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Double le nombre de sorts de magicien de niveau 1 mémorisables
+
+Poids : 0~
+
+
+// PoD Item Descriptions
+
+
+@11030 = ~Masque viride~
+@11031 = ~Description provisoire du Masque viride
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Classe d'armure : +1
+– Immunité au charme et à l'étourdissement
+
+Poids : 1~
+
+@11032 = ~Le Seigneur viride~
+@11033 = ~Description provisoire du Seigneur viride
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Protection contre les coups critiques
+– Classe d'armure : +1, +3 contre les dégâts contondants
+– Charisme : +2
+– Immunité au charme et à l'étourdissement
+
+Poids : 1~
+
+@11040 = ~Patte d'ours~
+@11041 = ~Description provisoire de Patte d'ours
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Classe d'armure : +1
+– Résistance à l'électricité : +50 %
+– Résistance au froid : +50 %
+
+Poids : 4~
+
+@11050 = ~Ovation~
+@11051 = ~Description provisoire d'Ovation
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Jets de sauvegarde contre les souffles : +2
+– Résistance aux dégâts physiques : +10 %
+– Durée du chant de barde doublée
+– Adulation : lorsque le barde tue un ennemi, il reçoit une inspiration bardique lui conférant un bonus de +3 aux dégâts, aux jets de sauvegarde et au TAC0 pendant 3 rounds.
+
+Classe d'armure : 0 (-2 contre les dégâts tranchants, 2 contre les dégâts contondants)
+Nécessite :
+ 6 en Force
+
+Poids : 8~
+
+@11052 = ~Adulation~
+
+@11060 = ~Sang d'Orcus +3~
+@11061 = ~Description provisoire de Sang d'Orcus
+
+Capacités de combat :
+– Brise-membre : chaque coup porté a 4 % de chances de réduire les points de vie de la cible de 20 %. Les cibles protégées par Peau de pierre ou Peau de fer, les créatures incorporelles et celles qui n'ont pas de membres reconnaissables, comme les vases, sont immunisées contre cet effet.
+– Chaque coup porté a 20 % de chances de contraindre la cible à réussir un jet de sauvegarde contre la mort avec un malus de -2 sous peine de mourir décapitée. Si la cible rate sa sauvegarde mais est immunisée contre les attaques vorpales, elle subit tout de même les effets de Brise-membre.
+
+PARAMÈTRES :
+
+TAC0 : +3
+Dégâts : 1d8+3, +1 point de dégâts de feu
+Facteur de vitesse : 4
+Type de compétence : hache
+Type : arme à une main
+Nécessite :
+ 10 en Force
+
+Poids : 4~
+
+@11062 = ~Sang d'Orcus +5~
+@11063 = ~Description provisoire de Sang d'Orcus
+
+Capacités de combat :
+– Brise-membre : chaque coup porté a 5 % de chances de réduire les points de vie de la cible de 20 %. Les cibles protégées par Peau de pierre ou Peau de fer, les créatures incorporelles et celles qui n'ont pas de membres reconnaissables, comme les vases, sont immunisées contre cet effet.
+– Chaque coup porté a 20 % de chances de contraindre la cible à réussir un jet de sauvegarde contre la mort avec un malus de -3 sous peine de mourir décapitée. Si la cible rate sa sauvegarde mais est immunisée contre les attaques vorpales, elle subit tout de même les effets de Brise-membre.
+
+Capacités à charges :
+– Cercle d'ossements
+  Spécial : ????
+  Zone d'effet : le porteur
+
+PARAMÈTRES :
+
+TAC0 : +5
+Dégâts : 1d8+5, +2 points de dégâts de feu, +4 points de dégâts nécrotiques (uniquement contre les créatures vivantes du plan primaire)
+Type de dégâts : tranchants
+Facteur de vitesse : 2
+Type de compétence : hache
+Type : arme à une main
+Nécessite :
+ 10 en Force
+
+Poids : 4~
+
+@11064 = ~Membre brisé~
+
+@11070 = ~Ceinture du chevalier noir~
+@11071 = ~Description provisoire de la Ceinture du chevalier noir
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Immunité au poison
+– Classe d'armure : +1 (+2 pour les bardes et les voleurs)
+– Jets de sauvegarde : +1 (+2 pour les bardes et les voleurs)
+– Chaque round de combat, le porteur a 25 % de chances de déclencher un sort de Poussière scintillante sur lui-même. Cet effet ne peut se produire qu'une fois tous les trois rounds.
+– Chaque fois qu'il est touché, le porteur a 25 % de chances de déclencher un sort de Poussière scintillante sur lui-même. Cet effet ne peut se produire qu'une fois tous les trois rounds.
+
+Poids : 2~
+
+@11080 = ~Aiguille d'or +4~
+@11081 = ~Description provisoire d'Aiguille d'or
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Classe d'armure contre les dégâts tranchants : +1
+– Classe d'armure contre les dégâts perforants : +1
+– Classe d'armure contre les dégâts contondants : +1
+
+Capacités de combat :
+– Percée des défenses : 25 % de chances de dégrader la classe d'armure de la cible de 6 points et de réduire sa résistance aux dégâts physiques de 10 % pendant 2 rounds. Cet effet n'est pas cumulable.
+
+TAC0 : +4
+Dégâts : 1d6+4 (perforants)
+Facteur de vitesse : 0
+Type de compétence : épée courte
+Type : arme à une main
+Nécessite :
+ 5 en Force
+
+Poids : 2~
+@11082 = ~Défenses percées~
+
+@11090 = ~Catacombe~
+@11091 = ~Description provisoire de Catacombe
+
+PARAMÈTRES :
+
+Capacités à charges :
+– Invocation d'un serviteur d'Orcus (1 fois par jour)
+  Le serviteur est un chevalier mort-vivant, guerrier de niveau 15 et nécromancien de niveau 9. Il combat pour le porteur jusqu'à sa destruction ou pendant deux tours.
+– Animation des morts (1 fois par jour)
+  Lance le sort Animation des morts comme un nécromancien de niveau 16.
+
+Poids : 2~
+@11092 = ~Serviteur d'Orcus~
+
+@11093 = ~Heaume du dragon spirituel~
+@11094 = ~Description provisoire du Heaume du dragon spirituel
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Protection contre les coups critiques
+– Immunité au charme et à la domination
+– Classe d'armure : bonus de +1
+– Jets de sauvegarde : bonus de +1
+– Résistance au froid, au feu, à l'électricité, à l'acide et au poison : +40 %
+
+Poids : 4~
+
+@11095 = ~Alexandrite~
+@11096 = ~Variété de chrysobéryl. Cette gemme scintillante change de couleur selon la lumière qui l'éclaire. C'est la pierre précieuse la plus rare de l'Ordre d'Ecclesia.~
+
+@11097 = ~Le Spectateur~
+@11098 = ~Description provisoire du Spectateur
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Classe d'armure : bonus de +2 (+4 contre les aberrations)
+– Jets de sauvegarde : bonus de +2 (+4 contre les aberrations)
+– Résistance à la magie : +10 %
+– Les aberrations comprennent les spectateurs, les rampants charognards, les driders, les ettercaps, les flagelleurs mentaux et les otyughs.
+
+Capacités à charges :
+– Rayon antimagique (1 fois par jour)
+  Reproduit l'effet de l'œil central d'un spectateur : dissipe toute magie affectant la cible et l'empêche aussi bien d'utiliser la magie que d'en subir les effets.
+
+Poids : 0~
+
+@11099 = ~Cœur de Koryo~
+@11100 = ~Description provisoire de Cœur de Koryo
+
+PARAMÈTRES :
+
+Capacités de combat :
+– Courroux du sage : les attaques réussies infligent 2 points de dégâts magiques supplémentaires à 13 en Sagesse. Ce bonus augmente de 1 tous les deux points de Sagesse au-delà de 13, jusqu'à un maximum de +8 à 25 en Sagesse.
+
+TAC0 : +3
+Dégâts : 1d6+4
+Type de dégâts : contondants
+Facteur de vitesse : 6
+Type de compétence : masse
+Type : arme à une main
+Nécessite :
+ 10 en Force
+
+Poids : 8~
+
+@11101 = ~Amulette de protection +3~
+@11102 = ~Cette amulette améliore la classe d'armure et les jets de sauvegarde de son porteur contre toutes les formes d'attaque. Ses propriétés magiques empêchent de la porter avec d'autres objets magiques de protection, y compris les armures enchantées.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Classe d'armure : +3
+– Jets de sauvegarde : +3
+
+Poids : 1~
+
+@11103 = ~La Paume ouverte~
+@11104 = ~Description provisoire de La Paume ouverte
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Classe d'armure : +6, avec +1 supplémentaire contre les projectiles
+– Immunité aux effets d'immobilisation, de Toile d'araignée, de paralysie et d'étourdissement
+– 1/2 attaque supplémentaire par round
+– Aura du champion : +1 au TAC0 et aux dégâts pour tous les alliés dans un rayon de 4,5 m
+Nécessite :
+ 10 en Force
+
+Poids : 8~
+
+@11105 = ~Aura du champion~
+
+@11106 = ~Xykesh~
+@11107 = ~Description provisoire de Xykesh... Seuls ceux dont les actes comme les pensées sont empreints d'équilibre peuvent manier le marteau de forge.
+
+Capacités à charges :
+– Globe de lames (2 fois par jour)
+  Lance le sort Globe de lames comme un clerc de niveau 25.
+
+TAC0 : +4
+Dégâts : 2d4+4, +1d6 points de dégâts magiques
+Type de dégâts : contondants
+Facteur de vitesse : 0
+Type de compétence : marteau de guerre
+Type : arme à une main
+Nécessite :
+ 9 en Force
+
+Poids : 6~
+
+@11108 = ~Merveilles ailées de Wazzer~
+@11109 = ~Description provisoire des Merveilles ailées de Wazzer
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Classe d'armure : +1, avec +4 supplémentaires contre les projectiles
+– Immunité à Enchevêtrement, Graisse et Toile d'araignée
+– Vitesse de déplacement augmentée de 5
+
+Capacités à charges :
+– Zone d'air pur (1 fois par jour)~
+
+@11110 = ~Potion de chance~
+@11111 = ~Description provisoire de la Potion de chance
+
+PARAMÈTRES :
+
+Chance : +1
+Durée : 2 tours
+
+Poids : 1~
+
+@11112 = ~Armure d'os de rage~
+@11113 = ~Description provisoire de l'Armure d'os de rage
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Résistance aux dégâts tranchants, perforants et contondants : +20 % lorsque le porteur est équipé d'une arme à deux mains.
+
+Classe d'armure : -1 (-2 contre les dégâts perforants et les projectiles, -3 contre les dégâts contondants)
+Nécessite :
+ 8 en Force
+
+Poids : 10~
+
+@11114 = ~Flacon des mille vents~
+@11115 = ~Description du Flacon des mille vents
+
+PARAMÈTRES :
+
+– Tourbillon
+  Invoque un tourbillon qui inflige 2d8 points de dégâts contondants et 2d8 points de dégâts tranchants à un maximum de huit créatures de taille petite ou moyenne. Elles sont également étourdies si elles ratent un jet de sauvegarde contre les souffles avec un malus de -2.
+
+Poids : 1~
+
+@11116 = ~Potion d'eau~
+@11117 = ~Description provisoire de la Potion d'eau
+
+PARAMÈTRES :
+
+Aucun
+
+Poids : 1~
+
+@11118 = ~L'Essaim~
+@11119 = ~Description de L'Essaim
+
+PARAMÈTRES :
+
+Capacités à charges :
+– Fléau d'insectes
+  Dégâts : 1 point de dégâts perforants toutes les 2 secondes
+  Spécial : se propage à un maximum de 6 créatures, provoque 100 % d'échec des sorts et impose un jet de sauvegarde contre les souffles sous peine de paniquer pendant 1 round
+  Portée : 18 m
+  Zone d'effet : rayon de 4,5 m
+  Durée : 6 rounds
+
+Nécessite :
+ 10 en Sagesse
+
+Poids : 1~
+
+@11120 = ~Silencieux comme la pierre~
+@11121 = ~Description de Silencieux comme la pierre
+
+PARAMÈTRES :
+
+Poids : 4~
+
+@11122 = ~Anneau de vitesse mercurielle~
+@11123 = ~Description provisoire de l'Anneau de vitesse mercurielle
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– 1/2 attaque supplémentaire par round
+– Jets de sauvegarde contre les souffles : +2
+
+Poids : 1~
+
+@11124 = ~Mastodonte~
+@11125 = ~Description provisoire de Mastodonte
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Les barbares gagnent +1 en Constitution
+
+Capacités de combat :
+– Chaque coup porté a 25 % de chances de faire perdre connaissance à la cible pendant 1 round.
+  Un jet de sauvegarde contre la mort réussi avec un malus de -1 annule cet effet.
+
+Capacités à charges :
+– Barrissement (1 fois par jour)
+  Confère +1 à la CA et aux jets de sauvegarde à tous les alliés dans un rayon de 4,5 m pendant 5 rounds.
+
+TAC0 : +3
+Dégâts : 1d10+3, +2 points de dégâts de froid
+Type de dégâts : tranchants
+Facteur de vitesse : 0
+Type de compétence : hache
+Type : arme à deux mains
+Nécessite :
+ 15 en Force
+
+Poids : 14~
+
+@11126 =~Barrissement~
+@11127 = ~Éclat de mémoire de Nephetel~
+@11128 = ~Description provisoire de l'Éclat de mémoire de Nephetel
+
+Poids : 1~
+@11129 = ~Interagir~
+@11130 = ~Souliers de danse~
+@11131 = ~Description provisoire des Souliers de danse
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+– Classe d'armure : +1
+– Vitesse de déplacement doublée
+– Danse frénétique
+  Spécial : les esprits invoqués gagnent 1 attaque par round, +2 en Force et +5 en vitesse de déplacement
+
+Poids : 4~
+@11132 = ~Danse frénétique~
+
+@11133 = ~Gantelets du marteau céleste~
+@11134 = ~Description provisoire des Gantelets du marteau céleste
+
+PARAMÈTRES :
+
+Capacités de combat :
+– Chaque coup porté inflige 2 points de dégâts d'électricité supplémentaires
+– Chances de coup critique : +5 %
+– Les coups critiques infligent 3d6 points de dégâts d'électricité supplémentaires
+
+Poids : 4~
+
+// Creatures
+
+@15000 = ~Reptemort~ // placeholder
+@15001 = ~Nephetel~
+@15002 = ~Dennaton~
+@15003 = ~Couatl~
+@15004 = ~Stirv, le dresseur de créatures~
+@15005 = ~Worg vampirique~
+@15006 = ~Élan dangereux~
+@15007 = ~Ours sanguinaire~
+@15008 = ~Bête éclipsante~
+@15009 = ~Boalisk vénérable~
+@15010 = ~Seigneur charognard~
+@15011 = ~Araignée du vortex de minuit~
+@15012 = ~Wyverne rare~
+@15013 = ~Brodle~
+@15014 = ~Voghiln le Vaste~
+@15015 = ~Beuglegorgée~
+@15016 = ~Tartle~
+@15017 = ~Szass Tam~
+@15018 = ~Seigneur minotaure~
+@15019 = ~L'Ailée~
+@15020 = ~Ombre des roches des profondeurs~
+@15021 = ~L'Intendant~
+@15022 = ~Reine des profondeurs~
+@15023 = ~Golem d'argile de maître~
+@15024 = ~Golem d'argile supérieur~
+@15025 = ~Golem d'acide mineur~
+
+@18000 = ~Anti-simulacre~
+@18001 = ~Piétinement~
+@18002 = ~Renversé~
+@18003 = ~Bond~
+@18004 = ~Coup de corne~
+
+@18005 = ~Document compromettant~
+@18006 = ~Ce long compte rendu manuscrit relate une rencontre entre dame Katarina et sire Dominick. Un espion resté anonyme y a consigné avec soin les propos les plus insignifiants de sire Dominick. Quelques passages retiennent votre attention :
+
+Dame Katarina : Je salue votre bon goût, mon cher sire Dominick. Ces notes de terroir sont aussi délicieuses que vous me l'aviez promis... Mais dites-moi, la bouteille est déjà vide ? Un homme moins honorable et moins séduisant que vous pourrait être soupçonné de vouloir m'enivrer. Je plaisante, bien entendu, mon seigneur. Allons, ouvrons une autre bouteille pour porter un toast à la gloire de la Porte de Baldur ! Racontez-moi encore votre rencontre.
+Dominick : Pardonnez-moi, madame. Quand j'ai dit que je connaissais la personne qui a sauvé la ville, c'était plutôt... euh... de loin. J'étais à la Porte de Baldur quand <PRO_HESHE> l'a sauvée. Mon père et moi, on était de passage.
+Dame Katarina : Oh, quel fripon, vous m'avez donc trompée... Vous ne me mentiriez plus maintenant que nous sommes de si bons amis, n'est-ce pas, mon cher ?
+Dominick : Jamais, mademoiselle Katarina. Je peux vous dire ce que je sais... <PRO_HESHE> a reçu tous les honneurs pour avoir déjoué les noirs desseins de Sarevok, mais la rumeur disait qu'ils avaient le même sang !
+Dame Katarina : Continuez donc ! Je l'avoue, je raffole de ce genre de confidences.
+Dominick : Oh oui... Quand toute la bande a quitté la ville, on en était presque sûr : Sarevok et la personne qui l'avait tué étaient... des enfants de Bhaal...
+
+La suite devient de plus en plus incohérente : l'ivresse de sire Dominick a d'abord raison de la clarté de ses propos, puis, enfin, de sa conscience.~
+
+// Combat Scripting
+
+@18007 = ~Détecte les illusions~
+@18008 = ~Ne parvient pas à détecter les illusions~
+
+@18009 = ~applique une huile de rapidité~
+@18010 = ~boit une potion d'invulnérabilité~
+@18011 = ~boit une potion de résistance au feu~
+@18012 = ~boit une potion d'héroïsme~
+@18013 = ~boit une potion de force de géant des collines~
+@18014 = ~boit une potion de protection contre la magie~
+@18015 = ~boit une potion de force de géant des pierres~
+@18016 = ~boit une potion de force de géant du froid~
+@18017 = ~boit une potion de régénération~
+@18018 = ~boit une potion de force de géant du feu~
+@18019 = ~boit une potion de bouclier magique~
+@18020 = ~boit une potion de force de géant des nuages~
+@18021 = ~boit une potion de blocage de la magie~
+@18022 = ~boit une potion de force de géant des tempêtes~
+
+// Buff
+@18023 = ~murmure une prière sur son symbole sacré~
+@18024 = ~serre dans sa main le talisman suspendu à son cou~
+@18025 = ~fait tourner un anneau magique à son doigt~ // currently buffs using vanilla, not my script. Vanilla displays in combat log that chain contingency is activated.
+@18026 = ~Barrissement~
+
+@19000 = ~Les Fosses du désespoir — Texte provisoire du chapitre 1.~
+@19001 = ~Les Fosses du désespoir — Texte provisoire du chapitre 2.~
+@19002 = ~Les Fosses du désespoir — Texte provisoire du chapitre 3.~
+@19003 = ~Les Fosses du désespoir — Texte provisoire du chapitre 4.~
+
+@3670 = ~<CHARNAME>,
+
+Un illustre djinn m'a contacté. Il sait apprécier vos talents considérables à leur juste valeur et souhaite vous proposer une occasion des plus lucratives. Vous êtes humblement convié à mon établissement de Franc-Marché afin que je puisse procéder aux présentations dans les formes.
+
+Vous trouverez un anneau joint à ce message, en gage de la générosité de notre ami. Je puis témoigner de son excellente facture, ayant moi-même reçu un exemplaire pour mon rôle d'intermédiaire. Notre bienfaiteur nous a promis à chacun d'autres présents dès votre arrivée.
+
+Votre dévoué,
+Vyatri~
+// components
+@20000 = "Installer les fichiers des Fosses noires requis pour les jeux d'origine"
+@20001 = "Pits of Despair pour Baldur's Gate 2: Enhanced Edition
+
+ATTENTION ! Ce mod perturbe le fonctionnement de la campagne indépendante Les Fosses noires II. Si vous tentez d'y jouer alors que ce mod est installé, nous déclinons toute responsabilité en cas de bogue ou de détérioration de votre installation."
+@20002 = ~Sons améliorés~
+@20003 = ~Portraits alternatifs de Nephetel~
+@20004 = ~Réalistes~
+@20005 = ~par Llewren~
+@20006 = ~Compatibilité avec Kaelyn's Consumables~
+// warnings
+@20050 = "Indisponible pour votre version du jeu."
+
+//added subcomponents
+@30000 = "Ce composant nécessite l'installation de Pits of Despair"
+@30001 = "Ce composant nécessite l'installation du mod Kaelyn's Consumables"
+
+@60000 = ~Sire Basil~
+@60001 = ~Eratos~
+@60002 = ~Ziks~

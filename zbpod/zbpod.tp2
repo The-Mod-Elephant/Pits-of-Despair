@@ -32,6 +32,13 @@ LANGUAGE  ~Simplified Chinese By Lzw104522773/MephistoSatanDevil~
           ~zbpod/lang/schinese/cutscenes.tra~
           ~zbpod/lang/schinese/neph.tra~
 
+LANGUAGE  ~French By Deratiseur~
+          ~french~
+          ~zbpod/lang/french/weidu.tra~
+          ~zbpod/lang/french/journalentries.tra~
+          ~zbpod/lang/french/cutscenes.tra~
+          ~zbpod/lang/french/neph.tra~
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20001 DESIGNATED 0 LABEL ~zb_pod_ee~ // INSTALL PIT OF DESPAIR FOR ENHANCED EDITION

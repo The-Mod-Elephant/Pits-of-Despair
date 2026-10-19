@@ -1,0 +1,46 @@
+@800000 = ~Un mystérieux messager~
+@800001 = ~Un mystérieux messager
+
+Un messager m'a remis une lettre scellée de Vyatri, un aubergiste de Franc-Marché, qui m'invite dans son établissement. Un anneau accompagnait la lettre en gage de bonne foi, ainsi que la promesse d'autres récompenses si j'accepte d'y rencontrer un djinn.~
+@800002 = ~Un document suspect~
+@800003 = ~Une transcription manuscrite relate une rencontre entre dame Katarina et sire Dominick. Un espion anonyme a rédigé ce long document, prenant soin de consigner jusqu'aux divagations les plus banales de sire Dominick. Quelques passages attirent votre attention :
+
+Dame Katarina : Je salue votre bon goût, sire Dominick. Voilà exactement les délicieuses notes de terroir que vous m'aviez décrites... Tiens, la bouteille est déjà vide ? D'un homme moins honorable et moins séduisant, je pourrais croire qu'il cherche à m'enivrer. Je plaisante, bien sûr, mon seigneur. Allons, ouvrons une autre bouteille pour boire à la gloire de la personne qui a sauvé la Porte de Baldur ! Racontez-moi encore votre rencontre.
+Dominick : Pardonnez-moi, madame. Quand je disais que je connaissais cette personne, c'était plutôt... euh, de loin. Je me trouvais à la Porte de Baldur quand <PRO_HESHE> a sauvé la cité. Mon père et moi étions de passage.
+Dame Katarina : Oh, le petit fripon ! M'avoir ainsi trompée... Vous ne me mentiriez plus, maintenant que nous sommes si bons amis, n'est-ce pas, mon cher ?
+Dominick : Jamais, demoiselle Katarina. Je peux vous dire ce que je sais... <PRO_HESHE> a reçu tous les honneurs pour avoir déjoué les sinistres projets de Sarevok, mais la rumeur disait qu'ils étaient du même sang !
+Dame Katarina : Continuez donc ! Je ne saurais résister à pareils commérages.
+Dominick : Oh, oui... Quand ils ont quitté la cité, toute la bande, c'était pour ainsi dire confirmé : Sarevok et la personne qui l'avait tué étaient... des enfants de Bhaal...
+
+Le reste de la transcription devient de plus en plus décousu, à mesure que l'ivresse prive sire Dominick de sa capacité à s'exprimer clairement, puis, finalement, de sa conscience.~
+@800004 = ~Un mystérieux messager
+
+À l'auberge de Vyatri, j'ai rencontré le djinn. Il m'a mis en garde contre une attaque imminente, mais son avertissement est arrivé trop tard.~
+@800005 = ~Les Fosses du désespoir~
+@800006 = ~Les Fosses du désespoir
+
+Le barde de la taverne n'en était pas un. Le rendez-vous était un piège, et me voilà en captivité. Dans la confusion, j'ai entendu prononcer un nom : Dennaton. Ce nom ne me dit rien, mais cette personne s'intéresse manifestement à moi. Pour l'heure, je dois découvrir où je me trouve et pourquoi on m'a fait venir ici.~
+@800007 = ~Les Fosses du désespoir
+
+Dennaton, le Magicien rouge de Thay responsable de ma capture, a rassemblé des guerriers de tous les Royaumes pour les faire combattre dans son arène. Il a dévoilé ses intentions au cours d'un festin, écourté lorsque plusieurs de ses combattants en sont venus aux mains. L'Ailée, une planétaire déchue, a rapidement mis fin aux troubles. Pour l'instant, je n'ai guère d'autre choix que de me plier aux exigences de Dennaton et de combattre. Je dois parler à Tartle lorsque tout sera prêt pour entrer dans l'arène, tout en continuant à chercher un moyen de m'évader.~
+@800008 = ~Premier sang~
+@800009 = ~Premier sang
+
+Une tieffeline nommée Nephetel m'a conseillé de trouver Stirv et d'affronter ses créatures. Cela devrait me permettre de découvrir le fonctionnement de l'arène avant de m'engager dans les véritables combats.~
+@800010 = ~Premier sang
+
+Les créatures de Stirv ont constitué une bonne entrée en matière. Après les avoir vaincues, j'ai pu découvrir la fosse de mes propres yeux. Cette expérience m'a permis de mieux comprendre ce qui m'attend.~
+@800011 = ~Premier sang
+J'ai choisi de ne pas affronter les créatures de Stirv. J'ai fait sans les enseignements que cette expérience aurait pu m'apporter.~
+@800012 = ~Voghiln le Vaste~
+@800013 = ~Voghiln le Vaste
+
+Voghiln semble avoir été capturé lui aussi. Il ne paraît guère s'en soucier et préfère tirer de sa mésaventure une histoire, voire s'enivrer jusqu'à l'inconscience, plutôt que de se lamenter.~
+@800014 = ~Nephetel~
+@800015 = ~Nephetel
+
+J'ai rencontré Nephetel, une mystérieuse jeune femme. Son rôle au sein de l'arène reste obscur, même si elle s'est empressée de me donner quelques conseils.~
+@800016 = ~Les Fosses du désespoir
+
+Pendant mon dernier combat, des gladiateurs se sont soulevés contre Dennaton. L'Ailée a été appelée pour écraser leur rébellion, mais leur résistance prouve que d'autres refusent leur sort. Peut-être devrais-je chercher des alliés parmi les prisonniers de l'arène ?~
+
