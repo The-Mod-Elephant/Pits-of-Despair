@@ -6,4 +6,3 @@ THEN
 		DisplayString(LastTrigger,14381)  // Trap Sprung
 		ForceSpell(LastTrigger,WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
 END
-

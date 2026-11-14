@@ -637,4 +637,3 @@ THEN
         SetGlobal("ohb_najim_intro_bark","oh8000",1)  // TBP2 - Suzail Tavern
         DisplayStringHead("ohbnajim",102548)  // The battle is hopeless, my friend! Lay down your arms and perhaps they will grant you mercy.
 END
-

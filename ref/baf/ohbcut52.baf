@@ -12,4 +12,3 @@ THEN
 		SetCursorState(TRUE)
 		ActionOverride("OHBBAEL",StartDialogueNoSet(Myself))
 END
-

@@ -1739,4 +1739,3 @@ THEN
 		SetGlobal("SPELLCAST","LOCALS",0)
 		Continue()
 END
-

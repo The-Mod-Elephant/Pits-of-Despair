@@ -22,4 +22,3 @@ THEN
 		Wait(1)
 		ActionOverride("ohbmardu",StartDialogueNoSet([PC]))
 END
-

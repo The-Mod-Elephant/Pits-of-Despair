@@ -77,4 +77,3 @@ THEN
 		JumpToPoint([4100.3170])
 		Face(W)
 END
-

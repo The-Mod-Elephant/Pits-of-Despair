@@ -1,5 +1,5 @@
-Note: Actions are in plain text, speech in quotations. Cannot use bold in-game. Context information will be in {brackets} and bolded. PC = Player Character.  
-  
+Note: Actions are in plain text, speech in quotations. Cannot use bold in-game. Context information will be in {brackets} and bolded. PC = Player Character.
+
 NPC Banter helper examples found here: [Party banter [Keldorn] | Baldur's Gate 2](https://www.google.com/url?q=https://www.youtube.com/watch?v%3DzfA4pvkYNVI&sa=D&source=editors&ust=1776534047590996&usg=AOvVaw1cvzOYAhzjEtviWi15nXHh)
 
 ## Legend:
@@ -21,24 +21,24 @@ Cespenar lines for the following:
 
 Bearfoot
 
-  
-The Viridian Lord  
+
+The Viridian Lord
 Scarlet Ninja Tabi 
 
-The Open Palm  
+The Open Palm
 Spirit Dragon Helm
 
 Winged Boots
 
 Robe of Skin
 
-Gargoyle Boots  
-Jade Spindel  
+Gargoyle Boots
+Jade Spindel
 Seraphic Gale
 
 Corrupted Blood of Orcus
 
-Umbral Fang  
+Umbral Fang
 Astral Crossbow of Speed +4
 
 # CH 2
@@ -199,8 +199,8 @@ Cernd: These twisted animals are an affront to Nature. Balance requires that we 
 
 Stirv -> if Minsc is present: Defenceless? Heh, you’re in for a nasty surprise, slave. C’mon, git going!
 
-After 1st TRAINING MATCH  
-  
+After 1st TRAINING MATCH
+
 Hmph, so you lived. Well, how about another match? I’ve got some lovelies lined up just pining to rip the meat off your bones!
 
 PC Response:
@@ -342,7 +342,7 @@ BRODLE STOP THE MATCHES
 
 Brodle: The pits are closed for cleaning. Why don’t you have a lie down for a while and come back later?
 
-PC Response:  
+PC Response:
 
 1. I guess we spilled too much blood. I will be back later.
 
@@ -374,9 +374,9 @@ Aerie: T-thank you for your kindness.
 
 Jaheria: You are welcome child. Let us continue to bring balance to this evil place.
 
-  
-Haer’Dalis after Match 7 - Githyanki  
-  
+
+Haer’Dalis after Match 7 - Githyanki
+
 Haer'Dalis: Ah my triumphant flock, these Githyanki were simplicity itself. No dirge for their silver swords. Doom etched it’s seal when they crossed our pernicious path.
 
 Imoen/Neera: Yeah! And they talked funny too. Even more funny than you.
@@ -387,10 +387,10 @@ Imoen/Neera: And they looked weird too. Heh, guess the Astral plane is murder on
 
 Haer’Dalis: Yes, diversity ever flowers on the planes, sweet one.
 
-Keldorn after Match 7 - Githyanki  
-  
-(Anomen passed his Test)  
-  
+Keldorn after Match 7 - Githyanki
+
+(Anomen passed his Test)
+
 Keldorn: Say what you will about the Githyanki, but they are an honorable and disciplined people.
 
 Anomen: ‘Tis as you say, Sir Keldorn. Their conviction to their faith, however repulsive their goddess may be, is laudable.
@@ -413,8 +413,8 @@ Keldorn: Your bitterness is twisting your mind and your faith, young one. You wo
 
 Anomen: Alas, that path is lost to me, I must forge a new one.
 
-Neera after Match 8 - Sahaugin  
-  
+Neera after Match 8 - Sahaugin
+
 Neera: Whew boy! Those fish stink! I need a bath after that one. I wonder if they have soap down here.
 
 Imoen: You think they have soap? They smell terrible and have you seen some of the people that work here?

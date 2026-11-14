@@ -1561,4 +1561,3 @@ THEN
 		SelectWeaponAbility(SLOT_AMMO0,0)
 		AttackReevaluate(LastSeenBy(Myself),15)
 END
-

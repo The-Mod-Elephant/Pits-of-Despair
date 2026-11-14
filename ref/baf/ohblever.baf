@@ -7,4 +7,3 @@ THEN
 		SetGlobal("ohb_finale_captain_bark2","oh8100",1)  // TBP2 - Staging Area Map
 		Unlock("door0003")
 END
-

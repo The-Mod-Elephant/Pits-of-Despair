@@ -48,4 +48,3 @@ THEN
 		SetGlobal("ohb_leokas_move_to_line","locals",1)
 		EscapeAreaMove("oh8100",4015,3085,W)  // TBP2 - Staging Area Map
 END
-

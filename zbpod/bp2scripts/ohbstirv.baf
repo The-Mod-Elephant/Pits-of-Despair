@@ -174,4 +174,3 @@ THEN
 		SmallWait(5)
 		EndCutSceneMode()
 END
-

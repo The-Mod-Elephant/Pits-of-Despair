@@ -314,7 +314,7 @@ IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",13)~ zbnpehreadytogo
   IF ~~ THEN REPLY @91 /* Not right now. Maybe later. */ EXIT
 END
 
-/* close first blood quest if it wasn't completed */ 
+/* close first blood quest if it wasn't completed */
 IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",13)~ zbnephescapecuttrigger1
   SAY @303 /* Just so you know, they will likely be able to track you magically. You’ll not have heard the last of Dennaton, but it gives you time on your side. */
   IF ~~ THEN DO ~
@@ -327,7 +327,7 @@ IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",13)~ zbnephescapecuttrigger1
   ~ EXIT
 END
 
-/* first blood was completed, no journal entry changes required, normal block */ 
+/* first blood was completed, no journal entry changes required, normal block */
 IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",13)~ zbnephescapecuttrigger2
   SAY @303 /* Just so you know, they will likely be able to track you magically. You’ll not have heard the last of Dennaton, but it gives you time on your side. */
   IF ~~ THEN DO ~

@@ -10,4 +10,3 @@ THEN
         EndCutSceneMode()
         SetGlobal("zb0700_first_enter","MYAREA",1)
 END
-

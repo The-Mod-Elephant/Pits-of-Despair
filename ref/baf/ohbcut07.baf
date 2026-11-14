@@ -221,4 +221,3 @@ THEN
 		SmallWait(17)
 		StartDialogueNoSet(Player1)
 END
-

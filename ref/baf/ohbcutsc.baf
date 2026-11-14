@@ -11,4 +11,3 @@ THEN
 	RESPONSE #100
 		SetGlobalTimer("OH_dself","LOCALS",THREE_ROUNDS)
 END
-

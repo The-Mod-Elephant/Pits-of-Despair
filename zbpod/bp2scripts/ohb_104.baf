@@ -111,4 +111,3 @@ THEN
 		IncrementGlobal("ohb_hero","global",-1)
 		IncrementGlobal("ohb_villain","global",1)
 END
-

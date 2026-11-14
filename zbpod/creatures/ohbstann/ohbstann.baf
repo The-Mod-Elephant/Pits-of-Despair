@@ -37,4 +37,3 @@ THEN
 		SetGlobal("OHB_SRING","LOCALS",1)
 		GiveItemCreate("OHBRING1",Myself,1,0,0)  // Stannel Eibor's Ring
 END
-

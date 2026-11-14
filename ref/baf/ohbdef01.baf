@@ -30,4 +30,3 @@ THEN
 		SetGlobal("OHB_ISDEAD","MYAREA",1)
 		GameOver(103098)  // The party has been killed. You must restart the game.
 END
-

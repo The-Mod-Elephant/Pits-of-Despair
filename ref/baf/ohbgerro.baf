@@ -24,4 +24,3 @@ THEN
 		SetGlobal("ohb_gerro_hired","global",4)
 		EquipMostDamagingMelee()
 END
-

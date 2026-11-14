@@ -112,4 +112,3 @@ THEN
 		GlobalShout(9011)
 		Continue()
 END
-

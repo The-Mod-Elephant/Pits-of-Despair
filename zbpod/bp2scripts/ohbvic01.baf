@@ -78,4 +78,3 @@ THEN
         SetGlobal("ohb_item_reward","global",6)
         SetGlobal("ohb_item_roll","global",1) /* we always want our rolls to be higher than this */
 END
-

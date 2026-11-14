@@ -333,4 +333,3 @@ THEN
 		SmallWait(5)
 		SetInterrupt(TRUE)
 END
-

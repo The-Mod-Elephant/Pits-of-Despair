@@ -15,7 +15,7 @@ Special Note: Nephetel will have a Voice Artist that we will direct. Certain wri
 
 ## Vanilla NPC Banter YOUTUBE LINK:
 
- [Party banter [Edwin] | Baldur's Gate 2](https://www.google.com/url?q=https://www.youtube.com/watch?v%3Dh05B2jBQVyE&sa=D&source=editors&ust=1777318457965481&usg=AOvVaw2dklqIki95NGgbVIQXuBfa)  
+ [Party banter [Edwin] | Baldur's Gate 2](https://www.google.com/url?q=https://www.youtube.com/watch?v%3Dh05B2jBQVyE&sa=D&source=editors&ust=1777318457965481&usg=AOvVaw2dklqIki95NGgbVIQXuBfa)
 Search Youtube by [NPC NAME] BG2 banter
 
 ## Global Variance
@@ -46,7 +46,7 @@ Alignment: True Neutral - Gravitates to good, but can behave morally grey in ord
 
 Base Traits - independent, aloof, professional, strong, guarded, uses clear more precise language, when emotional she begins to emit a slight burned smell, will usually not lower herself to respond to debasing remarks, can be playful and whimsical when it suits her, holy auras make her skin itch
 
-  
+
 Attempts to become friendly with PC and get to know them in order to free her brother, Enegar, a Bhaalspawn (Match 19 in the Pits).
 
 Is employed by Szass Tam to find Eshpel, the necronomicon.
@@ -95,10 +95,10 @@ Valygar: Will get along with them professionally. Mutual respect. Few words in m
 
 Yoshimo: Like. Similar background, has a similar personality. Appreciation for his position with his geas. Likes his sarcastic and playful nature as well as his thievery.
 
-Dorn: Dislike. Is there only violence and murder? Mention that they expect him to be more like a Bhaalspawn than CHARNAME due to his bloodthirsty single-mindedness. Doesn’t like pointless slaughter.  
-  
-Neera: Sympathy due to being persecuted and cautious because so unpredictable. Will be the one to teleport away when Neera begins casting. Interjection with either cutscene or some other aspect to show her be cautious around her when casting her magic.  
-  
+Dorn: Dislike. Is there only violence and murder? Mention that they expect him to be more like a Bhaalspawn than CHARNAME due to his bloodthirsty single-mindedness. Doesn’t like pointless slaughter.
+
+Neera: Sympathy due to being persecuted and cautious because so unpredictable. Will be the one to teleport away when Neera begins casting. Interjection with either cutscene or some other aspect to show her be cautious around her when casting her magic.
+
 Rasaad: Doesn’t like him taking conversations to New Age mysticism. Some parallels between his vengeance in his quest and her feelings regarding brother. Would interject some sympathy in his choices.
 
 Wilson: Like. A goofy, friendly, bear. Rwarrr?
@@ -332,7 +332,7 @@ Haer’Dalis: My magnificent magpie, we’ll make a bard out of you yet.
 
 All dialogue should be repeatable.
 
-  
+
 (**VA Note: Ignore the <CHARNAME> Reference, we will just be skipping that variable when doing VA**)
 
 Nephetel: [PLAYFUL] I hope you’re having a tolerable time here in the pits, <CHARNAME>. As far as Dennaton is concerned, you’re the main attraction in this three-ring circus, so I’d be surprised if you didn’t get a little special treatment.
@@ -578,7 +578,7 @@ Jaheira: It gives me no pleasure to have defeated this tribe. Their nature has b
 
 Nephetel: [CAUTIONARY] Umber hulks are extremely dangerous and fast to boot, and their elders more so. They can easily overpower those that gaze into their eyes. Luckily for you, I happen to have a potion that’ll defend you from any adverse effects. It’s all yours for a meager 300 gold.
 
-PC Response:  
+PC Response:
 1. I’ll take it.
 
 2. Keep your potion, I have no need of it.
@@ -629,7 +629,7 @@ Jan: My Uncle Gerhardt used to say, 'give the first turnip for free and get a cu
 
 Cernd: We are all beasts of a pack at the end of the day. We would do well to accept her help.
 
-PC Responses  
+PC Responses
         1. Your help would be greatly appreciated.
 
 2. How can you assist me?
@@ -664,7 +664,7 @@ Nalia: I love sneaking around. Reminds me of simpler times.
 
 Edwin: Eh, keep your guard up. I will not be held responsible if the tiefling girl ambushes us with the many spies she undoubtedly keeps in her back pocket (I can *feel* them watching.)
 
-  
+
 Nephetel moves to Sleeping Quarters
 
 ### Escape 1 Dialog
@@ -679,18 +679,18 @@ PC Response:
 2. You have a means to escape? Tell me!
 3. I’m certainly trapped here. You, I’m not so sure about.
 
-  
+
 NephyReponseto1: I’m sure you are, so keep quiet and listen carefully.
 
 NephyReponseto2: This is a sensitive matter, and we must be careful that we are not overheard.
 
 NephyResponseto3: Your suspicion is doing you no favors. I want to get out of here, but it’s been difficult.
 
-  
+
 NephyResponseto1-3: During your recent battles, I’ve been buttering up one of the young Red Wizards that watches you fight. The fellow likes to dip a bit too heavily into his drink while watching, you see. Apparently he’s been using a magical charm to come and go from the pits as he pleases.
 
-Nephetel: The very charm I now have in my pocket.  
-  
+Nephetel: The very charm I now have in my pocket.
+
 PC Response:
 
 1. You, Nephetel, are brilliant.
@@ -698,7 +698,7 @@ PC Response:
 3. Alright, what’s the catch?
 4. Do you expect me to believe such a simple story?
 
-  
+
 NephyResponseto1: I know, but I appreciate the reminder. Unfortunately, though, I led with the good news.
 
 NephyResponseto2: Hold on just a moment. There’s more to the story, unfortunately.
@@ -725,19 +725,19 @@ Nephetel (if Dorn is present): I don’t think so, blackguard. I think you’ll 
 
 Nephetel: So, what will it be, <CHARNAME>? Willing to take a chance with me and get out of here? If we use it just so, it *should* take us to where you were captured.
 
-PC Response to 1:  
-        1. I’ll take any chance I can get. Give it to me, and let’s go.  
+PC Response to 1:
+        1. I’ll take any chance I can get. Give it to me, and let’s go.
         2. It ‘should’ take us back? That doesn’t inspire a lot of confidence.
 
         3. Not just yet. There are a few things I want to take care of.
 
-  
+
 NephyResponseto1: [OFFHAND] Give it to you? I’ll be the one using it, thank you very much. Don’t expect to have heard the last of Dennaton and his goons after this. They don’t tend to let up when something doesn’t go their way. Now, let’s get this show on the road! *START CUTSCENE 2*NephyResponseto2: What other choice do you have? Stay here until Dennaton has decided that your entertainment value has expired? Or perhaps you’d rather die in the pits against some impossible foe. *CIRCLE BACK TO PC RESPONSES*
 
-NephyResponseto3: As you wish. I will be here preparing to go, so when you’re ready… you know where to find me. *EXIT DIALOGUE*  
-  
-If PC Response 3, ends the conversation and returns to speak to her.  
-  
+NephyResponseto3: As you wish. I will be here preparing to go, so when you’re ready… you know where to find me. *EXIT DIALOGUE*
+
+If PC Response 3, ends the conversation and returns to speak to her.
+
 Nephetel: Ready to go? Or perhaps you’re enjoying the slaughter of the pits too much for your own good.
 
 PC Response:
@@ -757,7 +757,7 @@ Flashy Teleport Party to Trademeet Inn
 
 {Context: After escaping the Pits with the party, Nephetel offers the opportunity to join the party so she can use the PC to find the necronomicon Eshpel. If not recruited here, will return to the Copper Coronet (a tavern in the slums of Athkatla) where it is possible to recruit her again.}
 
-Nephetel: [CAGEY] Here we are, for better or worse, released from the pits. Uh… where is here, exactly?  
+Nephetel: [CAGEY] Here we are, for better or worse, released from the pits. Uh… where is here, exactly?
 
 PC Response:
 
@@ -808,7 +808,7 @@ NEPH JOINS
 
 *GOTO JOIN INTERJECTIONS*
 
-  
+
 Haer’Dalis: We must consider ourselves fortunate to find another exotic bird to join our eccentric menagerie.
 
 Edwin: Eh? No, no this will not do at all. I will not tolerate spies within my company. I will be keeping an eye on you, tiefling. (Or… perhaps both eyes).
@@ -880,7 +880,7 @@ PC Response
 1. Yes, Nephetel. I’d like you to join us on our quest. +1 ZB_NEPHY_FRIEND *GO TO NEPHYRESPONSE1 ABOVE*
 2. Nope, just stopping by to say hello, and now I’ve said it. Goodbye. *EXIT DIALOGUE*
 
-##   
+##
 KICK OUT DIALOG
 
 Nephetel: [QUESTIONING] You wish to part ways?
@@ -946,7 +946,7 @@ Nephetel: I understand how valuable family can be—especially when it’s as co
 
 NephyResponseto2: I suppose it just speaks to your character that you’re going to such lengths to help her, then? Good to know I’m in reliable company.
 
-Nephetel: There are few things more valuable than trust. I’m sure your friend knows that you’re doing all you can to reach her. Let’s get back to it. [EXIT]  
+Nephetel: There are few things more valuable than trust. I’m sure your friend knows that you’re doing all you can to reach her. Let’s get back to it. [EXIT]
 
 NephyResponseto3: So it’s revenge you’re after. Or, maybe not. You strike me as someone with more at stake than a single captor’s cruelty. Regardless, I’ll not press it further for now. I believe we have business to take care of. [EXIT]
 
@@ -1004,7 +1004,7 @@ NephyResponse to 3: Seeing how you work, probably not much more than you’re us
 
 ## Finding Eshpel P1 - The Necromancer
 
-{Mardrick is an elven intelligence gatherer working directly under Viktor. His job is to sniff out avenues for leads on the Necronomicon that Nephetel can investigate. When the player first meets him, he is disguised as a simple messenger — he will appear a few days AFTER PC Banter 1, Amnian Air,  with Nephetel)  
+{Mardrick is an elven intelligence gatherer working directly under Viktor. His job is to sniff out avenues for leads on the Necronomicon that Nephetel can investigate. When the player first meets him, he is disguised as a simple messenger — he will appear a few days AFTER PC Banter 1, Amnian Air,  with Nephetel)
 
 [In Athkatla]
 
@@ -1347,7 +1347,7 @@ Nephetel: Maybe if we find the controls …
 
 Valygar: It is evil magic. We should destroy it instead of seeking to control it.
 
-Nephetel: [SASSY] Whatever you say, grumpy.  
+Nephetel: [SASSY] Whatever you say, grumpy.
 
 After speaking with Gaal during Eyeless Quest below the temple district of Athkatla -
 
@@ -1389,8 +1389,8 @@ Meeting with Aran Linvail, the Shadowmaster -
 
 Aran Linvail: Hello Nephetel, it seems you have freed yourself from under the wizard’s thumb. You’ve chosen well, <CHARNAME>. She is well suited to the tasks ahead.
 
-Nephetel: Greetings, Shadowmaster. I have paid my dues, but it seems I still find myself beholden to another.  
-  
+Nephetel: Greetings, Shadowmaster. I have paid my dues, but it seems I still find myself beholden to another.
+
 Aran Linvail: We must all eventually understand our role.
 
 Meeting with Bodhi, the Vampire -
@@ -1611,8 +1611,8 @@ Haer’Dalis: One cannot contain the veritable peacocks that we are.
 
 Minsc: Minsc has often been called colorful. Oh, Boo says, colorful NAMES. Thank you Boo.
 
-Viconia: Here in the underdark this party tramples and shouts with your oafish ways. Be quiet!  
-  
+Viconia: Here in the underdark this party tramples and shouts with your oafish ways. Be quiet!
+
 Wilson: Rawr, raww-r, rawr.
 
 Cernd: Among the wildflowers those with bright colors show they are poisonous and not to be trifled with.
@@ -1651,7 +1651,7 @@ Response3: Don’t stumble, it’s dangerous.
 
 NephyResponse to 1-1: I am used to being judged myself. Perhaps I overstepped.
 
-NephyResponse to 1-2: Thank you, you are not so bad yourself.  
+NephyResponse to 1-2: Thank you, you are not so bad yourself.
 NephyResponse to 2-1: It’s true, my dance partners can rarely keep up.
 
 NephyResponse to 2-2: You’ve seen it for yourself, don’t be coy.
@@ -1689,7 +1689,7 @@ IF Viconia -
 
 Viconia: Your toes may be cut off and your leg next. The drow are not to be trifled with, olplyn.
 
-  
+
 Baeloth: Ooo, a contemptuous kerfuffle among our catfighting kittens. My bet is on black.
 
 Haer’Dalis: The shadowed flicker and the blackbird pecking at one another. Devilish. *grin* I do hope our blackbird can take the heat.
@@ -1728,7 +1728,7 @@ PC Response:
 2. You seem very interested in discussing the drow. But I’m more interested in discussing you.
 3. We can't tarry, we must move on. *END DIALOG*
 
-  
+
 Nephy Response to 1 & 2
 
 Nephetel: From when I was very young I was a part of a thieves guild. Even within it they considered me lesser because I was a tiefling. I had to be the very best to overcome that stigma. This is why I prize skill and precision above all else. I have a fiery desire to prove that prejudice is unjustified.
@@ -1933,10 +1933,10 @@ Viktor: [THUNDEROUS THEN BACK TO HIS SLITHERY STYLE] Remember your PLACE, devil-
 
 Nephetel: [CONFIDENT] The book is in Amn, I am sure of it. I have a lead to a crypt warded by powerful magic. But… I doubt that I will be able to retrieve it on my own.
 
-Viktor: [PENSIVE AND ARROGANT] You have had false leads before. Ensure that this time is different, or…  
+Viktor: [PENSIVE AND ARROGANT] You have had false leads before. Ensure that this time is different, or…
 
-{Viktor casts a spell damaging Nephetel}  
-  
+{Viktor casts a spell damaging Nephetel}
+
 Viktor: [CALMS DOWN] You will fare much worse than that should you bring us another failure. [SUBTLE HINT OF FEAR] It would be… unwise to make the Zulkirs grow impatient.
 
 Nephetel: [PAINED] I can’t do anything while I’m here. Give me a way out—with the Bhaalspawn. Then I’ll complete my mission.
@@ -2087,7 +2087,7 @@ PC Response:
 1. Yes.
 2. No. -1 NEPHY_FRIEND
 
-  
+
 NephyResponse to 1: Let's wait until the next time we rest when we both can be ready to go. **ON REST GOTO CUTSCENE SHADOW PLANE OH4230.ARE**
 
 NephyResponse to 2: [SARCASTIC] Run, run, run. You won’t have to stop on my account.
@@ -2096,9 +2096,9 @@ NephyResponse to 2: [SARCASTIC] Run, run, run. You won’t have to stop on my ac
 
 {Nephetel moves toward the PC. Then she performs a Shadowstep. While in the Time Stop animation both the PC and Nephetel disappear and reappear on OH4230.ARE with a large number of shadows and shadow fiends standing around them in a circle. They will occasionally echo or comment.}
 
-  
-PC: You find yourself suddenly cold. A coldness that goes down to the bone. Your world has peeled back revealing just the underlying structure of stark black and bleached white. The air is heavy and the light makes everything seem thicker. All around you are creatures of shadow, taut and anxious.  
-  
+
+PC: You find yourself suddenly cold. A coldness that goes down to the bone. Your world has peeled back revealing just the underlying structure of stark black and bleached white. The air is heavy and the light makes everything seem thicker. All around you are creatures of shadow, taut and anxious.
+
 *PC turns in all 8 directions*
 
 Nephetel: Do not worry they will not harm you with me here. These are my friends.
@@ -2153,8 +2153,8 @@ Enegar: His laughter is grating and harsh. “This is pathetic, I thought you we
 
 # Nephetel’s ToB Quest
 
-Enegar, if he survives the encounter in the Pits. Nephetel has a personal quest that is tied to getting a True Resurrection ritual for Enegar.  
-  
+Enegar, if he survives the encounter in the Pits. Nephetel has a personal quest that is tied to getting a True Resurrection ritual for Enegar.
+
 This quest will be called the Sacrifice. Nephetel will get Enegar teleported to the pocket plane and then through dialog Enegar is either convinced to sacrifice himself to remove the taint for the PC. Or he becomes enraged one way or another and becomes the Slayer who must be killed.
 
 This would play into Nephetel’s purposeful personality and organized and calculating mannerisms.  This shows how she has an interconnecting plan to deal with the situation and allow us to showcase her inventiveness and preparatory nature.  This would split our Epilogues into versions that he is alive or dead.
@@ -2229,7 +2229,7 @@ Nephetel: Oh Edwina, men have their own pair of weaknesses below the belt.
 
 {
 
-##   
+##
 EDWIN TOB 2
 
 ## JAHEIRA 1
@@ -2450,7 +2450,7 @@ Aerie: Hey, hey give that back!
 
 Anomen: You foolish woman. That belongs to me.
 
-  
+
 Viconia: Get your filthy fingers off of that, iblith!
 
 Imoen: Lighten up, she was only BORROWING it. Besides, she’ll give it back… I think.
@@ -2527,7 +2527,7 @@ Nephetel: So, now you know. Do you still accept me, after you’ve seen who I re
 
 Aerie: I told you I would and I stand by it.
 
-  
+
 Nephetel: But, how? How can you stand by me? You didn’t even know who I was before now.
 
 Nephetel: Every time I have been open with another person they have hurt me. I’ve had to bury those feelings deep.
@@ -2756,7 +2756,7 @@ Nephetel: [Introspective]… thank you.
 
 ## MAZZY TOB 1
 
-##   
+##
 MAZZY TOB 2
 
 ## JAN 1
@@ -2853,10 +2853,10 @@ Nephetel: You know, you’re right. It’s easy to forget the simple things.
 
 Yoshimo: How about a challenge? The next lock is yours and you must pick it in five seconds.
 
-  
+
 Nephetel: Five seconds? How about three? *grins*
 
-## HAER’DALIS 1  
+## HAER’DALIS 1
 
 Haer'Dalis: I hold a great fondness for beauty wrapped in mystery. Such women are oft cast as spies... or subtler weavers of fate.
 
@@ -2870,12 +2870,12 @@ Nephetel: And, for a bard, your words prove rather blunt and clumsy. Must you st
 
 Haer'Dalis: If I trespass, it is only because the stage beckons so invitingly.
 
-##   
-  
-HAER’DALIS 2  
+##
 
-{Discussing how being tieflings are different with Haer’Dalis coming from Sigil and Nephetel has never left the material plane.}  
-  
+HAER’DALIS 2
+
+{Discussing how being tieflings are different with Haer’Dalis coming from Sigil and Nephetel has never left the material plane.}
+
 Nephetel: [CURIOUS WITH CONTAINED EXCITEMENT] Haer’Dalis, you’re from Sigil, right? What is it like? How many tieflings are there?
 
 Haer’Dalis: Oh, not just tieflings, there are so many wondrous creatures that inhabit Sigil. How many of our kind have you seen in your time?
@@ -2902,7 +2902,7 @@ Haer'Dalis: Ah, my dark flicker, I am the beast to your beauty. For while we all
 
 Nephetel: In the end, death claims us all.
 
-Haer'Dalis:  Indeed, the Final Curtain call! Feel the thrill of the embrace of the inevitable.  
+Haer'Dalis:  Indeed, the Final Curtain call! Feel the thrill of the embrace of the inevitable.
 
 ## HAER’DALIS 4
 
@@ -2918,7 +2918,7 @@ Nephetel: [EXHAUSTED SIGH] Oh, yes, I'm sure. A novelty or a bauble to some coll
 
 Haer'Dalis: I cannot deny that envy, lust, curiosity, and resentment would be well represented. In Sigil, the grotesque forces lead many a beauty to an untimely demise… but such tales are boring, let me tell you of the Doomguard!
 
-## HAER’DALIS 5  
+## HAER’DALIS 5
 
 {After Act 2 Brother Reveal}
 
@@ -3020,10 +3020,10 @@ Nephetel: Well, let’s just move on. At least you got a big fiery sword out of 
 
 {Curiosity about why she is so odd, even beyond being a wild mage. Her speech, mannerisms. Maybe Nephetel knows about wild mages}
 
-  
-Neera: … and this one time I was a squirrel for an entire week! I used to be allergic to nuts, now presto! I’m cured.  
-  
-Nephetel: So, you’re saying wild magic has improved you? What if you were turned into a gremishka?  
+
+Neera: … and this one time I was a squirrel for an entire week! I used to be allergic to nuts, now presto! I’m cured.
+
+Nephetel: So, you’re saying wild magic has improved you? What if you were turned into a gremishka?
 
 Neera: Well, things wouldn’t be so different, except maybe I’d smell funny, right?
 

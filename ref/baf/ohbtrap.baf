@@ -52,4 +52,3 @@ THEN
 		DisplayString(LastTrigger,14381)  // Trap Sprung
 		ForceSpell(LastTrigger,WIZARD_HORROR)  // SPWI205.SPL (Horror)
 END
-

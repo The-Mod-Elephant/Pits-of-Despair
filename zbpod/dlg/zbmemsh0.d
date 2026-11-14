@@ -6,5 +6,3 @@ BEGIN hello_world
   IF ~~
     EXIT
 END
-
-

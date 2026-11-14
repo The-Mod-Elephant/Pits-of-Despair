@@ -26,4 +26,3 @@ THEN
 	RESPONSE #100
 		SetGlobal("ohb_dennaton_journal","global",99)
 END
-

@@ -22,4 +22,3 @@ THEN
 		SetGlobal("ZBCUT07SKIP_CUTSCENE_BREAKABLE","GLOBAL",0)
 		ActionOverride("ohbcook",StartDialogueNoSet(Player1))
 END
-

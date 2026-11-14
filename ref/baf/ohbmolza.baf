@@ -7,4 +7,3 @@ THEN
 		ClearAllActions()
 		StartDialogueNoSet(Player1)
 END
-

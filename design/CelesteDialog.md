@@ -119,7 +119,7 @@ Battle Shouts - Special Circumstances
 
 "Do you need me to teach you how to cast fireball?"
 
-"Don’t you dare stand around doing nothing!"  
+"Don’t you dare stand around doing nothing!"
 - Strike swiftly and remember to refine your spellcraft.
 
 - Aren’t you tired of standing around? Don’t you want to stab something?
@@ -216,8 +216,8 @@ Wanna go and kill now? Hmm mm mmm hm mm hmmm. Now?
 
 Quick Bucket Additions
 
-Celeste has a girly, sassy vibe to most of her dialogue. With the occasional, squeaky ‘eww!’ vibes.  
-  
+Celeste has a girly, sassy vibe to most of her dialogue. With the occasional, squeaky ‘eww!’ vibes.
+
 Battle Shouts - General
 
 - Purity, power...and proper incantations! [ first two words are spoken more with more gravitas. Quick Pause. More girly, almost scholarly, addition on the last three ]
@@ -232,9 +232,9 @@ Battle Shouts - General
 
 - What happens when we stab…HERE?
 
-- Magic and mayhem? Yes, please!  
-- This one’s going in the spellbooks!  - [ think similar vibes to this is one for the history books, excited ]  
-- Did you forget to cast Stoneskin? Novice mistake! [ throwing down a mic on the ground, best insulting tone ]  
+- Magic and mayhem? Yes, please!
+- This one’s going in the spellbooks!  - [ think similar vibes to this is one for the history books, excited ]
+- Did you forget to cast Stoneskin? Novice mistake! [ throwing down a mic on the ground, best insulting tone ]
 - You’re just in time for the grand incantation!
 
 Battle Shouts - Special Circumstances
@@ -281,18 +281,18 @@ Do you have any advice?
 
 Of course I do! Why didn’t you ask sooner? [ pleased, happy to be of assistance, always eager to share knowledge - even if it’s not always GOOD knowledge ]
 
-- So…how much magic do you really know? You can never know enough! [ as though this is a big revelation ]  
+- So…how much magic do you really know? You can never know enough! [ as though this is a big revelation ]
 - What do you do when you meet an immovable object? Pound it to dust with Bigby’s Clenched Fist! Hee! [ fun, giggly ]
 
-- There’s always a lich behind everything. Cult uprising? Lich. Villagers disappearing? Lich. Lost your favorite scroll? Definitely a lich. [ gossip vibe activated, light & playful ]  
+- There’s always a lich behind everything. Cult uprising? Lich. Villagers disappearing? Lich. Lost your favorite scroll? Definitely a lich. [ gossip vibe activated, light & playful ]
 - Talk less, study more. [ sage knowledge, more serious ]
 
 - Never trust a chest that’s already been opened. Or even one that’s closed. That’s how the mimics get you! [ whispered, as though this is a big secret, very good advice obvs ]
 
-- Illusion spells fool the eye. Enchantment spells fool the mind. Master both and confuse everyone. [ i think the ‘everyone’ can be drawn out as though to illustrate it ]  
-  
-How are you, Celeste?  
--  You’re actually paying attention to me now? Thank you! I feel like stabbing something, don’t you? [ friendly start, gets slightly more violent / eager with the ‘stabbing’ line ]  
--  I’d feel better if you cast a fireball right about now…no? [ disappointed about it not happening ]  
-- Well, since you’re asking, I wouldn’t mind a polish. [ light, friendly, otherwise neutral ]  
+- Illusion spells fool the eye. Enchantment spells fool the mind. Master both and confuse everyone. [ i think the ‘everyone’ can be drawn out as though to illustrate it ]
+
+How are you, Celeste?
+-  You’re actually paying attention to me now? Thank you! I feel like stabbing something, don’t you? [ friendly start, gets slightly more violent / eager with the ‘stabbing’ line ]
+-  I’d feel better if you cast a fireball right about now…no? [ disappointed about it not happening ]
+- Well, since you’re asking, I wouldn’t mind a polish. [ light, friendly, otherwise neutral ]
 - Sharp as ever. I’m a dagger, remember? [ WITTY, quick & light read, like how a dagger stabs fast ]

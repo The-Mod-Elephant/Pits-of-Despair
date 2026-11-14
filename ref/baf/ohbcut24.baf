@@ -14,4 +14,3 @@ THEN
 		Wait(6)
 		StartDialogueNoSet([PC])
 END
-

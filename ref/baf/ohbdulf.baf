@@ -43,4 +43,3 @@ THEN
 		JumpToPoint([2025.1510])
 		Face(NE)
 END
-

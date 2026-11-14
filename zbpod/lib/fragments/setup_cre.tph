@@ -584,17 +584,17 @@ COPY_EXISTING ~ohbgol03.cre~ ~override~
 // Planetar Animations
 COPY_EXISTING ~ohbwing.cre~ ~override~
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~ZBFALLEN_PLANETAR~))
-  
+
  // Umber Hulk ELder Animation
 ACTION_FOR_EACH umbere IN
       zbumbqu // Deep Queen
       ohbumb01 // Umber Hulk Elder
     BEGIN
       ACTION_IF FILE_EXISTS_IN_GAME ~%umbere%.cre~ BEGIN
-        COPY_EXISTING ~%umbere%.cre~ ~override~ 
+        COPY_EXISTING ~%umbere%.cre~ ~override~
           WRITE_LONG  0x28 IDS_OF_SYMBOL (animate UMBER_HULK_ELDER)
-      END 
-    END 
+      END
+    END
 
 ///////////////////////////////////////////////////////////////////////////
 // Copy .BCS file to override folder                                     //

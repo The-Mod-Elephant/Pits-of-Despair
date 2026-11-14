@@ -33,4 +33,3 @@ THEN
 		ActionOverride(Player5,TransformItem("ohbbook2","ohbcom11"))  // Thassk's Journal
 		ActionOverride(Player6,TransformItem("ohbbook2","ohbcom11"))  // Thassk's Journal
 END
-

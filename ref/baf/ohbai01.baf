@@ -36,4 +36,3 @@ THEN
 	RESPONSE #100
 		AttackOneRound(LastAttackerOf(Myself))
 END
-

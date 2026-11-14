@@ -173,4 +173,3 @@ THEN
 		SetGlobal("OH_Haste","LOCALS",1)
 		ReallyForceSpell(Myself,GOLEM_HASTE)  // SPIN978.SPL (Golem Haste)
 END
-

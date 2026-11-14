@@ -22,4 +22,3 @@ THEN
 		SetGlobal("OH_Active","LOCALS",1)
 		Continue()
 END
-

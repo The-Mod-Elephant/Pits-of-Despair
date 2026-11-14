@@ -78,4 +78,3 @@ THEN
 		SetGlobal("ohb_item_reward","global",6)
 		SetGlobalRandom("ohb_item_roll","global",1,100)
 END
-

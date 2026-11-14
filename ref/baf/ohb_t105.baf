@@ -228,4 +228,3 @@ THEN
 		SetGlobalTimer("OH_RTaunt","LOCALS",ONE_ROUND)
 		Continue()
 END
-

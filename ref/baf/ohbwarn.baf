@@ -45,4 +45,3 @@ THEN
 		DestroyItem("MINHP1")  // No such index
 		Continue()
 END
-

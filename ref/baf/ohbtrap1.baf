@@ -5,4 +5,3 @@ THEN
 		DisplayString(LastTrigger,14381)  // Trap Sprung
 		ForceSpell(LastTrigger,MIMIC_POISON)  // SPIN568.SPL (Mimic Poison)
 END
-

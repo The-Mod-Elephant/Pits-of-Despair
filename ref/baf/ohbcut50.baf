@@ -18,4 +18,3 @@ THEN
 		UnhideGUI()
 		EndCutSceneMode()
 END
-

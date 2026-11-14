@@ -176,26 +176,26 @@ Spymaster of Szass Tam and powerful Red Wizard Necromancer. Forgemaker of the De
 
 ### Nephetel - Employed by Szass Tam
 
-Background and Family  
+Background and Family
 Nephetel, a Tiefling born in Thay, comes from mysterious fiendish lineage. Her mother had two children, each from different fathers. Enegar, her younger brother by three years, is a Bhaalspawn—a child born from Bhaal himself, god of murder. Their shared mother and Enegar’s stepfather (Nephetel’s father) raised them, and they loved both children deeply. Enegar has no relationship with Bhaal beyond the blood he inherited and considers their stepfather his true parent. Nephetel embraced Enegar fully as her brother, protective of him in every sense.
 
-Childhood and Awakening of Abilities  
+Childhood and Awakening of Abilities
 From a young age, Nephetel discovered her talents as a shadowdancer—these abilities allowed her to slip into the shadows, vanish from sight, and evade capture. These powers fueled her playful, mischievous personality, and she used them in small acts of daring and evasion. Over time, her skills evolved and shaped her shadowdancer abilities, as she grew increasingly agile and elusive.
 
 She also noticed that Enegar faced darker challenges, likely due to the taint of Bhaal in his veins, which plagued him with fits of rage and troubling thoughts. Nephetel became his steadfast protector, defending him against any prejudice for being both a Tiefling and a Bhaalspawn. She encouraged his efforts to control his darker urges and stood by him as he worked to resist them.
 
-Trauma and Survival  
+Trauma and Survival
 When Nephetel was twelve and Enegar was eight, tragedy struck: a Bhaalist cult raided their settlement. In the chaos, Nephetel’s parents were killed as she bravely tried to shield her brother. Despite her efforts, Enegar was captured, and she was left bruised, alone, and grief-stricken. This event left a deep scar on Nephetel, and only Enegar could draw out her hidden pain and trauma.
 
 Now an orphan, Nephetel had no choice but to survive by any means necessary. She turned to petty theft, pickpocketing, and cunning manipulation to make ends meet. Eventually, her skill and resourcefulness caught the eye of the local Thieves’ Guild, which took her in. Within the guild, she found a kind of surrogate family and was able to refine her shadowdancer abilities further, training in theft, stealth, ambush, and deception.
 
-Life in the Guild and Rising Strength  
+Life in the Guild and Rising Strength
 As Nephetel grew, her reputation within the Thieves’ Guild flourished, and she eventually caught the attention of the Shadowmaster of the Shadow Thieves. Her exploits earned her favor and access to rare gear and resources, and she continued honing her skills with the guild’s support. Nephetel learned from her life in the shadows that prejudices and others’ judgments held no power over her. Strength and skill became her armor, and she learned to stand confidently against ignorance and fear.
 
-A Hidden Purpose: Working for Szass Tam  
+A Hidden Purpose: Working for Szass Tam
 When Szass Tam, the formidable lich and leader of Thay, took notice of her talents, he hired Nephetel for missions that required infiltration, evasion, and subterfuge. These missions were challenging and often morally questionable, yet she accepted them to get closer to Enegar, who she learned was under Tam's influence. Nephetel viewed her employment under Szass Tam as a necessary evil to achieve her ultimate goal: rescuing her brother from the clutches of darkness. She buried her regrets, focusing only on the end goal, though she always preferred less abhorrent paths when possible.
 
-Present Motivations and Personality  
+Present Motivations and Personality
 Nephetel has become an expert at hiding her true intentions, using her playful demeanor and sass as a front for her more serious purpose. Her early mischievousness has evolved into a calculated persona, one she uses to mask her pain and single-minded determination. She maintains an air of control, often appearing unfazed or lighthearted, yet beneath it all is a woman carefully weighing each move, aware of the stakes at every turn. Her dedication to rescuing Enegar remains her driving force, and it is only through this mission that she believes she can find peace.
 
 Nephetel’s journey has molded her into someone profoundly resilient and, at times, secretive to a fault. She trusts few and reveals even less, all to protect the one bond that truly matters to her. In her heart, she knows that only by freeing Enegar from the sinister grip of Szass Tam can she hope to lay her pain to rest and perhaps, finally, begin a life on her own terms.

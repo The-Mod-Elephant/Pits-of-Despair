@@ -55,4 +55,3 @@ THEN
 		FaceObject([PC])
 		DisplayStringHead(Myself,102635)  // Our merchants have just received a new shipment of magical items. You might want to take a closer look at their wares.
 END
-

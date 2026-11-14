@@ -6,4 +6,3 @@ THEN
 		DisplayString(LastTrigger,14381)  // Trap Sprung
 		ForceSpell(LastTrigger,WIZARD_PRISMATIC_SPRAY)  // SPWI714.SPL (Prismatic Spray)
 END
-

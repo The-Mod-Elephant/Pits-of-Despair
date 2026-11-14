@@ -26,4 +26,3 @@ THEN
 	RESPONSE #100
 		CreateItem("ohbptn10",0,0,0)  // Rat Poison
 END
-

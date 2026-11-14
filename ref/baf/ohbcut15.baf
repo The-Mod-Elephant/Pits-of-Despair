@@ -30,4 +30,3 @@ THEN
 		Wait(1)
 		EndCutSceneMode()
 END
-

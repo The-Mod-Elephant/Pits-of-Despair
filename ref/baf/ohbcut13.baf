@@ -42,4 +42,3 @@ THEN
 		SmallWait(1)
 		ActionOverride("ohbjoker",StartDialogueNoSet([PC]))
 END
-

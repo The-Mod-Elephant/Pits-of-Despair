@@ -3,14 +3,14 @@
 //            momatk02
 /////////////////////////////////////////////////////////////////////
 //        Version 1
-// Vampire attack targeting to find creatures that can be level 
+// Vampire attack targeting to find creatures that can be level
 // drained.
 //
 //
 //
 /////////////////////////////////////////////////////////////////////
 IF
-    OR(3) 
+    OR(3)
       See(NearestEnemyOfType([PC]))
       See(WorstAC)
       See(LastAttackerOf(Myself))

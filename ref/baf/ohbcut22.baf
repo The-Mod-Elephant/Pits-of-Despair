@@ -62,4 +62,3 @@ THEN
 		Wait(2)
 		EndCutSceneMode()
 END
-

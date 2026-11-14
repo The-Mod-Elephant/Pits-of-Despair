@@ -38,4 +38,3 @@ THEN
 		SmallWait(1)
 		ActionOverride("ohbtartl",StartDialogueNoSet(Player1))
 END
-

@@ -73,7 +73,7 @@ ADD_JOURNAL TITLE (@800000) @800001 @800004
 ADD_JOURNAL TITLE (@800002) @800003
 ADD_JOURNAL TITLE (@800005) @800006 @800007 @800016
 ADD_JOURNAL TITLE (@800008) @800009 @800010 @800011
-ADD_JOURNAL TITLE (@800012) @800013 
+ADD_JOURNAL TITLE (@800012) @800013
 ADD_JOURNAL TITLE (@800014) @800015
 
 // Dialogs
@@ -146,7 +146,7 @@ COPY ~%MOD_FOLDER%/wav/zb~ ~override~
 // REQUIRE_COMPONENT "zbpod.tp2" "0" @30000 // traify later
 // REQUIRE_COMPONENT "ZS_Consumables.tp2" "0" @30001 // traify later
 
-// ACTION_IF FILE_EXISTS ~zs_weaponoils/libs/fragments/zs_patch_pod.tph~ BEGIN 
+// ACTION_IF FILE_EXISTS ~zs_weaponoils/libs/fragments/zs_patch_pod.tph~ BEGIN
 //   INCLUDE ~zs_weaponoils/libs/fragments/zs_patch_pod.tph~ // same file from oils
 // END
 

@@ -110,4 +110,3 @@ THEN
 	RESPONSE #100
 		AttackReevaluate(NearestEnemyOf(Myself),30)
 END
-

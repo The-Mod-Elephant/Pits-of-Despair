@@ -24,4 +24,3 @@ THEN
 	RESPONSE #100
 		Enemy()
 END
-

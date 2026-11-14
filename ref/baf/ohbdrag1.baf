@@ -2652,4 +2652,3 @@ THEN
 	RESPONSE #100
 		AttackReevaluate(LastSeenBy(Myself),15)
 END
-

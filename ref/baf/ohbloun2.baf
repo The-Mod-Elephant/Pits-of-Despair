@@ -6,4 +6,3 @@ THEN
 		DisplayString(LastTrigger,14381)  // Trap Sprung
 		ForceSpell(LastTrigger,TRAP_ARROW_DETONATION)  // SPWI009.SPL (No such index)
 END
-

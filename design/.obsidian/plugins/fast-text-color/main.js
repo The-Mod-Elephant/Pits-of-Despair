@@ -458,7 +458,7 @@ var FastTextColorPluginSettingTab = class extends import_obsidian4.PluginSetting
     });
   }
   /**
-   * Create a color row in the theme view 
+   * Create a color row in the theme view
    *
    * @param {HTMLElement} container - the root container of the element.
    * @param {TextColor} tColor - the color to be used for display

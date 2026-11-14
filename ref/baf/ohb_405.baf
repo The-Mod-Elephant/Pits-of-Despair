@@ -21,4 +21,3 @@ THEN
 		SetGlobal("ohb_spawn_gladiators","myarea",0)
 		SetCursorState(FALSE)
 END
-

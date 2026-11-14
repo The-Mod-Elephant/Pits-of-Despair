@@ -81,4 +81,3 @@ THEN
 		ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
 		SetInterrupt(TRUE)
 END
-

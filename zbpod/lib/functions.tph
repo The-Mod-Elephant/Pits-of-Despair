@@ -1107,4 +1107,3 @@ BEGIN
 		FAIL "ADD_IDS_ENTRY: the specified IDS file ~%idsFile%~ does not exist as a game resource"
 	END
 END
-
