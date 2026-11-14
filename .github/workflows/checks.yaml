@@ -1,19 +1,17 @@
-name: 'checks'
+name: checks
 on:
   pull_request:
 jobs:
-  pre-commit:
+  checks:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@main
-      with:
-        set-safe-directory: true
-        fetch-depth: 0
-    - uses: actions/setup-python@main
-    - run: |
-        wget -q https://github.com/WeiDUorg/weidu/releases/download/v249.00/WeiDU-Linux-249-amd64.zip
-        unzip WeiDU-Linux-249-amd64.zip
-        rm WeiDU-Linux-249-amd64.zip
-        sudo mv WeiDU-Linux/weidu /usr/local/bin/weidu
-        rm -rf WeiDU-Linux
-    - uses: pre-commit/action@main
+      - uses: actions/checkout@main
+      - uses: nixbuild/nix-quick-install-action@master
+      - name: nixcache
+        uses: nix-community/cache-nix-action@main
+        with:
+          primary-key: nix-${{ runner.os }}-${{ hashFiles('flake.nix', 'flake.lock') }}
+          restore-prefixes-first-match: nix-${{ runner.os }}-
+          gc-max-store-size-linux: 5G
+      - shell: 'nix develop -c bash -e {0}'
+        run: env HK_FIX=0 hk run pre-commit --all --no-fail-fast --stash none
