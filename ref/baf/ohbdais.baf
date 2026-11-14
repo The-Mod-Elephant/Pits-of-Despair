@@ -15,4 +15,3 @@ THEN
 	RESPONSE #100
 		DisplayString(Myself,14702)  // You are too far away to use that.
 END
-

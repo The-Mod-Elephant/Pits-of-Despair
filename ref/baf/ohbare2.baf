@@ -470,4 +470,3 @@ THEN
 		MoveViewObject("OHBELGIA",INSTANT)  // Elgiad
 		ActionOverride("OHBELGIA",StartDialogueNoSet(Player1))
 END
-

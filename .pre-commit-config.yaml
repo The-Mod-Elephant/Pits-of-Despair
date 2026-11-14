@@ -1,40 +1,40 @@
 default_install_hook_types: [pre-commit]
 repos:
-- repo: local
-  hooks:
-    - id: check-weidu
-      stages: [pre-commit]
-      name: check weidu
-      description: check if weidu files are parsable
-      entry: .github/scripts/check-weidu.sh
-      language: system
-      pass_filenames: true
-    - id: ie-file-check
-      stages: [pre-commit]
-      name: infinity engine file check
-      description: Infinity Engine File Check
-      entry: .github/scripts/check-ie.sh
-      language: system
-      pass_filenames: true
-      files: ".*[bam|baf|cre|d|itm|spl|sto|wav|vvc]"
-    - id: case-check
-      stages: [pre-commit]
-      name: check case conflict
-      description: Check case conflict
-      entry: .github/scripts/check-case.sh
-      language: system
-      pass_filenames: false
-    - id: git-check
-      stages: [pre-commit]
-      name: git check
-      description: Git check
-      entry: .github/scripts/check-git.sh
-      language: system
-      pass_filenames: false
-    - id: check-merge-conflict
-      stages: [pre-commit]
-      name:  check merge conflict
-      description: check if merge conflict
-      entry: .github/scripts/check-merge-conflict.sh
-      language: system
-      pass_filenames: true
+  - repo: local
+    hooks:
+      - id: check-weidu
+        stages: [pre-commit]
+        name: check weidu
+        description: check if weidu files are parsable
+        entry: .github/scripts/check-weidu.sh
+        language: system
+        pass_filenames: true
+      - id: ie-file-check
+        stages: [pre-commit]
+        name: infinity engine file check
+        description: Infinity Engine File Check
+        entry: .github/scripts/check-ie.sh
+        language: system
+        pass_filenames: true
+        files: ".*[bam|baf|cre|d|itm|spl|sto|wav|vvc]"
+      - id: case-check
+        stages: [pre-commit]
+        name: check case conflict
+        description: Check case conflict
+        entry: .github/scripts/check-case.sh
+        language: system
+        pass_filenames: false
+      - id: git-check
+        stages: [pre-commit]
+        name: git check
+        description: Git check
+        entry: .github/scripts/check-git.sh
+        language: system
+        pass_filenames: false
+      - id: check-merge-conflict
+        stages: [pre-commit]
+        name: check merge conflict
+        description: check if merge conflict
+        entry: .github/scripts/check-merge-conflict.sh
+        language: system
+        pass_filenames: true

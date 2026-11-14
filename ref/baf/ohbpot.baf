@@ -15,4 +15,3 @@ THEN
 		CreateItem("ohbptn11",0,0,0)  // Myconid Soup
 		SetGlobal("ohb_makesoup","LOCALS",1)
 END
-

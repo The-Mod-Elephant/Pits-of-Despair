@@ -6,4 +6,3 @@ THEN
 		DisplayString(LastTrigger,14381)  // Trap Sprung
 		ForceSpell(LastTrigger,WIZARD_MELF_ACID_ARROW)  // SPWI211.SPL (Melf's Acid Arrow)
 END
-

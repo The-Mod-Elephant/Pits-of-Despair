@@ -31,4 +31,3 @@ THEN
 		Wait(1)
 		StartCutScene("ohbcut03")
 END
-

@@ -202,4 +202,3 @@ THEN
 		SetGlobal("OHB_NOOBER","GLOBAL",2)
 		SetAreaScript("ohb_506",DEFAULT)
 END
-

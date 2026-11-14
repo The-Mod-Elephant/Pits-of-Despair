@@ -78,4 +78,3 @@ THEN
 		SetAreaScript("",OVERRIDE)
 		ActionOverride("ohbnajim",StartDialogueNoSet(Player1))
 END
-

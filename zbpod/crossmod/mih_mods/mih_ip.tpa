@@ -17,5 +17,3 @@ BEGIN
     ADD_STORE_ITEM "mh#ring1" AFTER "ring06" #0 #0 #0 "identified" #1
     ADD_STORE_ITEM "mh#clck1" AFTER "clck01" #0 #0 #0 "identified" #1
 END
-
-

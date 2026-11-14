@@ -43,4 +43,3 @@ THEN
 		SetGlobal("ZBCUT06SKIP_CUTSCENE_BREAKABLE","GLOBAL",0)
 		ActionOverride("ohbtartl",StartDialogueNoSet(Player1))
 END
-

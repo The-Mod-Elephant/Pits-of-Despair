@@ -83,4 +83,3 @@ THEN
 		SetGlobalTimer("OH_VFX","LOCALS",TWO_ROUNDS)
 		ForceSpell(Myself,DO_NOTHING)  // SPIN905.SPL (No such index)
 END
-

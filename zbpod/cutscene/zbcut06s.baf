@@ -30,4 +30,3 @@ THEN
 		Wait(2)
 		ActionOverride("ohbtartl",StartDialogueNoSet(Player1))
 END
-

@@ -48,4 +48,3 @@ THEN
 		ActionOverride("ohbdorma",Enemy())
 		EndCutSceneMode()
 END
-

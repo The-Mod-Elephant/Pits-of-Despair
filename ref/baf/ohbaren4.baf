@@ -21,4 +21,3 @@ THEN
 		SetCursorState(TRUE)
 		EndCutSceneMode()
 END
-

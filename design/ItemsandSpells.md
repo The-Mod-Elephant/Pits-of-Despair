@@ -30,7 +30,7 @@ Description:
 
 ZBpagesC
 
-        Report from the Shadow Thieves  
+        Report from the Shadow Thieves
 Requires: Act 1 - Given to Player by Galen Bayle
 
 Effects:
@@ -79,7 +79,7 @@ Zbribbc
 
         Magical RIbbon
 
-Requires: Act 2 - Match 15 J  
+Requires: Act 2 - Match 15 J
 Effect: Used to upgrade the Jade Fury to the Jade Spindel
 
 ![](Attachments/image3.png)
@@ -94,8 +94,8 @@ Effect: Used to upgrade the Blood of Orcus to the Corrupted Blood of Orcus
 
 ![](Attachments/image69.png)
 
-Zbdlfac  
-        Dracolich Fang  
+Zbdlfac
+        Dracolich Fang
 Requires: Act 4 - Killing Deathslither
 
 Effect: Used to upgrade Nephetel’s Penumbral Dagger to the Umbral Dagger
@@ -120,14 +120,14 @@ Zbgrimsc
 
 Requires: Match 18
 
-Effects: Grimsaw. Dagger +5, +4 piercing damage Ability: Fishhook 3/day targeted enemy is pulled toward wielder, stunning for 1 round, save vs death -6(?), deals 4d6+4 piercing damage  
+Effects: Grimsaw. Dagger +5, +4 piercing damage Ability: Fishhook 3/day targeted enemy is pulled toward wielder, stunning for 1 round, save vs death -6(?), deals 4d6+4 piercing damage
 Upon a successful Backstab applies "Gut" -4 to AC for 4 rounds
 
 Description: A weapon of a vicious pirate captain lost to the waves of Umberlee during a storm. May have gotten some powers from underwater creatures like Kuo-Toa or Sahguain
 
 ![](Attachments/image13.png)
 
-Zbmastc  
+Zbmastc
         Mastadon +3, Usable by: Any
 
 Requires: 10000 Gold
@@ -478,7 +478,7 @@ When the noble-born sorcerer and hunter of exotic beasts Khuldros Vey of Tethyr 
 
 Zbshamc
 
-        Dancer’s Shoes. Usable by: Shaman  
+        Dancer’s Shoes. Usable by: Shaman
 Requires: 18000 Gold
 
 Effects: AC/Saves +2, Spirits gain +1APR, +4 Damage, 10% Phys Resist. Ability 1/day - Mass Contagion: Chain attack that hits 1 then to the next in a 40 ft radius up to 5 targets. Poisons Damage 4/round. -4 AC/Saving throw, -2 THAC0). Save vs Death -2 to avoid. Duration 5 rounds.
@@ -535,7 +535,7 @@ ZBbruinC CRAFTED - Cromwell
 
         Belt of Ruinous Rage. Usable by Barbarian
 
-Requires: 12,000 Gold  
+Requires: 12,000 Gold
 Effects: +3 Piercing and Missile AC. Transforms a Barbarian's Rage into 'Ruinous Rage' which causes
 
 all attacks to do 1d6+3 slashing damage if 1-handed or 1d10+3 if 2-handed in a 5' radius around the target hit. Also causes 1d4 slashing per round damage to the Barbarian who is raging.
@@ -858,7 +858,7 @@ Effects:
 
 Description: Constructed by an inventive gnome from the Church of Gond, this crossbow is a mechanical marvel. Able to harness energies from the Astral Plane it fires those energies that causes greater harm those from the outer planes.
 
-  
+
 Upgraded from a sprout from the Tree of Life in Suldanessellar it transforms the energy it can capture into pure life energy that will etherealize where the bolt is fired causing a portion of what it hits to disintegrate.
 
 ![](images/image43.png)
@@ -905,7 +905,7 @@ ZBbbookc
 
         The Pits of Despair: Desperate and True by Baeloth Barrityl Dictated but not read
 
-Effects:  
+Effects:
 Description:
 
 Baeloth Barrityl, the notorious drow sorcerer and self-proclaimed "Entertainer" has once again unleashed his literary prowess upon the unsuspecting masses. His latest work, The Pits of Despair: Desperate and True, is a rousing mix of drama, despair, and – as one might expect – a rather excessive amount of self-aggrandizement.

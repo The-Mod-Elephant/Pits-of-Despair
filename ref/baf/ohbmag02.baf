@@ -4173,4 +4173,3 @@ THEN
 	RESPONSE #100
 		RandomWalkContinuous()
 END
-

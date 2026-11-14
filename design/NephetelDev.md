@@ -13,22 +13,22 @@ Dislikes - judgmental personality, questioning her competence,
 # Design Questions
 
 1. ## How did the Bhaalspawn, whether it is one or both, get taken by the Cult?
-    
+
 
 A raid made by cultists, and these cultists had some magical means of detecting Bhaal’s taint and he was an unlucky catch.
 
 2. ## How is Nephetel related to the Bhaalspawn (one or both) and why? 
-    
+
 
 One of them is her younger sibling. She is not a Bhaalspawn, her father was not Bhaal but a mortal someone else. Regardless of different parentage they share the same mother and she treats him as her real full brother and wants to protect him.
 
 3. ## Why does Nephetel want to save the Bhaalspawn (one or both)?
-    
+
 
 Because one of them is a sibling of hers, and she is protective of him.
 
 4. ## This happened in Thay. What part of  Thay is Nephetel and/or the Bhaalspawn from? Does this matter or factor into her story?
-    
+
 
 My gut thinking is to say it doesn’t matter where they are from, it only matters that they are within the reach of Thay, Szass Tam, and the Bhaalist cult. If you have more specific ideas, let me know.
 
@@ -41,7 +41,7 @@ She barely restrained her emotions when this event happened. This is why kidnapp
 Manipulating or tricking the PC into killing cultists or otherwise a bit of manipulation is a good idea. We can use that later as a “regret” conversation for having gone that far. After she bonds with the PC enough and earns enough trust, there’s some hindsight in place which leads to regret, which you can then use to absolve her or to condemn her, which could end the romance (or damage a friendship, if that makes sense too).
 
 5. ## What was Nephetel’s childhood like?
-    
+
 
 If one of her siblings is a Bhaalspawn, she might’ve had to deal with the consequences of the taint. Perhaps social ostracism from her sibling being “weird”, “mean”, or violent, including bullying, which adds up with the societal distrust towards tieflings to begin with.
 
@@ -66,7 +66,7 @@ After her brother was taken, she survived by thieving and any other means includ
 We could play with the Thieves’ Guild angle. Perhaps she did a huge favor to a Shadowmaster, and he or she is willing to return the favor, which is part of why her plan to rescue her brother has backing and higher chances of success, since Thieves’ Guilds are very powerful, especially shadow thieves.
 
 6. ## Give a brief summary of Nephetel’s Brother, Enegar
-    
+
 
 Nephetel’s younger brother. He’s also a tiefling, born from the same mother, but a different father, aka Bhaal. He is four years younger than Nephetel.
 
@@ -77,19 +77,19 @@ Before the kidnapping, he suffered the consequences of the taint of Bhaal in var
 - Sudden thoughts of violence when an opportunity arose, or when looking at someone in a submissive or vulnerable state. He had to ask himself why he had those thoughts. Nephetel had to work as his therapist in a way. This all led to rumors from the populace about him being cursed, a pariah, etc. They might have had to defend themselves against a small angry mob in the past.
 
 7. ## How did that change in her adulthood?
-    
+
 
 Independence. Gaining power, realizing the opinions of the populace are beneath her notice.
 
 It’s not that she thinks they’re sheep to be manipulated, it’s more like their opinions have no value to her. And as such all the aforementioned ostracisms, sideway glances of the populace are thereby deemed worthless. Maybe she understands that they are just expressing typical prejudices, racism, and the like. She’s now powerful in her own right and she won’t be stepped on. And it’s the ones she cares about or respects who really matter.
 
-8. ## What surviving family does she have?  
-    
+8. ## What surviving family does she have?
+
 
 Her Bhaalspawn sibling. Her parents died and she was the only protector of her sibling, and she blames herself for not being able to protect him when he was taken. And as such, guilt is a definite part of her history with her sibling.
 
 9. ## Why is Nephetel employed by Szass Tam?
-    
+
 
 For her skills, and maybe other reasons, but in truth she’s a double agent with ulterior motives. One of those reasons could be getting closer to saving her brother.
 
@@ -103,8 +103,8 @@ Under his employment, she had to go through necessary evils for the sake of her 
 
 We can allude to this with some of the missions in BP2. Like perhaps she won’t brew a deadly poison but rather an incapacitating one for Joker. She won’t allow a scroll that completely destroys Bannor but rather tries (and maybe fails?) to turn him into something lesser and not a drow as he was mortally, etc. However, she should have no qualms about going further if the goals are important. Some amount of guilt could display after the situation is over and the dust settles.
 
-10. ## What is her plan on what is going to happen and why?  
-    
+10. ## What is her plan on what is going to happen and why?
+
 
 Okay, so many possibilities could exist here:
 
@@ -125,7 +125,7 @@ Finally, I’m neutral on the topic of the merchants and what they can get out o
 - Denneton eventually fails Tam, but perhaps he was doing things under the table and in some way, perhaps through a go-between, Nephetel has been manipulating him to eventually fail. It could be that he himself is a member of the Cult and it seems like justice to have Tam kill his own head of the games.
 
 11. ## What is her motivation?
-    
+
 
 Possibly saving her brother to start with.
 
@@ -140,7 +140,7 @@ If she joins afterward, she could have a friendship or romance series of dialogs
 She could have a different goal afterwards although I'm more inclined to keep it focused on aimlessness after her goal is achieved since it's the thing that makes the most sense.
 
 12. ## How does this affect her personality?
-    
+
 
 Hidden under layers of playful secretiveness. She keeps her cool, but the matter of her brother and rescuing him might be the one thing that makes her lose her cool or get otherwise upset or emotional. In most situations unless under duress, she handles it without anyone noticing it.
 
@@ -155,7 +155,7 @@ In general, this fine control allows her to not take it out on others, although 
 This is where sadness and fear will come in. She will feel happiness and satisfaction when work and tasks are accomplished effectively. She dislikes incompetence and is annoyed by wasting time.
 
 13. ## How open/secretive is Nephetel?
-    
+
 
 Secretive from the outset, but played in a playful (pun not intended) manner. As the relationship deepens with the PC (romance-independently), she will be more open. The cause for this deepening could be depending on choices, or simply as part of the natural progression of the story. The first one is more interesting, in my view, since it involves player agency, RPG, and choices, but is naturally more involved. Examples of choices that may change this:
 
@@ -173,7 +173,7 @@ Little by little she can become more or less secretive using my proposal impleme
 As for breakpoints in relationship/trust we can say that romance cannot happen if trust is in the negative, and it doesn’t progress if it’s not high enough at some point too. The same rationale would apply to how open she is. We could have variants of responses depending on this level, which may help, help less, or hinder a player that wants to figure out the quest or the plot. The actual numbers used are arbitrary, depending on how many jumps we want, what numbers we want to track, and how many changes are there depending on trust level. So (-10,10) might be good or (-20, 20) might be good, it just depends on how much we flesh out her trust level. Is every number a new state with new changes, or are we going to check for example that if above 15, romance is possible, and no longer check values above that. That’s an implementation detail and it will become more clear as we define a number of moments that build or destroy her trust.
 
 14. ## If a romance, Love talks are probably in the 6-8 Range and all in ToB. You will need a structure and to identify what her ‘language of love’ is
-    
+
 
 I don’t know what “language of love” would be. I have low insight into what other people do to express love, other than stating things plainly as-matter-of-factly.
 
@@ -206,12 +206,12 @@ Other encounters we could do, are one in the Oasis and also one with the Pirates
 I think that if the outcome of her brother failing to be rescued or dying in the attempt is on the table, she should be completely closed to romance and remain psychologically broken permanently (maybe even snap and become evil – kinda like Caelar).
 
 15. ## What is her escape plan after getting her brother(s)?
-    
+
 
 Unclear. Maybe she has a special trinket or magical gear that allows to cover a party with a blanket of invisibility and silence and a few selected explosive materials stolen from merchants or from behind the locked doors of the pits.
 
 16. ## How does the PC factor into that plan?
-    
+
 
 Perhaps she’ll be able to do it either way, but the outcome is more positive if the PC agrees to help, and might add trust points. So perhaps she can suggest a small quest for the preparation of the escape to achieve this. Either way she will escape.
 
@@ -220,17 +220,17 @@ For this we have to consider the Bhaalspawn plot of absorbing or rejecting essen
 With the latter path, I think a positive relationship with her will be impossible.
 
 17. ## Why does the PC agree with her?
-    
+
 
 Because they may think it’s right, or simply for self-preservation that is involved in escaping the pits.
 
 18. ## Why does the PC disagree with her?
-    
+
 
 Because they may fear the outcome, or think it’s unlikely to succeed and she’ll die in the attempt, because of bloodlust, because they don’t care about her brother…
 
 19. ## You have around 10-20 quips to be able to build this relationship. Where do you start and what are you looking for?
-    
+
 
 Some ideas:
 
@@ -243,7 +243,7 @@ Some ideas:
 - Some banter about fights or future fights is also cool. Some sass is expected.
 
 20. ## Sex talk. It’s not graphic but tasteful. If it’s a one time thing it’s more impactful if her personality doesn’t allow it to go forward
-    
+
 
 I think this will be either a one-time thing, or a continued thing if romance goes through. If it’s a one-time thing, she will lose interest in the romance (think Jack from Mass Effect 2, if you’re familiar with it). We can keep track of this similarly to vanilla romance, e.g. with a global variable like ViconiaRomanceActive([0,3]).
 
@@ -254,14 +254,14 @@ As for how to describe it in a tasteful manner, I don’t have much input to giv
 I’m ambivalent between the people that like fantasy toned-down stuff like Lord of the Rings or “realer” stuff like Game of Thrones, and in some ways BG3. But if we want it to integrate it nicely with the style of BG2EE without looking too much like mod-added content, then the former is the way (I’m ambivalent but I favor the former a bit more anyway).
 
 21. ## We will use a cutscene to do the final talk. This is the “our future is uncertain” or “I accept you” type of thing, then after that it will be just normal admiration banter and interjections for time together. How do you envision the relationship “ending”?
-    
+
 
 Assuming that the romance doesn’t break in the process due to “saying the wrong thing” similar to how it happens in vanilla romances…
 
 Perhaps it could be a cutscene in a remote place separate from the group. That sort of looking at the nighttime landscape or starry sky and having a gentle and tender conversation about the previous events and the resolution of the conflicts (quests). Depending on how it was resolved, perhaps the tone of the conversation could change slightly (more pessimistic, more optimistic, etc, depending on the resolution, we will have to see after that is clearly defined).
 
 22. ## Check the structure of the [Rebalanced Pits](https://www.google.com/url?q=https://docs.google.com/document/u/0/d/1fhsLe1jYnQb1rSDnl9SNZ8rL5DNWvlm5V2_pYFVCtyQ/edit&sa=D&source=editors&ust=1776534020712901&usg=AOvVaw2qZaXXeeI1LCUugMkuBYPA), especially the section on Rebalancing which has the structure of the Escapes and potential “Rematches” or “New Matches” in it. Ask any questions you have about it and if it needs to be refined for Nephetel or her relationship quips.
-    
+
 
 No questions for now.
 

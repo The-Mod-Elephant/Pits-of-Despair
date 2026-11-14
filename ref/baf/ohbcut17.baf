@@ -29,4 +29,3 @@ THEN
 		Wait(2)
 		ActionOverride("ohbleoka",StartDialogueNoSet([PC]))
 END
-

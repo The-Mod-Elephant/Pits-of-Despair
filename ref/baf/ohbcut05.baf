@@ -86,4 +86,3 @@ THEN
 		MoveToPoint([3254.2039])
 		SmallWait(90)
 END
-

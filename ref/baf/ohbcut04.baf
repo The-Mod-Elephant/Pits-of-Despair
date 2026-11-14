@@ -71,4 +71,3 @@ THEN
 		Wait(1)
 		ApplySpell(Myself,SLAVE_CHUNK)  // SPIN813.SPL (Death Curse)
 END
-

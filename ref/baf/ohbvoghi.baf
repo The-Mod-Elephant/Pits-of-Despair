@@ -43,4 +43,3 @@ THEN
 		MoveToPointNoInterrupt([2260.1645])
 		Face(SW)
 END
-

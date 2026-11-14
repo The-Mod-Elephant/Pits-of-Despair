@@ -18,4 +18,3 @@ THEN
 		SetName(74108)  // Najim
 		StartDialogueNoSet(Myself)
 END
-

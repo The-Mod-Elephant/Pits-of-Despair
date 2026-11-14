@@ -16,7 +16,7 @@ IF
 THEN
   RESPONSE #100
     ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
-    ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  
+    ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
     ReallyForceSpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
     ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)
     ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_FIRE)
@@ -54,7 +54,7 @@ IF
 THEN
   RESPONSE #100
     ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
-    ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  
+    ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
     ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)
     ReallyForceSpell(Myself,WIZARD_SPELL_SHIELD)  // SPWI519.SPL (Spell Shield)
     SetGlobalTimer("DemiTS","LOCALS",60)
@@ -121,12 +121,12 @@ END
 /////////////////////////////////////////////////////////////////////
 // Allies
 /////////////////////////////////////////////////////////////////////
-IF 
+IF
   Global("Guard","LOCALS",0)
   Allegiance(Myself,ENEMY)
   DifficultyGT(HARD)
   AreaCheck("AR3027") // Watcher's Keep
-THEN 
+THEN
   RESPONSE #100
     CreateCreatureObjectDoor("dempit01",Myself,1,1,1)
     CreateCreatureEffect("MUMGRE01","SPRAISED",[236.416],E)  // Greater Mummy
@@ -135,12 +135,12 @@ THEN
     Continue()
 END
 
-IF 
+IF
   Global("Guard","LOCALS",0)
   Allegiance(Myself,ENEMY)
   Difficulty(HARD)
   AreaCheck("AR3027") // Watcher's Keep
-THEN 
+THEN
   RESPONSE #100
     CreateCreatureObjectDoor("dempit01",Myself,1,1,1)
     CreateCreatureEffect("MUMGRE01","SPRAISED",[646.445],E)  // Greater Mummy
@@ -153,12 +153,12 @@ THEN
     Continue()
 END
 
-IF 
+IF
   Global("Guard","LOCALS",0)
   Allegiance(Myself,ENEMY)
   Difficulty(NORMAL)
   AreaCheck("AR3027") // Watcher's Keep
-THEN 
+THEN
   RESPONSE #100
     CreateCreatureEffect("MUMGRE01","SPRAISED",[646.445],E)  // Greater Mummy
     IncrementGlobal("Guard","LOCALS",1)
@@ -182,7 +182,7 @@ THEN
     ForceSpell(Myself,WIZARD_TIME_STOP)  // SPWI909.SPL (Time Stop)
     SetGlobalTimer("MO_TS","GLOBAL",18)
     ReallyForceSpell(Myself,WIZARD_TELEPORT_FIELD)  // SPWI421.SPL (Teleport Field)
-    ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  
+    ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
     ReallyForceSpell(Myself,WIZARD_SPELL_SHIELD)  // SPWI519.SPL (Spell Shield)
     ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_FIRE)
 END
@@ -194,7 +194,7 @@ END
 /////////////////////////////////////////////////////////////////////
 // Spell: Demilich Howl (use if 3 enemies are within 15ft.)
 /////////////////////////////////////////////////////////////////////
-IF 
+IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
@@ -205,7 +205,7 @@ IF
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
-THEN 
+THEN
   RESPONSE #50
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
@@ -1968,7 +1968,7 @@ THEN
   RESPONSE #50
     SetGlobal("MO_CastChaos","LOCALS",0)
     Continue()
-END 
+END
 
 IF
   OR(2)
@@ -3438,7 +3438,7 @@ IF
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
-  RESPONSE #100    
+  RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_LevelOne","LOCALS",-1)
     SetInterrupt(FALSE)
@@ -3473,7 +3473,7 @@ IF
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
-  RESPONSE #100    
+  RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_LevelOne","LOCALS",-1)
     SetInterrupt(FALSE)
@@ -3508,7 +3508,7 @@ IF
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
-  RESPONSE #100    
+  RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_LevelOne","LOCALS",-1)
     SetInterrupt(FALSE)
@@ -3543,7 +3543,7 @@ IF
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
-  RESPONSE #100    
+  RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_LevelOne","LOCALS",-1)
     SetInterrupt(FALSE)
@@ -3578,7 +3578,7 @@ IF
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
-  RESPONSE #100    
+  RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_LevelOne","LOCALS",-1)
     SetInterrupt(FALSE)
@@ -3613,7 +3613,7 @@ IF
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
-  RESPONSE #100    
+  RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_LevelOne","LOCALS",-1)
     SetInterrupt(FALSE)
@@ -3622,7 +3622,7 @@ THEN
 END
 
 /////////////////////////////////////////////////////////////////////
-// Wait for death. :-) Don't let some other BG script take over. 
+// Wait for death. :-) Don't let some other BG script take over.
 /////////////////////////////////////////////////////////////////////
 IF
   True()

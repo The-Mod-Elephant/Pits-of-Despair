@@ -5,8 +5,8 @@
 //        Version 1
 // Gish, 13/13 level fighter/mage
 // Simyaz, 13/13 level fighter/mage
-// Memorized Mage Spells By Level: 5 5 5 4 4 2 
-// Memorized Mage Spells (number, name, spell level): 
+// Memorized Mage Spells By Level: 5 5 5 4 4 2
+// Memorized Mage Spells (number, name, spell level):
 //  Level 1 (5 memorized)
 //  magic missile (3)
 //  chromatic orb (2)
@@ -38,7 +38,7 @@
 //  Level 6 (2 memorized)
 //  pfmw (1)
 //  improved haste (1)
-// 
+//
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
@@ -442,7 +442,7 @@ END
 IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING) 
+    CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_RemoveMagicTimer","LOCALS")
   !GlobalTimerNotExpired("MO_RemoveMagicGlobalTimer","GLOBAL")
   See(SixthNearestEnemyOf(Myself))
@@ -2375,7 +2375,7 @@ IF
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
-  RESPONSE #100    
+  RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("Missile","LOCALS",-1)
     SetInterrupt(FALSE)
@@ -2411,7 +2411,7 @@ IF
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
-  RESPONSE #100    
+  RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("Missile","LOCALS",-1)
     SetInterrupt(FALSE)
@@ -2447,7 +2447,7 @@ IF
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
-  RESPONSE #100    
+  RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("Missile","LOCALS",-1)
     SetInterrupt(FALSE)
@@ -2483,7 +2483,7 @@ IF
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
-  RESPONSE #100    
+  RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("Missile","LOCALS",-1)
     SetInterrupt(FALSE)
@@ -2519,7 +2519,7 @@ IF
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
-  RESPONSE #100    
+  RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("Missile","LOCALS",-1)
     SetInterrupt(FALSE)
@@ -2555,7 +2555,7 @@ IF
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
-  RESPONSE #100    
+  RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("Missile","LOCALS",-1)
     SetInterrupt(FALSE)

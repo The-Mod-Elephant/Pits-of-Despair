@@ -602,7 +602,7 @@ COPY ~%MOD_FOLDER%/items/skyhammergauntlets~ ~override~
 COPY_EXISTING ~zbskyh0.itm~ ~override~
     SAY NAME2 @11133
     SAY IDENTIFIED_DESC @11134
-    
+
 // Post production, keep at end of file, do not add new items after this. \\
 
 COPY_EXISTING_REGEXP "^.*\.itm$" "override"
@@ -624,5 +624,3 @@ COPY_EXISTING_REGEXP "^.*\.itm$" "override"
   END
 
   BUT_ONLY_IF_IT_CHANGES
-
-

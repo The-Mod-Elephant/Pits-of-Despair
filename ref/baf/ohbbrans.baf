@@ -9,4 +9,3 @@ THEN
 		Polymorph(FIGHTER_MALE_HUMAN)
 		Enemy()
 END
-

@@ -170,7 +170,7 @@ Creature Fights will be repositioned to fight from the Arena. Magic will be allo
 
 All fights do not cost anything - are non-repeatable.
 
-  
+
 TRAINING 1 - 8,000 Exp - Reward: 1000 G
 
         2 Vampire Worg - E, 1 Dire Bear - N, 1 Dire Lion - S

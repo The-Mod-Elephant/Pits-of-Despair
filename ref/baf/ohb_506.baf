@@ -56,4 +56,3 @@ THEN
 		EndCutSceneMode()
 		SetAreaScript("ohbpost",DEFAULT)
 END
-

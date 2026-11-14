@@ -1,5 +1,5 @@
 /* some interjections are added via EXTERN + CHAIN to existing dialogues but, if wanted, the externs / dialogues might be moved over here instead later
-for now those files are: OHBVOGHI & OHBJOKER */ 
+for now those files are: OHBVOGHI & OHBJOKER */
 
 // Minsc Najim
 INTERJECT_COPY_TRANS OHBNAJIM 0 ZBNAJIM_MINSC

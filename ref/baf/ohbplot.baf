@@ -84,4 +84,3 @@ THEN
 		StartCutSceneMode()
 		StartCutScene("ohbcut16")
 END
-

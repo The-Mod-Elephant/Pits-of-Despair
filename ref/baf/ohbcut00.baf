@@ -77,4 +77,3 @@ THEN
 		SetAreaScript("",OVERRIDE)
 		ActionOverride("ohbjoker",StartDialogueNoSet(Player1))
 END
-

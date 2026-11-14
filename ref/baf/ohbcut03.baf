@@ -74,4 +74,3 @@ THEN
 		EndCutSceneMode()
 		SaveGame(0)
 END
-

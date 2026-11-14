@@ -11,4 +11,3 @@ THEN
 		SmallWait(5)
 		ActionOverride("ohbleoka",StartDialogueNoSet(Player1))
 END
-

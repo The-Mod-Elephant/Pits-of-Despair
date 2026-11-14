@@ -6,4 +6,3 @@ THEN
 		MoveToObject(Player1)
 		Continue()
 END
-

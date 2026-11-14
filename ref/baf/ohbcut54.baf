@@ -21,4 +21,3 @@ THEN
 		GoToStartScreen()
 		FadeFromColor([1.0],0)
 END
-

@@ -74,4 +74,3 @@ THEN
 		DisplayStringHead("ohbdrgd",101151)  // Move along, Noser. Go up or get out, make up your mind.
 		SetGlobalTimer("ohb_door11_close","oh8100",THREE_ROUNDS)  // TBP2 - Staging Area Map
 END
-

@@ -41,4 +41,3 @@ THEN
 		DisplayStringHead("ohbjoker",100613)  // Whoa! I don't feel so well. What's happening to me?
 		SetGlobalTimer("OHB_POISON_JOKER_finale","global",8)
 END
-

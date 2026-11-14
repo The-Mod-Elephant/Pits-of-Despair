@@ -8,5 +8,3 @@ BEGIN hello
   IF ~~
     EXIT
 END
-
-

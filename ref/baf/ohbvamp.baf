@@ -587,4 +587,3 @@ THEN
 		ForceSpell(LastSeenBy(Myself),VAMPIRE_DOMINATION)  // SPIN883.SPL (Domination)
 		SetInterrupt(TRUE)
 END
-

@@ -39,4 +39,3 @@ THEN
 		DisplayStringHead(Myself,90517)  // Keep moving. The banquet hall's straight ahead.
 		SetGlobalTimer("ohb_guard_intro_ot","locals",EIGHT_ROUNDS)
 END
-

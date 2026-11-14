@@ -7,10 +7,10 @@
 // Gith Knight, 21st level Fighter
 // Gith Captain, 25th level Fighter
 // Gith Sleep Interruptor, 21st level Fighter
-// 
-// 
 //
-// 
+//
+//
+//
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
@@ -288,13 +288,13 @@ IF
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobal("mindblast","LOCALS",1)
-    SetInterrupt(FALSE) 
+    SetInterrupt(FALSE)
     ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psionic Blast)
-    SetInterrupt(TRUE) 
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -324,13 +324,13 @@ IF
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobal("mindblast","LOCALS",1)
-    SetInterrupt(FALSE) 
+    SetInterrupt(FALSE)
     ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psionic Blast)
-    SetInterrupt(TRUE) 
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -360,13 +360,13 @@ IF
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobal("mindblast","LOCALS",1)
-    SetInterrupt(FALSE) 
+    SetInterrupt(FALSE)
     ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psionic Blast)
-    SetInterrupt(TRUE) 
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -396,13 +396,13 @@ IF
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobal("mindblast","LOCALS",1)
-    SetInterrupt(FALSE) 
+    SetInterrupt(FALSE)
     ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psionic Blast)
-    SetInterrupt(TRUE) 
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -432,13 +432,13 @@ IF
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobal("mindblast","LOCALS",1)
-    SetInterrupt(FALSE) 
+    SetInterrupt(FALSE)
     ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psionic Blast)
-    SetInterrupt(TRUE) 
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -468,13 +468,13 @@ IF
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobal("mindblast","LOCALS",1)
-    SetInterrupt(FALSE) 
+    SetInterrupt(FALSE)
     ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psionic Blast)
-    SetInterrupt(TRUE) 
+    SetInterrupt(TRUE)
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -515,13 +515,13 @@ IF
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_PsionicsTimer","LOCALS",12)
-    SetInterrupt(FALSE) 
+    SetInterrupt(FALSE)
     ForceSpell(LastSeenBy(Myself),PSIONIC_PROJECT_FORCE)  // SPIN547.SPL (Project Force)
-    SetInterrupt(TRUE) 
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -542,13 +542,13 @@ IF
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_PsionicsTimer","LOCALS",12)
-    SetInterrupt(FALSE) 
+    SetInterrupt(FALSE)
     ForceSpell(LastSeenBy(Myself),PSIONIC_PROJECT_FORCE)  // SPIN547.SPL (Project Force)
-    SetInterrupt(TRUE) 
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -569,13 +569,13 @@ IF
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_PsionicsTimer","LOCALS",12)
-    SetInterrupt(FALSE) 
+    SetInterrupt(FALSE)
     ForceSpell(LastSeenBy(Myself),PSIONIC_PROJECT_FORCE)  // SPIN547.SPL (Project Force)
-    SetInterrupt(TRUE) 
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -596,13 +596,13 @@ IF
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_PsionicsTimer","LOCALS",12)
-    SetInterrupt(FALSE) 
+    SetInterrupt(FALSE)
     ForceSpell(LastSeenBy(Myself),PSIONIC_PROJECT_FORCE)  // SPIN547.SPL (Project Force)
-    SetInterrupt(TRUE) 
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -623,13 +623,13 @@ IF
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_PsionicsTimer","LOCALS",12)
-    SetInterrupt(FALSE) 
+    SetInterrupt(FALSE)
     ForceSpell(LastSeenBy(Myself),PSIONIC_PROJECT_FORCE)  // SPIN547.SPL (Project Force)
-    SetInterrupt(TRUE) 
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -650,13 +650,13 @@ IF
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
-THEN 
+THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_PsionicsTimer","LOCALS",12)
-    SetInterrupt(FALSE) 
+    SetInterrupt(FALSE)
     ForceSpell(LastSeenBy(Myself),PSIONIC_PROJECT_FORCE)  // SPIN547.SPL (Project Force)
-    SetInterrupt(TRUE) 
+    SetInterrupt(TRUE)
 END
 
 /////////////////////////////////////////////////////////////////////

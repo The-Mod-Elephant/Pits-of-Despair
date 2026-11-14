@@ -257,7 +257,7 @@ THEN
     Continue()
 END
 
-IF  
+IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
@@ -302,7 +302,7 @@ THEN
     SetInterrupt(TRUE)
 END
 
-IF  
+IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
@@ -347,7 +347,7 @@ THEN
     SetInterrupt(TRUE)
 END
 
-IF  
+IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
@@ -392,7 +392,7 @@ THEN
     SetInterrupt(TRUE)
 END
 
-IF  
+IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
@@ -437,7 +437,7 @@ THEN
     SetInterrupt(TRUE)
 END
 
-IF  
+IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
@@ -482,7 +482,7 @@ THEN
     SetInterrupt(TRUE)
 END
 
-IF  
+IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
@@ -528,7 +528,7 @@ THEN
 END
 
 /////////////////////////////////////////////////////////////////////
-// Confusion 
+// Confusion
 /////////////////////////////////////////////////////////////////////
 IF
   OR(2)
@@ -1084,7 +1084,7 @@ THEN
 END
 
 /////////////////////////////////////////////////////////////////////
-// Slow 
+// Slow
 /////////////////////////////////////////////////////////////////////
 IF
   OR(2)

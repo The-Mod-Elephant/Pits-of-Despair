@@ -115,4 +115,3 @@ THEN
 		Wait(1)
 		ActionOverride("ohbdenna",StartDialogueNoSet(Player1))
 END
-

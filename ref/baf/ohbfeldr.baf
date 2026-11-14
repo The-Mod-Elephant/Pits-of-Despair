@@ -47,4 +47,3 @@ THEN
 		SetGlobalTimer("OH_Rest","LOCALS",EIGHT_HOURS)
 		Continue()
 END
-

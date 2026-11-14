@@ -430,4 +430,3 @@ THEN
 	RESPONSE #100
 		AttackOneRound(NearestEnemyOf(Myself))
 END
-

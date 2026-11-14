@@ -201,4 +201,3 @@ THEN
 		Deactivate("ohbstann")  // Stannel Eibor
 		EndCutSceneMode()
 END
-
