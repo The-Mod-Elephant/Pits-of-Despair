@@ -1,23 +1,36 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/2cd3cac16691a933e94276f0a810453f17775c28";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
-  outputs = { self, nixpkgs }:
+  outputs =
+    { self, nixpkgs }:
     let
-      systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
-      forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
-    in {
-      devShells = forAllSystems (system:
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "aarch64-darwin"
+      ];
+      forEachSystem = f: nixpkgs.lib.genAttrs systems (system: f system);
+    in
+    {
+      devShells = forEachSystem (
+        system:
         let
           pkgs = import nixpkgs { inherit system; };
-        in {
+        in
+        {
           default = pkgs.mkShell {
             nativeBuildInputs = with pkgs; [
               git
-              pre-commit
+              hk
+              nil
+              nixfmt
               weidu
+              yamlfmt
             ];
           };
-        });
+        }
+      );
+      formatter = forEachSystem (system: nixpkgs.${system}.nixfmt);
     };
 }
